@@ -7,7 +7,7 @@
     signOut,
     type User
   } from 'firebase/auth';
-  import { doc, onSnapshot, type Unsubscribe } from 'firebase/firestore';
+  import type { Unsubscribe } from 'firebase/firestore';
   import { getFirebase } from '$lib/firebase';
   import { basePath, commitChanges, removeEntity, watchCollection } from '$lib/repository';
   import {
@@ -115,9 +115,52 @@
       };
     }
     const firebase = client;
-    let memberUnsub: Unsubscribe | undefined;
+    let refreshTimer: ReturnType<typeof setInterval> | undefined;
+    let generation = 0;
+    let verifyingGeneration: number | null = null;
+    async function verifyAccess(current: User, version: number) {
+      if (verifyingGeneration === version) return;
+      verifyingGeneration = version;
+      try {
+        const response = await fetch('/api/access', {
+          method: 'POST',
+          headers: { Authorization: 'Bearer ' + (await current.getIdToken()) },
+          cache: 'no-store'
+        });
+        const result = await response.json();
+        if (version !== generation) return;
+        if (!response.ok) {
+          denied(new Error(result.error || 'Accesso non consentito.'));
+          return;
+        }
+        if (access === 'member') return;
+        error = '';
+        access = 'member';
+        for (const name of [...collections, 'members'] as const) {
+          unsubs.push(
+            watchCollection(
+              firebase.db,
+              name,
+              (entities, cached) => {
+                if (version !== generation || access !== 'member') return;
+                if (name === 'members') members = entities;
+                else data[name] = entities;
+                if (!cached && !loaded.includes(name)) loaded = [...loaded, name];
+              },
+              denied
+            )
+          );
+        }
+      } catch {
+        if (version === generation)
+          denied(new Error('Serve una connessione per verificare ALLOW_LIST. Riprova tra poco.'));
+      } finally {
+        if (verifyingGeneration === version) verifyingGeneration = null;
+      }
+    }
     const authUnsub = onAuthStateChanged(firebase.auth, (current) => {
-      memberUnsub?.();
+      const version = ++generation;
+      clearInterval(refreshTimer);
       stop();
       clear();
       error = '';
@@ -127,38 +170,13 @@
         return;
       }
       access = 'loading';
-      memberUnsub = onSnapshot(
-        doc(firebase.db, basePath, 'members', current.uid),
-        { includeMetadataChanges: true },
-        (snap) => {
-          if (!snap.exists() && !snap.metadata.fromCache) {
-            denied();
-            return;
-          }
-          if (snap.metadata.fromCache) return;
-          if (access === 'member') return;
-          access = 'member';
-          for (const name of [...collections, 'members'] as const) {
-            unsubs.push(
-              watchCollection(
-                firebase.db,
-                name,
-                (entities, cached) => {
-                  if (name === 'members') members = entities;
-                  else data[name] = entities;
-                  if (!cached && !loaded.includes(name)) loaded = [...loaded, name];
-                },
-                denied
-              )
-            );
-          }
-        },
-        denied
-      );
+      void verifyAccess(current, version);
+      refreshTimer = setInterval(() => void verifyAccess(current, version), 60_000);
     });
     return () => {
       authUnsub();
-      memberUnsub?.();
+      generation++;
+      clearInterval(refreshTimer);
       stop();
       window.removeEventListener('online', updateNetwork);
       window.removeEventListener('offline', updateNetwork);
@@ -277,13 +295,13 @@
           </p>
         </div>
       {:else if access === 'denied'}<div class="notice">
-          <h2>Accesso riservato ai membri</h2>
+          <h2>Accesso non abilitato</h2>
           <p>
-            Il tuo account non è abilitato, oppure il permesso è stato revocato. Chiedi a chi
-            gestisce il workspace di aggiungere questo UID:
+            L’accesso è riservato agli account Google presenti nella configurazione privata
+            ALLOW_LIST. Usa un account autorizzato oppure chiedi al gestore di aggiungere la tua
+            email alla lista.
           </p>
-          <code class="uid">{user?.uid}</code>
-          <p>Non è possibile aggiungersi autonomamente.</p>
+          <button onclick={() => location.reload()}>Riprova verifica accesso</button>
         </div>
       {:else}<button class="primary login" onclick={login}>Accedi con Google</button><small
           >Solo i membri abilitati possono leggere e modificare il workspace.</small

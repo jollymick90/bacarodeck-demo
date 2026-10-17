@@ -4,7 +4,11 @@ service cloud.firestore {
   // Merge ONLY this workspace match into an existing project ruleset.
   match /workspaces/codemotion-milano-2026 {
    function member() {
-    return request.auth != null && exists(/databases/$(database)/documents/workspaces/codemotion-milano-2026/members/$(request.auth.uid));
+    return request.auth != null
+     && request.auth.token.email_verified == true
+     && request.auth.token.firebase.sign_in_provider == 'google.com'
+     && request.auth.token.email.lower() in get(/databases/$(database)/documents/workspaces/codemotion-milano-2026/access/config).data.allowedEmails
+     && exists(/databases/$(database)/documents/workspaces/codemotion-milano-2026/members/$(request.auth.uid));
    }
    function known(kind) { return kind in ['speakers','talks','sources','materials','insights','questions','interviewPlans']; }
    function valid(kind, id) {

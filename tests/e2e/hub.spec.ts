@@ -1,5 +1,27 @@
 import { test, expect } from '@playwright/test';
 
+test.beforeEach(async ({ request }) => {
+  const response = await request.patch(
+    'http://127.0.0.1:8080/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/access/config',
+    {
+      headers: { Authorization: 'Bearer owner' },
+      data: {
+        fields: {
+          allowedEmails: {
+            arrayValue: {
+              values: [
+                { stringValue: 'editor-desktop@example.test' },
+                { stringValue: 'editor-mobile@example.test' }
+              ]
+            }
+          }
+        }
+      }
+    }
+  );
+  expect(response.ok()).toBeTruthy();
+});
+
 test('member prepares the five speakers, CRUD and import work on screen', async ({
   page,
   request
@@ -7,29 +29,16 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/');
+  const accessRequest = page.waitForRequest('**/api/access');
   const popupPromise = page.waitForEvent('popup');
   await page.getByRole('button', { name: 'Accedi con Google' }).click();
   const popup = await popupPromise;
   await expect(popup.locator('.provider-name').first()).toHaveText('Google.com');
   await popup.getByRole('button', { name: 'Add new account' }).click();
 
-  await popup
-    .getByLabel('Email')
-    .fill(`editor-${testInfo.project.name}-${Date.now()}@example.test`);
+  await popup.getByLabel('Email').fill(`editor-${testInfo.project.name}@example.test`);
   await popup.getByLabel('Display name').fill('Editor Bacaro');
   await popup.getByRole('button', { name: 'Sign in with Google.com', exact: true }).click();
-  await expect(page.getByText('Accesso riservato ai membri')).toBeVisible();
-  const uid = await page.locator('.uid').innerText();
-  const response = await request.patch(
-    `http://127.0.0.1:8080/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/members/${uid}`,
-    {
-      headers: { Authorization: 'Bearer owner' },
-      data: {
-        fields: { displayName: { stringValue: 'Editor Bacaro' }, role: { stringValue: 'editor' } }
-      }
-    }
-  );
-  expect(response.ok()).toBeTruthy();
   await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Aggiungi speaker', exact: true })).toBeEnabled();
   if (await page.getByRole('button', { name: 'Prepara import dei 5 speaker' }).isVisible()) {
@@ -71,7 +80,13 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   );
   await expect(source.getByText('Fonte verificata dal team')).toBeVisible();
   await page.getByRole('button', { name: 'Prepara intervista' }).click();
-  await page.getByLabel('Intervistatore', { exact: true }).selectOption(uid);
+  const uid = await page
+    .getByLabel('Intervistatore', { exact: true })
+    .locator('option')
+    .filter({ hasText: 'Editor Bacaro' })
+    .last()
+    .getAttribute('value');
+  await page.getByLabel('Intervistatore', { exact: true }).selectOption(uid!);
   await page.getByLabel('Preparazione', { exact: true }).selectOption('ready');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
   await page.getByRole('button', { name: 'Intervista', exact: true }).click();
@@ -90,4 +105,41 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await page.getByRole('button', { name: /Andrey Breslav/ }).click();
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
   expect(errors).toEqual([]);
+  // Simulate publication of a newer policy. A running old deployment must never restore its list.
+  const authorization = (await accessRequest).headers().authorization;
+  const configUrl =
+    'http://127.0.0.1:8080/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/access/config';
+  expect(
+    (
+      await request.patch(configUrl, {
+        headers: { Authorization: 'Bearer owner' },
+        data: { fields: { allowedEmails: { arrayValue: { values: [] } } } }
+      })
+    ).ok()
+  ).toBeTruthy();
+  expect(
+    (await request.post('/api/access', { headers: { Authorization: authorization } })).status()
+  ).toBe(503);
+  const config = await (
+    await request.get(configUrl, { headers: { Authorization: 'Bearer owner' } })
+  ).json();
+  expect(config.fields.allowedEmails.arrayValue.values || []).toEqual([]);
+});
+
+test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ page, request }) => {
+  expect((await request.post('/api/access')).status()).toBe(401);
+  expect(
+    (await request.post('/api/access', { headers: { Authorization: 'Bearer forged' } })).status()
+  ).toBe(401);
+  await page.goto('/');
+  const popupPromise = page.waitForEvent('popup');
+  await page.getByRole('button', { name: 'Accedi con Google' }).click();
+  const popup = await popupPromise;
+  await expect(popup.locator('.provider-name').first()).toHaveText('Google.com');
+  await popup.getByRole('button', { name: 'Add new account' }).click();
+  await popup.getByLabel('Email').fill('outsider@example.test');
+  await popup.getByRole('button', { name: 'Sign in with Google.com', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Accesso non abilitato' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /Andrey Breslav/ })).toHaveCount(0);
 });

@@ -30,15 +30,25 @@ afterAll(async () => {
 beforeEach(async () => {
   await env.clearFirestore();
   await env.withSecurityRulesDisabled(async (c) => {
+    await setDoc(doc(c.firestore(), 'workspaces/codemotion-milano-2026/access/config'), {
+      allowedEmails: ['alice@example.test']
+    });
     await setDoc(doc(c.firestore(), 'workspaces/codemotion-milano-2026/members/alice'), {
       displayName: 'Alice',
       role: 'editor'
     });
   });
 });
+function googleContext(uid: string) {
+  return env.authenticatedContext(uid, {
+    email: uid + '@example.test',
+    email_verified: true,
+    firebase: { sign_in_provider: 'google.com' }
+  });
+}
 const base = 'workspaces/codemotion-milano-2026/';
 it('denies unauthenticated users, outsiders and self enrollment', async () => {
-  const outsider = env.authenticatedContext('outsider').firestore();
+  const outsider = googleContext('outsider').firestore();
   await assertFails(getDocs(collection(outsider, base + 'speakers')));
   await assertFails(
     getDocs(collection(env.unauthenticatedContext().firestore(), base + 'speakers'))
@@ -48,7 +58,7 @@ it('denies unauthenticated users, outsiders and self enrollment', async () => {
 });
 it('allows member CRUD, preserves audit, rejects stale edit and delete', async () => {
   // The rules harness returns a compat instance; modular SDK unwraps it internally.
-  const db = env.authenticatedContext('alice').firestore() as unknown as Firestore;
+  const db = googleContext('alice').firestore() as unknown as Firestore;
   await commitChanges(db, 'alice', [
     {
       collection: 'sources',
@@ -83,7 +93,7 @@ it('allows member CRUD, preserves audit, rejects stale edit and delete', async (
 });
 it('aborts entire import when one revision changed', async () => {
   // The rules harness returns a compat instance; modular SDK unwraps it internally.
-  const db = env.authenticatedContext('alice').firestore() as unknown as Firestore;
+  const db = googleContext('alice').firestore() as unknown as Firestore;
   await commitChanges(db, 'alice', [
     { collection: 'speakers', data: { id: 's', fullName: 'Name' }, expectedRevision: null }
   ]);
@@ -101,7 +111,7 @@ it('aborts entire import when one revision changed', async () => {
 });
 it('enforces revision, author, contact restrictions and workspace isolation at rules level', async () => {
   // The rules harness returns a compat instance; modular SDK unwraps it internally.
-  const db = env.authenticatedContext('alice').firestore() as unknown as Firestore;
+  const db = googleContext('alice').firestore() as unknown as Firestore;
   const audit = {
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
@@ -138,7 +148,7 @@ it('enforces revision, author, contact restrictions and workspace isolation at r
   );
 });
 it('persists insights and nullable Markdown accepted by import schema', async () => {
-  const db = env.authenticatedContext('alice').firestore() as unknown as Firestore;
+  const db = googleContext('alice').firestore() as unknown as Firestore;
   await commitChanges(db, 'alice', [
     {
       collection: 'insights',
@@ -153,7 +163,7 @@ it('persists insights and nullable Markdown accepted by import schema', async ()
 
 it('supports create read update delete for every editorial collection', async () => {
   const { collections, emptyEntity } = await import('../src/lib/fields');
-  const db = env.authenticatedContext('alice').firestore() as unknown as Firestore;
+  const db = googleContext('alice').firestore() as unknown as Firestore;
   for (const name of collections) {
     const entity = emptyEntity(name, 'test-speaker');
     if (name === 'speakers') entity.fullName = 'Test Speaker';
@@ -175,4 +185,42 @@ it('supports create read update delete for every editorial collection', async ()
     await removeEntity(db, name, { ...updated, id: entity.id });
     expect((await getDoc(ref)).exists()).toBe(false);
   }
+});
+
+it('denies legacy members, unverified identities and removed allowlist entries', async () => {
+  const db = googleContext('alice').firestore() as unknown as Firestore;
+  await assertSucceeds(getDocs(collection(db, base + 'speakers')));
+  await assertFails(getDoc(doc(db, base + 'access/config')));
+  await assertFails(
+    getDocs(
+      collection(
+        env
+          .authenticatedContext('alice', {
+            email: 'alice@example.test',
+            email_verified: false,
+            firebase: { sign_in_provider: 'google.com' }
+          })
+          .firestore(),
+        base + 'speakers'
+      )
+    )
+  );
+  await assertFails(
+    getDocs(
+      collection(
+        env
+          .authenticatedContext('alice', {
+            email: 'alice@example.test',
+            email_verified: true,
+            firebase: { sign_in_provider: 'password' }
+          })
+          .firestore(),
+        base + 'speakers'
+      )
+    )
+  );
+  await env.withSecurityRulesDisabled(async (c) => {
+    await setDoc(doc(c.firestore(), base + 'access/config'), { allowedEmails: [] });
+  });
+  await assertFails(getDocs(collection(db, base + 'speakers')));
 });

@@ -12,11 +12,14 @@
     "test": "vitest run",
     "test:rules": "firebase emulators:exec --only firestore --project demo-bacarodeck 'vitest run tests/rules.test.ts'",
     "test:e2e": "playwright test",
-    "format:check": "prettier --check \"src/**/*.{ts,svelte}\" src/app.css \"tests/**/*.ts\" \"*.{ts,js,json}\" schemas/*.json"
+    "format:check": "prettier --check \"src/**/*.{ts,svelte}\" src/app.css \"tests/**/*.ts\" \"*.{ts,js,json}\" schemas/*.json",
+    "access:sync": "node --env-file-if-exists=.env scripts/sync-access.mjs",
+    "build:deploy": "npm run access:sync && npm run build"
   },
   "dependencies": {
     "ajv": "^8.17.1",
     "firebase": "^12.0.0",
+    "firebase-admin": "^14.5.0",
     "marked": "^16.0.0",
     "sanitize-html": "^2.17.0"
   },

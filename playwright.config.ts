@@ -18,7 +18,9 @@ export default defineConfig({
       PUBLIC_FIREBASE_AUTH_DOMAIN: 'demo-bacarodeck.firebaseapp.com',
       PUBLIC_FIREBASE_PROJECT_ID: 'demo-bacarodeck',
       PUBLIC_FIREBASE_APP_ID: 'demo-app',
-      PUBLIC_USE_EMULATORS: 'true'
+      PUBLIC_USE_EMULATORS: 'true',
+      ALLOW_LIST: 'editor-desktop@example.test,editor-mobile@example.test',
+      FIREBASE_ADMIN_KEY: ''
     }
   }
 });
