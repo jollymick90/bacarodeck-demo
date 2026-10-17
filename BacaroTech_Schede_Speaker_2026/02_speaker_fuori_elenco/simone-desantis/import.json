@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "simone-desantis",
+      "fullName": "Simone Desantis",
+      "firstName": "Simone",
+      "lastName": "Desantis",
+      "headline": "CTO of Openapi",
+      "organization": null,
+      "biographyMd": "For years in internet technologies, he has gained experience in the design, development and maintenance of reliable and stable IT infrastructures.\nNaturally brought to problem solving, he is passionate about complex systems, starting from their comprehension, through the identification of critical issues, up to their optimization and improvement.\nCurrently involved in the design and development of a new high performance all purpose API infrastructure.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-simone-desantis"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-simone-desantis",
+      "speakerIds": [
+        "simone-desantis"
+      ],
+      "title": "5 API per mettere a sicuro il tuo progetto digitale",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "simone-desantis",
+      "speakerId": "simone-desantis",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

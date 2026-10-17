@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "paolo-insogna",
+      "fullName": "Paolo Insogna",
+      "firstName": "Paolo",
+      "lastName": "Insogna",
+      "headline": "Platformatic",
+      "organization": "Platformatic",
+      "biographyMd": "",
+      "photoUrl": "https://cdn.sessionize.com/image/0f73-400o400o1-PSt5mDhCrYJEibYim5yRq5.jpg",
+      "priority": true,
+      "inDirectorySnapshot": false,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "talkIds": [
+        "talk-paolo-insogna"
+      ],
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-paolo-insogna",
+      "speakerIds": [
+        "paolo-insogna"
+      ],
+      "title": "Bridge The Gap: The Journey Behind node:ffi",
+      "abstractMd": "In this talk, I’ll take you through the journey that led to the creation of node:ffi — an effort that started as an ambitious idea and slowly evolved into a real piece of the Node.js platform. Along the way, I had the chance to explore different approaches to native interoperability, compare ideas with other collaborators in the ecosystem, and learn from a lot of smart and creative solutions that helped shape the direction of the project.\n\nI’ll walk through the technical challenges behind building an FFI layer for Node.js, from ABI compatibility to deep integration with V8, and show how recent advances like Fast API calls finally made high-performance native bindings practical without relying on traditional C++ addons.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "paolo-insogna",
+      "speakerId": "paolo-insogna",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

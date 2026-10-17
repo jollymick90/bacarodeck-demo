@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "francesco-facconi",
+      "fullName": "Francesco Facconi",
+      "firstName": "Francesco",
+      "lastName": "Facconi",
+      "headline": "Speaker on Digitalia - Senior Engineering Manager at Doctolib",
+      "organization": null,
+      "biographyMd": "Engineer, manager, former startupper, broadcasting every Monday evening on Digitalia, one of the longest-lasting Podcast in Italy, speaking about technology and how this interacts with our lives. His last book is \"Almanacco Digitaliano 2024\" from Ledizioni Publishing. Musician and performer with more than 400 gigs.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-francesco-facconi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-francesco-facconi",
+      "speakerIds": [
+        "francesco-facconi"
+      ],
+      "title": "When the Backlog Dispatches Itself: a Production Fleet of Autonomous AI Coding Agents",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "francesco-facconi",
+      "speakerId": "francesco-facconi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

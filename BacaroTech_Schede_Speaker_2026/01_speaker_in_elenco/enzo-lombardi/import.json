@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "enzo-lombardi",
+      "fullName": "Enzo Lombardi",
+      "firstName": "Enzo",
+      "lastName": "Lombardi",
+      "headline": "Cleafy, 🌩️ Cloud Software Architect 🦀 Learning Rust 🕹️ Mame contributor 🔬 Arduino thinkerer: ESP32, nrf52 🔍 Former Google and Microsoft dev 🥞 Almost-full stack developer (can't align with CSS)",
+      "organization": "Cleafy",
+      "biographyMd": "Former software engineer, spent large part of my career in US working for Microsoft, Google and startups.\nIn Microsoft I was part of the original .Net team and later worked on Windows Compatibility Toolkit and Windows Performance Analyzer.\nIn Google I worked for Hangouts during its glory days, and moved to work on the Directory product part of Google Workplace offer.\nI moved back to Italy in Summer 2023 to pivot my career as Software Architect in order to bring my experience to use in a fast growing company working on a interesting product.\nI am learning by teaching Rust and successfully contributed to Mame bringing the sound effects to the Italian arcade game dribbling.\n\nBook author of:\nTu lo conosci Claude vol. 1 and 2\nOOP to Rust (English and Italian)\nMultiplatform UI in Rust",
+      "photoUrl": "https://cdn.sessionize.com/image/ba8d-400o400o1-TU33WUCQxvFJFtLdG545P.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-enzo-lombardi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-enzo-lombardi",
+      "speakerIds": [
+        "enzo-lombardi"
+      ],
+      "title": "Racing the beam",
+      "abstractMd": "Nel 1977 Atari rilasciò una console leggendaria: il VCS 2600. La RAM era misurata in byte, 128 in tutto, senza la possibilità di avere un frame buffer e con capacità grafiche molto limitate: 2 sprite giocatore, due sprite proiettile, uno sprite \"palla\", playground a media risoluzione.\nDurante gli anni '80 coi miei amici si spendeva interi pomeriggi a giocare un gioco \"oscuro\" chiamato \"Slot Racers\" scritto dallo stesso autore del mitico Adventure, Warren Robinett. L'unico limite: richiedeva 2 giocatori, non c'era spazio per l'AI.\nNel talk mostrerò come ho:\n* creato un MCP che interfacciasse Claude con l'emulatore di Atari 2600 scritto in Go per debuggare l'assembly del gioco (in precedenza da me reverse engineered a manella)\n* chiedere a Claude di usare l'MCP per creare una AI che fosse abbastanza tosta da dare filo da torcere",
+      "language": "it",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "enzo-lombardi",
+      "speakerId": "enzo-lombardi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "erik-pronk",
+      "fullName": "Erik Pronk",
+      "firstName": "Erik",
+      "lastName": "Pronk",
+      "headline": "Passionate about people and software",
+      "organization": null,
+      "biographyMd": "Erik Pronk is a passionate software engineer that has been working in IT since 2001. During this period he has gained a lot of experience in a variety of technologies, roles, development environments and market segments. His main focus is on implementing enterprise solutions in an agile way. In his spare time, Erik loves to run and experiment with VR and domotics. Erik works at JDriven where he shares his passion and drive with other colleagues.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-erik-pronk"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-erik-pronk",
+      "speakerIds": [
+        "erik-pronk"
+      ],
+      "title": "AI is changing your team more than your code",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "erik-pronk",
+      "speakerId": "erik-pronk",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

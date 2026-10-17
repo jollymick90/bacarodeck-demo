@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "alessandro-riboni",
+      "fullName": "Alessandro Riboni",
+      "firstName": "Alessandro",
+      "lastName": "Riboni",
+      "headline": "AI Engineer",
+      "organization": null,
+      "biographyMd": "Alessandro Riboni is a Staff Engineer at Generali, specializing in AI engineering and GenAI platforms. Supports internal teams and builds horizontal tooling that standardizes and simplifies GenAI development: from a framework for prompt management, automated evaluation and CI/CD-based release of prompts, to Flowmetrics, a semantic layer that gives AI agents governed access to business metrics. Before that, five years in consulting for insurance and banking: first as a data engineer on real-time pipelines, then as an ML engineer building LLM-based claims assistants, RAG systems for policy risk assessment and document-parsing tools on AWS. Holds an MSc in Data Science from the University of Milano-Bicocca.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alessandro-riboni"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-alessandro-riboni",
+      "speakerIds": [
+        "alessandro-riboni"
+      ],
+      "title": "Text-to-SQL Isn't Enough: Trustworthy AI Data Agents on a Semantic Layer",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "alessandro-riboni",
+      "speakerId": "alessandro-riboni",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

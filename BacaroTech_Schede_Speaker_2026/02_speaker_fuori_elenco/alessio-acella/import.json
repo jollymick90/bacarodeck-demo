@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "alessio-acella",
+      "fullName": "Alessio Acella",
+      "firstName": "Alessio",
+      "lastName": "Acella",
+      "headline": "CTO, Founder, Software engineer at Omnes",
+      "organization": null,
+      "biographyMd": "Alessio is CTO and Software Engineer at Omnes. Over the years, he has specialized in building tailored digital platforms, evolving from early work in C, C++, JAVA, PHP and Laravel to large-scale projects powered by modern stacks such as Vue.js, Nuxt, TypeScript, React and Node.js.\n\nHis technical journey has been shaped by constant curiosity for scalable architectures and performance-driven design. Alessio has worked extensively with cloud infrastructures on AWS, relational as well as NoSQL databases, real-time messaging, and modern headless frameworks.\n\nToday he leads teams building B2B and B2C platforms that combine strong engineering foundations with a focus on user experience and accessibility, while exploring how AI and automation are reshaping development practices.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alessio-acella"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-alessio-acella",
+      "speakerIds": [
+        "alessio-acella"
+      ],
+      "title": "Accessibility first: progettare una piattaforma quando l’accessibilità non è negoziabile",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "alessio-acella",
+      "speakerId": "alessio-acella",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

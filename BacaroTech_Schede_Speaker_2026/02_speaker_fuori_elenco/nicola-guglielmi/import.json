@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "nicola-guglielmi",
+      "fullName": "Nicola Guglielmi",
+      "firstName": "Nicola",
+      "lastName": "Guglielmi",
+      "headline": "GDE Cloud • Google Cloud Architect • Google Cloud Authorized Trainer • Team Manager • GDG Community Lead 🚀",
+      "organization": null,
+      "biographyMd": "I operate at the intersection of bold vision and brilliant teams. As a Principal Cloud & AI Strategist and Fractional CTO, I partner with companies to architect future-proof cloud solutions and build the high-performing engineering teams needed to execute them.\nWith over a decade of hands-on experience in Digital Transformation, I specialize in Google Cloud Platform, Generative AI (Vertex AI), and complex multi-cloud architectures. I don't just talk theory, I have built Cloud Business Units from scratch and led mission-critical migrations in fast-paced sectors like Oil & Gas.\nMy philosophy is simple: an elite strategy is useless without an elite team to execute it, so I build the team first, knowing that the results will follow.\nAs a passionate advocate for open knowledge, I am a Google Cloud Authorized Trainer, a Google Developer Expert (GDE) for Cloud, and the Community Lead for GDG Campobasso.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-nicola-guglielmi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-nicola-guglielmi",
+      "speakerIds": [
+        "nicola-guglielmi"
+      ],
+      "title": "Engineering Leadership Through Multi-Agent Simulations",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "nicola-guglielmi",
+      "speakerId": "nicola-guglielmi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

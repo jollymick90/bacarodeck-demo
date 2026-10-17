@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "christian-schabetsberger",
+      "fullName": "Christian Schabetsberger",
+      "firstName": "Christian",
+      "lastName": "Schabetsberger",
+      "headline": "Freelance Software Engineer & Architect",
+      "organization": "Finxit IT Solutions",
+      "biographyMd": "Christian Schabetsberger, the world's okayest developer, is a Freelance Software Engineer & Architect from Linz, Austria with over a decade of experience.\nHaving spend half of his life in the .NET ecosystem (amongst others), he likes to stay on the bleeding edge of technology to become the (tech-savvy) ninja he pretends to be since he is six.\nHe is also an active community member, organising the .NET Meetup in Linz and supporting other local user groups. Furthermore he is a member of the .NET Foundation.",
+      "photoUrl": "https://cdn.sessionize.com/image/fde0-400o400o1-YW8GokVBE7PPj7swgfvDKT.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-christian-schabetsberger"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-christian-schabetsberger",
+      "speakerIds": [
+        "christian-schabetsberger"
+      ],
+      "title": "What comes after Git?",
+      "abstractMd": "Are the version control system wars over? It mostly looks like that, as Git has been the default contender for more than the past 10 years. But how did that even happen? And what will it take to dethrone the most dominating piece of software our industry has ever seen? New version control systems are rising on the horizon, with promising new features to simplify development workflows and improve developer experience, that are often inherently complex, or even outright impossible, to do with Git. In this talk, we are going to take a look at the history of version control systems, how new rising young stars like Jujutsu, Sapling or GitButler are innovating in that space today and how to use and integrate them into your existing Git-based project.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "christian-schabetsberger",
+      "speakerId": "christian-schabetsberger",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

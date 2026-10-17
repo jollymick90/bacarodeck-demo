@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "graziano-casto",
+      "fullName": "Graziano Casto",
+      "firstName": "Graziano",
+      "lastName": "Casto",
+      "headline": "Developer Relations Engineer @ Akamas | Tech Lead @ CNCF TAG DevEx | Kubernetes v1.35 Comms Lead",
+      "organization": null,
+      "biographyMd": "Graziano is a DevRel Engineer at Akamas, where he spends his days convincing computers to stop being lazy and start being efficient. A former distributed systems developer and product manager, he’s now on a mission to optimize the entire cloud-native universe, one Pod at a time. As a Tech Lead for the CNCF TAG DevEx and a member of the Kubernetes Release Team since v1.34, he balances deep infrastructure roots with a passion for developer happiness. Obsessed with AI, Platform Engineering, and saving the planet through better code, Graziano is basically trying to make the cloud faster, greener, and significantly less annoying for everyone.\n\nMore on: https://castograziano.com/",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-graziano-casto"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-graziano-casto",
+      "speakerIds": [
+        "graziano-casto"
+      ],
+      "title": "Startup veloci, Pod snelli: In-Place Pod Resize in pratica",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "graziano-casto",
+      "speakerId": "graziano-casto",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

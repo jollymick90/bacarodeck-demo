@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "gabriele-negro",
+      "fullName": "Gabriele Negro",
+      "firstName": "Gabriele",
+      "lastName": "Negro",
+      "headline": "Chief Technology Officer @altermAInd",
+      "organization": null,
+      "biographyMd": "Gabriele is a technology leader with extensive experience in building digital platforms and enterprise software solutions. He currently works on AI-driven products focused on transforming how people learn, work, and make decisions inside organizations.\n\nWith a background in software architecture and large-scale systems, he has led projects in banking, fintech, and cloud-native environments, helping companies adopt modern architectures and artificial intelligence in real business scenarios.\n\nToday his main focus is on the impact of AI on society and the workplace, exploring how tools like generative AI and vibe coding are changing the way software is built and how companies operate.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-gabriele-negro"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-gabriele-negro",
+      "speakerIds": [
+        "gabriele-negro"
+      ],
+      "title": "The Cost of Cheap Code",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "gabriele-negro",
+      "speakerId": "gabriele-negro",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

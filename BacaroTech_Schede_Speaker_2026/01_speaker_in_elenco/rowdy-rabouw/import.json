@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "rowdy-rabouw",
+      "fullName": "Rowdy Rabouw",
+      "firstName": "Rowdy",
+      "lastName": "Rabouw",
+      "headline": "Front-End Focused Senior DevOps Engineer",
+      "organization": "Nationale-Nederlanden",
+      "biographyMd": "Rowdy Rabouw is a Google Developer Expert in Web Technologies with over 25 years of experience in HTML, CSS and JavaScript. Currently, he works as a Front-End-Focused Senior DevOps Engineer on Vue, Node, and NestJS projects, with a focus on usability and accessibility. Rowdy loves his electronic drum kit and dabbles in creating music on his laptop.",
+      "photoUrl": "https://cdn.sessionize.com/image/f20e-400o400o1-LqCirkShubcxGkm5Ac1CrN.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-rowdy-rabouw"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-rowdy-rabouw",
+      "speakerIds": [
+        "rowdy-rabouw"
+      ],
+      "title": "Warp Pipes and Prefetching: Navigating the Web at Mario Speed",
+      "abstractMd": "Long wait times are the \"Bowser\" of the good user experience. Even if your site looks great, slow transitions or blank loading screens can make users feel like they’ve fallen down a bottomless pit. But what if your website could predict the future and move between pages as smoothly as a Warp Pipe?\n\nIn this session, we’ll explore the \"Power-Up\" duo of modern web development:\n- Speculation Rules API: See how prefetching and prerendering can load pages before users click.\n- View Transition API: Use animations to help users move smoothly through your \"world map\" with ease.\n\nWe’ll break down the technical plumbing required to make these APIs work nicely together. You will leave this session with the cheat codes needed to deliver a fast, seamless experience that will have your users saying, \"Mamma Mia, that’s fast!\"",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "rowdy-rabouw",
+      "speakerId": "rowdy-rabouw",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

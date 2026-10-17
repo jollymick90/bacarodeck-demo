@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "michele-laurelli",
+      "fullName": "Michele Laurelli",
+      "firstName": "Michele",
+      "lastName": "Laurelli",
+      "headline": "Founder of Scriba, University Professor adj, Author",
+      "organization": null,
+      "biographyMd": "Michele Laurelli è fondatore e CEO di Algoretico, software house milanese specializzata in intelligenza artificiale, e co-fondatore e Head of AI di Scriba AI, piattaforma per la migrazione di codice legacy rivolta ai System Integrator. È CTO di Lagiste23 e guida una software factory dedicata allo sviluppo di soluzioni AI. In ambito accademico è docente a.c. all'Università Vita-Salute San Raffaele. È autore della collana Fondamenti di Intelligenza Artificiale e scrive per ai-blog.it e varie riviste. Ha pubblicato diverse ricerche in ambito Intelligenza Artificiale e ML.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-michele-laurelli"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-michele-laurelli",
+      "speakerIds": [
+        "michele-laurelli"
+      ],
+      "title": "SCRIBA.AI. soluzione IA italiana per modernizzare il codice legacy",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "michele-laurelli",
+      "speakerId": "michele-laurelli",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

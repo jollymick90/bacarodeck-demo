@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "alessandro-miliucci",
+      "fullName": "Alessandro Miliucci",
+      "firstName": "Alessandro",
+      "lastName": "Miliucci",
+      "headline": "Solution Architect @ Fabrick S.p.a.",
+      "organization": null,
+      "biographyMd": "I am Alessandro Miliucci, a developer, author and speaker. Although I have many interests, software development is what I devote most of my time to and what I am best known for. I have also written a few books on software development.\n\nMy interests range over all aspects of software: from user interfaces to databases, including network protocols.\n\nI am a co-organizer of RomaJS meetup and the leader of MongoDB User Group in Rome.\n\nDuring my career I have spent a lot of time working on start-ups such as Hype, the first Italian neo-bank, and Vidra, an e-commerce SaaS that I co-Founded.\nNowadays I work as a Solution Architect for Fabrick S.p.a. one of the leading Italian Fintech companies.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alessandro-miliucci"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-alessandro-miliucci",
+      "speakerIds": [
+        "alessandro-miliucci"
+      ],
+      "title": "Distributed Locks with MongoDB",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "alessandro-miliucci",
+      "speakerId": "alessandro-miliucci",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

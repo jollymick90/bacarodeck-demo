@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "carolina-pinto",
+      "fullName": "Carolina Pinto",
+      "firstName": "Carolina",
+      "lastName": "Pinto",
+      "headline": "Candy Crush",
+      "organization": "Candy Crush",
+      "biographyMd": "",
+      "photoUrl": "https://cdn.sessionize.com/image/2f34-400o400o1-4aVKHFLLkk8ZP5nJYQdKQz.jpg",
+      "priority": true,
+      "inDirectorySnapshot": false,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "talkIds": [
+        "talk-carolina-pinto"
+      ],
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-carolina-pinto",
+      "speakerIds": [
+        "carolina-pinto"
+      ],
+      "title": "What Candy Crush Can Teach AI Products About Human Behavior",
+      "abstractMd": "AI products are becoming increasingly capable,  but many still fail to create experiences people actually enjoy using. I’ve seen how games solve problems that modern AI tools are only starting to face: onboarding complexity, trust, motivation, feedback loops, and long-term engagement.\nThis talk explores what AI-powered products can learn from game design built for millions of users. From progression mechanics and emotional feedback to behavioral pacing, we’ll look at how gaming UX principles can help developers create AI products that feel intuitive, rewarding, and human-centered.\nBecause in the end, successful products are not only about what AI can do, but about how people feel while using it.\n\nKey Takeaways\n- Understand how gaming UX principles apply to AI-driven products and developer tools\n- Learn why motivation, feedback, and progression are critical for user adoption\n- Discover practical design patterns for creating more engaging AI experiences",
+      "language": "en",
+      "level": "Non Technical/For Everyone",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "carolina-pinto",
+      "speakerId": "carolina-pinto",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

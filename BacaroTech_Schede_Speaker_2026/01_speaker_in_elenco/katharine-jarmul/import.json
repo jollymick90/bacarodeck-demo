@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "katharine-jarmul",
+      "fullName": "Katharine Jarmul",
+      "firstName": "Katharine",
+      "lastName": "Jarmul",
+      "headline": "Privacy and Security in AI Systems",
+      "organization": null,
+      "biographyMd": "Katharine Jarmul focuses her work and research on privacy and security in data science, deep learning and AI. She is author of the well received O'Reilly book Practical Data Privacy (O'Reilly 2023) and has more than 10 years experience in machine learning/AI where she has helped build large scale AI systems with privacy and security built in. You can follow her work via her newsletter, Probably Private or on her website at https://kjamistan.com.",
+      "photoUrl": null,
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-katharine-jarmul"
+      ],
+      "reviewFlags": [
+        "csv_talk_missing_directory_present"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-katharine-jarmul",
+      "speakerIds": [
+        "katharine-jarmul"
+      ],
+      "title": "I spy on my agents and you can too!",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [
+        "csv_talk_missing_directory_present"
+      ],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "katharine-jarmul",
+      "speakerId": "katharine-jarmul",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "marco-ippolito",
+      "fullName": "Marco Ippolito",
+      "firstName": "Marco",
+      "lastName": "Ippolito",
+      "headline": "Senior Security Engineer @HeroDevs | Node.js TSC",
+      "organization": "HeroDevs",
+      "biographyMd": "Marco is a Senior Security Engineer at HeroDevs.\nActive contributor, releaser, and member of the Node.js Technical Steering Committee, he is a renowned international speaker and a former Microsoft MVP. Marco is actively involved in many projects within the Node.js ecosystem and also serves as a delegate in TC39.",
+      "photoUrl": "https://cdn.sessionize.com/image/4b31-400o400o1-SkXx6766j2iCudSPd9Ympj.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-marco-ippolito"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-marco-ippolito",
+      "speakerIds": [
+        "marco-ippolito"
+      ],
+      "title": "The Memedex: indicizzare Internet, un meme alla volta",
+      "abstractMd": "I meme sembrano caos: immagini riciclate, testi sovrapposti, sottoculture, remix e inside joke. Con The Memedex abbiamo provato a trasformare questo caos in un database navigabile.\n\nNato da una tesi universitaria sulla storia e sulla cultura dei meme, il progetto è diventato una pipeline per raccogliere, catalogare, filtrare e moderare milioni di immagini tramite AI.\n\nIn questo talk racconteremo le sfide tecniche dietro il progetto: raccolta da fonti eterogenee, deduplicazione, classificazione per sottoculture, moderazione automatica, controllo dei costi AI e uso di embedding e grafi per trovare meme simili.",
+      "language": "it",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "marco-ippolito",
+      "speakerId": "marco-ippolito",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

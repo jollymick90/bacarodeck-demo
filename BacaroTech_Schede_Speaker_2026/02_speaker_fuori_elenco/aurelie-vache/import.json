@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "aurelie-vache",
+      "fullName": "Aurélie Vache",
+      "firstName": "Aurélie",
+      "lastName": "Vache",
+      "headline": "Developer Advocate at OVHcloud, Docker Captain, CNCF Ambassador & GDE",
+      "organization": null,
+      "biographyMd": "Aurélie Vache is a Developer Advocate at OVHcloud in Toulouse, France. She is a Docker Captain, CNCF ambassador, Google Cloud Developer Expert & Women techmarkers Ambassador. She has been working as a Developer and Ops for over 20 years. Cloud enthusiast and advocates DevOps/Cloud/Golang best practices.\n\nTechnical writer (dev.to/aurelievache), a book author & reviewer, a sketchnoter and a speaker at international conferences.\nConferences and meetups organizer since 2016.\n\nCreator and maintainer of https://developers.events/, a collaborative, open-source platform that aggregates & list developer/tech-focused conferences/events and call-for-papers (CFP) opportunities worldwide, helping speakers, organizers, sponsors and attendees.\n\nShe created a new visual way for people to learn and understand Cloud technologies: \"Understanding Kubernetes/Istio/Docker in a visual way\" in sketchnotes, books and videos.\n\nBlog: https://dev.to/aurelievache/\nYouTube: https://www.youtube.com/c/AurelieVache",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-aurelie-vache"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-aurelie-vache",
+      "speakerIds": [
+        "aurelie-vache"
+      ],
+      "title": "The Ultimate Kubernetes Challenge: An Interactive Trivia Game on concepts, components, usage...",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "aurelie-vache",
+      "speakerId": "aurelie-vache",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

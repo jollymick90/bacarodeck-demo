@@ -1,0 +1,47 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  // Merge ONLY this workspace match into an existing project ruleset.
+  match /workspaces/codemotion-milano-2026 {
+   function member() {
+    return request.auth != null && exists(/databases/$(database)/documents/workspaces/codemotion-milano-2026/members/$(request.auth.uid));
+   }
+   function known(kind) { return kind in ['speakers','talks','sources','materials','insights','questions','interviewPlans']; }
+   function valid(kind, id) {
+    let d = request.resource.data;
+    return d.id == id && id.matches('^[a-zA-Z0-9_-]{1,128}$')
+     && d.keys().hasAll(['id','createdAt','updatedAt','createdBy','updatedBy','revision'])
+     && d.revision is int && d.createdAt is timestamp && d.updatedAt == request.time
+     && d.updatedBy == request.auth.uid
+     && (kind != 'materials' || !('bodyMd' in d) || d.bodyMd == null || (d.bodyMd is string && d.bodyMd.size() <= 204800))
+     && (
+       ((kind == 'speakers' && d.keys().hasOnly(["id", "fullName", "firstName", "lastName", "headline", "organization", "biographyMd", "photoUrl", "priority", "inDirectorySnapshot", "tags", "suggestedTags", "publicLinks", "sourceIds", "talkIds", "reviewFlags", "notesMd", "status", "createdAt", "updatedAt", "createdBy", "updatedBy", "revision"])) && d.fullName is string && d.fullName.size() > 0)
+       || (kind == 'talks' && d.keys().hasOnly(["id", "speakerIds", "title", "abstractMd", "language", "topic", "level", "alternateTitles", "sourceIds", "notesMd", "day", "time", "stage", "reviewFlags", "createdAt", "updatedAt", "createdBy", "updatedBy", "revision"]))
+       || (kind == 'sources' && d.keys().hasOnly(["id", "kind", "title", "url", "publisher", "notesMd", "tags", "status", "speakerIds", "createdAt", "updatedAt", "createdBy", "updatedBy", "revision"]))
+       || (kind == 'materials' && d.keys().hasOnly(["id", "speakerIds", "type", "title", "url", "bodyMd", "notesMd", "sourceIds", "tags", "language", "readStatus", "status", "provenance", "createdAt", "updatedAt", "createdBy", "updatedBy", "revision"]))
+       || (kind == 'insights' && d.keys().hasOnly(["id", "title", "bodyMd", "provenance", "speakerIds", "sourceIds", "materialIds", "tags", "notesMd", "status", "createdAt", "updatedAt", "createdBy", "updatedBy", "revision"]))
+       || (kind == 'questions' && d.keys().hasOnly(["id", "speakerId", "order", "textEn", "textIt", "followUpEn", "followUpIt", "whyMd", "tags", "sourceIds", "materialIds", "status", "notesMd", "createdAt", "updatedAt", "createdBy", "updatedBy", "revision"]))
+       || (kind == 'interviewPlans' && d.keys().hasOnly(["id", "speakerId", "assignedToUid", "assignedToName", "status", "interviewStatus", "priority", "notesMd", "targetQuestions", "date", "startTime", "createdAt", "updatedAt", "createdBy", "updatedBy", "revision"]))
+     );
+   }
+   allow read: if member();
+   allow write: if false;
+   match /members/{uid} {
+    allow get: if request.auth != null && (request.auth.uid == uid || member());
+    allow list: if member();
+    allow write: if false;
+   }
+   match /{kind}/{id} {
+    allow read: if known(kind) && member();
+    allow create: if known(kind) && member() && valid(kind,id)
+     && request.resource.data.createdBy == request.auth.uid
+     && request.resource.data.createdAt == request.time && request.resource.data.revision == 1;
+    allow update: if known(kind) && member() && valid(kind,id)
+     && request.resource.data.createdAt == resource.data.createdAt
+     && request.resource.data.createdBy == resource.data.createdBy
+     && request.resource.data.revision == resource.data.revision + 1;
+    allow delete: if known(kind) && member();
+   }
+  }
+ }
+}

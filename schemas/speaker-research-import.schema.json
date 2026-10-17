@@ -1,0 +1,541 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BacaroTech speaker research import",
+  "type": "object",
+  "required": ["schemaVersion"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "workspaceId": {
+      "const": "codemotion-milano-2026"
+    },
+    "targetSpeakerId": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+    },
+    "description": {
+      "type": "string"
+    },
+    "dataSnapshotDate": {
+      "type": "string"
+    },
+    "workspace": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+        },
+        "title": {
+          "type": ["string", "null"]
+        },
+        "eventStart": {
+          "type": ["string", "null"]
+        },
+        "eventEnd": {
+          "type": ["string", "null"]
+        },
+        "preparationDeadline": {
+          "type": ["string", "null"]
+        },
+        "notesMd": {
+          "type": ["string", "null"]
+        },
+        "language": {
+          "type": ["string", "null"]
+        },
+        "status": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "speakers": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "fullName": {
+            "type": ["string", "null"]
+          },
+          "firstName": {
+            "type": ["string", "null"]
+          },
+          "lastName": {
+            "type": ["string", "null"]
+          },
+          "headline": {
+            "type": ["string", "null"]
+          },
+          "organization": {
+            "type": ["string", "null"]
+          },
+          "biographyMd": {
+            "type": ["string", "null"]
+          },
+          "photoUrl": {
+            "type": ["string", "null"]
+          },
+          "priority": {
+            "type": "boolean"
+          },
+          "inDirectorySnapshot": {
+            "type": "boolean"
+          },
+          "tags": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggestedTags": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "publicLinks": {
+            "type": "array",
+            "maxItems": 50,
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["url"],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "sourceIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "talkIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "reviewFlags": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "notesMd": {
+            "type": ["string", "null"]
+          },
+          "status": {
+            "type": ["string", "null"]
+          }
+        },
+        "required": ["id", "fullName"],
+        "additionalProperties": false
+      }
+    },
+    "talks": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "speakerIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": ["string", "null"]
+          },
+          "abstractMd": {
+            "type": ["string", "null"]
+          },
+          "language": {
+            "type": ["string", "null"]
+          },
+          "topic": {
+            "type": ["string", "null"]
+          },
+          "level": {
+            "type": ["string", "null"]
+          },
+          "alternateTitles": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "notesMd": {
+            "type": ["string", "null"]
+          },
+          "day": {
+            "type": ["string", "null"]
+          },
+          "time": {
+            "type": ["string", "null"]
+          },
+          "stage": {
+            "type": ["string", "null"]
+          },
+          "reviewFlags": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+      }
+    },
+    "sources": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "kind": {
+            "type": ["string", "null"]
+          },
+          "title": {
+            "type": ["string", "null"]
+          },
+          "url": {
+            "type": ["string", "null"]
+          },
+          "publisher": {
+            "type": ["string", "null"]
+          },
+          "notesMd": {
+            "type": ["string", "null"]
+          },
+          "tags": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": ["string", "null"]
+          },
+          "speakerIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+      }
+    },
+    "materials": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "speakerIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "type": {
+            "type": ["string", "null"]
+          },
+          "title": {
+            "type": ["string", "null"]
+          },
+          "url": {
+            "type": ["string", "null"]
+          },
+          "bodyMd": {
+            "type": ["string", "null"]
+          },
+          "notesMd": {
+            "type": ["string", "null"]
+          },
+          "sourceIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "language": {
+            "type": ["string", "null"]
+          },
+          "readStatus": {
+            "type": ["string", "null"]
+          },
+          "status": {
+            "type": ["string", "null"]
+          },
+          "provenance": {
+            "type": ["string", "null"]
+          }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+      }
+    },
+    "insights": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": ["string", "null"]
+          },
+          "bodyMd": {
+            "type": ["string", "null"]
+          },
+          "provenance": {
+            "type": ["string", "null"]
+          },
+          "speakerIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "materialIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "notesMd": {
+            "type": ["string", "null"]
+          },
+          "status": {
+            "type": ["string", "null"]
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+      }
+    },
+    "questions": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "speakerId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "textEn": {
+            "type": ["string", "null"]
+          },
+          "textIt": {
+            "type": ["string", "null"]
+          },
+          "followUpEn": {
+            "type": ["string", "null"]
+          },
+          "followUpIt": {
+            "type": ["string", "null"]
+          },
+          "whyMd": {
+            "type": ["string", "null"]
+          },
+          "tags": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "materialIds": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": ["string", "null"]
+          },
+          "notesMd": {
+            "type": ["string", "null"]
+          }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+      }
+    },
+    "interviewPlans": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "speakerId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "assignedToUid": {
+            "type": ["string", "null"]
+          },
+          "assignedToName": {
+            "type": ["string", "null"]
+          },
+          "status": {
+            "type": ["string", "null"]
+          },
+          "interviewStatus": {
+            "type": ["string", "null"]
+          },
+          "priority": {
+            "type": ["string", "null"]
+          },
+          "notesMd": {
+            "type": ["string", "null"]
+          },
+          "targetQuestions": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "date": {
+            "type": ["string", "null"]
+          },
+          "startTime": {
+            "type": ["string", "null"]
+          }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "anyOf": [
+    {
+      "required": ["speakers"]
+    },
+    {
+      "required": ["talks"]
+    },
+    {
+      "required": ["sources"]
+    },
+    {
+      "required": ["materials"]
+    },
+    {
+      "required": ["insights"]
+    },
+    {
+      "required": ["questions"]
+    },
+    {
+      "required": ["interviewPlans"]
+    }
+  ]
+}

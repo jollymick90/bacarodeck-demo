@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "alice-viola-setti",
+      "fullName": "Alice Viola Setti",
+      "firstName": "Alice",
+      "lastName": "Viola Setti",
+      "headline": "Senior Staff Engineer @ Smartness, author of Queen MQ",
+      "organization": null,
+      "biographyMd": "Alice Viola Setti is a proud neurodivergent transgender woman, software engineer, architect, and sysadmin with a master's degree in Mechatronic Engineering and a product-builder mindset.\n\nHer background spans the entire technical spectrum, from provisioning bare-metal datacenters to architecting complex distributed systems and leading engineering teams. She is highly autonomous and drives end-to-end product delivery.\n\nShe works mainly with Kubernetes, Kafka, Postgres, C++, Node, and Vue, and has shipped with Python, Ruby, Objective-C++, Swift, Rust, OpenCV, Proxmox, VMware, Nginx, HAProxy, Scylla, Redis, MySQL, MariaDB, MongoDB, OpenSearch, Solr, Neo4j, Cassandra, Pulsar, RabbitMQ, NATS, and MQTT.\n\nShe has installed and managed clusters in on-premise datacenters using bare-metal servers, hypervisors, and Kubernetes; configured network switches and firewalls; developed microservice architectures; built drone control systems; and conducted research in computer vision.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alice-viola-setti"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-alice-viola-setti",
+      "speakerIds": [
+        "alice-viola-setti"
+      ],
+      "title": "Kafka didn't fit our LLM agents, so we wrote our own broker",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "alice-viola-setti",
+      "speakerId": "alice-viola-setti",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

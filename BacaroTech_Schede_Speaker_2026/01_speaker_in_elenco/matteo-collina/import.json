@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "matteo-collina",
+      "fullName": "Matteo Collina",
+      "firstName": "Matteo",
+      "lastName": "Collina",
+      "headline": "Platformatic Co-Founder and CTO, Node.js TSC member, Fastify Lead Maintainer",
+      "organization": "Platformatic",
+      "biographyMd": "Matteo is the Co-Founder and CTO of Platformatic.dev. He is also a prolific Open Source author in the JavaScript ecosystem and modules he maintain are downloaded more than 12 billion times a year. Previously he was Chief Software Architect at NearForm, the best professional services company in the JavaScript ecosystem. In 2014, he defended his Ph.D. thesis titled \"Application Platforms for the Internet of Things\". Matteo is a member of the Node.js Technical Steering Committee focusing on streams, diagnostics and http. He is also the author of the fast logger Pino and of the Fastify web framework. Matteo is an renowed international speaker after more than 60 conferences, including OpenJS World, Node.js Interactive, NodeConf.eu, NodeSummit, JSConf.Asia, WebRebels, and JsDay just to name a few. He is also co-author of the book \"Node.js Cookbook, Third Edition\" edited by Packt. In the summer he loves sailing the Sirocco.",
+      "photoUrl": "https://cdn.sessionize.com/image/c2d5-400o400o1-MwoLHzhcJSuqZSP2BwgzbG.jpeg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-matteo-collina"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-matteo-collina",
+      "speakerIds": [
+        "matteo-collina"
+      ],
+      "title": "Kill the Standup: How One Engineer Ships What Five Cannot",
+      "abstractMd": "Fred Brooks named the problem in 1975. Communication channels grow as n(n-1)/2, and every methodology since has been a coping mechanism. None solved it.\nAI has changed the equation. The cave engineer, one skilled developer with autonomy, taste, and an AI that removes the throughput constraint, now ships in two weeks what a team ships in two months. Over three months from Christmas 2025, I added nineteen thousand lines to the Node.js Virtual File System. Alone. The architecture is coherent because no team was there to mirror.\nThe model rests on autonomy and taste. Remove either and it breaks. I introduced CVE-2026-2581 into Undici with an AI-assisted PR I did not review properly. That is autonomy without taste. Cave engineering is the opposite.\nI will cover Conway’s Law, why Scrum taxes the absence of trust, and when the cave is the wrong call. The team of one was always magical. We finally have the tools to scale it.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "matteo-collina",
+      "speakerId": "matteo-collina",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

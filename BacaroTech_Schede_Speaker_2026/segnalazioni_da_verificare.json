@@ -1,0 +1,52 @@
+{
+  "counts": {
+    "priority": 29,
+    "directory": 81,
+    "intersection": 26,
+    "priorityOnly": 3,
+    "additional": 55,
+    "unique": 84
+  },
+  "issues": [
+    {
+      "speakerId": "carolina-pinto",
+      "kind": "not_in_directory_snapshot",
+      "action": "Presente solo nel CSV prioritari; non assumere che non partecipi."
+    },
+    {
+      "speakerId": "erick-wendel",
+      "kind": "not_in_directory_snapshot",
+      "action": "Presente solo nel CSV prioritari; non assumere che non partecipi."
+    },
+    {
+      "speakerId": "gabriele-santomaggio",
+      "kind": "csv_talk_missing",
+      "directoryTitle": "Critica dell'informatica pura",
+      "action": "Titolo recuperato dallo snapshot della directory; verificare se necessario."
+    },
+    {
+      "speakerId": "gabriele-santomaggio",
+      "kind": "talk_attribution_to_verify",
+      "directoryTitle": "Critica dell'informatica pura",
+      "action": "Lo stesso titolo è associato a Paolo Caressa nello snapshot. Potrebbe essere una sessione con più speaker; verificare prima di considerarlo certo."
+    },
+    {
+      "speakerId": "jigyasa-grover",
+      "kind": "talk_title_mismatch",
+      "csvTitle": "When NOT to use an agent: Choosing Between Workflows, Services, and LLM Orchestration",
+      "directoryTitle": "When NOT to build an agent: Lessons from systems that didn't want autonomy",
+      "action": "Verificare sul programma ufficiale; non sovrascrivere automaticamente."
+    },
+    {
+      "speakerId": "katharine-jarmul",
+      "kind": "csv_talk_missing",
+      "directoryTitle": "I spy on my agents and you can too!",
+      "action": "Titolo recuperato dallo snapshot della directory; verificare se necessario."
+    },
+    {
+      "speakerId": "paolo-insogna",
+      "kind": "not_in_directory_snapshot",
+      "action": "Presente solo nel CSV prioritari; non assumere che non partecipi."
+    }
+  ]
+}

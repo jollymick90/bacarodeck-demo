@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "alfonso-graziano",
+      "fullName": "Alfonso Graziano",
+      "firstName": "Alfonso",
+      "lastName": "Graziano",
+      "headline": "AI Tech Lead @ Nearform",
+      "organization": "Nearform",
+      "biographyMd": "Alfonso Graziano is a AI Tech Lead with a strong background in software engineering, specializing in JavaScript, AI and distributed systems. Currently at Nearform, Alfonso leads engineering teams to deliver impactful projects. Passionate about knowledge sharing, he loves to solve problems and contributes to tech communities.",
+      "photoUrl": "https://cdn.sessionize.com/image/b124-400o400o1-E73XiN6VYoSJZGcZjsnQY3.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alfonso-graziano"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-alfonso-graziano",
+      "speakerIds": [
+        "alfonso-graziano"
+      ],
+      "title": "Scaling AI Adoption: The Real Challenges of Transforming 300 Engineers",
+      "abstractMd": "Most companies talk about becoming “AI-native.” Very few actually do it.\n\nIn this talk, I’ll share how we’re approaching the upskilling of ~300 engineers to move beyond experimentation and into real, repeatable AI-native development.\n\nWe’ll cover how we’re introducing new paradigms like AI-Native Engineering (AINE) and Spec-Driven Development, how we’re structuring the individual contributor journey, and how we’re driving adoption across teams with very different levels of maturity.\n\nMore importantly, we’ll dive into what doesn’t work: resistance patterns, false starts, over-reliance on tools, and the gap between perceived and actual productivity gains.\n\nThis talk will give you a concrete blueprint along with the trade-offs and lessons learned along the way.",
+      "language": "en",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "alfonso-graziano",
+      "speakerId": "alfonso-graziano",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

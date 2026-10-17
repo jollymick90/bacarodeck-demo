@@ -1,0 +1,797 @@
+{
+  "schemaVersion": 1,
+  "workspace": {
+    "id": "codemotion-milano-2026",
+    "title": "BacaroTech — Codemotion Milano 2026",
+    "eventStart": "2026-10-28",
+    "eventEnd": "2026-10-29",
+    "preparationDeadline": "2026-10-27",
+    "notesMd": "Knowledge e preparazione delle interviste. Nessuna email di speaker.",
+    "language": "it",
+    "status": "active"
+  },
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "speakers": [
+    {
+      "id": "andrey-breslav",
+      "fullName": "Andrey Breslav",
+      "firstName": "Andrey",
+      "lastName": "Breslav",
+      "headline": "Creator of Kotlin and CodeSpeak",
+      "organization": "CodeSpeak",
+      "biographyMd": "Andrey created the Kotlin programming language and led its development at JetBrains from 0 to millions of users. He’s the founder of CodeSpeak, a spec-based AI coding solution.",
+      "photoUrl": "https://cdn.sessionize.com/image/a515-400o400o1-DiDERqotJ4LrTzY69vF7s1.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "tags": [
+        "AI"
+      ],
+      "suggestedTags": [
+        "AI e agenti",
+        "Software engineering"
+      ],
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-andrey-breslav"
+      ],
+      "reviewFlags": [],
+      "notesMd": "",
+      "status": "active"
+    },
+    {
+      "id": "matteo-collina",
+      "fullName": "Matteo Collina",
+      "firstName": "Matteo",
+      "lastName": "Collina",
+      "headline": "Platformatic Co-Founder and CTO, Node.js TSC member, Fastify Lead Maintainer",
+      "organization": "Platformatic",
+      "biographyMd": "Matteo is the Co-Founder and CTO of Platformatic.dev. He is also a prolific Open Source author in the JavaScript ecosystem and modules he maintain are downloaded more than 12 billion times a year. Previously he was Chief Software Architect at NearForm, the best professional services company in the JavaScript ecosystem. In 2014, he defended his Ph.D. thesis titled \"Application Platforms for the Internet of Things\". Matteo is a member of the Node.js Technical Steering Committee focusing on streams, diagnostics and http. He is also the author of the fast logger Pino and of the Fastify web framework. Matteo is an renowed international speaker after more than 60 conferences, including OpenJS World, Node.js Interactive, NodeConf.eu, NodeSummit, JSConf.Asia, WebRebels, and JsDay just to name a few. He is also co-author of the book \"Node.js Cookbook, Third Edition\" edited by Packt. In the summer he loves sailing the Sirocco.",
+      "photoUrl": "https://cdn.sessionize.com/image/c2d5-400o400o1-MwoLHzhcJSuqZSP2BwgzbG.jpeg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "tags": [
+        "Software Engineering & Architecture"
+      ],
+      "suggestedTags": [
+        "Software engineering",
+        "Leadership e team"
+      ],
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-matteo-collina"
+      ],
+      "reviewFlags": [],
+      "notesMd": "",
+      "status": "active"
+    },
+    {
+      "id": "abiodun-olowode",
+      "fullName": "Abiodun Olowode",
+      "firstName": "Abiodun",
+      "lastName": "Olowode",
+      "headline": "CTO & Co-Founder, Metrifox",
+      "organization": "Metrifox",
+      "biographyMd": "Abiodun is the CTO and Co-Founder at Metrifox, where she leads the engineering team building impactful software.\n\nShe specialises in streamlining workflows, reducing technical debt, and building reusable abstractions that unlock developer productivity through automation and strong defaults.\n\nShe’s passionate about growing engineers and building cultures where excellence is the norm — and she writes and speaks regularly about leadership, engineering, and the uncomfortable parts of both.",
+      "photoUrl": "https://cdn.sessionize.com/image/d0e5-400o400o1-YHyGVoPSt6gg8dmF7HzrMe.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "tags": [
+        "Leadership and Inspirational"
+      ],
+      "suggestedTags": [
+        "Software engineering"
+      ],
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-abiodun-olowode"
+      ],
+      "reviewFlags": [],
+      "notesMd": "",
+      "status": "active"
+    },
+    {
+      "id": "carolina-pinto",
+      "fullName": "Carolina Pinto",
+      "firstName": "Carolina",
+      "lastName": "Pinto",
+      "headline": "Candy Crush",
+      "organization": "Candy Crush",
+      "biographyMd": "",
+      "photoUrl": "https://cdn.sessionize.com/image/2f34-400o400o1-4aVKHFLLkk8ZP5nJYQdKQz.jpg",
+      "priority": true,
+      "inDirectorySnapshot": false,
+      "tags": [
+        "AI"
+      ],
+      "suggestedTags": [
+        "AI e agenti",
+        "Leadership e team",
+        "Game development"
+      ],
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "talkIds": [
+        "talk-carolina-pinto"
+      ],
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ],
+      "notesMd": "",
+      "status": "active"
+    },
+    {
+      "id": "gabriele-santomaggio",
+      "fullName": "Gabriele Santomaggio",
+      "firstName": "Gabriele",
+      "lastName": "Santomaggio",
+      "headline": "RabbitMQ team member",
+      "organization": "Broadcom",
+      "biographyMd": "RabbitMQ team member, working with distributed systems, open source lover, Linux fan.",
+      "photoUrl": "https://cdn.sessionize.com/image/e9b8-400o400o1-PcaCVE2vD46ZYmKGbuxH5j.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "tags": [],
+      "suggestedTags": [],
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-gabriele-santomaggio"
+      ],
+      "reviewFlags": [
+        "csv_talk_missing_directory_present",
+        "talk_attribution_to_verify"
+      ],
+      "notesMd": "",
+      "status": "active"
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-andrey-breslav",
+      "speakerIds": [
+        "andrey-breslav"
+      ],
+      "title": "Future of Programming: What's our place in the world of coding machines?",
+      "abstractMd": "Programming is obviously changing: more and more code is generated by agents and LLMs, people often struggle to keep up with code reviews, and overall building software feels incredibly easy to more and more people. \n\nWhat is the role of humans in the future of software engineering? Can agents just do all the planning, coding, reviewing, and testing? What do humans have that LLMs don’t? \n\nIn this talk, I’ll share my take on what can and can not be, at least until Skynet has actually taken over :)",
+      "language": "en",
+      "topic": "AI",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "notesMd": "",
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": []
+    },
+    {
+      "id": "talk-matteo-collina",
+      "speakerIds": [
+        "matteo-collina"
+      ],
+      "title": "Kill the Standup: How One Engineer Ships What Five Cannot",
+      "abstractMd": "Fred Brooks named the problem in 1975. Communication channels grow as n(n-1)/2, and every methodology since has been a coping mechanism. None solved it.\nAI has changed the equation. The cave engineer, one skilled developer with autonomy, taste, and an AI that removes the throughput constraint, now ships in two weeks what a team ships in two months. Over three months from Christmas 2025, I added nineteen thousand lines to the Node.js Virtual File System. Alone. The architecture is coherent because no team was there to mirror.\nThe model rests on autonomy and taste. Remove either and it breaks. I introduced CVE-2026-2581 into Undici with an AI-assisted PR I did not review properly. That is autonomy without taste. Cave engineering is the opposite.\nI will cover Conway’s Law, why Scrum taxes the absence of trust, and when the cave is the wrong call. The team of one was always magical. We finally have the tools to scale it.",
+      "language": "en",
+      "topic": "Software Engineering & Architecture",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "notesMd": "",
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": []
+    },
+    {
+      "id": "talk-abiodun-olowode",
+      "speakerIds": [
+        "abiodun-olowode"
+      ],
+      "title": "We Review Code. Why Won’t We Review Each Other?",
+      "abstractMd": "We review code all day, commenting on abstractions, naming, tests, and patterns. But in standups, when someone derails the meeting, we stay quiet. In design reviews, when key requirements are ignored, we assume someone else will speak up. Often, no one does, and the design ships anyway.\n\nEngineers are confident giving feedback in pull requests, yet oddly silent everywhere else: standups, design reviews, pairing sessions, Slack threads, retros, and one-on-ones. The same people who request changes in code reviews often soften, defer, or redirect hard conversations to managers who lack context.\n\nThis session is about closing that gap. It argues for being willing to say the hard thing in the moment, clearly and constructively, outside the PR. We will explore why developers avoid these conversations, what effective directness looks like beyond code review, and how to build that skill without becoming that person everyone dreads working with.",
+      "language": "en",
+      "topic": "Leadership and Inspirational",
+      "level": "Non Technical/For Everyone",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "notesMd": "",
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": []
+    },
+    {
+      "id": "talk-carolina-pinto",
+      "speakerIds": [
+        "carolina-pinto"
+      ],
+      "title": "What Candy Crush Can Teach AI Products About Human Behavior",
+      "abstractMd": "AI products are becoming increasingly capable,  but many still fail to create experiences people actually enjoy using. I’ve seen how games solve problems that modern AI tools are only starting to face: onboarding complexity, trust, motivation, feedback loops, and long-term engagement.\nThis talk explores what AI-powered products can learn from game design built for millions of users. From progression mechanics and emotional feedback to behavioral pacing, we’ll look at how gaming UX principles can help developers create AI products that feel intuitive, rewarding, and human-centered.\nBecause in the end, successful products are not only about what AI can do, but about how people feel while using it.\n\nKey Takeaways\n- Understand how gaming UX principles apply to AI-driven products and developer tools\n- Learn why motivation, feedback, and progression are critical for user adoption\n- Discover practical design patterns for creating more engaging AI experiences",
+      "language": "en",
+      "topic": "AI",
+      "level": "Non Technical/For Everyone",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "notesMd": "",
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": []
+    },
+    {
+      "id": "talk-gabriele-santomaggio",
+      "speakerIds": [
+        "gabriele-santomaggio"
+      ],
+      "title": "Critica dell'informatica pura",
+      "abstractMd": "",
+      "language": null,
+      "topic": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "notesMd": "",
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [
+        "csv_talk_missing_directory_present",
+        "talk_attribution_to_verify"
+      ]
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "andrey-breslav",
+      "speakerId": "andrey-breslav",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "researching",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "notesMd": "",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null
+    },
+    {
+      "id": "matteo-collina",
+      "speakerId": "matteo-collina",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "researching",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "notesMd": "",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null
+    },
+    {
+      "id": "abiodun-olowode",
+      "speakerId": "abiodun-olowode",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "researching",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "notesMd": "",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null
+    },
+    {
+      "id": "carolina-pinto",
+      "speakerId": "carolina-pinto",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "researching",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "notesMd": "",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null
+    },
+    {
+      "id": "gabriele-santomaggio",
+      "speakerId": "gabriele-santomaggio",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "researching",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "notesMd": "",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null
+    }
+  ],
+  "materials": [
+    {
+      "id": "material-talk-abstract-andrey-breslav",
+      "speakerIds": [
+        "andrey-breslav"
+      ],
+      "type": "talk_abstract",
+      "title": "Abstract ufficiale — Future of Programming: What's our place in the world of coding machines?",
+      "url": null,
+      "bodyMd": "Programming is obviously changing: more and more code is generated by agents and LLMs, people often struggle to keep up with code reviews, and overall building software feels incredibly easy to more and more people. \n\nWhat is the role of humans in the future of software engineering? Can agents just do all the planning, coding, reviewing, and testing? What do humans have that LLMs don’t? \n\nIn this talk, I’ll share my take on what can and can not be, at least until Skynet has actually taken over :)",
+      "notesMd": "",
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "tags": [
+        "AI"
+      ],
+      "language": "en",
+      "readStatus": "unread",
+      "status": "active"
+    },
+    {
+      "id": "material-talk-abstract-matteo-collina",
+      "speakerIds": [
+        "matteo-collina"
+      ],
+      "type": "talk_abstract",
+      "title": "Abstract ufficiale — Kill the Standup: How One Engineer Ships What Five Cannot",
+      "url": null,
+      "bodyMd": "Fred Brooks named the problem in 1975. Communication channels grow as n(n-1)/2, and every methodology since has been a coping mechanism. None solved it.\nAI has changed the equation. The cave engineer, one skilled developer with autonomy, taste, and an AI that removes the throughput constraint, now ships in two weeks what a team ships in two months. Over three months from Christmas 2025, I added nineteen thousand lines to the Node.js Virtual File System. Alone. The architecture is coherent because no team was there to mirror.\nThe model rests on autonomy and taste. Remove either and it breaks. I introduced CVE-2026-2581 into Undici with an AI-assisted PR I did not review properly. That is autonomy without taste. Cave engineering is the opposite.\nI will cover Conway’s Law, why Scrum taxes the absence of trust, and when the cave is the wrong call. The team of one was always magical. We finally have the tools to scale it.",
+      "notesMd": "",
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "tags": [
+        "Software Engineering & Architecture"
+      ],
+      "language": "en",
+      "readStatus": "unread",
+      "status": "active"
+    },
+    {
+      "id": "material-talk-abstract-abiodun-olowode",
+      "speakerIds": [
+        "abiodun-olowode"
+      ],
+      "type": "talk_abstract",
+      "title": "Abstract ufficiale — We Review Code. Why Won’t We Review Each Other?",
+      "url": null,
+      "bodyMd": "We review code all day, commenting on abstractions, naming, tests, and patterns. But in standups, when someone derails the meeting, we stay quiet. In design reviews, when key requirements are ignored, we assume someone else will speak up. Often, no one does, and the design ships anyway.\n\nEngineers are confident giving feedback in pull requests, yet oddly silent everywhere else: standups, design reviews, pairing sessions, Slack threads, retros, and one-on-ones. The same people who request changes in code reviews often soften, defer, or redirect hard conversations to managers who lack context.\n\nThis session is about closing that gap. It argues for being willing to say the hard thing in the moment, clearly and constructively, outside the PR. We will explore why developers avoid these conversations, what effective directness looks like beyond code review, and how to build that skill without becoming that person everyone dreads working with.",
+      "notesMd": "",
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "tags": [
+        "Leadership and Inspirational"
+      ],
+      "language": "en",
+      "readStatus": "unread",
+      "status": "active"
+    },
+    {
+      "id": "material-talk-abstract-carolina-pinto",
+      "speakerIds": [
+        "carolina-pinto"
+      ],
+      "type": "talk_abstract",
+      "title": "Abstract ufficiale — What Candy Crush Can Teach AI Products About Human Behavior",
+      "url": null,
+      "bodyMd": "AI products are becoming increasingly capable,  but many still fail to create experiences people actually enjoy using. I’ve seen how games solve problems that modern AI tools are only starting to face: onboarding complexity, trust, motivation, feedback loops, and long-term engagement.\nThis talk explores what AI-powered products can learn from game design built for millions of users. From progression mechanics and emotional feedback to behavioral pacing, we’ll look at how gaming UX principles can help developers create AI products that feel intuitive, rewarding, and human-centered.\nBecause in the end, successful products are not only about what AI can do, but about how people feel while using it.\n\nKey Takeaways\n- Understand how gaming UX principles apply to AI-driven products and developer tools\n- Learn why motivation, feedback, and progression are critical for user adoption\n- Discover practical design patterns for creating more engaging AI experiences",
+      "notesMd": "",
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "tags": [
+        "AI"
+      ],
+      "language": "en",
+      "readStatus": "unread",
+      "status": "active"
+    },
+    {
+      "id": "material-research-check-gabriele-santomaggio",
+      "speakerIds": [
+        "gabriele-santomaggio"
+      ],
+      "type": "note",
+      "title": "Da approfondire — talk e altre fonti",
+      "url": null,
+      "bodyMd": "La riga prioritaria non contiene abstract né titolo. Lo snapshot generale riporta: Critica dell'informatica pura. Verificare l’attribuzione sul programma prima dell’intervista.",
+      "notesMd": "",
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "tags": [],
+      "language": null,
+      "readStatus": "unread",
+      "status": "active"
+    }
+  ],
+  "insights": [],
+  "questions": [
+    {
+      "id": "question-andrey-breslav-01",
+      "speakerId": "andrey-breslav",
+      "order": 1,
+      "textEn": "What did building Kotlin teach you about designing AI-first development tools?",
+      "textIt": "Cosa ti ha insegnato costruire Kotlin che oggi applichi agli strumenti basati sull’AI?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Collegare l’esperienza su Kotlin al talk sul futuro della programmazione.",
+      "tags": [
+        "AI e agenti",
+        "Software engineering"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "material-talk-abstract-andrey-breslav"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-andrey-breslav-02",
+      "speakerId": "andrey-breslav",
+      "order": 2,
+      "textEn": "If AI-generated code passes all the tests but nobody understands it, would you ship it?",
+      "textIt": "Se il codice generato dall’AI supera tutti i test ma nessuno lo comprende, tu lo rilasceresti?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Far emergere il giudizio umano e il criterio di qualità.",
+      "tags": [
+        "AI e agenti",
+        "Software engineering"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "material-talk-abstract-andrey-breslav"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-andrey-breslav-03",
+      "speakerId": "andrey-breslav",
+      "order": 3,
+      "textEn": "What skill should junior developers deliberately practice as agents get better at coding?",
+      "textIt": "Quale competenza dovrebbero allenare intenzionalmente i junior mentre gli agenti migliorano?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Ottenere un consiglio pratico per il pubblico.",
+      "tags": [
+        "AI e agenti",
+        "Software engineering"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "material-talk-abstract-andrey-breslav"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-matteo-collina-01",
+      "speakerId": "matteo-collina",
+      "order": 1,
+      "textEn": "Your talk says one engineer can ship what five cannot. What is the biggest bottleneck in most teams?",
+      "textIt": "Il tuo talk suggerisce che una persona può rilasciare ciò che cinque non riescono a fare. Qual è il blocco maggiore nei team?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Esplorare la provocazione del titolo senza assumere che descriva un fatto universale.",
+      "tags": [
+        "Software engineering",
+        "Leadership e team"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "material-talk-abstract-matteo-collina"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-matteo-collina-02",
+      "speakerId": "matteo-collina",
+      "order": 2,
+      "textEn": "When does a daily standup help, and when does it become a distraction?",
+      "textIt": "Quando un daily standup è utile e quando diventa una distrazione?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Raccogliere un criterio concreto e applicabile.",
+      "tags": [
+        "Software engineering",
+        "Leadership e team"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "material-talk-abstract-matteo-collina"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-matteo-collina-03",
+      "speakerId": "matteo-collina",
+      "order": 3,
+      "textEn": "What would you change first in a team that struggles to ship?",
+      "textIt": "Cosa cambieresti per prima cosa in un team che fatica a rilasciare software?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Ottenere una risposta immediatamente utile.",
+      "tags": [
+        "Software engineering",
+        "Leadership e team"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "material-talk-abstract-matteo-collina"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-abiodun-olowode-01",
+      "speakerId": "abiodun-olowode",
+      "order": 1,
+      "textEn": "Why is it easier for engineers to review code than to give difficult feedback in a meeting?",
+      "textIt": "Perché agli ingegneri riesce più facile fare code review che dare feedback difficili durante una riunione?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Collegamento diretto con il talk.",
+      "tags": [
+        "Software engineering"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "material-talk-abstract-abiodun-olowode"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-abiodun-olowode-02",
+      "speakerId": "abiodun-olowode",
+      "order": 2,
+      "textEn": "Can you give us one sentence a junior engineer could use to challenge a design respectfully?",
+      "textIt": "Puoi darci una frase che un junior potrebbe usare per mettere in discussione un design con rispetto?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Ottenere un esempio ripetibile davanti alla camera.",
+      "tags": [
+        "Software engineering"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "material-talk-abstract-abiodun-olowode"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-abiodun-olowode-03",
+      "speakerId": "abiodun-olowode",
+      "order": 3,
+      "textEn": "How do you build a feedback culture without making the team feel constantly judged?",
+      "textIt": "Come costruisci una cultura del feedback senza far sentire le persone costantemente giudicate?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Esplorare il compromesso tra chiarezza e relazione.",
+      "tags": [
+        "Software engineering"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "material-talk-abstract-abiodun-olowode"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-carolina-pinto-01",
+      "speakerId": "carolina-pinto",
+      "order": 1,
+      "textEn": "What can AI products learn from how games introduce complexity to new users?",
+      "textIt": "Cosa possono imparare i prodotti AI dal modo in cui i giochi introducono la complessità ai nuovi utenti?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Collegamento tra onboarding dei giochi e prodotti AI.",
+      "tags": [
+        "AI e agenti",
+        "Leadership e team"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "materialIds": [
+        "material-talk-abstract-carolina-pinto"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-carolina-pinto-02",
+      "speakerId": "carolina-pinto",
+      "order": 2,
+      "textEn": "Where is the line between motivating users and manipulating them?",
+      "textIt": "Dove passa il confine tra motivare gli utenti e manipolarli?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Approfondire una tensione etica degli strumenti di engagement.",
+      "tags": [
+        "AI e agenti",
+        "Leadership e team"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "materialIds": [
+        "material-talk-abstract-carolina-pinto"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-carolina-pinto-03",
+      "speakerId": "carolina-pinto",
+      "order": 3,
+      "textEn": "What is one simple experiment a product team could run tomorrow to improve its AI onboarding?",
+      "textIt": "Qual è un esperimento semplice che un team potrebbe fare domani per migliorare l’onboarding AI?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Ottenere una tecnica concreta.",
+      "tags": [
+        "AI e agenti",
+        "Leadership e team"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "materialIds": [
+        "material-talk-abstract-carolina-pinto"
+      ],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-gabriele-santomaggio-01",
+      "speakerId": "gabriele-santomaggio",
+      "order": 1,
+      "textEn": "What is one common misunderstanding developers have about distributed messaging?",
+      "textIt": "Qual è un equivoco comune degli sviluppatori sulla messaggistica distribuita?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Il profilo pubblico menziona RabbitMQ e sistemi distribuiti; verificare il talk associato.",
+      "tags": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-gabriele-santomaggio-02",
+      "speakerId": "gabriele-santomaggio",
+      "order": 2,
+      "textEn": "Can you tell us about a messaging failure that taught you an important lesson?",
+      "textIt": "Puoi raccontarci un problema di messaggistica che ti ha insegnato una lezione importante?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Cercare una storia reale senza anticiparne il contenuto.",
+      "tags": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [],
+      "status": "suggested",
+      "notesMd": ""
+    },
+    {
+      "id": "question-gabriele-santomaggio-03",
+      "speakerId": "gabriele-santomaggio",
+      "order": 3,
+      "textEn": "When is a message broker the wrong solution?",
+      "textIt": "Quando un message broker è la soluzione sbagliata?",
+      "followUpEn": "Can you give us a concrete example?",
+      "followUpIt": "Puoi farci un esempio concreto?",
+      "whyMd": "Far emergere criteri di system design.",
+      "tags": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [],
+      "status": "suggested",
+      "notesMd": ""
+    }
+  ]
+}

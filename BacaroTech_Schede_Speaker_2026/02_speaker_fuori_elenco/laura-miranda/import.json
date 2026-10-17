@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "laura-miranda",
+      "fullName": "Laura Miranda",
+      "firstName": "Laura",
+      "lastName": "Miranda",
+      "headline": "C-Level Consultant, Marketing Manager, Digital Enthusiast",
+      "organization": null,
+      "biographyMd": "Ha sempre vissuto la passione per il marketing e la Comunicazione come uno strumento di Business Development.\n\nAvere un sogno, trasformarlo in obiettivi sfidanti, analizzare e pianificare le attività cercando sempre elementi di disruption e costruire un team unito.\n\nIl suo approccio al management l' ha portato a svolgere tante belle esperienze all'estero dove ha aperto la mente a stili di vita e modi di pensare differenti.\n\nDopo una parentesi imprenditoriale, ha deciso di tornare in Italia mettendo la sua esperienza a supporto della Digital Trasformation delle PMI.\n\nLe piacciono le persone, ama ascoltare e leggere tanto. Se hai un sogno... make it happen!",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-laura-miranda"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-laura-miranda",
+      "speakerIds": [
+        "laura-miranda"
+      ],
+      "title": "Da feature a revenue: come i team tecnici possono pensare (anche) da marketer",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "laura-miranda",
+      "speakerId": "laura-miranda",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

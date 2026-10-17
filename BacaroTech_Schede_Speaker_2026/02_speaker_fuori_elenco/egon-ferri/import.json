@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "egon-ferri",
+      "fullName": "Egon Ferri",
+      "firstName": "Egon",
+      "lastName": "Ferri",
+      "headline": "AI engineer @ Gamindo",
+      "organization": null,
+      "biographyMd": "Putting AI into production is not just about connecting a model to a chat interface. In Gamindo AI, we built a workflow that turns vague requirements, source materials and live game state into structured game-based learning content: it refines the initial intent, generates a validated learning experience, supports controlled edits through structured patches, and produces contextual commentary and audio aligned with gameplay.\n\nThis talk walks through the architecture behind it: typed contracts with PydanticAI, FastAPI endpoints, fallback strategies across OpenAI, Anthropic and Google, streaming events, output validation, eval datasets, custom evaluators, observability with Logfire, and practical error handling.\n\nAttendees will leave with patterns and tradeoffs for designing AI workflows that are robust, observable, measurable and flexible enough to evolve without rewriting everything.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-egon-ferri"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-egon-ferri",
+      "speakerIds": [
+        "egon-ferri"
+      ],
+      "title": "Beyond Benchmarks: What ARC Teaches Us About Measuring Intelligence",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "egon-ferri",
+      "speakerId": "egon-ferri",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

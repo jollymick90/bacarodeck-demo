@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "mario-zechner",
+      "fullName": "Mario Zechner",
+      "firstName": "Mario",
+      "lastName": "Zechner",
+      "headline": "Partner and Pi Baker at Earendil",
+      "organization": "Earendil",
+      "biographyMd": "Mario used to work in applied machine learning in the 2000s, built OSS game dev tools, wrote books, went to SF, came back, did another startup, sold, then had a nice cosy 10 years of building a market leading family business in game dev tools. Then OpenAI released a useful LLM. Then he built pi, the coding agent powering OpenClaw and it's been all downhill from there. Now Mario is doing yet another startup with friends in the AI space. Oh no.",
+      "photoUrl": "https://cdn.sessionize.com/image/4bd8-400o400o1-VXQVTPjP63RwMuoLzXCqSM.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-mario-zechner"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-mario-zechner",
+      "speakerIds": [
+        "mario-zechner"
+      ],
+      "title": "Everything is slop, let's slow the f**k down",
+      "abstractMd": "Your OSS project is flooded with agent-generated slop issues and PRs? Your wonderful experience with coding agents in a hobby greenfield project did not translate to your production codebase, and instead turned it into a beautiful shit flower of complexity?\n\nThen this talk is the right support group for you. Come with me on a journey through how OSS and the software development lifecycle have changed for the worse, why coding agents compound our worst habits at machine speed, and how we might claw back some discipline, agency, and sanity while still benefiting from our new agentic friends.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "mario-zechner",
+      "speakerId": "mario-zechner",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "saverio-murgia",
+      "fullName": "Saverio Murgia",
+      "firstName": "Saverio",
+      "lastName": "Murgia",
+      "headline": "CTO at Wonderful - Forbes 30 Under 30 Europe, founder of Horus Technology",
+      "organization": null,
+      "biographyMd": "Saverio Murgia is CTO Italy at Wonderful, an enterprise agentic AI platform that enables large organizations to build their own Enterprise Super Intelligence through conversational and back-office agents. With almost ten years of experience taking AI products from zero to real-world impact, he co-founded Horus Technology in 2014, an AI company dedicated to improving the lives of blind and visually impaired people, leading it to a successful exit in 2019. He later led product development at Caricami and spent over two years as CTO of a stealth startup studio in Los Angeles, contributing to the launch of more than 20 ventures across SaaS, AI and B2B/B2C products. He holds an MSc in Advanced Robotics and a BSc in Biomedical Engineering, with research experience at EPFL, IIT and Ecole Centrale de Nantes, and is an alumnus of ISICT, the school of excellence of the University of Genoa.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-saverio-murgia"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-saverio-murgia",
+      "speakerIds": [
+        "saverio-murgia"
+      ],
+      "title": "Agents Don't Work Alone",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "saverio-murgia",
+      "speakerId": "saverio-murgia",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

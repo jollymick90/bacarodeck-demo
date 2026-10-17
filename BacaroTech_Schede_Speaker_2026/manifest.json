@@ -1,0 +1,696 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "counts": {
+    "inElenco": 29,
+    "fuoriElenco": 55,
+    "totale": 84
+  },
+  "speakers": [
+    {
+      "speakerId": "abiodun-olowode",
+      "fullName": "Abiodun Olowode",
+      "group": "in",
+      "path": "01_speaker_in_elenco/abiodun-olowode",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "alexio-cassani",
+      "fullName": "Alexio Cassani",
+      "group": "in",
+      "path": "01_speaker_in_elenco/alexio-cassani",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "alfonso-fuggetta",
+      "fullName": "Alfonso Fuggetta",
+      "group": "in",
+      "path": "01_speaker_in_elenco/alfonso-fuggetta",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "alfonso-graziano",
+      "fullName": "Alfonso Graziano",
+      "group": "in",
+      "path": "01_speaker_in_elenco/alfonso-graziano",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "andrey-breslav",
+      "fullName": "Andrey Breslav",
+      "group": "in",
+      "path": "01_speaker_in_elenco/andrey-breslav",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "carolina-pinto",
+      "fullName": "Carolina Pinto",
+      "group": "in",
+      "path": "01_speaker_in_elenco/carolina-pinto",
+      "inDirectorySnapshot": false,
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ]
+    },
+    {
+      "speakerId": "christian-schabetsberger",
+      "fullName": "Christian Schabetsberger",
+      "group": "in",
+      "path": "01_speaker_in_elenco/christian-schabetsberger",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "david-mccarter",
+      "fullName": "David McCarter",
+      "group": "in",
+      "path": "01_speaker_in_elenco/david-mccarter",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "dennis-nerush",
+      "fullName": "Dennis Nerush",
+      "group": "in",
+      "path": "01_speaker_in_elenco/dennis-nerush",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "dotan-horovits",
+      "fullName": "Dotan Horovits",
+      "group": "in",
+      "path": "01_speaker_in_elenco/dotan-horovits",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "emanuele-fabbiani",
+      "fullName": "Emanuele Fabbiani",
+      "group": "in",
+      "path": "01_speaker_in_elenco/emanuele-fabbiani",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "enzo-lombardi",
+      "fullName": "Enzo Lombardi",
+      "group": "in",
+      "path": "01_speaker_in_elenco/enzo-lombardi",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "erick-wendel",
+      "fullName": "Erick Wendel",
+      "group": "in",
+      "path": "01_speaker_in_elenco/erick-wendel",
+      "inDirectorySnapshot": false,
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ]
+    },
+    {
+      "speakerId": "gabriele-santomaggio",
+      "fullName": "Gabriele Santomaggio",
+      "group": "in",
+      "path": "01_speaker_in_elenco/gabriele-santomaggio",
+      "inDirectorySnapshot": true,
+      "reviewFlags": [
+        "csv_talk_missing_directory_present",
+        "talk_attribution_to_verify"
+      ]
+    },
+    {
+      "speakerId": "giorgio-natili",
+      "fullName": "Giorgio Natili",
+      "group": "in",
+      "path": "01_speaker_in_elenco/giorgio-natili",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "jigyasa-grover",
+      "fullName": "Jigyasa Grover",
+      "group": "in",
+      "path": "01_speaker_in_elenco/jigyasa-grover",
+      "inDirectorySnapshot": true,
+      "reviewFlags": [
+        "talk_title_mismatch"
+      ]
+    },
+    {
+      "speakerId": "katharine-jarmul",
+      "fullName": "Katharine Jarmul",
+      "group": "in",
+      "path": "01_speaker_in_elenco/katharine-jarmul",
+      "inDirectorySnapshot": true,
+      "reviewFlags": [
+        "csv_talk_missing_directory_present"
+      ]
+    },
+    {
+      "speakerId": "leonardo-cavagnis",
+      "fullName": "Leonardo Cavagnis",
+      "group": "in",
+      "path": "01_speaker_in_elenco/leonardo-cavagnis",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "marco-ippolito",
+      "fullName": "Marco Ippolito",
+      "group": "in",
+      "path": "01_speaker_in_elenco/marco-ippolito",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "mario-zechner",
+      "fullName": "Mario Zechner",
+      "group": "in",
+      "path": "01_speaker_in_elenco/mario-zechner",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "matteo-collina",
+      "fullName": "Matteo Collina",
+      "group": "in",
+      "path": "01_speaker_in_elenco/matteo-collina",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "mauro-morales",
+      "fullName": "Mauro Morales",
+      "group": "in",
+      "path": "01_speaker_in_elenco/mauro-morales",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "olena-borzenko",
+      "fullName": "Olena Borzenko",
+      "group": "in",
+      "path": "01_speaker_in_elenco/olena-borzenko",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "paolo-caressa",
+      "fullName": "Paolo Caressa",
+      "group": "in",
+      "path": "01_speaker_in_elenco/paolo-caressa",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "paolo-insogna",
+      "fullName": "Paolo Insogna",
+      "group": "in",
+      "path": "01_speaker_in_elenco/paolo-insogna",
+      "inDirectorySnapshot": false,
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ]
+    },
+    {
+      "speakerId": "riccardo-carlesso",
+      "fullName": "Riccardo Carlesso",
+      "group": "in",
+      "path": "01_speaker_in_elenco/riccardo-carlesso",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "rowdy-rabouw",
+      "fullName": "Rowdy Rabouw",
+      "group": "in",
+      "path": "01_speaker_in_elenco/rowdy-rabouw",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "soumaya-erradi",
+      "fullName": "Soumaya Erradi",
+      "group": "in",
+      "path": "01_speaker_in_elenco/soumaya-erradi",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "vladi-stevanovic",
+      "fullName": "Vladi Stevanovic",
+      "group": "in",
+      "path": "01_speaker_in_elenco/vladi-stevanovic",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "alessandro-festa",
+      "fullName": "Alessandro Festa",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/alessandro-festa",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "alessandro-miliucci",
+      "fullName": "Alessandro Miliucci",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/alessandro-miliucci",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "alessandro-riboni",
+      "fullName": "Alessandro Riboni",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/alessandro-riboni",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "alessio-acella",
+      "fullName": "Alessio Acella",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/alessio-acella",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "alice-viola-setti",
+      "fullName": "Alice Viola Setti",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/alice-viola-setti",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "andrea-ferlito",
+      "fullName": "Andrea Ferlito",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/andrea-ferlito",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "andrea-raponi",
+      "fullName": "Andrea Raponi",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/andrea-raponi",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "andrei-chis",
+      "fullName": "Andrei Chiș",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/andrei-chis",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "aniello-bossa",
+      "fullName": "Aniello Bossa",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/aniello-bossa",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "aurelie-vache",
+      "fullName": "Aurélie Vache",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/aurelie-vache",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "costantino-cavallo",
+      "fullName": "Costantino Cavallo",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/costantino-cavallo",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "daniel-zotti",
+      "fullName": "Daniel Zotti",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/daniel-zotti",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "daniele-zonca",
+      "fullName": "Daniele Zonca",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/daniele-zonca",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "danilo-deponti",
+      "fullName": "Danilo Deponti",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/danilo-deponti",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "davide-caldarulo",
+      "fullName": "Davide Caldarulo",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/davide-caldarulo",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "davide-pensato",
+      "fullName": "Davide Pensato",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/davide-pensato",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "diana-bernabei",
+      "fullName": "Diana Bernabei",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/diana-bernabei",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "edoardo-dusi",
+      "fullName": "Edoardo Dusi",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/edoardo-dusi",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "egon-ferri",
+      "fullName": "Egon Ferri",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/egon-ferri",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "elena-guidi",
+      "fullName": "Elena Guidi",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/elena-guidi",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "emmanuele-villa",
+      "fullName": "Emmanuele Villa",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/emmanuele-villa",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "erik-pronk",
+      "fullName": "Erik Pronk",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/erik-pronk",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "ettore-di-giacinto",
+      "fullName": "Ettore Di Giacinto",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/ettore-di-giacinto",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "francesco-facconi",
+      "fullName": "Francesco Facconi",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/francesco-facconi",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "francesco-pirrone",
+      "fullName": "Francesco Pirrone",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/francesco-pirrone",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "gabriele-negro",
+      "fullName": "Gabriele Negro",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/gabriele-negro",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "gianni-forlastro",
+      "fullName": "Gianni Forlastro",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/gianni-forlastro",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "giovanni-galloro",
+      "fullName": "Giovanni Galloro",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/giovanni-galloro",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "giulio-d-alessandro",
+      "fullName": "Giulio D'Alessandro",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/giulio-d-alessandro",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "giulio-sciarappa",
+      "fullName": "Giulio Sciarappa",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/giulio-sciarappa",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "graziano-casto",
+      "fullName": "Graziano Casto",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/graziano-casto",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "gregorio-palama",
+      "fullName": "Gregorio Palamà",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/gregorio-palama",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "guglielmo-fancellu",
+      "fullName": "Guglielmo Fancellu",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/guglielmo-fancellu",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "laura-miranda",
+      "fullName": "Laura Miranda",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/laura-miranda",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "luca-bianchi",
+      "fullName": "Luca Bianchi",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/luca-bianchi",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "marco-landi",
+      "fullName": "Marco Landi",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/marco-landi",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "marco-liberati",
+      "fullName": "Marco Liberati",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/marco-liberati",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "marco-simonte",
+      "fullName": "Marco Simonte",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/marco-simonte",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "marta-scandellari",
+      "fullName": "Marta Scandellari",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/marta-scandellari",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "matteo-flora",
+      "fullName": "Matteo Flora",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/matteo-flora",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "matteo-mortari",
+      "fullName": "Matteo Mortari",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/matteo-mortari",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "maurizio-argoneto",
+      "fullName": "Maurizio Argoneto",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/maurizio-argoneto",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "maurizio-mangione",
+      "fullName": "Maurizio Mangione",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/maurizio-mangione",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "michelantonio-trizio",
+      "fullName": "Michelantonio Trizio",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/michelantonio-trizio",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "michele-laurelli",
+      "fullName": "Michele Laurelli",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/michele-laurelli",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "moreno-lovato",
+      "fullName": "Moreno Lovato",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/moreno-lovato",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "nicola-guglielmi",
+      "fullName": "Nicola Guglielmi",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/nicola-guglielmi",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "nicolo-giorgio",
+      "fullName": "Nicolò Giorgio",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/nicolo-giorgio",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "paolo-rubano",
+      "fullName": "Paolo Rubano",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/paolo-rubano",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "saverio-murgia",
+      "fullName": "Saverio Murgia",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/saverio-murgia",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "simone-desantis",
+      "fullName": "Simone Desantis",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/simone-desantis",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "stefano-bruno",
+      "fullName": "Stefano Bruno",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/stefano-bruno",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "stefano-fiorucci",
+      "fullName": "Stefano Fiorucci",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/stefano-fiorucci",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "valeria-salis",
+      "fullName": "Valeria Salis",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/valeria-salis",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    },
+    {
+      "speakerId": "valeria-zuccoli",
+      "fullName": "Valeria Zuccoli",
+      "group": "out",
+      "path": "02_speaker_fuori_elenco/valeria-zuccoli",
+      "inDirectorySnapshot": true,
+      "reviewFlags": []
+    }
+  ]
+}

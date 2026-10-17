@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "dennis-nerush",
+      "fullName": "Dennis Nerush",
+      "firstName": "Dennis",
+      "lastName": "Nerush",
+      "headline": "Director of AI Engineering @Elementor",
+      "organization": "Elementor",
+      "biographyMd": "Dennis Nerush is the Director of AI at Elementor, where he leads the company's AI strategy and guides teams through the integration of GenAI technologies that enhance productivity while preserving human creativity and accountability.\n\nWith over 15 years of experience as a developer, manager, director, and adviser across multiple tech companies and startups, Dennis has dedicated his career to building people-first cultures rooted in continuous learning, curiosity, and growth. He believes that when individuals thrive, teams and businesses flourish, a philosophy that has guided him in founding dozens of teams and mentoring over 100 managers.\n\nDennis is a seasoned public speaker and writer who shares his insights on AI integration, leadership, and team performance at international conferences. He's passionate about helping leaders develop the skills and confidence to excel in a world where human leadership and AI collaboration go hand in hand.",
+      "photoUrl": "https://cdn.sessionize.com/image/4c16-400o400o1-Vt4AzQorAHSBSEjPFxFNsn.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-dennis-nerush"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-dennis-nerush",
+      "speakerIds": [
+        "dennis-nerush"
+      ],
+      "title": "How to Interview Engineers in the AI Era: What I Changed and What Actually Works",
+      "abstractMd": "AI has fundamentally changed how engineers work, but most hiring processes haven't changed at all.\n\nCoding assistants can generate solutions in seconds. System design answers can be refined with prompts. Candidates walk into interviews with powerful AI tools at their side. Yet many companies are still evaluating engineers as if AI didn't exist.\n\nAfter interviewing hundreds of engineers at Elementor, I redesigned my hiring process for the AI era. I changed what we evaluate. Today we test how engineers think, how they collaborate with AI, and how they apply judgment when AI-generated solutions are incomplete, incorrect, or misleading.\n\nIn this talk, I'll share what changed in our hiring process and what actually works in practice.\n\nWhether you're hiring engineers, preparing for interviews, or leading an engineering organization, you'll leave with a practical framework for evaluating engineering talent in the AI era.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "dennis-nerush",
+      "speakerId": "dennis-nerush",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

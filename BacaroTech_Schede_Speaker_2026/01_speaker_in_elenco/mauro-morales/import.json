@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "mauro-morales",
+      "fullName": "Mauro Morales",
+      "firstName": "Mauro",
+      "lastName": "Morales",
+      "headline": "Staff Engineer at Spectro Cloud",
+      "organization": "Spec",
+      "biographyMd": "Mauro Morales is a Guatemalan software developer and speaker. He’s currently a Staff Engineer at Spectro Cloud, where he’s part of the team building Kairos — an open-source Linux distribution for running Kubernetes at the edge. Mauro regularly speaks at conferences like KubeCon, FOSDEM, and the Open Source Summit, and co-hosts the Cloud Native Community Belgium.",
+      "photoUrl": "https://cdn.sessionize.com/image/0e2a-400o400o1-WmwqgLPeWH4oDnZ8vbNBJ.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-mauro-morales"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-mauro-morales",
+      "speakerIds": [
+        "mauro-morales"
+      ],
+      "title": "Your GPU node is a snowflake: shipping AI infrastructure as a versioned artifact",
+      "abstractMd": "Run a fleet of GPU or edge inference nodes and you learn the stack is brittle: one mismatch across kernel, NVIDIA driver, CUDA, firmware, runtime or, at the edge, JetPack turns a working node into a debugging session. Rebuilding that state through runtime configuration lets drift creep back, until every node is its own special case.\n\nThis talk argues for a different model: the machine becomes a versioned, reproducible image that can be shipped and rolled back atomically. When a vendor supports a specific Ubuntu-based stack, preserve it while adding an immutable lifecycle. Using Kairos as a concrete example, we will examine how to compose a reproducible AI node image, what belongs in it, and how this model changes upgrades, rollback and fleet visibility across datacenter and edge deployments.\n\nIf your AI stack needs machine-level compatibility, can your OS lifecycle reproduce it?",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "mauro-morales",
+      "speakerId": "mauro-morales",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

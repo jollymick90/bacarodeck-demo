@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "abiodun-olowode",
+      "fullName": "Abiodun Olowode",
+      "firstName": "Abiodun",
+      "lastName": "Olowode",
+      "headline": "CTO & Co-Founder, Metrifox",
+      "organization": "Metrifox",
+      "biographyMd": "Abiodun is the CTO and Co-Founder at Metrifox, where she leads the engineering team building impactful software.\n\nShe specialises in streamlining workflows, reducing technical debt, and building reusable abstractions that unlock developer productivity through automation and strong defaults.\n\nShe’s passionate about growing engineers and building cultures where excellence is the norm — and she writes and speaks regularly about leadership, engineering, and the uncomfortable parts of both.",
+      "photoUrl": "https://cdn.sessionize.com/image/d0e5-400o400o1-YHyGVoPSt6gg8dmF7HzrMe.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-abiodun-olowode"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-abiodun-olowode",
+      "speakerIds": [
+        "abiodun-olowode"
+      ],
+      "title": "We Review Code. Why Won’t We Review Each Other?",
+      "abstractMd": "We review code all day, commenting on abstractions, naming, tests, and patterns. But in standups, when someone derails the meeting, we stay quiet. In design reviews, when key requirements are ignored, we assume someone else will speak up. Often, no one does, and the design ships anyway.\n\nEngineers are confident giving feedback in pull requests, yet oddly silent everywhere else: standups, design reviews, pairing sessions, Slack threads, retros, and one-on-ones. The same people who request changes in code reviews often soften, defer, or redirect hard conversations to managers who lack context.\n\nThis session is about closing that gap. It argues for being willing to say the hard thing in the moment, clearly and constructively, outside the PR. We will explore why developers avoid these conversations, what effective directness looks like beyond code review, and how to build that skill without becoming that person everyone dreads working with.",
+      "language": "en",
+      "level": "Non Technical/For Everyone",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "abiodun-olowode",
+      "speakerId": "abiodun-olowode",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "ettore-di-giacinto",
+      "fullName": "Ettore Di Giacinto",
+      "firstName": "Ettore",
+      "lastName": "Di Giacinto",
+      "headline": "LocalAI Creator",
+      "organization": null,
+      "biographyMd": "I’m Ettore and I’m a long-time Open Source hacker and hacktivist. I’ve been involved in the Open Source community for more than 18 years. I’ve studied CS at University, and pursued my degree at full votes with a MS in Computer Science.\n\nI formerly was a Gentoo developer, I did lead Sabayon Linux and contributed to several FOSS projects among openSUSE, Cloud Foundry, openQA, llama.cpp.\n\nPreviously I’ve worked at SUSE where I was leading the Elemental team. At Spectro Cloud I've created Kairos and donated it to CNCF, and collaborated with Intel on SENA ( Secure Edge-Native Architecture).\n\nI am a Golang and Kubernetes enthusiast with a strong Linux background skillset. I am the LocalAI creator and maintainer.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-ettore-di-giacinto"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-ettore-di-giacinto",
+      "speakerIds": [
+        "ettore-di-giacinto"
+      ],
+      "title": "Stop Sending Everything to the Cloud: Hybrid AI with LocalAI",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "ettore-di-giacinto",
+      "speakerId": "ettore-di-giacinto",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

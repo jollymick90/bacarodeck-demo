@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "david-mccarter",
+      "fullName": "David McCarter",
+      "firstName": "David",
+      "lastName": "McCarter",
+      "headline": "Microsoft MVP (Developer Technologies), Software Architect, Speaker, Trainer, Inventor, and Mentor.",
+      "organization": "McCarter Consulting",
+      "biographyMd": "**As David gradually winds down his career and looks toward retirement, now is the time to benefit from his experience, insight, and availability.**\n\nDavid McCarter is an exceptionally seasoned software engineer, a celebrated author, and a captivating speaker with a remarkable track record spanning over two decades within the industry. Holding the distinguished title of Microsoft MVP (Most Valuable Professional), David also serves as a solutions architect, Code Quality Zar, consultant, proficient code reviewer, and the esteemed editor-in-chief of dotNetTips.com.\n\nHe has left an indelible mark on user groups, educational institutions, and prominent conferences worldwide, such as BuildStuff, Øredev, NDC, Copenhagen Developers Festival, Code Camp, SQL Saturday, DevConnections, and VSLive, among others. His instructional legacy even includes a tenure at the University of California, San Diego.",
+      "photoUrl": "https://cdn.sessionize.com/image/ffc4-400o400o1-nficXnMa7uZZSDsnw5Jwa7.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-david-mccarter"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-david-mccarter",
+      "speakerIds": [
+        "david-mccarter"
+      ],
+      "title": "Unleash Your Inner Rockstar: The 5 Steps to Dynamic Public Speaking!",
+      "abstractMd": "Ready to elevate your career, captivate your workplace, or take the leap into the world of conference speaking? This session is for you! With over 30 years of experience in public speaking, I'm thrilled to share the essential five steps that will transform you into a dynamic speaker and presenter.\n\nIf you’re like I was at the start of my journey—nervous, unsure, and wondering how to capture the audience's attention—this session will help you conquer those fears. My unique approach to public speaking has not only helped me overcome stage fright but has also allowed me to build an impactful career as an award-winning developer, university educator, published author, blogger, patented inventor, and more!\n\nThis session isn’t just about speaking; it’s about empowering yourself and enhancing your career. Come join me for this electrifying talk, and let’s unlock your potential as a rockstar speaker, elevating your communication skills to new heights and amplifying your engineering expertise!",
+      "language": "en",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "david-mccarter",
+      "speakerId": "david-mccarter",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

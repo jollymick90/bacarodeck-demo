@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "luca-bianchi",
+      "fullName": "Luca Bianchi",
+      "firstName": "Luca",
+      "lastName": "Bianchi",
+      "headline": "CTO | AWS Serverless Hero | Cursor Ambassador | Production AI/ML & Event-Driven Architecture at Scale",
+      "organization": null,
+      "biographyMd": "Over the past decade, I've architected production AI/ML systems.\nAWS Hero and Cursor Ambassador focused on cost-optimized AI infrastructure and real-time data pipelines.\n\nProduction track record:\n- Built production AI Agents for legal domains, managing very long contexts, planning, and dynamic loading through event-driven orchestration\n- Scaled cloud SaaS to 10M+ users, reducing p99 latency from 2s to 1.2s through event-driven architecture migration\n- Migrated 80% of workloads to serverless event-driven patterns, cutting infrastructure costs 10x while improving deployment velocity\n\nLed engineering teams of 100+ through cultural transformation toward continuous delivery and experimentation-driven development. Co-founder of the Serverless Italy\ncommunity, Milano Mongo User Group, and Cursor Meetup Milano.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-luca-bianchi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-luca-bianchi",
+      "speakerIds": [
+        "luca-bianchi"
+      ],
+      "title": "Documents Are Not Knowledge: Modelling Extraction as an Event-Driven Domain",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "luca-bianchi",
+      "speakerId": "luca-bianchi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

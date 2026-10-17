@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "moreno-lovato",
+      "fullName": "Moreno Lovato",
+      "firstName": "Moreno",
+      "lastName": "Lovato",
+      "headline": "RuneHeads, CEO",
+      "organization": null,
+      "biographyMd": "Moreno Lovato crea il suo primo videogioco a 14 anni programmando in assembler sul mitico Commodore 64.\nDopo quindici anni di esperienza nel campo dell’ITC come project manager e responsabile di sviluppo per i contesti bancari, automotive e editoria, torna al mondo dei videogames fondando una rivista online di settore. Successivamente decide di abbandonare la carriera da manager per dedicarsi a tempo pieno al mondo dei videogames.\n\nNegli ultimi quindici anni ha lavorato su oltre venti titoli, alcuni con un successo internazionale e con oltre quindici milioni di giocatori. Alcuni dei maggiori titoli sono: Extreme Landings, Frecce Tricolori, Blue Angels, Conglomerate 451 e Journey to the Void.\n\nNel corso degli anni ha dedicato parte del suo tempo all’insegnamento dello sviluppo di videogiochi nelle principali scuole di game development in Italia (DBGA, Event Horizon, Naba, Accademia Santa Giulia, Fastweb Academy, AIV e altre). \n\nOggi è alla guida dello studio indipendente RuneHeads.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-moreno-lovato"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-moreno-lovato",
+      "speakerIds": [
+        "moreno-lovato"
+      ],
+      "title": "Dal codice in banca ai videogiochi: il lungo percorso di un indie",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "moreno-lovato",
+      "speakerId": "moreno-lovato",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

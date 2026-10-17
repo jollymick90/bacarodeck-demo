@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "maurizio-argoneto",
+      "fullName": "Maurizio Argoneto",
+      "firstName": "Maurizio",
+      "lastName": "Argoneto",
+      "headline": "AWS Hero | CTO/Solution Architect | Community Lead (AWS, GDG, PLUG) | Co-founder of 'Come To Code'",
+      "organization": null,
+      "biographyMd": "Maurizio is a CTO, Solution Architect, and AWS Hero based in Basilicata, Italy. With a technical core rooted in Java, Python, and Django, he blends deep architectural expertise with a decade of experience in Project Management and community leadership.\nAs the founder of the AWS User Group Basilicata and co-founder of 'Come To Code'—the largest IT conference in Southern Italy—Maurizio is a driving force in the Italian tech ecosystem. He also leads GDG Basilicata and the PLUG (Pignola Linux User Group), where he has spent over 10 years promoting Open Source culture and digital literacy.\nMaurizio’s mission is to prove that innovation knows no boundaries. He believes that real progress happens through human connection and is dedicated to fostering inclusive spaces where tech hubs can thrive anywhere—from major cities to small mountain villages.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-maurizio-argoneto"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-maurizio-argoneto",
+      "speakerIds": [
+        "maurizio-argoneto"
+      ],
+      "title": "Shutup, Dependency Track! Silencing false positives locally with AST and AI",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "maurizio-argoneto",
+      "speakerId": "maurizio-argoneto",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

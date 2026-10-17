@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "alfonso-fuggetta",
+      "fullName": "Alfonso Fuggetta",
+      "firstName": "Alfonso",
+      "lastName": "Fuggetta",
+      "headline": "Politecnico di Milano",
+      "organization": "Politecnico di Milano",
+      "biographyMd": "Alfonso Fuggetta is a Full Professor of Computer Science at Politecnico di Milano, where his work spans software engineering and digital transformation in their technical and managerial dimensions. He is the former CEO and Scientific Director of Cefriel and former Chief Digital Transformation Officer of Ferrari, and has been a Visiting Professor at NTNU, CU Boulder, and UC Irvine. For over thirty years, he has worked at the crossroads of software engineering research, industry, and innovation, advising companies and public institutions on digital transformation and the impact of AI. He is ranked among the top 2% of researchers worldwide (Elsevier/Stanford) and writes about technology and society on his Substack, \"A bassa voce\".",
+      "photoUrl": "https://cdn.sessionize.com/image/5bf6-400o400o1-7AqrMHRBYiv5cf3nzfrwhN.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alfonso-fuggetta"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-alfonso-fuggetta",
+      "speakerIds": [
+        "alfonso-fuggetta"
+      ],
+      "title": "Why Coding Agents Need You More Than Ever",
+      "abstractMd": "“Will AI make developers obsolete?” The hype says the developer is finished. The denial says it’s just autocomplete. Both are comforting false simplicity.\n\nCapable coding agents don’t make software engineering obsolete; they make it indispensable. An LLM is a remarkable generative engine, but by its architecture, it has no internal reference for correctness, no grasp of the domain it is building for, no orientation toward the system’s future, and no memory across sessions. That isn’t a benchmark gap the next model closes; it’s a structural vacuum.\n\nFilling it takes method, domain knowledge, design judgment, process, and engineering depth to distinguish the correct from the merely plausible. The quality problems of AI-generated software are exactly why coding and design skills matter more, not less.\n\nThe uncomfortable, liberating consequence: capable agents demand more software engineering, not less. The discipline isn’t in decline. Its moment has arrived.",
+      "language": "en",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "alfonso-fuggetta",
+      "speakerId": "alfonso-fuggetta",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

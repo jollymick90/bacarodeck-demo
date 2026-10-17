@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "gianni-forlastro",
+      "fullName": "Gianni Forlastro",
+      "firstName": "Gianni",
+      "lastName": "Forlastro",
+      "headline": "Google GDE Cloud, Cloud Architect, GDG Cloud Torino & Flutter Torino Community Lead",
+      "organization": null,
+      "biographyMd": "Inizia la sua avventura con un Intel 80386 e si laurea in Informatica all'Università di Torino che completa con due master: Comunicazione Digitale/Web Marketing e Social Media Management, il secondo in Cloud Computing.\n\nDopo esperienze come sviluppatore web e mobile, oggi è Cloud Architect, docente e assistente universitario, co-organizzatore di droidcon Italy, Swift Heroes e Flutter Heroes.\n\nLato community nel 2018 fonda il GDG Cloud Torino, diventa Google Champion Innovator nel 2023 e Google GDE Cloud nel 2025.\n\nSu Instagram è noto come @mosquitoman81, tra i creator italiani più seguiti su giochi e fiere.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-gianni-forlastro"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-gianni-forlastro",
+      "speakerIds": [
+        "gianni-forlastro"
+      ],
+      "title": "Developer Experience 2.0: progettare software nell’era degli AI Agents",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "gianni-forlastro",
+      "speakerId": "gianni-forlastro",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

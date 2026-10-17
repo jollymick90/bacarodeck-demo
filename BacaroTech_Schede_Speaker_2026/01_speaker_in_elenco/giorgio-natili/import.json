@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "giorgio-natili",
+      "fullName": "Giorgio Natili",
+      "firstName": "Giorgio",
+      "lastName": "Natili",
+      "headline": "Head of AI Engineering for Oracle Support",
+      "organization": "Oracle",
+      "biographyMd": "Giorgio Natili is a technologist, ethicist, and builder working at the intersection of artificial intelligence, human dignity, and data sovereignty. As Senior Director and Head of AI Engineering for Oracle Cloud Support, he leads the design and deployment of AI systems that make enterprise support smarter, faster, and more trustworthy at scale.\n\nHis expertise in Sovereign AI—the principle that individuals, organizations, and nations must retain control over their data, models, and AI-driven decisions—comes from years of hands-on work. At OPAQUE Systems, where he served as VP and Head of Engineering, he built confidential AI infrastructure that enabled insights from sensitive data without exposing it. This shaped his belief that ethical AI and sovereign AI are inseparable.\n\nWith experience at Amazon, Mozilla, Capital One, OPAQUE Systems, and Oracle, he focuses on building AI that is powerful without being exploitative.",
+      "photoUrl": "https://cdn.sessionize.com/image/4315-400o400o1-TkWxLkWpraTjCmdk6vdpPs.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-giorgio-natili"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-giorgio-natili",
+      "speakerIds": [
+        "giorgio-natili"
+      ],
+      "title": "The Ethics Layer: Architecting Sovereign AI and Digital Dignity in Agentic Systems",
+      "abstractMd": "As we deploy autonomous AI agents globally, a critical friction point has emerged: these systems are fundamentally rooted in reinforcement learning that ruthlessly optimizes for generalized, monolithic reward functions. Consequently, they inherently clash with diverse global cultures, laws, and Sovereign AI mandates, threatening Digital Dignity.\nTo solve this, agentic systems require an Immutable Ethics Policy Layer (IEPL). While semantic filters (like Llama Guard) provide necessary moderation at the perception level, they fail during autonomous execution. Relying on a reasoning engine to self-police inevitably leads to hallucinated compliance.\nThis session introduces the IEPL—a deterministic control point between agent orchestration and tool execution. Grounded in foundational frameworks like The Human Blueprint, the IEPL shifts the AI from a general-purpose processor to a \"Loyal Agent\" bound by a fiduciary duty to the user.",
+      "language": "it",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "giorgio-natili",
+      "speakerId": "giorgio-natili",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

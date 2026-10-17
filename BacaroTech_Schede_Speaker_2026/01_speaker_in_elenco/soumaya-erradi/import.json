@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "soumaya-erradi",
+      "fullName": "Soumaya Erradi",
+      "firstName": "Soumaya",
+      "lastName": "Erradi",
+      "headline": "Senior Software Developer @ Atlantis",
+      "organization": "Atlantis",
+      "biographyMd": "I'm an experienced web developer and a passionate IT and electronics trainer, specializing in frontend development and enterprise applications built with Angular.\nI spend most of my time exploring what's new in the tech world and helping other developers improve their skills.\nAs a conference speaker, I bring advanced Angular topics, tips for the integration of smart contracts and best solutions for web3 applications.",
+      "photoUrl": "https://cdn.sessionize.com/image/785e-400o400o1-BqmZNDXLBrgYy9Avuv7Jre.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-soumaya-erradi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-soumaya-erradi",
+      "speakerIds": [
+        "soumaya-erradi"
+      ],
+      "title": "Can an LLM understand your car? Real telemetry and predictive insights",
+      "abstractMd": "Modern cars produce far more data than what appears on the dashboard: sensor readings, diagnostic codes, pressure changes, temperature values, service intervals, and component health trends.\n\nIn this talk, we’ll explore how to turn telemetry collected from different real Porsche sports cars into clear, useful insights using a structured LLM-based analysis pipeline. We’ll detect measurable signals such as declining health, warning states, critical sensors, performance patterns, and upcoming maintenance needs. Then we’ll use an LLM as an explanation layer to summarize driving behavior, anomalies, and maintenance signals.\n\nThe goal is not to let the LLM control the car or replace expert inspection, but to make complex telemetry easier to understand, explain, and act on.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "soumaya-erradi",
+      "speakerId": "soumaya-erradi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

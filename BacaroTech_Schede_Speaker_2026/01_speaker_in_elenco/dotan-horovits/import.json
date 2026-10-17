@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "dotan-horovits",
+      "fullName": "Dotan Horovits",
+      "firstName": "Dotan",
+      "lastName": "Horovits",
+      "headline": "OpenSearch Ambassador",
+      "organization": "Amazon Web Services",
+      "biographyMd": "Horovits lives at the intersection of technology, product and open source. With over 20 years in the tech industry as a software developer, a solutions architect and a product manager, he brings a wealth of knowledge in cloud-native architectures, big data solutions, DevOps practices and more.\n\nHorovits is an international speaker, an Ambassador of the Cloud Native Computing Foundation, and host of the popular OpenObservability Talks podcast. On the OpenSearch front, Horovits is an OpenSearch Ambassador under the Linux Foundation, he serves as a lead for the Observability technical advisory group, and is on the project’s outreach committee.\n\nHorovits works as a senior open source advocate at Amazon Web Services, with special focus on the OpenSearch project, open observability, and open source practices.",
+      "photoUrl": "https://cdn.sessionize.com/image/3ae9-400o400o1-suaWqZz8r8Sb9QT353GRd1.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-dotan-horovits"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-dotan-horovits",
+      "speakerIds": [
+        "dotan-horovits"
+      ],
+      "title": "One Stack to Observe Them All: Open Source Observability with OpenSearch",
+      "abstractMd": "What if you could have a complete, production-grade observability platform that is fully open source, built on open standards, and led by The Linux Foundation? \n\nIn this session, OpenSearch Ambassador Dotan Horovits demonstrates how OpenSearch delivers a complete, open-source, OpenTelemetry-native observability platform for logs, metrics, traces, APM, and even AI agent observability. You’ll also learn how to integrate with Prometheus metrics, how to create powerful dashboards, and how to easily deploy it to Docker or Kubernetes. \n\nWhether you’re struggling with finding insights in your mounts of logs, fighting a vendors’ bills and proprietary instrumentation, or looking for advanced agentic observability, this session will give you the open source you don’t want to miss.",
+      "language": "en",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "dotan-horovits",
+      "speakerId": "dotan-horovits",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

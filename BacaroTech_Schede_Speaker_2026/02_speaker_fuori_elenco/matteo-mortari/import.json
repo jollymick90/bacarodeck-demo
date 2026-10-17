@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "matteo-mortari",
+      "fullName": "Matteo Mortari",
+      "firstName": "Matteo",
+      "lastName": "Mortari",
+      "headline": "Senior Principal Software Engineer",
+      "organization": null,
+      "biographyMd": "I believe Kubernetes is an awesome platform for app-dev, MLOps (Kubeflow) and Containerization, including OCI packaging and distribution (ORAS/Podman/Buildah) especially in relation to ML\nmodel assets and integration with signature, attestation.\nI contribute to Kubeflow, Oras, and other Open Source projects.\nI'm a co-organizer of the local JUG (JVM User Group) Milano, and I'm active in other Italian communities, often contributing my passion/hobby of live streaming and video recording.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-matteo-mortari"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-matteo-mortari",
+      "speakerIds": [
+        "matteo-mortari"
+      ],
+      "title": "Bring Your Own Agent: Building Real-World Agents for a Sovereign SDLC",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "matteo-mortari",
+      "speakerId": "matteo-mortari",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

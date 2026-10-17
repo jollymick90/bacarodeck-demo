@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "leonardo-cavagnis",
+      "fullName": "Leonardo Cavagnis",
+      "firstName": "Leonardo",
+      "lastName": "Cavagnis",
+      "headline": "Firmware Engineer & Developer Relations @ Arduino",
+      "organization": "Arduino",
+      "biographyMd": "Since 2023, I have been working as a firmware engineer at Arduino, contributing to the development of innovative hardware and software solutions.\nI hold a Master's Degree in Computer Engineering from Politecnico di Milano, specializing in embedded systems. Before joining Arduino, I gained experience in various fields, including industrial, automotive, and green mobility.\nPassionate about technical writing and traveling, I am always seeking new experiences and knowledge.",
+      "photoUrl": "https://cdn.sessionize.com/image/39d9-400o400o1-UxtwKsVoC2wTDTZKPLW8ZZ.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-leonardo-cavagnis"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-leonardo-cavagnis",
+      "speakerIds": [
+        "leonardo-cavagnis"
+      ],
+      "title": "Designing Physical AI Systems: From Sensors to On-Device Intelligence",
+      "abstractMd": "Building AI systems on edge devices requires a different engineering mindset.\nIn this talk, we explore how to design Physical AI systems end-to-end, focusing on the constraints and trade-offs of moving from cloud to embedded environments.\nStarting from a real architecture on Arduino platforms, we’ll walk through the full pipeline: data acquisition, preprocessing, model deployment, and on-device optimization.\nThe session highlights practical design decisions, latency vs accuracy trade-offs, and the challenges of running reliable AI directly on hardware.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "leonardo-cavagnis",
+      "speakerId": "leonardo-cavagnis",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

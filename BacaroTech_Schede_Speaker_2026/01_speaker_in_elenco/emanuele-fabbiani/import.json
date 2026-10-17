@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "emanuele-fabbiani",
+      "fullName": "Emanuele Fabbiani",
+      "firstName": "Emanuele",
+      "lastName": "Fabbiani",
+      "headline": "Co-founder and head of AI at xtream (acquired by TeamSystem), Professor at Catholic University of Milan",
+      "organization": "TeamSystem",
+      "biographyMd": "Emanuele is an entrepreneur, engineer, and researcher passionate about achieving impact with AI.\n\nAfter earning his PhD in machine learning and working as a guest researcher at EPFL in Lausanne, he is now co-founder and Head of AI at xtream, a company that applies AI to solve complex business challenges. xtream was acquired by TeamSystem in September 2025.\n\nEmanuele is also a professor of AI at the Catholic University of Milan and has been a guest lecturer at Italian, Swiss, and Polish universities.\n\nHe has published 8 papers in international journals with 175+ citations and contributed to over 30 international conferences, including AMLD Lausanne, ODSC London, WeAreDevelopers Berlin, PyData Berlin, PyData Paris, PyCon Italy, the Swiss Python Summit, and Codemotion Milan and Rome.",
+      "photoUrl": "https://cdn.sessionize.com/image/ed79-400o400o1-Lrx7d7JesiucfjEWSp5p4H.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-emanuele-fabbiani"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-emanuele-fabbiani",
+      "speakerIds": [
+        "emanuele-fabbiani"
+      ],
+      "title": "How Does AI Watermarking Work? A Close Look at SynthID",
+      "abstractMd": "Watermarking is the only reliable way to spot AI-generated content.\n\nThis talk analyses SynthID, the watermarking scheme DeepMind built for Gemini. \n\nThe core idea is tournament sampling: at each step of text generation, candidate tokens drawn from the model's output probability distribution are scored with pseudorandom values, and the token that wins the tournament gets emitted. This process leaves the model's output distribution unchanged, so watermarked text reads exactly like unwatermarked text. In DeepMind's own evaluation, the scheme added only 0.57% latency overhead per token, detected watermarked text with about 95% accuracy at a 1% false-positive rate, and caused no quality drop across 20 million Gemini responses.\n\nThe talk ends with a live demo: watermarking and detecting text on a local model with an open-source Python package. \n\nAttendees will leave knowing exactly how the algorithm embeds and detects its signal, and how to add the same capability to a model they control.",
+      "language": "en",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "emanuele-fabbiani",
+      "speakerId": "emanuele-fabbiani",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

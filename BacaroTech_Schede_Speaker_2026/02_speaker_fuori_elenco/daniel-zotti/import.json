@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "daniel-zotti",
+      "fullName": "Daniel Zotti",
+      "firstName": "Daniel",
+      "lastName": "Zotti",
+      "headline": "Tech Lead & Team Lead @ Bitrock, Podcaster @ Shiftati di Testa",
+      "organization": null,
+      "biographyMd": "Daniel è un software engineer da quasi 20 anni, specializzato nel frontend dal lontano 2013.\nSi definisce un Creative Web Developer perché ama portare una visione non banale nei progetti in cui è coinvolto.\nNella sua carriera ha visto di tutto: da un’azienda di 5 persone al reparto IT di un ospedale, fino a una multinazionale da 20 mila dipendenti, senza farsi mancare il “classico” anno da freelance. Dal 2021 lavora nell'area front-end di Bitrock, una società di consulenza di Milano.\nFuori dall'ufficio calca i palchi come improvvisatore teatrale, e si spaccia per stand-up comedian con i Gin Comici. Insieme a Stefano conduce Shiftati di Testa: Il podcast più atteso del web (anche se il web ancora non lo sa!)",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-daniel-zotti"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-daniel-zotti",
+      "speakerIds": [
+        "daniel-zotti"
+      ],
+      "title": "Provocazioni Artificiali: un talk così “shiftato” che ti verrà la voglia di rubarci il microfono!",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "daniel-zotti",
+      "speakerId": "daniel-zotti",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

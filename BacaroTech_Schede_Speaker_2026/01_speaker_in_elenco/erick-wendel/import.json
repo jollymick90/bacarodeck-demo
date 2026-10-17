@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "erick-wendel",
+      "fullName": "Erick Wendel",
+      "firstName": "Erick",
+      "lastName": "Wendel",
+      "headline": "EW Academy",
+      "organization": "EW Academy",
+      "biographyMd": "",
+      "photoUrl": "https://cdn.sessionize.com/image/4b6c-400o400o1-Vk9AgnwbCVgq4uti3h3ZMU.jpg",
+      "priority": true,
+      "inDirectorySnapshot": false,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "talkIds": [
+        "talk-erick-wendel"
+      ],
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-erick-wendel",
+      "speakerIds": [
+        "erick-wendel"
+      ],
+      "title": "The Revolution of Embedded AI in the Browsers",
+      "abstractMd": "In this session, I’ll reveal how the web is entering a new era with AI running natively inside browsers. We’ll explore Chrome’s initiative to embed models directly in the runtime, the emerging consensus among browsers to define a common future for Web AI, and how this paves the way for a new “Web 4.0” — the agentic web. You’ll also gain insights into the latest Chrome AI APIs, see what’s already possible today, and discover how these capabilities will transform the way we build intelligent web applications.\n\nOutline\n\n- Embedded AI: Chrome’s initiative to ship models in the browser\n- Cross-Browser Consensus: Aligning on the future of Web AI\n- Web 4.0 Vision: The rise of the agentic web\n- Chrome AI APIs: What developers can build today\n- Real-World Use Cases: Practical examples of AI-powered web apps",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "erick-wendel",
+      "speakerId": "erick-wendel",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

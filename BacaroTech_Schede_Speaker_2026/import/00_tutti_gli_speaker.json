@@ -1,0 +1,4910 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "abiodun-olowode",
+      "fullName": "Abiodun Olowode",
+      "firstName": "Abiodun",
+      "lastName": "Olowode",
+      "headline": "CTO & Co-Founder, Metrifox",
+      "organization": "Metrifox",
+      "biographyMd": "Abiodun is the CTO and Co-Founder at Metrifox, where she leads the engineering team building impactful software.\n\nShe specialises in streamlining workflows, reducing technical debt, and building reusable abstractions that unlock developer productivity through automation and strong defaults.\n\nShe’s passionate about growing engineers and building cultures where excellence is the norm — and she writes and speaks regularly about leadership, engineering, and the uncomfortable parts of both.",
+      "photoUrl": "https://cdn.sessionize.com/image/d0e5-400o400o1-YHyGVoPSt6gg8dmF7HzrMe.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-abiodun-olowode"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "alexio-cassani",
+      "fullName": "Alexio Cassani",
+      "firstName": "Alexio",
+      "lastName": "Cassani",
+      "headline": "Co-Founder & CEO FairMind - Claude Ambassador",
+      "organization": "FairMind",
+      "biographyMd": "Alexio Cassani is an Italian entrepreneur and thought leader in generative AI, AI agents, and corporate digital transformation. He is co-founder of FairMind, a startup that is building AI agent solutions that boost software development team productivity.\nA Computer Engineering graduate from Politecnico di Milano (2003), he was CTO at Cortilia and Webscience (now part of the Adesso group), founded the retail and e-commerce startup Stentle (acquired in 2019), and worked as a researcher with the Intranet and Cloud Observatories at Politecnico di Milano.\nHe is adjunct professor at Politecnico di Milano School of Management, teaching Generative AI and advising companies on AI adoption and transformation. A frequent speaker at Italian and international conferences on generative AI, AI agents, software factory innovation, and responsible technology adoption, he is the author of \"Code Revealed\", a guide to how roles, organization, and tools in software development are evolving in the AI era.",
+      "photoUrl": "https://cdn.sessionize.com/image/34a0-400o400o1-JW3nhaZJRDWhphe1ryDpf9.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alexio-cassani"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "alfonso-fuggetta",
+      "fullName": "Alfonso Fuggetta",
+      "firstName": "Alfonso",
+      "lastName": "Fuggetta",
+      "headline": "Politecnico di Milano",
+      "organization": "Politecnico di Milano",
+      "biographyMd": "Alfonso Fuggetta is a Full Professor of Computer Science at Politecnico di Milano, where his work spans software engineering and digital transformation in their technical and managerial dimensions. He is the former CEO and Scientific Director of Cefriel and former Chief Digital Transformation Officer of Ferrari, and has been a Visiting Professor at NTNU, CU Boulder, and UC Irvine. For over thirty years, he has worked at the crossroads of software engineering research, industry, and innovation, advising companies and public institutions on digital transformation and the impact of AI. He is ranked among the top 2% of researchers worldwide (Elsevier/Stanford) and writes about technology and society on his Substack, \"A bassa voce\".",
+      "photoUrl": "https://cdn.sessionize.com/image/5bf6-400o400o1-7AqrMHRBYiv5cf3nzfrwhN.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alfonso-fuggetta"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "alfonso-graziano",
+      "fullName": "Alfonso Graziano",
+      "firstName": "Alfonso",
+      "lastName": "Graziano",
+      "headline": "AI Tech Lead @ Nearform",
+      "organization": "Nearform",
+      "biographyMd": "Alfonso Graziano is a AI Tech Lead with a strong background in software engineering, specializing in JavaScript, AI and distributed systems. Currently at Nearform, Alfonso leads engineering teams to deliver impactful projects. Passionate about knowledge sharing, he loves to solve problems and contributes to tech communities.",
+      "photoUrl": "https://cdn.sessionize.com/image/b124-400o400o1-E73XiN6VYoSJZGcZjsnQY3.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alfonso-graziano"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "andrey-breslav",
+      "fullName": "Andrey Breslav",
+      "firstName": "Andrey",
+      "lastName": "Breslav",
+      "headline": "Creator of Kotlin and CodeSpeak",
+      "organization": "CodeSpeak",
+      "biographyMd": "Andrey created the Kotlin programming language and led its development at JetBrains from 0 to millions of users. He’s the founder of CodeSpeak, a spec-based AI coding solution.",
+      "photoUrl": "https://cdn.sessionize.com/image/a515-400o400o1-DiDERqotJ4LrTzY69vF7s1.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-andrey-breslav"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "carolina-pinto",
+      "fullName": "Carolina Pinto",
+      "firstName": "Carolina",
+      "lastName": "Pinto",
+      "headline": "Candy Crush",
+      "organization": "Candy Crush",
+      "biographyMd": "",
+      "photoUrl": "https://cdn.sessionize.com/image/2f34-400o400o1-4aVKHFLLkk8ZP5nJYQdKQz.jpg",
+      "priority": true,
+      "inDirectorySnapshot": false,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "talkIds": [
+        "talk-carolina-pinto"
+      ],
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "christian-schabetsberger",
+      "fullName": "Christian Schabetsberger",
+      "firstName": "Christian",
+      "lastName": "Schabetsberger",
+      "headline": "Freelance Software Engineer & Architect",
+      "organization": "Finxit IT Solutions",
+      "biographyMd": "Christian Schabetsberger, the world's okayest developer, is a Freelance Software Engineer & Architect from Linz, Austria with over a decade of experience.\nHaving spend half of his life in the .NET ecosystem (amongst others), he likes to stay on the bleeding edge of technology to become the (tech-savvy) ninja he pretends to be since he is six.\nHe is also an active community member, organising the .NET Meetup in Linz and supporting other local user groups. Furthermore he is a member of the .NET Foundation.",
+      "photoUrl": "https://cdn.sessionize.com/image/fde0-400o400o1-YW8GokVBE7PPj7swgfvDKT.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-christian-schabetsberger"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "david-mccarter",
+      "fullName": "David McCarter",
+      "firstName": "David",
+      "lastName": "McCarter",
+      "headline": "Microsoft MVP (Developer Technologies), Software Architect, Speaker, Trainer, Inventor, and Mentor.",
+      "organization": "McCarter Consulting",
+      "biographyMd": "**As David gradually winds down his career and looks toward retirement, now is the time to benefit from his experience, insight, and availability.**\n\nDavid McCarter is an exceptionally seasoned software engineer, a celebrated author, and a captivating speaker with a remarkable track record spanning over two decades within the industry. Holding the distinguished title of Microsoft MVP (Most Valuable Professional), David also serves as a solutions architect, Code Quality Zar, consultant, proficient code reviewer, and the esteemed editor-in-chief of dotNetTips.com.\n\nHe has left an indelible mark on user groups, educational institutions, and prominent conferences worldwide, such as BuildStuff, Øredev, NDC, Copenhagen Developers Festival, Code Camp, SQL Saturday, DevConnections, and VSLive, among others. His instructional legacy even includes a tenure at the University of California, San Diego.",
+      "photoUrl": "https://cdn.sessionize.com/image/ffc4-400o400o1-nficXnMa7uZZSDsnw5Jwa7.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-david-mccarter"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "dennis-nerush",
+      "fullName": "Dennis Nerush",
+      "firstName": "Dennis",
+      "lastName": "Nerush",
+      "headline": "Director of AI Engineering @Elementor",
+      "organization": "Elementor",
+      "biographyMd": "Dennis Nerush is the Director of AI at Elementor, where he leads the company's AI strategy and guides teams through the integration of GenAI technologies that enhance productivity while preserving human creativity and accountability.\n\nWith over 15 years of experience as a developer, manager, director, and adviser across multiple tech companies and startups, Dennis has dedicated his career to building people-first cultures rooted in continuous learning, curiosity, and growth. He believes that when individuals thrive, teams and businesses flourish, a philosophy that has guided him in founding dozens of teams and mentoring over 100 managers.\n\nDennis is a seasoned public speaker and writer who shares his insights on AI integration, leadership, and team performance at international conferences. He's passionate about helping leaders develop the skills and confidence to excel in a world where human leadership and AI collaboration go hand in hand.",
+      "photoUrl": "https://cdn.sessionize.com/image/4c16-400o400o1-Vt4AzQorAHSBSEjPFxFNsn.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-dennis-nerush"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "dotan-horovits",
+      "fullName": "Dotan Horovits",
+      "firstName": "Dotan",
+      "lastName": "Horovits",
+      "headline": "OpenSearch Ambassador",
+      "organization": "Amazon Web Services",
+      "biographyMd": "Horovits lives at the intersection of technology, product and open source. With over 20 years in the tech industry as a software developer, a solutions architect and a product manager, he brings a wealth of knowledge in cloud-native architectures, big data solutions, DevOps practices and more.\n\nHorovits is an international speaker, an Ambassador of the Cloud Native Computing Foundation, and host of the popular OpenObservability Talks podcast. On the OpenSearch front, Horovits is an OpenSearch Ambassador under the Linux Foundation, he serves as a lead for the Observability technical advisory group, and is on the project’s outreach committee.\n\nHorovits works as a senior open source advocate at Amazon Web Services, with special focus on the OpenSearch project, open observability, and open source practices.",
+      "photoUrl": "https://cdn.sessionize.com/image/3ae9-400o400o1-suaWqZz8r8Sb9QT353GRd1.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-dotan-horovits"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "emanuele-fabbiani",
+      "fullName": "Emanuele Fabbiani",
+      "firstName": "Emanuele",
+      "lastName": "Fabbiani",
+      "headline": "Co-founder and head of AI at xtream (acquired by TeamSystem), Professor at Catholic University of Milan",
+      "organization": "TeamSystem",
+      "biographyMd": "Emanuele is an entrepreneur, engineer, and researcher passionate about achieving impact with AI.\n\nAfter earning his PhD in machine learning and working as a guest researcher at EPFL in Lausanne, he is now co-founder and Head of AI at xtream, a company that applies AI to solve complex business challenges. xtream was acquired by TeamSystem in September 2025.\n\nEmanuele is also a professor of AI at the Catholic University of Milan and has been a guest lecturer at Italian, Swiss, and Polish universities.\n\nHe has published 8 papers in international journals with 175+ citations and contributed to over 30 international conferences, including AMLD Lausanne, ODSC London, WeAreDevelopers Berlin, PyData Berlin, PyData Paris, PyCon Italy, the Swiss Python Summit, and Codemotion Milan and Rome.",
+      "photoUrl": "https://cdn.sessionize.com/image/ed79-400o400o1-Lrx7d7JesiucfjEWSp5p4H.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-emanuele-fabbiani"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "enzo-lombardi",
+      "fullName": "Enzo Lombardi",
+      "firstName": "Enzo",
+      "lastName": "Lombardi",
+      "headline": "Cleafy, 🌩️ Cloud Software Architect 🦀 Learning Rust 🕹️ Mame contributor 🔬 Arduino thinkerer: ESP32, nrf52 🔍 Former Google and Microsoft dev 🥞 Almost-full stack developer (can't align with CSS)",
+      "organization": "Cleafy",
+      "biographyMd": "Former software engineer, spent large part of my career in US working for Microsoft, Google and startups.\nIn Microsoft I was part of the original .Net team and later worked on Windows Compatibility Toolkit and Windows Performance Analyzer.\nIn Google I worked for Hangouts during its glory days, and moved to work on the Directory product part of Google Workplace offer.\nI moved back to Italy in Summer 2023 to pivot my career as Software Architect in order to bring my experience to use in a fast growing company working on a interesting product.\nI am learning by teaching Rust and successfully contributed to Mame bringing the sound effects to the Italian arcade game dribbling.\n\nBook author of:\nTu lo conosci Claude vol. 1 and 2\nOOP to Rust (English and Italian)\nMultiplatform UI in Rust",
+      "photoUrl": "https://cdn.sessionize.com/image/ba8d-400o400o1-TU33WUCQxvFJFtLdG545P.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-enzo-lombardi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "erick-wendel",
+      "fullName": "Erick Wendel",
+      "firstName": "Erick",
+      "lastName": "Wendel",
+      "headline": "EW Academy",
+      "organization": "EW Academy",
+      "biographyMd": "",
+      "photoUrl": "https://cdn.sessionize.com/image/4b6c-400o400o1-Vk9AgnwbCVgq4uti3h3ZMU.jpg",
+      "priority": true,
+      "inDirectorySnapshot": false,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "talkIds": [
+        "talk-erick-wendel"
+      ],
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "gabriele-santomaggio",
+      "fullName": "Gabriele Santomaggio",
+      "firstName": "Gabriele",
+      "lastName": "Santomaggio",
+      "headline": "RabbitMQ team member",
+      "organization": "Broadcom",
+      "biographyMd": "RabbitMQ team member, working with distributed systems, open source lover, Linux fan.",
+      "photoUrl": "https://cdn.sessionize.com/image/e9b8-400o400o1-PcaCVE2vD46ZYmKGbuxH5j.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-gabriele-santomaggio"
+      ],
+      "reviewFlags": [
+        "csv_talk_missing_directory_present",
+        "talk_attribution_to_verify"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "giorgio-natili",
+      "fullName": "Giorgio Natili",
+      "firstName": "Giorgio",
+      "lastName": "Natili",
+      "headline": "Head of AI Engineering for Oracle Support",
+      "organization": "Oracle",
+      "biographyMd": "Giorgio Natili is a technologist, ethicist, and builder working at the intersection of artificial intelligence, human dignity, and data sovereignty. As Senior Director and Head of AI Engineering for Oracle Cloud Support, he leads the design and deployment of AI systems that make enterprise support smarter, faster, and more trustworthy at scale.\n\nHis expertise in Sovereign AI—the principle that individuals, organizations, and nations must retain control over their data, models, and AI-driven decisions—comes from years of hands-on work. At OPAQUE Systems, where he served as VP and Head of Engineering, he built confidential AI infrastructure that enabled insights from sensitive data without exposing it. This shaped his belief that ethical AI and sovereign AI are inseparable.\n\nWith experience at Amazon, Mozilla, Capital One, OPAQUE Systems, and Oracle, he focuses on building AI that is powerful without being exploitative.",
+      "photoUrl": "https://cdn.sessionize.com/image/4315-400o400o1-TkWxLkWpraTjCmdk6vdpPs.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-giorgio-natili"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "jigyasa-grover",
+      "fullName": "Jigyasa Grover",
+      "firstName": "Jigyasa",
+      "lastName": "Grover",
+      "headline": "AI/ML Lead Engineer • 12x AI + Open Source Award Winner • Google Advisory Board Member • 'Sculpting Data for ML' Book Author • Featured @ Business Insider, Google, UN, and more!",
+      "organization": "Uber",
+      "biographyMd": "Jigyasa Grover is a 12-time award-winning AI leader and author of Sculpting Data for ML, driving cutting-edge personalization at Uber after transforming ML systems at Twitter/X, Meta/Facebook, Faire, and Bordo AI. featured at Google I/O keynote and a Google Developer Advisory Board member, she operates at the intersection of large-scale AI, product innovation, and global influence, educating thousands as a LinkedIn Learning instructor while advising top Silicon Valley startups. Recognized by Forbes, Business Insider, World Economic Forum, and many others, she is shaping the future of AI through leadership, research, and impact at global scale.",
+      "photoUrl": "https://cdn.sessionize.com/image/2e74-400o400o1-SUA72EqprKNp7aWicnecCv.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-jigyasa-grover"
+      ],
+      "reviewFlags": [
+        "talk_title_mismatch"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "katharine-jarmul",
+      "fullName": "Katharine Jarmul",
+      "firstName": "Katharine",
+      "lastName": "Jarmul",
+      "headline": "Privacy and Security in AI Systems",
+      "organization": null,
+      "biographyMd": "Katharine Jarmul focuses her work and research on privacy and security in data science, deep learning and AI. She is author of the well received O'Reilly book Practical Data Privacy (O'Reilly 2023) and has more than 10 years experience in machine learning/AI where she has helped build large scale AI systems with privacy and security built in. You can follow her work via her newsletter, Probably Private or on her website at https://kjamistan.com.",
+      "photoUrl": null,
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-katharine-jarmul"
+      ],
+      "reviewFlags": [
+        "csv_talk_missing_directory_present"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "leonardo-cavagnis",
+      "fullName": "Leonardo Cavagnis",
+      "firstName": "Leonardo",
+      "lastName": "Cavagnis",
+      "headline": "Firmware Engineer & Developer Relations @ Arduino",
+      "organization": "Arduino",
+      "biographyMd": "Since 2023, I have been working as a firmware engineer at Arduino, contributing to the development of innovative hardware and software solutions.\nI hold a Master's Degree in Computer Engineering from Politecnico di Milano, specializing in embedded systems. Before joining Arduino, I gained experience in various fields, including industrial, automotive, and green mobility.\nPassionate about technical writing and traveling, I am always seeking new experiences and knowledge.",
+      "photoUrl": "https://cdn.sessionize.com/image/39d9-400o400o1-UxtwKsVoC2wTDTZKPLW8ZZ.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-leonardo-cavagnis"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "marco-ippolito",
+      "fullName": "Marco Ippolito",
+      "firstName": "Marco",
+      "lastName": "Ippolito",
+      "headline": "Senior Security Engineer @HeroDevs | Node.js TSC",
+      "organization": "HeroDevs",
+      "biographyMd": "Marco is a Senior Security Engineer at HeroDevs.\nActive contributor, releaser, and member of the Node.js Technical Steering Committee, he is a renowned international speaker and a former Microsoft MVP. Marco is actively involved in many projects within the Node.js ecosystem and also serves as a delegate in TC39.",
+      "photoUrl": "https://cdn.sessionize.com/image/4b31-400o400o1-SkXx6766j2iCudSPd9Ympj.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-marco-ippolito"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "mario-zechner",
+      "fullName": "Mario Zechner",
+      "firstName": "Mario",
+      "lastName": "Zechner",
+      "headline": "Partner and Pi Baker at Earendil",
+      "organization": "Earendil",
+      "biographyMd": "Mario used to work in applied machine learning in the 2000s, built OSS game dev tools, wrote books, went to SF, came back, did another startup, sold, then had a nice cosy 10 years of building a market leading family business in game dev tools. Then OpenAI released a useful LLM. Then he built pi, the coding agent powering OpenClaw and it's been all downhill from there. Now Mario is doing yet another startup with friends in the AI space. Oh no.",
+      "photoUrl": "https://cdn.sessionize.com/image/4bd8-400o400o1-VXQVTPjP63RwMuoLzXCqSM.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-mario-zechner"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "matteo-collina",
+      "fullName": "Matteo Collina",
+      "firstName": "Matteo",
+      "lastName": "Collina",
+      "headline": "Platformatic Co-Founder and CTO, Node.js TSC member, Fastify Lead Maintainer",
+      "organization": "Platformatic",
+      "biographyMd": "Matteo is the Co-Founder and CTO of Platformatic.dev. He is also a prolific Open Source author in the JavaScript ecosystem and modules he maintain are downloaded more than 12 billion times a year. Previously he was Chief Software Architect at NearForm, the best professional services company in the JavaScript ecosystem. In 2014, he defended his Ph.D. thesis titled \"Application Platforms for the Internet of Things\". Matteo is a member of the Node.js Technical Steering Committee focusing on streams, diagnostics and http. He is also the author of the fast logger Pino and of the Fastify web framework. Matteo is an renowed international speaker after more than 60 conferences, including OpenJS World, Node.js Interactive, NodeConf.eu, NodeSummit, JSConf.Asia, WebRebels, and JsDay just to name a few. He is also co-author of the book \"Node.js Cookbook, Third Edition\" edited by Packt. In the summer he loves sailing the Sirocco.",
+      "photoUrl": "https://cdn.sessionize.com/image/c2d5-400o400o1-MwoLHzhcJSuqZSP2BwgzbG.jpeg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-matteo-collina"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "mauro-morales",
+      "fullName": "Mauro Morales",
+      "firstName": "Mauro",
+      "lastName": "Morales",
+      "headline": "Staff Engineer at Spectro Cloud",
+      "organization": "Spec",
+      "biographyMd": "Mauro Morales is a Guatemalan software developer and speaker. He’s currently a Staff Engineer at Spectro Cloud, where he’s part of the team building Kairos — an open-source Linux distribution for running Kubernetes at the edge. Mauro regularly speaks at conferences like KubeCon, FOSDEM, and the Open Source Summit, and co-hosts the Cloud Native Community Belgium.",
+      "photoUrl": "https://cdn.sessionize.com/image/0e2a-400o400o1-WmwqgLPeWH4oDnZ8vbNBJ.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-mauro-morales"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "olena-borzenko",
+      "fullName": "Olena Borzenko",
+      "firstName": "Olena",
+      "lastName": "Borzenko",
+      "headline": "Coding Consultant & Microsoft MVP at Xebia",
+      "organization": "Xebia",
+      "biographyMd": "Olena working as a consultant with the main focus on building .Net Cloud Applications. She is passionate about event-driven architecture, clean code, and modern cloud-based application development.\nShe has previously worked in a service company based in Ukraine and took part in the creation of various products from small startups, and B2B applications, to enterprise platforms.\nAs Microsoft MVP for Azure, Olena is contributing to the community sharing her gained knowledge at international conferences, user groups, and community meetups as a speaker.",
+      "photoUrl": "https://cdn.sessionize.com/image/7e5f-400o400o1-hhcCkw9PnPq9bVdi71j5Ap.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-olena-borzenko"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "paolo-caressa",
+      "fullName": "Paolo Caressa",
+      "firstName": "Paolo",
+      "lastName": "Caressa",
+      "headline": "GSE spa - IT Expert",
+      "organization": "GSE",
+      "biographyMd": "Formerly:\n- Math BS+MS & PhD.\n- Math researcher.\n- IT consultant.\n- Developer & quant @big bank.\n- Project manager, technical consultant & writer @small sw house.\n- Adjunct professor @\"Sapienza\" University (Rome).\n- Instructor @Deep Learning Italia.\n\nCurrently:\n- IT expert @GSE energy company.",
+      "photoUrl": "https://cdn.sessionize.com/image/a0ac-400o400o1-JuJZHqwbWMmU3yYvLHrhBW.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-paolo-caressa"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "paolo-insogna",
+      "fullName": "Paolo Insogna",
+      "firstName": "Paolo",
+      "lastName": "Insogna",
+      "headline": "Platformatic",
+      "organization": "Platformatic",
+      "biographyMd": "",
+      "photoUrl": "https://cdn.sessionize.com/image/0f73-400o400o1-PSt5mDhCrYJEibYim5yRq5.jpg",
+      "priority": true,
+      "inDirectorySnapshot": false,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "talkIds": [
+        "talk-paolo-insogna"
+      ],
+      "reviewFlags": [
+        "not_in_directory_snapshot"
+      ],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "riccardo-carlesso",
+      "fullName": "Riccardo Carlesso",
+      "firstName": "Riccardo",
+      "lastName": "Carlesso",
+      "headline": "Developer Advocate, google cloud",
+      "organization": "Google Switzerland",
+      "biographyMd": "Riccardo loves caipirinhas and 🍷 Amarone, playing 🎹 piano and 🏊🏻🚴🏿🏃‍♀️ triathlons; he's been passionate about Mathematics since he was 4. He's still in love with Ruby and Rails.\n\nFormer network administrator, sysadmin, and Ruby on Rails developer, Riccardo has been in operations for 20+ years and still likes to spend time coding (better if Ruby). He loves engaging with customers and help them run their operations reliably and successfully in the cloud.\n\nMore: https://g.dev/ricc",
+      "photoUrl": "https://cdn.sessionize.com/image/0802-400o400o1-WrWArqkGzSaKjoMzfViDU.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-riccardo-carlesso"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "rowdy-rabouw",
+      "fullName": "Rowdy Rabouw",
+      "firstName": "Rowdy",
+      "lastName": "Rabouw",
+      "headline": "Front-End Focused Senior DevOps Engineer",
+      "organization": "Nationale-Nederlanden",
+      "biographyMd": "Rowdy Rabouw is a Google Developer Expert in Web Technologies with over 25 years of experience in HTML, CSS and JavaScript. Currently, he works as a Front-End-Focused Senior DevOps Engineer on Vue, Node, and NestJS projects, with a focus on usability and accessibility. Rowdy loves his electronic drum kit and dabbles in creating music on his laptop.",
+      "photoUrl": "https://cdn.sessionize.com/image/f20e-400o400o1-LqCirkShubcxGkm5Ac1CrN.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-rowdy-rabouw"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "soumaya-erradi",
+      "fullName": "Soumaya Erradi",
+      "firstName": "Soumaya",
+      "lastName": "Erradi",
+      "headline": "Senior Software Developer @ Atlantis",
+      "organization": "Atlantis",
+      "biographyMd": "I'm an experienced web developer and a passionate IT and electronics trainer, specializing in frontend development and enterprise applications built with Angular.\nI spend most of my time exploring what's new in the tech world and helping other developers improve their skills.\nAs a conference speaker, I bring advanced Angular topics, tips for the integration of smart contracts and best solutions for web3 applications.",
+      "photoUrl": "https://cdn.sessionize.com/image/785e-400o400o1-BqmZNDXLBrgYy9Avuv7Jre.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-soumaya-erradi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "vladi-stevanovic",
+      "fullName": "Vladi Stevanovic",
+      "firstName": "Vladi",
+      "lastName": "Stevanovic",
+      "headline": "Head of Content",
+      "organization": "Multiplayer",
+      "biographyMd": "Head of Content at Maximize, with 10+ years of experience in building developer communities and enablement. Previously leading customer success at Prisma and MongoDB. I'm interested in all things system design, distributed systems, and observability. You can usually find me working on my couch surrounded by dogs.",
+      "photoUrl": "https://cdn.sessionize.com/image/ffbb-400o400o1-pwfuR1FsaXWa65KLESy9zA.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-vladi-stevanovic"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "alessandro-festa",
+      "fullName": "Alessandro Festa",
+      "firstName": "Alessandro",
+      "lastName": "Festa",
+      "headline": "Sr. Product Manager - SUSE AI",
+      "organization": null,
+      "biographyMd": "Highly energetic, charismatic leader with Technical proficiency as well as a Business attitude. Product Manager, Coder, Passionate.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alessandro-festa"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "alessandro-miliucci",
+      "fullName": "Alessandro Miliucci",
+      "firstName": "Alessandro",
+      "lastName": "Miliucci",
+      "headline": "Solution Architect @ Fabrick S.p.a.",
+      "organization": null,
+      "biographyMd": "I am Alessandro Miliucci, a developer, author and speaker. Although I have many interests, software development is what I devote most of my time to and what I am best known for. I have also written a few books on software development.\n\nMy interests range over all aspects of software: from user interfaces to databases, including network protocols.\n\nI am a co-organizer of RomaJS meetup and the leader of MongoDB User Group in Rome.\n\nDuring my career I have spent a lot of time working on start-ups such as Hype, the first Italian neo-bank, and Vidra, an e-commerce SaaS that I co-Founded.\nNowadays I work as a Solution Architect for Fabrick S.p.a. one of the leading Italian Fintech companies.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alessandro-miliucci"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "alessandro-riboni",
+      "fullName": "Alessandro Riboni",
+      "firstName": "Alessandro",
+      "lastName": "Riboni",
+      "headline": "AI Engineer",
+      "organization": null,
+      "biographyMd": "Alessandro Riboni is a Staff Engineer at Generali, specializing in AI engineering and GenAI platforms. Supports internal teams and builds horizontal tooling that standardizes and simplifies GenAI development: from a framework for prompt management, automated evaluation and CI/CD-based release of prompts, to Flowmetrics, a semantic layer that gives AI agents governed access to business metrics. Before that, five years in consulting for insurance and banking: first as a data engineer on real-time pipelines, then as an ML engineer building LLM-based claims assistants, RAG systems for policy risk assessment and document-parsing tools on AWS. Holds an MSc in Data Science from the University of Milano-Bicocca.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alessandro-riboni"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "alessio-acella",
+      "fullName": "Alessio Acella",
+      "firstName": "Alessio",
+      "lastName": "Acella",
+      "headline": "CTO, Founder, Software engineer at Omnes",
+      "organization": null,
+      "biographyMd": "Alessio is CTO and Software Engineer at Omnes. Over the years, he has specialized in building tailored digital platforms, evolving from early work in C, C++, JAVA, PHP and Laravel to large-scale projects powered by modern stacks such as Vue.js, Nuxt, TypeScript, React and Node.js.\n\nHis technical journey has been shaped by constant curiosity for scalable architectures and performance-driven design. Alessio has worked extensively with cloud infrastructures on AWS, relational as well as NoSQL databases, real-time messaging, and modern headless frameworks.\n\nToday he leads teams building B2B and B2C platforms that combine strong engineering foundations with a focus on user experience and accessibility, while exploring how AI and automation are reshaping development practices.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alessio-acella"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "alice-viola-setti",
+      "fullName": "Alice Viola Setti",
+      "firstName": "Alice",
+      "lastName": "Viola Setti",
+      "headline": "Senior Staff Engineer @ Smartness, author of Queen MQ",
+      "organization": null,
+      "biographyMd": "Alice Viola Setti is a proud neurodivergent transgender woman, software engineer, architect, and sysadmin with a master's degree in Mechatronic Engineering and a product-builder mindset.\n\nHer background spans the entire technical spectrum, from provisioning bare-metal datacenters to architecting complex distributed systems and leading engineering teams. She is highly autonomous and drives end-to-end product delivery.\n\nShe works mainly with Kubernetes, Kafka, Postgres, C++, Node, and Vue, and has shipped with Python, Ruby, Objective-C++, Swift, Rust, OpenCV, Proxmox, VMware, Nginx, HAProxy, Scylla, Redis, MySQL, MariaDB, MongoDB, OpenSearch, Solr, Neo4j, Cassandra, Pulsar, RabbitMQ, NATS, and MQTT.\n\nShe has installed and managed clusters in on-premise datacenters using bare-metal servers, hypervisors, and Kubernetes; configured network switches and firewalls; developed microservice architectures; built drone control systems; and conducted research in computer vision.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alice-viola-setti"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "andrea-ferlito",
+      "fullName": "Andrea Ferlito",
+      "firstName": "Andrea",
+      "lastName": "Ferlito",
+      "headline": "CTO",
+      "organization": null,
+      "biographyMd": "ICT professional with over 20 years experience in software design and development and project management. His insane passion for videogames brought him to be well known through the italian and international game developer communities.\nHe is also leader of Roma Game Dev community, organizing dedicated meetups and the famous Global Game Jam. He is CTO and Game Developer Content manager of Codemotion",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-andrea-ferlito"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "andrea-raponi",
+      "fullName": "Andrea Raponi",
+      "firstName": "Andrea",
+      "lastName": "Raponi",
+      "headline": "Technical Manager @ Engineering · Software Craftsman",
+      "organization": null,
+      "biographyMd": "Andrea Raponi è Technical Manager in Engineering, dove si occupa di architetture software, tecnologie Cloud Native e Intelligenza Artificiale Generativa.\n\nHa trascorso buona parte della sua carriera a metà strada tra infrastruttura e sviluppo software, con una particolare curiosità per tutto ciò che succede “sotto il cofano”. È appassionato di open source, developer experience e di tecnologie costruite senza legarsi troppo a strumenti o vendor specifici.\n\nQuando non disegna architetture o scrive codice, probabilmente sta leggendo Thoreau, andando in bici o trasformando qualche nuova ossessione tecnologica in un side project.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-andrea-raponi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "andrei-chis",
+      "fullName": "Andrei Chiș",
+      "firstName": "Andrei",
+      "lastName": "Chiș",
+      "headline": "tool crafter at feenk",
+      "organization": null,
+      "biographyMd": "Andrei Chiș is a tool crafter at feenk (feenk.com), where he builds tools and techniques to improve software development both with and without AI. He is also a co-author of the Glamorous Toolkit (gtoolkit.org) platform.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-andrei-chis"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "aniello-bossa",
+      "fullName": "Aniello Bossa",
+      "firstName": "Aniello",
+      "lastName": "Bossa",
+      "headline": "Senior Data Engineer",
+      "organization": null,
+      "biographyMd": "Aniello Bossa è Senior Data Engineer in Generali Italia, dove progetta e gestisce microservizi e pipeline dati su Google Cloud per i processi di gestione sinistri e antifrode. Lavora ogni giorno con Python, FastAPI, Kubernetes e Airflow, e si occupa di portare in produzione sistemi affidabili e osservabili su larga scala. Crede nella semplicità, nell'automazione e nel codice che si spiega da solo.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-aniello-bossa"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "aurelie-vache",
+      "fullName": "Aurélie Vache",
+      "firstName": "Aurélie",
+      "lastName": "Vache",
+      "headline": "Developer Advocate at OVHcloud, Docker Captain, CNCF Ambassador & GDE",
+      "organization": null,
+      "biographyMd": "Aurélie Vache is a Developer Advocate at OVHcloud in Toulouse, France. She is a Docker Captain, CNCF ambassador, Google Cloud Developer Expert & Women techmarkers Ambassador. She has been working as a Developer and Ops for over 20 years. Cloud enthusiast and advocates DevOps/Cloud/Golang best practices.\n\nTechnical writer (dev.to/aurelievache), a book author & reviewer, a sketchnoter and a speaker at international conferences.\nConferences and meetups organizer since 2016.\n\nCreator and maintainer of https://developers.events/, a collaborative, open-source platform that aggregates & list developer/tech-focused conferences/events and call-for-papers (CFP) opportunities worldwide, helping speakers, organizers, sponsors and attendees.\n\nShe created a new visual way for people to learn and understand Cloud technologies: \"Understanding Kubernetes/Istio/Docker in a visual way\" in sketchnotes, books and videos.\n\nBlog: https://dev.to/aurelievache/\nYouTube: https://www.youtube.com/c/AurelieVache",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-aurelie-vache"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "costantino-cavallo",
+      "fullName": "Costantino Cavallo",
+      "firstName": "Costantino",
+      "lastName": "Cavallo",
+      "headline": "altermaind, Chief A.I. Officer",
+      "organization": null,
+      "biographyMd": "Costantino Cavallo is the Chief Artificial Intelligence Officer at altermAInd and an international speaker with a strong passion for technology and continuous learning. He focuses on Automation and Artificial Intelligence, helping organizations maximize team efficiency through innovative methodologies and practical adoption of emerging technologies. Deeply committed to exploring new approaches, Costantino blends strategic vision with hands-on experimentation.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-costantino-cavallo"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "daniel-zotti",
+      "fullName": "Daniel Zotti",
+      "firstName": "Daniel",
+      "lastName": "Zotti",
+      "headline": "Tech Lead & Team Lead @ Bitrock, Podcaster @ Shiftati di Testa",
+      "organization": null,
+      "biographyMd": "Daniel è un software engineer da quasi 20 anni, specializzato nel frontend dal lontano 2013.\nSi definisce un Creative Web Developer perché ama portare una visione non banale nei progetti in cui è coinvolto.\nNella sua carriera ha visto di tutto: da un’azienda di 5 persone al reparto IT di un ospedale, fino a una multinazionale da 20 mila dipendenti, senza farsi mancare il “classico” anno da freelance. Dal 2021 lavora nell'area front-end di Bitrock, una società di consulenza di Milano.\nFuori dall'ufficio calca i palchi come improvvisatore teatrale, e si spaccia per stand-up comedian con i Gin Comici. Insieme a Stefano conduce Shiftati di Testa: Il podcast più atteso del web (anche se il web ancora non lo sa!)",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-daniel-zotti"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "daniele-zonca",
+      "fullName": "Daniele Zonca",
+      "firstName": "Daniele",
+      "lastName": "Zonca",
+      "headline": "Distinguished Engineer - Red Hat",
+      "organization": null,
+      "biographyMd": "Daniele Zonca is a Distinguised Engineer working for Red Hat. He contributes to many open source projects like TrustyAI, KServe, vLLM and llm-d. He is the Chief Architect for Red Hat Openshift AI product and before this he led Big Data development team of one of the largest Italian bank.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-daniele-zonca"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "danilo-deponti",
+      "fullName": "Danilo Deponti",
+      "firstName": "Danilo",
+      "lastName": "Deponti",
+      "headline": "Senior Software Engineer",
+      "organization": null,
+      "biographyMd": "Danilo Deponti is a Senior Software Engineer, currently working in Doctolib, where he helps build the internal AI-augmented developer tools. His work focuses on autonomous coding agents, AI orchestration, and developer productivity, turning experimental LLM tooling into something teams can trust in production. He's passionate about pushing the boundaries of what AI can do inside a real engineering organisation: from agent fleets and persistent memory to observability, cost control, and keeping humans meaningfully in the loop.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-danilo-deponti"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "davide-caldarulo",
+      "fullName": "Davide Caldarulo",
+      "firstName": "Davide",
+      "lastName": "Caldarulo",
+      "headline": "Senior Software Developer",
+      "organization": null,
+      "biographyMd": "Davide Caldarulo is a Senior Software Developer at Objectway's Bari office, where he designs and develops Java backend solutions for the financial sector. Passionate about technology and problem-solving, he enjoys turning complex challenges into simple, efficient solutions, always striving to deliver high-quality software that creates real value.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-davide-caldarulo"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "davide-pensato",
+      "fullName": "Davide Pensato",
+      "firstName": "Davide",
+      "lastName": "Pensato",
+      "headline": "Audio Director and Founder",
+      "organization": null,
+      "biographyMd": "In 1999 Davide Pensato starts his career as in-house Audio DirectorSound Designer at Ubisoft Studios Milano. In a couple of years he is responsible of audio team. Both a creative and technical figure, he can create audio for a game as well as integrating it using software and hardware tools. In January 2007 creates his own company (dpstudios) offering consulting and services for game audio. He develops web and multimedia projects too, as a new activity branch.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-davide-pensato"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "diana-bernabei",
+      "fullName": "Diana Bernabei",
+      "firstName": "Diana",
+      "lastName": "Bernabei",
+      "headline": "CEO, Co-Founder & Senior Accessibility Engineer @ AriaLab",
+      "organization": null,
+      "biographyMd": "Sono una Frontend Developer freelance specializzata in consulenza sull'accessibilità, design UI/UX e sviluppo web.\nIl mio obiettivo è garantire che ogni sito web sia accessibile a tutti, indipendentemente dalle capacità fisiche o cognitive.\nDa oltre 5 anni, mi dedico con passione e professionalità a questo obiettivo, lavorando con semplicità e attenzione al dettaglio.\nPer me, l'accessibilità web va oltre la tecnologia: rappresenta una questione di diritti, uguaglianza e libertà.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-diana-bernabei"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "edoardo-dusi",
+      "fullName": "Edoardo Dusi",
+      "firstName": "Edoardo",
+      "lastName": "Dusi",
+      "headline": "Senior Developer Relations Engineer",
+      "organization": null,
+      "biographyMd": "Edoardo is a Developer Relations Engineer. He has a strong software developer and team leader background, working on various projects and platforms. He is passionate about creating and sharing content that educates and inspires other developers, such as tech talks, videos, podcasts, conferences, and more. He enjoys connecting with the developer community and promoting the benefits of open source software.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-edoardo-dusi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "egon-ferri",
+      "fullName": "Egon Ferri",
+      "firstName": "Egon",
+      "lastName": "Ferri",
+      "headline": "AI engineer @ Gamindo",
+      "organization": null,
+      "biographyMd": "Putting AI into production is not just about connecting a model to a chat interface. In Gamindo AI, we built a workflow that turns vague requirements, source materials and live game state into structured game-based learning content: it refines the initial intent, generates a validated learning experience, supports controlled edits through structured patches, and produces contextual commentary and audio aligned with gameplay.\n\nThis talk walks through the architecture behind it: typed contracts with PydanticAI, FastAPI endpoints, fallback strategies across OpenAI, Anthropic and Google, streaming events, output validation, eval datasets, custom evaluators, observability with Logfire, and practical error handling.\n\nAttendees will leave with patterns and tradeoffs for designing AI workflows that are robust, observable, measurable and flexible enough to evolve without rewriting everything.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-egon-ferri"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "elena-guidi",
+      "fullName": "Elena Guidi",
+      "firstName": "Elena",
+      "lastName": "Guidi",
+      "headline": "Senior Software Engineer - Thoughtworks",
+      "organization": null,
+      "biographyMd": "Senior Software Developer at Thoughtworks\n\nA developer with 8 years of experience across Italy and abroad, Elena bridges the gap between clean code and clear communication. At Thoughtworks, she balances technical delivery with a mission to debug the \"Human Stack.\" Through the lens of Crucial Conversations and Green Computing, she equips teams to handle high-stakes friction and build a more sustainable digital future.\n\nCode is logical; people are complex. She helps you master both.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-elena-guidi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "emmanuele-villa",
+      "fullName": "Emmanuele Villa",
+      "firstName": "Emmanuele",
+      "lastName": "Villa",
+      "headline": "Mobile Architect & Tech Leader",
+      "organization": null,
+      "biographyMd": "Emmanuele Villa is a Senior Technical Consultant at Fincons Group, leading mobile and web development with technologies like Kotlin Multiplatform, Compose, and SwiftUI.\n\nHe also teaches at the Università della Terza Età in Carate Brianza and is pursuing a degree in Middle Age History, bridging his passion for technology and the humanities.\n\nOutside of work, he enjoys exploring Quantum Computing, running Dungeons&Dragons, and reading One Piece.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-emmanuele-villa"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "erik-pronk",
+      "fullName": "Erik Pronk",
+      "firstName": "Erik",
+      "lastName": "Pronk",
+      "headline": "Passionate about people and software",
+      "organization": null,
+      "biographyMd": "Erik Pronk is a passionate software engineer that has been working in IT since 2001. During this period he has gained a lot of experience in a variety of technologies, roles, development environments and market segments. His main focus is on implementing enterprise solutions in an agile way. In his spare time, Erik loves to run and experiment with VR and domotics. Erik works at JDriven where he shares his passion and drive with other colleagues.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-erik-pronk"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "ettore-di-giacinto",
+      "fullName": "Ettore Di Giacinto",
+      "firstName": "Ettore",
+      "lastName": "Di Giacinto",
+      "headline": "LocalAI Creator",
+      "organization": null,
+      "biographyMd": "I’m Ettore and I’m a long-time Open Source hacker and hacktivist. I’ve been involved in the Open Source community for more than 18 years. I’ve studied CS at University, and pursued my degree at full votes with a MS in Computer Science.\n\nI formerly was a Gentoo developer, I did lead Sabayon Linux and contributed to several FOSS projects among openSUSE, Cloud Foundry, openQA, llama.cpp.\n\nPreviously I’ve worked at SUSE where I was leading the Elemental team. At Spectro Cloud I've created Kairos and donated it to CNCF, and collaborated with Intel on SENA ( Secure Edge-Native Architecture).\n\nI am a Golang and Kubernetes enthusiast with a strong Linux background skillset. I am the LocalAI creator and maintainer.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-ettore-di-giacinto"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "francesco-facconi",
+      "fullName": "Francesco Facconi",
+      "firstName": "Francesco",
+      "lastName": "Facconi",
+      "headline": "Speaker on Digitalia - Senior Engineering Manager at Doctolib",
+      "organization": null,
+      "biographyMd": "Engineer, manager, former startupper, broadcasting every Monday evening on Digitalia, one of the longest-lasting Podcast in Italy, speaking about technology and how this interacts with our lives. His last book is \"Almanacco Digitaliano 2024\" from Ledizioni Publishing. Musician and performer with more than 400 gigs.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-francesco-facconi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "francesco-pirrone",
+      "fullName": "Francesco Pirrone",
+      "firstName": "Francesco",
+      "lastName": "Pirrone",
+      "headline": "Fullstack developer",
+      "organization": null,
+      "biographyMd": "Graduated in Computer Science from the University of Turin, he is a full-stack developer at Finwave, where he is responsible for the design and development of distributed systems.\nNerd at 99%, he is trying to stay in touch with the real world for the remaining 1% of his day.\nSince 2018, he is one of the Community Leader for GDG Cloud Turin.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-francesco-pirrone"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "gabriele-negro",
+      "fullName": "Gabriele Negro",
+      "firstName": "Gabriele",
+      "lastName": "Negro",
+      "headline": "Chief Technology Officer @altermAInd",
+      "organization": null,
+      "biographyMd": "Gabriele is a technology leader with extensive experience in building digital platforms and enterprise software solutions. He currently works on AI-driven products focused on transforming how people learn, work, and make decisions inside organizations.\n\nWith a background in software architecture and large-scale systems, he has led projects in banking, fintech, and cloud-native environments, helping companies adopt modern architectures and artificial intelligence in real business scenarios.\n\nToday his main focus is on the impact of AI on society and the workplace, exploring how tools like generative AI and vibe coding are changing the way software is built and how companies operate.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-gabriele-negro"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "gianni-forlastro",
+      "fullName": "Gianni Forlastro",
+      "firstName": "Gianni",
+      "lastName": "Forlastro",
+      "headline": "Google GDE Cloud, Cloud Architect, GDG Cloud Torino & Flutter Torino Community Lead",
+      "organization": null,
+      "biographyMd": "Inizia la sua avventura con un Intel 80386 e si laurea in Informatica all'Università di Torino che completa con due master: Comunicazione Digitale/Web Marketing e Social Media Management, il secondo in Cloud Computing.\n\nDopo esperienze come sviluppatore web e mobile, oggi è Cloud Architect, docente e assistente universitario, co-organizzatore di droidcon Italy, Swift Heroes e Flutter Heroes.\n\nLato community nel 2018 fonda il GDG Cloud Torino, diventa Google Champion Innovator nel 2023 e Google GDE Cloud nel 2025.\n\nSu Instagram è noto come @mosquitoman81, tra i creator italiani più seguiti su giochi e fiere.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-gianni-forlastro"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "giovanni-galloro",
+      "fullName": "Giovanni Galloro",
+      "firstName": "Giovanni",
+      "lastName": "Galloro",
+      "headline": "Specialist Customer Engineer at Google",
+      "organization": null,
+      "biographyMd": "Giovanni Galloro is a Customer Engineer at Google, where he has been working since 2017. Over the years, he has built deep expertise in developer productivity and software delivery tools and practices. Today, he partners with engineering organizations across Europe to help them unlock the full potential of AI, improving how teams build, ship, and iterate on software at scale.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-giovanni-galloro"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "giulio-d-alessandro",
+      "fullName": "Giulio D'Alessandro",
+      "firstName": "Giulio",
+      "lastName": "D'Alessandro",
+      "headline": "AI Knowledge Architect at Poste Italiane",
+      "organization": null,
+      "biographyMd": "Giulio D'Alessandro is a philosophy graduate who turned to software. He joined Poste Italiane five years ago and started out as a DevOps engineer.\nThen AI arrived and sent him back where he began. When machines can build anything, the rare skill is knowing what's worth building — and why.\nHe now works in Poste Italiane's Digital Technology Office, between the rigour of formal models and the messiness of what people actually mean.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-giulio-d-alessandro"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "giulio-sciarappa",
+      "fullName": "Giulio Sciarappa",
+      "firstName": "Giulio",
+      "lastName": "Sciarappa",
+      "headline": "Enterprise Architect, Head of Azure & AI",
+      "organization": null,
+      "biographyMd": "Enterprise architect with multiple job experiences in different fields, from banking to aerospace, with a spice of DevOps and other less known methodologies",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-giulio-sciarappa"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "graziano-casto",
+      "fullName": "Graziano Casto",
+      "firstName": "Graziano",
+      "lastName": "Casto",
+      "headline": "Developer Relations Engineer @ Akamas | Tech Lead @ CNCF TAG DevEx | Kubernetes v1.35 Comms Lead",
+      "organization": null,
+      "biographyMd": "Graziano is a DevRel Engineer at Akamas, where he spends his days convincing computers to stop being lazy and start being efficient. A former distributed systems developer and product manager, he’s now on a mission to optimize the entire cloud-native universe, one Pod at a time. As a Tech Lead for the CNCF TAG DevEx and a member of the Kubernetes Release Team since v1.34, he balances deep infrastructure roots with a passion for developer happiness. Obsessed with AI, Platform Engineering, and saving the planet through better code, Graziano is basically trying to make the cloud faster, greener, and significantly less annoying for everyone.\n\nMore on: https://castograziano.com/",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-graziano-casto"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "gregorio-palama",
+      "fullName": "Gregorio Palamà",
+      "firstName": "Gregorio",
+      "lastName": "Palamà",
+      "headline": "GDE Cloud | Senior Enterprise Architect @ adesso.it | Community Manager @ GDG Pescara",
+      "organization": null,
+      "biographyMd": "I have been working in the IT industry for over 15 years. I currently hold the role of Senior Enterprise Architect in adesso.it. I am a Google Developer Expert on GCP and a Google Cloud Innovator Champion on the topic of modern architecture. I manage GDG Pescara together with other developers, I love sharing my knowledge and trying to do it in a fun way.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-gregorio-palama"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "guglielmo-fancellu",
+      "fullName": "Guglielmo Fancellu",
+      "firstName": "Guglielmo",
+      "lastName": "Fancellu",
+      "headline": "AI Knowledge Architect at Poste Italiane",
+      "organization": null,
+      "biographyMd": "Guglielmo studied philosophy, then became a software architect at Poste Italiane. Over time the focus shifted toward AI and language models, with a growing interest in computational linguistics. These days the work is ontology design: building semantic models that help machines understand what people actually mean. Turns out Plato comes in handy after all",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-guglielmo-fancellu"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "laura-miranda",
+      "fullName": "Laura Miranda",
+      "firstName": "Laura",
+      "lastName": "Miranda",
+      "headline": "C-Level Consultant, Marketing Manager, Digital Enthusiast",
+      "organization": null,
+      "biographyMd": "Ha sempre vissuto la passione per il marketing e la Comunicazione come uno strumento di Business Development.\n\nAvere un sogno, trasformarlo in obiettivi sfidanti, analizzare e pianificare le attività cercando sempre elementi di disruption e costruire un team unito.\n\nIl suo approccio al management l' ha portato a svolgere tante belle esperienze all'estero dove ha aperto la mente a stili di vita e modi di pensare differenti.\n\nDopo una parentesi imprenditoriale, ha deciso di tornare in Italia mettendo la sua esperienza a supporto della Digital Trasformation delle PMI.\n\nLe piacciono le persone, ama ascoltare e leggere tanto. Se hai un sogno... make it happen!",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-laura-miranda"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "luca-bianchi",
+      "fullName": "Luca Bianchi",
+      "firstName": "Luca",
+      "lastName": "Bianchi",
+      "headline": "CTO | AWS Serverless Hero | Cursor Ambassador | Production AI/ML & Event-Driven Architecture at Scale",
+      "organization": null,
+      "biographyMd": "Over the past decade, I've architected production AI/ML systems.\nAWS Hero and Cursor Ambassador focused on cost-optimized AI infrastructure and real-time data pipelines.\n\nProduction track record:\n- Built production AI Agents for legal domains, managing very long contexts, planning, and dynamic loading through event-driven orchestration\n- Scaled cloud SaaS to 10M+ users, reducing p99 latency from 2s to 1.2s through event-driven architecture migration\n- Migrated 80% of workloads to serverless event-driven patterns, cutting infrastructure costs 10x while improving deployment velocity\n\nLed engineering teams of 100+ through cultural transformation toward continuous delivery and experimentation-driven development. Co-founder of the Serverless Italy\ncommunity, Milano Mongo User Group, and Cursor Meetup Milano.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-luca-bianchi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "marco-landi",
+      "fullName": "Marco Landi",
+      "firstName": "Marco",
+      "lastName": "Landi",
+      "headline": "Presidente Scriba.AI",
+      "organization": null,
+      "biographyMd": "Marco Landi is an international figure of the IT sector. During his thirty-years long career he has worked as President of Texas Instruments Europe and Asia, head of BMC Europe and Asia, but his is mostly known for his years spent in Cupertino as President and COO of Apple Computer in the years before Steve Jobs' comeback to the company. Marco Landi today is an investor and a mentor for start-up companies, he sits in several high-tech companies' Boards, and acts as honorary president and advisor of Scriba.AI, where he is also a lead investor.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-marco-landi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "marco-liberati",
+      "fullName": "Marco Liberati",
+      "firstName": "Marco",
+      "lastName": "Liberati",
+      "headline": "Software Engineer. Work in visualizations, graph and interesting stuff.",
+      "organization": null,
+      "biographyMd": "I'm passionate on doing interesting things that make users/developers life easier. From writing performant code in a visualisation library to smooth the editor UX for new languages, I've been working on many different things so far.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-marco-liberati"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "marco-simonte",
+      "fullName": "Marco Simonte",
+      "firstName": "Marco",
+      "lastName": "Simonte",
+      "headline": "xtream",
+      "organization": null,
+      "biographyMd": "AI scientist at xtream with a PhD in astrophysics, focused on machine learning systems. I work on understanding how AI systems behave beyond surface-level metrics: how architectures affect learning, how data shapes predictions, and how theoretical ideas become practical engineering tools. I enjoy making dense technical concepts clear and useful for technical audiences.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-marco-simonte"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "marta-scandellari",
+      "fullName": "Marta Scandellari",
+      "firstName": "Marta",
+      "lastName": "Scandellari",
+      "headline": "IT Governance, Strategy & Management Office",
+      "organization": null,
+      "biographyMd": "Marta is a pattern seeker, cerca da sempre come funzionano le cose, umane e tecnologiche, la ragione che completa il sentimento. Ha studiato legge, cinese, scritto codice per più di dieci anni e alla fine intuito che tutte le regole hanno delle eccezioni. L'importante è saperle intercettarle.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-marta-scandellari"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "matteo-flora",
+      "fullName": "Matteo Flora",
+      "firstName": "Matteo",
+      "lastName": "Flora",
+      "headline": "Founder of The Fool",
+      "organization": null,
+      "biographyMd": "Matteo Flora is Professor of Fundamentals of AI and SuperIntelligence Safety at the European School of Economics and contract Professor of Corporate Reputation and Crisis Management at Università di Pavia. He combines cognitive science, data and generative AI to shape how organisations, ideas and audiences build knowledge and make choices.\n\nA serial entrepreneur, he founded The Fool through Samadhi Holding, co-founded The Magician, 40Degrees and LT42, and is Founding Partner of 42 Law Firm.\n\nA cybersecurity expert and 2012 US Department of State IVLP participant, he is President of PermessoNegato APS, supporting victims of non-consensual pornography, and co-founder of the Hermes Centre for Digital Human Rights.\n\nHe hosts “Intelligenze Artifici” on Mediaset/TgCom and the tech policy YouTube channel “Ciao Internet”. A lecturer and keynote speaker, he is a three-time TEDx speaker and former Forbes podcaster.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-matteo-flora"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "matteo-mortari",
+      "fullName": "Matteo Mortari",
+      "firstName": "Matteo",
+      "lastName": "Mortari",
+      "headline": "Senior Principal Software Engineer",
+      "organization": null,
+      "biographyMd": "I believe Kubernetes is an awesome platform for app-dev, MLOps (Kubeflow) and Containerization, including OCI packaging and distribution (ORAS/Podman/Buildah) especially in relation to ML\nmodel assets and integration with signature, attestation.\nI contribute to Kubeflow, Oras, and other Open Source projects.\nI'm a co-organizer of the local JUG (JVM User Group) Milano, and I'm active in other Italian communities, often contributing my passion/hobby of live streaming and video recording.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-matteo-mortari"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "maurizio-argoneto",
+      "fullName": "Maurizio Argoneto",
+      "firstName": "Maurizio",
+      "lastName": "Argoneto",
+      "headline": "AWS Hero | CTO/Solution Architect | Community Lead (AWS, GDG, PLUG) | Co-founder of 'Come To Code'",
+      "organization": null,
+      "biographyMd": "Maurizio is a CTO, Solution Architect, and AWS Hero based in Basilicata, Italy. With a technical core rooted in Java, Python, and Django, he blends deep architectural expertise with a decade of experience in Project Management and community leadership.\nAs the founder of the AWS User Group Basilicata and co-founder of 'Come To Code'—the largest IT conference in Southern Italy—Maurizio is a driving force in the Italian tech ecosystem. He also leads GDG Basilicata and the PLUG (Pignola Linux User Group), where he has spent over 10 years promoting Open Source culture and digital literacy.\nMaurizio’s mission is to prove that innovation knows no boundaries. He believes that real progress happens through human connection and is dedicated to fostering inclusive spaces where tech hubs can thrive anywhere—from major cities to small mountain villages.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-maurizio-argoneto"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "maurizio-mangione",
+      "fullName": "Maurizio Mangione",
+      "firstName": "Maurizio",
+      "lastName": "Mangione",
+      "headline": "CEO & co-founder @ Faust",
+      "organization": null,
+      "biographyMd": "Russian literature lover, writer, rock climber/star.\nFormer Google Developers Expert and Microsoft MVP, founder of great communities.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-maurizio-mangione"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "michelantonio-trizio",
+      "fullName": "Michelantonio Trizio",
+      "firstName": "Michelantonio",
+      "lastName": "Trizio",
+      "headline": "CTO @ Wideverse",
+      "organization": null,
+      "biographyMd": "Engineer & Digital entrepreneur. I took the master degree in computer engineering with a thesis on AI at Polytechnic University of Bari in 2007. I worked for several years in ICT companies in Italy as a backend software developer. I attended the Mind The Bridge startup school in San Francisco in 2011. Back in Italy I started working on my own companies. Now, I'm the CTO of Wideverse, a spin-off of the Polytechnic University of Bari that works on XR and AI technologies. In addition I'm the founder and the current lead of Google Developer Group Bari community. I’m a public speaker globetrotter nerd with the passion for SUP, running, Rock and photography. BBQ and IPA beers addicted.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-michelantonio-trizio"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "michele-laurelli",
+      "fullName": "Michele Laurelli",
+      "firstName": "Michele",
+      "lastName": "Laurelli",
+      "headline": "Founder of Scriba, University Professor adj, Author",
+      "organization": null,
+      "biographyMd": "Michele Laurelli è fondatore e CEO di Algoretico, software house milanese specializzata in intelligenza artificiale, e co-fondatore e Head of AI di Scriba AI, piattaforma per la migrazione di codice legacy rivolta ai System Integrator. È CTO di Lagiste23 e guida una software factory dedicata allo sviluppo di soluzioni AI. In ambito accademico è docente a.c. all'Università Vita-Salute San Raffaele. È autore della collana Fondamenti di Intelligenza Artificiale e scrive per ai-blog.it e varie riviste. Ha pubblicato diverse ricerche in ambito Intelligenza Artificiale e ML.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-michele-laurelli"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "moreno-lovato",
+      "fullName": "Moreno Lovato",
+      "firstName": "Moreno",
+      "lastName": "Lovato",
+      "headline": "RuneHeads, CEO",
+      "organization": null,
+      "biographyMd": "Moreno Lovato crea il suo primo videogioco a 14 anni programmando in assembler sul mitico Commodore 64.\nDopo quindici anni di esperienza nel campo dell’ITC come project manager e responsabile di sviluppo per i contesti bancari, automotive e editoria, torna al mondo dei videogames fondando una rivista online di settore. Successivamente decide di abbandonare la carriera da manager per dedicarsi a tempo pieno al mondo dei videogames.\n\nNegli ultimi quindici anni ha lavorato su oltre venti titoli, alcuni con un successo internazionale e con oltre quindici milioni di giocatori. Alcuni dei maggiori titoli sono: Extreme Landings, Frecce Tricolori, Blue Angels, Conglomerate 451 e Journey to the Void.\n\nNel corso degli anni ha dedicato parte del suo tempo all’insegnamento dello sviluppo di videogiochi nelle principali scuole di game development in Italia (DBGA, Event Horizon, Naba, Accademia Santa Giulia, Fastweb Academy, AIV e altre). \n\nOggi è alla guida dello studio indipendente RuneHeads.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-moreno-lovato"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "nicola-guglielmi",
+      "fullName": "Nicola Guglielmi",
+      "firstName": "Nicola",
+      "lastName": "Guglielmi",
+      "headline": "GDE Cloud • Google Cloud Architect • Google Cloud Authorized Trainer • Team Manager • GDG Community Lead 🚀",
+      "organization": null,
+      "biographyMd": "I operate at the intersection of bold vision and brilliant teams. As a Principal Cloud & AI Strategist and Fractional CTO, I partner with companies to architect future-proof cloud solutions and build the high-performing engineering teams needed to execute them.\nWith over a decade of hands-on experience in Digital Transformation, I specialize in Google Cloud Platform, Generative AI (Vertex AI), and complex multi-cloud architectures. I don't just talk theory, I have built Cloud Business Units from scratch and led mission-critical migrations in fast-paced sectors like Oil & Gas.\nMy philosophy is simple: an elite strategy is useless without an elite team to execute it, so I build the team first, knowing that the results will follow.\nAs a passionate advocate for open knowledge, I am a Google Cloud Authorized Trainer, a Google Developer Expert (GDE) for Cloud, and the Community Lead for GDG Campobasso.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-nicola-guglielmi"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "nicolo-giorgio",
+      "fullName": "Nicolò Giorgio",
+      "firstName": "Nicolò",
+      "lastName": "Giorgio",
+      "headline": "Product Designer",
+      "organization": null,
+      "biographyMd": "Stop boring software",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-nicolo-giorgio"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "paolo-rubano",
+      "fullName": "Paolo Rubano",
+      "firstName": "Paolo",
+      "lastName": "Rubano",
+      "headline": "Software designer and developer",
+      "organization": null,
+      "biographyMd": "Paolo Rubano is a software designer and developer with over 30 years of experience, having worked in the industry since 1992.\nThroughout his career, he has consistently been involved in the development of mission-critical systems across a wide range of industries. His technical background spans several programming languages, from C, Pascal, and Modula2 to C++, and ultimately Java.\nAlways eager to embrace innovation, he has continuously surfed the wave of emerging technologies, methodologies, and software development processes, adapting to the rapidly evolving IT landscape.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-paolo-rubano"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "saverio-murgia",
+      "fullName": "Saverio Murgia",
+      "firstName": "Saverio",
+      "lastName": "Murgia",
+      "headline": "CTO at Wonderful - Forbes 30 Under 30 Europe, founder of Horus Technology",
+      "organization": null,
+      "biographyMd": "Saverio Murgia is CTO Italy at Wonderful, an enterprise agentic AI platform that enables large organizations to build their own Enterprise Super Intelligence through conversational and back-office agents. With almost ten years of experience taking AI products from zero to real-world impact, he co-founded Horus Technology in 2014, an AI company dedicated to improving the lives of blind and visually impaired people, leading it to a successful exit in 2019. He later led product development at Caricami and spent over two years as CTO of a stealth startup studio in Los Angeles, contributing to the launch of more than 20 ventures across SaaS, AI and B2B/B2C products. He holds an MSc in Advanced Robotics and a BSc in Biomedical Engineering, with research experience at EPFL, IIT and Ecole Centrale de Nantes, and is an alumnus of ISICT, the school of excellence of the University of Genoa.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-saverio-murgia"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "simone-desantis",
+      "fullName": "Simone Desantis",
+      "firstName": "Simone",
+      "lastName": "Desantis",
+      "headline": "CTO of Openapi",
+      "organization": null,
+      "biographyMd": "For years in internet technologies, he has gained experience in the design, development and maintenance of reliable and stable IT infrastructures.\nNaturally brought to problem solving, he is passionate about complex systems, starting from their comprehension, through the identification of critical issues, up to their optimization and improvement.\nCurrently involved in the design and development of a new high performance all purpose API infrastructure.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-simone-desantis"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "stefano-bruno",
+      "fullName": "Stefano Bruno",
+      "firstName": "Stefano",
+      "lastName": "Bruno",
+      "headline": "CTO @ CyberGrant Italia, Podcaster @ Shiftati di Testa",
+      "organization": null,
+      "biographyMd": "Ricopre attualmente la carica di CTO di CyberGrant per l'Italia. Nel corso della sua carriera ha operato per molti anni nel settore della consulenza, dapprima come imprenditore e successivamente come responsabile di area, sviluppando inoltre una consolidata competenza in ambito Data Protection e Cyber Security. Insieme a Daniel conduce Shiftati di Testa: Il podcast più atteso del web (anche se il web ancora non lo sa!)",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-stefano-bruno"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "stefano-fiorucci",
+      "fullName": "Stefano Fiorucci",
+      "firstName": "Stefano",
+      "lastName": "Fiorucci",
+      "headline": "AI/Software Engineer",
+      "organization": null,
+      "biographyMd": "🧑‍🚀 AI Engineer/explorer. Passionate about Language Models, open source, and knowledge sharing.\n\n👨‍💻 I work on the open-source Haystack LLM orchestration framework, contributing code, tutorials and demos.\n\n🧭 Fascinated by all things LLMs. From inference and orchestration (Agents, RAG) to post-training techniques. I frequently experiment with training small Language Models and Reinforcement Learning. I like sharing what I learn.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-stefano-fiorucci"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "valeria-salis",
+      "fullName": "Valeria Salis",
+      "firstName": "Valeria",
+      "lastName": "Salis",
+      "headline": "Tech Sustainability Consultant, Speaker, Host @ Green Tech Tales",
+      "organization": null,
+      "biographyMd": "As a Green Software Advocate and Tech Sustainability Consultant, my mission is helping companies and professionals build more sustainable, low-carbon digital solutions. Since discovering technology's environmental impact in early 2023, I've become a recognized speaker at major tech conferences and co-founded Green Software Italia community. I believe in responsible technology that creates positive impact for both businesses and the environment.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-valeria-salis"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    },
+    {
+      "id": "valeria-zuccoli",
+      "fullName": "Valeria Zuccoli",
+      "firstName": "Valeria",
+      "lastName": "Zuccoli",
+      "headline": "Data Scientist",
+      "organization": null,
+      "biographyMd": "Statistician by education, Valeria is a Data Scientist specializing in real-time models for complex, challenging scenarios. Driven by a deep curiosity for the latest research, she applies advanced analytical techniques to build intelligent systems that deliver immediate and effective solutions in high-impact domains.",
+      "photoUrl": null,
+      "priority": false,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-valeria-zuccoli"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-abiodun-olowode",
+      "speakerIds": [
+        "abiodun-olowode"
+      ],
+      "title": "We Review Code. Why Won’t We Review Each Other?",
+      "abstractMd": "We review code all day, commenting on abstractions, naming, tests, and patterns. But in standups, when someone derails the meeting, we stay quiet. In design reviews, when key requirements are ignored, we assume someone else will speak up. Often, no one does, and the design ships anyway.\n\nEngineers are confident giving feedback in pull requests, yet oddly silent everywhere else: standups, design reviews, pairing sessions, Slack threads, retros, and one-on-ones. The same people who request changes in code reviews often soften, defer, or redirect hard conversations to managers who lack context.\n\nThis session is about closing that gap. It argues for being willing to say the hard thing in the moment, clearly and constructively, outside the PR. We will explore why developers avoid these conversations, what effective directness looks like beyond code review, and how to build that skill without becoming that person everyone dreads working with.",
+      "language": "en",
+      "level": "Non Technical/For Everyone",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-alexio-cassani",
+      "speakerIds": [
+        "alexio-cassani"
+      ],
+      "title": "Configurare l’harness: da Claude Code come tool a Claude Code come sistema di lavoro",
+      "abstractMd": "Un coding agent moderno arriva già con il suo harness. Quello che cambia i risultati non è costruirne uno, è configurarlo. In questa sessione si lavora su Claude Code come implementazione di riferimento e si attraversano le superfici che governano davvero il comportamento dell’agente: istruzioni di progetto, skill, permessi, hook, subagent, MCP, fino al plugin che impacchetta la configurazione e la rende condivisibile nel team.\nIl filo conduttore non è il tutorial, è la decisione: quale superficie deve possedere quale regola. Una conoscenza contestuale non è un hook, un vincolo che deve valere sempre non è una riga di istruzioni. Poi si apre il loop a grafo, con subagent in parallelo e un nodo di giudizio, e si verifica se serva davvero. Le decisioni si trasferiscono agli altri coding agent: cambiano i nomi dei file, non il ragionamento.",
+      "language": "it",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-alfonso-fuggetta",
+      "speakerIds": [
+        "alfonso-fuggetta"
+      ],
+      "title": "Why Coding Agents Need You More Than Ever",
+      "abstractMd": "“Will AI make developers obsolete?” The hype says the developer is finished. The denial says it’s just autocomplete. Both are comforting false simplicity.\n\nCapable coding agents don’t make software engineering obsolete; they make it indispensable. An LLM is a remarkable generative engine, but by its architecture, it has no internal reference for correctness, no grasp of the domain it is building for, no orientation toward the system’s future, and no memory across sessions. That isn’t a benchmark gap the next model closes; it’s a structural vacuum.\n\nFilling it takes method, domain knowledge, design judgment, process, and engineering depth to distinguish the correct from the merely plausible. The quality problems of AI-generated software are exactly why coding and design skills matter more, not less.\n\nThe uncomfortable, liberating consequence: capable agents demand more software engineering, not less. The discipline isn’t in decline. Its moment has arrived.",
+      "language": "en",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-alfonso-graziano",
+      "speakerIds": [
+        "alfonso-graziano"
+      ],
+      "title": "Scaling AI Adoption: The Real Challenges of Transforming 300 Engineers",
+      "abstractMd": "Most companies talk about becoming “AI-native.” Very few actually do it.\n\nIn this talk, I’ll share how we’re approaching the upskilling of ~300 engineers to move beyond experimentation and into real, repeatable AI-native development.\n\nWe’ll cover how we’re introducing new paradigms like AI-Native Engineering (AINE) and Spec-Driven Development, how we’re structuring the individual contributor journey, and how we’re driving adoption across teams with very different levels of maturity.\n\nMore importantly, we’ll dive into what doesn’t work: resistance patterns, false starts, over-reliance on tools, and the gap between perceived and actual productivity gains.\n\nThis talk will give you a concrete blueprint along with the trade-offs and lessons learned along the way.",
+      "language": "en",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-andrey-breslav",
+      "speakerIds": [
+        "andrey-breslav"
+      ],
+      "title": "Future of Programming: What's our place in the world of coding machines?",
+      "abstractMd": "Programming is obviously changing: more and more code is generated by agents and LLMs, people often struggle to keep up with code reviews, and overall building software feels incredibly easy to more and more people. \n\nWhat is the role of humans in the future of software engineering? Can agents just do all the planning, coding, reviewing, and testing? What do humans have that LLMs don’t? \n\nIn this talk, I’ll share my take on what can and can not be, at least until Skynet has actually taken over :)",
+      "language": "en",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-carolina-pinto",
+      "speakerIds": [
+        "carolina-pinto"
+      ],
+      "title": "What Candy Crush Can Teach AI Products About Human Behavior",
+      "abstractMd": "AI products are becoming increasingly capable,  but many still fail to create experiences people actually enjoy using. I’ve seen how games solve problems that modern AI tools are only starting to face: onboarding complexity, trust, motivation, feedback loops, and long-term engagement.\nThis talk explores what AI-powered products can learn from game design built for millions of users. From progression mechanics and emotional feedback to behavioral pacing, we’ll look at how gaming UX principles can help developers create AI products that feel intuitive, rewarding, and human-centered.\nBecause in the end, successful products are not only about what AI can do, but about how people feel while using it.\n\nKey Takeaways\n- Understand how gaming UX principles apply to AI-driven products and developer tools\n- Learn why motivation, feedback, and progression are critical for user adoption\n- Discover practical design patterns for creating more engaging AI experiences",
+      "language": "en",
+      "level": "Non Technical/For Everyone",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-christian-schabetsberger",
+      "speakerIds": [
+        "christian-schabetsberger"
+      ],
+      "title": "What comes after Git?",
+      "abstractMd": "Are the version control system wars over? It mostly looks like that, as Git has been the default contender for more than the past 10 years. But how did that even happen? And what will it take to dethrone the most dominating piece of software our industry has ever seen? New version control systems are rising on the horizon, with promising new features to simplify development workflows and improve developer experience, that are often inherently complex, or even outright impossible, to do with Git. In this talk, we are going to take a look at the history of version control systems, how new rising young stars like Jujutsu, Sapling or GitButler are innovating in that space today and how to use and integrate them into your existing Git-based project.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-david-mccarter",
+      "speakerIds": [
+        "david-mccarter"
+      ],
+      "title": "Unleash Your Inner Rockstar: The 5 Steps to Dynamic Public Speaking!",
+      "abstractMd": "Ready to elevate your career, captivate your workplace, or take the leap into the world of conference speaking? This session is for you! With over 30 years of experience in public speaking, I'm thrilled to share the essential five steps that will transform you into a dynamic speaker and presenter.\n\nIf you’re like I was at the start of my journey—nervous, unsure, and wondering how to capture the audience's attention—this session will help you conquer those fears. My unique approach to public speaking has not only helped me overcome stage fright but has also allowed me to build an impactful career as an award-winning developer, university educator, published author, blogger, patented inventor, and more!\n\nThis session isn’t just about speaking; it’s about empowering yourself and enhancing your career. Come join me for this electrifying talk, and let’s unlock your potential as a rockstar speaker, elevating your communication skills to new heights and amplifying your engineering expertise!",
+      "language": "en",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-dennis-nerush",
+      "speakerIds": [
+        "dennis-nerush"
+      ],
+      "title": "How to Interview Engineers in the AI Era: What I Changed and What Actually Works",
+      "abstractMd": "AI has fundamentally changed how engineers work, but most hiring processes haven't changed at all.\n\nCoding assistants can generate solutions in seconds. System design answers can be refined with prompts. Candidates walk into interviews with powerful AI tools at their side. Yet many companies are still evaluating engineers as if AI didn't exist.\n\nAfter interviewing hundreds of engineers at Elementor, I redesigned my hiring process for the AI era. I changed what we evaluate. Today we test how engineers think, how they collaborate with AI, and how they apply judgment when AI-generated solutions are incomplete, incorrect, or misleading.\n\nIn this talk, I'll share what changed in our hiring process and what actually works in practice.\n\nWhether you're hiring engineers, preparing for interviews, or leading an engineering organization, you'll leave with a practical framework for evaluating engineering talent in the AI era.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-dotan-horovits",
+      "speakerIds": [
+        "dotan-horovits"
+      ],
+      "title": "One Stack to Observe Them All: Open Source Observability with OpenSearch",
+      "abstractMd": "What if you could have a complete, production-grade observability platform that is fully open source, built on open standards, and led by The Linux Foundation? \n\nIn this session, OpenSearch Ambassador Dotan Horovits demonstrates how OpenSearch delivers a complete, open-source, OpenTelemetry-native observability platform for logs, metrics, traces, APM, and even AI agent observability. You’ll also learn how to integrate with Prometheus metrics, how to create powerful dashboards, and how to easily deploy it to Docker or Kubernetes. \n\nWhether you’re struggling with finding insights in your mounts of logs, fighting a vendors’ bills and proprietary instrumentation, or looking for advanced agentic observability, this session will give you the open source you don’t want to miss.",
+      "language": "en",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-emanuele-fabbiani",
+      "speakerIds": [
+        "emanuele-fabbiani"
+      ],
+      "title": "How Does AI Watermarking Work? A Close Look at SynthID",
+      "abstractMd": "Watermarking is the only reliable way to spot AI-generated content.\n\nThis talk analyses SynthID, the watermarking scheme DeepMind built for Gemini. \n\nThe core idea is tournament sampling: at each step of text generation, candidate tokens drawn from the model's output probability distribution are scored with pseudorandom values, and the token that wins the tournament gets emitted. This process leaves the model's output distribution unchanged, so watermarked text reads exactly like unwatermarked text. In DeepMind's own evaluation, the scheme added only 0.57% latency overhead per token, detected watermarked text with about 95% accuracy at a 1% false-positive rate, and caused no quality drop across 20 million Gemini responses.\n\nThe talk ends with a live demo: watermarking and detecting text on a local model with an open-source Python package. \n\nAttendees will leave knowing exactly how the algorithm embeds and detects its signal, and how to add the same capability to a model they control.",
+      "language": "en",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-enzo-lombardi",
+      "speakerIds": [
+        "enzo-lombardi"
+      ],
+      "title": "Racing the beam",
+      "abstractMd": "Nel 1977 Atari rilasciò una console leggendaria: il VCS 2600. La RAM era misurata in byte, 128 in tutto, senza la possibilità di avere un frame buffer e con capacità grafiche molto limitate: 2 sprite giocatore, due sprite proiettile, uno sprite \"palla\", playground a media risoluzione.\nDurante gli anni '80 coi miei amici si spendeva interi pomeriggi a giocare un gioco \"oscuro\" chiamato \"Slot Racers\" scritto dallo stesso autore del mitico Adventure, Warren Robinett. L'unico limite: richiedeva 2 giocatori, non c'era spazio per l'AI.\nNel talk mostrerò come ho:\n* creato un MCP che interfacciasse Claude con l'emulatore di Atari 2600 scritto in Go per debuggare l'assembly del gioco (in precedenza da me reverse engineered a manella)\n* chiedere a Claude di usare l'MCP per creare una AI che fosse abbastanza tosta da dare filo da torcere",
+      "language": "it",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-erick-wendel",
+      "speakerIds": [
+        "erick-wendel"
+      ],
+      "title": "The Revolution of Embedded AI in the Browsers",
+      "abstractMd": "In this session, I’ll reveal how the web is entering a new era with AI running natively inside browsers. We’ll explore Chrome’s initiative to embed models directly in the runtime, the emerging consensus among browsers to define a common future for Web AI, and how this paves the way for a new “Web 4.0” — the agentic web. You’ll also gain insights into the latest Chrome AI APIs, see what’s already possible today, and discover how these capabilities will transform the way we build intelligent web applications.\n\nOutline\n\n- Embedded AI: Chrome’s initiative to ship models in the browser\n- Cross-Browser Consensus: Aligning on the future of Web AI\n- Web 4.0 Vision: The rise of the agentic web\n- Chrome AI APIs: What developers can build today\n- Real-World Use Cases: Practical examples of AI-powered web apps",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-gabriele-santomaggio",
+      "speakerIds": [
+        "gabriele-santomaggio"
+      ],
+      "title": "Critica dell'informatica pura",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [
+        "csv_talk_missing_directory_present",
+        "talk_attribution_to_verify"
+      ],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-giorgio-natili",
+      "speakerIds": [
+        "giorgio-natili"
+      ],
+      "title": "The Ethics Layer: Architecting Sovereign AI and Digital Dignity in Agentic Systems",
+      "abstractMd": "As we deploy autonomous AI agents globally, a critical friction point has emerged: these systems are fundamentally rooted in reinforcement learning that ruthlessly optimizes for generalized, monolithic reward functions. Consequently, they inherently clash with diverse global cultures, laws, and Sovereign AI mandates, threatening Digital Dignity.\nTo solve this, agentic systems require an Immutable Ethics Policy Layer (IEPL). While semantic filters (like Llama Guard) provide necessary moderation at the perception level, they fail during autonomous execution. Relying on a reasoning engine to self-police inevitably leads to hallucinated compliance.\nThis session introduces the IEPL—a deterministic control point between agent orchestration and tool execution. Grounded in foundational frameworks like The Human Blueprint, the IEPL shifts the AI from a general-purpose processor to a \"Loyal Agent\" bound by a fiduciary duty to the user.",
+      "language": "it",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-jigyasa-grover",
+      "speakerIds": [
+        "jigyasa-grover"
+      ],
+      "title": "When NOT to use an agent: Choosing Between Workflows, Services, and LLM Orchestration",
+      "abstractMd": "LLM-powered “agents” are quickly becoming the default architectural pattern for AI-enabled systems.\n\nAutomation? Integration? Reasoning? Build an agent.\n\nBut agents are not an upgrade; they are a trade-off. They introduce non-determinism, larger attack surfaces, evaluation complexity, and operational unpredictability.\n\nIn this session, we’ll examine three common architectural patterns for LLM systems:\n- Deterministic workflows (state machines, orchestrated pipelines)\n- Service-oriented architectures with LLM augmentation\n- Fully agentic orchestration with dynamic tool use\n\nRather than comparing features, we’ll analyze these patterns across real engineering constraints:\n- Failure isolation and blast radius\n- Latency and cost predictability\n- Observability and debugging complexity\n- Security boundaries and permission scoping\n- Evaluation and regression testing strategy\n- Operational burden over time\n\nYou’ll leave with a mental model to evaluate whether an agent is justified, or not!",
+      "language": "en",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [
+        {
+          "title": "When NOT to build an agent: Lessons from systems that didn't want autonomy",
+          "sourceId": "snapshot-speakers-directory"
+        }
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [
+        "talk_title_mismatch"
+      ],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-katharine-jarmul",
+      "speakerIds": [
+        "katharine-jarmul"
+      ],
+      "title": "I spy on my agents and you can too!",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [
+        "csv_talk_missing_directory_present"
+      ],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-leonardo-cavagnis",
+      "speakerIds": [
+        "leonardo-cavagnis"
+      ],
+      "title": "Designing Physical AI Systems: From Sensors to On-Device Intelligence",
+      "abstractMd": "Building AI systems on edge devices requires a different engineering mindset.\nIn this talk, we explore how to design Physical AI systems end-to-end, focusing on the constraints and trade-offs of moving from cloud to embedded environments.\nStarting from a real architecture on Arduino platforms, we’ll walk through the full pipeline: data acquisition, preprocessing, model deployment, and on-device optimization.\nThe session highlights practical design decisions, latency vs accuracy trade-offs, and the challenges of running reliable AI directly on hardware.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-marco-ippolito",
+      "speakerIds": [
+        "marco-ippolito"
+      ],
+      "title": "The Memedex: indicizzare Internet, un meme alla volta",
+      "abstractMd": "I meme sembrano caos: immagini riciclate, testi sovrapposti, sottoculture, remix e inside joke. Con The Memedex abbiamo provato a trasformare questo caos in un database navigabile.\n\nNato da una tesi universitaria sulla storia e sulla cultura dei meme, il progetto è diventato una pipeline per raccogliere, catalogare, filtrare e moderare milioni di immagini tramite AI.\n\nIn questo talk racconteremo le sfide tecniche dietro il progetto: raccolta da fonti eterogenee, deduplicazione, classificazione per sottoculture, moderazione automatica, controllo dei costi AI e uso di embedding e grafi per trovare meme simili.",
+      "language": "it",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-mario-zechner",
+      "speakerIds": [
+        "mario-zechner"
+      ],
+      "title": "Everything is slop, let's slow the f**k down",
+      "abstractMd": "Your OSS project is flooded with agent-generated slop issues and PRs? Your wonderful experience with coding agents in a hobby greenfield project did not translate to your production codebase, and instead turned it into a beautiful shit flower of complexity?\n\nThen this talk is the right support group for you. Come with me on a journey through how OSS and the software development lifecycle have changed for the worse, why coding agents compound our worst habits at machine speed, and how we might claw back some discipline, agency, and sanity while still benefiting from our new agentic friends.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-matteo-collina",
+      "speakerIds": [
+        "matteo-collina"
+      ],
+      "title": "Kill the Standup: How One Engineer Ships What Five Cannot",
+      "abstractMd": "Fred Brooks named the problem in 1975. Communication channels grow as n(n-1)/2, and every methodology since has been a coping mechanism. None solved it.\nAI has changed the equation. The cave engineer, one skilled developer with autonomy, taste, and an AI that removes the throughput constraint, now ships in two weeks what a team ships in two months. Over three months from Christmas 2025, I added nineteen thousand lines to the Node.js Virtual File System. Alone. The architecture is coherent because no team was there to mirror.\nThe model rests on autonomy and taste. Remove either and it breaks. I introduced CVE-2026-2581 into Undici with an AI-assisted PR I did not review properly. That is autonomy without taste. Cave engineering is the opposite.\nI will cover Conway’s Law, why Scrum taxes the absence of trust, and when the cave is the wrong call. The team of one was always magical. We finally have the tools to scale it.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-mauro-morales",
+      "speakerIds": [
+        "mauro-morales"
+      ],
+      "title": "Your GPU node is a snowflake: shipping AI infrastructure as a versioned artifact",
+      "abstractMd": "Run a fleet of GPU or edge inference nodes and you learn the stack is brittle: one mismatch across kernel, NVIDIA driver, CUDA, firmware, runtime or, at the edge, JetPack turns a working node into a debugging session. Rebuilding that state through runtime configuration lets drift creep back, until every node is its own special case.\n\nThis talk argues for a different model: the machine becomes a versioned, reproducible image that can be shipped and rolled back atomically. When a vendor supports a specific Ubuntu-based stack, preserve it while adding an immutable lifecycle. Using Kairos as a concrete example, we will examine how to compose a reproducible AI node image, what belongs in it, and how this model changes upgrades, rollback and fleet visibility across datacenter and edge deployments.\n\nIf your AI stack needs machine-level compatibility, can your OS lifecycle reproduce it?",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-olena-borzenko",
+      "speakerIds": [
+        "olena-borzenko"
+      ],
+      "title": "Coding, but Make It Art",
+      "abstractMd": "Art speaks to the fundamental creative urge in people. It comes in many forms, and it's everywhere. It's in the way we write code, design systems and build tools. \n\nWhen I started my journey as an artist, I couldn’t leave my love for technology behind. This talk is about how that love of programming, combined with machinery and 3D modeling, has helped me develop a distinct style of art that's a natural blend of both painting and engineering.\n\nIn this session, I’ll talk about my inspirations and how my fascination with mathematics and art led me to build a tool for generating sketches. I’ll show how I process data with OpenAI’s models, use Azure Cosmos DB to store it, run semantic searches on embeddings, and turn that processed data into mathematical visualizations using the p5.js library.\n\nYou’ll hear the story of how I became an artist, seeing in detail how I bring shapes to life on canvas, the machines I use to do it, and how I built the system behind my generative art and paintings.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-paolo-caressa",
+      "speakerIds": [
+        "paolo-caressa"
+      ],
+      "title": "Critica dell'informatica pura",
+      "abstractMd": "Le schede perforate, le macchine calcolatrici programmabili, gli operatori booleani, gli automi, le architetture di calcolo parallelo, le funzioni ricorsive, le lambda: sono solo esempi di concetti che gli informatici credono di aver scoperto, ma che in realtà hanno solo riscoperto dopo che alcuni filosofi, magari secoli prima, le avevano pensate.\n\nCosa possiamo imparare da questa storia? Che possiamo credere d’essere il miglior programmatore, architetto, informatico del mondo, ma molto probabilmente non lo siamo, e il miglior modo per diventarlo è capire di non esserlo.\n\nIl talk sarà disseminato di esempi tecnici, per cuori impavidi e menti aperte, somministrati in modo giocoso ma rigoroso perché, \"quanno se gioca bisogna esse' seri\".",
+      "language": "it",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-paolo-insogna",
+      "speakerIds": [
+        "paolo-insogna"
+      ],
+      "title": "Bridge The Gap: The Journey Behind node:ffi",
+      "abstractMd": "In this talk, I’ll take you through the journey that led to the creation of node:ffi — an effort that started as an ambitious idea and slowly evolved into a real piece of the Node.js platform. Along the way, I had the chance to explore different approaches to native interoperability, compare ideas with other collaborators in the ecosystem, and learn from a lot of smart and creative solutions that helped shape the direction of the project.\n\nI’ll walk through the technical challenges behind building an FFI layer for Node.js, from ABI compatibility to deep integration with V8, and show how recent advances like Fast API calls finally made high-performance native bindings practical without relying on traditional C++ addons.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-riccardo-carlesso",
+      "speakerIds": [
+        "riccardo-carlesso"
+      ],
+      "title": "Stop Grepping, Start Reasoning: Skill-Based Agentic SRE 🚀",
+      "abstractMd": "Let’s be honest: debugging production at scale is manual labor. 🫠 At Google, we decided making thousands of SREs act like human search engines in 2026 was a bug, not a feature. Enter the Agentic SRE Extension—a skill-based framework that lives in your terminal and actually knows its way around Kubernetes. 🚀 In this high-energy deep dive, I’m showing you exactly how we use modular skills and MCP to chain diagnostic tools, analyze metric regressions, and execute safe mitigations (Rollbacks, Throttling) without the \"deleted production\" anxiety. 🔥 We’ll dissect the \"Outage Investigator\" agent's logic loop, see it draft a technical postmortem in seconds, and discuss why we built this as a portable framework whose skills can be easily leveraged by any modern AI harness. You’ll leave with the code to wire up your own Kubernetes stack and let the agent's skills do the heavy lifting while you drink espresso. ☕️ No fluff, no 101s. Just AI agents, specialized skills, and less toil.",
+      "language": "en",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-rowdy-rabouw",
+      "speakerIds": [
+        "rowdy-rabouw"
+      ],
+      "title": "Warp Pipes and Prefetching: Navigating the Web at Mario Speed",
+      "abstractMd": "Long wait times are the \"Bowser\" of the good user experience. Even if your site looks great, slow transitions or blank loading screens can make users feel like they’ve fallen down a bottomless pit. But what if your website could predict the future and move between pages as smoothly as a Warp Pipe?\n\nIn this session, we’ll explore the \"Power-Up\" duo of modern web development:\n- Speculation Rules API: See how prefetching and prerendering can load pages before users click.\n- View Transition API: Use animations to help users move smoothly through your \"world map\" with ease.\n\nWe’ll break down the technical plumbing required to make these APIs work nicely together. You will leave this session with the cheat codes needed to deliver a fast, seamless experience that will have your users saying, \"Mamma Mia, that’s fast!\"",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-soumaya-erradi",
+      "speakerIds": [
+        "soumaya-erradi"
+      ],
+      "title": "Can an LLM understand your car? Real telemetry and predictive insights",
+      "abstractMd": "Modern cars produce far more data than what appears on the dashboard: sensor readings, diagnostic codes, pressure changes, temperature values, service intervals, and component health trends.\n\nIn this talk, we’ll explore how to turn telemetry collected from different real Porsche sports cars into clear, useful insights using a structured LLM-based analysis pipeline. We’ll detect measurable signals such as declining health, warning states, critical sensors, performance patterns, and upcoming maintenance needs. Then we’ll use an LLM as an explanation layer to summarize driving behavior, anomalies, and maintenance signals.\n\nThe goal is not to let the LLM control the car or replace expert inspection, but to make complex telemetry easier to understand, explain, and act on.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-vladi-stevanovic",
+      "speakerIds": [
+        "vladi-stevanovic"
+      ],
+      "title": "The Swiss cheese fix: why PR quality needs layers",
+      "abstractMd": "PRs sitting unreviewed for days. Reviewers skimming 500-line diffs. Rubber-stamp approvals on changes nobody fully understood. Most engineering teams quietly accepted that PR reviews were a known weak point as the cost of moving fast.\n\nThen AI coding agents arrived and made it unsustainable, flooding review queues with high-volume, low-quality PRs.\n\nThe fix isn't a single solution. It's layers.\n\nThis talk introduces the Swiss cheese model as a framework for thinking about PR quality: stack enough imperfect defensive layers and you get a system more reliable than any individual component. The emerging layers (spec-driven development, multi-agent competition, automated verification, and giving agents the right runtime context from the start, etc.) each address a specific failure mode. None of them are mutually exclusive.\n\nWhat you'll leave with: a concrete mental model for where your current review process is failing and what a layered verification system looks like.",
+      "language": "en",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-alessandro-festa",
+      "speakerIds": [
+        "alessandro-festa"
+      ],
+      "title": "E se deployare workload AI non fosse poi così complicato?",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-alessandro-miliucci",
+      "speakerIds": [
+        "alessandro-miliucci"
+      ],
+      "title": "Distributed Locks with MongoDB",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-alessandro-riboni",
+      "speakerIds": [
+        "alessandro-riboni"
+      ],
+      "title": "Text-to-SQL Isn't Enough: Trustworthy AI Data Agents on a Semantic Layer",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-alessio-acella",
+      "speakerIds": [
+        "alessio-acella"
+      ],
+      "title": "Accessibility first: progettare una piattaforma quando l’accessibilità non è negoziabile",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-alice-viola-setti",
+      "speakerIds": [
+        "alice-viola-setti"
+      ],
+      "title": "Kafka didn't fit our LLM agents, so we wrote our own broker",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-andrea-ferlito",
+      "speakerIds": [
+        "andrea-ferlito"
+      ],
+      "title": "In attesa dei legali della GRANDE N: come io e Gemini abbiamo portato Parachute su un HW impossibile",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-andrea-raponi",
+      "speakerIds": [
+        "andrea-raponi"
+      ],
+      "title": "Saliresti su un aereo vibecodato? Spec-driven AI con EARS e Walden",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-andrei-chis",
+      "speakerIds": [
+        "andrei-chis"
+      ],
+      "title": "Understanding at machine speed with thousands of contextual tools",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-aniello-bossa",
+      "speakerIds": [
+        "aniello-bossa"
+      ],
+      "title": "Text-to-SQL Isn't Enough: Trustworthy AI Data Agents on a Semantic Layer",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-aurelie-vache",
+      "speakerIds": [
+        "aurelie-vache"
+      ],
+      "title": "The Ultimate Kubernetes Challenge: An Interactive Trivia Game on concepts, components, usage...",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-costantino-cavallo",
+      "speakerIds": [
+        "costantino-cavallo"
+      ],
+      "title": "From Code Velocity to Production Value",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-daniel-zotti",
+      "speakerIds": [
+        "daniel-zotti"
+      ],
+      "title": "Provocazioni Artificiali: un talk così “shiftato” che ti verrà la voglia di rubarci il microfono!",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-daniele-zonca",
+      "speakerIds": [
+        "daniele-zonca"
+      ],
+      "title": "Bring Your Own Agent: Building Real-World Agents for a Sovereign SDLC",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-danilo-deponti",
+      "speakerIds": [
+        "danilo-deponti"
+      ],
+      "title": "When the Backlog Dispatches Itself: a Production Fleet of Autonomous AI Coding Agents",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-davide-caldarulo",
+      "speakerIds": [
+        "davide-caldarulo"
+      ],
+      "title": "Da settimane a ore: modernizzare i report finanziari per WCAG con la GenAI",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-davide-pensato",
+      "speakerIds": [
+        "davide-pensato"
+      ],
+      "title": "Game Audio: Beyond PlaySound()",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-diana-bernabei",
+      "speakerIds": [
+        "diana-bernabei"
+      ],
+      "title": "Accessibility first: progettare una piattaforma quando l’accessibilità non è negoziabile",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-edoardo-dusi",
+      "speakerIds": [
+        "edoardo-dusi"
+      ],
+      "title": "Honey, We Predicted the Bits",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-egon-ferri",
+      "speakerIds": [
+        "egon-ferri"
+      ],
+      "title": "Beyond Benchmarks: What ARC Teaches Us About Measuring Intelligence",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-elena-guidi",
+      "speakerIds": [
+        "elena-guidi"
+      ],
+      "title": "System Failure: Why Your Tech Stack Can't Fix a Communication Leak",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-emmanuele-villa",
+      "speakerIds": [
+        "emmanuele-villa"
+      ],
+      "title": "AI Fundamentals in Action: Evolving a Flappy Bird Agent",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-erik-pronk",
+      "speakerIds": [
+        "erik-pronk"
+      ],
+      "title": "AI is changing your team more than your code",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-ettore-di-giacinto",
+      "speakerIds": [
+        "ettore-di-giacinto"
+      ],
+      "title": "Stop Sending Everything to the Cloud: Hybrid AI with LocalAI",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-francesco-facconi",
+      "speakerIds": [
+        "francesco-facconi"
+      ],
+      "title": "When the Backlog Dispatches Itself: a Production Fleet of Autonomous AI Coding Agents",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-francesco-pirrone",
+      "speakerIds": [
+        "francesco-pirrone"
+      ],
+      "title": "Developer Experience 2.0: progettare software nell’era degli AI Agents",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-gabriele-negro",
+      "speakerIds": [
+        "gabriele-negro"
+      ],
+      "title": "The Cost of Cheap Code",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-gianni-forlastro",
+      "speakerIds": [
+        "gianni-forlastro"
+      ],
+      "title": "Developer Experience 2.0: progettare software nell’era degli AI Agents",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-giovanni-galloro",
+      "speakerIds": [
+        "giovanni-galloro"
+      ],
+      "title": "Build agents with agents",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-giulio-d-alessandro",
+      "speakerIds": [
+        "giulio-d-alessandro"
+      ],
+      "title": "Weapon or Tool? An Ontological Approach to Enterprise Knowledge",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-giulio-sciarappa",
+      "speakerIds": [
+        "giulio-sciarappa"
+      ],
+      "title": "Emergency in production: how to survive disasters ...a small guide",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-graziano-casto",
+      "speakerIds": [
+        "graziano-casto"
+      ],
+      "title": "Startup veloci, Pod snelli: In-Place Pod Resize in pratica",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-gregorio-palama",
+      "speakerIds": [
+        "gregorio-palama"
+      ],
+      "title": "Fast & Furious LLM: Scaling Performance with MTP Drafters",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-guglielmo-fancellu",
+      "speakerIds": [
+        "guglielmo-fancellu"
+      ],
+      "title": "Weapon or Tool? An Ontological Approach to Enterprise Knowledge",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-laura-miranda",
+      "speakerIds": [
+        "laura-miranda"
+      ],
+      "title": "Da feature a revenue: come i team tecnici possono pensare (anche) da marketer",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-luca-bianchi",
+      "speakerIds": [
+        "luca-bianchi"
+      ],
+      "title": "Documents Are Not Knowledge: Modelling Extraction as an Event-Driven Domain",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-marco-landi",
+      "speakerIds": [
+        "marco-landi"
+      ],
+      "title": "SCRIBA.AI. soluzione IA italiana per modernizzare il codice legacy",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-marco-liberati",
+      "speakerIds": [
+        "marco-liberati"
+      ],
+      "title": "An Emergency Decree Walks Into a Pull Request: 165 Years of Italian Law, Read Like a Repo",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-marco-simonte",
+      "speakerIds": [
+        "marco-simonte"
+      ],
+      "title": "Transformers Are Changing: Inside the New Architecture of Long-Context AI",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-marta-scandellari",
+      "speakerIds": [
+        "marta-scandellari"
+      ],
+      "title": "Inclusion by design: engineering team workflows for different brains",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-matteo-flora",
+      "speakerIds": [
+        "matteo-flora"
+      ],
+      "title": "What Could Possibly Go Wrong? A Crash Course in Paranoia for Developers",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-matteo-mortari",
+      "speakerIds": [
+        "matteo-mortari"
+      ],
+      "title": "Bring Your Own Agent: Building Real-World Agents for a Sovereign SDLC",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-maurizio-argoneto",
+      "speakerIds": [
+        "maurizio-argoneto"
+      ],
+      "title": "Shutup, Dependency Track! Silencing false positives locally with AST and AI",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-maurizio-mangione",
+      "speakerIds": [
+        "maurizio-mangione"
+      ],
+      "title": "Is getting hot in here",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-michelantonio-trizio",
+      "speakerIds": [
+        "michelantonio-trizio"
+      ],
+      "title": "When AI agents click buy: atomic checkouts for dynamic retail carts",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-michele-laurelli",
+      "speakerIds": [
+        "michele-laurelli"
+      ],
+      "title": "SCRIBA.AI. soluzione IA italiana per modernizzare il codice legacy",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-moreno-lovato",
+      "speakerIds": [
+        "moreno-lovato"
+      ],
+      "title": "Dal codice in banca ai videogiochi: il lungo percorso di un indie",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-nicola-guglielmi",
+      "speakerIds": [
+        "nicola-guglielmi"
+      ],
+      "title": "Engineering Leadership Through Multi-Agent Simulations",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-nicolo-giorgio",
+      "speakerIds": [
+        "nicolo-giorgio"
+      ],
+      "title": "The Memedex: indicizzare Internet, un meme alla volta",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-paolo-rubano",
+      "speakerIds": [
+        "paolo-rubano"
+      ],
+      "title": "Da settimane a ore: modernizzare i report finanziari per WCAG con la GenAI",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-saverio-murgia",
+      "speakerIds": [
+        "saverio-murgia"
+      ],
+      "title": "Agents Don't Work Alone",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-simone-desantis",
+      "speakerIds": [
+        "simone-desantis"
+      ],
+      "title": "5 API per mettere a sicuro il tuo progetto digitale",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-stefano-bruno",
+      "speakerIds": [
+        "stefano-bruno"
+      ],
+      "title": "Provocazioni Artificiali: un talk così “shiftato” che ti verrà la voglia di rubarci il microfono!",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-stefano-fiorucci",
+      "speakerIds": [
+        "stefano-fiorucci"
+      ],
+      "title": "The case for Small Models: a 1M ModernBERT playing Doom in milliseconds",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-valeria-salis",
+      "speakerIds": [
+        "valeria-salis"
+      ],
+      "title": "Green Prompting: designing AI interactions with sustainability in mind",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    },
+    {
+      "id": "talk-valeria-zuccoli",
+      "speakerIds": [
+        "valeria-zuccoli"
+      ],
+      "title": "The Zero-Temperature Lie: Why Your Deterministic LLM is Still Hallucinating Randomness",
+      "abstractMd": "",
+      "language": null,
+      "level": null,
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "abiodun-olowode",
+      "speakerId": "abiodun-olowode",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "alexio-cassani",
+      "speakerId": "alexio-cassani",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "alfonso-fuggetta",
+      "speakerId": "alfonso-fuggetta",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "alfonso-graziano",
+      "speakerId": "alfonso-graziano",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "andrey-breslav",
+      "speakerId": "andrey-breslav",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "carolina-pinto",
+      "speakerId": "carolina-pinto",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "christian-schabetsberger",
+      "speakerId": "christian-schabetsberger",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "david-mccarter",
+      "speakerId": "david-mccarter",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "dennis-nerush",
+      "speakerId": "dennis-nerush",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "dotan-horovits",
+      "speakerId": "dotan-horovits",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "emanuele-fabbiani",
+      "speakerId": "emanuele-fabbiani",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "enzo-lombardi",
+      "speakerId": "enzo-lombardi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "erick-wendel",
+      "speakerId": "erick-wendel",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "gabriele-santomaggio",
+      "speakerId": "gabriele-santomaggio",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "giorgio-natili",
+      "speakerId": "giorgio-natili",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "jigyasa-grover",
+      "speakerId": "jigyasa-grover",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "katharine-jarmul",
+      "speakerId": "katharine-jarmul",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "leonardo-cavagnis",
+      "speakerId": "leonardo-cavagnis",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "marco-ippolito",
+      "speakerId": "marco-ippolito",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "mario-zechner",
+      "speakerId": "mario-zechner",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "matteo-collina",
+      "speakerId": "matteo-collina",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "mauro-morales",
+      "speakerId": "mauro-morales",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "olena-borzenko",
+      "speakerId": "olena-borzenko",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "paolo-caressa",
+      "speakerId": "paolo-caressa",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "paolo-insogna",
+      "speakerId": "paolo-insogna",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "riccardo-carlesso",
+      "speakerId": "riccardo-carlesso",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "rowdy-rabouw",
+      "speakerId": "rowdy-rabouw",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "soumaya-erradi",
+      "speakerId": "soumaya-erradi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "vladi-stevanovic",
+      "speakerId": "vladi-stevanovic",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "alessandro-festa",
+      "speakerId": "alessandro-festa",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "alessandro-miliucci",
+      "speakerId": "alessandro-miliucci",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "alessandro-riboni",
+      "speakerId": "alessandro-riboni",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "alessio-acella",
+      "speakerId": "alessio-acella",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "alice-viola-setti",
+      "speakerId": "alice-viola-setti",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "andrea-ferlito",
+      "speakerId": "andrea-ferlito",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "andrea-raponi",
+      "speakerId": "andrea-raponi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "andrei-chis",
+      "speakerId": "andrei-chis",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "aniello-bossa",
+      "speakerId": "aniello-bossa",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "aurelie-vache",
+      "speakerId": "aurelie-vache",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "costantino-cavallo",
+      "speakerId": "costantino-cavallo",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "daniel-zotti",
+      "speakerId": "daniel-zotti",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "daniele-zonca",
+      "speakerId": "daniele-zonca",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "danilo-deponti",
+      "speakerId": "danilo-deponti",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "davide-caldarulo",
+      "speakerId": "davide-caldarulo",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "davide-pensato",
+      "speakerId": "davide-pensato",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "diana-bernabei",
+      "speakerId": "diana-bernabei",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "edoardo-dusi",
+      "speakerId": "edoardo-dusi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "egon-ferri",
+      "speakerId": "egon-ferri",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "elena-guidi",
+      "speakerId": "elena-guidi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "emmanuele-villa",
+      "speakerId": "emmanuele-villa",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "erik-pronk",
+      "speakerId": "erik-pronk",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "ettore-di-giacinto",
+      "speakerId": "ettore-di-giacinto",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "francesco-facconi",
+      "speakerId": "francesco-facconi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "francesco-pirrone",
+      "speakerId": "francesco-pirrone",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "gabriele-negro",
+      "speakerId": "gabriele-negro",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "gianni-forlastro",
+      "speakerId": "gianni-forlastro",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "giovanni-galloro",
+      "speakerId": "giovanni-galloro",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "giulio-d-alessandro",
+      "speakerId": "giulio-d-alessandro",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "giulio-sciarappa",
+      "speakerId": "giulio-sciarappa",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "graziano-casto",
+      "speakerId": "graziano-casto",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "gregorio-palama",
+      "speakerId": "gregorio-palama",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "guglielmo-fancellu",
+      "speakerId": "guglielmo-fancellu",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "laura-miranda",
+      "speakerId": "laura-miranda",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "luca-bianchi",
+      "speakerId": "luca-bianchi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "marco-landi",
+      "speakerId": "marco-landi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "marco-liberati",
+      "speakerId": "marco-liberati",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "marco-simonte",
+      "speakerId": "marco-simonte",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "marta-scandellari",
+      "speakerId": "marta-scandellari",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "matteo-flora",
+      "speakerId": "matteo-flora",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "matteo-mortari",
+      "speakerId": "matteo-mortari",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "maurizio-argoneto",
+      "speakerId": "maurizio-argoneto",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "maurizio-mangione",
+      "speakerId": "maurizio-mangione",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "michelantonio-trizio",
+      "speakerId": "michelantonio-trizio",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "michele-laurelli",
+      "speakerId": "michele-laurelli",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "moreno-lovato",
+      "speakerId": "moreno-lovato",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "nicola-guglielmi",
+      "speakerId": "nicola-guglielmi",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "nicolo-giorgio",
+      "speakerId": "nicolo-giorgio",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "paolo-rubano",
+      "speakerId": "paolo-rubano",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "saverio-murgia",
+      "speakerId": "saverio-murgia",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "simone-desantis",
+      "speakerId": "simone-desantis",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "stefano-bruno",
+      "speakerId": "stefano-bruno",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "stefano-fiorucci",
+      "speakerId": "stefano-fiorucci",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "valeria-salis",
+      "speakerId": "valeria-salis",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    },
+    {
+      "id": "valeria-zuccoli",
+      "speakerId": "valeria-zuccoli",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "normal",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

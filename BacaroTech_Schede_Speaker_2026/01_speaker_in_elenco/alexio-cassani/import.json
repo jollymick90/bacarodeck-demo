@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "alexio-cassani",
+      "fullName": "Alexio Cassani",
+      "firstName": "Alexio",
+      "lastName": "Cassani",
+      "headline": "Co-Founder & CEO FairMind - Claude Ambassador",
+      "organization": "FairMind",
+      "biographyMd": "Alexio Cassani is an Italian entrepreneur and thought leader in generative AI, AI agents, and corporate digital transformation. He is co-founder of FairMind, a startup that is building AI agent solutions that boost software development team productivity.\nA Computer Engineering graduate from Politecnico di Milano (2003), he was CTO at Cortilia and Webscience (now part of the Adesso group), founded the retail and e-commerce startup Stentle (acquired in 2019), and worked as a researcher with the Intranet and Cloud Observatories at Politecnico di Milano.\nHe is adjunct professor at Politecnico di Milano School of Management, teaching Generative AI and advising companies on AI adoption and transformation. A frequent speaker at Italian and international conferences on generative AI, AI agents, software factory innovation, and responsible technology adoption, he is the author of \"Code Revealed\", a guide to how roles, organization, and tools in software development are evolving in the AI era.",
+      "photoUrl": "https://cdn.sessionize.com/image/34a0-400o400o1-JW3nhaZJRDWhphe1ryDpf9.png",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-alexio-cassani"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-alexio-cassani",
+      "speakerIds": [
+        "alexio-cassani"
+      ],
+      "title": "Configurare l’harness: da Claude Code come tool a Claude Code come sistema di lavoro",
+      "abstractMd": "Un coding agent moderno arriva già con il suo harness. Quello che cambia i risultati non è costruirne uno, è configurarlo. In questa sessione si lavora su Claude Code come implementazione di riferimento e si attraversano le superfici che governano davvero il comportamento dell’agente: istruzioni di progetto, skill, permessi, hook, subagent, MCP, fino al plugin che impacchetta la configurazione e la rende condivisibile nel team.\nIl filo conduttore non è il tutorial, è la decisione: quale superficie deve possedere quale regola. Una conoscenza contestuale non è un hook, un vincolo che deve valere sempre non è una riga di istruzioni. Poi si apre il loop a grafo, con subagent in parallelo e un nodo di giudizio, e si verifica se serva davvero. Le decisioni si trasferiscono agli altri coding agent: cambiano i nomi dei file, non il ragionamento.",
+      "language": "it",
+      "level": "Beginner / Introductory",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "alexio-cassani",
+      "speakerId": "alexio-cassani",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

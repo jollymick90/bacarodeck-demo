@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "riccardo-carlesso",
+      "fullName": "Riccardo Carlesso",
+      "firstName": "Riccardo",
+      "lastName": "Carlesso",
+      "headline": "Developer Advocate, google cloud",
+      "organization": "Google Switzerland",
+      "biographyMd": "Riccardo loves caipirinhas and 🍷 Amarone, playing 🎹 piano and 🏊🏻🚴🏿🏃‍♀️ triathlons; he's been passionate about Mathematics since he was 4. He's still in love with Ruby and Rails.\n\nFormer network administrator, sysadmin, and Ruby on Rails developer, Riccardo has been in operations for 20+ years and still likes to spend time coding (better if Ruby). He loves engaging with customers and help them run their operations reliably and successfully in the cloud.\n\nMore: https://g.dev/ricc",
+      "photoUrl": "https://cdn.sessionize.com/image/0802-400o400o1-WrWArqkGzSaKjoMzfViDU.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-riccardo-carlesso"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-riccardo-carlesso",
+      "speakerIds": [
+        "riccardo-carlesso"
+      ],
+      "title": "Stop Grepping, Start Reasoning: Skill-Based Agentic SRE 🚀",
+      "abstractMd": "Let’s be honest: debugging production at scale is manual labor. 🫠 At Google, we decided making thousands of SREs act like human search engines in 2026 was a bug, not a feature. Enter the Agentic SRE Extension—a skill-based framework that lives in your terminal and actually knows its way around Kubernetes. 🚀 In this high-energy deep dive, I’m showing you exactly how we use modular skills and MCP to chain diagnostic tools, analyze metric regressions, and execute safe mitigations (Rollbacks, Throttling) without the \"deleted production\" anxiety. 🔥 We’ll dissect the \"Outage Investigator\" agent's logic loop, see it draft a technical postmortem in seconds, and discuss why we built this as a portable framework whose skills can be easily leveraged by any modern AI harness. You’ll leave with the code to wire up your own Kubernetes stack and let the agent's skills do the heavy lifting while you drink espresso. ☕️ No fluff, no 101s. Just AI agents, specialized skills, and less toil.",
+      "language": "en",
+      "level": "Advanced",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "riccardo-carlesso",
+      "speakerId": "riccardo-carlesso",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}

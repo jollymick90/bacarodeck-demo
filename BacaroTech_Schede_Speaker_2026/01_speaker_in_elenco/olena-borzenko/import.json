@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-17",
+  "description": "Solo schede base da materiali di partenza BacaroTech; nessun topic, domanda o ricerca generata. Import create-only.",
+  "speakers": [
+    {
+      "id": "olena-borzenko",
+      "fullName": "Olena Borzenko",
+      "firstName": "Olena",
+      "lastName": "Borzenko",
+      "headline": "Coding Consultant & Microsoft MVP at Xebia",
+      "organization": "Xebia",
+      "biographyMd": "Olena working as a consultant with the main focus on building .Net Cloud Applications. She is passionate about event-driven architecture, clean code, and modern cloud-based application development.\nShe has previously worked in a service company based in Ukraine and took part in the creation of various products from small startups, and B2B applications, to enterprise platforms.\nAs Microsoft MVP for Azure, Olena is contributing to the community sharing her gained knowledge at international conferences, user groups, and community meetups as a speaker.",
+      "photoUrl": "https://cdn.sessionize.com/image/7e5f-400o400o1-hhcCkw9PnPq9bVdi71j5Ap.jpg",
+      "priority": true,
+      "inDirectorySnapshot": true,
+      "publicLinks": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "talkIds": [
+        "talk-olena-borzenko"
+      ],
+      "reviewFlags": [],
+      "status": "active",
+      "tags": [],
+      "suggestedTags": [],
+      "notesMd": ""
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-olena-borzenko",
+      "speakerIds": [
+        "olena-borzenko"
+      ],
+      "title": "Coding, but Make It Art",
+      "abstractMd": "Art speaks to the fundamental creative urge in people. It comes in many forms, and it's everywhere. It's in the way we write code, design systems and build tools. \n\nWhen I started my journey as an artist, I couldn’t leave my love for technology behind. This talk is about how that love of programming, combined with machinery and 3D modeling, has helped me develop a distinct style of art that's a natural blend of both painting and engineering.\n\nIn this session, I’ll talk about my inspirations and how my fascination with mathematics and art led me to build a tool for generating sketches. I’ll show how I process data with OpenAI’s models, use Azure Cosmos DB to store it, run semantic searches on embeddings, and turn that processed data into mathematical visualizations using the p5.js library.\n\nYou’ll hear the story of how I became an artist, seeing in detail how I bring shapes to life on canvas, the machines I use to do it, and how I built the system behind my generative art and paintings.",
+      "language": "en",
+      "level": "Intermediate",
+      "alternateTitles": [],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "day": null,
+      "time": null,
+      "stage": null,
+      "reviewFlags": [],
+      "topic": null,
+      "notesMd": ""
+    }
+  ],
+  "sources": [
+    {
+      "id": "snapshot-priority-csv",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — speaker prioritari (CSV fornito)",
+      "url": null,
+      "publisher": "BacaroTech / CSV di lavoro",
+      "notesMd": "29 righe; elenco operativo BacaroTech. Non rappresenta conferma di intervista. Colonna Email esclusa volontariamente.",
+      "tags": [
+        "import",
+        "prioritari"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    },
+    {
+      "id": "snapshot-speakers-directory",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — elenco speaker (testo fornito)",
+      "url": null,
+      "publisher": "Snapshot pagina speaker Codemotion",
+      "notesMd": "81 voci estratte dal file di testo fornito. Non aggiungere automaticamente dati provenienti da altre fonti.",
+      "tags": [
+        "import",
+        "speaker-directory"
+      ],
+      "status": "reviewed",
+      "speakerIds": []
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "olena-borzenko",
+      "speakerId": "olena-borzenko",
+      "assignedToUid": null,
+      "assignedToName": null,
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "priority": "high",
+      "targetQuestions": 4,
+      "date": null,
+      "startTime": null,
+      "notesMd": ""
+    }
+  ],
+  "materials": [],
+  "insights": [],
+  "questions": []
+}
