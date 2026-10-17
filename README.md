@@ -122,7 +122,7 @@ Riferimento: [segnalazione upstream jwks-rsa #507](https://github.com/auth0/node
 
 La ricerca speaker è verticale anche sul telefono: cerca nome, organizzazione o tag (accenti ignorati), apri i filtri e seleziona una scheda. “Torna agli speaker” conserva ricerca e posizione. “Importa tutti gli 84 speaker” prepara soltanto i documenti mancanti, con anteprima; i dati già lavorati non vengono sovrascritti. Il catalogo originale resta intatto; il pacchetto app normalizza un titolo alternativo strutturato conservandone la fonte.
 
-Il team editoriale è distinto dagli account Google: Giorgio (IT), Alberto, Martin e Michele per le interviste; Lorenzo e Danilo per camera. I campi descrizione e abstract hanno IT/EN e stato di revisione; se manca una traduzione, l'app segnala esplicitamente il fallback al testo originale. I testi del catalogo non sono stati tradotti automaticamente.
+Il team editoriale è distinto dagli account Google: Giorgio (IT), Alberto, Martin e Michele per le interviste; Lorenzo e Danilo per camera. I campi descrizione e abstract hanno IT/EN e stato di revisione; se manca una traduzione, l'app segnala esplicitamente il fallback al testo originale. Sono disponibili traduzioni automatiche Google Translate per le 81 biografie e i 27 abstract presenti nel catalogo, tutte da verificare. Le schede prive di testo originale restano vuote.
 
 ## Superadmin
 
@@ -137,3 +137,7 @@ Il pannello conserva 14 coppie principale/backup e gli slot originali da 30 minu
 “Prepara altre 10 domande” offre bozze IT/EN ancorate a estratti di abstract, materiali o biografia; senza testi usa tracce esplorative sul titolo e segnala la lacuna. Sono spunti editoriali da rivedere, non una ricerca autonoma o un servizio AI. IDs stabili evitano duplicati e la ricomparsa di bozze eliminate. Voti personali 1–5, media, ordinamento; scarto tramite stato e cancellazione con conferma. Le cancellazioni registrano un tombstone privato che impedisce il reimport dello stesso ID.
 
 La PWA è installabile dal browser su HTTPS. Il service worker conserva solo asset pubblici e pagina offline, mai API o pagine autenticate. Non supporta scritture offline. La pagina offline invita a riconnettersi; le bozze aperte rimangono nello stato della pagina finché questa resta aperta.
+
+### Importare le traduzioni nelle schede esistenti
+
+Apri **Importa traduzioni IT/EN**, poi **Valida e mostra anteprima → Seleziona traduzioni mancanti**. Controlla il risultato e conferma l’importazione. Il pacchetto contiene solo campi vuoti su schede esistenti con originale invariato; le schede già verificate e quelle con originale modificato vengono escluse e conteggiate. I testi già scritti dal team e i documenti sorgenti restano invariati. Ogni salvataggio usa le revisioni per evitare sovrascritture concorrenti. I nuovi import del catalogo/seed includono già i testi IT/EN. `data/seed/translations.json` è il pacchetto manuale equivalente, da usare con revisione campo per campo.

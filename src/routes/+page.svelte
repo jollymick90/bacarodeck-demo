@@ -304,6 +304,14 @@
     importText = JSON.stringify({ schemaVersion: 1, questions }, null, 2);
     importing = true;
   }
+  async function loadTranslations() {
+    const catalog = (await import('../../data/seed/catalog.json')).default;
+    const { prepareTranslationImport } = await import('$lib/translations');
+    const result = prepareTranslationImport(catalog as unknown as Dataset, data);
+    importText = JSON.stringify(result.data, null, 2);
+    message = `Traduzioni mancanti: ${(result.data.speakers?.length || 0) + (result.data.talks?.length || 0)} schede. Escluse ${result.changedSources} con originale modificato e ${result.reviewedSkipped} già verificate.`;
+    importing = true;
+  }
   async function loadCatalog() {
     const catalog = (await import('../../data/seed/catalog.json')).default;
     const missing: Record<string, unknown> = { schemaVersion: 1 };
@@ -404,6 +412,9 @@
         <p>Ricerca condivisa · preparazione entro il 27 ottobre</p>
       </div>
       <div class="toolbar-actions">
+        <button disabled={!ready || busy} onclick={loadTranslations}
+          >Importa traduzioni IT/EN</button
+        >
         <button onclick={() => (showSchedule = !showSchedule)}
           >{showSchedule ? 'Chiudi programmazione' : 'Programmazione'}</button
         >

@@ -262,6 +262,46 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
       })
     ).status()
   ).toBe(409);
+  const migrationSource = (
+    await (await request.get('/api/data/speakers', { headers })).json()
+  ).find((item: { id: string }) => item.id === 'abiodun-olowode');
+  expect(
+    (
+      await request.post('/api/data', {
+        headers,
+        data: {
+          action: 'save',
+          changes: [
+            {
+              collection: 'speakers',
+              data: {
+                ...migrationSource,
+                biographyIt: '',
+                biographyEn: 'Team translation to preserve',
+                translationReviewed: false
+              },
+              expectedRevision: migrationSource.revision
+            }
+          ]
+        }
+      })
+    ).status()
+  ).toBe(200);
+  await page.reload();
+  const translations = page.getByRole('button', { name: 'Importa traduzioni IT/EN' });
+  await expect(translations).toBeEnabled();
+  await translations.click();
+  await page.getByRole('button', { name: 'Valida e mostra anteprima' }).click();
+  await page.getByRole('button', { name: 'Seleziona traduzioni mancanti' }).click();
+  await page.getByLabel('Ho verificato le differenze e approvo queste scritture').check();
+  await page.getByRole('button', { name: 'Conferma importazione' }).click();
+  await expect(page.getByRole('heading', { name: 'Importa ricerca' })).toHaveCount(0);
+  const translated = (await (await request.get('/api/data/speakers', { headers })).json()).find(
+    (item: { id: string }) => item.id === 'abiodun-olowode'
+  );
+  expect(translated.biographyIt.length).toBeGreaterThan(100);
+  expect(translated.biographyEn).toBe('Team translation to preserve');
+  expect(translated.biographyMd).toBe(migrationSource.biographyMd);
 });
 
 test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ page, request }) => {

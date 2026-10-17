@@ -69,7 +69,10 @@
       ],
       "reviewFlags": [],
       "notesMd": "",
-      "status": "active"
+      "status": "active",
+      "biographyIt": "Andrey ha creato il linguaggio di programmazione Kotlin e ne ha guidato lo sviluppo presso JetBrains da 0 a milioni di utenti. È il fondatore di CodeSpeak, una soluzione di codifica AI basata su specifiche.",
+      "biographyEn": "Andrey created the Kotlin programming language and led its development at JetBrains from 0 to millions of users. He’s the founder of CodeSpeak, a spec-based AI coding solution.",
+      "translationReviewed": false
     },
     {
       "id": "matteo-collina",
@@ -99,7 +102,10 @@
       ],
       "reviewFlags": [],
       "notesMd": "",
-      "status": "active"
+      "status": "active",
+      "biographyIt": "Matteo è il co-fondatore e CTO di Platformatic.dev. È anche un prolifico autore Open Source nell'ecosistema JavaScript e i moduli da lui gestiti vengono scaricati più di 12 miliardi di volte l'anno. In precedenza è stato Chief Software Architect presso NearForm, la migliore società di servizi professionali nell'ecosistema JavaScript. Nel 2014 ha difeso il suo dottorato di ricerca. tesi dal titolo \"Piattaforme applicative per l'Internet of Things\". Matteo è membro del comitato direttivo tecnico di Node.js che si concentra su flussi, diagnostica e http. È anche l'autore del fast logger Pino e del framework web Fastify. Matteo è un rinomato relatore internazionale dopo più di 60 conferenze, tra cui OpenJS World, Node.js Interactive, NodeConf.eu, NodeSummit, JSConf.Asia, WebRebels e JsDay solo per citarne alcune. È anche coautore del libro \"Node.js Cookbook, Third Edition\" edito da Packt. D'estate ama navigare sullo Scirocco.",
+      "biographyEn": "Matteo is the Co-Founder and CTO of Platformatic.dev. He is also a prolific Open Source author in the JavaScript ecosystem and modules he maintain are downloaded more than 12 billion times a year. Previously he was Chief Software Architect at NearForm, the best professional services company in the JavaScript ecosystem. In 2014, he defended his Ph.D. thesis titled \"Application Platforms for the Internet of Things\". Matteo is a member of the Node.js Technical Steering Committee focusing on streams, diagnostics and http. He is also the author of the fast logger Pino and of the Fastify web framework. Matteo is an renowed international speaker after more than 60 conferences, including OpenJS World, Node.js Interactive, NodeConf.eu, NodeSummit, JSConf.Asia, WebRebels, and JsDay just to name a few. He is also co-author of the book \"Node.js Cookbook, Third Edition\" edited by Packt. In the summer he loves sailing the Sirocco.",
+      "translationReviewed": false
     },
     {
       "id": "abiodun-olowode",
@@ -128,7 +134,10 @@
       ],
       "reviewFlags": [],
       "notesMd": "",
-      "status": "active"
+      "status": "active",
+      "biographyIt": "Abiodun è CTO e co-fondatrice di Metrifox, dove guida il team di ingegneri che crea software di grande impatto.\n\nÈ specializzata nella semplificazione dei flussi di lavoro, nella riduzione del debito tecnico e nella creazione di astrazioni riutilizzabili che sbloccano la produttività degli sviluppatori attraverso l'automazione e solide impostazioni predefinite.\n\nÈ appassionata di far crescere ingegneri e costruire culture in cui l'eccellenza è la norma - e scrive e parla regolarmente di leadership, ingegneria e degli aspetti scomodi di entrambi.",
+      "biographyEn": "Abiodun is the CTO and Co-Founder at Metrifox, where she leads the engineering team building impactful software.\n\nShe specialises in streamlining workflows, reducing technical debt, and building reusable abstractions that unlock developer productivity through automation and strong defaults.\n\nShe’s passionate about growing engineers and building cultures where excellence is the norm — and she writes and speaks regularly about leadership, engineering, and the uncomfortable parts of both.",
+      "translationReviewed": false
     },
     {
       "id": "carolina-pinto",
@@ -188,7 +197,10 @@
         "talk_attribution_to_verify"
       ],
       "notesMd": "",
-      "status": "active"
+      "status": "active",
+      "biographyIt": "Membro del team RabbitMQ, lavora con sistemi distribuiti, amante dell'open source, fan di Linux.",
+      "biographyEn": "RabbitMQ team member, working with distributed systems, open source lover, Linux fan.",
+      "translationReviewed": false
     }
   ],
   "talks": [
@@ -211,7 +223,10 @@
       "day": null,
       "time": null,
       "stage": null,
-      "reviewFlags": []
+      "reviewFlags": [],
+      "abstractIt": "La programmazione sta ovviamente cambiando: sempre più codice viene generato da agenti e LLM, le persone spesso hanno difficoltà a tenere il passo con le revisioni del codice e, nel complesso, la creazione di software sembra incredibilmente facile per sempre più persone. \n\nQual è il ruolo dell’uomo nel futuro dell’ingegneria del software? Gli agenti possono occuparsi solo di pianificazione, codifica, revisione e test? Cosa hanno gli esseri umani che i LLM non hanno? \n\nIn questo discorso condividerò la mia opinione su ciò che può e non può essere, almeno fino a quando Skynet non avrà effettivamente preso il sopravvento :)",
+      "abstractEn": "Programming is obviously changing: more and more code is generated by agents and LLMs, people often struggle to keep up with code reviews, and overall building software feels incredibly easy to more and more people. \n\nWhat is the role of humans in the future of software engineering? Can agents just do all the planning, coding, reviewing, and testing? What do humans have that LLMs don’t? \n\nIn this talk, I’ll share my take on what can and can not be, at least until Skynet has actually taken over :)",
+      "translationReviewed": false
     },
     {
       "id": "talk-matteo-collina",
@@ -232,7 +247,10 @@
       "day": null,
       "time": null,
       "stage": null,
-      "reviewFlags": []
+      "reviewFlags": [],
+      "abstractIt": "Fred Brooks definì il problema nel 1975. I canali di comunicazione crescono come n(n-1)/2 e da allora ogni metodologia è diventata un meccanismo di coping. Nessuno lo ha risolto.\nL’intelligenza artificiale ha cambiato l’equazione. L'ingegnere delle caverne, uno sviluppatore esperto con autonomia, gusto e un'intelligenza artificiale che rimuove i vincoli di produttività, ora spedisce in due settimane ciò che un team spedisce in due mesi. Nell'arco di tre mesi a partire dal Natale 2025, ho aggiunto diciannovemila righe al file system virtuale Node.js. Solo. L'architettura è coerente perché nessuna squadra era lì a rispecchiarsi.\nIl modello si basa sull'autonomia e sul gusto. Rimuovi uno dei due e si rompe. Ho introdotto CVE-2026-2581 in Undici con un PR assistito dall'intelligenza artificiale che non ho esaminato correttamente. Questa è autonomia senza gusto. L’ingegneria delle caverne è l’opposto.\nTratterò la Legge di Conway, perché Scrum tassa l’assenza di fiducia e quando la caverna è la scelta sbagliata. La squadra di uno era sempre magica. Finalmente abbiamo gli strumenti per ridimensionarlo.",
+      "abstractEn": "Fred Brooks named the problem in 1975. Communication channels grow as n(n-1)/2, and every methodology since has been a coping mechanism. None solved it.\nAI has changed the equation. The cave engineer, one skilled developer with autonomy, taste, and an AI that removes the throughput constraint, now ships in two weeks what a team ships in two months. Over three months from Christmas 2025, I added nineteen thousand lines to the Node.js Virtual File System. Alone. The architecture is coherent because no team was there to mirror.\nThe model rests on autonomy and taste. Remove either and it breaks. I introduced CVE-2026-2581 into Undici with an AI-assisted PR I did not review properly. That is autonomy without taste. Cave engineering is the opposite.\nI will cover Conway’s Law, why Scrum taxes the absence of trust, and when the cave is the wrong call. The team of one was always magical. We finally have the tools to scale it.",
+      "translationReviewed": false
     },
     {
       "id": "talk-abiodun-olowode",
@@ -253,7 +271,10 @@
       "day": null,
       "time": null,
       "stage": null,
-      "reviewFlags": []
+      "reviewFlags": [],
+      "abstractIt": "Esaminiamo il codice tutto il giorno, commentando astrazioni, denominazione, test e modelli. Ma negli standup, quando qualcuno fa deragliare la riunione, restiamo in silenzio. Nelle revisioni della progettazione, quando i requisiti chiave vengono ignorati, presumiamo che qualcun altro parlerà. Spesso nessuno lo fa e il design viene comunque spedito.\n\nGli ingegneri sono fiduciosi nel fornire feedback nelle richieste pull, ma stranamente silenziosi ovunque: standup, revisioni del progetto, sessioni di abbinamento, thread Slack, retro e uno contro uno. Le stesse persone che richiedono modifiche nelle revisioni del codice spesso ammorbidiscono, rinviano o reindirizzano le conversazioni difficili a manager che non hanno contesto.\n\nQuesta sessione mira a colmare questo divario. Sostiene di essere disposti a dire la cosa difficile sul momento, in modo chiaro e costruttivo, al di fuori del PR. Esploreremo il motivo per cui gli sviluppatori evitano queste conversazioni, quale sia l'efficacia dell'immediatezza al di là della revisione del codice e come sviluppare tale abilità senza diventare quella persona con cui tutti temono di lavorare.",
+      "abstractEn": "We review code all day, commenting on abstractions, naming, tests, and patterns. But in standups, when someone derails the meeting, we stay quiet. In design reviews, when key requirements are ignored, we assume someone else will speak up. Often, no one does, and the design ships anyway.\n\nEngineers are confident giving feedback in pull requests, yet oddly silent everywhere else: standups, design reviews, pairing sessions, Slack threads, retros, and one-on-ones. The same people who request changes in code reviews often soften, defer, or redirect hard conversations to managers who lack context.\n\nThis session is about closing that gap. It argues for being willing to say the hard thing in the moment, clearly and constructively, outside the PR. We will explore why developers avoid these conversations, what effective directness looks like beyond code review, and how to build that skill without becoming that person everyone dreads working with.",
+      "translationReviewed": false
     },
     {
       "id": "talk-carolina-pinto",
@@ -273,7 +294,10 @@
       "day": null,
       "time": null,
       "stage": null,
-      "reviewFlags": []
+      "reviewFlags": [],
+      "abstractIt": "I prodotti di intelligenza artificiale stanno diventando sempre più potenti, ma molti ancora non riescono a creare esperienze che le persone apprezzino davvero. Ho visto come i giochi risolvono problemi che i moderni strumenti di intelligenza artificiale stanno appena iniziando ad affrontare: complessità di onboarding, fiducia, motivazione, cicli di feedback e coinvolgimento a lungo termine.\nQuesto discorso esplora ciò che i prodotti basati sull'intelligenza artificiale possono imparare dalla progettazione di giochi realizzati per milioni di utenti. Dalle meccaniche di progressione e feedback emotivo al ritmo comportamentale, esamineremo come i principi dell'UX di gioco possono aiutare gli sviluppatori a creare prodotti di intelligenza artificiale che siano intuitivi, gratificanti e incentrati sull'uomo.\nPerché alla fine i prodotti di successo non riguardano solo ciò che l’intelligenza artificiale può fare, ma anche il modo in cui le persone si sentono mentre la utilizzano.\n\nPunti chiave\n- Comprendere come i principi dell'UX di gioco si applicano ai prodotti basati sull'intelligenza artificiale e agli strumenti di sviluppo\n- Scopri perché la motivazione, il feedback e la progressione sono fondamentali per l'adozione da parte degli utenti\n- Scopri modelli di progettazione pratici per creare esperienze IA più coinvolgenti",
+      "abstractEn": "AI products are becoming increasingly capable,  but many still fail to create experiences people actually enjoy using. I’ve seen how games solve problems that modern AI tools are only starting to face: onboarding complexity, trust, motivation, feedback loops, and long-term engagement.\nThis talk explores what AI-powered products can learn from game design built for millions of users. From progression mechanics and emotional feedback to behavioral pacing, we’ll look at how gaming UX principles can help developers create AI products that feel intuitive, rewarding, and human-centered.\nBecause in the end, successful products are not only about what AI can do, but about how people feel while using it.\n\nKey Takeaways\n- Understand how gaming UX principles apply to AI-driven products and developer tools\n- Learn why motivation, feedback, and progression are critical for user adoption\n- Discover practical design patterns for creating more engaging AI experiences",
+      "translationReviewed": false
     },
     {
       "id": "talk-gabriele-santomaggio",

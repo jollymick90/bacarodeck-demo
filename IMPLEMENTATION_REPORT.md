@@ -124,3 +124,9 @@ Implementazione su branch locale `feat/editorial-hub`; nessun commit, push, depl
 - PWA: manifest, PNG 192/512, service worker solo asset pubblici, fallback offline; nessuna coda di scritture.
 
 Verifica: 29 test unitari/regole (emulatori), 4 browser desktop/mobile con 84 speaker, revoca token esistente, rating senza impersonificazione e tombstone; TypeScript/Svelte 0 errori/warning; build Vercel completata (warning google-gax preesistente). Verifica browser production: manifest/icone, attivazione service worker, fallback offline, assenza di `/api/` e `/` nelle cache. Screenshot catalogo mobile ispezionato. Revisione indipendente ha rilevato duplicati nella generazione, avvisi orario, filtro priorità e fallback lingua: corretti. Limite editoriale delle traduzioni registrato sopra.
+
+## Traduzioni complete dei testi disponibili — 2026-10-17
+
+Tradotte 81 biografie e 27 abstract (108 testi unici: 94 originali EN e 14 IT) usando Google Translate, solo materiale pubblico. Campi IT/EN popolati nel catalogo e nel seed applicativo; originali immutati e translationReviewed=false. Le 3 biografie e 57 abstract senza originale non sono stati inventati. Pacchetto manuale translations.json e import dedicato dal catalogo per schede già presenti: solo campi vuoti, originale invariato, schede non già verificate. Selezione collettiva limitata ai campi mancanti, conferma finale e revisioni transazionali. Questo completa i testi mancanti segnalati nella sezione precedente; resta necessaria la revisione editoriale delle traduzioni automatiche. Nessun deploy o aggiornamento remoto eseguito.
+
+Verifica traduzioni: 34 test unitari superati, test regole su emulatore superato, 4 test browser desktop/mobile superati inclusa migrazione selettiva delle traduzioni. Check Svelte/TypeScript e formattazione senza errori; build Vercel completata con il warning google-gax preesistente. Originali confrontati automaticamente; nessun URL perso o lunghezza anomala rilevata.

@@ -37,6 +37,28 @@
       error = e instanceof Error ? e.message : String(e);
     }
   }
+  function selectMissingTranslations() {
+    const keys = new Set(['biographyIt', 'biographyEn', 'abstractIt', 'abstractEn']);
+    for (const row of rows) {
+      if (!row.existing || row.blocked || row.existing.translationReviewed === true) continue;
+      let selected = false;
+      for (const field of row.fields) {
+        if (
+          keys.has(field.key) &&
+          !String(field.before || '').trim() &&
+          String(field.after || '').trim()
+        ) {
+          field.selected = true;
+          selected = true;
+        }
+      }
+      if (selected) {
+        const review = row.fields.find((field) => field.key === 'translationReviewed');
+        if (review && review.after === false) review.selected = true;
+      }
+    }
+    approved = false;
+  }
   async function commit() {
     if (!approved || !changes.length) return;
     error = '';
@@ -69,6 +91,15 @@
       Le modifiche ai dati esistenti sono deselezionate. Seleziona i singoli campi da aggiornare;
       note e piani non vengono sostituiti automaticamente.
     </p>
+    {#if rows.some( (row) => row.fields.some( (field) => ['biographyIt', 'biographyEn', 'abstractIt', 'abstractEn'].includes(field.key) ) )}
+      <button onclick={selectMissingTranslations} disabled={busy}
+        >Seleziona traduzioni mancanti</button
+      >
+      <p class="muted">
+        Solo campi vuoti su schede esistenti non verificate. I testi già compilati vengono
+        conservati.
+      </p>
+    {/if}
     {#each rows as row}
       <article class="diff-row">
         <h3>{labels[row.collection]} · {row.id}</h3>
