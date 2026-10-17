@@ -34,3 +34,21 @@ it('requires verified Google identity and exact email membership', () => {
     isAllowedIdentity({ ...token, email: 'alice@example.test.attacker.test' }, 'alice@example.test')
   ).toBe(false);
 });
+
+it('distinguishes missing configuration from a different Google account without exposing the list', async () => {
+  const { getAccessDenial } = await import('../src/lib/server/access-policy');
+  const identity = {
+    email: 'signed-in@example.test',
+    email_verified: true,
+    firebase: { sign_in_provider: 'google.com' }
+  };
+  expect(getAccessDenial(identity, '')).toMatchObject({ status: 503 });
+  expect(getAccessDenial(identity, '"signed-in@example.test"')).toMatchObject({ status: 503 });
+  const denial = getAccessDenial(identity, 'allowed@example.test');
+  expect(denial?.error).toContain('signed-in@example.test');
+  expect(denial?.error).not.toContain('allowed@example.test');
+  expect(getAccessDenial(identity, 'signed-in@example.test')).toBeNull();
+  expect(
+    getAccessDenial({ ...identity, email_verified: false }, 'signed-in@example.test')?.error
+  ).toContain('verificata');
+});

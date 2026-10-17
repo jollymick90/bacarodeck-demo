@@ -1,5 +1,9 @@
 # Implementation report — BacaroTech Interview Hub
 
+## Diagnostica ALLOW_LIST
+
+Distinti i casi lista assente/vuota, formato Value errato (virgolette/array/assegnazione incollati in Vercel), provider diverso da Google, email non verificata e account escluso. Il messaggio per account escluso mostra soltanto l’email dell’identità autenticata, mai la lista. Nessuna modifica alle autorizzazioni per aggirare il controllo. Il valore Vercel non è stato letto o verificato; la causa specifica del deployment resta da confermare attraverso il formato configurato e l’account usato. Test di regressione prima fallito e poi superato; 20 test locali, typecheck e build verificati.
+
 ## Correzione Vercel: ERR_REQUIRE_ESM nel login
 
 Riprodotto l’errore fornito con `node --no-experimental-require-module -e "require('firebase-admin/auth')"`: jwks-rsa 4.1.0 caricava jose 6.2.12 ESM tramite require CommonJS. L’override mirato `jwks-rsa: { jose: "5.10.0" }` e il lockfile aggiornato mantengono Firebase Admin e lasciano jose 6 agli altri consumatori. Nessun secret o controllo di autorizzazione modificato.

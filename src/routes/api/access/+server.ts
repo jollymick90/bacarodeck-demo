@@ -2,7 +2,7 @@ import { json } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import { FieldValue } from 'firebase-admin/firestore';
 import { getAdmin } from '$lib/server/firebase-admin';
-import { isAllowedIdentity, parseAllowList } from '$lib/server/access-policy';
+import { getAccessDenial, parseAllowList } from '$lib/server/access-policy';
 import type { RequestHandler } from './$types';
 const base = 'workspaces/codemotion-milano-2026';
 export const POST: RequestHandler = async ({ request, url }) => {
@@ -34,12 +34,20 @@ export const POST: RequestHandler = async ({ request, url }) => {
   }
   try {
     const allowedEmails = parseAllowList(env.ALLOW_LIST || '');
-    const allowed = isAllowedIdentity(identity, env.ALLOW_LIST || '');
-    if (!allowed)
-      return json(
-        { error: 'Questo account Google non è incluso in ALLOW_LIST.' },
-        { status: 403, headers }
-      );
+    const denial = getAccessDenial(identity, env.ALLOW_LIST || '');
+    if (denial) {
+      // Only boolean/count diagnostics: never log emails, tokens, lists or Admin credentials.
+      console.warn('[access-policy-denied]', {
+        configurationPresent: Boolean(env.ALLOW_LIST?.trim()),
+        entryCount: allowedEmails.length,
+        emailMatches:
+          typeof identity.email === 'string' &&
+          allowedEmails.includes(identity.email.toLowerCase()),
+        emailVerified: identity.email_verified === true,
+        googleProvider: identity.firebase?.sign_in_provider === 'google.com'
+      });
+      return json({ error: denial.error }, { status: denial.status, headers });
+    }
     const config = admin.db.doc(`${base}/access/config`);
     const member = admin.db.doc(`${base}/members/${identity.uid}`);
     const policyReady = await admin.db.runTransaction(async (tx) => {
@@ -50,7 +58,7 @@ export const POST: RequestHandler = async ({ request, url }) => {
         JSON.stringify(configSnap.data()?.allowedEmails) !== JSON.stringify(allowedEmails)
       )
         return false;
-      if (allowed) {
+      {
         const displayName = identity.name || 'Membro BacaroTech';
         if (!memberSnap.exists || memberSnap.data()?.displayName !== displayName)
           tx.set(
