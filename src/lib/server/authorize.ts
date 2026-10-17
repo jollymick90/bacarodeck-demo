@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { env } from '$env/dynamic/private';
+import { getAccessState } from './member-access';
 import { getAdmin } from './firebase-admin';
 import { getAccessDenial } from './access-policy';
 
@@ -12,7 +12,10 @@ export async function authorize(request: Request, url: URL) {
   const identity = await admin.auth.verifyIdToken(bearer.slice(7), true).catch(() => {
     error(401, 'Sessione non valida. Accedi di nuovo con Google.');
   });
-  const denial = getAccessDenial(identity, env.ALLOW_LIST || '');
+  const denial = getAccessDenial(identity, identity.email || '');
   if (denial) error(denial.status, denial.error);
-  return { ...admin, identity };
+  const permissions = await getAccessState(identity.email!);
+  if (!permissions.allowed)
+    error(403, 'Questo account Google non è abilitato. Chiedi al superadmin di aggiungerti.');
+  return { ...admin, identity, ...permissions };
 }

@@ -27,6 +27,18 @@ export function safeUrl(value: unknown): boolean {
 }
 export function validateEntity(collection: Collection, data: Entity): string[] {
   const errors: string[] = [];
+  if (collection === 'interviewSlots') {
+    if (data.status === 'confirmed' && !data.chosenStart)
+      errors.push('Scegli un orario prima di confermare lo slot.');
+    if (!['proposed', 'provisional', 'confirmed'].includes(String(data.status)))
+      errors.push('Stato slot non valido.');
+    if (
+      data.chosenStart &&
+      (!/T.*(?:Z|[+-]\d{2}:\d{2})$/.test(String(data.chosenStart)) ||
+        !Number.isFinite(Date.parse(String(data.chosenStart))))
+    )
+      errors.push('Orario ISO con fuso richiesto.');
+  }
   if (!idPattern.test(data.id))
     errors.push('ID non valido. Usa lettere, numeri, trattini (max 128).');
   const allowed = new Set(['id', ...auditKeys, ...fields[collection].map((f) => f.key)]);

@@ -117,3 +117,23 @@ La catena `firebase-admin → jwks-rsa → jose` può fallire nei runtime Vercel
 Commetti anche `package-lock.json` e riesegui il deploy con le nuove dipendenze (se necessario disattiva la cache di build nel Redeploy Vercel). Questo errore avviene al caricamento del modulo, prima della lettura di `ALLOW_LIST`: non richiede cambiare i secret.
 
 Riferimento: [segnalazione upstream jwks-rsa #507](https://github.com/auth0/node-jwks-rsa/issues/507).
+
+## Catalogo e organizzazione mobile
+
+La ricerca speaker è verticale anche sul telefono: cerca nome, organizzazione o tag (accenti ignorati), apri i filtri e seleziona una scheda. “Torna agli speaker” conserva ricerca e posizione. “Importa tutti gli 84 speaker” prepara soltanto i documenti mancanti, con anteprima; i dati già lavorati non vengono sovrascritti. Il catalogo originale resta intatto; il pacchetto app normalizza un titolo alternativo strutturato conservandone la fonte.
+
+Il team editoriale è distinto dagli account Google: Giorgio (IT), Alberto, Martin e Michele per le interviste; Lorenzo e Danilo per camera. I campi descrizione e abstract hanno IT/EN e stato di revisione; se manca una traduzione, l'app segnala esplicitamente il fallback al testo originale. I testi del catalogo non sono stati tradotti automaticamente.
+
+## Superadmin
+
+Imposta `SUPERADMIN_EMAILS` su Vercel con l'email Google del primo amministratore (solo il valore, nessuna assegnazione o virgolette). La variabile locale è configurata privatamente per l'account indicato. Gli amministratori permanenti possono aprire “Gestisci accessi”, abilitare e revocare email. Un blocco prevale su ALLOW_LIST; i permanenti si gestiscono dall'ambiente. Le email autorizzate e bloccate sono in un documento privato access/members. Nessun comando di sincronizzazione; build sempre `npm run build`.
+
+## Programmazione
+
+Il pannello conserva 14 coppie principale/backup e gli slot originali da 30 minuti. Permette di scegliere il talk, applicare il suggerimento fine +30 minuti, assegnare intervistatore/camera e salvare proposta, provvisoria o confermata. Mostra conflitti e avvisi fuori dalle finestre iniziali. Gli orari sono Europe/Rome; il backup è un'alternativa. Lo snapshot ufficiale è datato, non una sincronizzazione continua. Per aggiornare: `python3 scripts/refresh-agenda.py`, controlla il diff e ridistribuisci. Il comando aggiorna solo le sessioni locali e conserva gli slot originali; gli appuntamenti salvati nel database non vengono spostati. Nessun nome non trovato viene associato automaticamente.
+
+## Domande e PWA
+
+“Prepara altre 10 domande” offre bozze IT/EN ancorate a estratti di abstract, materiali o biografia; senza testi usa tracce esplorative sul titolo e segnala la lacuna. Sono spunti editoriali da rivedere, non una ricerca autonoma o un servizio AI. IDs stabili evitano duplicati e la ricomparsa di bozze eliminate. Voti personali 1–5, media, ordinamento; scarto tramite stato e cancellazione con conferma. Le cancellazioni registrano un tombstone privato che impedisce il reimport dello stesso ID.
+
+La PWA è installabile dal browser su HTTPS. Il service worker conserva solo asset pubblici e pagina offline, mai API o pagine autenticate. Non supporta scritture offline. La pagina offline invita a riconnettersi; le bozze aperte rimangono nello stato della pagina finché questa resta aperta.

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+let administratorToken = '';
 
 test('member prepares the five speakers, CRUD and import work on screen', async ({
   page,
@@ -94,8 +95,117 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   // Data endpoints independently authorize requests and preserve atomic conflicts.
   const authorization = (await accessRequest).headers().authorization;
   const headers = { Authorization: authorization };
+  if (testInfo.project.name === 'desktop') administratorToken = authorization;
   expect((await request.get('/api/data/speakers', { headers })).status()).toBe(200);
   expect((await request.get('/api/data/access', { headers })).status()).toBe(400);
+  const accessResponse = await request.get('/api/admin/access', { headers });
+  expect(accessResponse.status()).toBe(testInfo.project.name === 'desktop' ? 200 : 403);
+  if (testInfo.project.name === 'desktop') {
+    expect(
+      (
+        await request.post('/api/admin/access', {
+          headers,
+          data: { email: 'new-member@example.test', enabled: true }
+        })
+      ).status()
+    ).toBe(200);
+    expect(
+      (
+        await request.post('/api/admin/access', {
+          headers,
+          data: { email: 'editor-desktop@example.test', enabled: false }
+        })
+      ).status()
+    ).toBe(400);
+  }
+  const questions = await (await request.get('/api/data/questions', { headers })).json();
+  const question = questions[0];
+  expect(
+    (
+      await request.post(`/api/questions/${question.id}/rating`, {
+        headers,
+        data: { score: 5, uid: 'forged' }
+      })
+    ).status()
+  ).toBe(200);
+  expect(
+    (
+      await request.post(`/api/questions/${question.id}/rating`, { headers, data: { score: 6 } })
+    ).status()
+  ).toBe(400);
+  const rated = (await (await request.get('/api/data/questions', { headers })).json()).find(
+    (q: { id: string }) => q.id === question.id
+  );
+  expect(rated.ratings.forged).toBeUndefined();
+  expect(Object.values(rated.ratings)).toContain(5);
+  if (testInfo.project.name === 'mobile') {
+    await page.getByRole('button', { name: 'Torna agli speaker', exact: false }).click();
+    await page.getByLabel('Cerca nome, organizzazione o tag').fill('breslav');
+    await expect(
+      page.getByRole('navigation', { name: 'Scegli speaker' }).getByRole('button')
+    ).toHaveCount(1);
+    await page.getByRole('button', { name: /Andrey Breslav/ }).click();
+    await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
+  }
+
+  const temporary = {
+    id: `delete-test-${testInfo.project.name}`,
+    speakerId: 'andrey-breslav',
+    textIt: 'Prova',
+    textEn: 'Test',
+    status: 'suggested'
+  };
+  expect(
+    (
+      await request.post('/api/data', {
+        headers,
+        data: {
+          action: 'save',
+          changes: [{ collection: 'questions', data: temporary, expectedRevision: null }]
+        }
+      })
+    ).status()
+  ).toBe(200);
+  expect(
+    (
+      await request.post('/api/data', {
+        headers,
+        data: {
+          action: 'delete',
+          changes: [{ collection: 'questions', data: temporary, expectedRevision: 1 }]
+        }
+      })
+    ).status()
+  ).toBe(200);
+  expect(
+    (
+      await request.post('/api/data', {
+        headers,
+        data: {
+          action: 'save',
+          changes: [{ collection: 'questions', data: temporary, expectedRevision: null }]
+        }
+      })
+    ).status()
+  ).toBe(409);
+  await page.getByRole('button', { name: 'Importa tutti gli 84 speaker' }).click();
+  await page.getByRole('button', { name: 'Valida e mostra anteprima' }).click();
+  if (await page.getByLabel('Ho verificato le differenze e approvo queste scritture').isVisible()) {
+    await page.getByLabel('Ho verificato le differenze e approvo queste scritture').check();
+    const commit = page.getByRole('button', { name: 'Conferma importazione' });
+    if (await commit.isEnabled()) await commit.click();
+    else await page.getByRole('button', { name: 'Chiudi', exact: true }).click();
+  }
+  if (testInfo.project.name === 'mobile')
+    await page.getByRole('button', { name: 'Torna agli speaker', exact: false }).click();
+  const reset = page.getByRole('button', { name: 'Azzera ricerca' });
+  if (await reset.isVisible()) await reset.click();
+  await expect(
+    page.getByRole('navigation', { name: 'Scegli speaker' }).getByRole('button')
+  ).toHaveCount(84);
+  const nav = page.getByRole('navigation', { name: 'Scegli speaker' });
+  expect(await nav.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
+  await page.screenshot({ path: `test-results/catalog-${testInfo.project.name}.png` });
   const speakers = await (await request.get('/api/data/speakers', { headers })).json();
   const original = speakers[0];
   const validChange = {
@@ -178,4 +288,25 @@ test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ pa
   const headers = { Authorization: (await deniedRequest).headers().authorization };
   expect((await request.get('/api/data/speakers', { headers })).status()).toBe(403);
   expect((await request.post('/api/data', { headers, data: {} })).status()).toBe(403);
+  if (administratorToken) {
+    const adminHeaders = { Authorization: administratorToken };
+    expect(
+      (
+        await request.post('/api/admin/access', {
+          headers: adminHeaders,
+          data: { email: 'outsider@example.test', enabled: true }
+        })
+      ).status()
+    ).toBe(200);
+    expect((await request.get('/api/data/speakers', { headers })).status()).toBe(200);
+    expect(
+      (
+        await request.post('/api/admin/access', {
+          headers: adminHeaders,
+          data: { email: 'outsider@example.test', enabled: false }
+        })
+      ).status()
+    ).toBe(200);
+    expect((await request.get('/api/data/speakers', { headers })).status()).toBe(403);
+  }
 });

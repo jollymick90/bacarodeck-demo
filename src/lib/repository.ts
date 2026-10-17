@@ -4,6 +4,9 @@ import type { Change } from './domain';
 import type { Collection, Entity } from './fields';
 export const basePath = 'workspaces/codemotion-milano-2026';
 const refresh = new EventTarget();
+export function refreshData() {
+  refresh.dispatchEvent(new Event('change'));
+}
 async function api(path: string, body?: unknown) {
   if (typeof navigator !== 'undefined' && navigator.onLine === false)
     throw new Error('Sei offline. Conserva il testo e riprova quando torna la connessione.');

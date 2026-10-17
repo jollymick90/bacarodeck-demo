@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { team } from '$lib/team';
   import { untrack } from 'svelte';
   import {
     fields,
@@ -36,6 +37,9 @@
     'headline',
     'organization',
     'biographyMd',
+    'biographyIt',
+    'biographyEn',
+    'translationReviewed',
     'photoUrl',
     'tags',
     'title',
@@ -44,6 +48,8 @@
     'provenance',
     'notesMd',
     'abstractMd',
+    'abstractIt',
+    'abstractEn',
     'day',
     'time',
     'stage',
@@ -54,6 +60,7 @@
     'order',
     'status',
     'assignedToUid',
+    'cameraId',
     'interviewStatus',
     'priority',
     'date',
@@ -78,7 +85,7 @@
       }
     } else draft[field.key] = value;
     if (field.key === 'assignedToUid')
-      draft.assignedToName = members.find((m) => m.id === value)?.displayName ?? null;
+      draft.assignedToName = [...team, ...members].find((m) => m.id === value)?.displayName ?? null;
   }
   async function save(event: SubmitEvent) {
     event.preventDefault();
@@ -118,7 +125,8 @@
             id={'edit-' + field.key}
             value={String(draft[field.key] ?? '')}
             onchange={(e) => update(field, e.currentTarget.value)}
-            ><option value="">Non assegnato</option>{#each members as member}<option
+            ><option value="">Non assegnato</option
+            >{#each [...team.filter((m) => m.role === 'interview'), ...members.filter((m) => !team.some((t) => t.id === m.id))] as member}<option
                 value={member.id}>{member.displayName || member.id}</option
               >{/each}</select
           >

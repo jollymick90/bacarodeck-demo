@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
+  import { searchSpeakers } from '$lib/speaker-search';
   import {
     GoogleAuthProvider,
     onAuthStateChanged,
@@ -20,6 +21,21 @@
     type Entity
   } from '$lib/fields';
   import { safeUrl, provenanceLabel, type Change } from '$lib/domain';
+  import { team } from '$lib/team';
+  import QuestionRating from '$lib/components/QuestionRating.svelte';
+  import { refreshData } from '$lib/repository';
+  let sortByRating = $state(false);
+  import Schedule from '$lib/components/Schedule.svelte';
+  let showSchedule = $state(false);
+  async function saveSlot(slot: Entity) {
+    if (!client || !user) return;
+    await commitChanges(client.db, user.uid, [
+      { collection: 'interviewSlots', data: slot, expectedRevision: slot.revision ?? null }
+    ]);
+  }
+  import AccessAdmin from '$lib/components/AccessAdmin.svelte';
+  let superadmin = $state(false);
+  let managingAccess = $state(false);
   import ConfirmDelete from '$lib/components/ConfirmDelete.svelte';
   import Markdown from '$lib/components/Markdown.svelte';
   import Editor from '$lib/components/Editor.svelte';
@@ -32,6 +48,27 @@
   let loaded = $state<string[]>([]);
   let selectedId = $state('');
   let query = $state('');
+  let mobileDetail = $state(false);
+  let listPosition = 0;
+  let directory = $state('');
+  let priorityOnly = $state(false);
+  async function openSpeaker(id: string) {
+    listPosition = window.scrollY;
+    selectedId = id;
+    tab = 'materials';
+    mobileDetail = true;
+    await tick();
+    if (window.matchMedia('(max-width: 650px)').matches) {
+      document.getElementById('speaker-title')?.focus();
+      window.scrollTo(0, 0);
+    }
+  }
+  async function backToSpeakers() {
+    mobileDetail = false;
+    await tick();
+    document.getElementById('speaker-' + selectedId)?.focus({ preventScroll: true });
+    window.scrollTo(0, listPosition);
+  }
   let tag = $state('');
   let prep = $state('');
   let assignee = $state('');
@@ -50,12 +87,14 @@
   const ready = $derived(loaded.length === collections.length + 1);
   const tags = $derived([...new Set(speakers.flatMap((s) => (s.tags as string[]) || []))].sort());
   const filtered = $derived(
-    speakers.filter((s) => {
+    searchSpeakers(speakers, query).filter((s) => {
       const plan = data.interviewPlans?.find((p) => p.speakerId === s.id);
       return (
-        `${s.fullName} ${((s.tags as string[]) || []).join(' ')}`
-          .toLowerCase()
-          .includes(query.toLowerCase()) &&
+        (!priorityOnly || s.priority === true) &&
+        (!directory ||
+          (directory === 'in'
+            ? s.inDirectorySnapshot === true
+            : s.inDirectorySnapshot === false)) &&
         (!tag || ((s.tags as string[]) || []).includes(tag)) &&
         (!prep || plan?.status === prep) &&
         (!assignee || plan?.assignedToUid === assignee)
@@ -77,13 +116,23 @@
           e.speakerId === selectedId || ((e.speakerIds as string[]) || []).includes(selectedId)
         );
       })
-      .toSorted((a, b) => Number(a.order || 0) - Number(b.order || 0))
+      .toSorted((a, b) => {
+        const average = (e: Entity) => {
+          const votes = Object.values((e.ratings || {}) as Record<string, number>);
+          return votes.length ? votes.reduce((x, y) => x + y, 0) / votes.length : 0;
+        };
+        return tab === 'questions' && sortByRating
+          ? average(b) - average(a)
+          : Number(a.order || 0) - Number(b.order || 0);
+      })
   );
   function stop() {
     unsubs.forEach((fn) => fn());
     unsubs = [];
   }
   function clear() {
+    superadmin = false;
+    managingAccess = false;
     data = {};
     members = [];
     loaded = [];
@@ -134,6 +183,7 @@
           return;
         }
         error = '';
+        superadmin = result.superadmin === true;
         if (access === 'member') return;
         access = 'member';
         for (const name of [...collections, 'members'] as const) {
@@ -231,6 +281,41 @@
       busy = false;
     }
   }
+  async function prepareQuestions() {
+    if (!speaker) return;
+    const { draftQuestions } = await import('$lib/questions');
+    const talk = data.talks?.find((t) => ((t.speakerIds as string[]) || []).includes(speaker.id));
+    const response = await fetch('/api/questions/deleted', {
+      headers: { Authorization: 'Bearer ' + (await user?.getIdToken()) }
+    });
+    if (!response.ok) {
+      fail(new Error('Impossibile controllare le domande eliminate.'));
+      return;
+    }
+    const deleted: string[] = await response.json();
+    const questions = draftQuestions(
+      speaker,
+      talk,
+      (data.materials || []).filter((m) => ((m.speakerIds as string[]) || []).includes(speaker.id))
+    ).filter(
+      (q) =>
+        !deleted.includes(q.id) && !(data.questions || []).some((existing) => existing.id === q.id)
+    );
+    importText = JSON.stringify({ schemaVersion: 1, questions }, null, 2);
+    importing = true;
+  }
+  async function loadCatalog() {
+    const catalog = (await import('../../data/seed/catalog.json')).default;
+    const missing: Record<string, unknown> = { schemaVersion: 1 };
+    for (const name of collections) {
+      const incoming = (catalog as unknown as Dataset)[name] || [];
+      missing[name] = incoming.filter(
+        (item) => !(data[name] || []).some((existing) => existing.id === item.id)
+      );
+    }
+    importText = JSON.stringify(missing, null, 2);
+    importing = true;
+  }
   async function loadSeed() {
     error = '';
     try {
@@ -319,6 +404,14 @@
         <p>Ricerca condivisa · preparazione entro il 27 ottobre</p>
       </div>
       <div class="toolbar-actions">
+        <button onclick={() => (showSchedule = !showSchedule)}
+          >{showSchedule ? 'Chiudi programmazione' : 'Programmazione'}</button
+        >
+        <button disabled={!ready || busy} onclick={loadCatalog}>Importa tutti gli 84 speaker</button
+        >
+        {#if superadmin}<button onclick={() => (managingAccess = !managingAccess)}
+            >{managingAccess ? 'Chiudi accessi' : 'Gestisci accessi'}</button
+          >{/if}
         <button
           onclick={() => {
             importText = '';
@@ -336,6 +429,8 @@
       </p>{/if}
     {#if !ready}<p role="status">Caricamento del workspace…</p>{/if}
     {#if message}<p class="success" role="status">{message}</p>{/if}
+    {#if showSchedule}<Schedule slots={data.interviewSlots || []} onsave={saveSlot} />{/if}
+    {#if managingAccess && superadmin}<AccessAdmin />{/if}
     {#if importing}<Import
         {data}
         initial={importText}
@@ -352,45 +447,68 @@
           oncancel={() => (editing = null)}
         />{/key}
     {:else}
-      <div class="workspace-grid">
+      <div class="workspace-grid" class:mobile-detail={mobileDetail}>
         <aside class="speaker-list" aria-label="Elenco speaker">
           <div class="list-heading"><h2>Speaker <span>{speakers.length}</span></h2></div>
-          <label for="search">Cerca nome o tag</label><input
+          <label for="search">Cerca nome, organizzazione o tag</label><input
             id="search"
             type="search"
             placeholder="Chi intervistiamo?"
             bind:value={query}
           />
-          <div class="filters">
+          <details class="search-filters">
+            <summary>Filtri speaker</summary>
+            <label><input type="checkbox" bind:checked={priorityOnly} /> Solo prioritari</label>
             <label
-              >Tag<select bind:value={tag}
-                ><option value="">Tutti i tag</option>{#each tags as t}<option>{t}</option
-                  >{/each}</select
+              >Elenco<select bind:value={directory}
+                ><option value="">Tutti</option><option value="in">In elenco</option><option
+                  value="out">Fuori elenco</option
+                ></select
               ></label
-            ><label
-              >Preparazione<select bind:value={prep}
-                ><option value="">Tutti gli stati</option
-                >{#each ['not_started', 'researching', 'ready', 'done'] as state}<option
-                    value={state}>{translate(state)}</option
+            >
+            <div class="filters">
+              <label
+                >Tag<select bind:value={tag}
+                  ><option value="">Tutti i tag</option>{#each tags as t}<option>{t}</option
+                    >{/each}</select
+                ></label
+              ><label
+                >Preparazione<select bind:value={prep}
+                  ><option value="">Tutti gli stati</option
+                  >{#each ['not_started', 'researching', 'ready', 'done'] as state}<option
+                      value={state}>{translate(state)}</option
+                    >{/each}</select
+                ></label
+              >
+            </div>
+            <label
+              >Intervistatore<select bind:value={assignee}
+                ><option value="">Tutti i membri</option
+                >{#each [...team.filter((m) => m.role === 'interview'), ...members] as m}<option
+                    value={m.id}>{m.displayName || m.id}</option
                   >{/each}</select
               ></label
             >
+          </details>
+          <div class="search-summary">
+            <span role="status">{filtered.length} di {speakers.length} speaker</span>
+            {#if query || tag || prep || assignee || directory || priorityOnly}<button
+                onclick={() => {
+                  query = '';
+                  tag = '';
+                  prep = '';
+                  assignee = '';
+                  directory = '';
+                  priorityOnly = false;
+                }}>Azzera ricerca</button
+              >{/if}
           </div>
-          <label
-            >Intervistatore<select bind:value={assignee}
-              ><option value="">Tutti i membri</option>{#each members as m}<option value={m.id}
-                  >{m.displayName || m.id}</option
-                >{/each}</select
-            ></label
-          >
           <nav aria-label="Scegli speaker">
             {#each filtered as s}<button
                 class:active={s.id === selectedId}
                 class="speaker-row"
-                onclick={() => {
-                  selectedId = s.id;
-                  tab = 'materials';
-                }}
+                id={'speaker-' + s.id}
+                onclick={() => openSpeaker(s.id)}
                 aria-current={s.id === selectedId ? 'true' : undefined}
                 ><span class="avatar"
                   >{display(s.fullName)
@@ -417,6 +535,7 @@
         </aside>
         <section class="speaker-detail" aria-label="Scheda speaker">
           {#if speaker}
+            <button class="back-speakers" onclick={backToSpeakers}>← Torna agli speaker</button>
             <div class="speaker-heading">
               {#if speaker.photoUrl && safeUrl(speaker.photoUrl)}<img
                   class="portrait"
@@ -426,7 +545,14 @@
                 />{/if}
               <div>
                 <p class="muted">Scheda di preparazione</p>
-                <h2>{speaker.fullName}</h2>
+                <div class="language">
+                  <button onclick={() => (language = 'it')} aria-pressed={language === 'it'}
+                    >Italiano</button
+                  ><button onclick={() => (language = 'en')} aria-pressed={language === 'en'}
+                    >English</button
+                  >
+                </div>
+                <h2 id="speaker-title" tabindex="-1">{speaker.fullName}</h2>
                 <p>{speaker.headline}</p>
                 <div class="chips">
                   {#each (speaker.tags as string[]) || [] as t}<span>{String(t)}</span>{/each}<span
@@ -435,6 +561,11 @@
                 </div>
               </div>
             </div>
+            {#if !(language === 'it' ? speaker.biographyIt : speaker.biographyEn)}<p class="muted">
+                Traduzione {language.toUpperCase()} non disponibile: viene mostrata la descrizione originale.
+              </p>{:else if !speaker.translationReviewed}<p class="muted">
+                Traduzione da verificare.
+              </p>{/if}
             {#if ((speaker.reviewFlags as string[]) || []).length}<p class="warning">
                 Da verificare: {(speaker.reviewFlags as string[]).join(', ')}
               </p>{/if}
@@ -446,7 +577,9 @@
             </div>
             <details class="bio">
               <summary>Biografia e note speaker</summary><Markdown
-                text={display(speaker.biographyMd) || 'Biografia da verificare.'}
+                text={display(language === 'it' ? speaker.biographyIt : speaker.biographyEn) ||
+                  display(speaker.biographyMd) ||
+                  'Descrizione non ancora disponibile.'}
               /><Markdown text={display(speaker.notesMd)} />
               <p class="muted">
                 Dati riportati dalle fonti: {((speaker.sourceIds as string[]) || []).join(', ')}
@@ -466,7 +599,10 @@
             </nav>
             <div class="section-heading">
               <h3>{labels[tab]}</h3>
-              {#if tab === 'questions'}<div class="language-switch" aria-label="Lingua domande">
+              {#if tab === 'questions'}<button onclick={() => (sortByRating = !sortByRating)}
+                  >{sortByRating ? 'Ordina per scaletta' : 'Ordina per voto'}</button
+                ><button onclick={prepareQuestions}>Prepara altre 10 domande</button>
+                <div class="language-switch" aria-label="Lingua domande">
                   <button class:current={language === 'it'} onclick={() => (language = 'it')}
                     >IT</button
                   ><button class:current={language === 'en'} onclick={() => (language = 'en')}
@@ -495,7 +631,10 @@
                   >{#if entity.status}<span class="status">{translate(entity.status)}</span>{/if}
                 </div>
                 <h3>{tab === 'interviewPlans' ? 'Piano intervista' : title(entity)}</h3>
-                {#if tab === 'questions'}<Markdown
+                {#if tab === 'questions'}<QuestionRating
+                    question={entity}
+                    onchange={refreshData}
+                  /><Markdown
                     text={display(language === 'it' ? entity.followUpIt : entity.followUpEn)}
                   />
                   <details>
@@ -505,7 +644,8 @@
                   </details>
                 {:else if tab === 'interviewPlans'}<p>
                     Intervistatore: {entity.assignedToName ||
-                      members.find((m) => m.id === entity.assignedToUid)?.displayName ||
+                      [...team, ...members].find((m) => m.id === entity.assignedToUid)
+                        ?.displayName ||
                       'Non assegnato'}
                   </p>
                   <p>
@@ -516,8 +656,16 @@
                   <p>{entity.date || 'Data da concordare'} {entity.startTime || ''}</p>
                   <p>Obiettivo: {entity.targetQuestions || '—'} domande</p>
                   <Markdown text={display(entity.notesMd)} />
-                {:else}<Markdown
-                    text={display(entity.bodyMd) || display(entity.abstractMd)}
+                {:else}{#if tab === 'talks'}<p class="muted">
+                      {!(language === 'it' ? entity.abstractIt : entity.abstractEn)
+                        ? 'Traduzione non disponibile: abstract originale.'
+                        : entity.translationReviewed
+                          ? 'Traduzione verificata.'
+                          : 'Traduzione da verificare.'}
+                    </p>{/if}<Markdown
+                    text={display(entity.bodyMd) ||
+                      display(language === 'it' ? entity.abstractIt : entity.abstractEn) ||
+                      display(entity.abstractMd)}
                   />{#if tab === 'talks'}<p>
                       {entity.day || 'Giorno da confermare'} · {entity.time ||
                         'Orario da confermare'} · {entity.stage || 'Palco da confermare'}

@@ -110,3 +110,17 @@ Limiti intenzionali dello scaffold: nessuna cache persistente dopo reload offlin
 Il metadata workspace del seed (titolo e date evento) è descrittivo e non viene scritto dall’import; le date dell’evento restano configurazione dell’app. La build segnala un chunk client superiore a 500 KiB (circa 287 KiB gzip): ottimizzazione del caricamento differito rimandata. Nessuna funzione LLM/RAG, scraping, registrazione o seconda fase è stata implementata.
 
 Nessun commit è stato creato: il repository era senza commit iniziali e i materiali forniti erano già non tracciati; il lavoro resta nella directory richiesta per la revisione.
+
+## Catalogo mobile e organizzazione editoriale — 2026-10-17
+
+Implementazione su branch locale `feat/editorial-hub`; nessun commit, push, deploy o aggiornamento di dati Firebase remoti. Configurata privatamente SUPERADMIN_EMAILS in `.env` per l'account richiesto; il valore va impostato separatamente su Vercel. Nessun dato personale aggiunto ai file pubblici.
+
+- Catalogo app 84 speaker con import create-only e ID compatibili con seed; normalizzato il titolo alternativo strutturato conservando la fonte. Sorgenti originali intatte.
+- Ricerca mobile verticale nome/organizzazione/tag, accenti ignorati, filtri richiudibili inclusa priorità, conteggio/reset, dettaglio separato e ripristino ricerca/posizione/focus.
+- Team editoriale separato dagli account; intervistatore e camera; pannello superadmin per aggiunte/blocchi, blocchi prevalenti su ALLOW_LIST, permanenti protetti.
+- Agenda snapshot ufficiale + 14 coppie originali, slot scelti separati persistenti, suggerimenti fine+30, conflitti risorse e avvisi fuori finestre. Refresh locale riproducibile, appuntamenti salvati invariati.
+- Campi IT/EN e revisione per descrizioni/abstract, fallback originale dichiarato. Non è stata prodotta una traduzione integrale delle 81 biografie e 27 abstract disponibili: i campi permettono di inserirla/revisionarla. Le bozze domande usano estratti originali e tracce IT/EN, non ricerca autonoma o affermazioni inventate.
+- Dieci bozze per speaker per anteprima, ID stabili/tombstone, voti personali 1–5 con media/ordinamento, scarto e cancellazione già disponibili.
+- PWA: manifest, PNG 192/512, service worker solo asset pubblici, fallback offline; nessuna coda di scritture.
+
+Verifica: 29 test unitari/regole (emulatori), 4 browser desktop/mobile con 84 speaker, revoca token esistente, rating senza impersonificazione e tombstone; TypeScript/Svelte 0 errori/warning; build Vercel completata (warning google-gax preesistente). Verifica browser production: manifest/icone, attivazione service worker, fallback offline, assenza di `/api/` e `/` nelle cache. Screenshot catalogo mobile ispezionato. Revisione indipendente ha rilevato duplicati nella generazione, avvisi orario, filtro priorità e fallback lingua: corretti. Limite editoriale delle traduzioni registrato sopra.

@@ -25,7 +25,17 @@ export const POST: RequestHandler = async ({ request, url }) => {
   await db.runTransaction(async (tx) => {
     const refs = keys.map((key) => db.doc(`workspaces/codemotion-milano-2026/${key}`));
     const snapshots = await Promise.all(refs.map((ref) => tx.get(ref)));
+    const tombstones = await Promise.all(
+      changes.map((change) =>
+        change.collection === 'questions'
+          ? tx.get(db.doc(`workspaces/codemotion-milano-2026/deletedQuestions/${change.data.id}`))
+          : Promise.resolve(null)
+      )
+    );
+
     const writes = changes.map((change, index) => {
+      if (body.action === 'save' && tombstones[index]?.exists)
+        error(409, 'Domanda eliminata: non può essere ripristinata da un import.');
       const snapshot = snapshots[index];
       const existing = snapshot.exists ? ({ ...snapshot.data(), id: snapshot.id } as Entity) : null;
       if (
@@ -46,8 +56,18 @@ export const POST: RequestHandler = async ({ request, url }) => {
     });
     refs.forEach((ref, index) => {
       const write = writes[index];
-      if (write) tx.set(ref, write);
-      else tx.delete(ref);
+      if (write) {
+        if (changes[index].collection === 'questions' && snapshots[index].data()?.ratings)
+          write.ratings = snapshots[index].data()!.ratings;
+        tx.set(ref, write);
+      } else {
+        tx.delete(ref);
+        if (changes[index].collection === 'questions')
+          tx.set(
+            db.doc(`workspaces/codemotion-milano-2026/deletedQuestions/${changes[index].data.id}`),
+            { deletedAt: Date.now() }
+          );
+      }
     });
   });
   return json({ saved: true }, { headers: { 'Cache-Control': 'no-store' } });

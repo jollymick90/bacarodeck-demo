@@ -1,0 +1,828 @@
+{
+  "source": "https://conferences.codemotion.com/milan/agenda/",
+  "retrievedOn": "2026-10-17",
+  "timezone": "Europe/Rome",
+  "sessions": [
+    {
+      "sessionId": "1327744",
+      "speakers": [
+        "katharine jarmul"
+      ],
+      "title": "I spy on my agents and you can too!",
+      "startsAt": "2026-10-28T09:50:00+01:00",
+      "endsAt": "2026-10-28T10:30:00+01:00"
+    },
+    {
+      "sessionId": "1329525",
+      "speakers": [
+        "Alessandro Fin"
+      ],
+      "title": "Trust Is the Feature",
+      "startsAt": "2026-10-28T10:35:00+01:00",
+      "endsAt": "2026-10-28T10:50:00+01:00"
+    },
+    {
+      "sessionId": "1244834",
+      "speakers": [
+        "Matteo Collina"
+      ],
+      "title": "Kill the Standup: How One Engineer Ships What Five Cannot",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1214501",
+      "speakers": [
+        "Abiodun Olowode"
+      ],
+      "title": "We Review Code. Why Won’t We Review Each Other?",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1246405",
+      "speakers": [
+        "Mauro Morales"
+      ],
+      "title": "Your GPU node is a snowflake: shipping AI infrastructure as a versioned artifact",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1227394",
+      "speakers": [
+        "Elena Guidi"
+      ],
+      "title": "System Failure: Why Your Tech Stack Can't Fix a Communication Leak",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1213991",
+      "speakers": [
+        "Leonardo Cavagnis"
+      ],
+      "title": "Designing Physical AI Systems: From Sensors to On-Device Intelligence",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1216484",
+      "speakers": [
+        "Erik Pronk"
+      ],
+      "title": "AI is changing your team more than your code",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1226083",
+      "speakers": [
+        "Graziano Casto"
+      ],
+      "title": "Startup veloci, Pod snelli: In-Place Pod Resize in pratica",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1237064",
+      "speakers": [
+        "Mario Zechner"
+      ],
+      "title": "Everything is slop, let's slow the f**k down",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1348517",
+      "speakers": [
+        "Saverio Murgia"
+      ],
+      "title": "Agents Don't Work Alone",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1222188",
+      "speakers": [
+        "Riccardo Carlesso"
+      ],
+      "title": "Stop Grepping, Start Reasoning: Skill-Based Agentic SRE 🚀",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1234300",
+      "speakers": [
+        "Alessandro Miliucci"
+      ],
+      "title": "Distributed Locks with MongoDB",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1330362",
+      "speakers": [
+        "Daniele Zonca",
+        "Matteo Mortari"
+      ],
+      "title": "Bring Your Own Agent: Building Real-World Agents for a Sovereign SDLC",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1265570",
+      "speakers": [
+        "Enzo Lombardi"
+      ],
+      "title": "Racing the beam",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1235212",
+      "speakers": [
+        "Gregorio Palamà"
+      ],
+      "title": "Fast & Furious LLM: Scaling Performance with MTP Drafters",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1232458",
+      "speakers": [
+        "Olena Borzenko"
+      ],
+      "title": "Coding, but Make It Art",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1330247",
+      "speakers": [
+        "Costantino Cavallo"
+      ],
+      "title": "From Code Velocity to Production Value",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1295740",
+      "speakers": [
+        "Andrei Chiș"
+      ],
+      "title": "Understanding at machine speed with thousands of contextual tools",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1234974",
+      "speakers": [
+        "Gianni Forlastro",
+        "Francesco Pirrone"
+      ],
+      "title": "Developer Experience 2.0: progettare software nell’era degli AI Agents",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1225977",
+      "speakers": [
+        "Valeria Salis"
+      ],
+      "title": "Green Prompting: designing AI interactions with sustainability in mind",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1340661",
+      "speakers": [
+        "Simone Desantis"
+      ],
+      "title": "5 API per mettere a sicuro il tuo progetto digitale",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:15:00+01:00"
+    },
+    {
+      "sessionId": "1319162",
+      "speakers": [
+        "Emanuele Fabbiani"
+      ],
+      "title": "How Does AI Watermarking Work? A Close Look at SynthID",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1330263",
+      "speakers": [
+        "Gabriele Negro"
+      ],
+      "title": "The Cost of Cheap Code",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1224608",
+      "speakers": [
+        "Rowdy Rabouw"
+      ],
+      "title": "Warp Pipes and Prefetching: Navigating the Web at Mario Speed",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1229817",
+      "speakers": [
+        "Alice Viola Setti"
+      ],
+      "title": "Kafka didn't fit our LLM agents, so we wrote our own broker",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1348290",
+      "speakers": [
+        "Giulio D'Alessandro",
+        "Guglielmo Fancellu"
+      ],
+      "title": "Weapon or Tool? An Ontological Approach to Enterprise Knowledge",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1218568",
+      "speakers": [
+        "Giulio Sciarappa"
+      ],
+      "title": "Emergency in production: how to survive disasters ...a small guide",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1235175",
+      "speakers": [
+        "Nicola Guglielmi"
+      ],
+      "title": "Engineering Leadership Through Multi-Agent Simulations",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1296534",
+      "speakers": [
+        "Luca Bianchi"
+      ],
+      "title": "Documents Are Not Knowledge: Modelling Extraction as an Event-Driven Domain",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1327616",
+      "speakers": [
+        "Davide Caldarulo",
+        "Paolo Rubano"
+      ],
+      "title": "Da settimane a ore: modernizzare i report finanziari per WCAG con la GenAI",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1216673",
+      "speakers": [
+        "Giorgio Natili"
+      ],
+      "title": "The Ethics Layer: Architecting Sovereign AI and Digital Dignity in Agentic Systems",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1216557",
+      "speakers": [
+        "David McCarter"
+      ],
+      "title": "Unleash Your Inner Rockstar: The 5 Steps to Dynamic Public Speaking!",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T17:20:00+01:00"
+    },
+    {
+      "sessionId": "1334014",
+      "speakers": [
+        "Alessandro Festa"
+      ],
+      "title": "E se deployare workload AI non fosse poi così complicato?",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:25:00+01:00"
+    },
+    {
+      "sessionId": "1226525",
+      "speakers": [
+        "Marco Simonte"
+      ],
+      "title": "Transformers Are Changing: Inside the New Architecture of Long-Context AI",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1213691",
+      "speakers": [
+        "Maurizio Mangione"
+      ],
+      "title": "Is getting hot in here",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1234920",
+      "speakers": [
+        "Laura Miranda"
+      ],
+      "title": "Da feature a revenue: come i team tecnici possono pensare (anche) da marketer",
+      "startsAt": "2026-10-28T16:30:00+01:00",
+      "endsAt": "2026-10-28T16:45:00+01:00"
+    },
+    {
+      "sessionId": "1260726",
+      "speakers": [
+        "Marco Ippolito",
+        "Nicolò Giorgio"
+      ],
+      "title": "The Memedex: indicizzare Internet, un meme alla volta",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00"
+    },
+    {
+      "sessionId": "1233101",
+      "speakers": [
+        "Francesco Facconi",
+        "Danilo Deponti"
+      ],
+      "title": "When the Backlog Dispatches Itself: a Production Fleet of Autonomous AI Coding Agents",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00"
+    },
+    {
+      "sessionId": "1230228",
+      "speakers": [
+        "Soumaya Erradi"
+      ],
+      "title": "Can an LLM understand your car? Real telemetry and predictive insights",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00"
+    },
+    {
+      "sessionId": "1231176",
+      "speakers": [
+        "Michelantonio Trizio"
+      ],
+      "title": "When AI agents click buy: atomic checkouts for dynamic retail carts",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00"
+    },
+    {
+      "sessionId": "1331302",
+      "speakers": [
+        "Ettore Di Giacinto"
+      ],
+      "title": "Stop Sending Everything to the Cloud: Hybrid AI with LocalAI",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00"
+    },
+    {
+      "sessionId": "1234971",
+      "speakers": [
+        "Omar Diop",
+        "Gianluca Carucci"
+      ],
+      "title": "Code is the easy part: cosa cambia nel processo di sviluppo quando il codice lo scrive l’AI",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00"
+    },
+    {
+      "sessionId": "1265470",
+      "speakers": [
+        "Andrey Breslav"
+      ],
+      "title": "Future of Programming: What's our place in the world of coding machines?",
+      "startsAt": "2026-10-28T17:50:00+01:00",
+      "endsAt": "2026-10-28T18:20:00+01:00"
+    },
+    {
+      "sessionId": "1361549",
+      "speakers": [
+        "Matteo Flora"
+      ],
+      "title": "What Could Possibly Go Wrong? A Crash Course in Paranoia for Developers",
+      "startsAt": "2026-10-29T10:00:00+01:00",
+      "endsAt": "2026-10-29T10:30:00+01:00"
+    },
+    {
+      "sessionId": "1219093",
+      "speakers": [
+        "Jigyasa Grover"
+      ],
+      "title": "When NOT to build an agent: Lessons from systems that didn't want autonomy",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1230660",
+      "speakers": [
+        "Dotan Horovits"
+      ],
+      "title": "One Stack to Observe Them All: Open Source Observability with OpenSearch",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1226121",
+      "speakers": [
+        "Egon Ferri"
+      ],
+      "title": "Beyond Benchmarks: What ARC Teaches Us About Measuring Intelligence",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1234927",
+      "speakers": [
+        "Andrea Ferlito"
+      ],
+      "title": "In attesa dei legali della GRANDE N: come io e Gemini abbiamo portato Parachute su un HW impossibile",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1362869",
+      "speakers": [
+        "Alexio Cassani"
+      ],
+      "title": "How Far Can You Loop? From one tool call to a Claude Code agent that fixes itself overnight",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1218655",
+      "speakers": [
+        "Marco Liberati"
+      ],
+      "title": "An Emergency Decree Walks Into a Pull Request: 165 Years of Italian Law, Read Like a Repo",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00"
+    },
+    {
+      "sessionId": "1362168",
+      "speakers": [
+        "Leonardo Cavagnis"
+      ],
+      "title": "Hands-On with Arduino UNO Q: Bringing AI and Local LLMs to the Edge",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T13:20:00+01:00"
+    },
+    {
+      "sessionId": "1254733",
+      "speakers": [
+        "Alfonso Fuggetta"
+      ],
+      "title": "Why Coding Agents Need You More Than Ever",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1215971",
+      "speakers": [
+        "Christian Schabetsberger"
+      ],
+      "title": "What comes after Git?",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1232889",
+      "speakers": [
+        "Giovanni Galloro"
+      ],
+      "title": "Build agents with agents",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1234879",
+      "speakers": [
+        "Valeria Zuccoli"
+      ],
+      "title": "The Zero-Temperature Lie: Why Your Deterministic LLM is Still Hallucinating Randomness",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1348385",
+      "speakers": [
+        "Moreno Lovato"
+      ],
+      "title": "Dal codice in banca ai videogiochi: il lungo percorso di un indie",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1354856",
+      "speakers": [
+        "Riccardo Galimberti",
+        "Alex Pagnoni"
+      ],
+      "title": "AI won't fix your Developer Experience",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1220576",
+      "speakers": [
+        "Maurizio Argoneto"
+      ],
+      "title": "Shutup, Dependency Track! Silencing false positives locally with AST and AI",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00"
+    },
+    {
+      "sessionId": "1342030",
+      "speakers": [
+        "Marco Landi",
+        "Michele Laurelli"
+      ],
+      "title": "SCRIBA.AI. soluzione IA italiana per modernizzare il codice legacy",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1216127",
+      "speakers": [
+        "Dennis Nerush"
+      ],
+      "title": "How to Interview Engineers in the AI Era: What I Changed and What Actually Works",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1355009",
+      "speakers": [
+        "Andrea Raponi"
+      ],
+      "title": "Saliresti su un aereo vibecodato? Spec-driven AI con EARS e Walden",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1357782",
+      "speakers": [
+        "Alfredo Morresi"
+      ],
+      "title": "How to tame our Hermes minions fleet",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1249272",
+      "speakers": [
+        "Vladi Stevanovic"
+      ],
+      "title": "The Swiss cheese fix: why PR quality needs layers",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1360406",
+      "speakers": [
+        "Davide Pensato"
+      ],
+      "title": "Game Audio: Beyond PlaySound()",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1210841",
+      "speakers": [
+        "Emmanuele Villa"
+      ],
+      "title": "AI Fundamentals in Action: Evolving a Flappy Bird Agent",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00"
+    },
+    {
+      "sessionId": "1364506",
+      "speakers": [
+        "Leonardo Cavagnis"
+      ],
+      "title": "Hands-On with Arduino UNO Q: Bringing AI and Local LLMs to the Edge (copy)",
+      "startsAt": "2026-10-29T14:40:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1324797",
+      "speakers": [
+        "Edoardo Dusi"
+      ],
+      "title": "Honey, We Predicted the Bits",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1233377",
+      "speakers": [
+        "Stefano Fiorucci"
+      ],
+      "title": "The case for Small Models: a 1M ModernBERT playing Doom in milliseconds",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1223092",
+      "speakers": [
+        "Aurélie Vache"
+      ],
+      "title": "The Ultimate Kubernetes Challenge: An Interactive Trivia Game on concepts, components, usage...",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1355799",
+      "speakers": [
+        "Aniello Bossa",
+        "Alessandro Riboni"
+      ],
+      "title": "Text-to-SQL Isn't Enough: Trustworthy AI Data Agents on a Semantic Layer",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1362542",
+      "speakers": [
+        "Lara Gianotti",
+        "Andrea Tabacco"
+      ],
+      "title": "Trovare la Propria Dimensione",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00"
+    },
+    {
+      "sessionId": "1301534",
+      "speakers": [
+        "Alexio Cassani"
+      ],
+      "title": "Configurare l’harness: da Claude Code come tool a Claude Code come sistema di lavoro",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1230211",
+      "speakers": [
+        "Alfonso Graziano"
+      ],
+      "title": "Scaling AI Adoption: The Real Challenges of Transforming 300 Engineers",
+      "startsAt": "2026-10-29T16:10:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1253908",
+      "speakers": [
+        "Daniel Zotti",
+        "Stefano Bruno"
+      ],
+      "title": "Provocazioni Artificiali: un talk così “shiftato” che ti verrà la voglia di rubarci il microfono!",
+      "startsAt": "2026-10-29T16:10:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1235267",
+      "speakers": [
+        "Diana Bernabei",
+        "Alessio Acella"
+      ],
+      "title": "Accessibility first: progettare una piattaforma quando l’accessibilità non è negoziabile",
+      "startsAt": "2026-10-29T16:10:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00"
+    },
+    {
+      "sessionId": "1225761",
+      "speakers": [
+        "Paolo Caressa",
+        "Gabriele Santomaggio"
+      ],
+      "title": "Critica dell'informatica pura",
+      "startsAt": "2026-10-29T17:00:00+01:00",
+      "endsAt": "2026-10-29T17:30:00+01:00"
+    }
+  ],
+  "originalSlots": [
+    {
+      "day": "2026-10-28",
+      "startTime": "11:00",
+      "mainSpeaker": "Alexio Cassani",
+      "backupSpeaker": "Alfonso Graziano",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-28",
+      "startTime": "11:30",
+      "mainSpeaker": "Alfonso Fuggetta",
+      "backupSpeaker": "Andrey Breslav",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-28",
+      "startTime": "12:00",
+      "mainSpeaker": "Abiodun Olowode",
+      "backupSpeaker": "Carolina Pinto",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-28",
+      "startTime": "12:30",
+      "mainSpeaker": "Christian Schabetsberger",
+      "backupSpeaker": "David McCarter",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-28",
+      "startTime": "15:00",
+      "mainSpeaker": "Dennis Nerush",
+      "backupSpeaker": "Dotan Horovits",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-28",
+      "startTime": "15:30",
+      "mainSpeaker": "Enzo Lombardi",
+      "backupSpeaker": "Erick Wendel",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-28",
+      "startTime": "16:00",
+      "mainSpeaker": "Emanuele Fabbiani",
+      "backupSpeaker": "Gabriele Santomaggio",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-28",
+      "startTime": "16:30",
+      "mainSpeaker": "Jigyasa Grover",
+      "backupSpeaker": "Katharine Jarmul",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-29",
+      "startTime": "11:00",
+      "mainSpeaker": "Giorgio Natili",
+      "backupSpeaker": "Leonardo Cavagnis",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-29",
+      "startTime": "11:30",
+      "mainSpeaker": "Marco Ippolito",
+      "backupSpeaker": "Mario Zechner",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-29",
+      "startTime": "12:00",
+      "mainSpeaker": "Matteo Collina",
+      "backupSpeaker": "Mauro Morales",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-29",
+      "startTime": "12:30",
+      "mainSpeaker": "Olena Borzenko",
+      "backupSpeaker": "Paolo Caressa",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-29",
+      "startTime": "15:00",
+      "mainSpeaker": "Paolo Insogna",
+      "backupSpeaker": "Riccardo Carlesso",
+      "durationMinutes": 30,
+      "status": "provisional"
+    },
+    {
+      "day": "2026-10-29",
+      "startTime": "15:30",
+      "mainSpeaker": "Rowdy Rabouw",
+      "backupSpeaker": "Soumaya Erradi",
+      "durationMinutes": 30,
+      "status": "provisional"
+    }
+  ]
+}

@@ -5,7 +5,8 @@ export const collections = [
   'materials',
   'insights',
   'questions',
-  'interviewPlans'
+  'interviewPlans',
+  'interviewSlots'
 ] as const;
 export type Collection = (typeof collections)[number];
 export type Value = string | number | boolean | null | Value[] | { [key: string]: Value };
@@ -34,16 +35,30 @@ export const labels: Record<Collection, string> = {
   materials: 'Materiali',
   insights: 'Insight',
   questions: 'Domande',
+  interviewSlots: 'Programmazione',
   interviewPlans: 'Intervista'
 };
 export const fields: Record<Collection, Field[]> = {
+  interviewSlots: [
+    f('originalStart', 'Slot originale'),
+    f('primarySpeaker', 'Speaker principale'),
+    f('backupSpeaker', 'Speaker backup'),
+    f('selectedTalkId', 'Talk collegato'),
+    f('chosenStart', 'Inizio scelto (ISO con fuso)'),
+    f('interviewerId', 'Intervistatore'),
+    f('cameraId', 'Camera'),
+    f('status', 'Stato slot')
+  ],
   speakers: [
     f('fullName', 'Nome completo'),
     f('firstName', 'Nome'),
     f('lastName', 'Cognome'),
     f('headline', 'Ruolo'),
     f('organization', 'Organizzazione'),
-    f('biographyMd', 'Biografia pubblica', 'markdown'),
+    f('biographyMd', 'Biografia originale', 'markdown'),
+    f('biographyIt', 'Descrizione IT', 'markdown'),
+    f('biographyEn', 'Description EN', 'markdown'),
+    f('translationReviewed', 'Traduzione verificata', 'boolean'),
     f('photoUrl', 'URL foto'),
     f('priority', 'Prioritario', 'boolean'),
     f('inDirectorySnapshot', 'Nello snapshot directory', 'boolean'),
@@ -59,7 +74,10 @@ export const fields: Record<Collection, Field[]> = {
   talks: [
     speakerIds,
     f('title', 'Titolo'),
-    f('abstractMd', 'Abstract', 'markdown'),
+    f('abstractMd', 'Abstract originale', 'markdown'),
+    f('abstractIt', 'Abstract IT', 'markdown'),
+    f('abstractEn', 'Abstract EN', 'markdown'),
+    f('translationReviewed', 'Traduzione verificata', 'boolean'),
     f('language', 'Lingua'),
     f('topic', 'Argomento'),
     f('level', 'Livello'),
@@ -133,6 +151,7 @@ export const fields: Record<Collection, Field[]> = {
   interviewPlans: [
     f('speakerId', 'ID speaker'),
     f('assignedToUid', 'Intervistatore'),
+    f('cameraId', 'Operatore camera', 'select', ['lorenzo', 'danilo']),
     f('assignedToName', 'Nome visualizzato assegnazione'),
     f('status', 'Preparazione', 'select', ['not_started', 'researching', 'ready', 'done']),
     f('interviewStatus', 'Stato intervista', 'select', [
@@ -149,7 +168,14 @@ export const fields: Record<Collection, Field[]> = {
     notes
   ]
 };
-export const auditKeys = ['createdAt', 'updatedAt', 'createdBy', 'updatedBy', 'revision'];
+export const auditKeys = [
+  'createdAt',
+  'updatedAt',
+  'createdBy',
+  'updatedBy',
+  'revision',
+  'ratings'
+];
 export function emptyEntity(collection: Collection, speakerId?: string): Entity {
   const entity: Entity = { id: crypto.randomUUID() };
   for (const field of fields[collection])

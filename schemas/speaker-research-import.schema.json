@@ -156,6 +156,15 @@
           },
           "status": {
             "type": ["string", "null"]
+          },
+          "biographyIt": {
+            "type": ["string", "null"]
+          },
+          "biographyEn": {
+            "type": ["string", "null"]
+          },
+          "translationReviewed": {
+            "type": ["boolean", "null"]
           }
         },
         "required": ["id", "fullName"],
@@ -226,6 +235,15 @@
             "items": {
               "type": "string"
             }
+          },
+          "abstractIt": {
+            "type": ["string", "null"]
+          },
+          "abstractEn": {
+            "type": ["string", "null"]
+          },
+          "translationReviewed": {
+            "type": ["boolean", "null"]
           }
         },
         "required": ["id"],
@@ -508,10 +526,51 @@
           },
           "startTime": {
             "type": ["string", "null"]
+          },
+          "cameraId": {
+            "type": ["string", "null"]
           }
         },
         "required": ["id"],
         "additionalProperties": false
+      }
+    },
+    "interviewSlots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "originalStart": {
+            "type": "string"
+          },
+          "primarySpeaker": {
+            "type": "string"
+          },
+          "backupSpeaker": {
+            "type": "string"
+          },
+          "selectedTalkId": {
+            "type": "string"
+          },
+          "chosenStart": {
+            "type": "string"
+          },
+          "interviewerId": {
+            "type": "string"
+          },
+          "cameraId": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
       }
     }
   },
