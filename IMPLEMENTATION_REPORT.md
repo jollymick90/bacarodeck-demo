@@ -1,5 +1,13 @@
 # Implementation report — BacaroTech Interview Hub
 
+## Correzione Vercel: ERR_REQUIRE_ESM nel login
+
+Riprodotto l’errore fornito con `node --no-experimental-require-module -e "require('firebase-admin/auth')"`: jwks-rsa 4.1.0 caricava jose 6.2.12 ESM tramite require CommonJS. L’override mirato `jwks-rsa: { jose: "5.10.0" }` e il lockfile aggiornato mantengono Firebase Admin e lasciano jose 6 agli altri consumatori. Nessun secret o controllo di autorizzazione modificato.
+
+Nuovo test `tests/runtime-auth.test.ts`: processo Node con bridge require(ESM) disabilitato, caricamento Firebase Auth, endpoint JWKS locale con RSA generata al momento, recupero della chiave e verifica di una firma reale. Il test riproduceva ERR_REQUIRE_ESM prima della correzione e passa dopo. Verificato anche l’endpoint compilato: import riuscito con lo stesso flag e risposta 401 alla richiesta senza token. Revisione indipendente senza rilievi.
+
+Verifiche aggiornate: 19 test senza emulatore, 26 con emulatore, 4 prove browser; typecheck e build Vercel. Audit runtime: zero vulnerabilità rilevate. Il deploy remoto non è stato eseguito: pubblicare package.json e package-lock.json aggiornati e creare un nuovo deployment; se Vercel riutilizza le vecchie dipendenze, disattivare la cache di build per quel redeploy.
+
 ## Aggiornamento: Google e ALLOW_LIST privata
 
 L’accesso ora dipende esclusivamente da email Google verificate presenti nella variabile server `ALLOW_LIST`. Il browser non riceve la lista né `FIREBASE_ADMIN_KEY`. Il token è verificato con Firebase Admin (inclusa revoca), con controllo del provider Google e confronto esatto dell’email normalizzata. Il server crea il documento membro automaticamente: non serve più abilitare UID dalla console.
