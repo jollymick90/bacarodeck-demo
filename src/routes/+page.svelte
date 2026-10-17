@@ -133,8 +133,8 @@
           denied(new Error(result.error || 'Accesso non consentito.'));
           return;
         }
-        if (access === 'member') return;
         error = '';
+        if (access === 'member') return;
         access = 'member';
         for (const name of [...collections, 'members'] as const) {
           unsubs.push(
@@ -152,8 +152,13 @@
           );
         }
       } catch {
-        if (version === generation)
-          denied(new Error('Serve una connessione per verificare ALLOW_LIST. Riprova tra poco.'));
+        if (version === generation) {
+          if (access === 'member')
+            error =
+              'Controllo accesso temporaneamente non disponibile. La bozza è conservata; riprova quando torna la connessione.';
+          else
+            denied(new Error('Serve una connessione per verificare ALLOW_LIST. Riprova tra poco.'));
+        }
       } finally {
         if (verifyingGeneration === version) verifyingGeneration = null;
       }

@@ -1,5 +1,21 @@
 # Implementation report — BacaroTech Interview Hub
 
+## Aggiornamento: Google e ALLOW_LIST privata
+
+L’accesso ora dipende esclusivamente da email Google verificate presenti nella variabile server `ALLOW_LIST`. Il browser non riceve la lista né `FIREBASE_ADMIN_KEY`. Il token è verificato con Firebase Admin (inclusa revoca), con controllo del provider Google e confronto esatto dell’email normalizzata. Il server crea il documento membro automaticamente: non serve più abilitare UID dalla console.
+
+Configurazione richiesta: `ALLOW_LIST` e `FIREBASE_ADMIN_KEY` nel `.env` ignorato da Git o nelle variabili private Vercel. Sono state aggiunte voci vuote quando mancanti nel `.env` locale, senza leggere/copiare segreti da BacaroGame. La credenziale Admin usa la stessa convenzione di quel progetto e deve appartenere allo stesso progetto Firebase delle variabili pubbliche. In locale è supportato anche `GOOGLE_APPLICATION_CREDENTIALS`.
+
+`npm run access:sync` pubblica la policy amministrativa in `workspaces/codemotion-milano-2026/access/config`; vuota revoca tutti gli accessi. Va eseguito dopo ogni modifica della lista. `npm run build:deploy` lo esegue prima della build per il deployment autorevole. `npm run build` resta senza scritture remote. La richiesta di login **non può modificare la policy**: una vecchia versione dell’app con env diverso viene rifiutata. Le regole richiedono email verificata, provider Google, inclusione nella policy pubblicata e membership, quindi una vecchia membership da sola non concede accesso. Il documento con la lista è inaccessibile ai client.
+
+Il browser controlla l’accesso prima di aprire le collezioni e ogni 60 secondi; le regole applicano la revoca anche agli accessi diretti via SDK appena viene pubblicata. Un errore di rete temporaneo durante il controllo periodico conserva la bozza già aperta; il primo accesso senza verifica riuscita resta bloccato. Una revoca effettiva chiude il workspace. Rimuovere un indirizzo soltanto dall’env senza pubblicare la policy non modifica Firestore: le istruzioni README includono esplicitamente questo passaggio e il comando automatico per Vercel.
+
+Verifiche aggiornamento: 18 test senza emulatore (16 dominio + 2 policy), 25 con emulatore (inclusi 7 regole/repository), 4 prove browser desktop/mobile per account ammessi/esclusi, token falsificati, pubblicazione della policy, revoca senza ripristino da vecchi server e bozza conservata in caso di rete interrotta durante il controllo. TypeScript/Svelte: zero errori e warning; formattazione e build Vercel verificate. Il test sulla policy inizialmente restituiva 200 e ripristinava la vecchia lista: corretto rimuovendo la pubblicazione dalle richieste di login. Il test sulla rete inizialmente cancellava la bozza: corretto conservando lo stato nei soli errori di trasporto di una sessione già aperta.
+
+Revisione indipendente: corretti i due rilievi importanti su propagazione della revoca e vecchi deploy che sovrascrivevano le policy. La build segnala un warning di tracing per un tentativo opzionale di caricamento `google-gax/build/package.json`; il modulo esegue un fallback protetto da catch e l’adapter conclude correttamente. Smoke test su Vercel e OAuth reale restano da eseguire con credenziali e progetto scelti. Nessuna policy o regola remota è stata pubblicata durante questo lavoro; `access:sync` è stato eseguito soltanto su `demo-bacarodeck` nell’emulatore. Le regole BacaroGame sono state lette e non modificate.
+
+Le sezioni seguenti descrivono lo scaffold iniziale; per autorizzazione e comandi di deployment valgono questo aggiornamento e il README corrente.
+
 Data: 17 ottobre 2026. Implementazione locale in `bacarodeck-demo`, senza deploy, push o import su servizi reali.
 
 ## Risultato

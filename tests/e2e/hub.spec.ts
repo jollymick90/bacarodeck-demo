@@ -28,6 +28,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
 }, testInfo) => {
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
+  await page.clock.install();
   await page.goto('/');
   const accessRequest = page.waitForRequest('**/api/access');
   const popupPromise = page.waitForEvent('popup');
@@ -39,7 +40,9 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await popup.getByLabel('Email').fill(`editor-${testInfo.project.name}@example.test`);
   await popup.getByLabel('Display name').fill('Editor Bacaro');
   await popup.getByRole('button', { name: 'Sign in with Google.com', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toBeVisible({
+    timeout: 15000
+  });
   await expect(page.getByRole('button', { name: 'Aggiungi speaker', exact: true })).toBeEnabled();
   if (await page.getByRole('button', { name: 'Prepara import dei 5 speaker' }).isVisible()) {
     await page.getByRole('button', { name: 'Prepara import dei 5 speaker' }).click();
@@ -53,6 +56,11 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await page.getByLabel('Titolo (facoltativo)').fill('Ricerca da Gemini');
   const markdown = '# Appunti da Gemini\n\n' + 'Testo lungo senza metadati. '.repeat(110);
   await page.getByLabel('Testo Markdown').fill(markdown);
+  await page.route('**/api/access', (route) => route.abort());
+  await page.clock.fastForward(61_000);
+  await expect(page.getByLabel('Testo Markdown')).toHaveValue(markdown);
+  await page.unroute('**/api/access');
+
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
   await expect(page.getByRole('heading', { name: 'Ricerca da Gemini' })).toBeVisible();
   const material = page

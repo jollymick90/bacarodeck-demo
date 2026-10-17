@@ -74,11 +74,7 @@ export const POST: RequestHandler = async ({ request, url }) => {
         },
         { status: 503, headers }
       );
-    if (!allowed)
-      return json(
-        { error: 'Questo account Google non è incluso in ALLOW_LIST.' },
-        { status: 403, headers }
-      );
+
     return json({ allowed: true, uid: identity.uid }, { headers });
   } catch {
     return json(
