@@ -1,3 +1,9 @@
+## Accessi server come BacaroGame
+
+ALLOW_LIST viene verificata dal server per ogni richiesta autenticata. CRUD e import usano Firebase Admin con validazione e transazioni atomiche; nessuna pubblicazione della policy durante la build. Rimossi access:sync e build:deploy. Il browser usa Bearer Firebase anziché il cookie di BacaroGame, e aggiorna i dati ogni 15 secondi e dopo i salvataggi. Regole workspace: deny all per SDK client. È necessario pubblicare il blocco aggiornato preservando le regole degli altri dataset. Nessuna modifica remota effettuata. Le sezioni sottostanti descrivono la storia precedente e sono superate dove citano la sincronizzazione della policy.
+
+Verifica della migrazione: 20 test unitari più 1 test regole con emulatore superati; 4 test browser desktop/mobile superati, incluse API negate agli esclusi, conflitti, validazione e rollback atomico. Check TypeScript/Svelte senza errori o warning; build Vercel completata. Resta il warning preesistente di tracing google-gax sul package.json opzionale.
+
 # Implementation report — BacaroTech Interview Hub
 
 ## Diagnostica ALLOW_LIST

@@ -1,27 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-test.beforeEach(async ({ request }) => {
-  const response = await request.patch(
-    'http://127.0.0.1:8080/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/access/config',
-    {
-      headers: { Authorization: 'Bearer owner' },
-      data: {
-        fields: {
-          allowedEmails: {
-            arrayValue: {
-              values: [
-                { stringValue: 'editor-desktop@example.test' },
-                { stringValue: 'editor-mobile@example.test' }
-              ]
-            }
-          }
-        }
-      }
-    }
-  );
-  expect(response.ok()).toBeTruthy();
-});
-
 test('member prepares the five speakers, CRUD and import work on screen', async ({
   page,
   request
@@ -113,25 +91,67 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await page.getByRole('button', { name: /Andrey Breslav/ }).click();
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
   expect(errors).toEqual([]);
-  // Simulate publication of a newer policy. A running old deployment must never restore its list.
+  // Data endpoints independently authorize requests and preserve atomic conflicts.
   const authorization = (await accessRequest).headers().authorization;
-  const configUrl =
-    'http://127.0.0.1:8080/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/access/config';
+  const headers = { Authorization: authorization };
+  expect((await request.get('/api/data/speakers', { headers })).status()).toBe(200);
+  expect((await request.get('/api/data/access', { headers })).status()).toBe(400);
+  const speakers = await (await request.get('/api/data/speakers', { headers })).json();
+  const original = speakers[0];
+  const validChange = {
+    collection: 'speakers',
+    data: { ...original, fullName: 'Must roll back' },
+    expectedRevision: original.revision
+  };
+  const invalidChange = {
+    collection: 'materials',
+    data: { id: `invalid-${testInfo.project.name}`, bodyMd: 'x'.repeat(201 * 1024) },
+    expectedRevision: null
+  };
   expect(
     (
-      await request.patch(configUrl, {
-        headers: { Authorization: 'Bearer owner' },
-        data: { fields: { allowedEmails: { arrayValue: { values: [] } } } }
+      await request.post('/api/data', {
+        headers,
+        data: { action: 'save', changes: [validChange, invalidChange] }
       })
-    ).ok()
-  ).toBeTruthy();
+    ).status()
+  ).toBe(400);
+  const unchanged = await (await request.get('/api/data/speakers', { headers })).json();
+  expect(unchanged.find((item: { id: string }) => item.id === original.id)).toEqual(original);
   expect(
-    (await request.post('/api/access', { headers: { Authorization: authorization } })).status()
-  ).toBe(503);
-  const config = await (
-    await request.get(configUrl, { headers: { Authorization: 'Bearer owner' } })
-  ).json();
-  expect(config.fields.allowedEmails.arrayValue.values || []).toEqual([]);
+    (
+      await request.post('/api/data', {
+        headers,
+        data: { action: 'save', changes: [validChange, validChange] }
+      })
+    ).status()
+  ).toBe(400);
+  expect(
+    (
+      await request.post('/api/data', {
+        headers,
+        data: { action: 'save', changes: [{ ...validChange, collection: 'members' }] }
+      })
+    ).status()
+  ).toBe(400);
+
+  expect(
+    (
+      await request.post('/api/data', {
+        headers,
+        data: {
+          action: 'save',
+          changes: [
+            {
+              collection: 'speakers',
+              data: { id: 'andrey-breslav', fullName: 'Changed' },
+              expectedRevision: 99999
+            }
+          ]
+        }
+      })
+    ).status()
+  ).toBe(409);
 });
 
 test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ page, request }) => {
@@ -139,7 +159,12 @@ test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ pa
   expect(
     (await request.post('/api/access', { headers: { Authorization: 'Bearer forged' } })).status()
   ).toBe(401);
+  expect((await request.get('/api/data/speakers')).status()).toBe(401);
+  expect(
+    (await request.post('/api/data', { data: { action: 'save', changes: [] } })).status()
+  ).toBe(401);
   await page.goto('/');
+  const deniedRequest = page.waitForRequest('**/api/access');
   const popupPromise = page.waitForEvent('popup');
   await page.getByRole('button', { name: 'Accedi con Google' }).click();
   const popup = await popupPromise;
@@ -150,4 +175,7 @@ test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ pa
   await expect(page.getByRole('heading', { name: 'Accesso non abilitato' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toHaveCount(0);
   await expect(page.getByRole('button', { name: /Andrey Breslav/ })).toHaveCount(0);
+  const headers = { Authorization: (await deniedRequest).headers().authorization };
+  expect((await request.get('/api/data/speakers', { headers })).status()).toBe(403);
+  expect((await request.post('/api/data', { headers, data: {} })).status()).toBe(403);
 });

@@ -30,18 +30,13 @@ Puoi usare lo stesso **database esistente di BacaroGame**, anche sul piano gratu
    `ALLOW_LIST` contiene email Google esatte separate da virgola (accettati anche punto e virgola e righe separate), senza distinzione maiuscole/minuscole. Vuota significa nessun accesso. `FIREBASE_ADMIN_KEY` contiene il JSON completo del service account, in una sola riga: è la stessa convenzione già usata da BacaroGame e puoi riutilizzare la credenziale dello stesso progetto. Il JSON abbreviato nell’esempio non è una credenziale utilizzabile. Non commettere `.env` o il file JSON e non inserire la chiave nel frontend. In alternativa locale è supportato `GOOGLE_APPLICATION_CREDENTIALS` verso un file fuori dal repository.
 
 3. Integra **il solo blocco match di questo workspace** di `firebase/firestore.rules` nelle regole del progetto, mantenendo tutti i match degli altri dataset. Controlla che eventuali regole globali permissive non concedano accesso a questo percorso: i permessi Firestore si combinano in OR. Pubblica il ruleset unificato con il normale processo del progetto scelto.
-4. Pubblica la lista privata nel database e avvia l’app:
+4. Avvia l’app con `npm run dev`. Non serve sincronizzare la lista nel database.
 
-   ```sh
-   npm run access:sync
-   npm run dev
-   ```
+Come in BacaroGame, i dati passano attraverso il server Firebase Admin. Ogni richiesta verifica il token Firebase, il provider Google, l’email verificata e `ALLOW_LIST` privata. Il browser conserva il login Firebase e invia il token Bearer alle API; non usa una sessione cookie. I documenti membri servono per assegnare interviste, non concedono accesso.
 
-   Il comando scrive soltanto la configurazione di autorizzazione di questo workspace, non importa speaker o modifica dati BacaroGame. Ogni volta che cambi `ALLOW_LIST` in locale, riesegui `npm run access:sync` e riavvia il server. Non servono documenti membri creati a mano.
+Le regole negano letture e scritture dirette dal browser. **Migrazione dalla versione precedente:** pubblica il blocco di regole aggiornato per questo workspace, preservando le altre regole del progetto condiviso. Finché restano attive le vecchie regole, la vecchia policy nel database può ancora autorizzare accessi SDK. Il documento `access/config` non viene più usato dal server.
 
-Il server verifica il token Firebase, il provider Google, l’email verificata e la presenza in `ALLOW_LIST`. Un account autorizzato riceve automaticamente il documento membro per assegnare le interviste. Un account escluso può autenticarsi con Google, ma non può aprire il workspace o leggere/scrivere i dati. Il browser ricontrolla la sessione ogni 60 secondi; i permessi database sono applicati dalle regole Firestore e non dipendono dal polling.
-
-La lista viene pubblicata dal comando amministrativo, **mai da una richiesta di login**. Un server con una configurazione diversa da quella pubblicata rifiuta l’accesso senza sovrascrivere i permessi. La rimozione di un’email diventa effettiva anche per accessi diretti via SDK appena esegui `access:sync`; non occorre aspettare la scadenza del token. Le copie già lette sul dispositivo non possono essere ritirate.
+Quando cambi `ALLOW_LIST`, riavvia il server locale o crea un nuovo deploy Vercel. Ogni deploy usa il proprio ambiente: vecchi deployment ancora raggiungibili possono continuare a usare la vecchia lista e vanno rimossi o protetti quando revochi accessi. Il browser aggiorna i dati ogni 15 secondi e dopo ogni salvataggio; le transazioni mantengono il controllo dei conflitti.
 
 Il `firebase.json` incluso serve soprattutto all’emulatore; **non pubblicarlo ciecamente sopra le regole di un progetto condiviso**. Il service account deve poter verificare gli utenti Auth e leggere/scrivere questo workspace in Firestore. Nessuna regola o credenziale remota è stata modificata automaticamente durante l’implementazione.
 
@@ -109,7 +104,7 @@ I test browser avviano Vite con configurazione fittizia e usano soltanto gli emu
 
 ## Vercel
 
-Importa questa directory come root del progetto Vercel, preset SvelteKit, Node 22, build `npm run build:deploy`. Questo comando pubblica ALLOW_LIST con Firebase Admin e poi esegue la build; usalo solo nel deployment autorevole dello workspace. L’adapter Vercel è già configurato. Imposta le quattro variabili `PUBLIC_FIREBASE_*` e le due variabili private `ALLOW_LIST` e `FIREBASE_ADMIN_KEY`, lascia `PUBLIC_USE_EMULATORS=false` e abilita il dominio Vercel in Firebase Auth. Dopo ogni modifica alle variabili, esegui un nuovo deploy. Le preview devono usare un progetto separato oppure il normale comando `npm run build`, senza pubblicare policy differenti sul database condiviso. La build locale `npm run build` non scrive su Firebase. Nessun deploy è stato eseguito.
+Importa questa directory come root del progetto Vercel, preset SvelteKit, Node 22, build `npm run build`. Imposta `PUBLIC_FIREBASE_*`, `ALLOW_LIST` e `FIREBASE_ADMIN_KEY`, lascia `PUBLIC_USE_EMULATORS=false` e abilita il dominio Vercel in Firebase Auth. Se avevi impostato `npm run build:deploy`, sostituiscilo con `npm run build`. Dopo ogni modifica delle variabili crea un nuovo deploy. La build non scrive su Firebase. Nessun deploy è stato eseguito automaticamente.
 
 Vedi `IMPLEMENTATION_REPORT.md` per evidenze, scelte sui documenti mancanti e limiti di accettazione.
 

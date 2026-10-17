@@ -130,7 +130,7 @@
         const result = await response.json();
         if (version !== generation) return;
         if (!response.ok) {
-          denied(new Error(result.error || 'Accesso non consentito.'));
+          denied(new Error(result.message || result.error || 'Accesso non consentito.'));
           return;
         }
         error = '';
