@@ -310,6 +310,47 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   expect(translated.biographyIt.length).toBeGreaterThan(100);
   expect(translated.biographyEn).toBe('Team translation to preserve');
   expect(translated.biographyMd).toBe(migrationSource.biographyMd);
+  expect(
+    (
+      await request.post('/api/data', {
+        headers,
+        data: {
+          action: 'save',
+          changes: [
+            {
+              collection: 'speakers',
+              data: { ...translated, tags: ['Team tag'] },
+              expectedRevision: translated.revision
+            },
+            {
+              collection: 'talks',
+              data: {
+                id: `tag-test-${testInfo.project.name}`,
+                speakerIds: ['abiodun-olowode'],
+                title: 'AI security'
+              },
+              expectedRevision: null
+            }
+          ]
+        }
+      })
+    ).status()
+  ).toBe(200);
+  await page.reload();
+  const updateTags = page.getByRole('button', { name: 'Aggiorna tag', exact: true });
+  await expect(updateTags).toBeEnabled();
+  await updateTags.click();
+  await expect(page.getByRole('button', { name: 'Conferma aggiornamento tag' })).toBeDisabled();
+  await page.getByRole('button', { name: 'Seleziona tutti i tag proposti' }).click();
+  await page.getByRole('button', { name: 'Conferma aggiornamento tag' }).click();
+  await expect(page.getByRole('heading', { name: 'Aggiorna tag speaker' })).toHaveCount(0);
+  const tagged = (await (await request.get('/api/data/speakers', { headers })).json()).find(
+    (item: { id: string }) => item.id === 'abiodun-olowode'
+  );
+  expect(tagged.tags).toEqual(expect.arrayContaining(['Team tag', 'AI', 'Sicurezza']));
+  await updateTags.click();
+  await expect(page.getByText('0 speaker con nuovi tag proposti.', { exact: false })).toBeVisible();
+  await page.getByRole('button', { name: 'Chiudi tag' }).click();
 });
 
 test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ page, request }) => {

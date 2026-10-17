@@ -1,5 +1,11 @@
 <script lang="ts">
   import { onMount, tick } from 'svelte';
+  import TagUpdates from '$lib/components/TagUpdates.svelte';
+  let updatingTags = $state(false);
+  async function saveTags(changes: Change[]) {
+    await importChanges(changes);
+    updatingTags = false;
+  }
   import { isInInterviewList } from '$lib/interview-list';
   import { searchSpeakers } from '$lib/speaker-search';
   import {
@@ -131,6 +137,7 @@
   function clear() {
     superadmin = false;
     managingAccess = false;
+    updatingTags = false;
     data = {};
     members = [];
     loaded = [];
@@ -248,6 +255,7 @@
     if (client) await signOut(client.auth);
   }
   function edit(collection: Collection, entity?: Entity) {
+    updatingTags = false;
     editing = { collection, entity: entity ?? emptyEntity(collection, selectedId || undefined) };
     message = '';
   }
@@ -280,6 +288,7 @@
     }
   }
   async function prepareQuestions() {
+    updatingTags = false;
     if (!speaker) return;
     const { draftQuestions } = await import('$lib/questions');
     const talk = data.talks?.find((t) => ((t.speakerIds as string[]) || []).includes(speaker.id));
@@ -303,6 +312,7 @@
     importing = true;
   }
   async function loadTranslations() {
+    updatingTags = false;
     const catalog = (await import('../../data/seed/catalog.json')).default;
     const { prepareTranslationImport } = await import('$lib/translations');
     const result = prepareTranslationImport(catalog as unknown as Dataset, data);
@@ -311,6 +321,7 @@
     importing = true;
   }
   async function loadCatalog() {
+    updatingTags = false;
     const catalog = (await import('../../data/seed/catalog.json')).default;
     const missing: Record<string, unknown> = { schemaVersion: 1 };
     for (const name of collections) {
@@ -410,6 +421,14 @@
         <p>Ricerca condivisa · preparazione entro il 27 ottobre</p>
       </div>
       <div class="toolbar-actions">
+        <button
+          disabled={!ready || busy}
+          onclick={() => {
+            updatingTags = true;
+            importing = false;
+            editing = null;
+          }}>Aggiorna tag</button
+        >
         <button disabled={!ready || busy} onclick={loadTranslations}
           >Importa traduzioni IT/EN</button
         >
@@ -423,6 +442,7 @@
           >{/if}
         <button
           onclick={() => {
+            updatingTags = false;
             importText = '';
             importing = true;
             editing = null;
@@ -440,7 +460,12 @@
     {#if message}<p class="success" role="status">{message}</p>{/if}
     {#if showSchedule}<Schedule slots={data.interviewSlots || []} onsave={saveSlot} />{/if}
     {#if managingAccess && superadmin}<AccessAdmin />{/if}
-    {#if importing}<Import
+    {#if updatingTags}<TagUpdates
+        {data}
+        {busy}
+        oncommit={saveTags}
+        oncancel={() => (updatingTags = false)}
+      />{:else if importing}<Import
         {data}
         initial={importText}
         {busy}
