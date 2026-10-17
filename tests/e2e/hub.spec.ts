@@ -204,6 +204,14 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     page.getByRole('navigation', { name: 'Scegli speaker' }).getByRole('button')
   ).toHaveCount(84);
   const nav = page.getByRole('navigation', { name: 'Scegli speaker' });
+  await page.getByText('Filtri speaker', { exact: true }).click();
+  await page.getByRole('combobox', { name: 'Elenco interviste', exact: true }).selectOption('in');
+  await expect(nav.getByRole('button')).toHaveCount(29);
+  await page.getByRole('combobox', { name: 'Elenco interviste', exact: true }).selectOption('out');
+  await expect(nav.getByRole('button')).toHaveCount(55);
+  await page.getByRole('button', { name: 'Azzera ricerca' }).click();
+  await expect(nav.getByRole('button')).toHaveCount(84);
+
   expect(await nav.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
   await page.screenshot({ path: `test-results/catalog-${testInfo.project.name}.png` });
   const speakers = await (await request.get('/api/data/speakers', { headers })).json();

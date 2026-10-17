@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, tick } from 'svelte';
+  import { isInInterviewList } from '$lib/interview-list';
   import { searchSpeakers } from '$lib/speaker-search';
   import {
     GoogleAuthProvider,
@@ -91,10 +92,7 @@
       const plan = data.interviewPlans?.find((p) => p.speakerId === s.id);
       return (
         (!priorityOnly || s.priority === true) &&
-        (!directory ||
-          (directory === 'in'
-            ? s.inDirectorySnapshot === true
-            : s.inDirectorySnapshot === false)) &&
+        (!directory || (directory === 'in' ? isInInterviewList(s) : !isInInterviewList(s))) &&
         (!tag || ((s.tags as string[]) || []).includes(tag)) &&
         (!prep || plan?.status === prep) &&
         (!assignee || plan?.assignedToUid === assignee)
@@ -471,7 +469,7 @@
             <summary>Filtri speaker</summary>
             <label><input type="checkbox" bind:checked={priorityOnly} /> Solo prioritari</label>
             <label
-              >Elenco<select bind:value={directory}
+              >Elenco interviste<select bind:value={directory}
                 ><option value="">Tutti</option><option value="in">In elenco</option><option
                   value="out">Fuori elenco</option
                 ></select

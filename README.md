@@ -141,3 +141,5 @@ La PWA è installabile dal browser su HTTPS. Il service worker conserva solo ass
 ### Importare le traduzioni nelle schede esistenti
 
 Apri **Importa traduzioni IT/EN**, poi **Valida e mostra anteprima → Seleziona traduzioni mancanti**. Controlla il risultato e conferma l’importazione. Il pacchetto contiene solo campi vuoti su schede esistenti con originale invariato; le schede già verificate e quelle con originale modificato vengono escluse e conteggiate. I testi già scritti dal team e i documenti sorgenti restano invariati. Ogni salvataggio usa le revisioni per evitare sovrascritture concorrenti. I nuovi import del catalogo/seed includono già i testi IT/EN. `data/seed/translations.json` è il pacchetto manuale equivalente, da usare con revisione campo per campo.
+
+Il filtro **Elenco interviste** segue la selezione Bacaro del manifest, corrispondente alle cartelle `01_speaker_in_elenco` (29) e `02_speaker_fuori_elenco` (55). Non usa `inDirectorySnapshot`, che indica la presenza nella directory della conferenza (81), né la priorità modificabile. La correzione si applica anche ai dati già importati senza migrazione.
