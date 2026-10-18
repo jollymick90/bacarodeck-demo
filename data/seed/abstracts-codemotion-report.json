@@ -1,0 +1,350 @@
+{
+  "retrievedOn": "2026-10-18",
+  "source": "https://conferences.codemotion.com/milan/agenda/",
+  "matching": "Titolo e nome speaker, normalizzati; solo abstractMd vuoti nel catalogo locale",
+  "recovered": [
+    {
+      "id": "talk-gabriele-santomaggio",
+      "title": "Critica dell'informatica pura",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1225761",
+      "sessionId": "1225761"
+    },
+    {
+      "id": "talk-katharine-jarmul",
+      "title": "I spy on my agents and you can too!",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1327744",
+      "sessionId": "1327744"
+    },
+    {
+      "id": "talk-alessandro-festa",
+      "title": "E se deployare workload AI non fosse poi così complicato?",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1334014",
+      "sessionId": "1334014"
+    },
+    {
+      "id": "talk-alessandro-miliucci",
+      "title": "Distributed Locks with MongoDB",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1234300",
+      "sessionId": "1234300"
+    },
+    {
+      "id": "talk-alessandro-riboni",
+      "title": "Text-to-SQL Isn't Enough: Trustworthy AI Data Agents on a Semantic Layer",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1355799",
+      "sessionId": "1355799"
+    },
+    {
+      "id": "talk-alessio-acella",
+      "title": "Accessibility first: progettare una piattaforma quando l’accessibilità non è negoziabile",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1235267",
+      "sessionId": "1235267"
+    },
+    {
+      "id": "talk-alice-viola-setti",
+      "title": "Kafka didn't fit our LLM agents, so we wrote our own broker",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1229817",
+      "sessionId": "1229817"
+    },
+    {
+      "id": "talk-andrea-ferlito",
+      "title": "In attesa dei legali della GRANDE N: come io e Gemini abbiamo portato Parachute su un HW impossibile",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1234927",
+      "sessionId": "1234927"
+    },
+    {
+      "id": "talk-andrea-raponi",
+      "title": "Saliresti su un aereo vibecodato? Spec-driven AI con EARS e Walden",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1355009",
+      "sessionId": "1355009"
+    },
+    {
+      "id": "talk-andrei-chis",
+      "title": "Understanding at machine speed with thousands of contextual tools",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1295740",
+      "sessionId": "1295740"
+    },
+    {
+      "id": "talk-aniello-bossa",
+      "title": "Text-to-SQL Isn't Enough: Trustworthy AI Data Agents on a Semantic Layer",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1355799",
+      "sessionId": "1355799"
+    },
+    {
+      "id": "talk-aurelie-vache",
+      "title": "The Ultimate Kubernetes Challenge: An Interactive Trivia Game on concepts, components, usage...",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1223092",
+      "sessionId": "1223092"
+    },
+    {
+      "id": "talk-costantino-cavallo",
+      "title": "From Code Velocity to Production Value",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1330247",
+      "sessionId": "1330247"
+    },
+    {
+      "id": "talk-daniel-zotti",
+      "title": "Provocazioni Artificiali: un talk così “shiftato” che ti verrà la voglia di rubarci il microfono!",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1253908",
+      "sessionId": "1253908"
+    },
+    {
+      "id": "talk-daniele-zonca",
+      "title": "Bring Your Own Agent: Building Real-World Agents for a Sovereign SDLC",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1330362",
+      "sessionId": "1330362"
+    },
+    {
+      "id": "talk-danilo-deponti",
+      "title": "When the Backlog Dispatches Itself: a Production Fleet of Autonomous AI Coding Agents",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1233101",
+      "sessionId": "1233101"
+    },
+    {
+      "id": "talk-davide-caldarulo",
+      "title": "Da settimane a ore: modernizzare i report finanziari per WCAG con la GenAI",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1327616",
+      "sessionId": "1327616"
+    },
+    {
+      "id": "talk-davide-pensato",
+      "title": "Game Audio: Beyond PlaySound()",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1360406",
+      "sessionId": "1360406"
+    },
+    {
+      "id": "talk-diana-bernabei",
+      "title": "Accessibility first: progettare una piattaforma quando l’accessibilità non è negoziabile",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1235267",
+      "sessionId": "1235267"
+    },
+    {
+      "id": "talk-edoardo-dusi",
+      "title": "Honey, We Predicted the Bits",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1324797",
+      "sessionId": "1324797"
+    },
+    {
+      "id": "talk-egon-ferri",
+      "title": "Beyond Benchmarks: What ARC Teaches Us About Measuring Intelligence",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1226121",
+      "sessionId": "1226121"
+    },
+    {
+      "id": "talk-elena-guidi",
+      "title": "System Failure: Why Your Tech Stack Can't Fix a Communication Leak",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1227394",
+      "sessionId": "1227394"
+    },
+    {
+      "id": "talk-emmanuele-villa",
+      "title": "AI Fundamentals in Action: Evolving a Flappy Bird Agent",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1210841",
+      "sessionId": "1210841"
+    },
+    {
+      "id": "talk-erik-pronk",
+      "title": "AI is changing your team more than your code",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1216484",
+      "sessionId": "1216484"
+    },
+    {
+      "id": "talk-ettore-di-giacinto",
+      "title": "Stop Sending Everything to the Cloud: Hybrid AI with LocalAI",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1331302",
+      "sessionId": "1331302"
+    },
+    {
+      "id": "talk-francesco-facconi",
+      "title": "When the Backlog Dispatches Itself: a Production Fleet of Autonomous AI Coding Agents",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1233101",
+      "sessionId": "1233101"
+    },
+    {
+      "id": "talk-francesco-pirrone",
+      "title": "Developer Experience 2.0: progettare software nell’era degli AI Agents",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1234974",
+      "sessionId": "1234974"
+    },
+    {
+      "id": "talk-gabriele-negro",
+      "title": "The Cost of Cheap Code",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1330263",
+      "sessionId": "1330263"
+    },
+    {
+      "id": "talk-gianni-forlastro",
+      "title": "Developer Experience 2.0: progettare software nell’era degli AI Agents",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1234974",
+      "sessionId": "1234974"
+    },
+    {
+      "id": "talk-giovanni-galloro",
+      "title": "Build agents with agents",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1232889",
+      "sessionId": "1232889"
+    },
+    {
+      "id": "talk-giulio-d-alessandro",
+      "title": "Weapon or Tool? An Ontological Approach to Enterprise Knowledge",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1348290",
+      "sessionId": "1348290"
+    },
+    {
+      "id": "talk-giulio-sciarappa",
+      "title": "Emergency in production: how to survive disasters ...a small guide",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1218568",
+      "sessionId": "1218568"
+    },
+    {
+      "id": "talk-graziano-casto",
+      "title": "Startup veloci, Pod snelli: In-Place Pod Resize in pratica",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1226083",
+      "sessionId": "1226083"
+    },
+    {
+      "id": "talk-gregorio-palama",
+      "title": "Fast & Furious LLM: Scaling Performance with MTP Drafters",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1235212",
+      "sessionId": "1235212"
+    },
+    {
+      "id": "talk-guglielmo-fancellu",
+      "title": "Weapon or Tool? An Ontological Approach to Enterprise Knowledge",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1348290",
+      "sessionId": "1348290"
+    },
+    {
+      "id": "talk-laura-miranda",
+      "title": "Da feature a revenue: come i team tecnici possono pensare (anche) da marketer",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1234920",
+      "sessionId": "1234920"
+    },
+    {
+      "id": "talk-luca-bianchi",
+      "title": "Documents Are Not Knowledge: Modelling Extraction as an Event-Driven Domain",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1296534",
+      "sessionId": "1296534"
+    },
+    {
+      "id": "talk-marco-landi",
+      "title": "SCRIBA.AI. soluzione IA italiana per modernizzare il codice legacy",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1342030",
+      "sessionId": "1342030"
+    },
+    {
+      "id": "talk-marco-liberati",
+      "title": "An Emergency Decree Walks Into a Pull Request: 165 Years of Italian Law, Read Like a Repo",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1218655",
+      "sessionId": "1218655"
+    },
+    {
+      "id": "talk-marco-simonte",
+      "title": "Transformers Are Changing: Inside the New Architecture of Long-Context AI",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1226525",
+      "sessionId": "1226525"
+    },
+    {
+      "id": "talk-matteo-flora",
+      "title": "What Could Possibly Go Wrong? A Crash Course in Paranoia for Developers",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1361549",
+      "sessionId": "1361549"
+    },
+    {
+      "id": "talk-matteo-mortari",
+      "title": "Bring Your Own Agent: Building Real-World Agents for a Sovereign SDLC",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1330362",
+      "sessionId": "1330362"
+    },
+    {
+      "id": "talk-maurizio-argoneto",
+      "title": "Shutup, Dependency Track! Silencing false positives locally with AST and AI",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1220576",
+      "sessionId": "1220576"
+    },
+    {
+      "id": "talk-maurizio-mangione",
+      "title": "Is getting hot in here",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1213691",
+      "sessionId": "1213691"
+    },
+    {
+      "id": "talk-michelantonio-trizio",
+      "title": "When AI agents click buy: atomic checkouts for dynamic retail carts",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1231176",
+      "sessionId": "1231176"
+    },
+    {
+      "id": "talk-michele-laurelli",
+      "title": "SCRIBA.AI. soluzione IA italiana per modernizzare il codice legacy",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1342030",
+      "sessionId": "1342030"
+    },
+    {
+      "id": "talk-moreno-lovato",
+      "title": "Dal codice in banca ai videogiochi: il lungo percorso di un indie",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1348385",
+      "sessionId": "1348385"
+    },
+    {
+      "id": "talk-nicola-guglielmi",
+      "title": "Engineering Leadership Through Multi-Agent Simulations",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1235175",
+      "sessionId": "1235175"
+    },
+    {
+      "id": "talk-nicolo-giorgio",
+      "title": "The Memedex: indicizzare Internet, un meme alla volta",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1260726",
+      "sessionId": "1260726"
+    },
+    {
+      "id": "talk-paolo-rubano",
+      "title": "Da settimane a ore: modernizzare i report finanziari per WCAG con la GenAI",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1327616",
+      "sessionId": "1327616"
+    },
+    {
+      "id": "talk-saverio-murgia",
+      "title": "Agents Don't Work Alone",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1348517",
+      "sessionId": "1348517"
+    },
+    {
+      "id": "talk-simone-desantis",
+      "title": "5 API per mettere a sicuro il tuo progetto digitale",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1340661",
+      "sessionId": "1340661"
+    },
+    {
+      "id": "talk-stefano-bruno",
+      "title": "Provocazioni Artificiali: un talk così “shiftato” che ti verrà la voglia di rubarci il microfono!",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1253908",
+      "sessionId": "1253908"
+    },
+    {
+      "id": "talk-stefano-fiorucci",
+      "title": "The case for Small Models: a 1M ModernBERT playing Doom in milliseconds",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1233377",
+      "sessionId": "1233377"
+    },
+    {
+      "id": "talk-valeria-salis",
+      "title": "Green Prompting: designing AI interactions with sustainability in mind",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1225977",
+      "sessionId": "1225977"
+    },
+    {
+      "id": "talk-valeria-zuccoli",
+      "title": "The Zero-Temperature Lie: Why Your Deterministic LLM is Still Hallucinating Randomness",
+      "sourceUrl": "https://sessionize.com/api/v2/t79hj390/session?id=1234879",
+      "sessionId": "1234879"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "talk-marta-scandellari",
+      "title": "Inclusion by design: engineering team workflows for different brains",
+      "reason": "Nessuna corrispondenza univoca titolo + speaker"
+    }
+  ]
+}
