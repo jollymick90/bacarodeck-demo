@@ -1,3 +1,4 @@
+import { invalidateCollections } from '$lib/server/firestore-cache';
 import { error, json } from '@sveltejs/kit';
 import { authorize } from '$lib/server/authorize';
 import type { RequestHandler } from './$types';
@@ -14,5 +15,6 @@ export const POST: RequestHandler = async ({ request, url, params }) => {
     const votes = { ...(snapshot.data()?.ratings || {}), [identity.uid]: body.score };
     tx.update(ref, { ratings: votes });
   });
+  await invalidateCollections(db, ['questions']);
   return json({ saved: true }, { headers: { 'Cache-Control': 'no-store' } });
 };

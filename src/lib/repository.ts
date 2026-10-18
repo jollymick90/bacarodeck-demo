@@ -5,7 +5,7 @@ import type { Collection, Entity } from './fields';
 export const basePath = 'workspaces/codemotion-milano-2026';
 const refresh = new EventTarget();
 export function refreshData() {
-  refresh.dispatchEvent(new Event('change'));
+  refresh.dispatchEvent(new CustomEvent('change', { detail: ['questions'] }));
 }
 async function api(path: string, body?: unknown) {
   if (typeof navigator !== 'undefined' && navigator.onLine === false)
@@ -29,7 +29,9 @@ export async function commitChanges(
 ): Promise<void> {
   if (!changes.length) return;
   await api('/api/data', { action: 'save', changes });
-  refresh.dispatchEvent(new Event('change'));
+  refresh.dispatchEvent(
+    new CustomEvent('change', { detail: [...new Set(changes.map((change) => change.collection))] })
+  );
 }
 export async function removeEntity(
   _db: Firestore,
@@ -40,7 +42,7 @@ export async function removeEntity(
     action: 'delete',
     changes: [{ collection, data: entity, expectedRevision: entity.revision }]
   });
-  refresh.dispatchEvent(new Event('change'));
+  refresh.dispatchEvent(new CustomEvent('change', { detail: [collection] }));
 }
 export function watchCollection(
   _db: Firestore,
@@ -60,11 +62,21 @@ export function watchCollection(
     }
   }
   void load();
-  const timer = setInterval(load, 15000);
-  refresh.addEventListener('change', load);
+  function poll() {
+    if (document.visibilityState === 'visible' && navigator.onLine) void load();
+  }
+  function changed(event: Event) {
+    if ((event as CustomEvent<string[]>).detail.includes(name)) void load();
+  }
+  const timer = setInterval(poll, 60_000);
+  document.addEventListener('visibilitychange', poll);
+  window.addEventListener('online', poll);
+  refresh.addEventListener('change', changed);
   return () => {
     active = false;
     clearInterval(timer);
-    refresh.removeEventListener('change', load);
+    refresh.removeEventListener('change', changed);
+    document.removeEventListener('visibilitychange', poll);
+    window.removeEventListener('online', poll);
   };
 }

@@ -1,14 +1,15 @@
+import { firestoreCache } from '$lib/server/firestore-cache';
 import { error, json } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import { authorize } from '$lib/server/authorize';
-import { accessDocument } from '$lib/server/member-access';
+import { accessDocument, readAccessMembers } from '$lib/server/member-access';
 import { parseAllowList } from '$lib/server/access-policy';
 import type { RequestHandler } from './$types';
 const headers = { 'Cache-Control': 'private, no-store' };
 export const GET: RequestHandler = async ({ request, url }) => {
   const { db, superadmin } = await authorize(request, url);
   if (!superadmin) error(403, 'Operazione riservata al superadmin.');
-  const data = (await db.doc(accessDocument).get()).data();
+  const data = await readAccessMembers();
   const permanent = parseAllowList(env.SUPERADMIN_EMAILS || '');
   const blocked: string[] = data?.blocked || [];
   const emails = [
@@ -55,5 +56,6 @@ export const POST: RequestHandler = async ({ request, url }) => {
     }
     tx.set(ref, { added: [...added].sort(), blocked: [...blocked].sort() });
   });
+  await firestoreCache(db).invalidate('access-members');
   return json({ saved: true }, { headers });
 };

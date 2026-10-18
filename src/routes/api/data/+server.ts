@@ -1,3 +1,4 @@
+import { invalidateCollections } from '$lib/server/firestore-cache';
 import { error, json } from '@sveltejs/kit';
 import { authorize } from '$lib/server/authorize';
 import { collections, type Entity } from '$lib/fields';
@@ -70,5 +71,11 @@ export const POST: RequestHandler = async ({ request, url }) => {
       }
     });
   });
+  await invalidateCollections(db, [
+    ...changes.map((change) => change.collection),
+    ...(body.action === 'delete' && changes.some((change) => change.collection === 'questions')
+      ? ['deletedQuestions']
+      : [])
+  ]);
   return json({ saved: true }, { headers: { 'Cache-Control': 'no-store' } });
 };

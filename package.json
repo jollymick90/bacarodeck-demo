@@ -15,6 +15,7 @@
     "format:check": "prettier --check \"src/**/*.{ts,svelte}\" src/app.css \"tests/**/*.ts\" \"*.{ts,js,json}\" schemas/*.json"
   },
   "dependencies": {
+    "@vercel/functions": "^3.10.1",
     "ajv": "^8.17.1",
     "firebase": "^12.0.0",
     "firebase-admin": "^14.5.0",

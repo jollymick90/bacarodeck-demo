@@ -147,3 +147,47 @@ Il filtro **Elenco interviste** segue la selezione Bacaro del manifest, corrispo
 ### Aggiornare i tag
 
 **Aggiorna tag** propone categorie (AI, Backend, Frontend, Cloud, DevOps, Sicurezza, Dati, Leadership) dai titoli, abstract IT/EN e argomenti dei talk associati. È un riconoscimento locale per parole chiave, non ricerca AI. L’anteprima mostra la parola riconosciuta; seleziona singoli tag o tutti e premi **Conferma aggiornamento tag**. Sono aggiunti solo nuovi tag: quelli manuali restano invariati, i duplicati sono ignorati senza distinzione maiuscole/minuscole e gli speaker senza indizi non vengono modificati. Le revisioni impediscono sovrascritture se una scheda cambia dopo l’anteprima. Ripetere l’operazione senza nuovi contenuti non propone nuovamente i tag già presenti.
+
+### Cache delle letture Firestore
+
+Le letture dell'app passano dalle API SvelteKit dopo l'autenticazione. Il server usa
+`@vercel/functions` Runtime Cache su Vercel, condivisa fra le istanze nella stessa
+regione; in sviluppo il pacchetto usa una cache in memoria. Non servono nuove chiavi
+segrete. Il namespace separa progetto Firebase, progetto Vercel, workspace ed emulatori.
+
+- Collezioni, inclusi membri e ID delle domande eliminate: cache di 5 minuti.
+- Documento degli accessi: cache di 30 minuti per le letture. Le scritture verificano
+  sempre i permessi su Firestore; la verifica del token Firebase resta attiva.
+- Sincronizzazione profilo al login: una volta all'ora per UID/nome, salvo cache miss.
+- Salvataggi/import, cancellazioni, rating e gestione accessi invalidano le rispettive
+  cache dopo la transazione. Una query precedente alla modifica non può ripopolare la
+  generazione corrente con una risposta vecchia.
+- Il browser aggiorna i dati ogni minuto solo se visibile e online; dopo una propria
+  modifica aggiorna subito le sole collezioni interessate.
+
+L'invalidazione tramite versione aggiorna la regione che riceve la scrittura. In un
+futuro deploy multi-regione, o se il backend cache non registra l'invalidazione,
+altre istanze possono mostrare i dati precedenti fino alla scadenza (5 minuti per
+contenuti, 30 minuti per accessi). Non è una garanzia di consistenza immediata globale;
+le revisioni nelle transazioni impediscono comunque di sovrascrivere dati più recenti.
+
+Le risposte HTTP autenticate restano `private, no-store`: questa è una cache dei dati
+sul server, non una cache pubblica della CDN. Le transazioni mantengono le letture
+Firestore dirette per controllo revisioni, rating e cancellazioni. Le modifiche fatte
+fuori dall'app (console/script) diventano visibili alla scadenza della cache; una
+revoca esterna può richiedere fino a 30 minuti sulle letture, mentre le scritture
+consultano sempre il documento corrente.
+
+Un esempio senza modifiche: 300 documenti ricaricati ogni 15 secondi producono circa
+72.000 letture/ora per browser. Con una cache calda di 5 minuti nella stessa regione,
+le scansioni periodiche equivalenti scendono a circa 3.600 documenti/ora, condivise tra
+utenti. Non è un limite garantito: scritture, scadenze, eviction, regioni e cache miss
+contemporanei possono aumentare il consumo. I payload grandi vengono suddivisi in
+blocchi per rispettare il limite per elemento di Runtime Cache.
+
+I log `[firestore-read]` mostrano collezione e numero di documenti per le scansioni
+che raggiungono Firestore, senza contenuti o credenziali. Su Vercel controllare anche
+Runtime Cache nell'osservabilità: se compare `Runtime Cache unavailable`, il pacchetto
+sta usando solo memoria locale e il risparmio non è condiviso tra istanze. La cache
+Vercel ha quote e condizioni proprie: vedere la
+[documentazione ufficiale](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package#getcache).
