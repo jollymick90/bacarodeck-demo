@@ -184,6 +184,10 @@
         const result = await response.json();
         if (version !== generation) return;
         if (!response.ok) {
+          if (response.status >= 500 && access === 'member') {
+            fail(new Error(result.message || 'Verifica accesso temporaneamente non disponibile.'));
+            return;
+          }
           denied(new Error(result.message || result.error || 'Accesso non consentito.'));
           return;
         }

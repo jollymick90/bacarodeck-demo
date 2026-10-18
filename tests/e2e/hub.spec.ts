@@ -39,6 +39,16 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await page.clock.fastForward(61_000);
   await expect(page.getByLabel('Testo Markdown')).toHaveValue(markdown);
   await page.unroute('**/api/access');
+  await page.route('**/api/access', (route) =>
+    route.fulfill({
+      status: 503,
+      contentType: 'application/json',
+      body: JSON.stringify({ message: 'Temporary service failure' })
+    })
+  );
+  await page.clock.fastForward(61_000);
+  await expect(page.getByLabel('Testo Markdown')).toHaveValue(markdown);
+  await page.unroute('**/api/access');
 
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
   await expect(page.getByRole('heading', { name: 'Ricerca da Gemini' })).toBeVisible();
@@ -95,6 +105,17 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   // Data endpoints independently authorize requests and preserve atomic conflicts.
   const authorization = (await accessRequest).headers().authorization;
   const headers = { Authorization: authorization };
+  const accessIdentity = await (await request.post('/api/access', { headers })).json();
+  const memberUrl = `http://127.0.0.1:8080/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/members/${accessIdentity.uid}`;
+  const beforeMember = await (
+    await request.get(memberUrl, { headers: { Authorization: 'Bearer owner' } })
+  ).json();
+  expect((await request.post('/api/access', { headers })).status()).toBe(200);
+  const afterMember = await (
+    await request.get(memberUrl, { headers: { Authorization: 'Bearer owner' } })
+  ).json();
+  expect(afterMember.updateTime).toBe(beforeMember.updateTime);
+
   if (testInfo.project.name === 'desktop') administratorToken = authorization;
   expect((await request.get('/api/data/speakers', { headers })).status()).toBe(200);
   expect((await request.get('/api/data/access', { headers })).status()).toBe(400);

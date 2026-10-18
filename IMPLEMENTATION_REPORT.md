@@ -134,3 +134,7 @@ Verifica traduzioni: 34 test unitari superati, test regole su emulatore superato
 ## Aggiornamento tag da interfaccia
 
 Pulsante “Aggiorna tag”: proposte basate su parole chiave di titoli/abstract/argomenti dei talk associati, con evidenza visibile. Anteprima per speaker, selezione singola o collettiva e conferma. Tag esistenti conservati e duplicati ignorati; nessuna chiamata esterna. Snapshot delle revisioni per impedire sovrascritture concorrenti. Verificati 39 test unitari e 4 test browser desktop/mobile, inclusi conservazione del tag manuale e seconda esecuzione senza proposte duplicate; check Svelte e build superati. Nessun deploy o scrittura remota.
+
+## Diagnostica accesso — 2026-10-18
+
+Il log remoto conteneva soltanto reference/route: causa del 500 non determinabile dai dati disponibili. Aggiunte fasi admin-init, policy-read e member-sync e codici tecnici ammessi esplicitamente; messaggi, payload, email e credenziali non vengono registrati. Il controllo membro ora legge in transazione e scrive solo alla creazione o se nome/ruolo cambiano. Un 5xx di /api/access durante una sessione già aperta conserva lo stato e la bozza; 401/403 continuano a negare l'accesso. Nessun esito autorizzativo memorizzato nel browser per bypassare il server. Verificati 42 test unitari, check Svelte, build e 4 test browser, inclusi 503 durante la modifica e updateTime membro invariato dopo controlli ripetuti. Occorre il nuovo log dal deployment aggiornato per diagnosticare il guasto remoto; nessun deploy eseguito.
