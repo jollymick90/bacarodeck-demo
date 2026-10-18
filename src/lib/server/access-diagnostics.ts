@@ -19,9 +19,10 @@ const codes = new Set([
 class AccessFailure extends Error {
   constructor(
     readonly stage: Stage,
-    readonly code: string
+    readonly code: string,
+    cause: unknown
   ) {
-    super('Access service unavailable');
+    super('Access service unavailable', { cause });
   }
 }
 export async function runAccessStep<T>(stage: Stage, run: () => T | Promise<T>): Promise<T> {
@@ -36,7 +37,7 @@ export async function runAccessStep<T>(stage: Stage, run: () => T | Promise<T>):
         : typeof raw === 'string' && codes.has(raw)
           ? raw
           : 'unknown';
-    throw new AccessFailure(stage, code);
+    throw new AccessFailure(stage, code, failure);
   }
 }
 export function accessDiagnostic(failure: unknown) {
