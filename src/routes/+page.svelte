@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, tick } from 'svelte';
+  import InterviewBadges from '$lib/components/InterviewBadges.svelte';
   import WorkspaceBackup from '$lib/components/WorkspaceBackup.svelte';
   let fullBackup = $state(false);
   import Export from '$lib/components/Export.svelte';
@@ -61,7 +62,7 @@
   let query = $state('');
   let mobileDetail = $state(false);
   let listPosition = 0;
-  let directory = $state('');
+  let directory = $state('in');
   let priorityOnly = $state(false);
   async function openSpeaker(id: string) {
     listPosition = window.scrollY;
@@ -590,7 +591,9 @@
                 ><span
                   ><strong>{s.fullName}</strong><small
                     >{s.organization || 'Organizzazione da verificare'}</small
-                  ></span
+                  ><InterviewBadges
+                    plan={data.interviewPlans?.find((p) => p.speakerId === s.id)}
+                  /></span
                 ><span aria-hidden="true">›</span></button
               >{/each}
           </nav>
@@ -719,11 +722,7 @@
                         ?.displayName ||
                       'Non assegnato'}
                   </p>
-                  <p>
-                    Preparazione: {translate(entity.status)} · Intervista: {translate(
-                      entity.interviewStatus
-                    )}
-                  </p>
+                  <InterviewBadges plan={entity} />
                   <p>{entity.date || 'Data da concordare'} {entity.startTime || ''}</p>
                   <p>Obiettivo: {entity.targetQuestions || '—'} domande</p>
                   <Markdown text={display(entity.notesMd)} />
