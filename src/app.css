@@ -820,6 +820,16 @@ dialog::backdrop {
 .back-speakers {
   display: none;
 }
+@media (min-width: 651px) {
+  .speaker-detail {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+}
 @media (max-width: 650px) {
   .workspace-grid:not(.mobile-detail) .speaker-detail {
     display: none;
