@@ -11,7 +11,13 @@ import {
   type Dataset,
   type Value
 } from './fields';
-export type ImportData = Dataset & { schemaVersion: number; targetSpeakerId?: string };
+export type ImportData = Dataset & {
+  schemaVersion: number;
+  targetSpeakerId?: string;
+  exportKind?: 'editorial-work';
+  personalRatings?: { questionId: string; score: number }[];
+  requiredDocuments?: { collection: Collection; id: string }[];
+};
 const ajv = new Ajv({ allErrors: true, strict: false });
 const validateSchema = ajv.compile(schema);
 const idPattern = /^[a-zA-Z0-9_-]{1,128}$/;
@@ -200,6 +206,7 @@ export type PreviewRow = {
   warnings: string[];
   blocked: boolean;
   selected: boolean;
+  preserveQuestionStatus?: boolean;
 };
 const normalize = (v: unknown) =>
   String(v || '')
@@ -214,6 +221,12 @@ const normalizeUrl = (v: unknown) =>
     .toLowerCase();
 export function previewImport(input: ImportData, current: Dataset): PreviewRow[] {
   const rows: PreviewRow[] = [];
+  const restoring = input.exportKind === 'editorial-work';
+  const missing = restoring
+    ? (input.requiredDocuments || []).filter(
+        (ref) => !(current[ref.collection] || []).some((entity) => entity.id === ref.id)
+      )
+    : [];
   const from = input.speakers?.[0]?.id;
   const target = input.targetSpeakerId;
   for (const collection of collections)
@@ -229,7 +242,7 @@ export function previewImport(input: ImportData, current: Dataset): PreviewRow[]
           );
         if (collection === 'interviewPlans' && incoming.id === from) incoming.id = target;
       }
-      if (collection === 'questions') incoming.status = 'suggested';
+      if (collection === 'questions' && !restoring) incoming.status = 'suggested';
       const existing = (current[collection] || []).find((e) => e.id === incoming.id) || null;
       const warnings: string[] = [];
       if (
@@ -247,8 +260,14 @@ export function previewImport(input: ImportData, current: Dataset): PreviewRow[]
         )
       )
         warnings.push('URL fonte già presente con un altro ID. Deseleziona per evitare duplicati.');
-      const blocked = collection === 'questions' && !!existing && existing.status !== 'suggested';
-      if (blocked)
+      const protectedQuestion =
+        !restoring && collection === 'questions' && !!existing && existing.status !== 'suggested';
+      const blocked = protectedQuestion || missing.length > 0;
+      if (missing.length)
+        warnings.push(
+          `Importa prima i documenti di base mancanti: ${missing.map((ref) => `${ref.collection}/${ref.id}`).join(', ')}`
+        );
+      if (protectedQuestion)
         warnings.push('Domanda esistente protetta. Modificala manualmente dalla scheda.');
       const diffs = Object.keys(incoming)
         .filter(
@@ -261,7 +280,8 @@ export function previewImport(input: ImportData, current: Dataset): PreviewRow[]
           key,
           before: existing?.[key],
           after: incoming[key],
-          selected: !existing && !blocked
+          selected: !existing && !blocked,
+          preserveQuestionStatus: restoring
         }));
       rows.push({
         collection,
@@ -271,7 +291,8 @@ export function previewImport(input: ImportData, current: Dataset): PreviewRow[]
         fields: diffs,
         warnings,
         blocked,
-        selected: !existing && !blocked
+        selected: !existing && !blocked,
+        preserveQuestionStatus: restoring
       });
     }
   return rows;
@@ -290,7 +311,7 @@ export function selectedChanges(rows: PreviewRow[]): Change[] {
     if (!selected.length) continue;
     const data = { ...row.existing };
     for (const f of selected) data[f.key] = f.after;
-    if (row.collection === 'questions') data.status = 'suggested';
+    if (row.collection === 'questions' && !row.preserveQuestionStatus) data.status = 'suggested';
     changes.push({
       collection: row.collection,
       data,

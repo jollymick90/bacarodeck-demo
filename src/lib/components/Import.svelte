@@ -16,7 +16,11 @@
     busy = false
   }: {
     data: Dataset;
-    oncommit: (changes: Change[]) => Promise<void>;
+    oncommit: (
+      changes: Change[],
+      origin?: 'manual' | 'import',
+      votes?: { questionId: string; score: number }[]
+    ) => Promise<void>;
     oncancel: () => void;
     initial?: string;
     busy?: boolean;
@@ -26,12 +30,35 @@
   let error = $state('');
   let approved = $state(false);
   let reviewed = $state(false);
+  let restoring = $state(false);
+  let votes = $state<{ questionId: string; score: number }[]>([]);
+  let restoreVotes = $state(false);
+  let missingRequired = $state(false);
   const changes = $derived(selectedChanges(rows));
+  const missingVoteTargets = $derived(
+    restoreVotes &&
+      votes.some(
+        (vote) =>
+          !data.questions?.some((question) => question.id === vote.questionId) &&
+          !changes.some(
+            (change) => change.collection === 'questions' && change.data.id === vote.questionId
+          )
+      )
+  );
   function preview() {
     error = '';
     approved = false;
     try {
-      rows = previewImport(parseImport(text), data);
+      const parsed = parseImport(text);
+      restoring = parsed.exportKind === 'editorial-work';
+      votes = restoring ? parsed.personalRatings || [] : [];
+      restoreVotes = false;
+      missingRequired =
+        restoring &&
+        (parsed.requiredDocuments || []).some(
+          (ref) => !data[ref.collection]?.some((entity) => entity.id === ref.id)
+        );
+      rows = previewImport(parsed, data);
       reviewed = true;
     } catch (e) {
       error = e instanceof Error ? e.message : String(e);
@@ -59,11 +86,27 @@
     }
     approved = false;
   }
+  async function loadFile(event: Event) {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    if (!file) return;
+    try {
+      text = await file.text();
+      preview();
+    } catch (e) {
+      error = e instanceof Error ? e.message : String(e);
+    }
+  }
   async function commit() {
-    if (!approved || !changes.length) return;
+    if (
+      !approved ||
+      missingRequired ||
+      missingVoteTargets ||
+      (!changes.length && !(restoreVotes && votes.length))
+    )
+      return;
     error = '';
     try {
-      await oncommit(changes);
+      await oncommit(changes, restoring ? 'manual' : 'import', restoreVotes ? votes : []);
     } catch (e) {
       error = e instanceof Error ? e.message : String(e);
     }
@@ -80,6 +123,13 @@
     suggerite.
   </p>
   {#if !reviewed}
+    <label
+      >Apri file JSON<input
+        type="file"
+        accept=".json,application/json"
+        onchange={loadFile}
+      /></label
+    >
     <label for="import-json">JSON da importare</label><textarea
       id="import-json"
       rows="14"
@@ -87,6 +137,10 @@
       spellcheck="false"></textarea>
     <button class="primary" onclick={preview}>Valida e mostra anteprima</button>
   {:else}
+    {#if restoring}<p class="notice">
+        Ripristino lavoro editoriale: gli stati delle domande vengono conservati. Controlla e
+        seleziona le modifiche ai documenti già presenti.
+      </p>{/if}
     <p class="notice">
       Le modifiche ai dati esistenti sono deselezionate. Seleziona i singoli campi da aggiornare;
       note e piani non vengono sostituiti automaticamente.
@@ -100,6 +154,24 @@
         conservati.
       </p>
     {/if}
+    {#if missingRequired}<p class="warning">
+        Importa i documenti di base richiesti prima di ripristinare questo file.
+      </p>{/if}
+    {#if missingVoteTargets}<p class="warning">
+        Alcune domande votate non sono presenti: importa prima le domande oppure deseleziona il
+        ripristino dei voti. Gli altri contenuti possono essere importati separatamente.
+      </p>{/if}
+    {#if votes.length}<label class="inline"
+        ><input
+          type="checkbox"
+          bind:checked={restoreVotes}
+          onchange={() => (approved = false)}
+        />Ripristina {votes.length} voti sul mio account attuale</label
+      >
+      <p class="muted">
+        I voti sono applicati dopo i documenti. Se un passaggio fallisce, riapri il file e ripeti
+        l’importazione senza duplicarli.
+      </p>{/if}
     {#each rows as row}
       <article class="diff-row">
         <h3>{labels[row.collection]} · {row.id}</h3>
@@ -153,8 +225,14 @@
       e approvo queste scritture</label
     >
     <div class="form-actions">
-      <button class="primary" onclick={commit} disabled={!approved || !changes.length || busy}
-        >{busy ? 'Importazione…' : 'Conferma importazione'}</button
+      <button
+        class="primary"
+        onclick={commit}
+        disabled={!approved ||
+          missingRequired ||
+          missingVoteTargets ||
+          (!changes.length && !(restoreVotes && votes.length)) ||
+          busy}>{busy ? 'Importazione…' : 'Conferma importazione'}</button
       ><button
         disabled={busy}
         onclick={() => {

@@ -1,9 +1,12 @@
 import { getAuth } from 'firebase/auth';
 import type { Firestore, Unsubscribe } from 'firebase/firestore';
 import type { Change } from './domain';
-import type { Collection, Entity } from './fields';
+import { collections, type Collection, type Entity } from './fields';
 export const basePath = 'workspaces/codemotion-milano-2026';
 const refresh = new EventTarget();
+export function refreshWorkspace() {
+  refresh.dispatchEvent(new CustomEvent('change', { detail: [...collections, 'members'] }));
+}
 export function refreshData() {
   refresh.dispatchEvent(new CustomEvent('change', { detail: ['questions'] }));
 }
@@ -25,10 +28,11 @@ async function api(path: string, body?: unknown) {
 export async function commitChanges(
   _db: Firestore,
   _uid: string,
-  changes: Change[]
+  changes: Change[],
+  origin: 'manual' | 'import' = 'manual'
 ): Promise<void> {
   if (!changes.length) return;
-  await api('/api/data', { action: 'save', changes });
+  await api('/api/data', { action: 'save', changes, origin });
   refresh.dispatchEvent(
     new CustomEvent('change', { detail: [...new Set(changes.map((change) => change.collection))] })
   );
@@ -79,4 +83,13 @@ export function watchCollection(
     document.removeEventListener('visibilitychange', poll);
     window.removeEventListener('online', poll);
   };
+}
+
+export async function restorePersonalRatings(votes: { questionId: string; score: number }[]) {
+  for (const vote of votes) {
+    await api(`/api/questions/${encodeURIComponent(vote.questionId)}/rating`, {
+      score: vote.score
+    });
+  }
+  if (votes.length) refreshData();
 }

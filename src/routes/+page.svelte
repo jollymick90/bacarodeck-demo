@@ -1,9 +1,13 @@
 <script lang="ts">
   import { onMount, tick } from 'svelte';
+  import WorkspaceBackup from '$lib/components/WorkspaceBackup.svelte';
+  let fullBackup = $state(false);
+  import Export from '$lib/components/Export.svelte';
+  let exporting = $state(false);
   import TagUpdates from '$lib/components/TagUpdates.svelte';
   let updatingTags = $state(false);
   async function saveTags(changes: Change[]) {
-    await importChanges(changes);
+    await importChanges(changes, 'manual');
     updatingTags = false;
   }
   import { isInInterviewList } from '$lib/interview-list';
@@ -30,7 +34,7 @@
   import { safeUrl, provenanceLabel, type Change } from '$lib/domain';
   import { team } from '$lib/team';
   import QuestionRating from '$lib/components/QuestionRating.svelte';
-  import { refreshData } from '$lib/repository';
+  import { refreshData, refreshWorkspace, restorePersonalRatings } from '$lib/repository';
   let sortByRating = $state(false);
   import Schedule from '$lib/components/Schedule.svelte';
   let showSchedule = $state(false);
@@ -135,6 +139,8 @@
     unsubs = [];
   }
   function clear() {
+    fullBackup = false;
+    exporting = false;
     superadmin = false;
     managingAccess = false;
     updatingTags = false;
@@ -280,12 +286,23 @@
       busy = false;
     }
   }
-  async function importChanges(changes: Change[]) {
+  async function importChanges(
+    changes: Change[],
+    origin: 'manual' | 'import' = 'import',
+    votes: { questionId: string; score: number }[] = []
+  ) {
     if (!client || !user) return;
     busy = true;
     try {
-      await commitChanges(client.db, user.uid, changes);
-      message = `Importazione completata: ${changes.length} documenti salvati.`;
+      await commitChanges(client.db, user.uid, changes, origin);
+      try {
+        await restorePersonalRatings(votes);
+      } catch (failure) {
+        throw new Error(
+          `Documenti salvati, ma ripristino dei voti incompleto. Riapri il file e ripristina i voti rimasti: ${failure instanceof Error ? failure.message : String(failure)}`
+        );
+      }
+      message = `Importazione completata: ${changes.length} documenti salvati, ${votes.length} voti ripristinati.`;
       importing = false;
     } finally {
       busy = false;
@@ -425,6 +442,12 @@
         <p>Ricerca condivisa · preparazione entro il 27 ottobre</p>
       </div>
       <div class="toolbar-actions">
+        <button disabled={!ready || busy} onclick={() => (fullBackup = !fullBackup)}
+          >Export / import completo</button
+        >
+        <button disabled={!ready || busy} onclick={() => (exporting = !exporting)}
+          >{exporting ? 'Chiudi export' : 'Esporta il mio lavoro'}</button
+        >
         <button
           disabled={!ready || busy}
           onclick={() => {
@@ -464,6 +487,16 @@
     {#if message}<p class="success" role="status">{message}</p>{/if}
     {#if showSchedule}<Schedule slots={data.interviewSlots || []} onsave={saveSlot} />{/if}
     {#if managingAccess && superadmin}<AccessAdmin />{/if}
+    {#if fullBackup}<WorkspaceBackup
+        {superadmin}
+        onbusychange={(value) => (busy = value)}
+        oncancel={() => (fullBackup = false)}
+        onrestored={() => {
+          refreshWorkspace();
+          message = 'Backup ripristinato.';
+        }}
+      />{/if}
+    {#if exporting}<Export uid={user!.uid} oncancel={() => (exporting = false)} />{/if}
     {#if updatingTags}<TagUpdates
         {data}
         {busy}

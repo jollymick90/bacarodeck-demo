@@ -174,7 +174,9 @@ export const auditKeys = [
   'createdBy',
   'updatedBy',
   'revision',
-  'ratings'
+  'ratings',
+  'entryOrigin',
+  'manualFields'
 ];
 export function emptyEntity(collection: Collection, speakerId?: string): Entity {
   const entity: Entity = { id: crypto.randomUUID() };

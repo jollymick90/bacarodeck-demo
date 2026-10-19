@@ -191,3 +191,94 @@ Runtime Cache nell'osservabilità: se compare `Runtime Cache unavailable`, il pa
 sta usando solo memoria locale e il risparmio non è condiviso tra istanze. La cache
 Vercel ha quote e condizioni proprie: vedere la
 [documentazione ufficiale](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package#getcache).
+
+### Trasferire il lavoro editoriale da Vercel al locale
+
+Dopo il deploy di questa versione, apri **Esporta il mio lavoro** su Vercel. Il pannello
+legge lo stato salvato attraverso le API autenticate e la cache server. Non include
+bozze ancora aperte nell'editor. Controlla i campi proposti e premi **Scarica export JSON**.
+
+- I nuovi salvataggi distinguono inserimenti manuali e import JSON. Le modifiche manuali
+  a una scheda importata vengono esportate come campi aggiuntivi/modificati, senza
+  copiare tutto il catalogo. Il tracciamento è calcolato sul server, non accetta i
+  metadati dichiarati dal documento inviato dal client.
+- Per i dati salvati prima di questa funzione non esiste una cronologia dell'origine:
+  il confronto con catalogo, seed, pacchetto speaker e abstract riconosce i valori già
+  importabili. Le differenze e i documenti sconosciuti sono **da verificare**, inizialmente
+  deselezionati. Anche un vecchio import JSON personalizzato può apparire tra questi.
+  Controlla quindi i campi per distinguere il tuo lavoro dagli altri import.
+- I contenuti editoriali sono condivisi dal workspace: il pannello non pretende di
+  attribuire retroattivamente ogni testo al singolo autore. I voti, invece, sono solo
+  quelli dell'account con cui stai esportando e non contengono il suo UID.
+
+In locale, con gli emulatori attivi e `PUBLIC_USE_EMULATORS=true`:
+
+1. Importa i pacchetti originali necessari (catalogo speaker e gli eventuali altri JSON
+   usati su Vercel), mantenendo gli stessi ID.
+2. Apri **Importa JSON → Apri file JSON** e scegli l'export del lavoro.
+3. Controlla l'anteprima. I nuovi documenti sono selezionati; le modifiche a documenti
+   esistenti richiedono la selezione dei singoli campi. I riferimenti di base mancanti
+   bloccano il ripristino per evitare schede scollegate/incomplete.
+4. Se desiderato seleziona **Ripristina … voti sul mio account attuale**. Le domande
+   devono già esistere o essere create dallo stesso import. Puoi lasciare i voti
+   deselezionati e ripristinare comunque gli altri contenuti.
+5. Approva e conferma. I documenti sono salvati in transazione con controllo revisioni;
+   i voti sono applicati successivamente. In caso di errore nei voti riapri il file:
+   ripeterli non crea duplicati. Gli export editoriali preservano gli stati delle domande;
+   gli import di ricerca ordinari continuano a proporle come `suggested`.
+
+Massimo 400 documenti per file: per quantità maggiori seleziona gruppi separati. I
+riferimenti a documenti manuali esclusi dalla selezione vanno ripristinati prima dei
+contenuti che li citano. Il nome completo dello speaker e il contesto di validazione
+per gli slot sono mantenuti anche negli export parziali.
+
+Questo è un trasferimento del lavoro editoriale, non un backup completo del database:
+non trasferisce account, credenziali, voti altrui, cronologia o cancellazioni/tombstone.
+Le assegnazioni a UID di membri remoti possono richiedere una nuova assegnazione in
+locale. I file scaricati restano sul tuo computer: non committarli se contengono appunti
+privati. Con gli emulatori salva un nuovo export prima di interrompere la sessione se
+non hai configurato la persistenza dei loro dati.
+
+### Export / import completo del workspace
+
+Il pulsante **Export / import completo** è distinto da **Esporta il mio lavoro**.
+**Scarica backup completo** include tutte le otto collezioni editoriali, `members`
+(profili visualizzati, non account Auth) e `deletedQuestions`, compresi dati importati
+via JSON, voti di tutti, stati delle domande, origine dei contenuti e riferimenti.
+Non include altre applicazioni Firebase, credenziali, Firebase Authentication,
+`ALLOW_LIST`, `SUPERADMIN_EMAILS` o il documento privato degli accessi.
+
+L'export usa letture autenticate e la cache server esistente. Le pagine di risposta
+rimangono sotto 2 MB, e il browser le ricompone in un file JSON. La versione della
+collezione viene verificata tra le pagine: se cambia, l'export viene interrotto per
+non mescolare pagine differenti. Non è una transazione unica su tutto il workspace;
+evitare modifiche durante il trasferimento e attendere la scadenza della cache (5
+minuti) per modifiche fatte direttamente dalla console/script.
+
+Per ripristinare:
+
+1. Accedi come **superadmin della destinazione**, anche negli emulatori locali.
+2. Apri **Export / import completo → Apri backup completo**. Non usare l'import di
+   ricerca JSON o quello del solo lavoro editoriale per questo formato.
+3. Controlla progetto di destinazione, conteggi e differenze tra documenti attuali
+   e backup. In una destinazione vuota non occorre importare prima il catalogo.
+4. Approva le sostituzioni/cancellazioni indicate e premi **Ripristina backup completo**.
+
+Il ripristino aggiunge i documenti mancanti e sostituisce interamente quelli con lo
+stesso ID. **Non svuota la destinazione**: i documenti assenti dal file sono conservati,
+salvo le domande marcate come eliminate nel backup. Ripristinare una domanda presente
+rimuove il suo eventuale tombstone locale; ripristinare un tombstone elimina la domanda
+locale corrispondente. Le due operazioni viaggiano nello stesso blocco atomico.
+
+Le scritture sono suddivise in blocchi fino a 100 operazioni e 2 MB, quindi possono
+superare complessivamente 400 documenti. Ogni blocco ricontrolla i valori della preview
+in transazione; un conflitto interrompe il ripristino senza annullare i blocchi già
+completati. **Ricarica anteprima completa** prima di riprovare: i documenti già uguali
+vengono saltati. Revisioni e ultimo aggiornamento dei contenuti ripristinati vengono
+aggiornati sul server per mantenere il controllo dei conflitti.
+
+Voti e assegnazioni mantengono gli UID originali: un account creato nell'emulatore
+potrebbe avere un UID differente. Il ripristino dei profili non concede accesso né
+privilegi e non ricrea gli account Google. L'import completo è riservato al superadmin
+perché può sostituire anche voti e contenuti degli altri membri. File fino a 100 MiB
+sono accettati dal pannello; conservare il file scaricato come backup prima di procedere.

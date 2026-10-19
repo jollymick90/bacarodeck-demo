@@ -1,3 +1,4 @@
+import { trackEditorialFields } from '$lib/editorial-export';
 import { invalidateCollections } from '$lib/server/firestore-cache';
 import { error, json } from '@sveltejs/kit';
 import { authorize } from '$lib/server/authorize';
@@ -8,6 +9,8 @@ export const POST: RequestHandler = async ({ request, url }) => {
   const { db, identity } = await authorize(request, url);
   const body = await request.json().catch(() => error(400, 'JSON non valido.'));
   const changes: Change[] = body?.changes;
+  if (body?.origin !== undefined && !['manual', 'import'].includes(body.origin))
+    error(400, 'Origine non valida.');
   if (!Array.isArray(changes) || !changes.length || changes.length > 400)
     error(400, 'Sono richiesti da 1 a 400 documenti.');
   if (body.action !== 'save' && body.action !== 'delete') error(400, 'Operazione non valida.');
@@ -34,7 +37,7 @@ export const POST: RequestHandler = async ({ request, url }) => {
       )
     );
 
-    const writes = changes.map((change, index) => {
+    const writes = changes.map((change, index): Entity | null => {
       if (body.action === 'save' && tombstones[index]?.exists)
         error(409, 'Domanda eliminata: non può essere ripristinata da un import.');
       const snapshot = snapshots[index];
@@ -50,7 +53,14 @@ export const POST: RequestHandler = async ({ request, url }) => {
         return null;
       }
       try {
-        return prepareWrite(change.collection, change.data, existing, identity.uid, Date.now());
+        const write = prepareWrite(
+          change.collection,
+          change.data,
+          existing,
+          identity.uid,
+          Date.now()
+        );
+        return { ...write, ...trackEditorialFields(write, existing, body.origin || 'manual') };
       } catch (failure) {
         error(400, failure instanceof Error ? failure.message : 'Documento non valido.');
       }

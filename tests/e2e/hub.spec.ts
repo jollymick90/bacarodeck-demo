@@ -1,3 +1,4 @@
+import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
 let administratorToken = '';
 
@@ -372,6 +373,187 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await updateTags.click();
   await expect(page.getByText('0 speaker con nuovi tag proposti.', { exact: false })).toBeVisible();
   await page.getByRole('button', { name: 'Chiudi tag' }).click();
+  const insightId = `manual-insight-${testInfo.project.name}`;
+  expect(
+    (
+      await request.post('/api/data', {
+        headers,
+        data: {
+          action: 'save',
+          origin: 'manual',
+          changes: [
+            {
+              collection: 'insights',
+              data: {
+                id: insightId,
+                title: 'Craftsmanship dopo gli agenti',
+                bodyMd: 'Uno spunto personale',
+                speakerIds: ['abiodun-olowode']
+              },
+              expectedRevision: null
+            }
+          ]
+        }
+      })
+    ).status()
+  ).toBe(200);
+  await page.reload();
+  await page.getByRole('button', { name: 'Esporta il mio lavoro' }).click();
+  await expect(
+    page.locator('.diff-row').filter({ hasText: insightId }).getByRole('heading')
+  ).toBeVisible();
+  const downloaded = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Scarica export JSON' }).click();
+  const file = await downloaded;
+  const exported = JSON.parse(await readFile((await file.path())!, 'utf8'));
+  expect(exported.exportKind).toBe('editorial-work');
+  expect(exported.insights).toContainEqual(
+    expect.objectContaining({ id: insightId, bodyMd: 'Uno spunto personale' })
+  );
+  expect(JSON.stringify(exported)).not.toContain('createdBy');
+  expect(
+    exported.speakers?.some((item: { id: string }) => item.id === 'andrey-breslav')
+  ).toBeFalsy();
+  expect(exported.requiredDocuments).toContainEqual({
+    collection: 'speakers',
+    id: 'abiodun-olowode'
+  });
+  const insight = (await (await request.get('/api/data/insights', { headers })).json()).find(
+    (item: { id: string }) => item.id === insightId
+  );
+  expect(
+    (
+      await request.post('/api/data', {
+        headers,
+        data: {
+          action: 'delete',
+          changes: [{ collection: 'insights', data: insight, expectedRevision: insight.revision }]
+        }
+      })
+    ).status()
+  ).toBe(200);
+  await page.reload();
+  await page.getByRole('button', { name: 'Importa JSON', exact: true }).click();
+  await page.getByLabel('Apri file JSON').setInputFiles({
+    name: 'lavoro.json',
+    mimeType: 'application/json',
+    buffer: Buffer.from(JSON.stringify(exported))
+  });
+  await expect(page.getByText('Ripristino lavoro editoriale:', { exact: false })).toBeVisible();
+  if (exported.personalRatings?.length)
+    await page.getByLabel(/Ripristina .* voti sul mio account attuale/).check();
+  await page.getByLabel('Ho verificato le differenze e approvo queste scritture').check();
+  await page.getByRole('button', { name: 'Conferma importazione' }).click();
+  await expect(page.getByText(/Importazione completata:/)).toBeVisible();
+  const restored = (await (await request.get('/api/data/insights', { headers })).json()).find(
+    (item: { id: string }) => item.id === insightId
+  );
+  expect(restored.bodyMd).toBe('Uno spunto personale');
+  expect(restored.entryOrigin).toBe('manual');
+  await page.getByRole('button', { name: 'Export / import completo' }).click();
+  const fullDownload = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Scarica backup completo' }).click();
+  const fullFile = await fullDownload;
+  const complete = JSON.parse(await readFile((await fullFile.path())!, 'utf8'));
+  expect(complete.format).toBe('bacarodeck-workspace');
+  expect(complete.data.speakers).toHaveLength(84);
+  expect(complete.data.members.length).toBeGreaterThan(0);
+  expect(complete.data.deletedQuestions.length).toBeGreaterThan(0);
+  expect(complete.data.access).toBeUndefined();
+  if (testInfo.project.name === 'desktop') {
+    expect(
+      (
+        await request.post('/api/data', {
+          headers,
+          data: {
+            action: 'save',
+            changes: [
+              {
+                collection: 'insights',
+                data: { ...restored, bodyMd: 'Dopo il backup' },
+                expectedRevision: restored.revision
+              }
+            ]
+          }
+        })
+      ).status()
+    ).toBe(200);
+    await page.getByLabel('Apri backup completo').setInputFiles({
+      name: 'completo.json',
+      mimeType: 'application/json',
+      buffer: Buffer.from(JSON.stringify(complete))
+    });
+    await expect(page.getByText(/1 da sostituire/)).toBeVisible();
+    await page
+      .getByLabel('Ho verificato destinazione, sostituzioni e cancellazioni del backup completo')
+      .check();
+    await page.getByRole('button', { name: 'Ripristina backup completo', exact: true }).click();
+    await expect(page.getByText(/Ripristino completo: 1 operazioni completate/)).toBeVisible();
+    const recovered = (await (await request.get('/api/data/insights', { headers })).json()).find(
+      (item: { id: string }) => item.id === insightId
+    );
+    expect(recovered.bodyMd).toBe('Uno spunto personale');
+    expect(recovered.entryOrigin).toBe('manual');
+    expect(
+      (
+        await request.post('/api/backup', {
+          headers,
+          data: {
+            changes: [
+              {
+                collection: 'insights',
+                id: insightId,
+                data: { ...recovered, bodyMd: 'Conflict test' },
+                expected: restored
+              }
+            ]
+          }
+        })
+      ).status()
+    ).toBe(409);
+    const questionId = 'full-backup-deleted-question';
+    expect(
+      (
+        await request.post('/api/data', {
+          headers,
+          data: {
+            action: 'save',
+            changes: [
+              {
+                collection: 'questions',
+                data: { id: questionId, textIt: 'Temporary question', status: 'asked' },
+                expectedRevision: null
+              }
+            ]
+          }
+        })
+      ).status()
+    ).toBe(200);
+    const question = (await (await request.get('/api/data/questions', { headers })).json()).find(
+      (item: { id: string }) => item.id === questionId
+    );
+    const deletion = {
+      changes: [
+        { collection: 'questions', id: questionId, data: null, expected: question },
+        {
+          collection: 'deletedQuestions',
+          id: questionId,
+          data: { id: questionId, deletedAt: Date.now() },
+          expected: null
+        }
+      ]
+    };
+    expect((await request.post('/api/backup', { headers, data: deletion })).status()).toBe(200);
+    expect((await request.post('/api/backup', { headers, data: deletion })).status()).toBe(200);
+    expect(await (await request.get('/api/questions/deleted', { headers })).json()).toContain(
+      questionId
+    );
+  } else {
+    expect((await request.post('/api/backup', { headers, data: { changes: [] } })).status()).toBe(
+      403
+    );
+  }
+  expect(errors).toEqual([]);
 });
 
 test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ page, request }) => {
@@ -380,6 +562,9 @@ test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ pa
     (await request.post('/api/access', { headers: { Authorization: 'Bearer forged' } })).status()
   ).toBe(401);
   expect((await request.get('/api/data/speakers')).status()).toBe(401);
+  expect((await request.get('/api/export')).status()).toBe(401);
+  expect((await request.get('/api/backup')).status()).toBe(401);
+  expect((await request.post('/api/backup', { data: { changes: [] } })).status()).toBe(401);
   expect(
     (await request.post('/api/data', { data: { action: 'save', changes: [] } })).status()
   ).toBe(401);
