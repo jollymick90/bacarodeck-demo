@@ -86,6 +86,8 @@
           "priority": {
             "type": "boolean"
           },
+          "inInterviewList": { "type": "boolean" },
+          "isKeynote": { "type": "boolean" },
           "inDirectorySnapshot": {
             "type": "boolean"
           },

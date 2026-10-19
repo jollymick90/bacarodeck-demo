@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { isInInterviewList } from '$lib/interview-list';
   import { team } from '$lib/team';
   import { untrack } from 'svelte';
   import {
@@ -34,6 +35,8 @@
   let advanced = $state(false);
   const mainKeys = [
     'fullName',
+    'inInterviewList',
+    'isKeynote',
     'headline',
     'organization',
     'biographyMd',
@@ -134,7 +137,9 @@
           <input
             id={'edit-' + field.key}
             type="checkbox"
-            checked={Boolean(draft[field.key])}
+            checked={field.key === 'inInterviewList'
+              ? isInInterviewList(draft)
+              : Boolean(draft[field.key])}
             onchange={(e) => update(field, e.currentTarget.checked)}
           />
         {:else if field.type === 'select'}

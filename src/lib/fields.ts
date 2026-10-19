@@ -61,6 +61,8 @@ export const fields: Record<Collection, Field[]> = {
     f('translationReviewed', 'Traduzione verificata', 'boolean'),
     f('photoUrl', 'URL foto'),
     f('priority', 'Prioritario', 'boolean'),
+    f('inInterviewList', 'In elenco interviste', 'boolean'),
+    f('isKeynote', 'Speaker keynote', 'boolean'),
     f('inDirectorySnapshot', 'Nello snapshot directory', 'boolean'),
     tags,
     f('suggestedTags', 'Tag suggeriti', 'array'),

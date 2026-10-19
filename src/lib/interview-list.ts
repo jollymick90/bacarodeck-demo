@@ -6,5 +6,7 @@ const interviewIds = new Set(
   manifest.speakers.filter((speaker) => speaker.group === 'in').map((speaker) => speaker.speakerId)
 );
 export function isInInterviewList(speaker: Entity): boolean {
-  return interviewIds.has(speaker.id);
+  return typeof speaker.inInterviewList === 'boolean'
+    ? speaker.inInterviewList
+    : interviewIds.has(speaker.id);
 }

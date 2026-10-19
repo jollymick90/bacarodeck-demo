@@ -25,3 +25,9 @@ it('does not confuse mutable priority or directory presence with interview selec
     isInInterviewList({ id: 'andrey-breslav', priority: false, inDirectorySnapshot: false })
   ).toBe(true);
 });
+
+it('explicit choices override the original list in both directions', () => {
+  expect(isInInterviewList({ id: 'andrey-breslav', inInterviewList: false })).toBe(false);
+  expect(isInInterviewList({ id: 'unknown', inInterviewList: true })).toBe(true);
+  expect(isInInterviewList({ id: 'unknown', isKeynote: true })).toBe(false);
+});

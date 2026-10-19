@@ -589,8 +589,9 @@
                     .slice(0, 2)
                     .join('')}</span
                 ><span
-                  ><strong>{s.fullName}</strong><small
-                    >{s.organization || 'Organizzazione da verificare'}</small
+                  ><strong>{s.fullName}</strong>{#if s.isKeynote}<span class="keynote-badge"
+                      >Keynote</span
+                    >{/if}<small>{s.organization || 'Organizzazione da verificare'}</small
                   ><InterviewBadges
                     plan={data.interviewPlans?.find((p) => p.speakerId === s.id)}
                   /></span
@@ -629,6 +630,8 @@
                 <h2 id="speaker-title" tabindex="-1">{speaker.fullName}</h2>
                 <p>{speaker.headline}</p>
                 <div class="chips">
+                  <span>{isInInterviewList(speaker) ? 'In elenco' : 'Non in elenco'}</span>
+                  {#if speaker.isKeynote}<span class="keynote-badge">Keynote</span>{/if}
                   {#each (speaker.tags as string[]) || [] as t}<span>{String(t)}</span>{/each}<span
                     >{translate(plan?.status) || 'Da preparare'}</span
                   >

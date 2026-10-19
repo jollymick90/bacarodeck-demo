@@ -879,3 +879,15 @@ dialog::backdrop {
     min-height: 44px;
   }
 }
+
+.keynote-badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  margin: 0.2rem 0;
+  border: 1px solid #c9b5df;
+  border-radius: 999px;
+  background: #f1eafa;
+  color: #593377;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
