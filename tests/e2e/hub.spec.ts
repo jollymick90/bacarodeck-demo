@@ -44,8 +44,22 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await expect(assistant.getByLabel(/Prompt pronto/)).toHaveValue(/RICERCA SELEZIONATA/);
   await assistant
     .getByLabel('Oppure incolla il risultato Markdown')
-    .fill('# Ricerca AI incollata\n\n**IT:** Idee. **EN:** Ideas.');
+    .fill(
+      '# Ricerca AI incollata\n\n**IT:** Idee. **EN:** Ideas.\n\n# Seconda fonte\n\n`[Originale](https://example.com)`'
+    );
   await assistant.getByRole('button', { name: 'Aggiungi all’anteprima' }).click();
+  const reader = assistant.locator('.research-reader');
+  await expect(reader.locator('details').nth(1)).not.toHaveAttribute('open');
+  await reader.getByRole('combobox').selectOption('1');
+  await expect(reader.getByRole('link', { name: 'Originale' })).toBeVisible();
+  await expect(reader.getByRole('link', { name: 'Originale' })).toHaveAttribute(
+    'href',
+    'https://example.com'
+  );
+  await reader.getByRole('button', { name: 'Chiudi tutto' }).click();
+  await expect(reader.locator('details[open]')).toHaveCount(0);
+  await reader.getByRole('button', { name: 'Apri tutto' }).click();
+  await expect(reader.locator('details[open]')).toHaveCount(2);
   await assistant.getByLabel('Carica uno o più file .md').setInputFiles({
     name: 'ricerca.md',
     mimeType: 'text/markdown',

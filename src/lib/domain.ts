@@ -131,16 +131,34 @@ export function prepareWrite(
     revision: (existing?.revision ?? 0) + 1
   };
 }
-export function renderMarkdown(text: string): string {
-  return sanitizeHtml(marked.parse(text, { async: false }) as string, {
-    allowedTags: sanitizeHtml.defaults.allowedTags,
-    allowedAttributes: { a: ['href', 'title', 'rel', 'target'], code: ['class'] },
-    allowedSchemes: ['https', 'http'],
-    allowProtocolRelative: false,
-    transformTags: {
-      a: sanitizeHtml.simpleTransform('a', { target: '_blank', rel: 'noopener noreferrer' })
+export function renderMarkdown(text: string, researchLinks = false): string {
+  return sanitizeHtml(
+    marked.parse(text, {
+      async: false,
+      walkTokens(token) {
+        if (!researchLinks || token.type !== 'codespan') return;
+        const value = token.text;
+        const candidates = marked.lexer(value);
+        const inline = candidates[0]?.type === 'paragraph' ? candidates[0].tokens : [];
+        if (
+          inline?.length === 1 &&
+          inline[0].type === 'link' &&
+          /^https?:\/\//i.test(inline[0].href)
+        ) {
+          Object.assign(token, inline[0]);
+        }
+      }
+    }) as string,
+    {
+      allowedTags: sanitizeHtml.defaults.allowedTags,
+      allowedAttributes: { a: ['href', 'title', 'rel', 'target'], code: ['class'] },
+      allowedSchemes: ['https', 'http'],
+      allowProtocolRelative: false,
+      transformTags: {
+        a: sanitizeHtml.simpleTransform('a', { target: '_blank', rel: 'noopener noreferrer' })
+      }
     }
-  });
+  );
 }
 export function parseImport(text: string): ImportData {
   let value: unknown;

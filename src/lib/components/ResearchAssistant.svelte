@@ -3,7 +3,7 @@
   import { researchPrompt, questionsPrompt } from '$lib/research-prompts';
   import { emptyEntity, type Dataset, type Entity } from '$lib/fields';
   import { validateEntity } from '$lib/domain';
-  import Markdown from './Markdown.svelte';
+  import ResearchReader from './ResearchReader.svelte';
   let {
     speaker,
     data,
@@ -171,7 +171,7 @@
   {#each drafts as record (record.id)}
     <section class="draft">
       <h4>{record.title}</h4>
-      <Markdown text={String(record.bodyMd)} />
+      <ResearchReader text={String(record.bodyMd)} />
       <button
         disabled={busy}
         onclick={() => (drafts = drafts.filter((item) => item.id !== record.id))}

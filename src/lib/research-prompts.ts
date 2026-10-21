@@ -34,7 +34,7 @@ Cerca sul web talk, video, articoli e post pertinenti, privilegiando fonti prima
 Se non puoi navigare, leggere un link o accedere alla trascrizione di un video, dichiaralo e chiedimi il materiale. Non fingere di aver ascoltato video. Per ogni fonte indica cosa hai realmente consultato (testo completo, trascrizione, descrizione o solo risultati di ricerca).
 ${evidence}
 
-Restituisci soltanto Markdown. Per ogni fonte usa questa struttura, così posso salvare i risultati separatamente:
+Restituisci soltanto Markdown. Usa un titolo di livello 1 (#) per ogni fonte e sottotitoli di livello 2 (##) al suo interno. Scrivi i link come [titolo](https://...) senza backtick e senza racchiudere il documento in un blocco di codice. Per ogni fonte usa questa struttura, così posso salvare i risultati separatamente:
 # Titolo della ricerca / fonte
 ## Fonte
 Autore, titolo, URL originale, data se disponibile, tipo e contenuto effettivamente consultato.

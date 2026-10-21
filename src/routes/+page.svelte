@@ -53,6 +53,7 @@
   let managingAccess = $state(false);
   import ConfirmDelete from '$lib/components/ConfirmDelete.svelte';
   import Markdown from '$lib/components/Markdown.svelte';
+  import ResearchReader from '$lib/components/ResearchReader.svelte';
   import Editor from '$lib/components/Editor.svelte';
   import Import from '$lib/components/Import.svelte';
   let client: ReturnType<typeof getFirebase> = null;
@@ -774,11 +775,13 @@
                         : entity.translationReviewed
                           ? 'Traduzione verificata.'
                           : 'Traduzione da verificare.'}
-                    </p>{/if}<Markdown
-                    text={display(entity.bodyMd) ||
-                      display(language === 'it' ? entity.abstractIt : entity.abstractEn) ||
-                      display(entity.abstractMd)}
-                  />{#if tab === 'talks'}<p>
+                    </p>{/if}{#if tab === 'materials'}
+                    <ResearchReader text={display(entity.bodyMd)} />
+                  {:else}<Markdown
+                      text={display(entity.bodyMd) ||
+                        display(language === 'it' ? entity.abstractIt : entity.abstractEn) ||
+                        display(entity.abstractMd)}
+                    />{/if}{#if tab === 'talks'}<p>
                       {entity.day || 'Giorno da confermare'} · {entity.time ||
                         'Orario da confermare'} · {entity.stage || 'Palco da confermare'}
                     </p>{/if}<Markdown text={display(entity.notesMd)} />{/if}
