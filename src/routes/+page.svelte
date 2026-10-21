@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, tick } from 'svelte';
+  import ResearchAssistant from '$lib/components/ResearchAssistant.svelte';
   import { researchEntries } from '$lib/research';
   const tabLabels = { ...labels, materials: 'Ricerca' };
   import InterviewBadges from '$lib/components/InterviewBadges.svelte';
@@ -274,6 +275,27 @@
     updatingTags = false;
     editing = { collection, entity: entity ?? emptyEntity(collection, selectedId || undefined) };
     message = '';
+  }
+  async function saveResearch(records: Entity[]) {
+    if (!client || !user) throw new Error('Accedi prima di salvare.');
+    if (new TextEncoder().encode(JSON.stringify(records)).length > 2_000_000) {
+      throw new Error('Anteprima troppo grande: salva meno documenti per volta (massimo 2 MB).');
+    }
+    busy = true;
+    try {
+      await commitChanges(
+        client.db,
+        user.uid,
+        records.map((entity) => ({
+          collection: 'materials' as const,
+          data: entity,
+          expectedRevision: null
+        }))
+      );
+      message = 'Ricerca salvata.';
+    } finally {
+      busy = false;
+    }
   }
   async function save(entity: Entity) {
     if (!client || !user || !editing) return;
@@ -699,6 +721,14 @@
                     : 'Aggiungi'}</button
               >
             </div>
+            {#if tab === 'materials'}
+              {#key speaker.id}<ResearchAssistant
+                  {speaker}
+                  {data}
+                  {busy}
+                  onsave={saveResearch}
+                />{/key}
+            {/if}
             {#if !related.length}<div class="empty-state">
                 <h3>Spazio alla ricerca.</h3>
                 <p>

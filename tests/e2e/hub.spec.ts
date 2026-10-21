@@ -32,6 +32,35 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   }
   await page.getByRole('button', { name: /Andrey Breslav/ }).click();
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
+  const assistant = page.locator('.research-assistant');
+  await assistant.locator('summary').click();
+  await assistant.getByRole('button', { name: 'Copia prompt ricerca', exact: true }).click();
+  await expect(assistant.getByLabel(/Prompt pronto/)).toHaveValue(/Andrey Breslav/);
+  await expect(
+    assistant.getByRole('button', { name: 'Copia prompt domande', exact: true })
+  ).toBeDisabled();
+  await assistant.locator('.choices input').first().check();
+  await assistant.getByRole('button', { name: 'Copia prompt domande', exact: true }).click();
+  await expect(assistant.getByLabel(/Prompt pronto/)).toHaveValue(/RICERCA SELEZIONATA/);
+  await assistant
+    .getByLabel('Oppure incolla il risultato Markdown')
+    .fill('# Ricerca AI incollata\n\n**IT:** Idee. **EN:** Ideas.');
+  await assistant.getByRole('button', { name: 'Aggiungi all’anteprima' }).click();
+  await assistant.getByLabel('Carica uno o più file .md').setInputFiles({
+    name: 'ricerca.md',
+    mimeType: 'text/markdown',
+    buffer: Buffer.from('# Ricerca AI da file\n\nAppunti dal file.')
+  });
+  await assistant.getByRole('button', { name: 'Conferma e salva 2 contenuti' }).click();
+  for (const title of ['Ricerca AI incollata', 'Ricerca AI da file']) {
+    const entry = page
+      .locator('.content-entry')
+      .filter({ has: page.getByRole('heading', { name: title, exact: true }) });
+    await expect(entry).toBeVisible();
+    await entry.getByRole('button', { name: 'Elimina', exact: true }).click();
+    await page.getByRole('button', { name: 'Elimina definitivamente' }).click();
+    await expect(entry).toHaveCount(0);
+  }
   await page.getByRole('button', { name: '+ Aggiungi ricerca', exact: true }).click();
   await page.getByLabel('Titolo (facoltativo)').fill('Ricerca da Gemini');
   const markdown = '# Appunti da Gemini\n\n' + 'Testo lungo senza metadati. '.repeat(110);
@@ -220,6 +249,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   }
   if (testInfo.project.name === 'mobile')
     await page.getByRole('button', { name: 'Torna agli speaker', exact: false }).click();
+  await page.getByRole('navigation', { name: 'Scegli speaker' }).waitFor();
   const reset = page.getByRole('button', { name: 'Azzera ricerca' });
   if (await reset.isVisible()) await reset.click();
   await expect(

@@ -292,3 +292,26 @@ sulla collezione originali, senza migrazioni o riscritture automatiche. Anche re
 con lo stesso ID in collezioni diverse rimangono distinti. Import/export e backup
 mantengono il formato precedente. Sono visibili anche le fonti citate nei materiali
 e negli insight, e gli insight collegati ai materiali dello speaker.
+
+### Due sessioni AI per la ricerca
+
+Nella scheda **Ricerca**, aprire **Ricerca con Gemini / ChatGPT**:
+
+1. **Copia prompt ricerca** prepara il contesto dello speaker e dei talk, richiede
+   fonti verificabili e un Markdown italiano con punti chiave IT/EN. Incollarlo nella
+   propria chat AI; l'app non effettua chiamate AI e non invia i contenuti automaticamente.
+2. Caricare uno o più file `.md`, oppure incollare ogni risultato e premere
+   **Aggiungi all’anteprima**. Controllare i testi, quindi **Conferma e salva**.
+   Ogni risultato crea un nuovo materiale collegato allo speaker con provenienza
+   `ai_generated`. Nessun contenuto precedente viene sovrascritto. Limiti: 200 KiB
+   per documento, 30 documenti per anteprima e 2 MB complessivi per salvataggio.
+3. Selezionare i contenuti utili e premere **Copia prompt domande**. Aprire una nuova
+   chat: il prompt include la ricerca scelta, lingua prevista, talk e domande già
+   presenti per evitare duplicati; richiede domande e follow-up IT/EN con riferimenti.
+
+Il prompt resta visibile e selezionabile se la copia automatica non è disponibile.
+Il contesto non viene troncato; sopra 50.000 caratteri viene suggerita una selezione
+più piccola. Biografia e abstract sono inclusi in una sola lingua per ridurre ripetizioni.
+Le domande importate via Markdown rimangono testo nella Ricerca: non vengono inserite
+automaticamente nella scaletta strutturata. Le bozze nell'anteprima non sono ancora
+salvate: confermarle prima di cambiare speaker o ricaricare la pagina.
