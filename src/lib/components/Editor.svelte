@@ -116,7 +116,13 @@
 
 <section class="editor" aria-label="Modifica contenuto">
   <div class="section-heading">
-    <h2>{entity.revision ? 'Modifica' : 'Aggiungi'} · {labels[collection]}</h2>
+    <h2>
+      {entity.revision ? 'Modifica' : 'Aggiungi'} · {['materials', 'sources', 'insights'].includes(
+        collection
+      )
+        ? 'Ricerca'
+        : labels[collection]}
+    </h2>
     <button type="button" class="quiet" onclick={oncancel} disabled={busy}>Chiudi</button>
   </div>
   <form onsubmit={save}>

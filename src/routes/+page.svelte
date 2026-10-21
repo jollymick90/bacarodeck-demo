@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount, tick } from 'svelte';
+  import { researchEntries } from '$lib/research';
+  const tabLabels = { ...labels, materials: 'Ricerca' };
   import InterviewBadges from '$lib/components/InterviewBadges.svelte';
   import WorkspaceBackup from '$lib/components/WorkspaceBackup.svelte';
   let fullBackup = $state(false);
@@ -113,27 +115,30 @@
   const speaker = $derived(speakers.find((s) => s.id === selectedId));
   const plan = $derived(data.interviewPlans?.find((p) => p.speakerId === selectedId));
   const related = $derived(
-    (data[tab] || [])
-      .filter((e) => {
-        if (tab === 'speakers') return e.id === selectedId;
-        if (tab === 'sources')
-          return (
-            ((speaker?.sourceIds as string[]) || []).includes(e.id) ||
-            ((e.speakerIds as string[]) || []).includes(selectedId)
-          );
-        return (
-          e.speakerId === selectedId || ((e.speakerIds as string[]) || []).includes(selectedId)
-        );
-      })
-      .toSorted((a, b) => {
-        const average = (e: Entity) => {
-          const votes = Object.values((e.ratings || {}) as Record<string, number>);
-          return votes.length ? votes.reduce((x, y) => x + y, 0) / votes.length : 0;
-        };
-        return tab === 'questions' && sortByRating
-          ? average(b) - average(a)
-          : Number(a.order || 0) - Number(b.order || 0);
-      })
+    tab === 'materials'
+      ? researchEntries(data, selectedId)
+      : (data[tab] || [])
+          .filter((e) => {
+            if (tab === 'speakers') return e.id === selectedId;
+            if (tab === 'sources')
+              return (
+                ((speaker?.sourceIds as string[]) || []).includes(e.id) ||
+                ((e.speakerIds as string[]) || []).includes(selectedId)
+              );
+            return (
+              e.speakerId === selectedId || ((e.speakerIds as string[]) || []).includes(selectedId)
+            );
+          })
+          .toSorted((a, b) => {
+            const average = (e: Entity) => {
+              const votes = Object.values((e.ratings || {}) as Record<string, number>);
+              return votes.length ? votes.reduce((x, y) => x + y, 0) / votes.length : 0;
+            };
+            return tab === 'questions' && sortByRating
+              ? average(b) - average(a)
+              : Number(a.order || 0) - Number(b.order || 0);
+          })
+          .map((entity) => ({ collection: tab, entity }))
   );
   function stop() {
     unsubs.forEach((fn) => fn());
@@ -647,7 +652,7 @@
                 Da verificare: {(speaker.reviewFlags as string[]).join(', ')}
               </p>{/if}
             <div class="detail-actions">
-              <button class="primary" onclick={() => edit('materials')}>+ Aggiungi materiale</button
+              <button class="primary" onclick={() => edit('materials')}>+ Aggiungi ricerca</button
               ><button onclick={() => edit('speakers', speaker)}>Modifica profilo</button><button
                 onclick={() => edit('interviewPlans', plan)}>Prepara intervista</button
               >
@@ -668,14 +673,14 @@
               >
             </details>
             <nav class="tabs" aria-label="Contenuti dello speaker">
-              {#each ['materials', 'questions', 'interviewPlans', 'talks', 'sources', 'insights'] as name}<button
+              {#each ['materials', 'questions', 'interviewPlans', 'talks'] as name}<button
                   class:current={tab === name}
                   aria-current={tab === name ? 'page' : undefined}
-                  onclick={() => (tab = name as Collection)}>{labels[name as Collection]}</button
+                  onclick={() => (tab = name as Collection)}>{tabLabels[name as Collection]}</button
                 >{/each}
             </nav>
             <div class="section-heading">
-              <h3>{labels[tab]}</h3>
+              <h3>{tabLabels[tab]}</h3>
               {#if tab === 'questions'}<button onclick={() => (sortByRating = !sortByRating)}
                   >{sortByRating ? 'Ordina per scaletta' : 'Ordina per voto'}</button
                 ><button onclick={prepareQuestions}>Prepara altre 10 domande</button>
@@ -687,22 +692,26 @@
                   >
                 </div>{/if}<button
                 onclick={() => edit(tab, tab === 'interviewPlans' ? plan : undefined)}
-                >{tab === 'interviewPlans' && plan ? 'Modifica piano' : 'Aggiungi'}</button
+                >{tab === 'materials'
+                  ? 'Aggiungi ricerca'
+                  : tab === 'interviewPlans' && plan
+                    ? 'Modifica piano'
+                    : 'Aggiungi'}</button
               >
             </div>
             {#if !related.length}<div class="empty-state">
                 <h3>Spazio alla ricerca.</h3>
                 <p>
-                  Non ci sono ancora {labels[tab].toLowerCase()} per {speaker.firstName ||
+                  Non ci sono ancora {tabLabels[tab].toLowerCase()} per {speaker.firstName ||
                     speaker.fullName}. Aggiungi il primo contenuto.
                 </p>
-                <button onclick={() => edit(tab)}>Aggiungi {labels[tab].toLowerCase()}</button>
+                <button onclick={() => edit(tab)}>Aggiungi {tabLabels[tab].toLowerCase()}</button>
               </div>{/if}
-            {#each related as entity}
+            {#each related as { collection, entity } (collection + ':' + entity.id)}
               <article class="content-entry">
                 <div class="entry-meta">
                   <span
-                    >{provenanceLabel(tab, entity)}{tab === 'questions'
+                    >{provenanceLabel(collection, entity)}{tab === 'questions'
                       ? ' · ' + (entity.order || '—')
                       : ''}</span
                   >{#if entity.status}<span class="status">{translate(entity.status)}</span>{/if}
@@ -754,9 +763,9 @@
                       .join(', ')}
                   </p>{/if}
                 <div class="entry-actions">
-                  <button onclick={() => edit(tab, entity)}>Modifica</button><button
+                  <button onclick={() => edit(collection, entity)}>Modifica</button><button
                     class="danger quiet"
-                    onclick={() => (deleting = { collection: tab, entity })}>Elimina</button
+                    onclick={() => (deleting = { collection, entity })}>Elimina</button
                   >
                 </div>
               </article>

@@ -282,3 +282,13 @@ potrebbe avere un UID differente. Il ripristino dei profili non concede accesso 
 privilegi e non ricrea gli account Google. L'import completo è riservato al superadmin
 perché può sostituire anche voti e contenuti degli altri membri. File fino a 100 MiB
 sono accettati dal pannello; conservare il file scaricato come backup prima di procedere.
+
+### Ricerca unificata
+
+La scheda **Ricerca** riunisce materiali, fonti e insight dello speaker. **Aggiungi
+ricerca** apre un unico modulo per nuovi appunti, riassunti e link. I record esistenti
+rimangono nelle rispettive collezioni: modifica ed eliminazione operano sull'ID e
+sulla collezione originali, senza migrazioni o riscritture automatiche. Anche record
+con lo stesso ID in collezioni diverse rimangono distinti. Import/export e backup
+mantengono il formato precedente. Sono visibili anche le fonti citate nei materiali
+e negli insight, e gli insight collegati ai materiali dello speaker.

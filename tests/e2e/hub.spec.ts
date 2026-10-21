@@ -32,7 +32,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   }
   await page.getByRole('button', { name: /Andrey Breslav/ }).click();
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
-  await page.getByRole('button', { name: '+ Aggiungi materiale', exact: true }).click();
+  await page.getByRole('button', { name: '+ Aggiungi ricerca', exact: true }).click();
   await page.getByLabel('Titolo (facoltativo)').fill('Ricerca da Gemini');
   const markdown = '# Appunti da Gemini\n\n' + 'Testo lungo senza metadati. '.repeat(110);
   await page.getByLabel('Testo Markdown').fill(markdown);
@@ -64,7 +64,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await material.getByRole('button', { name: 'Elimina', exact: true }).click();
   await page.getByRole('button', { name: 'Elimina definitivamente' }).click();
   await expect(page.getByRole('heading', { name: 'Ricerca da Gemini' })).toHaveCount(0);
-  await page.getByRole('button', { name: 'Fonti', exact: true }).click();
+  await page.getByRole('button', { name: 'Ricerca', exact: true }).click();
   const source = page
     .locator('.content-entry')
     .filter({ has: page.getByRole('heading', { name: /CSV fornito/ }) });
