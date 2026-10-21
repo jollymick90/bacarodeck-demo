@@ -509,6 +509,16 @@
           "status": {
             "type": ["string", "null"]
           },
+          "interviewLanguage": {
+            "enum": [
+              null,
+              "",
+              "language_pending",
+              "italian",
+              "english_possible",
+              "english_confirmed"
+            ]
+          },
           "interviewStatus": {
             "type": ["string", "null"]
           },

@@ -156,6 +156,12 @@ export const fields: Record<Collection, Field[]> = {
     f('cameraId', 'Operatore camera', 'select', ['lorenzo', 'danilo']),
     f('assignedToName', 'Nome visualizzato assegnazione'),
     f('status', 'Preparazione', 'select', ['not_started', 'researching', 'ready', 'done']),
+    f('interviewLanguage', 'Lingua intervista', 'select', [
+      'language_pending',
+      'italian',
+      'english_possible',
+      'english_confirmed'
+    ]),
     f('interviewStatus', 'Stato intervista', 'select', [
       'unconfirmed',
       'requested',
@@ -228,6 +234,10 @@ const translations: Record<string, string> = {
   researching: 'In ricerca',
   ready: 'Pronto',
   done: 'Completato',
+  language_pending: 'Da concordare',
+  italian: 'Italiano',
+  english_possible: 'Forse in inglese',
+  english_confirmed: 'Sicuramente in inglese',
   unconfirmed: 'Da confermare',
   requested: 'Richiesta',
   confirmed: 'Confermata',

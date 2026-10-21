@@ -65,6 +65,7 @@
     'assignedToUid',
     'cameraId',
     'interviewStatus',
+    'interviewLanguage',
     'priority',
     'date',
     'startTime',

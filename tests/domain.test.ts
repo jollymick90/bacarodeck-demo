@@ -214,3 +214,21 @@ it('warns about duplicate names and URLs within the same incoming file', () => {
   const rows = previewImport(input, {});
   expect(rows.filter((r) => r.warnings.length)).toHaveLength(4);
 });
+
+it('preserves interview language choices through import and accepts older plans', () => {
+  for (const interviewLanguage of [
+    'language_pending',
+    'italian',
+    'english_possible',
+    'english_confirmed'
+  ]) {
+    const plan = { id: 'plan', speakerId: 'speaker', interviewLanguage };
+    expect(validateEntity('interviewPlans', plan)).toEqual([]);
+    const imported = parseImport(JSON.stringify({ schemaVersion: 1, interviewPlans: [plan] }));
+    expect(imported.interviewPlans?.[0].interviewLanguage).toBe(interviewLanguage);
+  }
+  expect(validateEntity('interviewPlans', { id: 'legacy', speakerId: 'speaker' })).toEqual([]);
+  expect(
+    validateEntity('interviewPlans', { id: 'invalid', interviewLanguage: 'wrong' }).length
+  ).toBeGreaterThan(0);
+});

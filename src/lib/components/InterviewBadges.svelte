@@ -1,6 +1,7 @@
 <script lang="ts">
   import { translate, type Entity } from '$lib/fields';
   let { plan }: { plan?: Entity } = $props();
+  const language = $derived(String(plan?.interviewLanguage || 'language_pending'));
   const preparation = $derived(String(plan?.status || 'not_started'));
   const interview = $derived(String(plan?.interviewStatus || 'unconfirmed'));
 </script>
@@ -8,6 +9,7 @@
 <span class="badges">
   <span class="badge" data-state={preparation}>Preparazione: {translate(preparation)}</span>
   <span class="badge" data-state={interview}>Intervista: {translate(interview)}</span>
+  <span class="badge" data-state={language}>Lingua: {translate(language)}</span>
 </span>
 
 <style>
@@ -30,13 +32,15 @@
     background: #edf1f6;
   }
   .badge[data-state='researching'],
-  .badge[data-state='requested'] {
+  .badge[data-state='requested'],
+  .badge[data-state='english_possible'] {
     color: #734900;
     background: #fff3d6;
     border-color: #e5c980;
   }
   .badge[data-state='ready'],
-  .badge[data-state='confirmed'] {
+  .badge[data-state='confirmed'],
+  .badge[data-state='english_confirmed'] {
     color: #174e83;
     background: #e6f1ff;
     border-color: #a8c8e8;
