@@ -242,6 +242,11 @@
 {:else}<section class="speaker-detail" aria-label="Scheda speaker">
     {#if speaker}
       <SpeakerHeader {speaker} talks={speakerTalks} />
+      <p>
+        <a href={'/topic/connessioni?node=' + encodeURIComponent('speaker:' + speaker.id)}
+          >Esplora connessioni dello speaker</a
+        >
+      </p>
       <nav class="tabs" aria-label="Contenuti dello speaker">
         {#each ['speakers', 'materials', 'questions'] as name}<a
             class:current={!tools && tab === name}

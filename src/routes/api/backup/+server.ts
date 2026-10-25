@@ -1,3 +1,4 @@
+import { queueConnections, scheduleConnections } from '$lib/server/connections/service';
 import { createHash } from 'node:crypto';
 import { Timestamp } from 'firebase-admin/firestore';
 import { error, json } from '@sveltejs/kit';
@@ -5,6 +6,7 @@ import { authorize } from '$lib/server/authorize';
 import { readCollection, invalidateCollections, workspacePath } from '$lib/server/firestore-cache';
 import {
   backupCollections,
+  backupMember,
   backupPage,
   canonical,
   equivalentRestore,
@@ -13,6 +15,7 @@ import {
 } from '$lib/workspace-backup';
 import { collections, type Entity } from '$lib/fields';
 import type { RequestHandler } from './$types';
+export const config = { maxDuration: 300 };
 const headers = { 'Cache-Control': 'private, no-store' };
 
 export const GET: RequestHandler = async ({ request, url }) => {
@@ -26,7 +29,8 @@ export const GET: RequestHandler = async ({ request, url }) => {
     offset < 0
   )
     error(400, 'Pagina backup non valida.');
-  const records = await readCollection(db, collection);
+  const loaded = await readCollection(db, collection);
+  const records = collection === 'members' ? loaded.map(backupMember) : loaded;
   const version = createHash('sha256').update(JSON.stringify(records)).digest('hex');
   if (
     (offset > 0 || url.searchParams.has('version')) &&
@@ -91,7 +95,8 @@ export const POST: RequestHandler = async ({ request, url }) => {
     const final = new Map(current);
     for (const change of changes) {
       const key = `${change.collection}/${change.id}`;
-      const existing = current.get(key) || null;
+      const raw = current.get(key) || null;
+      const existing = change.collection === 'members' && raw ? backupMember(raw) : raw;
       if (
         !equivalentRestore(existing, change.data) &&
         canonical(existing) !== canonical(change.expected)
@@ -113,16 +118,28 @@ export const POST: RequestHandler = async ({ request, url }) => {
           'La domanda e la sua cancellazione devono essere ripristinate insieme. Ricarica l’anteprima.'
         );
     }
+    queueConnections(
+      tx,
+      db,
+      changes.map((c) => c.collection)
+    );
     for (const change of changes) {
       const key = `${change.collection}/${change.id}`;
       const existing = current.get(key) || null;
-      if (equivalentRestore(existing, change.data)) continue;
+      if (
+        equivalentRestore(
+          change.collection === 'members' && existing ? backupMember(existing) : existing,
+          change.data
+        )
+      )
+        continue;
       const ref = db.doc(`${workspacePath}/${key}`);
       if (change.data === null) {
         tx.delete(ref);
         continue;
       }
-      const data = { ...change.data };
+      const data =
+        change.collection === 'members' ? { ...existing, ...change.data } : { ...change.data };
       if ((collections as readonly string[]).includes(change.collection)) {
         data.revision = Math.max(Number(existing?.revision || 0), Number(data.revision || 0)) + 1;
         data.updatedAt = Date.now();
@@ -148,5 +165,6 @@ export const POST: RequestHandler = async ({ request, url }) => {
     db,
     changes.map((change) => change.collection)
   );
+  scheduleConnections(db);
   return json({ saved: changes.length }, { headers });
 };

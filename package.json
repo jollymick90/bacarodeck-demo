@@ -15,12 +15,14 @@
     "format:check": "prettier --check \"src/**/*.{ts,svelte}\" src/app.css \"tests/**/*.ts\" \"*.{ts,js,json}\" schemas/*.json"
   },
   "dependencies": {
+    "@huggingface/transformers": "^3.8.1",
     "@vercel/functions": "^3.10.1",
     "ajv": "^8.17.1",
     "firebase": "^12.0.0",
     "firebase-admin": "^14.5.0",
     "marked": "^16.0.0",
-    "sanitize-html": "^2.17.0"
+    "sanitize-html": "^2.17.0",
+    "three": "^0.186.1"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^5.0.0",
@@ -30,6 +32,7 @@
     "@sveltejs/vite-plugin-svelte": "^6.0.0",
     "@types/node": "^22.0.0",
     "@types/sanitize-html": "^2.16.0",
+    "@types/three": "^0.186.0",
     "firebase-tools": "^14.17.0",
     "prettier": "^3.9.10",
     "prettier-plugin-svelte": "^4.1.1",

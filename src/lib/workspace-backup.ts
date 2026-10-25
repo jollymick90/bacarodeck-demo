@@ -7,7 +7,7 @@ export type BackupCollection = (typeof backupCollections)[number];
 export type BackupData = Record<BackupCollection, Entity[]>;
 export type WorkspaceBackup = {
   format: 'bacarodeck-workspace';
-  version: 1 | 2;
+  version: 1 | 2 | 3;
   workspaceId: 'codemotion-milano-2026';
   exportedAt: string;
   data: BackupData;
@@ -39,14 +39,21 @@ export function equivalentRestore(a: Entity | null, b: Entity | null): boolean {
   return canonical(content(a)) === canonical(content(b));
 }
 
+export function backupMember(entity: Entity): Entity {
+  return { id: entity.id, displayName: entity.displayName, role: 'editor' };
+}
+
 export function makeBackup(data: Partial<BackupData>): WorkspaceBackup {
   return {
     format: 'bacarodeck-workspace',
-    version: 2,
+    version: 3,
     workspaceId: 'codemotion-milano-2026',
     exportedAt: new Date().toISOString(),
     data: Object.fromEntries(
-      backupCollections.map((name) => [name, data[name] || []])
+      backupCollections.map((name) => [
+        name,
+        name === 'members' ? (data[name] || []).map(backupMember) : data[name] || []
+      ])
     ) as BackupData
   };
 }
@@ -126,7 +133,7 @@ export function parseBackup(text: string): WorkspaceBackup {
   if (
     !value ||
     value.format !== 'bacarodeck-workspace' ||
-    ![1, 2].includes(value.version) ||
+    ![1, 2, 3].includes(value.version) ||
     value.workspaceId !== 'codemotion-milano-2026' ||
     typeof value.exportedAt !== 'string' ||
     !Number.isFinite(Date.parse(value.exportedAt)) ||
@@ -140,8 +147,8 @@ export function parseBackup(text: string): WorkspaceBackup {
     throw new Error('File backup completo non valido. Usa il pannello dedicato al tipo di export.');
   for (const collection of backupCollections) {
     if (
-      value.version === 1 &&
-      ['conductorBriefs', 'speakerInterests'].includes(collection) &&
+      ((value.version === 1 && ['conductorBriefs', 'speakerInterests'].includes(collection)) ||
+        (value.version < 3 && ['topics', 'graphLinks'].includes(collection))) &&
       value.data[collection] === undefined
     )
       value.data[collection] = [];
@@ -177,6 +184,8 @@ export function planRestore(
   ) as import('./fields').Dataset;
   const deleted = new Set(source.data.deletedQuestions.map((q) => q.id));
   context.questions = context.questions?.filter((q) => !deleted.has(q.id));
+  // Historical decisions can outlive deleted nodes; the graph hides dangling edges.
+  // Their structure is validated by parseBackup; new decisions require live references.
   for (const brief of source.data.conductorBriefs) validateBrief(brief, context);
   const result: RestoreChange[] = [];
   for (const collection of backupCollections) {

@@ -8,7 +8,9 @@ export const collections = [
   'insights',
   'questions',
   'interviewPlans',
-  'interviewSlots'
+  'interviewSlots',
+  'topics',
+  'graphLinks'
 ] as const;
 export type Collection = (typeof collections)[number];
 export type Value = string | number | boolean | null | Value[] | { [key: string]: Value };
@@ -31,6 +33,8 @@ const tags = f('tags', 'Tag', 'array');
 const sources = f('sourceIds', 'ID fonti', 'array');
 const speakerIds = f('speakerIds', 'ID speaker', 'array');
 export const labels: Record<Collection, string> = {
+  topics: 'Temi',
+  graphLinks: 'Collegamenti',
   conductorBriefs: 'Schede conduttore',
   speakerInterests: 'Interessi',
   speakers: 'Speaker',
@@ -43,6 +47,24 @@ export const labels: Record<Collection, string> = {
   interviewPlans: 'Intervista'
 };
 export const fields: Record<Collection, Field[]> = {
+  topics: [
+    f('label', 'Nome'),
+    f('aliases', 'Alias', 'array'),
+    f('description', 'Descrizione', 'markdown')
+  ],
+  graphLinks: [
+    f('source', 'Nodo origine'),
+    f('target', 'Nodo destinazione'),
+    f('kind', 'Relazione', 'select', [
+      'speaker-topic',
+      'question-topic',
+      'topic-related',
+      'speaker-similar',
+      'question-similar'
+    ]),
+    f('decision', 'Decisione', 'select', ['linked', 'confirmed', 'dismissed']),
+    f('reason', 'Motivazione', 'markdown')
+  ],
   conductorBriefs: [
     f('speakerId', 'Speaker'),
     f('talkId', 'Talk'),

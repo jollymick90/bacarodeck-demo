@@ -303,6 +303,9 @@
       >
     {:else}
       {#if mode === 'topics' || mode === 'topic'}
+        <a class="nav-action" href="/topic/connessioni"
+          >Esplora connessioni tra topic, speaker e domande</a
+        >
         <nav class="topic-filters" aria-label="Filtra per topic">
           <a class="nav-action" class:active={!topic} href="/topic">Tutti</a>
           {#each topics as t}<a
@@ -343,6 +346,11 @@
       </p>{/if}
   {:else if speaker}
     <a class="nav-action back" href="/">← Torna agli speaker</a>
+    <a
+      class="nav-action"
+      href={'/topic/connessioni?node=' + encodeURIComponent('speaker:' + selected)}
+      >Esplora connessioni</a
+    >
     <div class="brief-heading">
       <div>
         <h1>{speaker.fullName}</h1>
@@ -395,6 +403,11 @@
                 >Traduzione mancante: testo originale.</small
               >{/if}
             <div class="question-actions">
+              <a
+                class="nav-action"
+                href={'/topic/connessioni?node=' + encodeURIComponent('question:' + q.id)}
+                >Domande simili e topic</a
+              >
               <button disabled={busy} onclick={() => edit(q)}>Modifica</button><button
                 disabled={busy}
                 onclick={() => replace(q.id)}>Sostituisci</button
@@ -458,6 +471,11 @@
         >
           <Markdown text={qtext(q)} />
           <div class="question-actions">
+            <a
+              class="nav-action"
+              href={'/topic/connessioni?node=' + encodeURIComponent('question:' + q.id)}
+              >Domande simili e topic</a
+            >
             <button disabled={busy} onclick={() => edit(q)}>Modifica</button><button
               disabled={busy}
               onclick={() =>

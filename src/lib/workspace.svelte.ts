@@ -9,6 +9,7 @@ import {
 import { getFirebase } from './firebase';
 import { collections, type Dataset, type Entity } from './fields';
 import { watchCollection } from './repository';
+import type { GraphResponse } from './connections/types';
 
 const key = Symbol('workspace');
 
@@ -17,6 +18,7 @@ export class Workspace {
   user = $state<User | null>(null);
   access = $state<'loading' | 'setup' | 'login' | 'denied' | 'member'>('loading');
   data = $state<Dataset>({});
+  connections = $state<GraphResponse | null>(null);
   members = $state<Entity[]>([]);
   assignees = $state<Entity[]>([]);
   loaded = $state<string[]>([]);
@@ -71,6 +73,7 @@ export class Workspace {
     };
     const clear = () => {
       this.data = {};
+      this.connections = null;
       this.members = [];
       this.assignees = [];
       this.loaded = [];

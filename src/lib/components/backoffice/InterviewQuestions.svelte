@@ -194,6 +194,11 @@
           .join(', ')}
       </p>{/if}
     <div class="entry-actions">
+      <a
+        class="button-link"
+        href={'/topic/connessioni?node=' + encodeURIComponent('question:' + question.id)}
+        >Domande simili e topic</a
+      >
       {#if index >= 0}
         <button
           disabled={busy}

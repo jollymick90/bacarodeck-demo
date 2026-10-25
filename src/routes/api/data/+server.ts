@@ -1,3 +1,4 @@
+import { queueConnections, scheduleConnections } from '$lib/server/connections/service';
 import { trackEditorialFields } from '$lib/editorial-export';
 import { guardConductorWrite, guardConductorDelete } from '$lib/conductor/write-policy';
 import { validateBrief } from '$lib/conductor/brief';
@@ -6,8 +7,9 @@ import { invalidateCollections } from '$lib/server/firestore-cache';
 import { error, json } from '@sveltejs/kit';
 import { authorize } from '$lib/server/authorize';
 import { collections, type Entity } from '$lib/fields';
-import { prepareWrite, type Change } from '$lib/domain';
+import { prepareWrite, validateGraphLinkReferences, type Change } from '$lib/domain';
 import type { RequestHandler } from './$types';
+export const config = { maxDuration: 300 };
 export const POST: RequestHandler = async ({ request, url }) => {
   const { db, identity } = await authorize(request, url);
   const body = await request.json().catch(() => error(400, 'JSON non valido.'));
@@ -42,18 +44,22 @@ export const POST: RequestHandler = async ({ request, url }) => {
       )
     );
     const context: Dataset = {};
-    if (body.action === 'save' && changes.some((c) => c.collection === 'conductorBriefs')) {
-      for (const name of ['speakers', 'talks', 'questions', 'conductorBriefs'] as const) {
-        const snapshot = await tx.get(db.collection(`workspaces/codemotion-milano-2026/${name}`));
-        context[name] = snapshot.docs.map((d) => ({ ...d.data(), id: d.id }) as Entity);
-      }
-      for (const change of changes) {
-        if (context[change.collection])
-          context[change.collection] = [
-            ...context[change.collection]!.filter((e) => e.id !== change.data.id),
-            change.data
-          ];
-      }
+    const contextNames = new Set<(typeof collections)[number]>();
+    if (body.action === 'save' && changes.some((c) => c.collection === 'conductorBriefs'))
+      for (const name of ['speakers', 'talks', 'questions', 'conductorBriefs'] as const)
+        contextNames.add(name);
+    if (body.action === 'save' && changes.some((c) => c.collection === 'graphLinks'))
+      for (const name of ['speakers', 'questions', 'topics'] as const) contextNames.add(name);
+    for (const name of contextNames) {
+      const snapshot = await tx.get(db.collection(`workspaces/codemotion-milano-2026/${name}`));
+      context[name] = snapshot.docs.map((d) => ({ ...d.data(), id: d.id }) as Entity);
+    }
+    for (const change of changes) {
+      if (context[change.collection])
+        context[change.collection] = [
+          ...context[change.collection]!.filter((e) => e.id !== change.data.id),
+          change.data
+        ];
     }
 
     const writes = changes.map((change, index): Entity | null => {
@@ -78,6 +84,7 @@ export const POST: RequestHandler = async ({ request, url }) => {
       }
       try {
         guardConductorWrite(change.collection, change.data, existing);
+        if (change.collection === 'graphLinks') validateGraphLinkReferences(change.data, context);
         if (change.collection === 'conductorBriefs') {
           validateBrief(change.data, context);
           if (
@@ -102,6 +109,11 @@ export const POST: RequestHandler = async ({ request, url }) => {
         error(400, failure instanceof Error ? failure.message : 'Documento non valido.');
       }
     });
+    queueConnections(
+      tx,
+      db,
+      changes.map((c) => c.collection)
+    );
     refs.forEach((ref, index) => {
       const write = writes[index];
       if (write) {
@@ -125,5 +137,6 @@ export const POST: RequestHandler = async ({ request, url }) => {
       ? ['deletedQuestions']
       : [])
   ]);
+  scheduleConnections(db);
   return json({ saved: true, documents }, { headers: { 'Cache-Control': 'no-store' } });
 };

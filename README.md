@@ -401,3 +401,45 @@ automaticamente nella scaletta strutturata. Le bozze nell'anteprima non sono anc
 salvate: confermarle prima di cambiare speaker o ricaricare la pagina.
 
 Le revoche rimuovono gli account dalle nuove assegnazioni; quelle già registrate rimangono visibili e possono essere riassegnate. Il server verifica il destinatario nella stessa transazione che aggiorna intervista e programmazione.
+
+### Connessioni tra topic, speaker e domande
+
+Apri **Topic → Esplora connessioni** (`/topic/connessioni`), oppure il collegamento
+alle connessioni nella scheda speaker/domanda. Da telefono si apre la lista; **3D**
+attiva la mappa ruotabile e ingrandibile. La vista mostra il nodo scelto e i suoi
+vicini (massimo 40 nodi/60 collegamenti), espandibili a due passaggi. Ricerca,
+selezione, filtro e vista rimangono nell'URL, anche ricaricando la pagina.
+
+I tag producono relazioni esplicite. Le affinità semantiche sono suggerimenti
+calcolati sul server con un modello multilingue locale; il punteggio non è una
+probabilità e non attesta una competenza dello speaker. **Conferma**, **Scarta**,
+**Annulla decisione** e **Aggiungi un collegamento** salvano decisioni condivise,
+protette da revisioni e conservate separatamente dai ricalcoli. Topic personalizzati
+e decisioni (`topics`, `graphLinks`) entrano negli export e nei backup versione 3;
+i backup versione 1 e 2 restano importabili.
+
+Il salvataggio di speaker, talk, note, spunti, domande e topic, anche durante import
+o ripristino, accoda il ricalcolo nella stessa transazione. Sono riutilizzati gli
+embedding invariati. Il job ha una lease recuperabile; se cambiano i contenuti
+mentre lavora, il risultato superato non diventa quello corrente. La pagina mostra
+avanzamento, risultati da aggiornare e un pulsante per riprovare. I lavori pendenti
+riprendono alla richiesta successiva/poll della pagina. Un'esecuzione lavora per
+circa 160 secondi, con un limite di 1500 nodi; download e singole inferenze possono
+superare quel budget morbido. Le funzioni richiedono un limite hosting di 300 secondi.
+
+Il modello è `Xenova/paraphrase-multilingual-MiniLM-L12-v2`, revisione
+`2c4055b12046f11709e9df2c122e59ffbdc2f900`, q8 CPU. Al primo utilizzo scarica circa
+145 MB nella directory temporanea del server (`bacarodeck-models`); serve accesso
+in uscita a Hugging Face. I testi vengono elaborati localmente e non inviati a
+servizi AI. La prima elaborazione è più lenta e usa memoria/CPU del piano hosting.
+Il pacchetto server include ONNX nativo: verificare limiti di dimensione e durata
+prima del deploy. Il calcolo usa estratti limitati dei dossier, non ogni paragrafo
+di ogni nota; può non trovare connessioni che una lettura editoriale riconosce.
+
+La consultazione offline conserva il grafo già caricato nella sessione aperta,
+anche navigando tra le schermate; tutte le modifiche richiedono la rete. Non è un
+pacchetto persistente per riaprire l'app da zero offline.
+
+Verifica isolata del worker: `FIRESTORE_EMULATOR_HOST=127.0.0.1:18380 npx vitest run
+tests/connection-integration.test.ts`. Questo test usa esclusivamente il progetto
+`demo-bacarodeck-graph-tests`; non eseguirlo sull'emulatore dei contenuti evento.

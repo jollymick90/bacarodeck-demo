@@ -616,7 +616,9 @@
               "questions",
               "interviewPlans",
               "interviewSlots",
-              "conductorBriefs"
+              "conductorBriefs",
+              "topics",
+              "graphLinks"
             ]
           },
           "id": {
@@ -704,6 +706,72 @@
           }
         }
       }
+    },
+    "topics": {
+      "type": "array",
+      "maxItems": 400,
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "graphLinks": {
+      "type": "array",
+      "maxItems": 400,
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "target", "kind", "decision"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$"
+          },
+          "source": {
+            "type": "string",
+            "pattern": "^(speaker|question|topic):[a-zA-Z0-9_-]{1,128}$"
+          },
+          "target": {
+            "type": "string",
+            "pattern": "^(speaker|question|topic):[a-zA-Z0-9_-]{1,128}$"
+          },
+          "kind": {
+            "enum": [
+              "speaker-topic",
+              "question-topic",
+              "topic-related",
+              "speaker-similar",
+              "question-similar"
+            ]
+          },
+          "decision": {
+            "enum": ["linked", "confirmed", "dismissed"]
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
     }
   },
   "anyOf": [
@@ -736,6 +804,12 @@
     },
     {
       "required": ["conductorBriefs"]
+    },
+    {
+      "required": ["topics"]
+    },
+    {
+      "required": ["graphLinks"]
     }
   ]
 }

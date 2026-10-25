@@ -1,3 +1,6 @@
+import topicCatalog from '../../data/editorial/2026-10-25-topic-connections.json';
+import { relationId, validateRelation } from './connections/model';
+import type { GraphNode, RelationKind } from './connections/types';
 import Ajv from 'ajv';
 import { marked } from 'marked';
 import sanitizeHtml from 'sanitize-html';
@@ -21,6 +24,27 @@ export type ImportData = Dataset & {
 const ajv = new Ajv({ allErrors: true, strict: false });
 const validateSchema = ajv.compile(schema);
 const idPattern = /^[a-zA-Z0-9_-]{1,128}$/;
+export const defaultTopicIds = new Set(topicCatalog.topics.map((topic) => topic.id));
+export function graphReference(value: string): {
+  id: string;
+  kind: 'speaker' | 'question' | 'topic';
+  entityId: string;
+} {
+  const match = /^(speaker|question|topic):([a-zA-Z0-9_-]{1,128})$/.exec(value);
+  if (!match) throw new Error('Riferimento nodo non valido.');
+  return { id: value, kind: match[1] as 'speaker' | 'question' | 'topic', entityId: match[2] };
+}
+export function validateGraphLinkReferences(entity: Entity, context: Dataset): void {
+  const errors = validateEntity('graphLinks', entity);
+  if (errors.length) throw new Error(errors.join('\n'));
+  for (const ref of [entity.source, entity.target]) {
+    const node = graphReference(String(ref));
+    const collection = { speaker: 'speakers', question: 'questions', topic: 'topics' } as const;
+    if (node.kind === 'topic' && defaultTopicIds.has(node.entityId)) continue;
+    if (!(context[collection[node.kind]] || []).some((item) => item.id === node.entityId))
+      throw new Error(`Nodo mancante: ${node.id}.`);
+  }
+}
 export function safeUrl(value: unknown): boolean {
   if (value === null || value === undefined || value === '') return true;
   if (typeof value !== 'string') return false;
@@ -33,6 +57,17 @@ export function safeUrl(value: unknown): boolean {
 }
 export function validateEntity(collection: Collection, data: Entity): string[] {
   const errors: string[] = [];
+  if (collection === 'graphLinks') {
+    try {
+      const source = graphReference(String(data.source));
+      const target = graphReference(String(data.target));
+      validateRelation(data.kind as RelationKind, source as GraphNode, target as GraphNode);
+      if (data.id !== relationId(data.kind as RelationKind, source.id, target.id))
+        throw new Error('ID collegamento non canonico.');
+    } catch (error) {
+      errors.push(error instanceof Error ? error.message : 'Collegamento non valido.');
+    }
+  }
   if (collection === 'conductorBriefs' || collection === 'speakerInterests') {
     for (const key of collection === 'speakerInterests'
       ? ['speakerId', 'memberUid']
@@ -104,7 +139,10 @@ export function validateEntity(collection: Collection, data: Entity): string[] {
     !ajv.validate(
       {
         ...entitySchema.items,
-        required: ['id', ...(collection === 'speakers' ? ['fullName'] : [])]
+        required:
+          collection === 'graphLinks'
+            ? ['id', 'source', 'target', 'kind', 'decision']
+            : ['id', ...(collection === 'speakers' ? ['fullName'] : [])]
       },
       editorial
     )
@@ -254,7 +292,9 @@ export function previewImport(input: ImportData, current: Dataset): PreviewRow[]
   const restoring = input.exportKind === 'editorial-work';
   const missing = restoring
     ? (input.requiredDocuments || []).filter(
-        (ref) => !(current[ref.collection] || []).some((entity) => entity.id === ref.id)
+        (ref) =>
+          !(ref.collection === 'topics' && defaultTopicIds.has(ref.id)) &&
+          !(current[ref.collection] || []).some((entity) => entity.id === ref.id)
       )
     : [];
   const from = input.speakers?.[0]?.id;
@@ -263,6 +303,16 @@ export function previewImport(input: ImportData, current: Dataset): PreviewRow[]
     for (const original of input[collection] || []) {
       const incoming: Entity = structuredClone(original);
       if (target) {
+        if (collection === 'graphLinks') {
+          for (const key of ['source', 'target']) {
+            if (incoming[key] === `speaker:${from}`) incoming[key] = `speaker:${target}`;
+          }
+          incoming.id = relationId(
+            incoming.kind as RelationKind,
+            String(incoming.source),
+            String(incoming.target)
+          );
+        }
         if (collection === 'speakers') incoming.id = target;
         if (incoming.speakerId === from || (!from && incoming.speakerId))
           incoming.speakerId = target;

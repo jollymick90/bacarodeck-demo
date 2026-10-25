@@ -6,7 +6,7 @@ import {
   type Entity,
   type Value
 } from './fields';
-import type { ImportData } from './domain';
+import { defaultTopicIds, graphReference, type ImportData } from './domain';
 
 export type ExportRow = {
   collection: Collection;
@@ -105,6 +105,9 @@ export function buildEditorialExport(
     if (!selected.length) continue;
     const entity: Entity = { id: row.entity.id };
     for (const field of selected) entity[field.key] = field.value;
+    if (row.collection === 'graphLinks') {
+      for (const key of ['source', 'target', 'kind', 'decision']) entity[key] = row.entity[key];
+    }
     if (row.collection === 'speakers') entity.fullName = row.entity.fullName;
     if (row.collection === 'interviewSlots') {
       entity.status = row.entity.status;
@@ -127,6 +130,16 @@ export function buildEditorialExport(
       ['classicQuestionIds', 'questions']
     ] as const) {
       for (const id of (entity[field] as string[] | undefined) || []) addDependency(collection, id);
+    }
+    if (row.collection === 'graphLinks') {
+      for (const ref of [entity.source, entity.target]) {
+        const node = graphReference(String(ref));
+        if (node.kind === 'topic' && defaultTopicIds.has(node.entityId)) continue;
+        addDependency(
+          ({ speaker: 'speakers', topic: 'topics', question: 'questions' } as const)[node.kind],
+          node.entityId
+        );
+      }
     }
     if (typeof entity.speakerId === 'string') addDependency('speakers', entity.speakerId);
     if (typeof entity.talkId === 'string' && entity.talkId) addDependency('talks', entity.talkId);
