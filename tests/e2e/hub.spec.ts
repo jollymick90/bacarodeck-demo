@@ -249,7 +249,10 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   expect(rated.ratings.forged).toBeUndefined();
   expect(Object.values(rated.ratings)).toContain(5);
   if (testInfo.project.name === 'mobile') {
-    await page.getByRole('link', { name: 'Torna agli speaker', exact: false }).click();
+    await page
+      .getByRole('navigation', { name: 'Gestione', exact: true })
+      .getByRole('link', { name: 'Speaker', exact: true })
+      .click();
     await page.getByLabel('Cerca nome, organizzazione o tag').fill('breslav');
     await expect(
       page.getByRole('navigation', { name: 'Scegli speaker' }).getByRole('link')

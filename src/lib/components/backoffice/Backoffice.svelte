@@ -237,7 +237,14 @@
   </aside>
 {:else}<section class="speaker-detail" aria-label="Scheda speaker">
     {#if speaker}
-      <a class="back-link" href="/backoffice">← Torna agli speaker</a>
+      <nav class="tabs" aria-label="Contenuti dello speaker">
+        {#each ['materials', 'questions', 'interviewPlans', 'talks'] as name}<a
+            class:current={tab === name}
+            aria-current={tab === name ? 'page' : undefined}
+            href={speakerPath(selectedId) + sections[name as Collection]}
+            >{tabLabels[name as Collection]}</a
+          >{/each}
+      </nav>
       <div class="speaker-heading">
         {#if speaker.photoUrl && safeUrl(speaker.photoUrl)}<img
             class="portrait"
@@ -300,14 +307,7 @@
           >Elimina speaker</button
         >
       </details>
-      <nav class="tabs" aria-label="Contenuti dello speaker">
-        {#each ['materials', 'questions', 'interviewPlans', 'talks'] as name}<a
-            class:current={tab === name}
-            aria-current={tab === name ? 'page' : undefined}
-            href={speakerPath(selectedId) + sections[name as Collection]}
-            >{tabLabels[name as Collection]}</a
-          >{/each}
-      </nav>
+
       <div class="section-heading">
         <h3>{tabLabels[tab]}</h3>
         {#if tab === 'questions'}<button onclick={() => (sortByRating = !sortByRating)}
@@ -438,9 +438,8 @@
   .speaker-detail {
     min-width: 0;
   }
-  .back-link {
-    display: inline-block;
-    margin-bottom: 1rem;
+  .tabs {
+    margin-top: 0;
   }
   .tabs a {
     padding: 0.8rem 1rem;
