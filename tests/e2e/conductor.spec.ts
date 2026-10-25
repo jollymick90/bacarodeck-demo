@@ -19,7 +19,20 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
   const records = [
     {
       collection: 'speakers',
-      data: { id, fullName: 'Speaker mobile ' + info.project.name, tags: ['AI'] }
+      data: {
+        id: id + '-outside',
+        fullName: 'Speaker fuori elenco ' + info.project.name,
+        inInterviewList: false
+      }
+    },
+    {
+      collection: 'speakers',
+      data: {
+        id,
+        fullName: 'Speaker mobile ' + info.project.name,
+        tags: ['AI'],
+        inInterviewList: true
+      }
     },
     {
       collection: 'talks',
@@ -58,6 +71,25 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
   expect(result.ok(), await result.text()).toBeTruthy();
   await page.reload();
   await expect(page.getByRole('heading', { name: 'Chi intervistiamo?' })).toBeVisible();
+  const outside = page.locator('[data-speaker="' + id + '-outside"]');
+  await expect(page.locator('[data-speaker="' + id + '"]')).toBeVisible();
+  await expect(outside).toHaveCount(0);
+  await page.getByLabel('Cerca speaker').fill('Speaker fuori elenco ' + info.project.name);
+  await expect(outside).toHaveCount(0);
+  await page.getByRole('button', { name: 'Mostra anche gli altri speaker', exact: true }).click();
+  await expect(page).toHaveURL('/?elenco=tutti');
+  await expect(outside).toBeVisible();
+  await page.reload();
+  await expect(outside).toBeVisible();
+  await page.getByRole('link', { name: 'Vedi la lista completa', exact: true }).click();
+  await expect(page).toHaveURL('/speaker?elenco=tutti');
+  await expect(outside).toBeVisible();
+  await page.getByRole('button', { name: 'Mostra solo in elenco', exact: true }).click();
+  await expect(page).toHaveURL('/speaker');
+  await expect(outside).toHaveCount(0);
+  await page.reload();
+  await expect(outside).toHaveCount(0);
+  await page.goto('/');
   await page.getByLabel('Cerca speaker').fill('Speaker mobile ' + info.project.name);
   const card = page.locator('[data-speaker="' + id + '"]');
   await card.getByRole('button', { name: 'Mi interessa', exact: true }).first().click();
@@ -272,7 +304,7 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
     ).json();
     for (const item of items.filter(
       (e: { id: string; speakerId?: string; speakerIds?: string[] }) =>
-        e.id === id || e.speakerId === id || e.speakerIds?.includes(id)
+        e.id === id || e.id === id + '-outside' || e.speakerId === id || e.speakerIds?.includes(id)
     )) {
       if (collection === 'interviewPlans') {
         expect(

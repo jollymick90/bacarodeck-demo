@@ -2,6 +2,7 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import type { Dataset, Entity } from '$lib/fields';
+  import { isInInterviewList } from '$lib/interview-list';
   import { searchSpeakers } from '$lib/speaker-search';
   import { groupSpeakers } from '$lib/conductor/home';
   import { resolveBrief, briefId } from '$lib/conductor/brief';
@@ -31,6 +32,22 @@
   } = $props();
   const language = $derived(page.url.searchParams.get('lang') === 'en' ? 'en' : 'it');
   let query = $state('');
+  const speakerList = $derived(mode === 'home' || mode === 'speakers');
+  const showAllSpeakers = $derived(page.url.searchParams.get('elenco') === 'tutti');
+  const visibleSpeakers = $derived(
+    (data.speakers || []).filter(
+      (item) => !speakerList || showAllSpeakers || isInInterviewList(item)
+    )
+  );
+  function toggleSpeakers() {
+    const params = new URLSearchParams(page.url.search);
+    if (showAllSpeakers) params.delete('elenco');
+    else params.set('elenco', 'tutti');
+    void goto(page.url.pathname + (params.size ? '?' + params : ''), {
+      noScroll: true,
+      keepFocus: true
+    });
+  }
   let busy = $state(false);
   let failure = $state('');
   let message = $state('');
@@ -54,11 +71,18 @@
   const brief = $derived(resolveBrief(data, selected, talkId, language));
   const groups = $derived(
     groupSpeakers(
-      searchSpeakers(data.speakers || [], query),
+      searchSpeakers(visibleSpeakers, query),
       data.speakerInterests || [],
       data.interviewPlans || [],
       uid,
       topic
+    )
+  );
+  const remainingSpeakers = $derived(
+    groups.all.filter(
+      (item) =>
+        !groups.saved.some((saved) => saved.id === item.id) &&
+        !groups.unassigned.some((unassigned) => unassigned.id === item.id)
     )
   );
   const topics = $derived(
@@ -217,7 +241,9 @@
         {mode === 'home'
           ? 'Chi intervistiamo?'
           : mode === 'speakers'
-            ? 'Tutti gli speaker'
+            ? showAllSpeakers
+              ? 'Tutti gli speaker'
+              : 'Speaker in elenco'
             : mode === 'topic'
               ? `Topic: ${topic}`
               : 'Topic'}
@@ -232,6 +258,18 @@
         placeholder="Nome, organizzazione o argomento"
       /></label
     >
+    {#if speakerList}
+      <div class="speaker-list-controls">
+        <p class="muted">
+          {showAllSpeakers
+            ? 'Stai vedendo tutti gli speaker.'
+            : 'Stai vedendo gli speaker in elenco per le interviste.'}
+        </p>
+        <button type="button" aria-pressed={showAllSpeakers} onclick={toggleSpeakers}>
+          {showAllSpeakers ? 'Mostra solo in elenco' : 'Mostra anche gli altri speaker'}
+        </button>
+      </div>
+    {/if}
     {#if mode === 'home'}
       <section aria-label="I miei speaker">
         <h2>I miei speaker <span>{groups.saved.length}</span></h2>
@@ -251,7 +289,18 @@
             </p>{/each}
         </div>
       </section>
-      <a class="nav-action all-speakers" href="/speaker">Tutti gli speaker, anche assegnati</a>
+      {#if remainingSpeakers.length}
+        <section aria-label="Altri speaker">
+          <h2>Altri speaker</h2>
+          <div class="speaker-cards">
+            {#each remainingSpeakers as s (s.id)}{@render card(s)}{/each}
+          </div>
+        </section>
+      {/if}
+      <a
+        class="nav-action all-speakers"
+        href={'/speaker' + (showAllSpeakers ? '?elenco=tutti' : '')}>Vedi la lista completa</a
+      >
     {:else}
       {#if mode === 'topics' || mode === 'topic'}
         <nav class="topic-filters" aria-label="Filtra per topic">
