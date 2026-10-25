@@ -31,7 +31,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   });
   await expect(page.getByRole('link', { name: 'Aggiungi speaker', exact: true })).toBeEnabled();
   const tools = page.locator('.backoffice-tools');
-  await expect(page.locator('.toolbar-actions .action-button')).toHaveCount(2);
+  await expect(page.locator('.toolbar-actions .action-button')).toHaveCount(1);
   await expect(tools).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Programmazione', exact: true })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Importa JSON', exact: true })).toBeHidden();
@@ -52,8 +52,11 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     await expect(help).toBeFocused();
   }
   await page.screenshot({ path: testInfo.outputPath('backoffice-tools.png'), fullPage: true });
-  await page.getByRole('link', { name: 'Speaker', exact: true }).click();
-  await expect(page.getByRole('navigation', { name: 'Scegli speaker' })).toBeVisible();
+  await page
+    .getByRole('navigation', { name: 'Gestione', exact: true })
+    .getByRole('link', { name: 'Speaker', exact: true })
+    .click();
+  await expect(page.getByLabel('Cerca nome, organizzazione o tag')).toBeVisible();
 
   if (!(await page.getByRole('link', { name: /Andrey Breslav/ }).isVisible())) {
     await openTools(page);
@@ -304,7 +307,10 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     if (await commit.isEnabled()) await commit.click();
     else await page.getByRole('button', { name: 'Chiudi', exact: true }).click();
   }
-  await page.getByRole('link', { name: 'Speaker', exact: true }).click();
+  await page
+    .getByRole('navigation', { name: 'Gestione', exact: true })
+    .getByRole('link', { name: 'Speaker', exact: true })
+    .click();
   await page.getByRole('navigation', { name: 'Scegli speaker' }).waitFor();
   const reset = page.getByRole('button', { name: 'Azzera ricerca' });
   if (await reset.isVisible()) await reset.click();

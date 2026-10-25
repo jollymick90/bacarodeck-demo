@@ -5,5 +5,5 @@
   const workspace = getWorkspace();
 </script>
 
-<svelte:head><title>Esporta · Backoffice BacaroTech</title></svelte:head>
+<svelte:head><title>Esporta · Gestione BacaroTech</title></svelte:head>
 <Export uid={workspace.user!.uid} oncancel={() => goto('/backoffice/strumenti')} />

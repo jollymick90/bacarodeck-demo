@@ -18,7 +18,7 @@
   }
 </script>
 
-<svelte:head><title>Tag · Backoffice BacaroTech</title></svelte:head>
+<svelte:head><title>Tag · Gestione BacaroTech</title></svelte:head>
 <TagUpdates
   data={workspace.data}
   {busy}

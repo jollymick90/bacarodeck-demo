@@ -74,7 +74,7 @@
 </script>
 
 <svelte:head
-  ><title>{id ? 'Scheda contenuto' : 'Nuovo contenuto'} · Backoffice BacaroTech</title></svelte:head
+  ><title>{id ? 'Scheda contenuto' : 'Nuovo contenuto'} · Gestione BacaroTech</title></svelte:head
 >
 <p><a href={returnPath}>← Torna {relatedSpeaker ? 'allo speaker' : 'agli speaker'}</a></p>
 {#if entity}<Editor

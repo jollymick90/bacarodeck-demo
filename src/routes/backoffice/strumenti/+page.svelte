@@ -10,7 +10,7 @@
   ];
 </script>
 
-<svelte:head><title>Strumenti · Backoffice BacaroTech</title></svelte:head>
+<svelte:head><title>Strumenti · Gestione BacaroTech</title></svelte:head>
 <section class="backoffice-tools">
   <h2>Strumenti</h2>
   <p>

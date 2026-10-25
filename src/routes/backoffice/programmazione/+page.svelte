@@ -11,5 +11,5 @@
   }
 </script>
 
-<svelte:head><title>Programmazione · Backoffice BacaroTech</title></svelte:head>
+<svelte:head><title>Programmazione · Gestione BacaroTech</title></svelte:head>
 <Schedule slots={workspace.data.interviewSlots || []} onsave={save} />

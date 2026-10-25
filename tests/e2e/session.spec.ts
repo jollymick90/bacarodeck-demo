@@ -40,7 +40,9 @@ test('the same account is restored after a full browser restart', async ({ baseU
     const reopened = await context.newPage();
     const restoredAccess = reopened.waitForResponse('**/api/access');
     await reopened.goto('/backoffice');
-    await expect(reopened.getByRole('heading', { name: 'Prepariamo le interviste.' })).toBeVisible();
+    await expect(
+      reopened.getByRole('heading', { name: 'Prepariamo le interviste.' })
+    ).toBeVisible();
     const restored = await (await restoredAccess).json();
     expect(restored.allowed).toBe(true);
     expect(restored.uid).toBe(identity.uid);
@@ -70,11 +72,46 @@ test('one login survives route changes, reload and reopening, until logout', asy
   await expect(page.getByRole('heading', { name: 'Chi intervistiamo?' })).toBeVisible();
 
   for (let i = 0; i < 2; i++) {
-    await page.getByRole('link', { name: 'Backoffice', exact: true }).click();
+    await page.getByRole('link', { name: 'Gestione', exact: true }).click();
     await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toBeVisible();
-    await page.getByRole('link', { name: '← Vista conduttore' }).click();
+    await page
+      .getByRole('navigation', { name: 'Navigazione principale' })
+      .getByRole('link', { name: 'Speaker', exact: true })
+      .click();
     await expect(page.getByRole('heading', { name: 'Chi intervistiamo?' })).toBeVisible();
   }
+  await page.getByRole('link', { name: 'Gestione', exact: true }).click();
+  const tabs = page.getByRole('navigation', { name: 'Gestione' });
+  await expect(tabs.getByRole('link')).toHaveText(['Speaker', 'Programmazione', 'Strumenti']);
+  await tabs.getByRole('link', { name: 'Programmazione', exact: true }).click();
+  await expect(tabs.getByRole('link', { name: 'Programmazione', exact: true })).toHaveAttribute(
+    'aria-current',
+    'page'
+  );
+  await tabs.getByRole('link', { name: 'Strumenti', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Strumenti', exact: true })).toBeVisible();
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  const footer = page.getByRole('navigation', { name: 'Navigazione principale' });
+  await expect(footer.getByRole('link', { name: 'Gestione', exact: true })).toHaveAttribute(
+    'aria-current',
+    'page'
+  );
+  expect(
+    await footer.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      return r.top >= 0 && r.bottom <= innerHeight;
+    })
+  ).toBe(true);
+  await expect(page.getByRole('link', { name: '← Vista conduttore' })).toHaveCount(0);
+  await page.screenshot({ path: info.outputPath('navigation.png'), fullPage: true });
+  await footer.getByRole('link', { name: 'Topic', exact: true }).click();
+  await expect(page).toHaveURL('/topic');
+  await expect(footer.getByRole('link', { name: 'Topic', exact: true })).toHaveAttribute(
+    'aria-current',
+    'page'
+  );
+  await footer.getByRole('link', { name: 'Speaker', exact: true }).click();
+  await expect(page).toHaveURL('/');
   await page.reload();
   await expect(page.getByRole('heading', { name: 'Chi intervistiamo?' })).toBeVisible();
   expect(errors).toEqual([]);
@@ -84,6 +121,12 @@ test('one login survives route changes, reload and reopening, until logout', asy
   const reopened = await context.newPage();
   await reopened.goto('/backoffice');
   await expect(reopened.getByRole('heading', { name: 'Prepariamo le interviste.' })).toBeVisible();
+  await expect(reopened.getByRole('button', { name: 'Esci', exact: true })).toBeHidden();
+  await reopened.getByRole('button', { name: 'Utente', exact: true }).click();
+  await expect(reopened.getByRole('button', { name: 'Esci', exact: true })).toBeVisible();
+  await reopened.keyboard.press('Escape');
+  await expect(reopened.getByRole('button', { name: 'Esci', exact: true })).toBeHidden();
+  await reopened.getByRole('button', { name: 'Utente', exact: true }).click();
   await reopened.getByRole('button', { name: 'Esci', exact: true }).click();
   await expect(reopened.getByRole('button', { name: 'Accedi con Google' })).toBeVisible();
   await reopened.goto('/');

@@ -101,7 +101,7 @@
   }
 </script>
 
-<svelte:head><title>Importa · Backoffice BacaroTech</title></svelte:head>
+<svelte:head><title>Importa · Gestione BacaroTech</title></svelte:head>
 {#if loading}<p role="status">Preparazione importazione…</p>
 {:else if failure}<p role="alert">{failure}</p>
   <a href="/backoffice/strumenti">Torna agli strumenti</a>

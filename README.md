@@ -20,8 +20,12 @@ Gli slot originali pertinenti vengono salvati insieme all'assegnazione anche se
 non erano ancora stati aperti nella programmazione. Piani e slot già assegnati
 non possono essere eliminati dal CRUD generico, per non lasciare stati discordanti.
 
-Il backoffice resta accessibile a tutti i conduttori autorizzati su `/backoffice`.
-La barra principale mostra «Aggiungi speaker» e «Programmazione». Importazioni,
+Gestione resta accessibile a tutti i conduttori autorizzati su `/backoffice`.
+L’header compatto mostra il logo BacaroTech e «Interview Hub». Il pulsante «Utente»
+apre i dettagli dell’account e il comando «Esci». La barra inferiore resta visibile
+durante lo scorrimento e collega Speaker, Topic e Gestione.
+Gestione ha tre tab: Speaker, Programmazione e Strumenti; «Aggiungi speaker» resta
+come azione rapida. Importazioni,
 esportazioni, tag, traduzioni e gestione accessi si trovano nella pagina
 «Strumenti» (`/backoffice/strumenti`), organizzata per funzione. Il pulsante ⓘ accanto
 a ogni comando apre una spiegazione; non esegue l'operazione.

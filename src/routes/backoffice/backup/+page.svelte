@@ -14,7 +14,7 @@
   });
 </script>
 
-<svelte:head><title>Backup · Backoffice BacaroTech</title></svelte:head>
+<svelte:head><title>Backup · Gestione BacaroTech</title></svelte:head>
 {#if navigationBlocked}<p role="alert" class="warning">
     Operazione in corso. Attendi il completamento prima di cambiare pagina.
   </p>{/if}

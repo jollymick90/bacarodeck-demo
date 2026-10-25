@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount, type Snippet } from 'svelte';
+  import AppHeader from './AppHeader.svelte';
+  import AppNavigation from './AppNavigation.svelte';
   import { provideWorkspace } from '$lib/workspace.svelte';
   let { children }: { children: Snippet } = $props();
   const workspace = provideWorkspace();
@@ -8,14 +10,7 @@
 
 <svelte:head><title>BacaroTech · Interview Hub</title></svelte:head>
 <a class="skip-link" href="#main">Vai al contenuto</a>
-<header class="masthead">
-  <a class="brand" href="/" aria-label="BacaroTech Interview Hub"
-    ><span class="brand-mark">b.</span><span>BacaroTech<small>Interview Hub</small></span></a
-  >
-  <div class="event">Codemotion Milano <strong>28–29 ottobre 2026</strong></div>
-  {#if workspace.user}<button class="header-button" onclick={() => workspace.logout()}>Esci</button
-    >{/if}
-</header>
+<AppHeader user={workspace.user} onlogout={() => workspace.logout()} />
 <main id="main">
   {#if workspace.access !== 'member'}
     <section class="welcome">
@@ -53,4 +48,10 @@
   {/if}
   {#if workspace.error}<p class="error" role="alert">{workspace.error}</p>{/if}
 </main>
-<footer>BacaroTech · Codemotion Milano 2026 <span>Ricerca, confronto, conversazioni.</span></footer>
+<AppNavigation />
+
+<style>
+  main {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  }
+</style>

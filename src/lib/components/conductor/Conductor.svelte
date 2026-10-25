@@ -207,12 +207,6 @@
 </script>
 
 <div class="conductor">
-  <nav class="conductor-nav" aria-label="Navigazione conduttore">
-    <a href="/">Speaker</a><a href="/topic">Topic</a>
-    <a href={selected ? '/backoffice/speaker/' + encodeURIComponent(selected) : '/backoffice'}
-      >Backoffice</a
-    >
-  </nav>
   {#if (mode === 'speaker' || mode === 'reading') && !speaker}
     <h1>Speaker non trovato</h1>
     <p>Lo speaker richiesto non è disponibile nel workspace.</p>
@@ -444,7 +438,7 @@
           />{#if entry.entity.url}<Markdown
               text={'[Apri fonte](' + String(entry.entity.url) + ')'}
             />{/if}<a href={'/backoffice/speaker/' + encodeURIComponent(selected)}
-            >Apri nel backoffice</a
+            >Apri in gestione</a
           >
         </article>{:else}<p>Non sono ancora presenti approfondimenti per questo speaker.</p>{/each}
     </details>
@@ -528,7 +522,7 @@
         >Usa questa domanda</button
       >
     </article>{:else}<p>
-      Non ci sono altre domande strutturate. Puoi aggiungerle dal backoffice.
+      Non ci sono altre domande strutturate. Puoi aggiungerle da Gestione.
     </p>{/each}{#if failure}<p role="alert">{failure}</p>{/if}<button
     disabled={busy}
     onclick={() => picker.close()}>Chiudi</button
@@ -541,18 +535,6 @@
     margin: 0 auto;
     padding: 0 8px 50px;
     color: #263e32;
-  }
-  .conductor-nav {
-    display: flex;
-    gap: 8px;
-    border-bottom: 1px solid #cdd6c5;
-    padding: 10px 0 18px;
-  }
-  .conductor-nav a {
-    padding: 12px 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 650;
   }
   .conductor h1 {
     font-size: clamp(2rem, 6vw, 3.2rem);
@@ -791,9 +773,6 @@
     }
     .question-sheet {
       padding: 16px;
-    }
-    .conductor-nav a {
-      padding: 12px;
     }
     .brief-heading {
       align-items: start;

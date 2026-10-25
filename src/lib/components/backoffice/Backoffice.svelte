@@ -139,7 +139,7 @@
 </script>
 
 <svelte:head
-  ><title>{speaker ? String(speaker.fullName) : 'Speaker'} · Backoffice BacaroTech</title
+  ><title>{speaker ? String(speaker.fullName) : 'Speaker'} · Gestione BacaroTech</title
   ></svelte:head
 >
 {#if !selectedId}
