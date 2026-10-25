@@ -21,6 +21,13 @@ non erano ancora stati aperti nella programmazione. Piani e slot già assegnati
 non possono essere eliminati dal CRUD generico, per non lasciare stati discordanti.
 
 Il backoffice resta accessibile a tutti i conduttori autorizzati su `/backoffice`.
+«Modifica profilo e intervista» apre un unico form con le due sezioni e un solo
+salvataggio. Un conflitto su una delle sezioni blocca entrambe le scritture e
+conserva le bozze nel form.
+I contenuti esistenti si aprono in lettura, con Markdown formattato e il pulsante
+«Modifica» per abilitare i campi. La descrizione speaker usa una sola area IT / EN;
+il cambio lingua conserva i due testi e le rispettive modifiche non ancora salvate.
+I nuovi contenuti si aprono direttamente in modifica.
 Da un materiale di ricerca si può incollare una domanda, controllare l'anteprima e
 confermare la creazione del record strutturato, conservando il materiale originale.
 Sintesi, domande classiche e scaletta si gestiscono dalla scheda conduttore collegata.

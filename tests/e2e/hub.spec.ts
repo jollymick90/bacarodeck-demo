@@ -107,6 +107,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     .locator('.content-entry')
     .filter({ has: page.getByRole('heading', { name: 'Ricerca da Gemini' }) });
   await material.getByRole('button', { name: 'Modifica', exact: true }).click();
+  await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
   await expect(page.getByLabel('Testo Markdown')).toHaveValue(markdown);
   await page.getByLabel('Note', { exact: true }).fill('Verificare con la fonte');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
@@ -119,6 +120,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     .locator('.content-entry')
     .filter({ has: page.getByRole('heading', { name: /CSV fornito/ }) });
   await source.getByRole('button', { name: 'Modifica', exact: true }).click();
+  await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
   await page.getByLabel('URL fonte').fill('https://example.org/codemotion');
   await page.getByLabel('Note', { exact: true }).fill('Fonte verificata dal team');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
@@ -127,7 +129,8 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     'https://example.org/codemotion'
   );
   await expect(source.getByText('Fonte verificata dal team')).toBeVisible();
-  await page.getByRole('button', { name: 'Prepara intervista' }).click();
+  await page.getByRole('button', { name: 'Modifica profilo e intervista' }).click();
+  await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
   await page.getByLabel('Preparazione', { exact: true }).selectOption('ready');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
   await page.getByRole('button', { name: 'Intervista', exact: true }).click();

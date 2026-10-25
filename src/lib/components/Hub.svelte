@@ -94,7 +94,11 @@
   let assignee = $state('');
   let tab = $state<Collection>('materials');
   let language = $state<'it' | 'en'>('it');
-  let editing = $state<{ collection: Collection; entity: Entity } | null>(null);
+  let editing = $state<{
+    collection: Collection;
+    entity: Entity;
+    interviewPlan?: Entity;
+  } | null>(null);
   let deleting = $state<{ collection: Collection; entity: Entity } | null>(null);
   let importing = $state(false);
   let importText = $state('');
@@ -280,7 +284,17 @@
   }
   function edit(collection: Collection, entity?: Entity) {
     updatingTags = false;
-    editing = { collection, entity: entity ?? emptyEntity(collection, selectedId || undefined) };
+    editing = {
+      collection,
+      entity: entity ?? emptyEntity(collection, selectedId || undefined),
+      ...(collection === 'speakers' && entity
+        ? {
+            interviewPlan:
+              data.interviewPlans?.find((p) => p.speakerId === entity.id) ??
+              emptyEntity('interviewPlans', entity.id)
+          }
+        : {})
+    };
     message = '';
   }
   async function saveResearch(records: Entity[]) {
@@ -304,17 +318,25 @@
       busy = false;
     }
   }
-  async function save(entity: Entity) {
+  async function save(entity: Entity, interviewPlan?: Entity) {
     if (!client || !user || !editing) return;
     busy = true;
     try {
-      await commitChanges(client.db, user.uid, [
+      const changes: Change[] = [
         {
           collection: editing.collection,
           data: entity,
           expectedRevision: editing.entity.revision ?? null
         }
-      ]);
+      ];
+      if (interviewPlan && editing.interviewPlan) {
+        changes.push({
+          collection: 'interviewPlans',
+          data: interviewPlan,
+          expectedRevision: editing.interviewPlan.revision ?? null
+        });
+      }
+      await commitChanges(client.db, user.uid, changes);
       message = 'Modifiche salvate.';
       editing = null;
     } finally {
@@ -561,6 +583,7 @@
     {:else if editing}{#key editing.entity.id + editing.collection}<Editor
           collection={editing.collection}
           entity={editing.entity}
+          interviewPlan={editing.interviewPlan}
           {members}
           {busy}
           onsave={save}
@@ -700,8 +723,8 @@
               </p>{/if}
             <div class="detail-actions">
               <button class="primary" onclick={() => edit('materials')}>+ Aggiungi ricerca</button
-              ><button onclick={() => edit('speakers', speaker)}>Modifica profilo</button><button
-                onclick={() => edit('interviewPlans', plan)}>Prepara intervista</button
+              ><button onclick={() => edit('speakers', speaker)}
+                >Modifica profilo e intervista</button
               >
             </div>
             <details class="bio">
