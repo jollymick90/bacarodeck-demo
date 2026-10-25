@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
+  import { untrack } from 'svelte';
   import { researchEntries } from '$lib/research';
   import { researchPrompt, questionsPrompt, audioPrompt } from '$lib/research-prompts';
   import { emptyEntity, type Dataset, type Entity } from '$lib/fields';
@@ -16,6 +17,7 @@
     busy: boolean;
     onsave: (records: Entity[]) => Promise<void>;
   } = $props();
+  let questionsOpen = $state(untrack(() => page.url.searchParams.get('prompt') === 'domande'));
   let selected = $state<string[]>([]);
   let prompt = $state('');
   let notice = $state('');
@@ -109,7 +111,7 @@
       >Copia prompt ricerca</button
     >
   </details>
-  <details class="prompt-group" open={page.url.searchParams.get('prompt') === 'domande'}>
+  <details class="prompt-group" bind:open={questionsOpen}>
     <summary>2. Prepara le domande</summary>
     <p>
       Seleziona solo i contenuti da portare nella nuova chat. Il prompt include anche i talk, la
