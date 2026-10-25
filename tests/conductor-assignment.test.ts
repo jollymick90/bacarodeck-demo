@@ -23,3 +23,16 @@ it('does not associate ambiguous legacy names with a slot', () => {
   );
   expect(changes).toHaveLength(1);
 });
+it('materializes an agenda slot when assigning before the slot has ever been saved', () => {
+  const changes = assignmentChanges(
+    { speakers: [{ id: 'alexio-cassani', fullName: 'Alexio Cassani' }] },
+    'alexio-cassani',
+    'martin',
+    '',
+    false
+  );
+  const slots = changes.filter((c) => c.collection === 'interviewSlots');
+  expect(slots.length).toBeGreaterThan(0);
+  expect(slots[0].expectedRevision).toBeNull();
+  expect(slots[0].data.interviewerId).toBe('martin');
+});

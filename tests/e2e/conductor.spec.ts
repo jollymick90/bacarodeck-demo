@@ -206,6 +206,30 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
       (e: { id: string; speakerId?: string; speakerIds?: string[] }) =>
         e.id === id || e.speakerId === id || e.speakerIds?.includes(id)
     )) {
+      if (collection === 'interviewPlans') {
+        expect(
+          (
+            await request.post('/api/data', {
+              headers: { Authorization: token },
+              data: {
+                action: 'delete',
+                changes: [{ collection, data: item, expectedRevision: item.revision }]
+              }
+            })
+          ).status()
+        ).toBe(400);
+        // Test-only teardown via the isolated demo emulator's administrative REST API.
+        const emulator = process.env.FIRESTORE_EMULATOR_HOST || '127.0.0.1:8080';
+        expect(
+          (
+            await request.delete(
+              `http://${emulator}/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/interviewPlans/${item.id}`,
+              { headers: { Authorization: 'Bearer owner' } }
+            )
+          ).ok()
+        ).toBeTruthy();
+        continue;
+      }
       cleanup.push({ collection, data: item, expectedRevision: item.revision });
     }
   }

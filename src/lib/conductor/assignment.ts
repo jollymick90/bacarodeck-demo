@@ -1,6 +1,7 @@
 import type { Dataset, Entity } from '../fields';
 import type { Change } from '../domain';
 import { team } from '../team';
+import agenda from '../../../data/agenda/codemotion.json';
 export const assignmentOwner = (plan?: Entity) =>
   String(plan?.assignedTeamId || plan?.assignedToUid || plan?.assignedToName || '');
 export function assignmentChanges(
@@ -34,7 +35,18 @@ export function assignmentChanges(
     }
   ];
   const uniqueName = data.speakers?.filter((s) => s.fullName === speaker.fullName).length === 1;
-  for (const slot of data.interviewSlots || []) {
+  const persisted = data.interviewSlots || [];
+  const initial: Entity[] = agenda.originalSlots.map((slot, index) => ({
+    id: `slot-${index + 1}`,
+    originalStart: `${slot.day}T${slot.startTime}:00+01:00`,
+    primarySpeaker: slot.mainSpeaker,
+    backupSpeaker: slot.backupSpeaker,
+    status: 'provisional'
+  }));
+  for (const slot of [
+    ...persisted,
+    ...initial.filter((s) => !persisted.some((p) => p.id === s.id))
+  ]) {
     if (
       slot.primarySpeakerId === speakerId ||
       (!slot.primarySpeakerId && uniqueName && slot.primarySpeaker === speaker.fullName)

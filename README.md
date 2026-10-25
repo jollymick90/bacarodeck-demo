@@ -16,6 +16,9 @@ La mancanza di tre domande o della sintesi non viene riempita con contenuti inve
 con il riepilogo. Piano e slot collegati vengono aggiornati insieme. I vecchi slot
 senza ID speaker vengono collegati solo con corrispondenza univoca del nome; i casi
 ambigui richiedono verifica. L'assegnazione non cambia gli interessi.
+Gli slot originali pertinenti vengono salvati insieme all'assegnazione anche se
+non erano ancora stati aperti nella programmazione. Piani e slot già assegnati
+non possono essere eliminati dal CRUD generico, per non lasciare stati discordanti.
 
 Il backoffice resta accessibile a tutti i conduttori autorizzati su `/backoffice`.
 Da un materiale di ricerca si può incollare una domanda, controllare l'anteprima e

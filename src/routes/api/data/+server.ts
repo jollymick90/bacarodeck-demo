@@ -1,5 +1,5 @@
 import { trackEditorialFields } from '$lib/editorial-export';
-import { guardConductorWrite } from '$lib/conductor/write-policy';
+import { guardConductorWrite, guardConductorDelete } from '$lib/conductor/write-policy';
 import { validateBrief } from '$lib/conductor/brief';
 import type { Dataset } from '$lib/fields';
 import { invalidateCollections } from '$lib/server/firestore-cache';
@@ -69,6 +69,11 @@ export const POST: RequestHandler = async ({ request, url }) => {
         error(409, 'Conflitto: il contenuto è cambiato. Ricarica prima di salvare.');
       if (body.action === 'delete') {
         if (!existing) error(409, 'Documento già eliminato.');
+        try {
+          guardConductorDelete(change.collection, existing);
+        } catch (e) {
+          error(400, (e as Error).message);
+        }
         return null;
       }
       try {

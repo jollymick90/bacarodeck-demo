@@ -1,4 +1,14 @@
 import type { Collection, Entity } from '../fields';
+import { assignmentOwner } from './assignment';
+export function guardConductorDelete(collection: Collection, existing: Entity) {
+  if (
+    (collection === 'interviewPlans' && assignmentOwner(existing)) ||
+    (collection === 'interviewSlots' && existing.interviewerId)
+  )
+    throw Error(
+      'Un piano o slot assegnato non si elimina direttamente: conserva l’assegnazione o riassegna dalla scheda speaker.'
+    );
+}
 export function guardConductorWrite(
   collection: Collection,
   incoming: Entity,
