@@ -122,7 +122,9 @@ export const fields: Record<Collection, Field[]> = {
     f('alternateTitles', 'Titoli alternativi', 'array'),
     sources,
     f('day', 'Giorno'),
-    f('time', 'Orario'),
+    f('time', 'Inizio talk (HH:mm)'),
+    f('endTime', 'Fine talk (HH:mm)'),
+    f('agendaSessionId', 'ID sessione Codemotion'),
     f('stage', 'Palco'),
     f('reviewFlags', 'Segnalazioni', 'array'),
     notes

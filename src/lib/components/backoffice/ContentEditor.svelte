@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { withScheduleDefaults } from '$lib/talk-schedule';
   import { untrack } from 'svelte';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
@@ -21,7 +22,15 @@
       : emptyEntity(collection, speakerId || undefined)
   );
   let entity = $state<Entity | undefined>(
-    original ? JSON.parse(JSON.stringify(original)) : undefined
+    untrack(() =>
+      original
+        ? JSON.parse(
+            JSON.stringify(
+              collection === 'talks' ? withScheduleDefaults(original, workspace.data) : original
+            )
+          )
+        : undefined
+    )
   );
   let editorVersion = $state(0);
   let savedNotice = $state('');

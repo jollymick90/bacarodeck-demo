@@ -84,6 +84,7 @@
     'abstractEn',
     'day',
     'time',
+    'endTime',
     'stage',
     'textIt',
     'textEn',

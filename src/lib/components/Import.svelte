@@ -7,13 +7,15 @@
     type PreviewRow,
     type Change
   } from '$lib/domain';
+  import { scheduleKeys } from '$lib/talk-schedule';
   import { labels, type Dataset } from '$lib/fields';
   let {
     data,
     oncommit,
     oncancel,
     initial = '',
-    busy = false
+    busy = false,
+    scheduleImport = false
   }: {
     data: Dataset;
     oncommit: (
@@ -24,6 +26,7 @@
     oncancel: () => void;
     initial?: string;
     busy?: boolean;
+    scheduleImport?: boolean;
   } = $props();
   let text = $state(untrack(() => initial));
   let rows = $state<PreviewRow[]>([]);
@@ -83,6 +86,14 @@
         const review = row.fields.find((field) => field.key === 'translationReviewed');
         if (review && review.after === false) review.selected = true;
       }
+    }
+    approved = false;
+  }
+  function selectSchedule() {
+    for (const row of rows) {
+      if (row.blocked || row.collection !== 'talks') continue;
+      for (const field of row.fields)
+        field.selected = (scheduleKeys as readonly string[]).includes(field.key);
     }
     approved = false;
   }
@@ -154,6 +165,12 @@
         conservati.
       </p>
     {/if}
+    {#if scheduleImport}<button disabled={busy} onclick={selectSchedule}
+        >Seleziona tutti gli aggiornamenti degli orari</button
+      >
+      <p>
+        Include le sostituzioni degli orari già salvati: verifica le differenze prima di confermare.
+      </p>{/if}
     {#if missingRequired}<p class="warning">
         Importa i documenti di base richiesti prima di ripristinare questo file.
       </p>{/if}

@@ -24,6 +24,12 @@ export const backofficeActions = [
       'Prepara l’importazione del catalogo di Codemotion con gli 84 speaker e i contenuti collegati. Propone solo i record mancanti: le schede già presenti non vengono sostituite. Controlla l’anteprima prima di confermare.'
   },
   {
+    label: 'Importa orari Codemotion',
+    href: '/backoffice/importa/orari',
+    description:
+      'Abbina giorno, inizio, fine e sala ai talk già presenti. Usa gli orari inclusi nell’app oppure un nuovo JSON delle sessioni. Controlla le differenze e scegli gli aggiornamenti: note, domande e appuntamenti delle interviste restano invariati.'
+  },
+  {
     label: 'Importa traduzioni IT/EN',
     href: '/backoffice/importa/traduzioni',
     description:

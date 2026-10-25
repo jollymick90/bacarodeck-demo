@@ -232,6 +232,8 @@
           "time": {
             "type": ["string", "null"]
           },
+          "endTime": { "type": ["string", "null"] },
+          "agendaSessionId": { "type": ["string", "null"] },
           "stage": {
             "type": ["string", "null"]
           },

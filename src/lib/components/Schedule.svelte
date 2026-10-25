@@ -1,6 +1,8 @@
 <script lang="ts">
   import { getWorkspace } from '$lib/workspace.svelte';
   const workspace = getWorkspace();
+  import { agendaSessions } from '$lib/talk-schedule';
+  import agendaSnapshot from '../../../data/agenda/codemotion-speakers.json';
   import agenda from '../../../data/agenda/codemotion.json';
   import { localTime, suggestInterview, findConflicts, outsideWindows } from '$lib/scheduling';
   import { team } from '$lib/team';
@@ -19,7 +21,12 @@
   const rows = $derived(initial.map((slot) => slots.find((saved) => saved.id === slot.id) || slot));
   const conflicts = $derived(findConflicts(rows));
   const talks = $derived(
-    agenda.sessions.filter((talk) => talk.speakers.includes(String(draft?.primarySpeaker)))
+    agendaSessions(workspace.data).filter((talk) =>
+      talk.speakers.some(
+        (name) =>
+          name.toLocaleLowerCase() === String(draft?.primarySpeaker || '').toLocaleLowerCase()
+      )
+    )
   );
   async function save() {
     if (!draft) return;
@@ -39,7 +46,8 @@
 <section class="editor">
   <h2>Programmazione interviste</h2>
   <p>
-    Slot da 30 minuti · Europe/Rome · agenda consultata il {agenda.retrievedOn}.
+    Slot da 30 minuti · Europe/Rome · orari predefiniti del {agendaSnapshot.retrievedOn}, con le
+    modifiche salvate sui talk.
     <a href={agenda.source} target="_blank" rel="noreferrer">Agenda ufficiale</a>
   </p>
   <p>

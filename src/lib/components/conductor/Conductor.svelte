@@ -9,6 +9,7 @@
   import { assignmentOwner } from '$lib/conductor/assignment';
   import { team } from '$lib/team';
   import { api, refreshWorkspace } from '$lib/repository';
+  import TalkSchedule from '../TalkSchedule.svelte';
   import Markdown from '../Markdown.svelte';
   import ResearchReader from '../ResearchReader.svelte';
   import { researchEntries } from '$lib/research';
@@ -371,7 +372,8 @@
           >{#each talks as t}<option value={t.id}>{t.title}</option>{/each}</select
         ></label
       >{/if}
-    {#if brief.talk}<h2 class="talk-title">{brief.talk.title}</h2>{/if}
+    {#if brief.talk}<h2 class="talk-title">{brief.talk.title}</h2>
+      <TalkSchedule talk={brief.talk} {data} />{/if}
     <section class="talk-summary">
       <h3>Il talk in 20 secondi</h3>
       {#if brief.summary}<Markdown

@@ -459,3 +459,31 @@ pacchetto persistente per riaprire l'app da zero offline.
 Verifica isolata del worker: `FIRESTORE_EMULATOR_HOST=127.0.0.1:18380 npx vitest run
 tests/connection-integration.test.ts`. Questo test usa esclusivamente il progetto
 `demo-bacarodeck-graph-tests`; non eseguirlo sull'emulatore dei contenuti evento.
+
+### Orari Codemotion degli speaker
+
+`data/agenda/codemotion-speakers.json` è l'asset predefinito (85 sessioni, snapshot
+25 ottobre 2026). Le schede speaker mostrano giorno, inizio, fine e sala del talk
+anche prima dell'import; gli orari salvati hanno precedenza sui predefiniti.
+I nuovi import del catalogo includono gli orari abbinabili. Il talk resta modificabile
+nel suo editor: **Giorno**, **Inizio talk**, **Fine talk**, **Palco**.
+
+Per aggiornare un workspace già presente su Vercel, dopo il deploy aprire
+**Gestione → Strumenti → Importa orari Codemotion**. Il file incluso è già pronto;
+in alternativa usare **Carica un JSON degli orari** con lo stesso formato `sessions`
+(`sessionId`, `title`, `speakers`, `startsAt`, `endsAt`, `room`). Gli istanti ISO devono
+includere il fuso; la visualizzazione viene convertita in Europe/Rome.
+
+Premere **Valida e mostra anteprima**, selezionare i campi desiderati oppure
+**Seleziona tutti gli aggiornamenti degli orari**, controllare le sostituzioni e
+confermare. L'import modifica esclusivamente giorno, inizio, fine, sala e associazione
+alla sessione; conserva note, descrizioni, domande e appuntamenti delle interviste.
+Usa le revisioni correnti e la transazione di import esistente, senza reimportare
+l'intero backup. Anche la programmazione legge gli orari modificati per proporre
+l'intervista dopo il talk; non sposta appuntamenti già salvati.
+
+L'abbinamento usa l'ID sessione salvato, poi speaker/titolo (anche titoli alternativi),
+oppure un unico talk per uno speaker con una sola sessione. Le ambiguità vengono
+segnalate. Sul catalogo incluso risultano 81 talk abbinati e 3 da verificare; nessun
+nuovo speaker viene creato dall'import degli orari. Le modifiche manuali restano
+prioritarie; un successivo import può sostituirle soltanto selezionando le differenze.

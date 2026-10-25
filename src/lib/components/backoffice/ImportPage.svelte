@@ -6,6 +6,7 @@
   import { collections, type Dataset } from '$lib/fields';
   import { commitChanges, restorePersonalRatings } from '$lib/repository';
   import type { Change } from '$lib/domain';
+  import { prepareScheduleImport, withScheduleDefaults } from '$lib/talk-schedule';
   import Import from '$lib/components/Import.svelte';
   let { preset = '', speakerId = '' }: { preset?: string; speakerId?: string } = $props();
   const workspace = getWorkspace();
@@ -13,6 +14,25 @@
   let loading = $state(true);
   let failure = $state('');
   let busy = $state(false);
+  let scheduleWarnings = $state<string[]>([]);
+  let scheduleCount = $state(0);
+  function prepareHours(snapshot?: unknown) {
+    const result = prepareScheduleImport(workspace.data, snapshot);
+    initial = JSON.stringify(result.data, null, 2);
+    scheduleWarnings = result.warnings;
+    scheduleCount = result.matched;
+  }
+  async function loadHours(event: Event) {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    if (!file) return;
+    try {
+      if (file.size > 5_000_000) throw Error('File troppo grande (massimo 5 MB).');
+      prepareHours(JSON.parse(await file.text()));
+      failure = '';
+    } catch (error) {
+      failure = (error as Error).message;
+    }
+  }
   const destination = $derived(
     speakerId
       ? '/backoffice/speaker/' +
@@ -28,7 +48,9 @@
     let active = true;
     async function prepare() {
       const data = workspace.data;
-      if (preset === 'catalogo' || preset === 'traduzioni') {
+      if (preset === 'orari') {
+        if (active) prepareHours();
+      } else if (preset === 'catalogo' || preset === 'traduzioni') {
         const catalog = (await import('../../../../data/seed/catalog.json'))
           .default as unknown as Dataset;
         if (preset === 'traduzioni') {
@@ -41,14 +63,24 @@
         } else {
           const missing: Record<string, unknown> = { schemaVersion: 1 };
           for (const name of collections)
-            missing[name] = (catalog[name] || []).filter(
-              (item) => !(data[name] || []).some((existing) => existing.id === item.id)
-            );
+            missing[name] = (catalog[name] || [])
+              .map((item) => (name === 'talks' ? withScheduleDefaults(item, catalog) : item))
+              .filter((item) => !(data[name] || []).some((existing) => existing.id === item.id));
           if (active) initial = JSON.stringify(missing, null, 2);
         }
       } else if (preset === 'esempio') {
         const seed = await import('../../../../data/seed/seed_five.json');
-        if (active) initial = JSON.stringify(seed.default, null, 2);
+        if (active)
+          initial = JSON.stringify(
+            {
+              ...seed.default,
+              talks: seed.default.talks.map((talk) =>
+                withScheduleDefaults(talk, seed.default as unknown as Dataset)
+              )
+            },
+            null,
+            2
+          );
       }
     }
     void prepare()
@@ -86,13 +118,36 @@
 </script>
 
 <svelte:head><title>Importa · Gestione BacaroTech</title></svelte:head>
+{#if preset === 'orari'}
+  <h1>Importa orari Codemotion</h1>
+  <p>
+    Orari del talk in Europe/Rome. Il file incluso è aggiornato al 25 ottobre 2026. Gli appuntamenti
+    delle interviste non vengono spostati.
+  </p>
+  <label
+    >Carica un JSON degli orari<input
+      type="file"
+      accept=".json,application/json"
+      onchange={loadHours}
+      disabled={busy}
+    /></label
+  >
+  <p>{scheduleCount} talk abbinati nel workspace attuale.</p>
+  {#if scheduleWarnings.length}<details>
+      <summary>Abbinamenti da verificare ({scheduleWarnings.length})</summary>
+      <ul>
+        {#each scheduleWarnings as warning}<li>{warning}</li>{/each}
+      </ul>
+    </details>{/if}
+{/if}
 {#if loading}<p role="status">Preparazione importazione…</p>
 {:else if failure}<p role="alert">{failure}</p>
   <a href="/backoffice/strumenti">Torna agli strumenti</a>
-{:else}<Import
-    data={workspace.data}
-    {initial}
-    {busy}
-    oncommit={save}
-    oncancel={() => goto(speakerId ? destination : '/backoffice/strumenti')}
-  />{/if}
+{:else}{#key initial}<Import
+      data={workspace.data}
+      {initial}
+      {busy}
+      scheduleImport={preset === 'orari'}
+      oncommit={save}
+      oncancel={() => goto(speakerId ? destination : '/backoffice/strumenti')}
+    />{/key}{/if}

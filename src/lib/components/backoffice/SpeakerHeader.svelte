@@ -1,4 +1,7 @@
 <script lang="ts">
+  import TalkSchedule from '../TalkSchedule.svelte';
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import type { Entity } from '$lib/fields';
   import { safeUrl } from '$lib/domain';
   let { speaker, talks = [] }: { speaker: Entity; talks?: Entity[] } = $props();
@@ -28,6 +31,7 @@
     <a class="speaker-talk" href={'/backoffice/speaker/' + encodeURIComponent(speaker.id) + '/talk'}
       >{talk.title || 'Talk senza titolo'}</a
     >
+    <TalkSchedule {talk} data={workspace.data} />
   {:else}<p class="muted">Talk non ancora disponibile.</p>{/each}
 </header>
 
