@@ -28,7 +28,8 @@ select,
 textarea {
   touch-action: manipulation;
 }
-button {
+button,
+.button-link {
   cursor: pointer;
   border: 1px solid #bbcadd;
   background: #fff;
@@ -38,19 +39,22 @@ button {
   min-height: 44px;
   font-weight: 600;
 }
-button:hover {
+button:hover,
+.button-link:hover {
   background: #e6edf8;
 }
 button:disabled {
   opacity: 0.5;
   cursor: wait;
 }
-button.primary {
+button.primary,
+.button-link.primary {
   background: var(--blue);
   color: #fff;
   border-color: var(--blue);
 }
-button.primary:hover {
+button.primary:hover,
+.button-link.primary:hover {
   background: #294d78;
 }
 button.quiet,
@@ -635,6 +639,9 @@ footer {
   z-index: 100;
   padding: 0.7rem;
 }
+.skip-link:not(:focus) {
+  clip-path: inset(50%);
+}
 .skip-link:focus {
   top: 1rem;
 }
@@ -900,4 +907,10 @@ dialog::backdrop {
   color: #593377;
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }

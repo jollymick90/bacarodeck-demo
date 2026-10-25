@@ -42,9 +42,9 @@ test('profile and interview save together, cancel together and retain drafts on 
   expect(created.ok(), await created.text()).toBe(true);
   try {
     await page.goto('/backoffice');
-    await expect(page.getByRole('button', { name: /Unified editor/ })).toBeVisible();
-    await page.getByRole('button', { name: /Unified editor/ }).click();
-    const edit = page.getByRole('button', { name: 'Modifica profilo e intervista', exact: true });
+    await expect(page.getByRole('link', { name: /Unified editor/ })).toBeVisible();
+    await page.getByRole('link', { name: /Unified editor/ }).click();
+    const edit = page.getByRole('link', { name: 'Modifica profilo e intervista', exact: true });
     await expect(edit).toBeVisible();
     await edit.click();
     const editor = page.locator('.editor');

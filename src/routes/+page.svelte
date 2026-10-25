@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hub from '$lib/components/Hub.svelte';
+  import ConductorPage from '$lib/components/conductor/ConductorPage.svelte';
 </script>
 
-<Hub />
+<ConductorPage mode="home" />

@@ -22,8 +22,8 @@ non possono essere eliminati dal CRUD generico, per non lasciare stati discordan
 
 Il backoffice resta accessibile a tutti i conduttori autorizzati su `/backoffice`.
 La barra principale mostra «Aggiungi speaker» e «Programmazione». Importazioni,
-esportazioni, tag, traduzioni e gestione accessi si trovano nella sezione
-«Strumenti», inizialmente chiusa e organizzata per funzione. Il pulsante ⓘ accanto
+esportazioni, tag, traduzioni e gestione accessi si trovano nella pagina
+«Strumenti» (`/backoffice/strumenti`), organizzata per funzione. Il pulsante ⓘ accanto
 a ogni comando apre una spiegazione; non esegue l'operazione.
 «Modifica profilo e intervista» apre un unico form con le due sezioni e un solo
 salvataggio. Un conflitto su una delle sezioni blocca entrambe le scritture e
@@ -36,6 +36,21 @@ Da un materiale di ricerca si può incollare una domanda, controllare l'anteprim
 confermare la creazione del record strutturato, conservando il materiale originale.
 Sintesi, domande classiche e scaletta si gestiscono dalla scheda conduttore collegata.
 Le funzioni amministrative conservano i privilegi precedenti.
+
+Ogni schermata ha una pagina SvelteKit e un URL apribile direttamente:
+
+- `/speaker`, `/speaker/[id]`, `/speaker/[id]/scaletta`: elenco, scheda e lettura per il conduttore.
+- `/topic` e `/topic/[topic]`: esplorazione degli argomenti.
+- `/backoffice/speaker/[id]`: ricerca dello speaker; `/domande`, `/intervista` e `/talk` per le altre sezioni.
+- `/backoffice/programmazione`: calendario delle interviste.
+- `/backoffice/contenuti/[collection]/[id]` e `/backoffice/nuovo/[collection]`: lettura/modifica e creazione dei contenuti.
+- `/backoffice/importa`, `/esporta`, `/backup`, `/tag`, `/accessi`: strumenti dedicati (tutti sotto `/backoffice`).
+
+Il layout radice mantiene sessione e dati condivisi durante la navigazione. I link
+supportano nuove schede, ricaricamento e Indietro/Avanti del browser; le vecchie URL
+con `?speaker=` reindirizzano alla scheda corrispondente. Talk, lingua e domanda
+corrente della scaletta sono parametri dell'URL. I popup restano per spiegazioni,
+conferme e modifiche brevi; non sostituiscono le pagine.
 
 Le altre sessioni ricevono i cambiamenti con il refresh periodico già presente
 (60 secondi) o ricaricando; non è una sincronizzazione push. I salvataggi richiedono

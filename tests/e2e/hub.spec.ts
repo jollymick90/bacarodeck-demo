@@ -2,9 +2,8 @@ import { readFile } from 'node:fs/promises';
 import { test, expect, type Page } from '@playwright/test';
 
 async function openTools(page: Page) {
-  const tools = page.locator('.backoffice-tools');
-  await expect(tools).toBeVisible();
-  if ((await tools.getAttribute('open')) === null) await tools.locator('summary').click();
+  await page.getByRole('link', { name: 'Strumenti', exact: true }).click();
+  await expect(page).toHaveURL('/backoffice/strumenti');
 }
 
 let administratorToken = '';
@@ -30,13 +29,12 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toBeVisible({
     timeout: 15000
   });
-  await expect(page.getByRole('button', { name: 'Aggiungi speaker', exact: true })).toBeEnabled();
+  await expect(page.getByRole('link', { name: 'Aggiungi speaker', exact: true })).toBeEnabled();
   const tools = page.locator('.backoffice-tools');
   await expect(page.locator('.toolbar-actions .action-button')).toHaveCount(2);
-  await expect(tools).toBeVisible();
-  await expect(tools).not.toHaveAttribute('open');
-  await expect(page.getByRole('button', { name: 'Programmazione', exact: true })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Importa JSON', exact: true })).toBeHidden();
+  await expect(tools).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Programmazione', exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Importa JSON', exact: true })).toBeHidden();
   const addHelp = page.getByRole('button', { name: 'Informazioni: Aggiungi speaker', exact: true });
   await addHelp.click();
   await expect(page.getByRole('dialog')).toContainText('nuova scheda');
@@ -54,16 +52,19 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     await expect(help).toBeFocused();
   }
   await page.screenshot({ path: testInfo.outputPath('backoffice-tools.png'), fullPage: true });
+  await page.getByRole('link', { name: 'Speaker', exact: true }).click();
+  await expect(page.getByRole('navigation', { name: 'Scegli speaker' })).toBeVisible();
 
-  if (!(await page.getByRole('button', { name: /Andrey Breslav/ }).isVisible())) {
+  if (!(await page.getByRole('link', { name: /Andrey Breslav/ }).isVisible())) {
+    await openTools(page);
     if (
       await page
-        .getByRole('button', { name: 'Prepara import dei 5 speaker', exact: true })
+        .getByRole('link', { name: 'Prepara import dei 5 speaker', exact: true })
         .isVisible()
     ) {
-      await page.getByRole('button', { name: 'Prepara import dei 5 speaker', exact: true }).click();
+      await page.getByRole('link', { name: 'Prepara import dei 5 speaker', exact: true }).click();
     } else {
-      await page.getByRole('button', { name: 'Importa JSON', exact: true }).click();
+      await page.getByRole('link', { name: 'Importa JSON', exact: true }).click();
       await page
         .getByLabel('JSON da importare')
         .fill(await readFile(new URL('../../data/seed/seed_five.json', import.meta.url), 'utf8'));
@@ -72,7 +73,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     await page.getByLabel('Ho verificato le differenze e approvo queste scritture').check();
     await page.getByRole('button', { name: 'Conferma importazione' }).click();
   }
-  await page.getByRole('button', { name: /Andrey Breslav/ }).click();
+  await page.getByRole('link', { name: /Andrey Breslav/ }).click();
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
   const assistant = page.locator('.research-assistant');
   await assistant.locator('summary').click();
@@ -117,7 +118,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     await page.getByRole('button', { name: 'Elimina definitivamente' }).click();
     await expect(entry).toHaveCount(0);
   }
-  await page.getByRole('button', { name: '+ Aggiungi ricerca', exact: true }).click();
+  await page.getByRole('link', { name: '+ Aggiungi ricerca', exact: true }).click();
   await page.getByLabel('Titolo (facoltativo)').fill('Ricerca da Gemini');
   const markdown = '# Appunti da Gemini\n\n' + 'Testo lungo senza metadati. '.repeat(110);
   await page.getByLabel('Testo Markdown').fill(markdown);
@@ -141,7 +142,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   const material = page
     .locator('.content-entry')
     .filter({ has: page.getByRole('heading', { name: 'Ricerca da Gemini' }) });
-  await material.getByRole('button', { name: 'Modifica', exact: true }).click();
+  await material.getByRole('link', { name: 'Modifica', exact: true }).click();
   await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
   await expect(page.getByLabel('Testo Markdown')).toHaveValue(markdown);
   await page.getByLabel('Note', { exact: true }).fill('Verificare con la fonte');
@@ -150,11 +151,11 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await material.getByRole('button', { name: 'Elimina', exact: true }).click();
   await page.getByRole('button', { name: 'Elimina definitivamente' }).click();
   await expect(page.getByRole('heading', { name: 'Ricerca da Gemini' })).toHaveCount(0);
-  await page.getByRole('button', { name: 'Ricerca', exact: true }).click();
+  await page.getByRole('link', { name: 'Ricerca', exact: true }).click();
   const source = page
     .locator('.content-entry')
     .filter({ has: page.getByRole('heading', { name: /CSV fornito/ }) });
-  await source.getByRole('button', { name: 'Modifica', exact: true }).click();
+  await source.getByRole('link', { name: 'Modifica', exact: true }).click();
   await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
   await page.getByLabel('URL fonte').fill('https://example.org/codemotion');
   await page.getByLabel('Note', { exact: true }).fill('Fonte verificata dal team');
@@ -164,16 +165,16 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     'https://example.org/codemotion'
   );
   await expect(source.getByText('Fonte verificata dal team')).toBeVisible();
-  await page.getByRole('button', { name: 'Modifica profilo e intervista' }).click();
+  await page.getByRole('link', { name: 'Modifica profilo e intervista' }).click();
   await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
   await page.getByLabel('Preparazione', { exact: true }).selectOption('ready');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
-  await page.getByRole('button', { name: 'Intervista', exact: true }).click();
+  await page.getByRole('link', { name: 'Intervista', exact: true }).click();
   await page.getByRole('button', { name: 'Assegna / cambia' }).click();
   await page.getByLabel('Conduttore', { exact: true }).selectOption('alberto');
   await page.getByRole('button', { name: /Conferma (riassegnazione|assegnazione)/ }).click();
   await expect(page.locator('.assignment-control')).toContainText('Alberto');
-  await page.getByRole('button', { name: 'Domande', exact: true }).click();
+  await page.getByRole('link', { name: 'Domande', exact: true }).click();
   await expect(
     page.getByRole('heading', { name: /Cosa ti ha insegnato costruire Kotlin/ })
   ).toBeVisible();
@@ -184,8 +185,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: `test-results/hub-${testInfo.project.name}.png`, fullPage: true });
   await page.reload();
-  await openTools(page);
-  await page.getByRole('button', { name: /Andrey Breslav/ }).click();
+  await expect(page).toHaveURL('/backoffice/speaker/andrey-breslav/domande');
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
   expect(errors).toEqual([]);
   // Data endpoints independently authorize requests and preserve atomic conflicts.
@@ -246,12 +246,12 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   expect(rated.ratings.forged).toBeUndefined();
   expect(Object.values(rated.ratings)).toContain(5);
   if (testInfo.project.name === 'mobile') {
-    await page.getByRole('button', { name: 'Torna agli speaker', exact: false }).click();
+    await page.getByRole('link', { name: 'Torna agli speaker', exact: false }).click();
     await page.getByLabel('Cerca nome, organizzazione o tag').fill('breslav');
     await expect(
-      page.getByRole('navigation', { name: 'Scegli speaker' }).getByRole('button')
+      page.getByRole('navigation', { name: 'Scegli speaker' }).getByRole('link')
     ).toHaveCount(1);
-    await page.getByRole('button', { name: /Andrey Breslav/ }).click();
+    await page.getByRole('link', { name: /Andrey Breslav/ }).click();
     await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
   }
 
@@ -295,7 +295,8 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
       })
     ).status()
   ).toBe(409);
-  await page.getByRole('button', { name: 'Importa tutti gli 84 speaker', exact: true }).click();
+  await openTools(page);
+  await page.getByRole('link', { name: 'Importa tutti gli 84 speaker', exact: true }).click();
   await page.getByRole('button', { name: 'Valida e mostra anteprima' }).click();
   if (await page.getByLabel('Ho verificato le differenze e approvo queste scritture').isVisible()) {
     await page.getByLabel('Ho verificato le differenze e approvo queste scritture').check();
@@ -303,22 +304,21 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     if (await commit.isEnabled()) await commit.click();
     else await page.getByRole('button', { name: 'Chiudi', exact: true }).click();
   }
-  if (testInfo.project.name === 'mobile')
-    await page.getByRole('button', { name: 'Torna agli speaker', exact: false }).click();
+  await page.getByRole('link', { name: 'Speaker', exact: true }).click();
   await page.getByRole('navigation', { name: 'Scegli speaker' }).waitFor();
   const reset = page.getByRole('button', { name: 'Azzera ricerca' });
   if (await reset.isVisible()) await reset.click();
   await expect(
-    page.getByRole('navigation', { name: 'Scegli speaker' }).getByRole('button')
+    page.getByRole('navigation', { name: 'Scegli speaker' }).getByRole('link')
   ).toHaveCount(84);
   const nav = page.getByRole('navigation', { name: 'Scegli speaker' });
   await page.getByText('Filtri speaker', { exact: true }).click();
   await page.getByRole('combobox', { name: 'Elenco interviste', exact: true }).selectOption('in');
-  await expect(nav.getByRole('button')).toHaveCount(29);
+  await expect(nav.getByRole('link')).toHaveCount(29);
   await page.getByRole('combobox', { name: 'Elenco interviste', exact: true }).selectOption('out');
-  await expect(nav.getByRole('button')).toHaveCount(55);
+  await expect(nav.getByRole('link')).toHaveCount(55);
   await page.getByRole('button', { name: 'Azzera ricerca' }).click();
-  await expect(nav.getByRole('button')).toHaveCount(84);
+  await expect(nav.getByRole('link')).toHaveCount(84);
 
   expect(await nav.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
   await page.screenshot({ path: `test-results/catalog-${testInfo.project.name}.png` });
@@ -405,7 +405,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   ).toBe(200);
   await page.reload();
   await openTools(page);
-  const translations = page.getByRole('button', { name: 'Importa traduzioni IT/EN', exact: true });
+  const translations = page.getByRole('link', { name: 'Importa traduzioni IT/EN', exact: true });
   await expect(translations).toBeEnabled();
   await translations.click();
   await page.getByRole('button', { name: 'Valida e mostra anteprima' }).click();
@@ -447,7 +447,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   ).toBe(200);
   await page.reload();
   await openTools(page);
-  const updateTags = page.getByRole('button', { name: 'Aggiorna tag', exact: true });
+  const updateTags = page.getByRole('link', { name: 'Aggiorna tag', exact: true });
   await expect(updateTags).toBeEnabled();
   await updateTags.click();
   await expect(page.getByRole('button', { name: 'Conferma aggiornamento tag' })).toBeDisabled();
@@ -458,6 +458,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     (item: { id: string }) => item.id === 'abiodun-olowode'
   );
   expect(tagged.tags).toEqual(expect.arrayContaining(['Team tag', 'AI', 'Sicurezza']));
+  await openTools(page);
   await updateTags.click();
   await expect(page.getByText('0 speaker con nuovi tag proposti.', { exact: false })).toBeVisible();
   await page.getByRole('button', { name: 'Chiudi tag' }).click();
@@ -487,7 +488,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   ).toBe(200);
   await page.reload();
   await openTools(page);
-  await page.getByRole('button', { name: 'Esporta il mio lavoro', exact: true }).click();
+  await page.getByRole('link', { name: 'Esporta il mio lavoro', exact: true }).click();
   await expect(
     page.locator('.diff-row').filter({ hasText: insightId }).getByRole('heading')
   ).toBeVisible();
@@ -523,7 +524,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   ).toBe(200);
   await page.reload();
   await openTools(page);
-  await page.getByRole('button', { name: 'Importa JSON', exact: true }).click();
+  await page.getByRole('link', { name: 'Importa JSON', exact: true }).click();
   await page.getByLabel('Apri file JSON').setInputFiles({
     name: 'lavoro.json',
     mimeType: 'application/json',
@@ -540,7 +541,8 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   );
   expect(restored.bodyMd).toBe('Uno spunto personale');
   expect(restored.entryOrigin).toBe('manual');
-  await page.getByRole('button', { name: 'Export / import completo', exact: true }).click();
+  await openTools(page);
+  await page.getByRole('link', { name: 'Export / import completo', exact: true }).click();
   const fullDownload = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Scarica backup completo' }).click();
   const fullFile = await fullDownload;
@@ -577,7 +579,27 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     await page
       .getByLabel('Ho verificato destinazione, sostituzioni e cancellazioni del backup completo')
       .check();
+    let releaseRestore!: () => void;
+    const restoreGate = new Promise<void>((resolve) => {
+      releaseRestore = resolve;
+    });
+    let restoreStarted!: () => void;
+    const restoreRequest = new Promise<void>((resolve) => {
+      restoreStarted = resolve;
+    });
+    await page.route('**/api/backup', async (route) => {
+      if (route.request().method() === 'POST') {
+        restoreStarted();
+        await restoreGate;
+      }
+      await route.continue();
+    });
     await page.getByRole('button', { name: 'Ripristina backup completo', exact: true }).click();
+    await restoreRequest;
+    await page.getByRole('link', { name: 'Programmazione', exact: true }).click();
+    await expect(page).toHaveURL('/backoffice/backup');
+    await expect(page.getByRole('alert')).toContainText('Attendi il completamento');
+    releaseRestore();
     await expect(page.getByText(/Ripristino completo: 1 operazioni completate/)).toBeVisible();
     const recovered = (await (await request.get('/api/data/insights', { headers })).json()).find(
       (item: { id: string }) => item.id === insightId
@@ -669,7 +691,7 @@ test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ pa
   await popup.getByRole('button', { name: 'Sign in with Google.com', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Accesso non abilitato' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toHaveCount(0);
-  await expect(page.getByRole('button', { name: /Andrey Breslav/ })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: /Andrey Breslav/ })).toHaveCount(0);
   const headers = { Authorization: (await deniedRequest).headers().authorization };
   expect((await request.get('/api/data/speakers', { headers })).status()).toBe(403);
   expect((await request.post('/api/data', { headers, data: {} })).status()).toBe(403);

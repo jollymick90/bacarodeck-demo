@@ -30,6 +30,15 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
         abstractIt: 'Come verificare un risultato reale.'
       }
     },
+    {
+      collection: 'talks',
+      data: {
+        id: id + '-second-talk',
+        speakerIds: [id],
+        title: 'Una seconda conversazione',
+        abstractIt: 'Il secondo talk dello speaker.'
+      }
+    },
     ...[1, 2, 3].map((n) => ({
       collection: 'questions',
       data: {
@@ -57,13 +66,59 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
   ).toBeVisible();
   await page
     .locator('[aria-label="I miei speaker"]')
-    .getByRole('button', { name: 'Apri scheda' })
+    .getByRole('link', { name: 'Apri scheda' })
     .click();
-  await page.getByRole('button', { name: 'Usa la scaletta', exact: true }).click();
-  await expect(page.getByText('Domanda preparata 1?', { exact: true })).toBeVisible();
-  await page.getByRole('button', { name: 'Avanti', exact: true }).click();
-  await expect(page.getByText('Domanda preparata 2?', { exact: true })).toBeVisible();
-  await page.getByRole('button', { name: 'Torna alla scheda' }).click();
+  await expect(page).toHaveURL(new RegExp('/speaker/' + id + '$'));
+  await page.reload();
+  await expect(
+    page.getByRole('heading', { name: 'Speaker mobile ' + info.project.name })
+  ).toBeVisible();
+  await page.goBack();
+  await expect(page).toHaveURL('/');
+  await page.goForward();
+  await expect(page).toHaveURL(new RegExp('/speaker/' + id + '$'));
+  await page.getByRole('combobox', { name: 'Talk', exact: true }).selectOption(id + '-second-talk');
+  await expect(page).toHaveURL(new RegExp('talk=' + id + '-second-talk'));
+  await page.getByRole('combobox', { name: 'Lingua', exact: true }).selectOption('en');
+  await expect(page).toHaveURL(/lang=en/);
+  await page.getByRole('link', { name: 'Usa la scaletta', exact: true }).click();
+  await expect(page).toHaveURL(new RegExp('/speaker/' + id + '/scaletta\\?'));
+  await expect(page).toHaveURL(/lang=en/);
+  await expect(page).toHaveURL(new RegExp('talk=' + id + '-second-talk'));
+  await page.reload();
+  await expect(
+    page.locator('.interview-question').getByText('Prepared question 1?', { exact: true })
+  ).toBeVisible();
+  await page.getByRole('link', { name: 'Torna alla scheda' }).click();
+  await expect(page.getByRole('combobox', { name: 'Talk', exact: true })).toHaveValue(
+    id + '-second-talk'
+  );
+  await page.getByRole('combobox', { name: 'Talk', exact: true }).selectOption(id + '-talk');
+  await expect(page).toHaveURL(new RegExp('talk=' + id + '-talk'));
+  await page.getByRole('combobox', { name: 'Lingua', exact: true }).selectOption('it');
+  await expect(page).toHaveURL(/lang=it/);
+  await page.getByRole('link', { name: 'Usa la scaletta', exact: true }).click();
+  await expect(
+    page.locator('.interview-question').getByText('Domanda preparata 1?', { exact: true })
+  ).toBeVisible();
+  await page.getByRole('link', { name: 'Avanti', exact: true }).click();
+  await expect(
+    page.locator('.interview-question').getByText('Domanda preparata 2?', { exact: true })
+  ).toBeVisible();
+  await expect(page).toHaveURL(new RegExp('question=' + id + '-q2'));
+  await page.reload();
+  await expect(
+    page.locator('.interview-question').getByText('Domanda preparata 2?', { exact: true })
+  ).toBeVisible();
+  await page.goBack();
+  await expect(
+    page.locator('.interview-question').getByText('Domanda preparata 1?', { exact: true })
+  ).toBeVisible();
+  await page.goForward();
+  await expect(
+    page.locator('.interview-question').getByText('Domanda preparata 2?', { exact: true })
+  ).toBeVisible();
+  await page.getByRole('link', { name: 'Torna alla scheda' }).click();
   await page.getByRole('button', { name: 'Assegna / cambia' }).click();
   await page.getByLabel('Conduttore', { exact: true }).selectOption('alberto');
   await page.getByRole('button', { name: 'Conferma assegnazione' }).click();
@@ -87,6 +142,19 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
   );
   await page.getByRole('button', { name: 'Sposta domanda 2 in alto' }).click();
   await expect(page.locator('.question-row').first()).toContainText('Domanda preparata 2?');
+  await page.getByRole('link', { name: 'Topic', exact: true }).click();
+  await expect(page).toHaveURL('/topic');
+  await page.getByRole('link', { name: 'AI', exact: true }).click();
+  await expect(page).toHaveURL('/topic/AI');
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Topic: AI' })).toBeVisible();
+  await page.goto('/speaker/missing-speaker');
+  await expect(page.getByRole('heading', { name: 'Speaker non trovato' })).toBeVisible();
+  await page.goto('/?speaker=' + id + '&talk=' + id + '-talk&lang=en');
+  await expect(page).toHaveURL(new RegExp('/speaker/' + id + '\\?talk=' + id + '-talk&lang=en$'));
+  await expect(page.getByRole('combobox', { name: 'Lingua', exact: true })).toHaveValue('en');
+  await page.getByRole('combobox', { name: 'Lingua', exact: true }).selectOption('it');
+  await expect(page).toHaveURL(/lang=it/);
   const secondContext = await browser.newContext();
   const second = await secondContext.newPage();
   await second.goto('/');

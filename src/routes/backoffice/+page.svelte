@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hub from '$lib/components/Hub.svelte';
+  import Backoffice from '$lib/components/backoffice/Backoffice.svelte';
 </script>
 
-<Hub view="backoffice" />
+<Backoffice />

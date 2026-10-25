@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { onMount, tick } from 'svelte';
+  import { goto } from '$app/navigation';
+  import { page } from '$app/state';
   import type { Dataset, Entity } from '$lib/fields';
   import { searchSpeakers } from '$lib/speaker-search';
   import { groupSpeakers } from '$lib/conductor/home';
@@ -16,25 +17,23 @@
     members,
     uid,
     onquestion,
-    initialSpeaker = ''
+    mode = 'home',
+    selected = '',
+    topic = ''
   }: {
     data: Dataset;
     members: Entity[];
     uid: string;
     onquestion: (q: Entity) => Promise<void>;
-    initialSpeaker?: string;
+    mode?: 'home' | 'speakers' | 'speaker' | 'reading' | 'topics' | 'topic';
+    selected?: string;
+    topic?: string;
   } = $props();
-  let selected = $state('');
-  let talkId = $state('');
-  let language = $state<'it' | 'en'>('it');
+  const language = $derived(page.url.searchParams.get('lang') === 'en' ? 'en' : 'it');
   let query = $state('');
-  let topic = $state('');
-  let all = $state(false);
   let busy = $state(false);
   let failure = $state('');
   let message = $state('');
-  let live = $state(false);
-  let liveId = $state('');
   let editQuestion = $state<Entity | null>(null);
   let editText = $state('');
   let editLanguage = $state<'it' | 'en'>('it');
@@ -44,10 +43,12 @@
   let draftSummary = $state('');
   let summaryEditing = $state(false);
   let summaryRevision = $state<number | null>(null);
-  let position = 0;
   const speaker = $derived(data.speakers?.find((s) => s.id === selected));
   const talks = $derived(
     (data.talks || []).filter((t) => ((t.speakerIds as string[]) || []).includes(selected))
+  );
+  const talkId = $derived(
+    talks.find((talk) => talk.id === page.url.searchParams.get('talk'))?.id || talks[0]?.id || ''
   );
   const plan = $derived(data.interviewPlans?.find((p) => p.speakerId === selected));
   const brief = $derived(resolveBrief(data, selected, talkId, language));
@@ -66,7 +67,11 @@
   const questions = $derived(
     (data.questions || []).filter((q) => q.speakerId === selected && q.status !== 'rejected')
   );
+  const liveId = $derived(
+    page.url.searchParams.get('question') || brief.mainQuestions[0]?.id || ''
+  );
   const current = $derived(brief.mainQuestions.find((q) => q.id === liveId));
+  const currentIndex = $derived(brief.mainQuestions.findIndex((q) => q.id === liveId));
   const research = $derived(researchEntries(data, selected));
   function names(id: string) {
     return (data.speakerInterests || [])
@@ -89,49 +94,19 @@
           String(p?.assignedToName || 'Assegnazione precedente')
       : 'Da assegnare';
   }
-  function updateUrl() {
-    const u = new URL(location.href);
-    if (selected) {
-      u.searchParams.set('speaker', selected);
-      if (talkId) u.searchParams.set('talk', talkId);
-      else u.searchParams.delete('talk');
-    } else {
-      u.searchParams.delete('speaker');
-      u.searchParams.delete('talk');
-    }
-    history.replaceState(history.state, '', u);
+  function speakerHref(reading = false, question = '') {
+    const params = new URLSearchParams({ lang: language });
+    if (talkId) params.set('talk', talkId);
+    if (question) params.set('question', question);
+    return `/speaker/${encodeURIComponent(selected)}${reading ? '/scaletta' : ''}?${params}`;
   }
-  function select(id: string) {
-    position = window.scrollY;
-    selected = id;
-    talkId = String(
-      (data.talks || []).find((t) => ((t.speakerIds as string[]) || []).includes(id))?.id || ''
-    );
-    live = false;
+  function changeOption(name: 'talk' | 'lang', value: string) {
+    const url = new URL(page.url);
+    url.searchParams.set(name, value);
+    if (name === 'talk') url.searchParams.delete('question');
     summaryEditing = false;
-    failure = '';
-    message = '';
-    updateUrl();
-    window.scrollTo(0, 0);
+    void goto(url.pathname + url.search, { noScroll: true, keepFocus: true });
   }
-  async function back() {
-    selected = '';
-    live = false;
-    summaryEditing = false;
-    updateUrl();
-    await tick();
-    window.scrollTo(0, position);
-  }
-  onMount(() => {
-    const u = new URL(location.href);
-    const id = u.searchParams.get('speaker') || initialSpeaker;
-    if (id) {
-      select(id);
-      const talk = u.searchParams.get('talk');
-      if (talk && talks.some((t) => t.id === talk)) talkId = talk;
-      updateUrl();
-    }
-  });
   async function run(action: () => Promise<void>, success = '') {
     busy = true;
     failure = '';
@@ -233,18 +208,26 @@
 
 <div class="conductor">
   <nav class="conductor-nav" aria-label="Navigazione conduttore">
-    <a href="/">Speaker</a><a
-      href="#topics"
-      onclick={() => {
-        if (selected) void back();
-      }}>Topic</a
-    ><a href={selected ? '/backoffice?speaker=' + encodeURIComponent(selected) : '/backoffice'}
+    <a href="/">Speaker</a><a href="/topic">Topic</a>
+    <a href={selected ? '/backoffice/speaker/' + encodeURIComponent(selected) : '/backoffice'}
       >Backoffice</a
     >
   </nav>
-  {#if !speaker}
+  {#if (mode === 'speaker' || mode === 'reading') && !speaker}
+    <h1>Speaker non trovato</h1>
+    <p>Lo speaker richiesto non è disponibile nel workspace.</p>
+    <a class="nav-action" href="/">← Torna agli speaker</a>
+  {:else if mode === 'home' || mode === 'speakers' || mode === 'topics' || mode === 'topic'}
     <div class="intro">
-      <h1>Chi intervistiamo?</h1>
+      <h1>
+        {mode === 'home'
+          ? 'Chi intervistiamo?'
+          : mode === 'speakers'
+            ? 'Tutti gli speaker'
+            : mode === 'topic'
+              ? `Topic: ${topic}`
+              : 'Topic'}
+      </h1>
       <p>Le domande sono già qui. Scegli una persona e prepara la conversazione.</p>
     </div>
     <label class="search"
@@ -255,59 +238,57 @@
         placeholder="Nome, organizzazione o argomento"
       /></label
     >
-    <section aria-label="I miei speaker">
-      <h2>I miei speaker <span>{groups.saved.length}</span></h2>
-      <p class="muted">I tuoi interessi, visibili anche agli altri.</p>
-      {#if !groups.saved.length}<div class="empty">
-          Tocca «Mi interessa» su uno speaker: lo ritroverai qui, anche dopo l’assegnazione.
-        </div>{/if}
+    {#if mode === 'home'}
+      <section aria-label="I miei speaker">
+        <h2>I miei speaker <span>{groups.saved.length}</span></h2>
+        <p class="muted">I tuoi interessi, visibili anche agli altri.</p>
+        {#if !groups.saved.length}<div class="empty">
+            Tocca «Mi interessa» su uno speaker: lo ritroverai qui, anche dopo l’assegnazione.
+          </div>{/if}
+        <div class="speaker-cards">
+          {#each groups.saved as s (s.id)}{@render card(s)}{/each}
+        </div>
+      </section>
+      <section>
+        <h2>Ancora da assegnare</h2>
+        <div class="speaker-cards">
+          {#each groups.unassigned as s (s.id)}{@render card(s)}{:else}<p class="empty">
+              Nessun altro speaker con questo filtro. Puoi consultare l’elenco completo.
+            </p>{/each}
+        </div>
+      </section>
+      <a class="nav-action all-speakers" href="/speaker">Tutti gli speaker, anche assegnati</a>
+    {:else}
+      {#if mode === 'topics' || mode === 'topic'}
+        <nav class="topic-filters" aria-label="Filtra per topic">
+          <a class="nav-action" class:active={!topic} href="/topic">Tutti</a>
+          {#each topics as t}<a
+              class="nav-action"
+              class:active={topic === t}
+              href={'/topic/' + encodeURIComponent(t)}>{t}</a
+            >{/each}
+        </nav>
+      {/if}
       <div class="speaker-cards">
-        {#each groups.saved as s (s.id)}{@render card(s)}{/each}
-      </div>
-    </section>
-    <section id="topics">
-      <h2>Ancora da assegnare</h2>
-      <div class="topic-filters" aria-label="Filtra per topic">
-        <button class:active={!topic} onclick={() => (topic = '')}>Tutti</button
-        >{#each topics as t}<button class:active={topic === t} onclick={() => (topic = t)}
-            >{t}</button
-          >{/each}
-      </div>
-      <div class="speaker-cards">
-        {#each groups.unassigned as s (s.id)}{@render card(s)}{:else}<p class="empty">
-            Nessun altro speaker con questo filtro. Puoi consultare l’elenco completo.
+        {#each groups.all as s (s.id)}{@render card(s)}{:else}<p class="empty">
+            Nessuno speaker con questo filtro.
           </p>{/each}
       </div>
-    </section>
-    <button class="all-speakers" onclick={() => (all = !all)}
-      >{all ? 'Chiudi elenco completo' : 'Tutti gli speaker, anche assegnati'}</button
-    >
-    {#if all}<div class="speaker-cards">
-        {#each groups.all as s (s.id)}{@render card(s)}{/each}
-      </div>{/if}
-  {:else if live}
-    <button onclick={() => (live = false)}>Torna alla scheda</button>
-    <h2>{speaker.fullName}</h2>
-    {#if current}<p class="muted">
-        Domanda {brief.mainQuestions.findIndex((q) => q.id === liveId) + 1} di {brief.mainQuestions
-          .length}
-      </p>
+    {/if}
+  {:else if speaker && mode === 'reading'}
+    <a class="nav-action" href={speakerHref()}>Torna alla scheda</a>
+    <h1>{speaker.fullName}</h1>
+    {#if current}<p class="muted">Domanda {currentIndex + 1} di {brief.mainQuestions.length}</p>
       <div class="interview-question"><Markdown text={qtext(current)} /></div>
       <div class="card-controls">
-        <button
-          disabled={brief.mainQuestions[0]?.id === liveId}
-          onclick={() =>
-            (liveId =
-              brief.mainQuestions[brief.mainQuestions.findIndex((q) => q.id === liveId) - 1].id)}
-          >Indietro</button
-        ><button
-          class="primary"
-          disabled={brief.mainQuestions.at(-1)?.id === liveId}
-          onclick={() =>
-            (liveId =
-              brief.mainQuestions[brief.mainQuestions.findIndex((q) => q.id === liveId) + 1].id)}
-          >Avanti</button
-        >
+        {#if currentIndex > 0}<a
+            class="nav-action"
+            href={speakerHref(true, brief.mainQuestions[currentIndex - 1].id)}>Indietro</a
+          >{:else}<button disabled>Indietro</button>{/if}
+        {#if currentIndex < brief.mainQuestions.length - 1}<a
+            class="nav-action primary"
+            href={speakerHref(true, brief.mainQuestions[currentIndex + 1].id)}>Avanti</a
+          >{:else}<button disabled>Avanti</button>{/if}
       </div>
       {#if current[language === 'it' ? 'followUpIt' : 'followUpEn']}<details>
           <summary>Follow-up</summary><Markdown
@@ -317,26 +298,25 @@
     {:else}<p role="status">
         La scaletta è cambiata e questa domanda non è più presente. Torna alla scheda per ripartire.
       </p>{/if}
-  {:else}
-    <button class="back" onclick={back}>← Torna agli speaker</button>
+  {:else if speaker}
+    <a class="nav-action back" href="/">← Torna agli speaker</a>
     <div class="brief-heading">
       <div>
         <h1>{speaker.fullName}</h1>
         <p>{speaker.headline || speaker.organization || ''}</p>
       </div>
       <label
-        >Lingua<select bind:value={language}
+        >Lingua<select
+          value={language}
+          onchange={(event) => changeOption('lang', event.currentTarget.value)}
           ><option value="it">Italiano</option><option value="en">English</option></select
         ></label
       >
     </div>
     {#if talks.length > 1}<label
         >Talk<select
-          bind:value={talkId}
-          onchange={() => {
-            summaryEditing = false;
-            updateUrl();
-          }}
+          value={talkId}
+          onchange={(event) => changeOption('talk', event.currentTarget.value)}
           >{#each talks as t}<option value={t.id}>{t.title}</option>{/each}</select
         ></label
       >{/if}
@@ -410,15 +390,12 @@
           {brief.mainQuestions.length} domande disponibili nella scaletta.
         </p>
         <button disabled={busy} onclick={() => replace(null)}>Scegli una domanda</button>{/if}
-      <button
-        class="primary start-interview"
-        disabled={!brief.mainQuestions.length || busy}
-        onclick={() => {
-          liveId = brief.mainQuestions[0].id;
-          live = true;
-          window.scrollTo(0, 0);
-        }}>Usa la scaletta</button
-      >
+      {#if brief.mainQuestions.length}
+        <a
+          class="nav-action primary start-interview"
+          href={speakerHref(true, brief.mainQuestions[0].id)}>Usa la scaletta</a
+        >
+      {:else}<button class="primary start-interview" disabled>Usa la scaletta</button>{/if}
     </section>
     <details>
       <summary>Domande classiche</summary>{#each brief.classicQuestions as q}<div class="card">
@@ -466,7 +443,7 @@
             text={String(entry.entity.bodyMd || entry.entity.notesMd || '')}
           />{#if entry.entity.url}<Markdown
               text={'[Apri fonte](' + String(entry.entity.url) + ')'}
-            />{/if}<a href={'/backoffice?speaker=' + encodeURIComponent(selected)}
+            />{/if}<a href={'/backoffice/speaker/' + encodeURIComponent(selected)}
             >Apri nel backoffice</a
           >
         </article>{:else}<p>Non sono ancora presenti approfondimenti per questo speaker.</p>{/each}
@@ -521,7 +498,7 @@
     <div class="card-controls">
       <button disabled={busy} onclick={() => interest(s.id)}
         >{saved(s.id) ? '★ Salvato' : 'Mi interessa'}</button
-      ><button class="primary" onclick={() => select(s.id)}>Apri scheda</button>
+      ><a class="nav-action primary" href={'/speaker/' + encodeURIComponent(s.id)}>Apri scheda</a>
     </div>
   </article>
 {/snippet}
@@ -656,7 +633,24 @@
     gap: 8px;
     margin: 18px 0;
   }
-  .active {
+  .nav-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 1px solid #bbcadd;
+    border-radius: 7px;
+    padding: 0.55rem 0.9rem;
+    background: #fff;
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .nav-action:hover {
+    background: #e6edf8;
+  }
+  .nav-action.primary,
+  .nav-action.active {
     background: #245844;
     color: white;
   }

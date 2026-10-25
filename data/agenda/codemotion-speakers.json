@@ -1,0 +1,2251 @@
+{
+  "source": "https://conferences.codemotion.com/milan/speakers/",
+  "widgetSource": "https://sessionize.com/api/v2/cdpvhngf/view/Speakers?under=True",
+  "retrievedOn": "2026-10-25",
+  "timezone": "Europe/Rome",
+  "extractionMethod": "POST to the Sessionize modal endpoint used by each link in .sz-speaker__sessions",
+  "speakerCount": 98,
+  "sessionCount": 85,
+  "scheduledSessionCount": 85,
+  "speakers": [
+    {
+      "speakerId": "c04f20d4-cd2f-4fb0-9ee2-c7b8cac9871f",
+      "name": "Alfonso Fuggetta",
+      "sessionIds": [
+        "1254733"
+      ]
+    },
+    {
+      "speakerId": "4c00dc98-d1b3-4d90-b1f6-acb3b024f625",
+      "name": "Andrey Breslav",
+      "sessionIds": [
+        "1265470"
+      ]
+    },
+    {
+      "speakerId": "9f65cf94-df17-447d-b1e0-6a0fb0eb92a5",
+      "name": "David McCarter",
+      "sessionIds": [
+        "1216557"
+      ]
+    },
+    {
+      "speakerId": "cc1e50f9-dc4a-4a1b-86fa-a012194cc751",
+      "name": "Dotan Horovits",
+      "sessionIds": [
+        "1230660"
+      ]
+    },
+    {
+      "speakerId": "83fedb47-af35-4d0a-8cf1-699bc04fd016",
+      "name": "Emanuele Fabbiani",
+      "sessionIds": [
+        "1319162"
+      ]
+    },
+    {
+      "speakerId": "a660ad54-ecd0-4cae-8478-03c3cff88050",
+      "name": "Gabriele Santomaggio",
+      "sessionIds": [
+        "1225761"
+      ]
+    },
+    {
+      "speakerId": "cb95763f-a586-4116-a70f-894bde9c7684",
+      "name": "Giorgio Natili",
+      "sessionIds": [
+        "1216673"
+      ]
+    },
+    {
+      "speakerId": "6b154a22-5948-4445-a2d5-34f03f9f2887",
+      "name": "Jigyasa Grover",
+      "sessionIds": [
+        "1219093"
+      ]
+    },
+    {
+      "speakerId": "4328c3e9-6ba6-4c45-b00f-ec2dfaea6099",
+      "name": "katharine jarmul",
+      "sessionIds": [
+        "1327744"
+      ]
+    },
+    {
+      "speakerId": "abb1bcd1-2689-492b-b4a7-28a2539f5a41",
+      "name": "Mario Zechner",
+      "sessionIds": [
+        "1237064"
+      ]
+    },
+    {
+      "speakerId": "70b99eb6-761f-4301-bf23-0d35bab3f1b3",
+      "name": "Matteo Collina",
+      "sessionIds": [
+        "1244834"
+      ]
+    },
+    {
+      "speakerId": "fbf4ed2b-e1ec-4557-85d3-4a7524b631eb",
+      "name": "Paolo Caressa",
+      "sessionIds": [
+        "1225761"
+      ]
+    },
+    {
+      "speakerId": "f5c30de4-cd93-4022-97f6-b0a58c92197c",
+      "name": "Rowdy Rabouw",
+      "sessionIds": [
+        "1224608"
+      ]
+    },
+    {
+      "speakerId": "0f3579a4-27fe-410e-9b48-052ccc0c17b5",
+      "name": "Abiodun Olowode",
+      "sessionIds": [
+        "1214501"
+      ]
+    },
+    {
+      "speakerId": "5ded1f41-b33f-4e38-945f-9b6c877c5156",
+      "name": "Alessandro Festa",
+      "sessionIds": [
+        "1334014"
+      ]
+    },
+    {
+      "speakerId": "181d05dc-0c6b-49f9-9894-9f76f994bfc3",
+      "name": "Alessandro Fin",
+      "sessionIds": [
+        "1329525"
+      ]
+    },
+    {
+      "speakerId": "8323e944-4c6f-4534-abbd-985c2ca459ed",
+      "name": "Alessandro Miliucci",
+      "sessionIds": [
+        "1234300"
+      ]
+    },
+    {
+      "speakerId": "91312c7d-3a93-45aa-8f81-cb280ed48a8b",
+      "name": "Alessandro Riboni",
+      "sessionIds": [
+        "1355799"
+      ]
+    },
+    {
+      "speakerId": "350e8d2b-9e61-45ee-9259-dc298452dd4d",
+      "name": "Alessio Acella",
+      "sessionIds": [
+        "1235267"
+      ]
+    },
+    {
+      "speakerId": "923911ba-8be5-43c5-a704-632013b0572c",
+      "name": "Alex Pagnoni",
+      "sessionIds": [
+        "1354856"
+      ]
+    },
+    {
+      "speakerId": "ca23aaf7-dd72-4e46-bc76-bd54b5195ffb",
+      "name": "Alexio Cassani",
+      "sessionIds": [
+        "1362869",
+        "1301534"
+      ]
+    },
+    {
+      "speakerId": "4f4a677c-44c3-484e-accb-5ba8b38463ef",
+      "name": "Alfonso Graziano",
+      "sessionIds": [
+        "1230211"
+      ]
+    },
+    {
+      "speakerId": "6fc71432-0fc4-4160-a7c9-0284e55e6398",
+      "name": "Alfredo Morresi",
+      "sessionIds": [
+        "1357782"
+      ]
+    },
+    {
+      "speakerId": "2f17f9f6-9e49-40ab-8140-c9fa7e137594",
+      "name": "Alice Viola Setti",
+      "sessionIds": [
+        "1229817"
+      ]
+    },
+    {
+      "speakerId": "e196e7a4-2761-40e4-8e1d-29e90d2375c4",
+      "name": "Andrea Ferlito",
+      "sessionIds": [
+        "1234927"
+      ]
+    },
+    {
+      "speakerId": "cb869b7c-d81b-46f8-86b8-755c7d2f3a0c",
+      "name": "Andrea Raponi",
+      "sessionIds": [
+        "1355009"
+      ]
+    },
+    {
+      "speakerId": "978284b5-966b-4d18-a62b-c54dfaf89999",
+      "name": "Andrea Slemer",
+      "sessionIds": [
+        "1367486"
+      ]
+    },
+    {
+      "speakerId": "2ca97891-f213-44c1-b420-b3dd8949e05c",
+      "name": "Andrea Tabacco",
+      "sessionIds": [
+        "1362542"
+      ]
+    },
+    {
+      "speakerId": "b8003cf8-a2b9-463a-afd1-747d19723af1",
+      "name": "Andrea Veronesi",
+      "sessionIds": [
+        "1369539"
+      ]
+    },
+    {
+      "speakerId": "e1e9a44a-6c1f-46d9-99f6-c1490e19346c",
+      "name": "Andrei Chiș",
+      "sessionIds": [
+        "1295740"
+      ]
+    },
+    {
+      "speakerId": "a46ab5b7-3951-4879-923b-2c5ee2f9ca46",
+      "name": "Aniello Bossa",
+      "sessionIds": [
+        "1355799"
+      ]
+    },
+    {
+      "speakerId": "24cbeef1-2467-4bd6-9a0e-a931b625f3d5",
+      "name": "Aurélie Vache",
+      "sessionIds": [
+        "1223092"
+      ]
+    },
+    {
+      "speakerId": "511b2545-db91-43bb-8435-0fac359397ad",
+      "name": "Chiara Russo",
+      "sessionIds": [
+        "1345279",
+        "1345280"
+      ]
+    },
+    {
+      "speakerId": "8c159868-7bac-46db-afe8-7f76e6b494b6",
+      "name": "Christian Schabetsberger",
+      "sessionIds": [
+        "1215971"
+      ]
+    },
+    {
+      "speakerId": "0c865efe-fc5e-457c-8753-94091d270728",
+      "name": "Costantino Cavallo",
+      "sessionIds": [
+        "1330247"
+      ]
+    },
+    {
+      "speakerId": "a68d9b27-86f2-41f9-aede-6a6a455180c2",
+      "name": "Daniel Zotti",
+      "sessionIds": [
+        "1253908"
+      ]
+    },
+    {
+      "speakerId": "a349a8c8-4d72-4dcd-91da-a504fce86d59",
+      "name": "Daniele Zonca",
+      "sessionIds": [
+        "1330362"
+      ]
+    },
+    {
+      "speakerId": "7b1b04ee-5397-4308-bc16-3b643ce7ee74",
+      "name": "Danilo Deponti",
+      "sessionIds": [
+        "1233101"
+      ]
+    },
+    {
+      "speakerId": "f8f1a3a8-6682-42e9-9df8-d3f6600c9a6f",
+      "name": "Davide Caldarulo",
+      "sessionIds": [
+        "1327616"
+      ]
+    },
+    {
+      "speakerId": "6f100b75-b8fa-4181-93d4-51e905936436",
+      "name": "Davide Pensato",
+      "sessionIds": [
+        "1360406"
+      ]
+    },
+    {
+      "speakerId": "f4d61fd8-1738-46f6-b83e-d60e833596bd",
+      "name": "Dennis Nerush",
+      "sessionIds": [
+        "1216127"
+      ]
+    },
+    {
+      "speakerId": "7094a6e4-e65a-4574-8010-844557ad2edb",
+      "name": "Diana Bernabei",
+      "sessionIds": [
+        "1235267"
+      ]
+    },
+    {
+      "speakerId": "87e12d99-9e42-47d2-b6e5-73dafd25ef45",
+      "name": "Edoardo Dusi",
+      "sessionIds": [
+        "1324797"
+      ]
+    },
+    {
+      "speakerId": "fc8ff68b-5890-48cd-8de6-05a062d962b5",
+      "name": "Egon Ferri",
+      "sessionIds": [
+        "1226121"
+      ]
+    },
+    {
+      "speakerId": "9967748f-0c55-466c-acb0-e7e5e3e6060f",
+      "name": "Elena Guidi",
+      "sessionIds": [
+        "1227394"
+      ]
+    },
+    {
+      "speakerId": "ddf81268-9ef6-47aa-a923-a2aaeb09e42f",
+      "name": "Emmanuele Villa",
+      "sessionIds": [
+        "1210841"
+      ]
+    },
+    {
+      "speakerId": "848b8bbd-0b54-45e6-ba65-73c5ea9935af",
+      "name": "Enzo Lombardi",
+      "sessionIds": [
+        "1265570"
+      ]
+    },
+    {
+      "speakerId": "e24cad72-cadf-461e-9fe4-c5f4fe385ca0",
+      "name": "Erik Pronk",
+      "sessionIds": [
+        "1216484"
+      ]
+    },
+    {
+      "speakerId": "df75a37d-9af7-4b19-a30d-8f86d7b6e753",
+      "name": "Ettore Di Giacinto",
+      "sessionIds": [
+        "1331302"
+      ]
+    },
+    {
+      "speakerId": "9de406b1-417a-4ac3-bf38-456cf3e8de8f",
+      "name": "Francesco Facconi",
+      "sessionIds": [
+        "1233101"
+      ]
+    },
+    {
+      "speakerId": "5d815b92-62d8-4b0e-a5fb-e7c596cccdfc",
+      "name": "Francesco Pirrone",
+      "sessionIds": [
+        "1234974"
+      ]
+    },
+    {
+      "speakerId": "987c2a62-d659-4204-af54-5b9b4056fe20",
+      "name": "Gabriele Negro",
+      "sessionIds": [
+        "1330263"
+      ]
+    },
+    {
+      "speakerId": "6d2cc8df-56c1-4cc1-9358-668530ea3635",
+      "name": "Gianluca Carucci",
+      "sessionIds": [
+        "1234971"
+      ]
+    },
+    {
+      "speakerId": "ce14485b-4d7a-473d-8424-ce85f935125b",
+      "name": "Gianni Forlastro",
+      "sessionIds": [
+        "1234974"
+      ]
+    },
+    {
+      "speakerId": "d1f80578-6fe5-45f4-ba37-5020a69f550f",
+      "name": "Giorgio Basile",
+      "sessionIds": [
+        "1370110"
+      ]
+    },
+    {
+      "speakerId": "17ef53a2-0ee6-4b36-a3db-ecc8041c5a3d",
+      "name": "Giovanni Galloro",
+      "sessionIds": [
+        "1232889"
+      ]
+    },
+    {
+      "speakerId": "b324d005-9ce8-45c9-961d-56a285369618",
+      "name": "Giulio D'Alessandro",
+      "sessionIds": [
+        "1348290"
+      ]
+    },
+    {
+      "speakerId": "1261e437-701b-416e-ae72-776e9f72a6d4",
+      "name": "Giulio Sciarappa",
+      "sessionIds": [
+        "1218568"
+      ]
+    },
+    {
+      "speakerId": "3c02a7bf-40b4-41b4-8b43-2de3be4b093c",
+      "name": "Graziano Casto",
+      "sessionIds": [
+        "1226083"
+      ]
+    },
+    {
+      "speakerId": "3d9a3287-cc36-4428-b6b4-1dd1df1e70e8",
+      "name": "Gregorio Palamà",
+      "sessionIds": [
+        "1235212"
+      ]
+    },
+    {
+      "speakerId": "153939fb-375b-4c3f-ae72-9c542a6c2426",
+      "name": "Guglielmo Fancellu",
+      "sessionIds": [
+        "1348290"
+      ]
+    },
+    {
+      "speakerId": "b7e3057a-ada5-4bf7-bb3a-aef1fa0947e0",
+      "name": "Lara Gianotti",
+      "sessionIds": [
+        "1362542"
+      ]
+    },
+    {
+      "speakerId": "05eb6909-e3e9-4ae3-b80f-a4306b34e594",
+      "name": "Laura Miranda",
+      "sessionIds": [
+        "1234920"
+      ]
+    },
+    {
+      "speakerId": "e402b908-1f81-4c84-a589-5557498aa3fa",
+      "name": "Leonardo Cavagnis",
+      "sessionIds": [
+        "1213991",
+        "1362168",
+        "1364506"
+      ]
+    },
+    {
+      "speakerId": "5fdb116d-05e0-4f06-acbc-8a58d7bfb867",
+      "name": "Luca Bianchi",
+      "sessionIds": [
+        "1296534"
+      ]
+    },
+    {
+      "speakerId": "73730527-b5d1-4698-aabf-04274f20264d",
+      "name": "Luca Fregoso",
+      "sessionIds": [
+        "1345280"
+      ]
+    },
+    {
+      "speakerId": "69fecef5-742d-4201-a22e-2d32983b642a",
+      "name": "Marco Ippolito",
+      "sessionIds": [
+        "1260726"
+      ]
+    },
+    {
+      "speakerId": "1d8c90f1-5864-4a9e-857f-e91c1dfdaa2b",
+      "name": "Marco Landi",
+      "sessionIds": [
+        "1342030"
+      ]
+    },
+    {
+      "speakerId": "cef3a191-54c8-48fa-a8f9-0cbada23232f",
+      "name": "Marco Liberati",
+      "sessionIds": [
+        "1218655"
+      ]
+    },
+    {
+      "speakerId": "6f11c7af-94eb-4cf7-8504-22292003e656",
+      "name": "Marco Simonte",
+      "sessionIds": [
+        "1226525"
+      ]
+    },
+    {
+      "speakerId": "56cfe09d-ecca-443e-b9c9-cd3b20d7d360",
+      "name": "Marta Scandellari",
+      "sessionIds": [
+        "1234564"
+      ]
+    },
+    {
+      "speakerId": "6e470f2c-f90f-4b91-a4d0-e6d5d5e7e66b",
+      "name": "Matteo Flora",
+      "sessionIds": [
+        "1361549"
+      ]
+    },
+    {
+      "speakerId": "a363f06e-1687-4256-a2e8-6c32f64bcfb9",
+      "name": "Matteo Mortari",
+      "sessionIds": [
+        "1330362"
+      ]
+    },
+    {
+      "speakerId": "7ce1be5a-b0fd-4121-9962-1269d381c001",
+      "name": "Mattia Minotti",
+      "sessionIds": [
+        "1368374"
+      ]
+    },
+    {
+      "speakerId": "bff9ee3e-05a4-4a8b-8dfc-5ca19092add2",
+      "name": "Maurizio Argoneto",
+      "sessionIds": [
+        "1220576"
+      ]
+    },
+    {
+      "speakerId": "a7a05d04-bc83-40a6-a39f-b73453673aae",
+      "name": "Maurizio Mangione",
+      "sessionIds": [
+        "1213691"
+      ]
+    },
+    {
+      "speakerId": "a629458c-a0db-4d84-b21c-162ba1c9aece",
+      "name": "Mauro Morales",
+      "sessionIds": [
+        "1246405"
+      ]
+    },
+    {
+      "speakerId": "ad8f450f-ae7c-4b1c-bfe5-9fe95c0f452a",
+      "name": "Michela Bertaina",
+      "sessionIds": [
+        "1345280"
+      ]
+    },
+    {
+      "speakerId": "42767f6e-7503-4017-b3e3-250175e1e00a",
+      "name": "Michelantonio Trizio",
+      "sessionIds": [
+        "1231176"
+      ]
+    },
+    {
+      "speakerId": "f742d009-90c4-46cd-808f-d2d05880106a",
+      "name": "Michele Laurelli",
+      "sessionIds": [
+        "1342030"
+      ]
+    },
+    {
+      "speakerId": "f222e97c-73d7-47e6-b070-b084d3b3c4ca",
+      "name": "Moreno Lovato",
+      "sessionIds": [
+        "1348385"
+      ]
+    },
+    {
+      "speakerId": "938c8344-624c-44ea-9bb5-c6d54f3c1ae1",
+      "name": "Natale Vinto",
+      "sessionIds": [
+        "1364614"
+      ]
+    },
+    {
+      "speakerId": "33ecf2ee-dfb9-4a4c-9d21-9d14f5205986",
+      "name": "Nicola Guglielmi",
+      "sessionIds": [
+        "1235175"
+      ]
+    },
+    {
+      "speakerId": "d85d4204-b1aa-4896-b1b1-4493d057cf99",
+      "name": "Nicolò Giorgio",
+      "sessionIds": [
+        "1260726"
+      ]
+    },
+    {
+      "speakerId": "14c3f2f6-f2d3-4b5c-9f6b-9e40fb95c546",
+      "name": "Olena Borzenko",
+      "sessionIds": [
+        "1232458"
+      ]
+    },
+    {
+      "speakerId": "73dae986-0261-426c-88b2-a8a2af0c257a",
+      "name": "Omar Diop",
+      "sessionIds": [
+        "1234971"
+      ]
+    },
+    {
+      "speakerId": "bd633373-c9ad-4ca6-8171-5811dcb3e2d7",
+      "name": "Paolo Rubano",
+      "sessionIds": [
+        "1327616"
+      ]
+    },
+    {
+      "speakerId": "73117d1d-312b-4364-91cb-a7b1dda5c162",
+      "name": "Riccardo Carlesso",
+      "sessionIds": [
+        "1222188"
+      ]
+    },
+    {
+      "speakerId": "ecc32706-8e3f-4ebd-a23f-cf7facc0d627",
+      "name": "Riccardo Galimberti",
+      "sessionIds": [
+        "1354856"
+      ]
+    },
+    {
+      "speakerId": "32276b3b-0741-4bf3-add7-77ae87528981",
+      "name": "Saverio Murgia",
+      "sessionIds": [
+        "1348517"
+      ]
+    },
+    {
+      "speakerId": "ea13f050-35b5-4d41-814c-e61eecc1f074",
+      "name": "Simone Desantis",
+      "sessionIds": [
+        "1340661"
+      ]
+    },
+    {
+      "speakerId": "000e7162-82b5-4498-9cca-53d356e0b427",
+      "name": "Soumaya Erradi",
+      "sessionIds": [
+        "1230228"
+      ]
+    },
+    {
+      "speakerId": "be964b25-3d59-46c3-8985-7c87fb884497",
+      "name": "Stefano Bruno",
+      "sessionIds": [
+        "1253908"
+      ]
+    },
+    {
+      "speakerId": "5297f3e4-6fac-4e76-8d6a-b67f084ab50b",
+      "name": "Stefano Fiorucci",
+      "sessionIds": [
+        "1233377"
+      ]
+    },
+    {
+      "speakerId": "bc261ce0-3d86-40a4-9c62-764d0115dc92",
+      "name": "Valeria Salis",
+      "sessionIds": [
+        "1225977"
+      ]
+    },
+    {
+      "speakerId": "72578c91-9bef-4d64-bd0d-9b3645364d74",
+      "name": "Valeria Zuccoli",
+      "sessionIds": [
+        "1234879"
+      ]
+    },
+    {
+      "speakerId": "966a3341-884b-4bf2-8e8a-dc8f6edc5d38",
+      "name": "Vladi Stevanovic",
+      "sessionIds": [
+        "1249272"
+      ]
+    },
+    {
+      "speakerId": "da541511-4ead-4d82-ab4d-a3218c81e254",
+      "name": "Walter Aglietti",
+      "sessionIds": [
+        "1367486"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "sessionId": "1345279",
+      "speakers": [
+        "Chiara Russo"
+      ],
+      "title": "Codemotion Milan '26 - Opening",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1345279",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1345279",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "09:15",
+      "endTime": "09:45",
+      "startsAt": "2026-10-28T09:15:00+01:00",
+      "endsAt": "2026-10-28T09:45:00+01:00",
+      "displayedTime": "Wed 9:15 am - 9:45 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1327744",
+      "speakers": [
+        "katharine jarmul"
+      ],
+      "title": "I spy on my agents and you can too!",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1327744",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1327744",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "09:50",
+      "endTime": "10:30",
+      "startsAt": "2026-10-28T09:50:00+01:00",
+      "endsAt": "2026-10-28T10:30:00+01:00",
+      "displayedTime": "Wed 9:50 am - 10:30 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1329525",
+      "speakers": [
+        "Alessandro Fin"
+      ],
+      "title": "Trust Is the Feature",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1329525",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1329525",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "10:35",
+      "endTime": "10:50",
+      "startsAt": "2026-10-28T10:35:00+01:00",
+      "endsAt": "2026-10-28T10:50:00+01:00",
+      "displayedTime": "Wed 10:35 am - 10:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1214501",
+      "speakers": [
+        "Abiodun Olowode"
+      ],
+      "title": "We Review Code. Why Won’t We Review Each Other?",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1214501",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1214501",
+      "room": "BICOCCA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00",
+      "displayedTime": "Wed 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1216484",
+      "speakers": [
+        "Erik Pronk"
+      ],
+      "title": "AI is changing your team more than your code",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1216484",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1216484",
+      "room": "BRERA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00",
+      "displayedTime": "Wed 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1227394",
+      "speakers": [
+        "Elena Guidi"
+      ],
+      "title": "System Failure: Why Your Tech Stack Can't Fix a Communication Leak",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1227394",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1227394",
+      "room": "CORVETTO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00",
+      "displayedTime": "Wed 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1213991",
+      "speakers": [
+        "Leonardo Cavagnis"
+      ],
+      "title": "Designing Physical AI Systems: From Sensors to On-Device Intelligence",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1213991",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1213991",
+      "room": "LAMBRATE",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00",
+      "displayedTime": "Wed 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1226083",
+      "speakers": [
+        "Graziano Casto"
+      ],
+      "title": "Startup veloci, Pod snelli: In-Place Pod Resize in pratica",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1226083",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1226083",
+      "room": "NAVIGLI",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00",
+      "displayedTime": "Wed 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1244834",
+      "speakers": [
+        "Matteo Collina"
+      ],
+      "title": "Kill the Standup: How One Engineer Ships What Five Cannot",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1244834",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1244834",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00",
+      "displayedTime": "Wed 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1246405",
+      "speakers": [
+        "Mauro Morales"
+      ],
+      "title": "Your GPU node is a snowflake: shipping AI infrastructure as a versioned artifact",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1246405",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1246405",
+      "room": "TORTONA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-28T11:20:00+01:00",
+      "endsAt": "2026-10-28T11:50:00+01:00",
+      "displayedTime": "Wed 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1348517",
+      "speakers": [
+        "Saverio Murgia"
+      ],
+      "title": "Agents Don't Work Alone",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1348517",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1348517",
+      "room": "BICOCCA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00",
+      "displayedTime": "Wed 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1265570",
+      "speakers": [
+        "Enzo Lombardi"
+      ],
+      "title": "Racing the beam",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1265570",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1265570",
+      "room": "BRERA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00",
+      "displayedTime": "Wed 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1234300",
+      "speakers": [
+        "Alessandro Miliucci"
+      ],
+      "title": "Distributed Locks with MongoDB",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1234300",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1234300",
+      "room": "CORVETTO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00",
+      "displayedTime": "Wed 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1330362",
+      "speakers": [
+        "Daniele Zonca",
+        "Matteo Mortari"
+      ],
+      "title": "Bring Your Own Agent: Building Real-World Agents for a Sovereign SDLC",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1330362",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1330362",
+      "room": "LAMBRATE",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00",
+      "displayedTime": "Wed 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1235212",
+      "speakers": [
+        "Gregorio Palamà"
+      ],
+      "title": "Fast & Furious LLM: Scaling Performance with MTP Drafters",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1235212",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1235212",
+      "room": "NAVIGLI",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00",
+      "displayedTime": "Wed 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1237064",
+      "speakers": [
+        "Mario Zechner"
+      ],
+      "title": "Everything is slop, let's slow the f**k down",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1237064",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1237064",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00",
+      "displayedTime": "Wed 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1222188",
+      "speakers": [
+        "Riccardo Carlesso"
+      ],
+      "title": "Stop Grepping, Start Reasoning: Skill-Based Agentic SRE 🚀",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1222188",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1222188",
+      "room": "TORTONA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-28T12:10:00+01:00",
+      "endsAt": "2026-10-28T12:40:00+01:00",
+      "displayedTime": "Wed 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1370110",
+      "speakers": [
+        "Giorgio Basile"
+      ],
+      "title": "AI/ML: Come (finalmente) leggere le specifiche di progetto",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1370110",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1370110",
+      "room": "BICOCCA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00",
+      "displayedTime": "Wed 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1340661",
+      "speakers": [
+        "Simone Desantis"
+      ],
+      "title": "5 API per mettere a sicuro il tuo progetto digitale",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1340661",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1340661",
+      "room": "BRERA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "13:00",
+      "endTime": "13:15",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:15:00+01:00",
+      "displayedTime": "Wed 1:00 pm - 1:15 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1234974",
+      "speakers": [
+        "Gianni Forlastro",
+        "Francesco Pirrone"
+      ],
+      "title": "Developer Experience 2.0: progettare software nell’era degli AI Agents",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1234974",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1234974",
+      "room": "CORVETTO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00",
+      "displayedTime": "Wed 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1330263",
+      "speakers": [
+        "Gabriele Negro"
+      ],
+      "title": "The Cost of Cheap Code",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1330263",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1330263",
+      "room": "LAMBRATE",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00",
+      "displayedTime": "Wed 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1368374",
+      "speakers": [
+        "Mattia Minotti"
+      ],
+      "title": "The product engineering team: own the problem, collab on specs, let agents code",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1368374",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1368374",
+      "room": "NAVIGLI",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00",
+      "displayedTime": "Wed 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1232458",
+      "speakers": [
+        "Olena Borzenko"
+      ],
+      "title": "Coding, but Make It Art",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1232458",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1232458",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00",
+      "displayedTime": "Wed 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1295740",
+      "speakers": [
+        "Andrei Chiș"
+      ],
+      "title": "Understanding at machine speed with thousands of contextual tools",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1295740",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1295740",
+      "room": "TORTONA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-28T13:00:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00",
+      "displayedTime": "Wed 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1234564",
+      "speakers": [
+        "Marta Scandellari"
+      ],
+      "title": "Inclusion by design: engineering team workflows for different brains",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1234564",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1234564",
+      "room": "BRERA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "13:15",
+      "endTime": "13:30",
+      "startsAt": "2026-10-28T13:15:00+01:00",
+      "endsAt": "2026-10-28T13:30:00+01:00",
+      "displayedTime": "Wed 1:15 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1327616",
+      "speakers": [
+        "Davide Caldarulo",
+        "Paolo Rubano"
+      ],
+      "title": "Da settimane a ore: modernizzare i report finanziari per WCAG con la GenAI",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1327616",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1327616",
+      "room": "BICOCCA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00",
+      "displayedTime": "Wed 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1218568",
+      "speakers": [
+        "Giulio Sciarappa"
+      ],
+      "title": "Emergency in production: how to survive disasters ...a small guide",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1218568",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1218568",
+      "room": "BRERA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00",
+      "displayedTime": "Wed 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1229817",
+      "speakers": [
+        "Alice Viola Setti"
+      ],
+      "title": "Kafka didn't fit our LLM agents, so we wrote our own broker",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1229817",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1229817",
+      "room": "CORVETTO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00",
+      "displayedTime": "Wed 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1348290",
+      "speakers": [
+        "Giulio D'Alessandro",
+        "Guglielmo Fancellu"
+      ],
+      "title": "Weapon or Tool? An Ontological Approach to Enterprise Knowledge",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1348290",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1348290",
+      "room": "LAMBRATE",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00",
+      "displayedTime": "Wed 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1235175",
+      "speakers": [
+        "Nicola Guglielmi"
+      ],
+      "title": "Engineering Leadership Through Multi-Agent Simulations",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1235175",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1235175",
+      "room": "NAVIGLI",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00",
+      "displayedTime": "Wed 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1319162",
+      "speakers": [
+        "Emanuele Fabbiani"
+      ],
+      "title": "How Does AI Watermarking Work? A Close Look at SynthID",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1319162",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1319162",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00",
+      "displayedTime": "Wed 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1224608",
+      "speakers": [
+        "Rowdy Rabouw"
+      ],
+      "title": "Warp Pipes and Prefetching: Navigating the Web at Mario Speed",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1224608",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1224608",
+      "room": "TORTONA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T15:50:00+01:00",
+      "displayedTime": "Wed 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1296534",
+      "speakers": [
+        "Luca Bianchi"
+      ],
+      "title": "Documents Are Not Knowledge: Modelling Extraction as an Event-Driven Domain",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1296534",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1296534",
+      "room": "Workshop",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "15:20",
+      "endTime": "16:40",
+      "startsAt": "2026-10-28T15:20:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00",
+      "displayedTime": "Wed 3:20 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1216673",
+      "speakers": [
+        "Giorgio Natili"
+      ],
+      "title": "The Ethics Layer: Architecting Sovereign AI and Digital Dignity in Agentic Systems",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1216673",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1216673",
+      "room": "BICOCCA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "16:10",
+      "endTime": "16:40",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00",
+      "displayedTime": "Wed 4:10 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1213691",
+      "speakers": [
+        "Maurizio Mangione"
+      ],
+      "title": "Is getting hot in here",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1213691",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1213691",
+      "room": "BRERA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "16:10",
+      "endTime": "16:40",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00",
+      "displayedTime": "Wed 4:10 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1334014",
+      "speakers": [
+        "Alessandro Festa"
+      ],
+      "title": "E se deployare workload AI non fosse poi così complicato?",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1334014",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1334014",
+      "room": "CORVETTO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "16:10",
+      "endTime": "16:25",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:25:00+01:00",
+      "displayedTime": "Wed 4:10 pm - 4:25 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1226525",
+      "speakers": [
+        "Marco Simonte"
+      ],
+      "title": "Transformers Are Changing: Inside the New Architecture of Long-Context AI",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1226525",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1226525",
+      "room": "LAMBRATE",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "16:10",
+      "endTime": "16:40",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00",
+      "displayedTime": "Wed 4:10 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1369539",
+      "speakers": [
+        "Andrea Veronesi"
+      ],
+      "title": "Platform & Harness Engineering: l'antidoto al caosagentico",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1369539",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1369539",
+      "room": "NAVIGLI",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "16:10",
+      "endTime": "16:40",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00",
+      "displayedTime": "Wed 4:10 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1230228",
+      "speakers": [
+        "Soumaya Erradi"
+      ],
+      "title": "Can an LLM understand your car? Real telemetry and predictive insights",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1230228",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1230228",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "16:10",
+      "endTime": "16:40",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T16:40:00+01:00",
+      "displayedTime": "Wed 4:10 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1216557",
+      "speakers": [
+        "David McCarter"
+      ],
+      "title": "Unleash Your Inner Rockstar: The 5 Steps to Dynamic Public Speaking!",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1216557",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1216557",
+      "room": "TORTONA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "16:10",
+      "endTime": "17:20",
+      "startsAt": "2026-10-28T16:10:00+01:00",
+      "endsAt": "2026-10-28T17:20:00+01:00",
+      "displayedTime": "Wed 4:10 pm - 5:20 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1234920",
+      "speakers": [
+        "Laura Miranda"
+      ],
+      "title": "Da feature a revenue: come i team tecnici possono pensare (anche) da marketer",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1234920",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1234920",
+      "room": "CORVETTO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "16:30",
+      "endTime": "16:45",
+      "startsAt": "2026-10-28T16:30:00+01:00",
+      "endsAt": "2026-10-28T16:45:00+01:00",
+      "displayedTime": "Wed 4:30 pm - 4:45 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1233101",
+      "speakers": [
+        "Francesco Facconi",
+        "Danilo Deponti"
+      ],
+      "title": "When the Backlog Dispatches Itself: a Production Fleet of Autonomous AI Coding Agents",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1233101",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1233101",
+      "room": "BICOCCA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "17:00",
+      "endTime": "17:30",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00",
+      "displayedTime": "Wed 5:00 pm - 5:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1331302",
+      "speakers": [
+        "Ettore Di Giacinto"
+      ],
+      "title": "Stop Sending Everything to the Cloud: Hybrid AI with LocalAI",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1331302",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1331302",
+      "room": "BRERA",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "17:00",
+      "endTime": "17:30",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00",
+      "displayedTime": "Wed 5:00 pm - 5:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1225977",
+      "speakers": [
+        "Valeria Salis"
+      ],
+      "title": "Green Prompting: designing AI interactions with sustainability in mind",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1225977",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1225977",
+      "room": "CORVETTO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "17:00",
+      "endTime": "17:30",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00",
+      "displayedTime": "Wed 5:00 pm - 5:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1231176",
+      "speakers": [
+        "Michelantonio Trizio"
+      ],
+      "title": "When AI agents click buy: atomic checkouts for dynamic retail carts",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1231176",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1231176",
+      "room": "LAMBRATE",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "17:00",
+      "endTime": "17:30",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00",
+      "displayedTime": "Wed 5:00 pm - 5:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1234971",
+      "speakers": [
+        "Omar Diop",
+        "Gianluca Carucci"
+      ],
+      "title": "Code is the easy part: cosa cambia nel processo di sviluppo quando il codice lo scrive l’AI",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1234971",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1234971",
+      "room": "NAVIGLI",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "17:00",
+      "endTime": "17:30",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00",
+      "displayedTime": "Wed 5:00 pm - 5:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1260726",
+      "speakers": [
+        "Marco Ippolito",
+        "Nicolò Giorgio"
+      ],
+      "title": "The Memedex: indicizzare Internet, un meme alla volta",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1260726",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1260726",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "17:00",
+      "endTime": "17:30",
+      "startsAt": "2026-10-28T17:00:00+01:00",
+      "endsAt": "2026-10-28T17:30:00+01:00",
+      "displayedTime": "Wed 5:00 pm - 5:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1265470",
+      "speakers": [
+        "Andrey Breslav"
+      ],
+      "title": "Future of Programming: What's our place in the world of coding machines?",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1265470",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1265470",
+      "room": "SANSIRO",
+      "day": "2026-10-28",
+      "weekday": "mercoledì",
+      "startTime": "17:50",
+      "endTime": "18:20",
+      "startsAt": "2026-10-28T17:50:00+01:00",
+      "endsAt": "2026-10-28T18:20:00+01:00",
+      "displayedTime": "Wed 5:50 pm - 6:20 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1345280",
+      "speakers": [
+        "Chiara Russo",
+        "Michela Bertaina",
+        "Luca Fregoso"
+      ],
+      "title": "Codemotion Milan '26 - Welcome back!",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1345280",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1345280",
+      "room": "SANSIRO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "09:35",
+      "endTime": "10:00",
+      "startsAt": "2026-10-29T09:35:00+01:00",
+      "endsAt": "2026-10-29T10:00:00+01:00",
+      "displayedTime": "Thu 9:35 am - 10:00 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1361549",
+      "speakers": [
+        "Matteo Flora"
+      ],
+      "title": "What Could Possibly Go Wrong? A Crash Course in Paranoia for Developers",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1361549",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1361549",
+      "room": "SANSIRO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "10:00",
+      "endTime": "10:30",
+      "startsAt": "2026-10-29T10:00:00+01:00",
+      "endsAt": "2026-10-29T10:30:00+01:00",
+      "displayedTime": "Thu 10:00 am - 10:30 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1362168",
+      "speakers": [
+        "Leonardo Cavagnis"
+      ],
+      "title": "Hands-On with Arduino UNO Q: Bringing AI and Local LLMs to the Edge",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1362168",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1362168",
+      "room": "Arduino Workshop",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "11:20",
+      "endTime": "13:20",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T13:20:00+01:00",
+      "displayedTime": "Thu 11:20 am - 1:20 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1362869",
+      "speakers": [
+        "Alexio Cassani"
+      ],
+      "title": "How Far Can You Loop? From one tool call to a Claude Code agent that fixes itself overnight",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1362869",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1362869",
+      "room": "BICOCCA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00",
+      "displayedTime": "Thu 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1367486",
+      "speakers": [
+        "Andrea Slemer",
+        "Walter Aglietti"
+      ],
+      "title": "Moving Beyond the Hype: Why Writing Code is No Longer the Hard Part of AI Engineering",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1367486",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1367486",
+      "room": "BRERA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00",
+      "displayedTime": "Thu 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1226121",
+      "speakers": [
+        "Egon Ferri"
+      ],
+      "title": "Beyond Benchmarks: What ARC Teaches Us About Measuring Intelligence",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1226121",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1226121",
+      "room": "CORVETTO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00",
+      "displayedTime": "Thu 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1234927",
+      "speakers": [
+        "Andrea Ferlito"
+      ],
+      "title": "In attesa dei legali della GRANDE N: come io e Gemini abbiamo portato Parachute su un HW impossibile",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1234927",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1234927",
+      "room": "LAMBRATE",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00",
+      "displayedTime": "Thu 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1218655",
+      "speakers": [
+        "Marco Liberati"
+      ],
+      "title": "An Emergency Decree Walks Into a Pull Request: 165 Years of Italian Law, Read Like a Repo",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1218655",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1218655",
+      "room": "NAVIGLI",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00",
+      "displayedTime": "Thu 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1219093",
+      "speakers": [
+        "Jigyasa Grover"
+      ],
+      "title": "When NOT to build an agent: Lessons from systems that didn't want autonomy",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1219093",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1219093",
+      "room": "SANSIRO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00",
+      "displayedTime": "Thu 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1230660",
+      "speakers": [
+        "Dotan Horovits"
+      ],
+      "title": "One Stack to Observe Them All: Open Source Observability with OpenSearch",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1230660",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1230660",
+      "room": "TORTONA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "11:20",
+      "endTime": "11:50",
+      "startsAt": "2026-10-29T11:20:00+01:00",
+      "endsAt": "2026-10-29T11:50:00+01:00",
+      "displayedTime": "Thu 11:20 am - 11:50 am",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1215971",
+      "speakers": [
+        "Christian Schabetsberger"
+      ],
+      "title": "What comes after Git?",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1215971",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1215971",
+      "room": "BICOCCA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00",
+      "displayedTime": "Thu 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1354856",
+      "speakers": [
+        "Riccardo Galimberti",
+        "Alex Pagnoni"
+      ],
+      "title": "AI won't fix your Developer Experience",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1354856",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1354856",
+      "room": "BRERA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00",
+      "displayedTime": "Thu 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1234879",
+      "speakers": [
+        "Valeria Zuccoli"
+      ],
+      "title": "The Zero-Temperature Lie: Why Your Deterministic LLM is Still Hallucinating Randomness",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1234879",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1234879",
+      "room": "CORVETTO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00",
+      "displayedTime": "Thu 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1348385",
+      "speakers": [
+        "Moreno Lovato"
+      ],
+      "title": "Dal codice in banca ai videogiochi: il lungo percorso di un indie",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1348385",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1348385",
+      "room": "LAMBRATE",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00",
+      "displayedTime": "Thu 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1220576",
+      "speakers": [
+        "Maurizio Argoneto"
+      ],
+      "title": "Shutup, Dependency Track! Silencing false positives locally with AST and AI",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1220576",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1220576",
+      "room": "NAVIGLI",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00",
+      "displayedTime": "Thu 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1254733",
+      "speakers": [
+        "Alfonso Fuggetta"
+      ],
+      "title": "Why Coding Agents Need You More Than Ever",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1254733",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1254733",
+      "room": "SANSIRO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00",
+      "displayedTime": "Thu 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1232889",
+      "speakers": [
+        "Giovanni Galloro"
+      ],
+      "title": "Build agents with agents",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1232889",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1232889",
+      "room": "TORTONA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "12:10",
+      "endTime": "12:40",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T12:40:00+01:00",
+      "displayedTime": "Thu 12:10 pm - 12:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1342030",
+      "speakers": [
+        "Marco Landi",
+        "Michele Laurelli"
+      ],
+      "title": "SCRIBA.AI. soluzione IA italiana per modernizzare il codice legacy",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1342030",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1342030",
+      "room": "Workshop",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "12:10",
+      "endTime": "13:30",
+      "startsAt": "2026-10-29T12:10:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00",
+      "displayedTime": "Thu 12:10 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1355009",
+      "speakers": [
+        "Andrea Raponi"
+      ],
+      "title": "Saliresti su un aereo vibecodato? Spec-driven AI in Inlay con EARS e Walden",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1355009",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1355009",
+      "room": "BICOCCA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00",
+      "displayedTime": "Thu 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1235267",
+      "speakers": [
+        "Diana Bernabei",
+        "Alessio Acella"
+      ],
+      "title": "Accessibility first: progettare una piattaforma quando l’accessibilità non è negoziabile",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1235267",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1235267",
+      "room": "BRERA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00",
+      "displayedTime": "Thu 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1249272",
+      "speakers": [
+        "Vladi Stevanovic"
+      ],
+      "title": "The Swiss cheese fix: why PR quality needs layers",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1249272",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1249272",
+      "room": "CORVETTO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00",
+      "displayedTime": "Thu 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1360406",
+      "speakers": [
+        "Davide Pensato"
+      ],
+      "title": "Game Audio: Beyond PlaySound()",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1360406",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1360406",
+      "room": "LAMBRATE",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00",
+      "displayedTime": "Thu 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1210841",
+      "speakers": [
+        "Emmanuele Villa"
+      ],
+      "title": "AI Fundamentals in Action: Evolving a Flappy Bird Agent",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1210841",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1210841",
+      "room": "NAVIGLI",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00",
+      "displayedTime": "Thu 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1216127",
+      "speakers": [
+        "Dennis Nerush"
+      ],
+      "title": "How to Interview Engineers in the AI Era: What I Changed and What Actually Works",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1216127",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1216127",
+      "room": "SANSIRO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00",
+      "displayedTime": "Thu 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1357782",
+      "speakers": [
+        "Alfredo Morresi"
+      ],
+      "title": "How to tame our Hermes minions fleet",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1357782",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1357782",
+      "room": "TORTONA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "startsAt": "2026-10-29T13:00:00+01:00",
+      "endsAt": "2026-10-29T13:30:00+01:00",
+      "displayedTime": "Thu 1:00 pm - 1:30 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1364506",
+      "speakers": [
+        "Leonardo Cavagnis"
+      ],
+      "title": "Hands-On with Arduino UNO Q: Bringing AI and Local LLMs to the Edge",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1364506",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1364506",
+      "room": "Arduino Workshop",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "14:40",
+      "endTime": "16:40",
+      "startsAt": "2026-10-29T14:40:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00",
+      "displayedTime": "Thu 2:40 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1233377",
+      "speakers": [
+        "Stefano Fiorucci"
+      ],
+      "title": "The case for Small Models: a 1M ModernBERT playing Doom in milliseconds",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1233377",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1233377",
+      "room": "BICOCCA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00",
+      "displayedTime": "Thu 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1355799",
+      "speakers": [
+        "Aniello Bossa",
+        "Alessandro Riboni"
+      ],
+      "title": "Text-to-SQL Isn't Enough: Trustworthy AI Data Agents on a Semantic Layer",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1355799",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1355799",
+      "room": "CORVETTO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00",
+      "displayedTime": "Thu 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1362542",
+      "speakers": [
+        "Lara Gianotti",
+        "Andrea Tabacco"
+      ],
+      "title": "Trovare la Propria Dimensione",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1362542",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1362542",
+      "room": "LAMBRATE",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00",
+      "displayedTime": "Thu 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1324797",
+      "speakers": [
+        "Edoardo Dusi"
+      ],
+      "title": "Honey, We Predicted the Bits",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1324797",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1324797",
+      "room": "SANSIRO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00",
+      "displayedTime": "Thu 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1223092",
+      "speakers": [
+        "Aurélie Vache"
+      ],
+      "title": "The Ultimate Kubernetes Challenge: An Interactive Trivia Game on concepts, components, usage...",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1223092",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1223092",
+      "room": "TORTONA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "15:20",
+      "endTime": "15:50",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T15:50:00+01:00",
+      "displayedTime": "Thu 3:20 pm - 3:50 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1301534",
+      "speakers": [
+        "Alexio Cassani"
+      ],
+      "title": "Configurare l’harness: da Claude Code come tool a Claude Code come sistema di lavoro",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1301534",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1301534",
+      "room": "Workshop",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "15:20",
+      "endTime": "16:40",
+      "startsAt": "2026-10-29T15:20:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00",
+      "displayedTime": "Thu 3:20 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1253908",
+      "speakers": [
+        "Daniel Zotti",
+        "Stefano Bruno"
+      ],
+      "title": "Provocazioni Artificiali: un talk così “shiftato” che ti verrà la voglia di rubarci il microfono!",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1253908",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1253908",
+      "room": "BICOCCA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "16:10",
+      "endTime": "16:40",
+      "startsAt": "2026-10-29T16:10:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00",
+      "displayedTime": "Thu 4:10 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1230211",
+      "speakers": [
+        "Alfonso Graziano"
+      ],
+      "title": "Scaling AI Adoption: The Real Challenges of Transforming 300 Engineers",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1230211",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1230211",
+      "room": "SANSIRO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "16:10",
+      "endTime": "16:40",
+      "startsAt": "2026-10-29T16:10:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00",
+      "displayedTime": "Thu 4:10 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1330247",
+      "speakers": [
+        "Costantino Cavallo"
+      ],
+      "title": "From Code Velocity to Production Value",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1330247",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1330247",
+      "room": "TORTONA",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "16:10",
+      "endTime": "16:40",
+      "startsAt": "2026-10-29T16:10:00+01:00",
+      "endsAt": "2026-10-29T16:40:00+01:00",
+      "displayedTime": "Thu 4:10 pm - 4:40 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1364614",
+      "speakers": [
+        "Natale Vinto"
+      ],
+      "title": "Beyond the Hype: Building a Sustainable, Open Source AI Strategy",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1364614",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1364614",
+      "room": "SANSIRO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "17:00",
+      "endTime": "17:15",
+      "startsAt": "2026-10-29T17:00:00+01:00",
+      "endsAt": "2026-10-29T17:15:00+01:00",
+      "displayedTime": "Thu 5:00 pm - 5:15 pm",
+      "scheduled": true
+    },
+    {
+      "sessionId": "1225761",
+      "speakers": [
+        "Paolo Caressa",
+        "Gabriele Santomaggio"
+      ],
+      "title": "Critica dell'informatica pura",
+      "sourceUrl": "https://conferences.codemotion.com/milan/speakers/#sz-session-1225761",
+      "detailUrl": "https://sessionize.com/api/v2/cdpvhngf/session?id=1225761",
+      "room": "SANSIRO",
+      "day": "2026-10-29",
+      "weekday": "giovedì",
+      "startTime": "17:20",
+      "endTime": "17:50",
+      "startsAt": "2026-10-29T17:20:00+01:00",
+      "endsAt": "2026-10-29T17:50:00+01:00",
+      "displayedTime": "Thu 5:20 pm - 5:50 pm",
+      "scheduled": true
+    }
+  ]
+}
