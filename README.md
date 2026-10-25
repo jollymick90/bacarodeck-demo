@@ -21,6 +21,10 @@ non erano ancora stati aperti nella programmazione. Piani e slot già assegnati
 non possono essere eliminati dal CRUD generico, per non lasciare stati discordanti.
 
 Il backoffice resta accessibile a tutti i conduttori autorizzati su `/backoffice`.
+La barra principale mostra «Aggiungi speaker» e «Programmazione». Importazioni,
+esportazioni, tag, traduzioni e gestione accessi si trovano nella sezione
+«Strumenti», inizialmente chiusa e organizzata per funzione. Il pulsante ⓘ accanto
+a ogni comando apre una spiegazione; non esegue l'operazione.
 «Modifica profilo e intervista» apre un unico form con le due sezioni e un solo
 salvataggio. Un conflitto su una delle sezioni blocca entrambe le scritture e
 conserva le bozze nel form.

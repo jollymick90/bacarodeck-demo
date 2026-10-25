@@ -59,6 +59,7 @@
   import Markdown from '$lib/components/Markdown.svelte';
   import ResearchReader from '$lib/components/ResearchReader.svelte';
   import Editor from '$lib/components/Editor.svelte';
+  import BackofficeToolbar from '$lib/components/BackofficeToolbar.svelte';
   import Import from '$lib/components/Import.svelte';
   let client: ReturnType<typeof getFirebase> = null;
   let user = $state<User | null>(null);
@@ -507,49 +508,115 @@
     {/if}
   {:else}
     <p><a href="/">← Vista conduttore</a></p>
-    <div class="workspace-toolbar">
-      <div>
-        <h1>Prepariamo le interviste.</h1>
-        <p>Ricerca condivisa · preparazione entro il 27 ottobre</p>
-      </div>
-      <div class="toolbar-actions">
-        <button disabled={!ready || busy} onclick={() => (fullBackup = !fullBackup)}
-          >Export / import completo</button
-        >
-        <button disabled={!ready || busy} onclick={() => (exporting = !exporting)}
-          >{exporting ? 'Chiudi export' : 'Esporta il mio lavoro'}</button
-        >
-        <button
-          disabled={!ready || busy}
-          onclick={() => {
-            updatingTags = true;
-            importing = false;
-            editing = null;
-          }}>Aggiorna tag</button
-        >
-        <button disabled={!ready || busy} onclick={loadTranslations}
-          >Importa traduzioni IT/EN</button
-        >
-        <button onclick={() => (showSchedule = !showSchedule)}
-          >{showSchedule ? 'Chiudi programmazione' : 'Programmazione'}</button
-        >
-        <button disabled={!ready || busy} onclick={loadCatalog}>Importa tutti gli 84 speaker</button
-        >
-        {#if superadmin}<button onclick={() => (managingAccess = !managingAccess)}
-            >{managingAccess ? 'Chiudi accessi' : 'Gestisci accessi'}</button
-          >{/if}
-        <button
-          onclick={() => {
-            updatingTags = false;
-            importText = '';
-            importing = true;
-            editing = null;
-          }}
-          disabled={!ready || busy}>Importa JSON</button
-        ><button onclick={() => edit('speakers')} disabled={!ready || busy}>Aggiungi speaker</button
-        >
-      </div>
-    </div>
+    <BackofficeToolbar
+      primary={[
+        {
+          label: 'Aggiungi speaker',
+          description:
+            'Crea una nuova scheda speaker inserendo nome, profilo e informazioni utili. Usalo per aggiungere una persona che non è ancora presente nel workspace.',
+          disabled: !ready || busy,
+          onclick: () => edit('speakers')
+        },
+        {
+          label: showSchedule ? 'Chiudi programmazione' : 'Programmazione',
+          helpTitle: 'Programmazione',
+          description:
+            'Consulta il calendario delle interviste e organizza gli appuntamenti: giorno, orario e stato di conferma. Le modifiche sono condivise con il team.',
+          onclick: () => (showSchedule = !showSchedule)
+        }
+      ]}
+      groups={[
+        {
+          title: 'Contenuti',
+          actions: [
+            {
+              label: 'Importa JSON',
+              description:
+                'Carica un file JSON o incolla contenuti strutturati, per esempio ricerche e domande preparate con un assistente AI o un export editoriale. Puoi controllare e selezionare le modifiche prima di confermare il salvataggio.',
+              disabled: !ready || busy,
+              onclick: () => {
+                updatingTags = false;
+                importText = '';
+                importing = true;
+                editing = null;
+              }
+            },
+            {
+              label: 'Importa tutti gli 84 speaker',
+              description:
+                'Prepara l’importazione del catalogo di Codemotion con gli 84 speaker e i contenuti collegati. Propone solo i record mancanti: le schede già presenti non vengono sostituite. Controlla l’anteprima prima di confermare.',
+              disabled: !ready || busy,
+              onclick: loadCatalog
+            },
+            {
+              label: 'Importa traduzioni IT/EN',
+              description:
+                'Recupera le traduzioni già predisposte per biografie e abstract del catalogo. Propone quelle mancanti ed esclude le schede già verificate o con originale modificato. Controlla i testi nell’anteprima prima di importarli.',
+              disabled: !ready || busy,
+              onclick: loadTranslations
+            },
+            {
+              label: 'Aggiorna tag',
+              description:
+                'Propone argomenti per gli speaker a partire dalle parole chiave nei titoli e negli abstract dei talk. Scegli quali aggiungere: i tag esistenti vengono conservati.',
+              disabled: !ready || busy,
+              onclick: () => {
+                updatingTags = true;
+                importing = false;
+                editing = null;
+              }
+            },
+            ...(ready && !speakers.length
+              ? [
+                  {
+                    label: 'Prepara import dei 5 speaker',
+                    description:
+                      'Carica il pacchetto iniziale di cinque speaker con materiali e domande di esempio. È un punto di partenza per un workspace vuoto; puoi controllare l’anteprima prima di importare.',
+                    disabled: busy,
+                    onclick: loadSeed
+                  }
+                ]
+              : [])
+          ]
+        },
+        {
+          title: 'Esportazioni e backup',
+          actions: [
+            {
+              label: exporting ? 'Chiudi export' : 'Esporta il mio lavoro',
+              helpTitle: 'Esporta il mio lavoro',
+              description:
+                'Seleziona e scarica i contenuti editoriali e le modifiche salvate nel workspace condiviso, con la possibilità di includere i tuoi voti. Serve a trasferire il lavoro tramite Importa JSON. Non comprende le bozze non salvate e non è una copia completa del workspace.',
+              disabled: !ready || busy,
+              onclick: () => (exporting = !exporting)
+            },
+            {
+              label: 'Export / import completo',
+              description:
+                'Scarica una copia completa dei dati del workspace, inclusi interessi e scalette condivise. Usala per conservare o trasferire il lavoro. Il ripristino può sostituire dati esistenti, richiede un amministratore e mostra un’anteprima da confermare.',
+              disabled: !ready || busy,
+              onclick: () => (fullBackup = !fullBackup)
+            }
+          ]
+        },
+        ...(superadmin
+          ? [
+              {
+                title: 'Accessi',
+                actions: [
+                  {
+                    label: managingAccess ? 'Chiudi accessi' : 'Gestisci accessi',
+                    helpTitle: 'Gestisci accessi',
+                    description:
+                      'Abilita o revoca l’accesso al workspace per gli account Google dei collaboratori. È una funzione riservata agli amministratori; non assegna gli speaker ai conduttori.',
+                    onclick: () => (managingAccess = !managingAccess)
+                  }
+                ]
+              }
+            ]
+          : [])
+      ]}
+    />
     {#if !online}<p class="warning" role="status">
         Sei offline. Puoi leggere i dati già caricati in questa sessione. I salvataggi sono
         disabilitati; i dati non ancora caricati non sono disponibili.
@@ -674,10 +741,9 @@
                 ? 'Nessun risultato. Prova un altro nome o filtro.'
                 : 'Il workspace è vuoto.'}
             </p>{/if}
-          {#if ready && !speakers.length}<button class="primary" onclick={loadSeed}
-              >Prepara import dei 5 speaker</button
-            >
-            <p class="muted">Potrai controllare tutti i dati prima di confermare.</p>{/if}
+          {#if ready && !speakers.length}<p class="muted">
+              Usa «Aggiungi speaker» oppure apri «Strumenti» per importare un catalogo.
+            </p>{/if}
         </aside>
         <section class="speaker-detail" aria-label="Scheda speaker">
           {#if speaker}

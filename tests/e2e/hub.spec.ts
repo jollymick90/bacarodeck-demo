@@ -1,5 +1,12 @@
 import { readFile } from 'node:fs/promises';
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
+
+async function openTools(page: Page) {
+  const tools = page.locator('.backoffice-tools');
+  await expect(tools).toBeVisible();
+  if ((await tools.getAttribute('open')) === null) await tools.locator('summary').click();
+}
+
 let administratorToken = '';
 
 test('member prepares the five speakers, CRUD and import work on screen', async ({
@@ -24,9 +31,37 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     timeout: 15000
   });
   await expect(page.getByRole('button', { name: 'Aggiungi speaker', exact: true })).toBeEnabled();
+  const tools = page.locator('.backoffice-tools');
+  await expect(page.locator('.toolbar-actions .action-button')).toHaveCount(2);
+  await expect(tools).toBeVisible();
+  await expect(tools).not.toHaveAttribute('open');
+  await expect(page.getByRole('button', { name: 'Programmazione', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Importa JSON', exact: true })).toBeHidden();
+  const addHelp = page.getByRole('button', { name: 'Informazioni: Aggiungi speaker', exact: true });
+  await addHelp.click();
+  await expect(page.getByRole('dialog')).toContainText('nuova scheda');
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(addHelp).toBeFocused();
+  await openTools(page);
+  const helpButtons = tools.getByRole('button', { name: /^Informazioni:/ });
+  expect(await helpButtons.count()).toBeGreaterThanOrEqual(6);
+  for (const help of await helpButtons.all()) {
+    await help.click();
+    await expect(page.getByRole('dialog').getByRole('heading')).toBeVisible();
+    await expect(page.getByRole('dialog').locator('p')).not.toBeEmpty();
+    await page.getByRole('dialog').getByRole('button', { name: 'Ho capito' }).click();
+    await expect(help).toBeFocused();
+  }
+  await page.screenshot({ path: testInfo.outputPath('backoffice-tools.png'), fullPage: true });
+
   if (!(await page.getByRole('button', { name: /Andrey Breslav/ }).isVisible())) {
-    if (await page.getByRole('button', { name: 'Prepara import dei 5 speaker' }).isVisible()) {
-      await page.getByRole('button', { name: 'Prepara import dei 5 speaker' }).click();
+    if (
+      await page
+        .getByRole('button', { name: 'Prepara import dei 5 speaker', exact: true })
+        .isVisible()
+    ) {
+      await page.getByRole('button', { name: 'Prepara import dei 5 speaker', exact: true }).click();
     } else {
       await page.getByRole('button', { name: 'Importa JSON', exact: true }).click();
       await page
@@ -149,6 +184,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: `test-results/hub-${testInfo.project.name}.png`, fullPage: true });
   await page.reload();
+  await openTools(page);
   await page.getByRole('button', { name: /Andrey Breslav/ }).click();
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
   expect(errors).toEqual([]);
@@ -259,7 +295,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
       })
     ).status()
   ).toBe(409);
-  await page.getByRole('button', { name: 'Importa tutti gli 84 speaker' }).click();
+  await page.getByRole('button', { name: 'Importa tutti gli 84 speaker', exact: true }).click();
   await page.getByRole('button', { name: 'Valida e mostra anteprima' }).click();
   if (await page.getByLabel('Ho verificato le differenze e approvo queste scritture').isVisible()) {
     await page.getByLabel('Ho verificato le differenze e approvo queste scritture').check();
@@ -368,7 +404,8 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     ).status()
   ).toBe(200);
   await page.reload();
-  const translations = page.getByRole('button', { name: 'Importa traduzioni IT/EN' });
+  await openTools(page);
+  const translations = page.getByRole('button', { name: 'Importa traduzioni IT/EN', exact: true });
   await expect(translations).toBeEnabled();
   await translations.click();
   await page.getByRole('button', { name: 'Valida e mostra anteprima' }).click();
@@ -409,6 +446,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     ).status()
   ).toBe(200);
   await page.reload();
+  await openTools(page);
   const updateTags = page.getByRole('button', { name: 'Aggiorna tag', exact: true });
   await expect(updateTags).toBeEnabled();
   await updateTags.click();
@@ -448,7 +486,8 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     ).status()
   ).toBe(200);
   await page.reload();
-  await page.getByRole('button', { name: 'Esporta il mio lavoro' }).click();
+  await openTools(page);
+  await page.getByRole('button', { name: 'Esporta il mio lavoro', exact: true }).click();
   await expect(
     page.locator('.diff-row').filter({ hasText: insightId }).getByRole('heading')
   ).toBeVisible();
@@ -483,6 +522,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     ).status()
   ).toBe(200);
   await page.reload();
+  await openTools(page);
   await page.getByRole('button', { name: 'Importa JSON', exact: true }).click();
   await page.getByLabel('Apri file JSON').setInputFiles({
     name: 'lavoro.json',
@@ -500,7 +540,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   );
   expect(restored.bodyMd).toBe('Uno spunto personale');
   expect(restored.entryOrigin).toBe('manual');
-  await page.getByRole('button', { name: 'Export / import completo' }).click();
+  await page.getByRole('button', { name: 'Export / import completo', exact: true }).click();
   const fullDownload = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Scarica backup completo' }).click();
   const fullFile = await fullDownload;
