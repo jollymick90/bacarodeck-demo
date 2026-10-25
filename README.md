@@ -122,6 +122,22 @@ Quando cambi `ALLOW_LIST`, riavvia il server locale o crea un nuovo deploy Verce
 
 Il `firebase.json` incluso serve soprattutto all’emulatore; **non pubblicarlo ciecamente sopra le regole di un progetto condiviso**. Il service account deve poter verificare gli utenti Auth e leggere/scrivere questo workspace in Firestore. Nessuna regola o credenziale remota è stata modificata automaticamente durante l’implementazione.
 
+## Errore Vercel `ERR_REQUIRE_ESM` nel rendering Markdown
+
+Se lo stack indica `sanitize-html → htmlparser2`, il problema riguarda il caricamento
+delle dipendenze del server, non i documenti Firestore. La build SSR include
+`sanitize-html`, `htmlparser2` e `is-plain-object` e converte il confine CommonJS/ESM;
+la configurazione si applica solo alla build, perché il server Vite di sviluppo usa
+un caricatore diverso. Non vengono retrocesse le dipendenze del filtro HTML: le
+versioni recenti includono [correzioni di sicurezza](https://github.com/apostrophecms/apostrophe/blob/main/packages/sanitize-html/CHANGELOG.md).
+
+Il test `tests/runtime-markdown.test.ts` compila il renderer reale con la
+configurazione SSR del progetto e lo esegue con `--no-experimental-require-module`,
+controllando anche che script, URL JavaScript e attributi evento siano eliminati.
+Pubblica il commit contenente `vite.config.ts` con un nuovo deploy Vercel; se
+ridistribuisci manualmente, scegli il deployment del commit corretto. Cancellare o
+reimportare Firestore non corregge questo errore.
+
 ## Primo caricamento: cinque persone
 
 Un membro entra nel workspace vuoto, sceglie **Prepara import dei 5 speaker**, controlla l’anteprima e conferma esplicitamente. Il seed contiene 5 speaker, 5 talk, 5 piani, 5 materiali, 15 domande suggerite e 2 fonti. Il caricamento non è automatico. Il catalogo completo in `BacaroTech_Schede_Speaker_2026` resta materiale di riferimento e non viene incluso nell’app o importato automaticamente.
