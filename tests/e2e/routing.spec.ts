@@ -94,17 +94,17 @@ test('speaker and scheduling URLs survive reload and browser history', async ({
     await expect(page.getByText('Engineering lead', { exact: true })).toBeVisible();
     await expect(
       page.getByRole('navigation', { name: 'Contenuti dello speaker' }).getByRole('link')
-    ).toHaveText(['Ricerca', 'Domande', 'Intervista']);
+    ).toHaveText(['Info', 'Ricerca', 'Intervista']);
     await expect(
       page.getByRole('link', { name: 'Designing resilient systems', exact: true })
     ).toHaveAttribute('href', `/backoffice/speaker/${id}/talk`);
     await page.getByRole('link', { name: 'Designing resilient systems', exact: true }).click();
     await expect(page).toHaveURL(`/backoffice/speaker/${id}/talk`);
     await page.getByRole('link', { name: 'Ricerca', exact: true }).click();
-    await expect(page).toHaveURL(`/backoffice/speaker/${id}`);
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/ricerca`);
     await page.screenshot({ path: info.outputPath('speaker-profile.png'), fullPage: true });
-    await page.getByRole('link', { name: 'Domande', exact: true }).click();
-    await expect(page).toHaveURL(`/backoffice/speaker/${id}/domande`);
+    await page.getByRole('link', { name: 'Intervista', exact: true }).click();
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/intervista`);
     await page.reload();
     await expect(page.getByRole('heading', { name: 'Routing speaker', exact: true })).toBeVisible();
     await page.getByRole('link', { name: 'Gestione', exact: true }).click();
@@ -113,7 +113,7 @@ test('speaker and scheduling URLs survive reload and browser history', async ({
       0
     );
     await page.goBack();
-    await expect(page).toHaveURL(`/backoffice/speaker/${id}/domande`);
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/intervista`);
     await expect(page.getByRole('heading', { name: 'Routing speaker', exact: true })).toBeVisible();
     await page.goForward();
     await expect(page).toHaveURL('/backoffice');

@@ -437,7 +437,7 @@
             text={String(entry.entity.bodyMd || entry.entity.notesMd || '')}
           />{#if entry.entity.url}<Markdown
               text={'[Apri fonte](' + String(entry.entity.url) + ')'}
-            />{/if}<a href={'/backoffice/speaker/' + encodeURIComponent(selected)}
+            />{/if}<a href={'/backoffice/speaker/' + encodeURIComponent(selected) + '/ricerca'}
             >Apri in gestione</a
           >
         </article>{:else}<p>Non sono ancora presenti approfondimenti per questo speaker.</p>{/each}

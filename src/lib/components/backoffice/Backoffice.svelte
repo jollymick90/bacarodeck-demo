@@ -7,13 +7,13 @@
   import { searchSpeakers } from '$lib/speaker-search';
   import { labels, translate, type Collection, type Entity } from '$lib/fields';
   import { safeUrl, provenanceLabel } from '$lib/domain';
-  import { commitChanges, removeEntity, refreshData } from '$lib/repository';
+  import { commitChanges, removeEntity } from '$lib/repository';
   import { team } from '$lib/team';
   import ResearchQuestionPromotion from '$lib/components/conductor/ResearchQuestionPromotion.svelte';
   import AssignmentControl from '$lib/components/conductor/AssignmentControl.svelte';
   import ResearchAssistant from '$lib/components/ResearchAssistant.svelte';
   import InterviewBadges from '$lib/components/InterviewBadges.svelte';
-  import QuestionRating from '$lib/components/QuestionRating.svelte';
+  import InterviewQuestions from './InterviewQuestions.svelte';
   import ConfirmDelete from '$lib/components/ConfirmDelete.svelte';
   import Markdown from '$lib/components/Markdown.svelte';
   import ResearchReader from '$lib/components/ResearchReader.svelte';
@@ -24,10 +24,11 @@
   const client = $derived(workspace.client);
   const user = $derived(workspace.user);
   const ready = $derived(workspace.ready);
-  const tabLabels = { ...labels, materials: 'Ricerca' };
+  const tabLabels = { ...labels, speakers: 'Info', materials: 'Ricerca', questions: 'Intervista' };
   const sections: Partial<Record<Collection, string>> = {
-    materials: '',
-    questions: '/domande',
+    speakers: '',
+    materials: '/ricerca',
+    questions: '/intervista',
     interviewPlans: '/intervista',
     talks: '/talk'
   };
@@ -49,7 +50,6 @@
   const prep = $derived(page.url.searchParams.get('preparazione') ?? '');
   const assignee = $derived(page.url.searchParams.get('conduttore') ?? '');
   let language = $state<'it' | 'en'>('it');
-  let sortByRating = $state(false);
   let busy = $state(false);
   let deleting = $state<{ collection: Collection; entity: Entity } | null>(null);
   const speakers = $derived(data.speakers || []);
@@ -86,15 +86,7 @@
               e.speakerId === selectedId || ((e.speakerIds as string[]) || []).includes(selectedId)
             );
           })
-          .toSorted((a, b) => {
-            const average = (e: Entity) => {
-              const votes = Object.values((e.ratings || {}) as Record<string, number>);
-              return votes.length ? votes.reduce((x, y) => x + y, 0) / votes.length : 0;
-            };
-            return tab === 'questions' && sortByRating
-              ? average(b) - average(a)
-              : Number(a.order || 0) - Number(b.order || 0);
-          })
+          .toSorted((a, b) => Number(a.order || 0) - Number(b.order || 0))
           .map((entity) => ({ collection: tab, entity }))
   );
   async function saveResearch(records: Entity[]) {
@@ -266,121 +258,105 @@
         {:else}<p class="muted">Talk non ancora disponibile.</p>{/each}
       </header>
       <nav class="tabs" aria-label="Contenuti dello speaker">
-        {#each ['materials', 'questions', 'interviewPlans'] as name}<a
+        {#each ['speakers', 'materials', 'questions'] as name}<a
             class:current={tab === name}
             aria-current={tab === name ? 'page' : undefined}
             href={speakerPath(selectedId) + sections[name as Collection]}
             >{tabLabels[name as Collection]}</a
           >{/each}
       </nav>
-      <div class="language">
-        <button onclick={() => (language = 'it')} aria-pressed={language === 'it'}>Italiano</button>
-        <button onclick={() => (language = 'en')} aria-pressed={language === 'en'}>English</button>
-      </div>
-      <div class="chips">
-        <span>{isInInterviewList(speaker) ? 'In elenco' : 'Non in elenco'}</span>
-        {#if speaker.isKeynote}<span class="keynote-badge">Keynote</span>{/if}
-        {#each (speaker.tags as string[]) || [] as t}<span>{String(t)}</span>{/each}
-        <span>{translate(plan?.status) || 'Da preparare'}</span>
-      </div>
-      <AssignmentControl {speaker} {plan} />
-      <p>
-        <a href={'/speaker/' + encodeURIComponent(speaker.id) + '/scaletta'}
-          >Apri scaletta conduttore</a
-        >
-      </p>
-      {#if !(language === 'it' ? speaker.biographyIt : speaker.biographyEn)}<p class="muted">
-          Traduzione {language.toUpperCase()} non disponibile: viene mostrata la descrizione originale.
-        </p>{:else if !speaker.translationReviewed}<p class="muted">
-          Traduzione da verificare.
-        </p>{/if}
-      {#if ((speaker.reviewFlags as string[]) || []).length}<p class="warning">
-          Da verificare: {(speaker.reviewFlags as string[]).join(', ')}
-        </p>{/if}
-      <div class="detail-actions">
-        <a class="button-link primary" href={editPath('materials')}>+ Aggiungi ricerca</a><a
-          class="button-link"
-          href={editPath('speakers', speaker)}>Modifica profilo e intervista</a
-        >
-      </div>
-      <details class="bio">
-        <summary>Biografia e note speaker</summary><Markdown
-          text={display(language === 'it' ? speaker.biographyIt : speaker.biographyEn) ||
-            display(speaker.biographyMd) ||
-            'Descrizione non ancora disponibile.'}
-        /><Markdown text={display(speaker.notesMd)} />
-        <p class="muted">
-          Dati riportati dalle fonti: {((speaker.sourceIds as string[]) || []).join(', ')}
-        </p>
-        <button
-          class="danger text-button"
-          onclick={() => (deleting = { collection: 'speakers', entity: speaker })}
-          >Elimina speaker</button
-        >
-      </details>
-
-      <div class="section-heading">
-        <h3>{tabLabels[tab]}</h3>
-        {#if tab === 'questions'}<button onclick={() => (sortByRating = !sortByRating)}
-            >{sortByRating ? 'Ordina per scaletta' : 'Ordina per voto'}</button
-          ><a
-            class="button-link"
-            href={'/backoffice/importa/domande?speaker=' + encodeURIComponent(selectedId)}
-            >Prepara altre 10 domande</a
+      {#if tab === 'speakers'}
+        <div class="language">
+          <button onclick={() => (language = 'it')} aria-pressed={language === 'it'}
+            >Italiano</button
           >
-          <div class="language-switch" aria-label="Lingua domande">
-            <button class:current={language === 'it'} onclick={() => (language = 'it')}>IT</button
-            ><button class:current={language === 'en'} onclick={() => (language = 'en')}>EN</button>
-          </div>{/if}<a
-          class="button-link"
-          href={editPath(tab, tab === 'interviewPlans' ? plan : undefined)}
-          >{tab === 'materials'
-            ? 'Aggiungi ricerca'
-            : tab === 'interviewPlans' && plan
-              ? 'Modifica piano'
-              : 'Aggiungi'}</a
-        >
-      </div>
-      {#if tab === 'materials'}
-        {#key speaker.id}<ResearchAssistant {speaker} {data} {busy} onsave={saveResearch} />{/key}
-      {/if}
-      {#if !related.length}<div class="empty-state">
-          <h3>Spazio alla ricerca.</h3>
-          <p>
-            Non ci sono ancora {tabLabels[tab].toLowerCase()} per {speaker.firstName ||
-              speaker.fullName}. Aggiungi il primo contenuto.
+          <button onclick={() => (language = 'en')} aria-pressed={language === 'en'}>English</button
+          >
+        </div>
+        <div class="chips">
+          <span>{isInInterviewList(speaker) ? 'In elenco' : 'Non in elenco'}</span>
+          {#if speaker.isKeynote}<span class="keynote-badge">Keynote</span>{/if}
+          {#each (speaker.tags as string[]) || [] as t}<span>{String(t)}</span>{/each}
+          <span>{translate(plan?.status) || 'Da preparare'}</span>
+        </div>
+        <AssignmentControl {speaker} {plan} />
+        <p>
+          <a href={'/speaker/' + encodeURIComponent(speaker.id) + '/scaletta'}
+            >Apri scaletta conduttore</a
+          >
+        </p>
+        {#if !(language === 'it' ? speaker.biographyIt : speaker.biographyEn)}<p class="muted">
+            Traduzione {language.toUpperCase()} non disponibile: viene mostrata la descrizione originale.
+          </p>{:else if !speaker.translationReviewed}<p class="muted">
+            Traduzione da verificare.
+          </p>{/if}
+        {#if ((speaker.reviewFlags as string[]) || []).length}<p class="warning">
+            Da verificare: {(speaker.reviewFlags as string[]).join(', ')}
+          </p>{/if}
+        <div class="detail-actions">
+          <a class="button-link primary" href={editPath('materials')}>+ Aggiungi ricerca</a><a
+            class="button-link"
+            href={editPath('speakers', speaker)}>Modifica profilo e intervista</a
+          >
+        </div>
+        <section class="bio" aria-label="Biografia e note speaker">
+          <h2>Biografia e note speaker</h2>
+          <Markdown
+            text={display(language === 'it' ? speaker.biographyIt : speaker.biographyEn) ||
+              display(speaker.biographyMd) ||
+              'Descrizione non ancora disponibile.'}
+          /><Markdown text={display(speaker.notesMd)} />
+          <p class="muted">
+            Dati riportati dalle fonti: {((speaker.sourceIds as string[]) || []).join(', ')}
           </p>
-          <a class="button-link" href={editPath(tab)}>Aggiungi {tabLabels[tab].toLowerCase()}</a>
-        </div>{/if}
-      {#each related as { collection, entity } (collection + ':' + entity.id)}
-        <article class="content-entry">
-          <div class="entry-meta">
-            <span
-              >{provenanceLabel(collection, entity)}{tab === 'questions'
-                ? ' · ' + (entity.order || '—')
-                : ''}</span
-            >{#if entity.status}<span class="status">{translate(entity.status)}</span>{/if}
+          <button
+            class="danger text-button"
+            onclick={() => (deleting = { collection: 'speakers', entity: speaker })}
+            >Elimina speaker</button
+          >
+        </section>
+      {:else if tab === 'questions'}
+        <InterviewQuestions
+          speakerId={selectedId}
+          ondelete={(entity) => (deleting = { collection: 'questions', entity })}
+        />
+      {:else}
+        {#if tab === 'talks'}
+          <div class="language" role="group" aria-label="Lingua talk">
+            <button onclick={() => (language = 'it')} aria-pressed={language === 'it'}
+              >Italiano</button
+            >
+            <button onclick={() => (language = 'en')} aria-pressed={language === 'en'}
+              >English</button
+            >
           </div>
-          <h3>{tab === 'interviewPlans' ? 'Piano intervista' : title(entity)}</h3>
-          {#if tab === 'questions'}<QuestionRating
-              question={entity}
-              onchange={refreshData}
-            /><Markdown text={display(language === 'it' ? entity.followUpIt : entity.followUpEn)} />
-            <details>
-              <summary>Motivazione e note</summary><Markdown
-                text={display(entity.whyMd)}
-              /><Markdown text={display(entity.notesMd)} />
-            </details>
-          {:else if tab === 'interviewPlans'}<p>
-              Intervistatore: {entity.assignedToName ||
-                [...team, ...members].find((m) => m.id === entity.assignedToUid)?.displayName ||
-                'Non assegnato'}
+        {/if}
+        <div class="section-heading">
+          <h3>{tabLabels[tab]}</h3>
+          <a class="button-link" href={editPath(tab)}
+            >{tab === 'materials' ? 'Aggiungi ricerca' : 'Aggiungi talk'}</a
+          >
+        </div>
+        {#if tab === 'materials'}
+          {#key speaker.id}<ResearchAssistant {speaker} {data} {busy} onsave={saveResearch} />{/key}
+        {/if}
+        {#if !related.length}<div class="empty-state">
+            <h3>Spazio alla ricerca.</h3>
+            <p>
+              Non ci sono ancora {tabLabels[tab].toLowerCase()} per {speaker.firstName ||
+                speaker.fullName}. Aggiungi il primo contenuto.
             </p>
-            <InterviewBadges plan={entity} />
-            <p>{entity.date || 'Data da concordare'} {entity.startTime || ''}</p>
-            <p>Obiettivo: {entity.targetQuestions || '—'} domande</p>
-            <Markdown text={display(entity.notesMd)} />
-          {:else}{#if tab === 'talks'}<p class="muted">
+            <a class="button-link" href={editPath(tab)}>Aggiungi {tabLabels[tab].toLowerCase()}</a>
+          </div>{/if}
+        {#each related as { collection, entity } (collection + ':' + entity.id)}
+          <article class="content-entry">
+            <div class="entry-meta">
+              <span>{provenanceLabel(collection, entity)}</span>{#if entity.status}<span
+                  class="status">{translate(entity.status)}</span
+                >{/if}
+            </div>
+            <h3>{title(entity)}</h3>
+            {#if tab === 'talks'}<p class="muted">
                 {!(language === 'it' ? entity.abstractIt : entity.abstractEn)
                   ? 'Traduzione non disponibile: abstract originale.'
                   : entity.translationReviewed
@@ -404,25 +380,26 @@
               />{/if}{#if tab === 'talks'}<p>
                 {entity.day || 'Giorno da confermare'} · {entity.time || 'Orario da confermare'} · {entity.stage ||
                   'Palco da confermare'}
-              </p>{/if}<Markdown text={display(entity.notesMd)} />{/if}
-          {#if entity.url && safeUrl(entity.url)}<a
-              href={display(entity.url)}
-              target="_blank"
-              rel="noopener noreferrer">Apri fonte originale</a
-            >{/if}
-          {#if ((entity.sourceIds as string[]) || []).length}<p class="provenance">
-              Fonti: {(entity.sourceIds as string[])
-                .map((id) => data.sources?.find((s) => s.id === id)?.title || id)
-                .join(', ')}
-            </p>{/if}
-          <div class="entry-actions">
-            <a class="button-link" href={editPath(collection, entity)}>Modifica</a><button
-              class="danger quiet"
-              onclick={() => (deleting = { collection, entity })}>Elimina</button
-            >
-          </div>
-        </article>
-      {/each}
+              </p>{/if}<Markdown text={display(entity.notesMd)} />
+            {#if entity.url && safeUrl(entity.url)}<a
+                href={display(entity.url)}
+                target="_blank"
+                rel="noopener noreferrer">Apri fonte originale</a
+              >{/if}
+            {#if ((entity.sourceIds as string[]) || []).length}<p class="provenance">
+                Fonti: {(entity.sourceIds as string[])
+                  .map((id) => data.sources?.find((s) => s.id === id)?.title || id)
+                  .join(', ')}
+              </p>{/if}
+            <div class="entry-actions">
+              <a class="button-link" href={editPath(collection, entity)}>Modifica</a><button
+                class="danger quiet"
+                onclick={() => (deleting = { collection, entity })}>Elimina</button
+              >
+            </div>
+          </article>
+        {/each}
+      {/if}
     {:else}<div class="empty-state">
         <h2>Speaker non trovato</h2>
         <p>La scheda non esiste oppure è stata eliminata.</p>

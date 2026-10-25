@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { getWorkspace } from '$lib/workspace.svelte';
   import { collections, type Dataset } from '$lib/fields';
@@ -13,7 +14,15 @@
   let failure = $state('');
   let busy = $state(false);
   const destination = $derived(
-    speakerId ? '/backoffice/speaker/' + encodeURIComponent(speakerId) + '/domande' : '/backoffice'
+    speakerId
+      ? '/backoffice/speaker/' +
+          encodeURIComponent(speakerId) +
+          '/intervista?' +
+          new URLSearchParams({
+            talk: page.url.searchParams.get('talk') || '',
+            lang: page.url.searchParams.get('lang') || 'it'
+          })
+      : '/backoffice'
   );
   onMount(() => {
     let active = true;
@@ -50,9 +59,12 @@
         });
         if (!response.ok) throw new Error('Impossibile controllare le domande eliminate.');
         const deleted: string[] = await response.json();
-        const talk = data.talks?.find((item) =>
+        const speakerTalks = (data.talks || []).filter((item) =>
           ((item.speakerIds as string[]) || []).includes(speakerId)
         );
+        const talk =
+          speakerTalks.find((item) => item.id === page.url.searchParams.get('talk')) ||
+          speakerTalks[0];
         const questions = draftQuestions(
           speaker,
           talk,

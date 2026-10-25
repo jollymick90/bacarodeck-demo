@@ -1,13 +1,19 @@
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import type { Collection } from '$lib/fields';
-export function load({ params }: { params: { speakerId: string; section?: string } }) {
+import type { PageLoad } from './$types';
+export const load: PageLoad = ({ params, url }) => {
+  if (params.section === 'domande')
+    redirect(
+      307,
+      '/backoffice/speaker/' + encodeURIComponent(params.speakerId) + '/intervista' + url.search
+    );
   const tabs: Record<string, Collection> = {
+    info: 'speakers',
     ricerca: 'materials',
-    domande: 'questions',
-    intervista: 'interviewPlans',
+    intervista: 'questions',
     talk: 'talks'
   };
-  const tab = params.section ? tabs[params.section] : 'materials';
+  const tab = tabs[params.section];
   if (!tab) error(404, 'Sezione non trovata');
   return { speakerId: params.speakerId, tab };
-}
+};

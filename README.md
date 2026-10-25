@@ -46,7 +46,8 @@ Ogni schermata ha una pagina SvelteKit e un URL apribile direttamente:
 
 - `/speaker`, `/speaker/[id]`, `/speaker/[id]/scaletta`: elenco, scheda e lettura per il conduttore.
 - `/topic` e `/topic/[topic]`: esplorazione degli argomenti.
-- `/backoffice/speaker/[id]`: ricerca dello speaker; `/domande`, `/intervista` e `/talk` per le altre sezioni.
+- `/backoffice/speaker/[id]`: Info con biografia, assegnazione e modifica del profilo; `/ricerca` per gli approfondimenti; `/intervista` unisce domande e preparazione; `/talk` per i dettagli del talk. I vecchi link `/domande` rimandano a `/intervista`.
+- In Intervista le **Domande per intervista** compaiono prima delle altre, evidenziate e riordinabili. La selezione, fino a tre domande per talk, è condivisa con la scaletta conduttore. In assenza di una selezione salvata vengono proposte le prime tre domande, da confermare.
 - `/backoffice/programmazione`: calendario delle interviste.
 - `/backoffice/contenuti/[collection]/[id]` e `/backoffice/nuovo/[collection]`: lettura/modifica e creazione dei contenuti.
 - `/backoffice/importa`, `/esporta`, `/backup`, `/tag`, `/accessi`: strumenti dedicati (tutti sotto `/backoffice`).

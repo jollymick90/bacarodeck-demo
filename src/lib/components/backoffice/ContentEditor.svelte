@@ -1,5 +1,6 @@
 <script lang="ts">
   import { untrack } from 'svelte';
+  import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { getWorkspace } from '$lib/workspace.svelte';
   import { emptyEntity, type Collection, type Entity } from '$lib/fields';
@@ -37,13 +38,25 @@
         : String(entity?.speakerId || (entity?.speakerIds as string[] | undefined)?.[0] || ''))
   );
   const suffix: Partial<Record<Collection, string>> = {
-    questions: '/domande',
+    questions: '/intervista',
+    materials: '/ricerca',
+    sources: '/ricerca',
+    insights: '/ricerca',
     interviewPlans: '/intervista',
     talks: '/talk'
   };
   const returnPath = untrack(() =>
     relatedSpeaker
-      ? '/backoffice/speaker/' + encodeURIComponent(relatedSpeaker) + (suffix[collection] || '')
+      ? '/backoffice/speaker/' +
+        encodeURIComponent(relatedSpeaker) +
+        (suffix[collection] || '') +
+        (collection === 'questions'
+          ? '?' +
+            new URLSearchParams({
+              talk: page.url.searchParams.get('talk') || '',
+              lang: page.url.searchParams.get('lang') || 'it'
+            })
+          : '')
       : '/backoffice'
   );
   let busy = $state(false);

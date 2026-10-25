@@ -82,6 +82,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   }
   await page.getByRole('link', { name: /Andrey Breslav/ }).click();
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
+  await page.getByRole('link', { name: 'Ricerca', exact: true }).click();
   const assistant = page.locator('.research-assistant');
   await assistant.locator('summary').click();
   await assistant.getByRole('button', { name: 'Copia prompt ricerca', exact: true }).click();
@@ -125,7 +126,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     await page.getByRole('button', { name: 'Elimina definitivamente' }).click();
     await expect(entry).toHaveCount(0);
   }
-  await page.getByRole('link', { name: '+ Aggiungi ricerca', exact: true }).click();
+  await page.getByRole('link', { name: 'Aggiungi ricerca', exact: true }).click();
   await page.getByLabel('Titolo (facoltativo)').fill('Ricerca da Gemini');
   const markdown = '# Appunti da Gemini\n\n' + 'Testo lungo senza metadati. '.repeat(110);
   await page.getByLabel('Testo Markdown').fill(markdown);
@@ -172,16 +173,16 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     'https://example.org/codemotion'
   );
   await expect(source.getByText('Fonte verificata dal team')).toBeVisible();
+  await page.getByRole('link', { name: 'Info', exact: true }).click();
   await page.getByRole('link', { name: 'Modifica profilo e intervista' }).click();
   await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
   await page.getByLabel('Preparazione', { exact: true }).selectOption('ready');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
-  await page.getByRole('link', { name: 'Intervista', exact: true }).click();
   await page.getByRole('button', { name: 'Assegna / cambia' }).click();
   await page.getByLabel('Conduttore', { exact: true }).selectOption('alberto');
   await page.getByRole('button', { name: /Conferma (riassegnazione|assegnazione)/ }).click();
   await expect(page.locator('.assignment-control')).toContainText('Alberto');
-  await page.getByRole('link', { name: 'Domande', exact: true }).click();
+  await page.getByRole('link', { name: 'Intervista', exact: true }).click();
   await expect(
     page.getByRole('heading', { name: /Cosa ti ha insegnato costruire Kotlin/ })
   ).toBeVisible();
@@ -192,7 +193,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: `test-results/hub-${testInfo.project.name}.png`, fullPage: true });
   await page.reload();
-  await expect(page).toHaveURL('/backoffice/speaker/andrey-breslav/domande');
+  await expect(page).toHaveURL('/backoffice/speaker/andrey-breslav/intervista?lang=en');
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
   expect(errors).toEqual([]);
   // Data endpoints independently authorize requests and preserve atomic conflicts.
