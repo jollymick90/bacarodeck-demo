@@ -109,13 +109,16 @@
         giovedì). Gli slot non sono prenotati automaticamente.
       </p>
       <label
-        >Intervistatore<select bind:value={draft.interviewerId}
+        >Intervistatore<select disabled bind:value={draft.interviewerId}
           ><option value="">Da assegnare</option
           >{#each team.filter((m) => m.role === 'interview') as member}<option value={member.id}
               >{member.displayName}</option
             >{/each}</select
         ></label
       >
+      <p class="muted">
+        L’intervistatore si cambia dalla scheda speaker tramite «Assegna / cambia».
+      </p>
       <label
         >Camera<select bind:value={draft.cameraId}
           ><option value="">Da assegnare</option

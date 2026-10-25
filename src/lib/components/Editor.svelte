@@ -71,7 +71,13 @@
     'startTime',
     'targetQuestions'
   ];
-  const visible = $derived(fields[collection].filter((f) => advanced || mainKeys.includes(f.key)));
+  const visible = $derived(
+    fields[collection].filter(
+      (f) =>
+        !['assignedToUid', 'assignedToName', 'assignedTeamId'].includes(f.key) &&
+        (advanced || mainKeys.includes(f.key))
+    )
+  );
   function update(field: Field, value: string | boolean) {
     if (field.type === 'array')
       draft[field.key] = String(value)
@@ -127,6 +133,9 @@
     <button type="button" class="quiet" onclick={oncancel} disabled={busy}>Chiudi</button>
   </div>
   <form onsubmit={save}>
+    {#if collection === 'interviewPlans'}<p class="notice">
+        Per assegnare o riassegnare usa «Assegna / cambia» nella scheda speaker.
+      </p>{/if}
     {#each visible as field}
       <div class:wide={field.type === 'markdown'} class="field">
         <label for={'edit-' + field.key}>{field.label}</label>

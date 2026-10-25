@@ -1,12 +1,13 @@
 import { collections, auditKeys, type Entity, type Collection } from './fields';
 import { validateEntity } from './domain';
+import { validateBrief } from './conductor/brief';
 
 export const backupCollections = [...collections, 'members', 'deletedQuestions'] as const;
 export type BackupCollection = (typeof backupCollections)[number];
 export type BackupData = Record<BackupCollection, Entity[]>;
 export type WorkspaceBackup = {
   format: 'bacarodeck-workspace';
-  version: 1;
+  version: 1 | 2;
   workspaceId: 'codemotion-milano-2026';
   exportedAt: string;
   data: BackupData;
@@ -41,7 +42,7 @@ export function equivalentRestore(a: Entity | null, b: Entity | null): boolean {
 export function makeBackup(data: Partial<BackupData>): WorkspaceBackup {
   return {
     format: 'bacarodeck-workspace',
-    version: 1,
+    version: 2,
     workspaceId: 'codemotion-milano-2026',
     exportedAt: new Date().toISOString(),
     data: Object.fromEntries(
@@ -125,7 +126,7 @@ export function parseBackup(text: string): WorkspaceBackup {
   if (
     !value ||
     value.format !== 'bacarodeck-workspace' ||
-    value.version !== 1 ||
+    ![1, 2].includes(value.version) ||
     value.workspaceId !== 'codemotion-milano-2026' ||
     typeof value.exportedAt !== 'string' ||
     !Number.isFinite(Date.parse(value.exportedAt)) ||
@@ -138,6 +139,12 @@ export function parseBackup(text: string): WorkspaceBackup {
   )
     throw new Error('File backup completo non valido. Usa il pannello dedicato al tipo di export.');
   for (const collection of backupCollections) {
+    if (
+      value.version === 1 &&
+      ['conductorBriefs', 'speakerInterests'].includes(collection) &&
+      value.data[collection] === undefined
+    )
+      value.data[collection] = [];
     const entities = value.data[collection];
     if (!Array.isArray(entities)) throw new Error(`Collezione mancante: ${collection}.`);
     const ids = new Set<string>();
@@ -159,6 +166,18 @@ export function planRestore(
   source: WorkspaceBackup,
   destination: WorkspaceBackup
 ): RestoreChange[] {
+  const context = Object.fromEntries(
+    collections.map((name) => [
+      name,
+      [
+        ...destination.data[name].filter((e) => !source.data[name].some((s) => s.id === e.id)),
+        ...source.data[name]
+      ]
+    ])
+  ) as import('./fields').Dataset;
+  const deleted = new Set(source.data.deletedQuestions.map((q) => q.id));
+  context.questions = context.questions?.filter((q) => !deleted.has(q.id));
+  for (const brief of source.data.conductorBriefs) validateBrief(brief, context);
   const result: RestoreChange[] = [];
   for (const collection of backupCollections) {
     const existing = new Map(destination.data[collection].map((entity) => [entity.id, entity]));

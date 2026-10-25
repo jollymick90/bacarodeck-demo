@@ -22,8 +22,10 @@ export function getFirebase() {
   const auth = getAuth(app);
   const db = initializeFirestore(app, { localCache: memoryLocalCache() });
   if (!existing && import.meta.env.DEV && env.PUBLIC_USE_EMULATORS === 'true') {
-    connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
-    connectFirestoreEmulator(db, '127.0.0.1', 8080);
+    connectAuthEmulator(auth, env.PUBLIC_AUTH_EMULATOR_URL || 'http://127.0.0.1:9099', {
+      disableWarnings: true
+    });
+    connectFirestoreEmulator(db, '127.0.0.1', Number(env.PUBLIC_FIRESTORE_EMULATOR_PORT || 8080));
   }
   return { auth, db };
 }

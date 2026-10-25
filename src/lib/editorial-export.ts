@@ -48,6 +48,7 @@ export function trackEditorialFields(
 export function exportCandidates(current: Dataset, baselines: Dataset[]): ExportRow[] {
   const rows: ExportRow[] = [];
   for (const collection of collections) {
+    if (collection === 'speakerInterests') continue;
     for (const entity of current[collection] || []) {
       const known = baselines.flatMap((base) =>
         (base[collection] || []).filter((item) => item.id === entity.id)
@@ -121,11 +122,14 @@ export function buildEditorialExport(
     for (const [field, collection] of [
       ['speakerIds', 'speakers'],
       ['sourceIds', 'sources'],
-      ['materialIds', 'materials']
+      ['materialIds', 'materials'],
+      ['mainQuestionIds', 'questions'],
+      ['classicQuestionIds', 'questions']
     ] as const) {
       for (const id of (entity[field] as string[] | undefined) || []) addDependency(collection, id);
     }
     if (typeof entity.speakerId === 'string') addDependency('speakers', entity.speakerId);
+    if (typeof entity.talkId === 'string' && entity.talkId) addDependency('talks', entity.talkId);
   }
   if (personalRatings.length) {
     result.personalRatings = personalRatings;

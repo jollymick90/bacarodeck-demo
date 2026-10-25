@@ -10,7 +10,7 @@ export function refreshWorkspace() {
 export function refreshData() {
   refresh.dispatchEvent(new CustomEvent('change', { detail: ['questions'] }));
 }
-async function api(path: string, body?: unknown) {
+export async function api(path: string, body?: unknown) {
   if (typeof navigator !== 'undefined' && navigator.onLine === false)
     throw new Error('Sei offline. Conserva il testo e riprova quando torna la connessione.');
   const user = getAuth().currentUser;

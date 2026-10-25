@@ -9,7 +9,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.clock.install();
-  await page.goto('/');
+  await page.goto('/backoffice');
   const accessRequest = page.waitForRequest('**/api/access');
   const popupPromise = page.waitForEvent('popup');
   await page.getByRole('button', { name: 'Accedi con Google' }).click();
@@ -24,8 +24,15 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     timeout: 15000
   });
   await expect(page.getByRole('button', { name: 'Aggiungi speaker', exact: true })).toBeEnabled();
-  if (await page.getByRole('button', { name: 'Prepara import dei 5 speaker' }).isVisible()) {
-    await page.getByRole('button', { name: 'Prepara import dei 5 speaker' }).click();
+  if (!(await page.getByRole('button', { name: /Andrey Breslav/ }).isVisible())) {
+    if (await page.getByRole('button', { name: 'Prepara import dei 5 speaker' }).isVisible()) {
+      await page.getByRole('button', { name: 'Prepara import dei 5 speaker' }).click();
+    } else {
+      await page.getByRole('button', { name: 'Importa JSON', exact: true }).click();
+      await page
+        .getByLabel('JSON da importare')
+        .fill(await readFile(new URL('../../data/seed/seed_five.json', import.meta.url), 'utf8'));
+    }
     await page.getByRole('button', { name: 'Valida e mostra anteprima' }).click();
     await page.getByLabel('Ho verificato le differenze e approvo queste scritture').check();
     await page.getByRole('button', { name: 'Conferma importazione' }).click();
@@ -121,17 +128,13 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   );
   await expect(source.getByText('Fonte verificata dal team')).toBeVisible();
   await page.getByRole('button', { name: 'Prepara intervista' }).click();
-  const uid = await page
-    .getByLabel('Intervistatore', { exact: true })
-    .locator('option')
-    .filter({ hasText: 'Editor Bacaro' })
-    .last()
-    .getAttribute('value');
-  await page.getByLabel('Intervistatore', { exact: true }).selectOption(uid!);
   await page.getByLabel('Preparazione', { exact: true }).selectOption('ready');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
   await page.getByRole('button', { name: 'Intervista', exact: true }).click();
-  await expect(page.getByText('Intervistatore: Editor Bacaro')).toBeVisible();
+  await page.getByRole('button', { name: 'Assegna / cambia' }).click();
+  await page.getByLabel('Conduttore', { exact: true }).selectOption('alberto');
+  await page.getByRole('button', { name: /Conferma (riassegnazione|assegnazione)/ }).click();
+  await expect(page.locator('.assignment-control')).toContainText('Alberto');
   await page.getByRole('button', { name: 'Domande', exact: true }).click();
   await expect(
     page.getByRole('heading', { name: /Cosa ti ha insegnato costruire Kotlin/ })
@@ -150,7 +153,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   const authorization = (await accessRequest).headers().authorization;
   const headers = { Authorization: authorization };
   const accessIdentity = await (await request.post('/api/access', { headers })).json();
-  const memberUrl = `http://127.0.0.1:8080/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/members/${accessIdentity.uid}`;
+  const memberUrl = `http://${process.env.FIRESTORE_EMULATOR_HOST || '127.0.0.1:8080'}/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/members/${accessIdentity.uid}`;
   const beforeMember = await (
     await request.get(memberUrl, { headers: { Authorization: 'Bearer owner' } })
   ).json();
@@ -612,7 +615,7 @@ test('Google accounts outside ALLOW_LIST cannot open the workspace', async ({ pa
   expect(
     (await request.post('/api/data', { data: { action: 'save', changes: [] } })).status()
   ).toBe(401);
-  await page.goto('/');
+  await page.goto('/backoffice');
   const deniedRequest = page.waitForRequest('**/api/access');
   const popupPromise = page.waitForEvent('popup');
   await page.getByRole('button', { name: 'Accedi con Google' }).click();

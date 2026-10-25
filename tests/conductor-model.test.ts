@@ -1,0 +1,47 @@
+import { describe, expect, it } from 'vitest';
+import { resolveBrief, validateBrief, briefId } from '../src/lib/conductor/brief';
+import type { Dataset } from '../src/lib/fields';
+const data: Dataset = {
+  speakers: [{ id: 'g', fullName: 'Giulia' }],
+  talks: [
+    { id: 'a', speakerIds: ['g'], title: 'Uno', abstractIt: 'Contesto.' },
+    { id: 'b', speakerIds: ['g'], title: 'Due' }
+  ],
+  questions: [
+    { id: 'q1', speakerId: 'g', textIt: 'Prima?', order: 1 },
+    { id: 'q2', speakerId: 'g', textIt: 'Seconda?', order: 2 },
+    { id: 'bad', speakerId: 'other' },
+    { id: 'reject', speakerId: 'g', status: 'rejected' }
+  ]
+};
+describe('shared conductor brief', () => {
+  it('uses bounded stable IDs even for maximum length source IDs', () => {
+    const id = briefId('s'.repeat(128), 't'.repeat(128));
+    expect(id.length).toBeLessThanOrEqual(128);
+    expect(id).not.toBe(briefId('s'.repeat(128), 't'.repeat(127) + 'x'));
+  });
+  it('offers legacy questions without pretending an editorial choice', () => {
+    const result = resolveBrief(data, 'g', 'a');
+    expect(result.mainQuestions.map((q) => q.id)).toEqual(['q1', 'q2']);
+    expect(result.selectionOrigin).toBe('legacy_proposal');
+    expect(result.summaryOrigin).toBe('abstract_excerpt');
+  });
+  it('rejects duplicates, more than three and another speaker questions', () => {
+    for (const ids of [['q1', 'q1'], ['q1', 'q2', 'q3', 'q4'], ['bad']]) {
+      expect(() =>
+        validateBrief({ id: 'x', speakerId: 'g', talkId: 'a', mainQuestionIds: ids }, data)
+      ).toThrow();
+    }
+    expect(() =>
+      validateBrief({ id: 'x', speakerId: 'g', talkId: 'b', mainQuestionIds: [] }, data)
+    ).not.toThrow();
+  });
+  it('does not borrow editorial choices from another talk', () => {
+    const dataset = {
+      ...data,
+      conductorBriefs: [{ id: 'b1', speakerId: 'g', talkId: 'a', mainQuestionIds: ['q2'] }]
+    };
+    expect(resolveBrief(dataset, 'g', 'a').mainQuestions.map((q) => q.id)).toEqual(['q2']);
+    expect(resolveBrief(dataset, 'g', 'b').selectionOrigin).toBe('legacy_proposal');
+  });
+});

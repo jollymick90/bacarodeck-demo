@@ -86,8 +86,12 @@
           "priority": {
             "type": "boolean"
           },
-          "inInterviewList": { "type": "boolean" },
-          "isKeynote": { "type": "boolean" },
+          "inInterviewList": {
+            "type": "boolean"
+          },
+          "isKeynote": {
+            "type": "boolean"
+          },
           "inDirectorySnapshot": {
             "type": "boolean"
           },
@@ -541,6 +545,9 @@
           },
           "cameraId": {
             "type": ["string", "null"]
+          },
+          "assignedTeamId": {
+            "type": "string"
           }
         },
         "required": ["id"],
@@ -581,6 +588,9 @@
           },
           "status": {
             "type": "string"
+          },
+          "primarySpeakerId": {
+            "type": "string"
           }
         }
       }
@@ -605,7 +615,8 @@
               "insights",
               "questions",
               "interviewPlans",
-              "interviewSlots"
+              "interviewSlots",
+              "conductorBriefs"
             ]
           },
           "id": {
@@ -631,6 +642,65 @@
             "type": "integer",
             "minimum": 1,
             "maximum": 5
+          }
+        }
+      }
+    },
+    "conductorBriefs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "speakerId"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "speakerId": {
+            "type": "string"
+          },
+          "talkId": {
+            "type": "string"
+          },
+          "summaryIt": {
+            "type": "string"
+          },
+          "summaryEn": {
+            "type": "string"
+          },
+          "mainQuestionIds": {
+            "type": "array",
+            "maxItems": 3,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "classicQuestionIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "speakerInterests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "speakerId", "memberUid"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "speakerId": {
+            "type": "string"
+          },
+          "memberUid": {
+            "type": "string"
           }
         }
       }
@@ -663,6 +733,9 @@
     },
     {
       "required": ["interviewSlots"]
+    },
+    {
+      "required": ["conductorBriefs"]
     }
   ]
 }

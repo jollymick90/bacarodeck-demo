@@ -1,4 +1,7 @@
 import { trackEditorialFields } from '$lib/editorial-export';
+import { guardConductorWrite } from '$lib/conductor/write-policy';
+import { validateBrief } from '$lib/conductor/brief';
+import type { Dataset } from '$lib/fields';
 import { invalidateCollections } from '$lib/server/firestore-cache';
 import { error, json } from '@sveltejs/kit';
 import { authorize } from '$lib/server/authorize';
@@ -14,6 +17,8 @@ export const POST: RequestHandler = async ({ request, url }) => {
   if (!Array.isArray(changes) || !changes.length || changes.length > 400)
     error(400, 'Sono richiesti da 1 a 400 documenti.');
   if (body.action !== 'save' && body.action !== 'delete') error(400, 'Operazione non valida.');
+  if (changes.some((change) => change?.collection === 'speakerInterests'))
+    error(400, 'Gli interessi si modificano dal proprio account nella vista conduttore.');
   const keys = changes.map((change) => {
     if (
       !change ||
@@ -36,6 +41,20 @@ export const POST: RequestHandler = async ({ request, url }) => {
           : Promise.resolve(null)
       )
     );
+    const context: Dataset = {};
+    if (body.action === 'save' && changes.some((c) => c.collection === 'conductorBriefs')) {
+      for (const name of ['speakers', 'talks', 'questions', 'conductorBriefs'] as const) {
+        const snapshot = await tx.get(db.collection(`workspaces/codemotion-milano-2026/${name}`));
+        context[name] = snapshot.docs.map((d) => ({ ...d.data(), id: d.id }) as Entity);
+      }
+      for (const change of changes) {
+        if (context[change.collection])
+          context[change.collection] = [
+            ...context[change.collection]!.filter((e) => e.id !== change.data.id),
+            change.data
+          ];
+      }
+    }
 
     const writes = changes.map((change, index): Entity | null => {
       if (body.action === 'save' && tombstones[index]?.exists)
@@ -53,6 +72,19 @@ export const POST: RequestHandler = async ({ request, url }) => {
         return null;
       }
       try {
+        guardConductorWrite(change.collection, change.data, existing);
+        if (change.collection === 'conductorBriefs') {
+          validateBrief(change.data, context);
+          if (
+            context.conductorBriefs?.some(
+              (b) =>
+                b.id !== change.data.id &&
+                b.speakerId === change.data.speakerId &&
+                String(b.talkId || '') === String(change.data.talkId || '')
+            )
+          )
+            throw Error('Scheda conduttore duplicata per lo stesso talk.');
+        }
         const write = prepareWrite(
           change.collection,
           change.data,

@@ -33,6 +33,14 @@ export function safeUrl(value: unknown): boolean {
 }
 export function validateEntity(collection: Collection, data: Entity): string[] {
   const errors: string[] = [];
+  if (collection === 'conductorBriefs' || collection === 'speakerInterests') {
+    for (const key of collection === 'speakerInterests'
+      ? ['speakerId', 'memberUid']
+      : ['speakerId']) {
+      if (typeof data[key] !== 'string' || !idPattern.test(String(data[key])))
+        errors.push(`${key}: riferimento richiesto e valido.`);
+    }
+  }
   if (collection === 'interviewSlots') {
     if (data.status === 'confirmed' && !data.chosenStart)
       errors.push('Scegli un orario prima di confermare lo slot.');
@@ -178,6 +186,10 @@ export function parseImport(text: string): ImportData {
           .join('\n')
     );
   const result = value as ImportData;
+  if (result.speakerInterests?.length)
+    throw new Error(
+      'Gli interessi si modificano dalla vista conduttore o si ripristinano dal backup completo.'
+    );
   let count = 0;
   for (const collection of collections) {
     const seen = new Set<string>();

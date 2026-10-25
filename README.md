@@ -1,5 +1,45 @@
 # BacaroTech Interview Hub
 
+## Vista conduttore
+
+La home `/` apre la vista per il telefono. «Mi interessa» salva uno speaker tra i
+propri preferiti, visibili in cima anche quando assegnati a un collega. Gli interessi
+di ciascun account sono visibili a tutto il team e non prenotano l'intervista.
+
+La scheda riunisce talk, sintesi, tre domande principali, altre domande e ricerca.
+«Usa la scaletta» mostra una domanda alla volta. Testi, scelta e ordine sono comuni:
+una modifica vale per tutti. Se non è ancora stata salvata una scelta editoriale,
+l'app propone le prime domande attive nell'ordine esistente e segnala la proposta.
+La mancanza di tre domande o della sintesi non viene riempita con contenuti inventati.
+
+«Assegna / cambia» usa il team editoriale; una sostituzione richiede una conferma
+con il riepilogo. Piano e slot collegati vengono aggiornati insieme. I vecchi slot
+senza ID speaker vengono collegati solo con corrispondenza univoca del nome; i casi
+ambigui richiedono verifica. L'assegnazione non cambia gli interessi.
+
+Il backoffice resta accessibile a tutti i conduttori autorizzati su `/backoffice`.
+Da un materiale di ricerca si può incollare una domanda, controllare l'anteprima e
+confermare la creazione del record strutturato, conservando il materiale originale.
+Sintesi, domande classiche e scaletta si gestiscono dalla scheda conduttore collegata.
+Le funzioni amministrative conservano i privilegi precedenti.
+
+Le altre sessioni ricevono i cambiamenti con il refresh periodico già presente
+(60 secondi) o ricaricando; non è una sincronizzazione push. I salvataggi richiedono
+rete e controllo delle revisioni; in caso di conflitto il testo aperto è conservato.
+
+Il backup completo versione 2 comprende `speakerInterests` e `conductorBriefs` e
+legge anche i backup versione 1. Gli interessi mantengono gli UID originali nel
+trasferimento e si modificano solo dal proprio account; l'import di ricerca non
+può attribuirli ad altri. L'export editoriale include le schede modificate con i
+riferimenti alle domande, ma esclude gli interessi: per questi usare il backup completo.
+
+Il grafo 3D e il calcolo automatico delle somiglianze sono previsti nella seconda
+fase del progetto e non sono inclusi in questa versione.
+
+Per testare senza interferire con emulatori già attivi, il client in sviluppo
+accetta `PUBLIC_AUTH_EMULATOR_URL` e `PUBLIC_FIRESTORE_EMULATOR_PORT`; Playwright
+accetta `TEST_PORT`. I valori predefiniti restano 9099, 8080 e 4173.
+
 Workspace collaborativo per preparare le interviste a Codemotion Milano, 28–29 ottobre 2026. Interfaccia mobile in italiano, SvelteKit 2 / Svelte 5 / TypeScript, Google Auth e Firestore, adapter Vercel.
 
 ## Avvio

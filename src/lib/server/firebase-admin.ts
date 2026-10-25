@@ -8,8 +8,11 @@ export function getAdmin() {
   const projectId = publicEnv.PUBLIC_FIREBASE_PROJECT_ID;
   if (!projectId) throw new Error('Configura PUBLIC_FIREBASE_PROJECT_ID.');
   if (dev && publicEnv.PUBLIC_USE_EMULATORS === 'true') {
-    process.env.FIREBASE_AUTH_EMULATOR_HOST = '127.0.0.1:9099';
-    process.env.FIRESTORE_EMULATOR_HOST = '127.0.0.1:8080';
+    process.env.FIREBASE_AUTH_EMULATOR_HOST ||= new URL(
+      publicEnv.PUBLIC_AUTH_EMULATOR_URL || 'http://127.0.0.1:9099'
+    ).host;
+    process.env.FIRESTORE_EMULATOR_HOST ||=
+      '127.0.0.1:' + (publicEnv.PUBLIC_FIRESTORE_EMULATOR_PORT || '8080');
   }
   if (!dev && (process.env.FIREBASE_AUTH_EMULATOR_HOST || process.env.FIRESTORE_EMULATOR_HOST))
     throw new Error('Emulatori non consentiti in produzione.');

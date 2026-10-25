@@ -1,4 +1,6 @@
 export const collections = [
+  'conductorBriefs',
+  'speakerInterests',
   'speakers',
   'talks',
   'sources',
@@ -29,6 +31,8 @@ const tags = f('tags', 'Tag', 'array');
 const sources = f('sourceIds', 'ID fonti', 'array');
 const speakerIds = f('speakerIds', 'ID speaker', 'array');
 export const labels: Record<Collection, string> = {
+  conductorBriefs: 'Schede conduttore',
+  speakerInterests: 'Interessi',
   speakers: 'Speaker',
   talks: 'Talk',
   sources: 'Fonti',
@@ -39,7 +43,17 @@ export const labels: Record<Collection, string> = {
   interviewPlans: 'Intervista'
 };
 export const fields: Record<Collection, Field[]> = {
+  conductorBriefs: [
+    f('speakerId', 'Speaker'),
+    f('talkId', 'Talk'),
+    f('summaryIt', 'Sintesi IT', 'markdown'),
+    f('summaryEn', 'Sintesi EN', 'markdown'),
+    f('mainQuestionIds', 'Domande principali', 'array'),
+    f('classicQuestionIds', 'Domande classiche', 'array')
+  ],
+  speakerInterests: [f('speakerId', 'Speaker'), f('memberUid', 'Membro')],
   interviewSlots: [
+    f('primarySpeakerId', 'ID speaker principale'),
     f('originalStart', 'Slot originale'),
     f('primarySpeaker', 'Speaker principale'),
     f('backupSpeaker', 'Speaker backup'),
@@ -151,6 +165,7 @@ export const fields: Record<Collection, Field[]> = {
     notes
   ],
   interviewPlans: [
+    f('assignedTeamId', 'Conduttore', 'select', ['giorgio', 'alberto', 'martin', 'michele']),
     f('speakerId', 'ID speaker'),
     f('assignedToUid', 'Intervistatore'),
     f('cameraId', 'Operatore camera', 'select', ['lorenzo', 'danilo']),
