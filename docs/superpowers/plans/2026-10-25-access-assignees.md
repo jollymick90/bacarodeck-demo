@@ -13,10 +13,16 @@
 - Non modificare i dati dell’evento durante i test.
 
 ## Steps
-- [ ] Aggiungere test per default, aggiunte, revoche, superadmin e alias.
-- [ ] Creare directory condivisa e usarla in policy, API accessi e API assignees.
-- [ ] Consumare la directory in workspace, assegnazione, filtro e programmazione; verificare nel server.
-- [ ] Verificare con unit test, controllo Svelte, build e test browser su emulatori isolati.
+- [x] Aggiungere test per default, aggiunte, revoche, superadmin e alias.
+- [x] Creare directory condivisa e usarla in policy, API accessi e API assignees.
+- [x] Consumare la directory in workspace, assegnazione, filtro e programmazione; verificare nel server.
+- [x] Verificare con unit test, controllo Svelte, build e test browser su emulatori isolati.
 
 ## Execution notes
 Implementazione nella workspace corrente, senza commit automatico, per proseguire il lavoro richiesto nell’IDE. Nessuna migrazione distruttiva.
+
+## Verification
+- 100 test unitari passati.
+- 4 test browser passati su desktop e mobile in emulatori isolati 19399/18380.
+- Svelte check: 0 errori e 0 warning; build completata.
+- Revisione indipendente: corretti filtro UID storico e label email; preservati alias e assegnazioni esistenti.

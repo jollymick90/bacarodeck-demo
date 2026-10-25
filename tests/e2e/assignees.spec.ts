@@ -9,6 +9,7 @@ test('interview assignments follow enabled access, including users before first 
   const popupPromise = page.waitForEvent('popup');
   await page.getByRole('button', { name: 'Accedi con Google' }).click();
   const popup = await popupPromise;
+  await expect(popup.locator('.provider-name').first()).toHaveText('Google.com');
   await popup.getByRole('button', { name: 'Add new account' }).click();
   await popup.getByLabel('Email').fill('editor-desktop@example.test');
   await popup.getByLabel('Display name').fill('Editor Bacaro');
