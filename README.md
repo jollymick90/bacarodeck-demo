@@ -487,3 +487,20 @@ oppure un unico talk per uno speaker con una sola sessione. Le ambiguità vengon
 segnalate. Sul catalogo incluso risultano 81 talk abbinati e 3 da verificare; nessun
 nuovo speaker viene creato dall'import degli orari. Le modifiche manuali restano
 prioritarie; un successivo import può sostituirle soltanto selezionando le differenze.
+
+### Modalità intervista
+
+**Avvia intervista**, nella scheda conduttore, nella scaletta o nel tab Intervista di
+Gestione, apre `/speaker/[speakerId]/intervista`: una domanda alla volta, testo grande,
+solo **Prossima domanda** ed **Esci**. Usa l'ordine e la lingua della scaletta corrente;
+i testi vengono mantenuti per la durata della lettura, evitando cambi improvvisi
+quando un collega modifica i contenuti. Non scrive modifiche alla scaletta condivisa.
+
+La richiesta di schermo intero parte dal clic dell'utente. Se il browser non supporta
+o rifiuta la Fullscreen API, resta la vista a tutto viewport senza header/footer.
+Il layout segue l'orientamento del dispositivo e mantiene i controlli visibili; le
+domande molto lunghe scorrono nella sola area del testo. All'ultima domanda Prossima
+è disabilitato. Esci/Escape tornano alla schermata di partenza e rilasciano il
+fullscreen; anche il tasto Indietro del browser lo rilascia. Freccia destra/PageDown
+avanzano alla domanda successiva. Un accesso diretto alla route apre la vista senza
+richiedere automaticamente il fullscreen, che richiede un gesto esplicito.

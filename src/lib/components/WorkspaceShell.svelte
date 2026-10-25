@@ -7,12 +7,19 @@
   let { children }: { children: Snippet } = $props();
   const workspace = provideWorkspace();
   onMount(() => workspace.start());
+  const immersive = $derived(
+    workspace.ready && /^\/speaker\/[^/]+\/intervista\/?$/.test(page.url.pathname)
+  );
 </script>
 
 <svelte:head><title>BacaroTech · Interview Hub</title></svelte:head>
-<a class="skip-link" href="#main">Vai al contenuto</a>
-<AppHeader user={workspace.user} onlogout={() => workspace.logout()} />
-<main id="main" class:with-subnavigation={page.url.pathname.startsWith('/backoffice')}>
+{#if !immersive}<a class="skip-link" href="#main">Vai al contenuto</a>
+  <AppHeader user={workspace.user} onlogout={() => workspace.logout()} />{/if}
+<main
+  id="main"
+  class:immersive
+  class:with-subnavigation={page.url.pathname.startsWith('/backoffice')}
+>
   {#if workspace.access !== 'member'}
     <section class="welcome">
       <p class="edition">Il tavolo di lavoro delle interviste</p>
@@ -40,20 +47,27 @@
     </section>
   {:else if !workspace.ready}<p role="status">Caricamento del workspace…</p>
   {:else}
-    {#if !workspace.online}<p class="warning" role="status">
+    {#if !workspace.online && !immersive}<p class="warning" role="status">
         Sei offline. Puoi leggere i dati già caricati in questa sessione. I salvataggi richiedono la
         rete.
       </p>{/if}
-    {#if workspace.message}<p class="success" role="status">{workspace.message}</p>{/if}
+    {#if workspace.message && !immersive}<p class="success" role="status">
+        {workspace.message}
+      </p>{/if}
     {@render children()}
   {/if}
-  {#if workspace.error}<p class="error" role="alert">{workspace.error}</p>{/if}
+  {#if workspace.error && !immersive}<p class="error" role="alert">{workspace.error}</p>{/if}
 </main>
-<AppNavigation />
+{#if !immersive}<AppNavigation />{/if}
 
 <style>
   main {
     padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  }
+  main.immersive {
+    padding: 0;
+    margin: 0;
+    max-width: none;
   }
   main.with-subnavigation {
     padding-bottom: calc(144px + env(safe-area-inset-bottom, 0px));

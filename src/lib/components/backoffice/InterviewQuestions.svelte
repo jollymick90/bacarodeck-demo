@@ -1,4 +1,5 @@
 <script lang="ts">
+  import StartInterview from '../conductor/StartInterview.svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { getWorkspace } from '$lib/workspace.svelte';
@@ -90,6 +91,13 @@
 </script>
 
 <div class="interview-tools">
+  <StartInterview
+    {speakerId}
+    {talkId}
+    {language}
+    back="gestione"
+    disabled={!selectedIds.length || busy}
+  />
   {#if talks.length > 1}<label
       >Talk<select
         value={talkId}
@@ -135,6 +143,13 @@
     >
   </div>
   <div class="interview-tools">
+    <StartInterview
+      {speakerId}
+      {talkId}
+      {language}
+      back="gestione"
+      disabled={!selectedIds.length || busy}
+    />
     <a
       class="button-link"
       href={'/backoffice/speaker/' + encodeURIComponent(speakerId) + '/strumenti?prompt=domande'}

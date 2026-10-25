@@ -1,4 +1,5 @@
 <script lang="ts">
+  import StartInterview from './StartInterview.svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import type { Dataset, Entity } from '$lib/fields';
@@ -325,7 +326,14 @@
   {:else if speaker && mode === 'reading'}
     <a class="nav-action" href={speakerHref()}>Torna alla scheda</a>
     <h1>{speaker.fullName}</h1>
-    {#if current}<p class="muted">Domanda {currentIndex + 1} di {brief.mainQuestions.length}</p>
+    {#if current}<StartInterview
+        speakerId={selected}
+        {talkId}
+        {language}
+        questionId={current.id}
+        back="scaletta"
+      />
+      <p class="muted">Domanda {currentIndex + 1} di {brief.mainQuestions.length}</p>
       <div class="interview-question"><Markdown text={qtext(current)} /></div>
       <div class="card-controls">
         {#if currentIndex > 0}<a
@@ -448,6 +456,12 @@
           {brief.mainQuestions.length} domande disponibili nella scaletta.
         </p>
         <button disabled={busy} onclick={() => replace(null)}>Scegli una domanda</button>{/if}
+      <StartInterview
+        speakerId={selected}
+        {talkId}
+        {language}
+        disabled={!brief.mainQuestions.length}
+      />
       {#if brief.mainQuestions.length}
         <a
           class="nav-action primary start-interview"
