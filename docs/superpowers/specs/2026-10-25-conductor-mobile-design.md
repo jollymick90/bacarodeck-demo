@@ -1,6 +1,6 @@
 # Bacarodeck: scheda conduttore e connessioni editoriali
 
-Data: 25 ottobre 2026. Stato: proposta da approvare, nessuna implementazione autorizzata da questo documento.
+Data: 25 ottobre 2026. Stato: progetto approvato in conversazione; prima fase mobile implementata sul branch feat/conductor-mobile. Grafo 3D e somiglianze automatiche restano la seconda fase.
 
 Revisione indipendente di pianificabilità completata: nessuna domanda di prodotto indispensabile rimasta aperta. Le decisioni tecniche delegate devono essere motivate nel successivo piano. Bozza interattiva locale: `.superpowers/brainstorm/52241-1792936991/content/conductor-flow-v2.html` (non inclusa nel commit).
 
