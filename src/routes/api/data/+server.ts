@@ -31,7 +31,7 @@ export const POST: RequestHandler = async ({ request, url }) => {
     return `${change.collection}/${change.data.id}`;
   });
   if (new Set(keys).size !== keys.length) error(400, 'Documenti duplicati.');
-  await db.runTransaction(async (tx) => {
+  const documents = await db.runTransaction(async (tx) => {
     const refs = keys.map((key) => db.doc(`workspaces/codemotion-milano-2026/${key}`));
     const snapshots = await Promise.all(refs.map((ref) => tx.get(ref)));
     const tombstones = await Promise.all(
@@ -117,6 +117,7 @@ export const POST: RequestHandler = async ({ request, url }) => {
           );
       }
     });
+    return writes.filter((write): write is Entity => write !== null);
   });
   await invalidateCollections(db, [
     ...changes.map((change) => change.collection),
@@ -124,5 +125,5 @@ export const POST: RequestHandler = async ({ request, url }) => {
       ? ['deletedQuestions']
       : [])
   ]);
-  return json({ saved: true }, { headers: { 'Cache-Control': 'no-store' } });
+  return json({ saved: true, documents }, { headers: { 'Cache-Control': 'no-store' } });
 };

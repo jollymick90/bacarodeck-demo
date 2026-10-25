@@ -20,7 +20,11 @@
     members,
     onsave,
     oncancel,
-    busy = false
+    onclose = oncancel,
+    onedit = () => {},
+    savedNotice = '',
+    busy = false,
+    actionsAtTop = false
   }: {
     collection: Collection;
     entity: Entity;
@@ -28,7 +32,11 @@
     members: Entity[];
     onsave: (entity: Entity, interviewPlan?: Entity) => Promise<void>;
     oncancel: () => void;
+    onclose?: () => void;
+    onedit?: () => void;
+    savedNotice?: string;
     busy?: boolean;
+    actionsAtTop?: boolean;
   } = $props();
   let draft = $state<Entity>(untrack(() => JSON.parse(JSON.stringify(entity))));
   let readOnly = $state(untrack(() => Boolean(entity.revision)));
@@ -150,24 +158,37 @@
 </script>
 
 <section class="editor" aria-label={readOnly ? 'Lettura contenuto' : 'Modifica contenuto'}>
-  <div class="section-heading">
-    <h2>
-      {#if interviewPlan}Profilo e intervista{:else}{readOnly
-          ? 'Leggi'
-          : entity.revision
-            ? 'Modifica'
-            : 'Aggiungi'} · {['materials', 'sources', 'insights'].includes(collection)
-          ? 'Nota'
-          : labels[collection]}{/if}
-    </h2>
-    <div class="editor-actions">
-      {#if readOnly}<button type="button" class="primary" onclick={() => (readOnly = false)}
-          >Modifica</button
-        >{/if}
-      <button type="button" class="quiet" onclick={oncancel} disabled={busy}>Chiudi</button>
-    </div>
-  </div>
   <form onsubmit={save}>
+    <div class="section-heading wide">
+      <h2>
+        {#if actionsAtTop}Nota{:else if interviewPlan}Profilo e intervista{:else}{readOnly
+            ? 'Leggi'
+            : entity.revision
+              ? 'Modifica'
+              : 'Aggiungi'} · {['materials', 'sources', 'insights'].includes(collection)
+            ? 'Nota'
+            : labels[collection]}{/if}
+      </h2>
+      <div class="editor-actions" class:top-actions={actionsAtTop}>
+        {#if readOnly}<button
+            type="button"
+            class="primary"
+            onclick={() => {
+              onedit();
+              readOnly = false;
+            }}>Modifica</button
+          >{/if}
+        {#if !readOnly && actionsAtTop}
+          <button type="submit" class="primary" aria-label="Salva modifiche" disabled={busy}
+            >{busy ? 'Salvataggio…' : 'Salva'}</button
+          >
+          <button type="button" onclick={oncancel} disabled={busy}>Annulla</button>
+        {:else}<button type="button" class="quiet" onclick={onclose} disabled={busy}>Chiudi</button
+          >{/if}
+      </div>
+    </div>
+    {#if savedNotice && readOnly}<p class="notice wide" role="status">{savedNotice}</p>{/if}
+    {#if error && actionsAtTop}<p class="error wide" role="alert">{error}</p>{/if}
     {#each groups as group (group.collection)}
       {@const draft = group.draft}
       <fieldset class="editor-fields wide" aria-label={group.label} disabled={busy}>
@@ -315,8 +336,8 @@
         >{advanced ? 'Nascondi campi aggiuntivi' : 'Mostra tutti i campi editoriali'}</button
       >
     </div>
-    {#if error}<p class="error wide" role="alert">{error}</p>{/if}
-    {#if !readOnly}<div class="form-actions wide">
+    {#if error && !actionsAtTop}<p class="error wide" role="alert">{error}</p>{/if}
+    {#if !readOnly && !actionsAtTop}<div class="form-actions wide">
         <button class="primary" disabled={busy} type="submit"
           >{busy ? 'Salvataggio…' : 'Salva modifiche'}</button
         ><button type="button" onclick={oncancel} disabled={busy}>Annulla</button>
@@ -341,6 +362,10 @@
     align-items: center;
     gap: 0.5rem;
     flex-wrap: wrap;
+  }
+  .editor-actions.top-actions {
+    flex-wrap: nowrap;
+    flex-shrink: 0;
   }
   .field-heading {
     justify-content: space-between;

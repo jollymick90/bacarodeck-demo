@@ -14,6 +14,7 @@
   import ResearchAssistant from '$lib/components/ResearchAssistant.svelte';
   import InterviewBadges from '$lib/components/InterviewBadges.svelte';
   import InterviewQuestions from './InterviewQuestions.svelte';
+  import SpeakerHeader from './SpeakerHeader.svelte';
   import ActionHelp from '$lib/components/ActionHelp.svelte';
   import ConfirmDelete from '$lib/components/ConfirmDelete.svelte';
   import Markdown from '$lib/components/Markdown.svelte';
@@ -237,31 +238,7 @@
   </aside>
 {:else}<section class="speaker-detail" aria-label="Scheda speaker">
     {#if speaker}
-      <header class="speaker-profile">
-        {#if speaker.photoUrl && safeUrl(speaker.photoUrl)}
-          <img
-            class="speaker-photo"
-            src={display(speaker.photoUrl)}
-            alt={'Foto di ' + speaker.fullName}
-            referrerpolicy="no-referrer"
-          />
-        {:else}
-          <div class="speaker-photo photo-placeholder" aria-label="Foto non disponibile">
-            {display(speaker.fullName)
-              .split(' ')
-              .map((part) => part[0])
-              .slice(0, 2)
-              .join('')}
-          </div>
-        {/if}
-        <h1 id="speaker-title" tabindex="-1">{speaker.fullName}</h1>
-        <p class="speaker-role">{speaker.headline || 'Ruolo non disponibile'}</p>
-        {#each speakerTalks as talk}
-          <a class="speaker-talk" href={speakerPath(selectedId) + '/talk'}
-            >{talk.title || 'Talk senza titolo'}</a
-          >
-        {:else}<p class="muted">Talk non ancora disponibile.</p>{/each}
-      </header>
+      <SpeakerHeader {speaker} talks={speakerTalks} />
       <nav class="tabs" aria-label="Contenuti dello speaker">
         {#each ['speakers', 'materials', 'questions'] as name}<a
             class:current={!tools && tab === name}
@@ -449,41 +426,6 @@
   }
   .speaker-detail {
     min-width: 0;
-  }
-  .speaker-profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.4rem;
-    margin-bottom: 1.5rem;
-  }
-  .speaker-photo {
-    width: 128px;
-    height: 128px;
-    border-radius: 12px;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-  }
-  .photo-placeholder {
-    display: grid;
-    place-items: center;
-    background: #dce6f2;
-    color: var(--blue);
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  .speaker-profile h1 {
-    margin: 0;
-    font-size: clamp(1.6rem, 5vw, 2rem);
-  }
-  .speaker-role {
-    margin: 0;
-    color: var(--muted);
-  }
-  .speaker-talk {
-    max-width: 60ch;
-    font-weight: 600;
   }
   .notes-heading {
     display: flex;

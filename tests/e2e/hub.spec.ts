@@ -93,10 +93,10 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await assistant.locator('summary').filter({ hasText: '1. Cerca e raccogli' }).click();
   await assistant.getByRole('button', { name: 'Copia prompt ricerca', exact: true }).click();
   await expect(assistant.getByLabel(/Prompt pronto/)).toHaveValue(/Andrey Breslav/);
+  await assistant.locator('summary').filter({ hasText: '2. Prepara le domande' }).click();
   await expect(
     assistant.getByRole('button', { name: 'Copia prompt domande', exact: true })
   ).toBeDisabled();
-  await assistant.locator('summary').filter({ hasText: '2. Prepara le domande' }).click();
   await assistant.locator('.choices input').first().check();
   await assistant.getByRole('button', { name: 'Copia prompt domande', exact: true }).click();
   await expect(assistant.getByLabel(/Prompt pronto/)).toHaveValue(/RICERCA SELEZIONATA/);
@@ -157,16 +157,58 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await page.unroute('**/api/access');
 
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
+  await expect(page).toHaveURL(/\/backoffice\/contenuti\/materials\//);
+  await expect(page.locator('.editor')).toHaveAttribute('aria-label', 'Lettura contenuto');
+  await expect(page.getByRole('status')).toContainText('Nota salvata.');
+  await page.locator('.editor').getByRole('button', { name: 'Chiudi', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Ricerca da Gemini' })).toBeVisible();
   const material = page
     .locator('.content-entry')
     .filter({ has: page.getByRole('heading', { name: 'Ricerca da Gemini' }) });
   await material.getByRole('link', { name: 'Modifica', exact: true }).click();
+  await expect(page.locator('.speaker-profile')).toContainText('Andrey Breslav');
+  await expect(page.locator('.speaker-profile .speaker-photo')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Aggiungi speaker', exact: true })).toHaveCount(0);
   await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
+  const actions = page.locator('.editor .editor-actions');
+  await expect(actions.getByRole('button')).toHaveText(['Salva', 'Annulla']);
+  await expect(page.locator('.editor .form-actions')).toHaveCount(0);
+  const saveBox = await actions.getByRole('button', { name: 'Salva modifiche' }).boundingBox();
+  const cancelBox = await actions.getByRole('button', { name: 'Annulla' }).boundingBox();
+  expect(Math.abs(saveBox!.y - cancelBox!.y)).toBeLessThan(2);
+  await page.locator('.speaker-profile').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: testInfo.outputPath('note-editor.png') });
   await expect(page.getByLabel('Testo Markdown')).toHaveValue(markdown);
+  const noteUrl = page.url();
   await page.getByLabel('Note', { exact: true }).fill('Verificare con la fonte');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
-  await expect(material.getByText('Verificare con la fonte')).toBeVisible();
+  await expect(page.locator('.editor').getByRole('status')).toHaveText('Nota salvata.');
+  await expect(page).toHaveURL(noteUrl);
+  await expect(page.locator('.editor')).toHaveAttribute('aria-label', 'Lettura contenuto');
+  await expect(page.locator('.editor')).toContainText('Verificare con la fonte');
+  await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
+  await expect(page.locator('.editor').getByRole('status')).toHaveCount(0);
+  await page.getByLabel('Note', { exact: true }).fill('Modifica da scartare');
+  await page.getByRole('button', { name: 'Annulla', exact: true }).click();
+  await expect(page).toHaveURL(noteUrl);
+  await expect(page.locator('.editor')).toHaveAttribute('aria-label', 'Lettura contenuto');
+  await expect(page.locator('.editor')).toContainText('Verificare con la fonte');
+  await expect(page.locator('.editor')).not.toContainText('Modifica da scartare');
+  await expect(page.locator('.editor').getByRole('status')).toHaveCount(0);
+  await page.locator('.editor').getByRole('button', { name: 'Modifica', exact: true }).click();
+  await page
+    .getByLabel('Note', { exact: true })
+    .fill('Fonte verificata dopo il secondo salvataggio');
+  await page.getByRole('button', { name: 'Salva modifiche' }).click();
+  await expect(page.locator('.editor').getByRole('status')).toHaveText('Nota salvata.');
+  await expect(page).toHaveURL(noteUrl);
+  await page.reload();
+  await expect(page.locator('.editor')).toContainText(
+    'Fonte verificata dopo il secondo salvataggio'
+  );
+  await page.locator('.editor').getByRole('button', { name: 'Chiudi', exact: true }).click();
+  await expect(material.getByText('Fonte verificata dopo il secondo salvataggio')).toBeVisible();
   await material.getByRole('button', { name: 'Elimina', exact: true }).click();
   await page.getByRole('button', { name: 'Elimina definitivamente' }).click();
   await expect(page.getByRole('heading', { name: 'Ricerca da Gemini' })).toHaveCount(0);
@@ -179,6 +221,8 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await page.getByLabel('URL fonte').fill('https://example.org/codemotion');
   await page.getByLabel('Note', { exact: true }).fill('Fonte verificata dal team');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
+  await expect(page.locator('.editor').getByRole('status')).toHaveText('Nota salvata.');
+  await page.locator('.editor').getByRole('button', { name: 'Chiudi', exact: true }).click();
   await expect(source.getByRole('link', { name: 'Apri fonte originale' })).toHaveAttribute(
     'href',
     'https://example.org/codemotion'

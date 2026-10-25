@@ -30,12 +30,13 @@ export async function commitChanges(
   _uid: string,
   changes: Change[],
   origin: 'manual' | 'import' = 'manual'
-): Promise<void> {
-  if (!changes.length) return;
-  await api('/api/data', { action: 'save', changes, origin });
+): Promise<Entity[]> {
+  if (!changes.length) return [];
+  const result = await api('/api/data', { action: 'save', changes, origin });
   refresh.dispatchEvent(
     new CustomEvent('change', { detail: [...new Set(changes.map((change) => change.collection))] })
   );
+  return result.documents;
 }
 export async function removeEntity(
   _db: Firestore,

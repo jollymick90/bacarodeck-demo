@@ -6,6 +6,7 @@
   import { emptyEntity, type Collection, type Entity } from '$lib/fields';
   import { commitChanges } from '$lib/repository';
   import type { Change } from '$lib/domain';
+  import SpeakerHeader from './SpeakerHeader.svelte';
   import Editor from '$lib/components/Editor.svelte';
   let {
     collection,
@@ -19,7 +20,11 @@
       ? workspace.data[collection]?.find((entity) => entity.id === id)
       : emptyEntity(collection, speakerId || undefined)
   );
-  const entity = original ? (JSON.parse(JSON.stringify(original)) as Entity) : undefined;
+  let entity = $state<Entity | undefined>(
+    original ? JSON.parse(JSON.stringify(original)) : undefined
+  );
+  let editorVersion = $state(0);
+  let savedNotice = $state('');
   const interviewPlan = untrack(() =>
     collection === 'speakers' && id
       ? (JSON.parse(
@@ -36,6 +41,13 @@
       (collection === 'speakers'
         ? id
         : String(entity?.speakerId || (entity?.speakerIds as string[] | undefined)?.[0] || ''))
+  );
+  const isNote = $derived(['materials', 'sources', 'insights'].includes(collection));
+  const speaker = $derived(workspace.data.speakers?.find((item) => item.id === relatedSpeaker));
+  const speakerTalks = $derived(
+    (workspace.data.talks || []).filter((talk) =>
+      ((talk.speakerIds as string[]) || []).includes(relatedSpeaker || '')
+    )
   );
   const suffix: Partial<Record<Collection, string>> = {
     questions: '/intervista',
@@ -60,6 +72,17 @@
       : '/backoffice'
   );
   let busy = $state(false);
+  function cancel() {
+    if (isNote && id) {
+      editorVersion += 1;
+      savedNotice = '';
+      workspace.message = '';
+    } else void goto(returnPath);
+  }
+  function startEditing() {
+    savedNotice = '';
+    if (isNote) workspace.message = '';
+  }
   async function save(updated: Entity, plan?: Entity) {
     if (!entity) return;
     busy = true;
@@ -73,7 +96,30 @@
           data: plan,
           expectedRevision: interviewPlan.revision ?? null
         });
-      await commitChanges(workspace.client!.db, workspace.user!.uid, changes);
+      const saved = await commitChanges(workspace.client!.db, workspace.user!.uid, changes);
+      if (isNote) {
+        entity = saved.find((record) => record.id === updated.id)!;
+        workspace.data[collection] = [
+          ...(workspace.data[collection] || []).filter((record) => record.id !== updated.id),
+          entity
+        ];
+        if (!id) {
+          await goto(
+            '/backoffice/contenuti/' +
+              collection +
+              '/' +
+              encodeURIComponent(updated.id) +
+              (relatedSpeaker ? '?speaker=' + encodeURIComponent(relatedSpeaker) : ''),
+            { replaceState: true }
+          );
+          workspace.message = 'Nota salvata.';
+        } else {
+          editorVersion += 1;
+          savedNotice = 'Nota salvata.';
+          workspace.message = '';
+        }
+        return;
+      }
       workspace.message = 'Modifiche salvate.';
       await goto(
         collection === 'speakers'
@@ -89,15 +135,20 @@
 <svelte:head
   ><title>{id ? 'Scheda contenuto' : 'Nuovo contenuto'} · Gestione BacaroTech</title></svelte:head
 >
+{#if isNote && speaker}<SpeakerHeader {speaker} talks={speakerTalks} />{/if}
 <p><a href={returnPath}>← Torna {relatedSpeaker ? 'allo speaker' : 'agli speaker'}</a></p>
-{#if entity}<Editor
-    {collection}
-    {entity}
-    {interviewPlan}
-    members={workspace.members}
-    {busy}
-    onsave={save}
-    oncancel={() => goto(returnPath)}
-  />
+{#if entity}{#key editorVersion}<Editor
+      {collection}
+      actionsAtTop={isNote}
+      {entity}
+      {interviewPlan}
+      members={workspace.members}
+      {busy}
+      onsave={save}
+      oncancel={cancel}
+      onclose={() => goto(returnPath)}
+      onedit={startEditing}
+      {savedNotice}
+    />{/key}
 {:else}<h2>Contenuto non trovato</h2>
   <p>Il contenuto non esiste oppure è stato eliminato.</p>{/if}
