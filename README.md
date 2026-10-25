@@ -24,7 +24,8 @@ Gestione resta accessibile a tutti i conduttori autorizzati su `/backoffice`.
 L’header compatto mostra il logo BacaroTech e «Interview Hub». Il pulsante «Utente»
 apre i dettagli dell’account e il comando «Esci». La barra inferiore resta visibile
 durante lo scorrimento e collega Speaker, Topic e Gestione.
-Gestione ha tre tab: Speaker, Programmazione e Strumenti; «Aggiungi speaker» resta
+Dentro Gestione, Speaker, Programmazione e Strumenti formano un secondo livello
+nel footer fisso, sopra la navigazione principale; «Aggiungi speaker» resta
 come azione rapida. Importazioni,
 esportazioni, tag, traduzioni e gestione accessi si trovano nella pagina
 «Strumenti» (`/backoffice/strumenti`), organizzata per funzione. Il pulsante ⓘ accanto

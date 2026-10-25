@@ -7,6 +7,20 @@
         ? 'topic'
         : 'speaker'
   );
+  const activeTab = $derived(
+    page.url.pathname.startsWith('/backoffice/programmazione')
+      ? 'programmazione'
+      : /^\/backoffice\/(strumenti|importa|esporta|backup|tag|accessi)(\/|$)/.test(
+            page.url.pathname
+          )
+        ? 'strumenti'
+        : 'speaker'
+  );
+  const tabs = [
+    { id: 'speaker', label: 'Speaker', href: '/backoffice' },
+    { id: 'programmazione', label: 'Programmazione', href: '/backoffice/programmazione' },
+    { id: 'strumenti', label: 'Strumenti', href: '/backoffice/strumenti' }
+  ];
   const links = [
     {
       id: 'speaker',
@@ -30,6 +44,16 @@
 </script>
 
 <footer class="app-footer">
+  {#if section === 'gestione'}
+    <div class="section-navigation">
+      <nav aria-label="Gestione">
+        {#each tabs as tab}<a
+            href={tab.href}
+            aria-current={activeTab === tab.id ? 'page' : undefined}>{tab.label}</a
+          >{/each}
+      </nav>
+    </div>
+  {/if}
   <nav aria-label="Navigazione principale">
     {#each links as link}
       <a href={link.href} aria-current={section === link.id ? 'page' : undefined}>
@@ -85,6 +109,20 @@
     border-color: var(--blue);
     color: var(--blue);
     background: #edf3fa;
+  }
+  .section-navigation {
+    background: #edf3fa;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-navigation a {
+    min-height: 48px;
+    font-size: 0.82rem;
+    border-top: 0;
+    border-bottom: 3px solid transparent;
+  }
+  .section-navigation a[aria-current='page'] {
+    border-bottom-color: var(--blue);
+    background: #dce6f2;
   }
   a:hover {
     background: #edf3fa;

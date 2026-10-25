@@ -81,7 +81,7 @@ test('one login survives route changes, reload and reopening, until logout', asy
     await expect(page.getByRole('heading', { name: 'Chi intervistiamo?' })).toBeVisible();
   }
   await page.getByRole('link', { name: 'Gestione', exact: true }).click();
-  const tabs = page.getByRole('navigation', { name: 'Gestione' });
+  const tabs = page.getByRole('contentinfo').getByRole('navigation', { name: 'Gestione' });
   await expect(tabs.getByRole('link')).toHaveText(['Speaker', 'Programmazione', 'Strumenti']);
   await tabs.getByRole('link', { name: 'Programmazione', exact: true }).click();
   await expect(tabs.getByRole('link', { name: 'Programmazione', exact: true })).toHaveAttribute(
@@ -102,10 +102,26 @@ test('one login survives route changes, reload and reopening, until logout', asy
       return r.top >= 0 && r.bottom <= innerHeight;
     })
   ).toBe(true);
+  expect(
+    await tabs.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      return r.top >= 0 && r.bottom <= innerHeight;
+    })
+  ).toBe(true);
+  expect(
+    await page
+      .locator('.backoffice-tools')
+      .evaluate(
+        (el) =>
+          el.getBoundingClientRect().bottom <=
+          document.querySelector('footer')!.getBoundingClientRect().top
+      )
+  ).toBe(true);
   await expect(page.getByRole('link', { name: '← Vista conduttore' })).toHaveCount(0);
   await page.screenshot({ path: info.outputPath('navigation.png'), fullPage: true });
   await footer.getByRole('link', { name: 'Topic', exact: true }).click();
   await expect(page).toHaveURL('/topic');
+  await expect(tabs).toHaveCount(0);
   await expect(footer.getByRole('link', { name: 'Topic', exact: true })).toHaveAttribute(
     'aria-current',
     'page'

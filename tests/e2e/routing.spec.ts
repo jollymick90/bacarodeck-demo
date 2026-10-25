@@ -82,7 +82,15 @@ test('speaker and scheduling URLs survive reload and browser history', async ({
     await page.goForward();
     await expect(page.getByRole('heading', { name: 'Routing speaker', exact: true })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toHaveCount(0);
-    await expect(page.getByRole('navigation', { name: 'Gestione', exact: true })).toHaveCount(0);
+    await expect(
+      page.getByRole('main').getByRole('navigation', { name: 'Gestione', exact: true })
+    ).toHaveCount(0);
+    await expect(
+      page
+        .getByRole('contentinfo')
+        .getByRole('navigation', { name: 'Gestione', exact: true })
+        .getByRole('link', { name: 'Speaker', exact: true })
+    ).toHaveAttribute('aria-current', 'page');
     await expect(page.getByText('Engineering lead', { exact: true })).toBeVisible();
     await expect(
       page.getByRole('navigation', { name: 'Contenuti dello speaker' }).getByRole('link')

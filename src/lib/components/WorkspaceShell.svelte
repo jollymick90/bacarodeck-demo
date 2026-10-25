@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/state';
   import { onMount, type Snippet } from 'svelte';
   import AppHeader from './AppHeader.svelte';
   import AppNavigation from './AppNavigation.svelte';
@@ -11,7 +12,7 @@
 <svelte:head><title>BacaroTech · Interview Hub</title></svelte:head>
 <a class="skip-link" href="#main">Vai al contenuto</a>
 <AppHeader user={workspace.user} onlogout={() => workspace.logout()} />
-<main id="main">
+<main id="main" class:with-subnavigation={page.url.pathname.startsWith('/backoffice')}>
   {#if workspace.access !== 'member'}
     <section class="welcome">
       <p class="edition">Il tavolo di lavoro delle interviste</p>
@@ -53,5 +54,8 @@
 <style>
   main {
     padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  }
+  main.with-subnavigation {
+    padding-bottom: calc(144px + env(safe-area-inset-bottom, 0px));
   }
 </style>
