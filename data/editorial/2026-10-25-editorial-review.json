@@ -1,0 +1,186 @@
+{
+  "updatedQuestions": 50,
+  "createdQuestions": 34,
+  "briefs": 28,
+  "appliedAt": "2026-10-25T20:55:53.769Z",
+  "verifiedRecords": 112,
+  "preservedAlternativeQuestions": 57,
+  "preservedMaterials": 25,
+  "preservedInsights": 6,
+  "totalQuestions": 141,
+  "projectId": "demo-bacarodeck",
+  "emulator": "127.0.0.1:8080",
+  "selection": "Speaker in elenco",
+  "sequence": [
+    "Talk",
+    "AI",
+    "Ponte tra talk e AI"
+  ],
+  "originalNotesChanged": false,
+  "defaultQuestionStatus": "suggested",
+  "basis": "Materiali e abstract del workspace; nessuna nuova ricerca web o visione dei video collegati.",
+  "abstractOnlySpeakers": [
+    "leonardo-cavagnis",
+    "marco-ippolito",
+    "mario-zechner",
+    "matteo-collina",
+    "mauro-morales",
+    "olena-borzenko",
+    "paolo-caressa",
+    "paolo-insogna",
+    "riccardo-carlesso",
+    "soumaya-erradi",
+    "vladi-stevanovic"
+  ],
+  "warnings": [
+    {
+      "speakerId": "alfonso-fuggetta",
+      "warnings": [
+        "Le formulazioni assolute del dossier sui limiti degli LLM sono tesi da interrogare, non fatti tecnici verificati."
+      ]
+    },
+    {
+      "speakerId": "andrey-breslav",
+      "warnings": [
+        "La nota manuale sui documenti lunghi viene usata come domanda aperta; il riassunto della video-intervista non equivale a una trascrizione.",
+        "Il materiale duplicato ebebf28b-ae3e-49d6-af83-ef874ec5fc19 è associato a Christian: escluso dai riferimenti di Andrey."
+      ]
+    },
+    {
+      "speakerId": "carolina-pinto",
+      "warnings": [
+        "L’appunto umano sul lavoro UX è incompleto: usato solo come spunto, senza completarne il pensiero o attribuirlo alla speaker."
+      ]
+    },
+    {
+      "speakerId": "christian-schabetsberger",
+      "warnings": [
+        "Escluso ebebf28b-ae3e-49d6-af83-ef874ec5fc19: dossier CodeSpeak/Andrey Breslav collegato erroneamente a Christian; non è evidenza sullo speaker.",
+        "Ricerca AI basata anche su estratti; video del talk non trascritti. Non assumere dettagli o giudizi sui singoli VCS come verificati.",
+        "La bio italiana traduce erroneamente “the world’s okayest developer” come “lo sviluppatore più bravo del mondo”. Non usare questa presentazione."
+      ]
+    },
+    {
+      "speakerId": "dotan-horovits",
+      "warnings": [
+        "Dossier AI con estratti e metadati: versioni, disponibilità delle integrazioni e promessa di zero lock-in non verificate esternamente.",
+        "La ricerca dichiara non descritta la pipeline di sanificazione dei prompt: nessun controllo specifico è dato per implementato."
+      ]
+    },
+    {
+      "speakerId": "emanuele-fabbiani",
+      "warnings": [
+        "L’abstract contiene affermazioni assolute e metriche non validate qui: le domande ne chiedono condizioni e limiti senza riproporle come fatti universali."
+      ]
+    },
+    {
+      "speakerId": "enzo-lombardi",
+      "warnings": [
+        "La ricerca deriva soprattutto da snippet: non chiarisce se l’avversario finale gira nella ROM o all’esterno, né il nome preciso dell’emulatore.",
+        "Non equiparare l’AI avversaria a Claude in esecuzione: l’abstract distingue l’agente che sviluppa dall’avversario creato."
+      ]
+    },
+    {
+      "speakerId": "gabriele-santomaggio",
+      "warnings": [
+        "Flag presenti nello snapshot: csv_talk_missing_directory_present e talk_attribution_to_verify. Confermare l’abbinamento speaker/talk prima dell’uso pubblico.",
+        "Il dossier ha datazione incerta del talk e riferimenti generici a RabbitMQ: non attribuire contributi o opinioni del team allo speaker.",
+        "Il dossier non documenta una sua posizione sull’AI. Le due domande pertinenti sono scenari ipotetici collegati al suo ambito tecnico."
+      ]
+    },
+    {
+      "speakerId": "jigyasa-grover",
+      "warnings": [
+        "Tecniche di valutazione riportate nel dossier, senza accesso indipendente al corso o ai file di esercizio. Nessuna attribuzione ai sistemi interni di Uber."
+      ]
+    },
+    {
+      "speakerId": "katharine-jarmul",
+      "warnings": [
+        "Il dossier riporta trascrizioni e configurazioni, ma in questa revisione non sono state verificate: omesse cifre, flag e affermazioni su prodotti specifici."
+      ]
+    },
+    {
+      "speakerId": "leonardo-cavagnis",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "marco-ippolito",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "mario-zechner",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "matteo-collina",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "mauro-morales",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "olena-borzenko",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "paolo-caressa",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "paolo-insogna",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "riccardo-carlesso",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "rowdy-rabouw",
+      "warnings": [
+        "Ricerca basata su estratti di slide: nessuna soglia, compatibilità browser o supporto API è considerato aggiornato e verificato.",
+        "Il talk sulla Built-in AI è documentato solo tramite metadati; non sono disponibili slide o trascrizione. Le proposte sull’AI sono ipotetiche.",
+        "Il materiale e2874e47-9ddb-40a0-a7ab-e60c4c287c30 contiene solo “un altro talk di 4 mesi fa”: non usato come prova tecnica."
+      ]
+    },
+    {
+      "speakerId": "soumaya-erradi",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    },
+    {
+      "speakerId": "vladi-stevanovic",
+      "warnings": [
+        "Manca una ricerca dedicata: verificare le premesse con lo speaker."
+      ]
+    }
+  ],
+  "connections": {
+    "status": "Bozza editoriale separata dall’app",
+    "topics": 17,
+    "questionPairs": 15,
+    "graph3dImplemented": false,
+    "automaticRecalculation": false
+  },
+  "rollbackFile": ".superpowers/editorial-in-list-2026-10-25/rollback-before-apply.json"
+}

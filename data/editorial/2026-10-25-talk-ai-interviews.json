@@ -1,0 +1,2433 @@
+{
+  "schemaVersion": 1,
+  "questions": [
+    {
+      "id": "q-abiodun-olowode-editorial-2",
+      "speakerId": "abiodun-olowode",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "In una PR discutiamo un diff osservabile; nel feedback a una persona rischiamo di giudicarne il carattere. Quale evidenza useresti per trasformare «sei poco collaborativo» in un problema su cui si può lavorare?",
+      "textEn": "In a PR we discuss an observable diff; when giving feedback to a person, we risk judging their character. What evidence would you use to turn “you are not collaborative” into an actionable problem?",
+      "followUpIt": "E come verificheresti che la tua lettura dell’episodio fosse sbagliata?",
+      "followUpEn": "How would you check whether your reading of the incident was wrong?",
+      "whyMd": "TALK — porta la precisione della review nelle relazioni, senza equiparare persone e codice.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract fornito e appunti presenti nel workspace. I link citati negli appunti non sono stati consultati; le ipotesi nelle domande non sono esperienze attribuite allo speaker.\n\nRiferimenti letti: talks/talk-abiodun-olowode",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "feedback",
+        "sicurezza-psicologica"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-abiodun-olowode-editorial-7",
+      "speakerId": "abiodun-olowode",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Quando un agente produce una PR plausibile, quale parte del giudizio artigianale del reviewer diventa più importante proprio perché non ha scritto il codice?",
+      "textEn": "When an agent produces a plausible PR, which part of the reviewer’s craftsmanship becomes more important precisely because they did not write the code?",
+      "followUpIt": "Quale domanda faresti prima di leggere le singole righe del diff?",
+      "followUpEn": "What would you ask before reading individual lines of the diff?",
+      "whyMd": "AI — riprende lo spunto dell’autore sul craftsmanship e lo traduce in responsabilità del reviewer.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract fornito e appunti presenti nel workspace. I link citati negli appunti non sono stati consultati; le ipotesi nelle domande non sono esperienze attribuite allo speaker.\n\nRiferimenti letti: talks/talk-abiodun-olowode; insights/5ddaea75-cf10-4bec-9f4e-d8d296182fb5",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "agentic-coding",
+        "code-review",
+        "giudizio-umano"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-abiodun-olowode-talk-ai-20261025-bridge",
+      "speakerId": "abiodun-olowode",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se un collega difende una scelta dicendo «l’ha suggerita l’AI», come riporti il confronto sulle ragioni tecniche senza trasformarlo in un giudizio sulla persona?",
+      "textEn": "If a colleague defends a decision by saying “the AI suggested it”, how do you bring the discussion back to technical reasoning without turning it into a judgment about the person?",
+      "followUpIt": "Quale evidenza gli chiederesti, applicando lo stesso criterio anche alle tue scelte?",
+      "followUpEn": "What evidence would you ask for, applying the same standard to your own decisions?",
+      "whyMd": "PONTE — collega il feedback diretto alla responsabilità per le proposte degli agenti.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract fornito e appunti presenti nel workspace. I link citati negli appunti non sono stati consultati; le ipotesi nelle domande non sono esperienze attribuite allo speaker.\n\nRiferimenti letti: talks/talk-abiodun-olowode; insights/5ddaea75-cf10-4bec-9f4e-d8d296182fb5; insights/bbea6ad3-0485-4806-8774-0e7b4ce4812a",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "feedback",
+        "agentic-coding",
+        "responsabilita"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-alexio-cassani-research-20261025-01",
+      "speakerId": "alexio-cassani",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Se una regola architetturale passa dalle istruzioni di progetto a un controllo bloccante, come gestisci un’eccezione legittima senza insegnare all’agente ad aggirare il controllo?",
+      "textEn": "When an architectural rule moves from project instructions to a blocking check, how do you handle a legitimate exception without teaching the agent to bypass the check?",
+      "followUpIt": "Chi può autorizzarla, e quale traccia deve lasciare?",
+      "followUpEn": "Who can authorize it, and what record should it leave?",
+      "whyMd": "Porta la scelta centrale dell’abstract — quale superficie possiede una regola — sul caso difficile delle eccezioni, chiedendo un meccanismo operativo.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Domanda di progettazione: non attribuisce a FairMind un protocollo di eccezioni già implementato.\n\nRiferimenti letti: talks/talk-alexio-cassani; materials/32a0365a-4d3b-4890-ab01-bc389ab72efc",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "harness-engineering",
+        "architectural-constraints",
+        "exception-management"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "32a0365a-4d3b-4890-ab01-bc389ab72efc"
+      ]
+    },
+    {
+      "id": "q-alexio-cassani-research-20261025-02",
+      "speakerId": "alexio-cassani",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "In un team italiano che sta introducendo coding agent, quale risultato ti farebbe fermare l’estensione dell’AI anche se gli sviluppatori dichiarano di lavorare più velocemente?",
+      "textEn": "In an Italian team introducing coding agents, what result would make you pause the AI rollout even if developers report working faster?",
+      "followUpIt": "Quanto tempo di review e rilavorazione includeresti nel confronto?",
+      "followUpEn": "How much review and rework time would you include in the comparison?",
+      "whyMd": "Allarga il discorso dalla configurazione al valore dell’adozione: chiede un criterio che possa smentire la percezione di produttività del singolo.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Scenario proposto per il pubblico Codemotion italiano; nessun dato nazionale o risultato aziendale è presupposto. Il dossier riporta il principio verification before throughput, non una misura verificata di impatto.\n\nRiferimenti letti: materials/32a0365a-4d3b-4890-ab01-bc389ab72efc",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "ai-adoption",
+        "delivery-outcomes",
+        "review-capacity"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "32a0365a-4d3b-4890-ab01-bc389ab72efc"
+      ]
+    },
+    {
+      "id": "q-alexio-cassani-research-20261025-03",
+      "speakerId": "alexio-cassani",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se l’agente legge la chat del team e trova un messaggio recente che contraddice una decisione architetturale approvata, quale passaggio deve impedirgli di scambiare la novità per autorità?",
+      "textEn": "If an agent reads team chat and finds a recent message contradicting an approved architectural decision, what step should prevent it from mistaking recency for authority?",
+      "followUpIt": "Dove collocheresti questa regola nell’harness?",
+      "followUpEn": "Where would you place that rule in the harness?",
+      "whyMd": "Collega MCP e configurazione dell’harness alla governance quotidiana delle fonti: il problema è l’autorità del contesto, non il solo accesso ai dati.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Conflitto ipotetico, non incidente attribuito allo speaker. La ricerca sul canale come harness dichiara di basarsi su frammenti indicizzati.\n\nRiferimenti letti: talks/talk-alexio-cassani; materials/32a0365a-4d3b-4890-ab01-bc389ab72efc",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "context-authority",
+        "mcp",
+        "decision-records"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "32a0365a-4d3b-4890-ab01-bc389ab72efc"
+      ]
+    },
+    {
+      "id": "q-alfonso-fuggetta-research-20261025-01",
+      "speakerId": "alfonso-fuggetta",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Il talk descrive un vuoto strutturale degli LLM. Se un agente incorpora memoria esterna, strumenti e verifiche, quale parte di quel vuoto ritieni resti al giudizio umano?",
+      "textEn": "The talk describes a structural gap in LLMs. If an agent incorporates external memory, tools and checks, which part of that gap do you think remains a matter of human judgment?",
+      "followUpIt": "Quale evidenza ti farebbe spostare quel confine?",
+      "followUpEn": "What evidence would make you move that boundary?",
+      "whyMd": "Interroga la tesi esplicita dell’abstract distinguendo il modello dal sistema che lo contiene; evita di confermare per inerzia l’impossibilità di delegare.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Memoria, strumenti e verifiche sono l’ipotesi della domanda: non si sostiene che risolvano il problema né si attribuiscono risultati al preprint non disponibile.\n\nRiferimenti letti: talks/talk-alfonso-fuggetta; materials/1717dbb8-20bc-4fd5-bfa9-d67cb6a5edb1\n\nDa verificare: Le formulazioni assolute del dossier sui limiti degli LLM sono tesi da interrogare, non fatti tecnici verificati.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "agent-architecture",
+        "human-judgment",
+        "software-engineering"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "1717dbb8-20bc-4fd5-bfa9-d67cb6a5edb1"
+      ]
+    },
+    {
+      "id": "q-alfonso-fuggetta-research-20261025-02",
+      "speakerId": "alfonso-fuggetta",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Una PMI italiana vede uno studio in cui gli agenti accelerano compiti circoscritti. Quale prova dovrebbe cercare prima di trasferire quel risultato a un software che dovrà mantenere per anni?",
+      "textEn": "An Italian SME sees a study in which agents speed up narrowly scoped tasks. What evidence should it seek before applying that finding to software it will maintain for years?",
+      "followUpIt": "Quale differenza tra lo studio e il suo contesto peserebbe di più?",
+      "followUpEn": "Which difference between the study and its own context would matter most?",
+      "whyMd": "Usa il tema dei livelli di evidenza presente nel materiale per chiedere un criterio pratico di adozione, senza inventare risultati della bibliografia citata.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. PMI e studio positivo sono uno scenario editoriale. Non vengono assunti numero, conclusioni o metodologia degli studi non disponibili integralmente.\n\nRiferimenti letti: materials/52c5100a-59d1-477d-8329-c7fa71ff24a9\n\nDa verificare: Le formulazioni assolute del dossier sui limiti degli LLM sono tesi da interrogare, non fatti tecnici verificati.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "empirical-evidence",
+        "ai-adoption",
+        "external-validity"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "52c5100a-59d1-477d-8329-c7fa71ff24a9"
+      ]
+    },
+    {
+      "id": "q-alfonso-fuggetta-research-20261025-03",
+      "speakerId": "alfonso-fuggetta",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se un agente genera codice e test dallo stesso requisito ambiguo, entrambi potrebbero essere coerenti ma sbagliati per l’azienda. Chi deve introdurre un criterio di correttezza indipendente prima del rilascio?",
+      "textEn": "If an agent generates code and tests from the same ambiguous requirement, both could be consistent yet wrong for the business. Who should introduce an independent criterion of correctness before release?",
+      "followUpIt": "Quale esempio concreto chiederesti all’esperto di dominio?",
+      "followUpEn": "What concrete example would you ask the domain expert for?",
+      "whyMd": "Traduce metodo e conoscenza del dominio in una responsabilità di processo verificabile, collegando la tesi del talk a una decisione di rilascio.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Scenario ipotetico di errore condiviso. Non viene presentato come limite universale dei test generati o come incidente osservato da Fuggetta.\n\nRiferimenti letti: talks/talk-alfonso-fuggetta; materials/52c5100a-59d1-477d-8329-c7fa71ff24a9\n\nDa verificare: Le formulazioni assolute del dossier sui limiti degli LLM sono tesi da interrogare, non fatti tecnici verificati.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "domain-validation",
+        "test-oracles",
+        "release-decisions"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "52c5100a-59d1-477d-8329-c7fa71ff24a9"
+      ]
+    },
+    {
+      "id": "q-alfonso-graziano-research-20261025-01",
+      "speakerId": "alfonso-graziano",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nello Spec-Driven Development la specifica precede il codice; in un esperimento, però, costruisci proprio per capire cosa serve. Qual è la specifica minima che mantiene il controllo senza fingere di avere già le risposte?",
+      "textEn": "In Spec-Driven Development, the specification comes before code; in an experiment, though, you build precisely to discover what is needed. What minimum specification preserves control without pretending you already have the answers?",
+      "followUpIt": "Quale incertezza scriveresti esplicitamente?",
+      "followUpEn": "Which uncertainty would you state explicitly?",
+      "whyMd": "Mette in tensione i checkpoint di specifica del percorso AINE e le piccole scommesse esplorative descritte nel dossier. Chiede un confine pratico al dettaglio preventivo.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Non assume che SDD imponga requisiti immutabili. L’esperimento è uno scenario, non un caso Nearform documentato.\n\nRiferimenti letti: talks/talk-alfonso-graziano; materials/6eb5f978-3749-4646-b4d9-8d864f47cba9",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "spec-driven-development",
+        "experimentation",
+        "requirements"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "6eb5f978-3749-4646-b4d9-8d864f47cba9"
+      ]
+    },
+    {
+      "id": "q-alfonso-graziano-research-20261025-02",
+      "speakerId": "alfonso-graziano",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se un team scrive codice più velocemente con l’AI ma non rilascia prima, quale segnale ti farebbe spostare l’investimento dagli strumenti al processo decisionale?",
+      "textEn": "If a team writes code faster with AI but does not ship sooner, what signal would make you shift investment from tools to the decision-making process?",
+      "followUpIt": "Quale coda osserveresti per prima?",
+      "followUpEn": "Which queue would you examine first?",
+      "whyMd": "Porta il divario fra produttività percepita e reale a una scelta di allocazione: come riconoscere il vincolo del sistema prima di aggiungere capacità locale.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Non attribuisce un rallentamento osservato a Nearform; propone un caso applicabile ai team italiani. Nessun moltiplicatore di produttività è dato per verificato.\n\nRiferimenti letti: talks/talk-alfonso-graziano; materials/6eb5f978-3749-4646-b4d9-8d864f47cba9",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "ai-adoption",
+        "delivery-flow",
+        "decision-latency"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "6eb5f978-3749-4646-b4d9-8d864f47cba9"
+      ]
+    },
+    {
+      "id": "q-alfonso-graziano-research-20261025-03",
+      "speakerId": "alfonso-graziano",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Nel passaggio all’AI-native, quale prova chiederesti a un team prima di ridurre i controlli umani, per evitare che la bravura del singolo esperto nasconda la dipendenza degli altri da lui?",
+      "textEn": "When moving to AI-native development, what evidence would you ask a team for before reducing human checks, so that one expert’s skill does not conceal everyone else’s dependence on them?",
+      "followUpIt": "Il team saprebbe gestire un output sbagliato in sua assenza?",
+      "followUpEn": "Could the team handle an incorrect output without that expert?",
+      "whyMd": "Collega il percorso individuale e i livelli di maturità dell’abstract a una conseguenza operativa dell’adozione: quando l’autonomia è davvero una capacità del team.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Dipendenza dall’esperto e riduzione dei controlli sono ipotesi. Non inventa i quadranti di maturità o gli esiti degli assessment citati nel materiale.\n\nRiferimenti letti: talks/talk-alfonso-graziano; materials/6eb5f978-3749-4646-b4d9-8d864f47cba9",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "team-maturity",
+        "human-oversight",
+        "knowledge-transfer"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "6eb5f978-3749-4646-b4d9-8d864f47cba9"
+      ]
+    },
+    {
+      "id": "q-andrey-breslav-research-20261025-01",
+      "speakerId": "andrey-breslav",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Se una breve specifica sostituisce molto codice, come distingui il boilerplate eliminabile da una scelta di prodotto che deve restare visibile a chi fa review?",
+      "textEn": "If a short specification replaces a lot of code, how do you distinguish removable boilerplate from a product decision that must remain visible to the reviewer?",
+      "followUpIt": "Per la cancellazione di un contatto, cosa non lasceresti implicito?",
+      "followUpEn": "For deleting a contact, what would you refuse to leave implicit?",
+      "whyMd": "Approfondisce il collo di bottiglia della review nell’abstract attraverso l’esempio CRUD del dossier: meno testo non implica automaticamente meno decisioni da controllare.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. La cancellazione è un esempio ipotetico. Non attribuisce al prodotto omissioni o garanzie non verificate; non usa i moltiplicatori commerciali di riduzione della codebase.\n\nRiferimenti letti: talks/talk-andrey-breslav; materials/ad90bf37-35ad-4dbb-87a3-a91a237d58cd\n\nDa verificare: La nota manuale sui documenti lunghi viene usata come domanda aperta; il riassunto della video-intervista non equivale a una trascrizione. Il materiale duplicato ebebf28b-ae3e-49d6-af83-ef874ec5fc19 è associato a Christian: escluso dai riferimenti di Andrey.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "specification-review",
+        "semantic-density",
+        "product-decisions"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "ad90bf37-35ad-4dbb-87a3-a91a237d58cd"
+      ]
+    },
+    {
+      "id": "q-andrey-breslav-research-20261025-02",
+      "speakerId": "andrey-breslav",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se due persone vogliono cose incompatibili dal software e l’AI propone un compromesso plausibile, quale parte della decisione deve restare esplicitamente umana, anche se l’agente sa implementare entrambe le alternative?",
+      "textEn": "If two people want incompatible things from the software and AI proposes a plausible compromise, which part of the decision must remain explicitly human, even if the agent can implement either option?",
+      "followUpIt": "Chi deve accettare il costo della scelta?",
+      "followUpEn": "Who must accept the cost of that choice?",
+      "whyMd": "Sposta la discussione sulle capacità degli agenti al giudizio e alla responsabilità su obiettivi conflittuali: non basta saper eseguire o verificare una soluzione per decidere quale risultato valga la pena ottenere.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Conflitto tra stakeholder proposto dall’intervistatore. Il materiale sostiene il tema del ruolo umano e della definizione del problema, non una posizione già espressa da Breslav su questo caso.\n\nRiferimenti letti: talks/talk-andrey-breslav; materials/ad90bf37-35ad-4dbb-87a3-a91a237d58cd\n\nDa verificare: La nota manuale sui documenti lunghi viene usata come domanda aperta; il riassunto della video-intervista non equivale a una trascrizione. Il materiale duplicato ebebf28b-ae3e-49d6-af83-ef874ec5fc19 è associato a Christian: escluso dai riferimenti di Andrey.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "human-judgment",
+        "stakeholder-conflict",
+        "decision-accountability"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "ad90bf37-35ad-4dbb-87a3-a91a237d58cd"
+      ]
+    },
+    {
+      "id": "q-andrey-breslav-research-20261025-03",
+      "speakerId": "andrey-breslav",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Passando da documenti lunghi a requisiti ricavati dalle chat con gli agenti, quale passaggio distingue un’idea provvisoria da una decisione che il sistema è autorizzato a implementare?",
+      "textEn": "When moving from long documents to requirements extracted from agent chats, what step distinguishes a tentative idea from a decision the system is authorized to implement?",
+      "followUpIt": "Se cambia, come rendi visibili i requisiti collegati da rivedere?",
+      "followUpEn": "If it changes, how do you make the related requirements needing review visible?",
+      "whyMd": "Riprende direttamente l’insight manuale sui documenti lunghi e il riassunto della fonte: trasforma il tema dell’eccesso di informazione in una domanda sull’autorità e sulle conseguenze delle modifiche.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. La premessa del passaggio alle chat è riportata nelle note della fonte, non verificata esternamente. Non si presume un workflow di approvazione già implementato. L’insight è una richiesta editoriale, non prova di un’esperienza personale dello speaker.\n\nRiferimenti letti: sources/452f418f-c182-4ac5-938e-4583fb49977e; insights/529dbe73-dd67-4f5a-9288-55181f1460a5\n\nDa verificare: La nota manuale sui documenti lunghi viene usata come domanda aperta; il riassunto della video-intervista non equivale a una trascrizione. Il materiale duplicato ebebf28b-ae3e-49d6-af83-ef874ec5fc19 è associato a Christian: escluso dai riferimenti di Andrey.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "requirements-extraction",
+        "decision-authority",
+        "change-impact"
+      ],
+      "sourceIds": [
+        "452f418f-c182-4ac5-938e-4583fb49977e"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-carolina-pinto-research-20261025-01",
+      "speakerId": "carolina-pinto",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nel talk colleghi feedback emotivo e fiducia. Se un prodotto AI celebra una risposta prima che sia verificata, come progetteresti quel feedback perché premi il controllo del risultato senza spezzare il ritmo dell’esperienza?",
+      "textEn": "Your talk connects emotional feedback and trust. If an AI product celebrates an answer before it has been verified, how would you design that feedback to reward checking the result without disrupting the experience?",
+      "followUpIt": "Che cosa dovrebbe accadere quando l’utente trova un errore?",
+      "followUpEn": "What should happen when the user finds an error?",
+      "whyMd": "Mette alla prova il trasferimento di una meccanica specifica del gaming a un output incerto: il momento della ricompensa.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Scenario ipotetico editoriale. Non attribuisce alla speaker un prodotto o un esperimento. Dossier fornito non verificato indipendentemente.\n\nRiferimenti letti: talks/talk-carolina-pinto\n\nDa verificare: L’appunto umano sul lavoro UX è incompleto: usato solo come spunto, senza completarne il pensiero o attribuirlo alla speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "feedback",
+        "fiducia",
+        "verifica-output"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "317ac47e-c238-4f3c-bd0e-2af2efd72b96"
+      ]
+    },
+    {
+      "id": "q-carolina-pinto-research-20261025-02",
+      "speakerId": "carolina-pinto",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se l’AI permette anche a chi non fa ricerca UX di produrre un prototipo convincente, quale evidenza sugli utenti dovrebbe servire prima di trasformarlo in una decisione di prodotto?",
+      "textEn": "If AI lets people without UX research expertise produce a convincing prototype, what user evidence should be required before turning it into a product decision?",
+      "followUpIt": "Quale decisione rimanderesti anche con un prototipo già pronto?",
+      "followUpEn": "Which decision would you postpone even with a prototype ready?",
+      "whyMd": "Riprende l’appunto umano sulla maggiore accessibilità del lavoro UX e chiede una soglia di evidenza, anziché una previsione sulla sostituzione dei designer.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Estrapolazione ipotetica dall’appunto incompleto dell’utente. Non è una tesi attribuita a Carolina né una capacità di strumenti specifici data per dimostrata.\n\nRiferimenti letti: materials/81e4248b-3626-4737-896b-7ba92c156f64\n\nDa verificare: L’appunto umano sul lavoro UX è incompleto: usato solo come spunto, senza completarne il pensiero o attribuirlo alla speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "ricerca-utente",
+        "prototipazione-ai",
+        "decisioni-prodotto"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "81e4248b-3626-4737-896b-7ba92c156f64",
+        "3bb1d7b9-b9f6-434f-aab9-50bfb0000f3e"
+      ]
+    },
+    {
+      "id": "q-carolina-pinto-research-20261025-03",
+      "speakerId": "carolina-pinto",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "In un assistente AI, completare bene il compito può significare tornare meno spesso. Se una meccanica di progressione aumenta i ritorni ma non migliora il lavoro svolto, quale risultato useresti per decidere se mantenerla?",
+      "textEn": "With an AI assistant, successfully finishing a task can mean returning less often. If a progression mechanic increases return visits without improving the work, what outcome would determine whether you keep it?",
+      "followUpIt": "Come includeresti nella misura chi completa il compito e non torna?",
+      "followUpEn": "How would you include users who finish their task and never return in that measurement?",
+      "whyMd": "Porta i pattern del talk a una decisione operativa sul successo del prodotto, distinta dalla progettazione del feedback e dalla validazione del prototipo.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Scenario ipotetico. Nessuna metrica o pratica interna di King è attribuita alla speaker. I materiali salvati non sono stati verificati indipendentemente.\n\nRiferimenti letti: talks/talk-carolina-pinto\n\nDa verificare: L’appunto umano sul lavoro UX è incompleto: usato solo come spunto, senza completarne il pensiero o attribuirlo alla speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "progressione",
+        "metriche-prodotto",
+        "task-success"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "317ac47e-c238-4f3c-bd0e-2af2efd72b96"
+      ]
+    },
+    {
+      "id": "q-christian-schabetsberger-editorial-1",
+      "speakerId": "christian-schabetsberger",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Se il team mantiene Git sul server ma cambia gli strumenti locali, quale garanzia deve sopravvivere al passaggio verso la pull request perché la compatibilità sia davvero sufficiente?",
+      "textEn": "If a team keeps Git on the server but changes its local tools, what guarantee must survive the journey to a pull request for compatibility to be good enough?",
+      "followUpIt": "Quale prova con CI e bot di aggiornamento farebbe fallire il tuo esperimento?",
+      "followUpEn": "What test involving CI and update bots would make you reject the trial?",
+      "whyMd": "L’integrazione in progetti Git esistenti è centrale nell’abstract; la ricerca aggiunge firma dei commit e automazione CI. La tensione è tra ergonomia individuale e garanzie condivise.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. La domanda non assume compatibilità completa né supporto specifico alla firma in Jujutsu, Sapling o GitButler.\n\nRiferimenti letti: materials/c8e96a6d-9285-4578-ad41-d914b16845e2; talks/talk-christian-schabetsberger\n\nDa verificare: Escluso ebebf28b-ae3e-49d6-af83-ef874ec5fc19: dossier CodeSpeak/Andrey Breslav collegato erroneamente a Christian; non è evidenza sullo speaker. Ricerca AI basata anche su estratti; video del talk non trascritti. Non assumere dettagli o giudizi sui singoli VCS come verificati. La bio italiana traduce erroneamente “the world’s okayest developer” come “lo sviluppatore più bravo del mondo”. Non usare questa presentazione.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "git-interoperability",
+        "pull-requests",
+        "ci-cd"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "c8e96a6d-9285-4578-ad41-d914b16845e2"
+      ]
+    },
+    {
+      "id": "q-christian-schabetsberger-editorial-2",
+      "speakerId": "christian-schabetsberger",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "In una migrazione brownfield affidata a un agente, una build verde può nascondere una funzionalità eliminata. Quale verifica indipendente dall’agente useresti per decidere se la migrazione è riuscita?",
+      "textEn": "In an agent-led brownfield migration, a green build can hide a deleted feature. What check independent of the agent would you use to decide whether the migration succeeded?",
+      "followUpIt": "Che cosa deve essere verificabile prima che l’agente tocchi il codice?",
+      "followUpEn": "What must be verifiable before the agent touches the code?",
+      "whyMd": "La ricerca su Looks Good To Me descrive funzionalità commentate e pulizia manuale. Il nodo è l’oracolo di correttezza, distinto dal controllo versione.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Il caso è formulato come scenario derivato dalla sintesi fornita, senza attribuire test o procedure specifiche allo speaker.\n\nRiferimenti letti: materials/c8e96a6d-9285-4578-ad41-d914b16845e2\n\nDa verificare: Escluso ebebf28b-ae3e-49d6-af83-ef874ec5fc19: dossier CodeSpeak/Andrey Breslav collegato erroneamente a Christian; non è evidenza sullo speaker. Ricerca AI basata anche su estratti; video del talk non trascritti. Non assumere dettagli o giudizi sui singoli VCS come verificati. La bio italiana traduce erroneamente “the world’s okayest developer” come “lo sviluppatore più bravo del mondo”. Non usare questa presentazione.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "brownfield-migration",
+        "agent-evaluation",
+        "behavior-preservation"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "c8e96a6d-9285-4578-ad41-d914b16845e2"
+      ]
+    },
+    {
+      "id": "q-christian-schabetsberger-editorial-3",
+      "speakerId": "christian-schabetsberger",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se un agente mescola una correzione utile e una regressione, quale informazione deve conservare il controllo versione per recuperare la prima senza fidarsi del racconto dell’agente?",
+      "textEn": "If an agent mixes a useful fix with a regression, what information must version control preserve so you can recover the fix without trusting the agent’s account?",
+      "followUpIt": "Quando basta Git ben configurato e quando serve davvero un modello diverso?",
+      "followUpEn": "When is well-configured Git enough, and when do you actually need a different model?",
+      "whyMd": "Collega l’insight manuale sul bisogno di nuovi VCS prima/dopo gli LLM con il dossier brownfield. Chiede se il nuovo modello migliori una decisione concreta, senza assumere che gli agenti rendano Git obsoleto.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. La sinergia VCS/agenti è un’ipotesi editoriale proposta nella ricerca, non una posizione verificata dello speaker.\n\nRiferimenti letti: materials/c8e96a6d-9285-4578-ad41-d914b16845e2; insights/d67bdf21-cebe-4653-856a-c98eb3660c0f\n\nDa verificare: Escluso ebebf28b-ae3e-49d6-af83-ef874ec5fc19: dossier CodeSpeak/Andrey Breslav collegato erroneamente a Christian; non è evidenza sullo speaker. Ricerca AI basata anche su estratti; video del talk non trascritti. Non assumere dettagli o giudizi sui singoli VCS come verificati. La bio italiana traduce erroneamente “the world’s okayest developer” come “lo sviluppatore più bravo del mondo”. Non usare questa presentazione.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "agentic-coding",
+        "change-recovery",
+        "version-control"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "c8e96a6d-9285-4578-ad41-d914b16845e2"
+      ]
+    },
+    {
+      "id": "q-david-mccarter-research-20261025-01",
+      "speakerId": "david-mccarter",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Dopo diversi talk posso conoscere bene il contenuto e sentirmi ancora insicuro: come distingui ciò che va allenato dall’ansia con cui devo imparare a parlare?",
+      "textEn": "After several talks, I may know my material well and still feel insecure: how do you distinguish what needs practice from anxiety I need to learn to speak through?",
+      "followUpIt": "Quale cambiamento concreto mi faresti provare al prossimo talk, e come ne valuteresti l’effetto?",
+      "followUpEn": "What specific change would you have me try in my next talk, and how would you assess its effect?",
+      "whyMd": "TALK — riprende direttamente l’esperienza personale annotata dal conduttore e chiede un esercizio osservabile.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract fornito e appunti presenti nel workspace. I link citati negli appunti non sono stati consultati; le ipotesi nelle domande non sono esperienze attribuite allo speaker.\n\nRiferimenti letti: talks/talk-david-mccarter; materials/7d1ae09b-be83-4944-82e8-e2a6882dcabd",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "public-speaking",
+        "pratica-deliberata"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "7d1ae09b-be83-4944-82e8-e2a6882dcabd"
+      ]
+    },
+    {
+      "id": "q-david-mccarter-research-20261025-02",
+      "speakerId": "david-mccarter",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se un’AI riscrive un intervento rendendolo più fluido, come capisci quando sta chiarendo il tuo pensiero e quando lo sta sostituendo con qualcosa che suona bene ma non ti appartiene?",
+      "textEn": "If AI rewrites a presentation to make it flow better, how do you tell when it is clarifying your thinking and when it is replacing it with something polished that is not yours?",
+      "followUpIt": "Quale parte della preparazione vorresti che un principiante facesse prima di aprire la chat?",
+      "followUpEn": "Which part of preparation would you want a beginner to do before opening the chat?",
+      "whyMd": "AI — esplora il confine tra assistenza alla preparazione e delega del pensiero, senza presupporre un suo uso di AI.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract fornito e appunti presenti nel workspace. I link citati negli appunti non sono stati consultati; le ipotesi nelle domande non sono esperienze attribuite allo speaker.\n\nRiferimenti letti: talks/talk-david-mccarter; materials/7d1ae09b-be83-4944-82e8-e2a6882dcabd",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "ai-assistita",
+        "public-speaking",
+        "autenticita"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "7d1ae09b-be83-4944-82e8-e2a6882dcabd"
+      ]
+    },
+    {
+      "id": "q-david-mccarter-research-20261025-03",
+      "speakerId": "david-mccarter",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Come trasformeresti una prova del talk con un coach AI in un allenamento utile davanti a persone reali, senza scambiare il feedback incoraggiante del modello per una prova di chiarezza?",
+      "textEn": "How would you turn rehearsing with an AI coach into useful practice for a real audience, without mistaking the model’s encouraging feedback for evidence of clarity?",
+      "followUpIt": "Che cosa faresti verificare comunque a una persona che non conosce l’argomento?",
+      "followUpEn": "What would you still ask someone unfamiliar with the topic to check?",
+      "whyMd": "PONTE — collega il bisogno di allenamento alla verifica umana dei suggerimenti generati.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract fornito e appunti presenti nel workspace. I link citati negli appunti non sono stati consultati; le ipotesi nelle domande non sono esperienze attribuite allo speaker.\n\nRiferimenti letti: talks/talk-david-mccarter; materials/7d1ae09b-be83-4944-82e8-e2a6882dcabd",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "valutazione-ai",
+        "public-speaking",
+        "feedback"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "7d1ae09b-be83-4944-82e8-e2a6882dcabd"
+      ]
+    },
+    {
+      "id": "q-dennis-nerush-research-20261025-01",
+      "speakerId": "dennis-nerush",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nel walkthrough di un esercizio assistito dall’AI, anche la spiegazione del codice può essere preparata dall’AI. Quale cambiamento al problema useresti per distinguere comprensione reale da una giustificazione imparata bene?",
+      "textEn": "In the walkthrough of an AI-assisted assignment, AI can prepare the code explanation too. What change to the problem would you use to distinguish real understanding from a well-rehearsed justification?",
+      "followUpIt": "Quale reazione del candidato ti farebbe cambiare valutazione?",
+      "followUpEn": "What response from the candidate would change your assessment?",
+      "whyMd": "Incrocia due punti del dossier: il walkthrough come prova di comprensione e la capacità dell’AI di spiegare le scelte. Chiede un test del ragionamento, non una spiegazione più eloquente.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Il cambiamento di vincolo è proposto come esperimento, non attribuito al processo corrente di Elementor.\n\nRiferimenti letti: materials/a77c07ec-3bf3-4847-b35a-7984c12229a5",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "engineering-interviews",
+        "adaptive-reasoning",
+        "ai-assisted-coding"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "a77c07ec-3bf3-4847-b35a-7984c12229a5"
+      ]
+    },
+    {
+      "id": "q-dennis-nerush-research-20261025-02",
+      "speakerId": "dennis-nerush",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se chiediamo agli ingegneri di giudicare il lavoro degli agenti, come può un junior costruire quel giudizio quando delega proprio l’implementazione da cui avrebbe imparato?",
+      "textEn": "If we ask engineers to judge agents’ work, how can a junior develop that judgment while delegating the very implementation they would otherwise learn from?",
+      "followUpIt": "Quale esercizio manterresti nel lavoro quotidiano?",
+      "followUpEn": "What exercise would you preserve in everyday work?",
+      "whyMd": "Allarga la selezione alla formazione della competenza richiesta dall’adozione: il dossier lega il giudizio ai modelli mentali e allo studio, ma non risolve come acquisirli con meno pratica di implementazione.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Domanda normativa, senza assumere che l’AI riduca sempre l’apprendimento o che lo speaker abbia già adottato un percorso junior.\n\nRiferimenti letti: materials/a77c07ec-3bf3-4847-b35a-7984c12229a5",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "engineering-education",
+        "mental-models",
+        "ai-delegation"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "a77c07ec-3bf3-4847-b35a-7984c12229a5"
+      ]
+    },
+    {
+      "id": "q-dennis-nerush-research-20261025-03",
+      "speakerId": "dennis-nerush",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Per un team italiano che adotta il tuo approccio, come verificheresti che individuare un errore dell’AI al colloquio anticipi il buon giudizio sul lavoro, anziché la capacità di indovinare cosa cerca l’intervistatore?",
+      "textEn": "For an Italian team adopting your approach, how would you check that spotting an AI error in an interview predicts good judgment at work, rather than the ability to guess what the interviewer wants?",
+      "followUpIt": "Quale evidenza ti farebbe ritirare un esercizio?",
+      "followUpEn": "What evidence would make you retire an exercise?",
+      "whyMd": "Collega la promessa di un framework di selezione utile alla validità operativa nel team che lo adotta: chiede come falsificare il segnale, non presume che il metodo sia già validato.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: materiale fornito nello snapshot, non verificato su fonti esterne. Scenario di trasferimento al pubblico italiano. Nessuna correlazione tra colloquio e performance successiva è documentata o presupposta; non si attribuiscono statistiche a Elementor.\n\nRiferimenti letti: talks/talk-dennis-nerush; materials/a77c07ec-3bf3-4847-b35a-7984c12229a5",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "hiring-validity",
+        "engineering-judgment",
+        "evaluation-bias"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "a77c07ec-3bf3-4847-b35a-7984c12229a5"
+      ]
+    },
+    {
+      "id": "q-dotan-horovits-research-20261025-01",
+      "speakerId": "dotan-horovits",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "OpenTelemetry aiuta a rendere portabile la raccolta, ma query e dashboard possono legare il team al backend. Quale prova di migrazione useresti per dimostrare che si può davvero uscire da uno stack unificato?",
+      "textEn": "OpenTelemetry helps make collection portable, but queries and dashboards can tie a team to the backend. What migration test would you use to demonstrate that a team can actually leave a unified stack?",
+      "followUpIt": "Quale parte del lavoro operativo accetteresti di dover riscrivere?",
+      "followUpEn": "Which part of the operational work would you accept having to rewrite?",
+      "whyMd": "Il dossier accosta zero lock-in, PPL e dashboard. La domanda mette alla prova la portabilità del lavoro oltre il formato della telemetria.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. La promessa contenuta nel dossier è oggetto della domanda, non una conclusione convalidata.\n\nRiferimenti letti: materials/3ead4103-4c4a-4186-a04f-c2ef7674f673; talks/talk-dotan-horovits\n\nDa verificare: Dossier AI con estratti e metadati: versioni, disponibilità delle integrazioni e promessa di zero lock-in non verificate esternamente. La ricerca dichiara non descritta la pipeline di sanificazione dei prompt: nessun controllo specifico è dato per implementato.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "opentelemetry",
+        "backend-portability",
+        "observability"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "3ead4103-4c4a-4186-a04f-c2ef7674f673"
+      ]
+    },
+    {
+      "id": "q-dotan-horovits-research-20261025-02",
+      "speakerId": "dotan-horovits",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Un agente può rispondere rapidamente e senza errori tecnici, ma fallire il compito. Quale evidenza renderebbe quel fallimento semantico abbastanza affidabile da svegliare chi è reperibile?",
+      "textEn": "An agent can respond quickly with no technical errors and still fail its task. What evidence would make that semantic failure reliable enough to page the on-call engineer?",
+      "followUpIt": "Come separeresti un peggioramento reale da un errore del valutatore?",
+      "followUpEn": "How would you distinguish a real degradation from an evaluator error?",
+      "whyMd": "La ricerca distingue guasti semantici e tecnici e propone valutazione continua. La decisione richiesta è trasformare una valutazione incerta in un intervento operativo.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Nessuna soglia né affidabilità del framework Agent Health è presupposta; il fallimento è uno scenario.\n\nRiferimenti letti: materials/3ead4103-4c4a-4186-a04f-c2ef7674f673\n\nDa verificare: Dossier AI con estratti e metadati: versioni, disponibilità delle integrazioni e promessa di zero lock-in non verificate esternamente. La ricerca dichiara non descritta la pipeline di sanificazione dei prompt: nessun controllo specifico è dato per implementato.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "semantic-failures",
+        "agent-evaluation",
+        "incident-response"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "3ead4103-4c4a-4186-a04f-c2ef7674f673"
+      ]
+    },
+    {
+      "id": "q-dotan-horovits-research-20261025-03",
+      "speakerId": "dotan-horovits",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Per ricostruire il fallimento di un agente servono contesto e risultati dei tool, ma registrarli aumenta l’esposizione dei dati. Qual è la traccia minima che porteresti nello stack di osservabilità senza perdere la possibilità di indagare?",
+      "textEn": "Reconstructing an agent failure requires context and tool results, but logging them increases data exposure. What is the minimum trace you would send to the observability stack while preserving the ability to investigate?",
+      "followUpIt": "Quale indagine accetteresti di non poter più fare?",
+      "followUpEn": "Which investigation would you accept being unable to perform?",
+      "whyMd": "Incrocia la piattaforma telemetrica del talk con tool-call tracing e protezione dei prompt nella ricerca. Chiede un limite progettuale concreto al raccogliere tutto.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Non assume che OpenSearch o un collector implementino già la strategia richiesta.\n\nRiferimenti letti: materials/3ead4103-4c4a-4186-a04f-c2ef7674f673; talks/talk-dotan-horovits\n\nDa verificare: Dossier AI con estratti e metadati: versioni, disponibilità delle integrazioni e promessa di zero lock-in non verificate esternamente. La ricerca dichiara non descritta la pipeline di sanificazione dei prompt: nessun controllo specifico è dato per implementato.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "agent-tracing",
+        "data-minimization",
+        "debugging"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "3ead4103-4c4a-4186-a04f-c2ef7674f673"
+      ]
+    },
+    {
+      "id": "q-emanuele-fabbiani-research-20261025-01",
+      "speakerId": "emanuele-fabbiani",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nell’abstract dici che il tournament sampling lascia invariata la distribuzione del modello. Su quale casualità vale questa garanzia, e che cosa resta da verificare quando usiamo la stessa chiave per generare molti testi?",
+      "textEn": "Your abstract says tournament sampling leaves the model’s distribution unchanged. Over which source of randomness does that guarantee hold, and what still needs checking when the same key generates many texts?",
+      "followUpIt": "Quale esperimento metterebbe alla prova un’interpretazione troppo forte della garanzia?",
+      "followUpEn": "What experiment would test an overly strong interpretation of that guarantee?",
+      "whyMd": "Chiede di precisare una proprietà tecnica centrale invece di confondere assenza di degrado percepito e identità delle distribuzioni.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Domanda metodologica sull’abstract fornito; nessuna dimostrazione del paper o proprietà per chiave fissa viene presupposta. Ricerca salvata non verificata indipendentemente.\n\nRiferimenti letti: talks/talk-emanuele-fabbiani\n\nDa verificare: L’abstract contiene affermazioni assolute e metriche non validate qui: le domande ne chiedono condizioni e limiti senza riproporle come fatti universali.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "tournament-sampling",
+        "distribuzione",
+        "watermark-key"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "e64b5ae8-8faa-4fde-9836-ece98df594c4"
+      ]
+    },
+    {
+      "id": "q-emanuele-fabbiani-research-20261025-02",
+      "speakerId": "emanuele-fabbiani",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Immaginiamo che solo una parte dei generatori adotti il watermarking. Quale promessa sulla provenienza dei contenuti può fare un prodotto AI senza trasformare l’assenza di watermark in una falsa garanzia di origine umana?",
+      "textEn": "Suppose only some generators adopt watermarking. What provenance promise can an AI product make without turning the absence of a watermark into a false guarantee of human authorship?",
+      "followUpIt": "Come presenteresti all’utente un risultato non conclusivo?",
+      "followUpEn": "How would you present an inconclusive result to the user?",
+      "whyMd": "Allarga il tema all’adozione nell’ecosistema e al significato della provenienza: una garanzia locale non implica copertura universale.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Adozione parziale posta come scenario ipotetico. Non certifica la frase assoluta sull’affidabilità né lo stato attuale del mercato.\n\nRiferimenti letti: talks/talk-emanuele-fabbiani\n\nDa verificare: L’abstract contiene affermazioni assolute e metriche non validate qui: le domande ne chiedono condizioni e limiti senza riproporle come fatti universali.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "provenienza",
+        "adozione-ai",
+        "copertura"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "e64b5ae8-8faa-4fde-9836-ece98df594c4"
+      ]
+    },
+    {
+      "id": "q-emanuele-fabbiani-research-20261025-03",
+      "speakerId": "emanuele-fabbiani",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Portiamo il detector della demo in una coda di documenti dove i testi con watermark sono rari: come sceglieresti la soglia prima di usare un esito positivo per mandare un documento in revisione?",
+      "textEn": "Let’s put the demo’s detector into a document queue where watermarked texts are rare: how would you choose the threshold before using a positive result to send a document for review?",
+      "followUpIt": "Quale costo dei falsi positivi ti farebbe cambiare quella soglia?",
+      "followUpEn": "What false-positive cost would make you change that threshold?",
+      "whyMd": "Trasforma la detection in una decisione operativa con prevalenza e carico di revisione, senza equiparare una metrica di benchmark all’affidabilità del singolo esito.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Coda documentale ipotetica, non un sistema di TeamSystem. Non si ripetono né certificano percentuali dell’abstract e non si assume che un positivo determini l’autorialità completa.\n\nRiferimenti letti: talks/talk-emanuele-fabbiani\n\nDa verificare: L’abstract contiene affermazioni assolute e metriche non validate qui: le domande ne chiedono condizioni e limiti senza riproporle come fatti universali.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "calibrazione",
+        "falsi-positivi",
+        "revisione-documenti"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "e64b5ae8-8faa-4fde-9836-ece98df594c4"
+      ]
+    },
+    {
+      "id": "q-enzo-lombardi-research-20261025-01",
+      "speakerId": "enzo-lombardi",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "L’avversario è implementato nella ROM emulata o in un componente esterno? Quale vincolo hardware hai preservato perché il risultato restasse una soluzione per Slot Racers?",
+      "textEn": "Is the opponent implemented in the emulated ROM or in an external component? Which hardware constraint did you preserve so that the result remained a solution for Slot Racers?",
+      "followUpIt": "Quale scorciatoia avrebbe reso la sfida tecnicamente diversa?",
+      "followUpEn": "Which shortcut would have made it a technically different challenge?",
+      "whyMd": "Risolve una lacuna esplicita nel dossier e mette a fuoco il perimetro tecnico del risultato, prima di discuterne la qualità.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Architettura finale chiesta apertamente; nessuna supposizione sul runtime dell’avversario o sull’emulatore.\n\nRiferimenti letti: materials/817c76f0-1603-428e-9f90-4f850ef7729a; talks/talk-enzo-lombardi\n\nDa verificare: La ricerca deriva soprattutto da snippet: non chiarisce se l’avversario finale gira nella ROM o all’esterno, né il nome preciso dell’emulatore. Non equiparare l’AI avversaria a Claude in esecuzione: l’abstract distingue l’agente che sviluppa dall’avversario creato.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "atari-2600",
+        "hardware-constraints",
+        "emulation"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "817c76f0-1603-428e-9f90-4f850ef7729a"
+      ]
+    },
+    {
+      "id": "q-enzo-lombardi-research-20261025-02",
+      "speakerId": "enzo-lombardi",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se un agente riceve un indice semantico invece di esplorare tutto il codice, come verificheresti che il risparmio di token non gli nasconda proprio la dipendenza che rende sbagliata una modifica?",
+      "textEn": "If an agent receives a semantic index instead of exploring all the code, how would you check that the token savings do not hide the very dependency that makes a change wrong?",
+      "followUpIt": "Quale risultato ti farebbe preferire più contesto e un costo maggiore?",
+      "followUpEn": "What result would make you prefer more context at a higher cost?",
+      "whyMd": "Il dossier descrive tokensave e grafi semantici; la domanda sposta il confronto dal costo nominale alla qualità delle modifiche su dipendenze difficili.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Scenario di valutazione suggerito dalla ricerca, senza assumere benchmark o prestazioni di tokensave verificati.\n\nRiferimenti letti: materials/817c76f0-1603-428e-9f90-4f850ef7729a\n\nDa verificare: La ricerca deriva soprattutto da snippet: non chiarisce se l’avversario finale gira nella ROM o all’esterno, né il nome preciso dell’emulatore. Non equiparare l’AI avversaria a Claude in esecuzione: l’abstract distingue l’agente che sviluppa dall’avversario creato.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "context-engineering",
+        "semantic-indexing",
+        "agent-evaluation"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "817c76f0-1603-428e-9f90-4f850ef7729a"
+      ]
+    },
+    {
+      "id": "q-enzo-lombardi-research-20261025-03",
+      "speakerId": "enzo-lombardi",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Nel collegamento MCP tra Claude e il debugger, come distingui una soluzione che rispetta le regole del gioco da una che ottiene il risultato aggirandole? Il confine va imposto dai tool o verificato sul comportamento finale?",
+      "textEn": "In the MCP connection between Claude and the debugger, how do you distinguish a solution that follows the game’s rules from one that gets results by bypassing them? Should the boundary be enforced by the tools or checked in the final behavior?",
+      "followUpIt": "Quale azione del debugger terresti disponibile pur rendendo la verifica più difficile?",
+      "followUpEn": "Which debugger action would you keep available even if it made verification harder?",
+      "whyMd": "La regola di non barare nella ricerca diventa una decisione sull’ambiente dell’agente: libertà diagnostica contro controllo del risultato.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Non assume enforcement già implementato; distingue i poteri dell’agente di sviluppo dalle capacità ammesse all’avversario.\n\nRiferimenti letti: materials/817c76f0-1603-428e-9f90-4f850ef7729a; talks/talk-enzo-lombardi\n\nDa verificare: La ricerca deriva soprattutto da snippet: non chiarisce se l’avversario finale gira nella ROM o all’esterno, né il nome preciso dell’emulatore. Non equiparare l’AI avversaria a Claude in esecuzione: l’abstract distingue l’agente che sviluppa dall’avversario creato.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "mcp-tool-design",
+        "agent-boundaries",
+        "behavioral-verification"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "817c76f0-1603-428e-9f90-4f850ef7729a"
+      ]
+    },
+    {
+      "id": "q-gabriele-santomaggio-research-20261025-01",
+      "speakerId": "gabriele-santomaggio",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Se molte idee informatiche sono riscoperte, quale cambiamento nei vincoli reali rende comunque necessaria una nuova architettura? Come distingui una novità utile da una vecchia idea rinominata?",
+      "textEn": "If many computing ideas are rediscoveries, what change in real constraints can still make a new architecture necessary? How do you distinguish useful innovation from an old idea with a new name?",
+      "followUpIt": "Quale esempio tecnico metterebbe in difficoltà il tuo criterio?",
+      "followUpEn": "What technical example would challenge your criterion?",
+      "whyMd": "Parte dalla tesi dell’abstract e dalla tensione della ricerca fra formalismi e vincoli di I/O: evita sia celebrazione della novità sia rifiuto automatico.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Nessuna genealogia storica o implementazione personale viene attribuita; l’aggancio ai vincoli è una lettura editoriale.\n\nRiferimenti letti: materials/485ba5d0-39f8-48e6-a55c-509cae34f690; talks/talk-gabriele-santomaggio\n\nDa verificare: Flag presenti nello snapshot: csv_talk_missing_directory_present e talk_attribution_to_verify. Confermare l’abbinamento speaker/talk prima dell’uso pubblico. Il dossier ha datazione incerta del talk e riferimenti generici a RabbitMQ: non attribuire contributi o opinioni del team allo speaker. Il dossier non documenta una sua posizione sull’AI. Le due domande pertinenti sono scenari ipotetici collegati al suo ambito tecnico.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "computing-foundations",
+        "architecture-decisions",
+        "technical-constraints"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "485ba5d0-39f8-48e6-a55c-509cae34f690"
+      ]
+    },
+    {
+      "id": "q-gabriele-santomaggio-research-20261025-02",
+      "speakerId": "gabriele-santomaggio",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se un LLM genera un consumer che funziona nei test ordinari, quale contratto su retry e duplicati vorresti rendere esplicito prima di usarlo in un sistema distribuito?",
+      "textEn": "If an LLM generates a consumer that passes ordinary tests, what contract around retries and duplicates would you want made explicit before using it in a distributed system?",
+      "followUpIt": "Quale guasto provocheresti per mettere alla prova quel contratto?",
+      "followUpEn": "What failure would you inject to test that contract?",
+      "whyMd": "Il profilo e il dossier offrono la specialità dei sistemi distribuiti e dei contratti broker/client. L’AI introduce il problema di accettare codice plausibile senza proprietà dichiarate.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Scenario ipotetico: non afferma che lo speaker usi LLM né presume specifiche garanzie di consegna di RabbitMQ.\n\nRiferimenti letti: materials/485ba5d0-39f8-48e6-a55c-509cae34f690\n\nDa verificare: Flag presenti nello snapshot: csv_talk_missing_directory_present e talk_attribution_to_verify. Confermare l’abbinamento speaker/talk prima dell’uso pubblico. Il dossier ha datazione incerta del talk e riferimenti generici a RabbitMQ: non attribuire contributi o opinioni del team allo speaker. Il dossier non documenta una sua posizione sull’AI. Le due domande pertinenti sono scenari ipotetici collegati al suo ambito tecnico.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "ai-generated-code",
+        "message-processing",
+        "failure-testing"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "485ba5d0-39f8-48e6-a55c-509cae34f690"
+      ]
+    },
+    {
+      "id": "q-gabriele-santomaggio-research-20261025-03",
+      "speakerId": "gabriele-santomaggio",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Un LLM può rendere molto convincente una proposta architetturale fondata su un’analogia sbagliata. Come tradurresti l’umiltà intellettuale del talk in una prova capace di smentirla prima che il team la adotti?",
+      "textEn": "An LLM can make an architectural proposal based on a flawed analogy sound convincing. How would you translate the talk’s intellectual humility into a test that could disprove it before the team adopts it?",
+      "followUpIt": "Quale assunzione chiederesti di rendere falsificabile per prima?",
+      "followUpEn": "Which assumption would you ask to make falsifiable first?",
+      "whyMd": "Collega esplicitamente l’umiltà e i fondamenti dell’abstract alla revisione di proposte AI; la decisione riguarda l’evidenza per adottare un’architettura, distinta dal test di un consumer.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Collegamento editoriale ipotetico; non attribuisce allo speaker una teoria degli LLM o metodi già applicati.\n\nRiferimenti letti: materials/485ba5d0-39f8-48e6-a55c-509cae34f690; talks/talk-gabriele-santomaggio\n\nDa verificare: Flag presenti nello snapshot: csv_talk_missing_directory_present e talk_attribution_to_verify. Confermare l’abbinamento speaker/talk prima dell’uso pubblico. Il dossier ha datazione incerta del talk e riferimenti generici a RabbitMQ: non attribuire contributi o opinioni del team allo speaker. Il dossier non documenta una sua posizione sull’AI. Le due domande pertinenti sono scenari ipotetici collegati al suo ambito tecnico.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "architectural-review",
+        "llm-reasoning",
+        "falsifiability"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "485ba5d0-39f8-48e6-a55c-509cae34f690"
+      ]
+    },
+    {
+      "id": "q-giorgio-natili-research-20261025-01",
+      "speakerId": "giorgio-natili",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nel layer etico che proponi, dove finisce una regola verificabile dal software e dove deve cominciare una decisione umana, senza nascondere quel confine dentro un altro modello?",
+      "textEn": "In the ethics layer you propose, where does a software-checkable rule end and a human decision need to begin, without hiding that boundary inside another model?",
+      "followUpIt": "Puoi fare un esempio di azione che il sistema dovrebbe sospendere anziché autorizzare o vietare da solo?",
+      "followUpEn": "Can you give an example of an action the system should pause rather than allow or deny on its own?",
+      "whyMd": "TALK — mette alla prova il confine concreto del controllo deterministico proposto nell’abstract.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract fornito e appunti presenti nel workspace. I link citati negli appunti non sono stati consultati; le ipotesi nelle domande non sono esperienze attribuite allo speaker.\n\nRiferimenti letti: talks/talk-giorgio-natili",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "agent-governance",
+        "human-in-the-loop"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-giorgio-natili-research-20261025-02",
+      "speakerId": "giorgio-natili",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Nel passaggio dalle applicazioni web agli agenti AI, quale responsabilità di chi costruisce il software è cambiata davvero, e quale stiamo soltanto riscoprendo con un altro nome?",
+      "textEn": "In the move from web applications to AI agents, which responsibility of software builders has genuinely changed, and which are we rediscovering under a different name?",
+      "followUpIt": "Quale errore dell’epoca web vorresti evitare di ripetere ora?",
+      "followUpEn": "Which mistake from the web era would you want us to avoid repeating now?",
+      "whyMd": "AI — sviluppa l’appunto sul percorso dello speaker senza dare per verificate le date delle sue partecipazioni.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract fornito e appunti presenti nel workspace. I link citati negli appunti non sono stati consultati; le ipotesi nelle domande non sono esperienze attribuite allo speaker.\n\nRiferimenti letti: talks/talk-giorgio-natili; materials/3d5cc631-032c-45d0-a9a3-2816f7b42076",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "responsabilita",
+        "agentic-ai",
+        "storia-del-software"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": [
+        "3d5cc631-032c-45d0-a9a3-2816f7b42076"
+      ]
+    },
+    {
+      "id": "q-giorgio-natili-research-20261025-03",
+      "speakerId": "giorgio-natili",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se ogni chiamata a uno strumento rispetta la policy ma la loro combinazione danneggia l’utente, come dovrebbe intervenire il tuo layer senza delegare di nuovo il controllo allo stesso agente?",
+      "textEn": "If every tool call complies with policy but their combination harms the user, how should your layer intervene without delegating control back to the same agent?",
+      "followUpIt": "Quale contesto delle azioni precedenti deve conservare il controllo per riconoscere quel caso?",
+      "followUpEn": "What context from previous actions must the control retain to recognise that case?",
+      "whyMd": "PONTE — verifica la proposta del talk rispetto alla composizione di azioni autonome.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract fornito e appunti presenti nel workspace. I link citati negli appunti non sono stati consultati; le ipotesi nelle domande non sono esperienze attribuite allo speaker.\n\nRiferimenti letti: talks/talk-giorgio-natili",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "agent-governance",
+        "tool-use",
+        "policy-enforcement"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-jigyasa-grover-research-20261025-01",
+      "speakerId": "jigyasa-grover",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Se un processo è prevedibile quasi ovunque, ma ha un passaggio che richiede di scegliere dinamicamente i tool, dove metteresti il confine tra workflow e agente perché il recupero da un errore resti controllabile?",
+      "textEn": "If a process is predictable almost everywhere but one step needs dynamic tool selection, where would you draw the boundary between workflow and agent so error recovery remains controllable?",
+      "followUpIt": "Quale stato dovrebbe rimanere fuori dal controllo del modello?",
+      "followUpEn": "What state should remain outside the model’s control?",
+      "whyMd": "Mette alla prova i tre pattern del talk su un caso ibrido e sulla responsabilità per lo stato, senza chiedere una classifica astratta delle architetture.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Caso ipotetico. Non descrive implementazioni della speaker. Materiali forniti non verificati indipendentemente.\n\nRiferimenti letti: talks/talk-jigyasa-grover\n\nDa verificare: Tecniche di valutazione riportate nel dossier, senza accesso indipendente al corso o ai file di esercizio. Nessuna attribuzione ai sistemi interni di Uber.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "workflow",
+        "agent-boundary",
+        "failure-isolation"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "9ba6db2e-df7e-4a45-b114-58c2de299459"
+      ]
+    },
+    {
+      "id": "q-jigyasa-grover-research-20261025-02",
+      "speakerId": "jigyasa-grover",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Un pilota AI può raggiungere gli obiettivi perché qualcuno corregge continuamente l’agente. Come renderesti visibile quel lavoro nel decidere se estendere l’adozione, e quando lo considereresti un segnale di autonomia eccessiva?",
+      "textEn": "An AI pilot can meet its targets because someone keeps correcting the agent. How would you make that work visible when deciding whether to expand adoption, and when would it signal excessive autonomy?",
+      "followUpIt": "Che cosa misureresti oltre al tempo risparmiato da chi avvia il task?",
+      "followUpEn": "What would you measure beyond time saved by the person starting the task?",
+      "whyMd": "Porta la supervisione dal ruolo di guardrail al costo organizzativo, distinguendo il risultato del sistema dal lavoro trasferito ai revisori.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Scenario ipotetico di adozione, non esperienza aziendale attribuita. Il richiamo al controllo umano deriva dal dossier fornito, non da intervista verificata qui.\n\nRiferimenti letti: materials/9ba6db2e-df7e-4a45-b114-58c2de299459; talks/talk-jigyasa-grover\n\nDa verificare: Tecniche di valutazione riportate nel dossier, senza accesso indipendente al corso o ai file di esercizio. Nessuna attribuzione ai sistemi interni di Uber.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "adozione-ai",
+        "human-in-the-loop",
+        "costo-operativo"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "9ba6db2e-df7e-4a45-b114-58c2de299459"
+      ]
+    },
+    {
+      "id": "q-jigyasa-grover-research-20261025-03",
+      "speakerId": "jigyasa-grover",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se lasciamo all’agente libertà di scegliere i tool, un aggiornamento può cambiare il percorso e produrre comunque il risultato corretto. Come costruiresti un gate di regressione che accetti questa variazione senza far passare azioni non autorizzate?",
+      "textEn": "If an agent is free to choose tools, an update may change its trajectory while still producing the right result. How would you build a regression gate that accepts this variation without letting unauthorized actions pass?",
+      "followUpIt": "Quale invariante deve bloccare il rilascio anche con un output corretto?",
+      "followUpEn": "Which invariant must block release even when the output is correct?",
+      "whyMd": "Collega l’autonomia architetturale a un esito operativo concreto: la decisione di rilascio. Distingue equivalenza della traccia, qualità dell’output e rispetto dei permessi.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Gate proposto come problema di progettazione; non si attribuiscono al corso criteri o metriche non presenti nei materiali. Golden traces citate nel dossier, non ispezionate direttamente.\n\nRiferimenti letti: materials/9ba6db2e-df7e-4a45-b114-58c2de299459\n\nDa verificare: Tecniche di valutazione riportate nel dossier, senza accesso indipendente al corso o ai file di esercizio. Nessuna attribuzione ai sistemi interni di Uber.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "regression-gates",
+        "tool-use",
+        "invarianti"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "9ba6db2e-df7e-4a45-b114-58c2de299459"
+      ]
+    },
+    {
+      "id": "q-katharine-jarmul-research-20261025-01",
+      "speakerId": "katharine-jarmul",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Per verificare che l’agente faccia davvero ciò che raccontano le sue tracce, quale segnale indipendente cercheresti sulla rete o sull’host, e come metteresti alla prova la capacità del monitoraggio di vedere un’azione inattesa?",
+      "textEn": "To check that an agent really does what its traces report, what independent network or host signal would you seek, and how would you test whether monitoring can see an unexpected action?",
+      "followUpIt": "Quale prova faresti con dati fittizi prima di fidarti degli alert?",
+      "followUpEn": "What test would you run with dummy data before trusting the alerts?",
+      "whyMd": "Approfondisce il metodo di osservazione del keynote: il monitoraggio deve poter smentire la traccia applicativa ed essere esso stesso verificato.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Domanda metodologica basata sul dossier fornito, non su ispezione diretta di video o blog. Nessun malfunzionamento concreto viene attribuito a un prodotto.\n\nRiferimenti letti: materials/74011374-018e-4fc2-ade7-6f59a7b3236f\n\nDa verificare: Il dossier riporta trascrizioni e configurazioni, ma in questa revisione non sono state verificate: omesse cifre, flag e affermazioni su prodotti specifici.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "observability",
+        "host-telemetry",
+        "detection-testing"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "74011374-018e-4fc2-ade7-6f59a7b3236f"
+      ]
+    },
+    {
+      "id": "q-katharine-jarmul-research-20261025-02",
+      "speakerId": "katharine-jarmul",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se un team approva quasi automaticamente le richieste dell’agente per non interrompere il lavoro, quali decisioni sposteresti in vincoli tecnici e quali lasceresti davvero alla persona?",
+      "textEn": "If a team approves agent requests almost automatically to avoid interrupting work, which decisions would you move into technical constraints and which would you genuinely leave to the person?",
+      "followUpIt": "Come verificheresti che una conferma umana aggiunga controllo reale?",
+      "followUpEn": "How would you check that human confirmation adds real control?",
+      "whyMd": "Interroga il modello di adozione e responsabilità: la presenza di una persona nel loop non basta a dimostrare un controllo efficace.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Scenario condizionale ispirato alle note sul permission bloat. Non assume comportamenti universali degli utenti né proprietà attuali di interfacce specifiche.\n\nRiferimenti letti: materials/74011374-018e-4fc2-ade7-6f59a7b3236f\n\nDa verificare: Il dossier riporta trascrizioni e configurazioni, ma in questa revisione non sono state verificate: omesse cifre, flag e affermazioni su prodotti specifici.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "permission-design",
+        "human-oversight",
+        "adozione-agenti"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "74011374-018e-4fc2-ade7-6f59a7b3236f"
+      ]
+    },
+    {
+      "id": "q-katharine-jarmul-research-20261025-03",
+      "speakerId": "katharine-jarmul",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Supponiamo che le tracce ti portino a spostare un workflow da un’API esterna a un modello locale. Quali prove useresti per verificare che ridurre l’esposizione dei dati non abbia introdotto nuovi errori nelle azioni dell’agente?",
+      "textEn": "Suppose the traces lead you to move a workflow from an external API to a local model. What tests would you use to check that reducing data exposure has not introduced new errors in the agent’s actions?",
+      "followUpIt": "Quale regressione ti farebbe fermare la migrazione?",
+      "followUpEn": "What regression would make you halt the migration?",
+      "whyMd": "Collega la visibilità promessa dal keynote a una scelta architetturale e a un criterio di accettazione del nuovo ambiente.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Migrazione ipotetica suggerita dai materiali su modelli locali. Non identifica obbligatoriamente new settings dell’abstract con il self-hosting; non presenta l’esecuzione locale come garanzia completa di privacy.\n\nRiferimenti letti: talks/talk-katharine-jarmul; materials/74011374-018e-4fc2-ade7-6f59a7b3236f\n\nDa verificare: Il dossier riporta trascrizioni e configurazioni, ma in questa revisione non sono state verificate: omesse cifre, flag e affermazioni su prodotti specifici.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "local-models",
+        "workflow-migration",
+        "regression-testing"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "74011374-018e-4fc2-ade7-6f59a7b3236f",
+        "861db4be-c3bb-45ac-a385-ab84d132c020"
+      ]
+    },
+    {
+      "id": "q-leonardo-cavagnis-talk-ai-20261025-talk",
+      "speakerId": "leonardo-cavagnis",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Quando devi rispettare un limite di latenza su un dispositivo, come decidi se sacrificare complessità del modello o cambiare acquisizione e preprocessing dei sensori?",
+      "textEn": "When you must meet a device latency limit, how do you decide whether to reduce model complexity or change sensor acquisition and preprocessing?",
+      "followUpIt": "Quale misura ti farebbe capire che stai ottimizzando il componente sbagliato?",
+      "followUpEn": "Which measurement would tell you that you are optimising the wrong component?",
+      "whyMd": "TALK — sposta il confronto modello-versus-hardware sulla pipeline completa descritta nell’abstract.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-leonardo-cavagnis\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "edge-ai",
+        "sensor-pipeline",
+        "latenza"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-leonardo-cavagnis-talk-ai-20261025-ai",
+      "speakerId": "leonardo-cavagnis",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Quale evidenza ti convince che un problema su un dispositivo richieda davvero un modello AI, invece di una regola deterministica più facile da verificare e mantenere?",
+      "textEn": "What evidence convinces you that a device problem truly needs an AI model rather than a deterministic rule that is easier to verify and maintain?",
+      "followUpIt": "Come imposteresti il confronto iniziale tra le due soluzioni?",
+      "followUpEn": "How would you set up the initial comparison between the two solutions?",
+      "whyMd": "AI — chiede un criterio di adozione, non assume che il modello sia sempre necessario.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-leonardo-cavagnis\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "adozione-ai",
+        "baseline",
+        "valutazione-ai"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-leonardo-cavagnis-talk-ai-20261025-bridge",
+      "speakerId": "leonardo-cavagnis",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se cambiano i sensori o le condizioni ambientali ma non puoi aggiornare subito tutti i dispositivi, come progetteresti il sistema perché riconosca quando il modello non è più affidabile?",
+      "textEn": "If sensors or environmental conditions change but you cannot immediately update every device, how would you design the system to recognise when its model is no longer reliable?",
+      "followUpIt": "Che cosa dovrebbe fare in quel momento: continuare con meno capacità, fermarsi o chiedere aiuto?",
+      "followUpEn": "What should it do then: continue with reduced capabilities, stop, or ask for help?",
+      "whyMd": "PONTE — collega la pipeline fisica all’affidabilità dell’AI dopo il rilascio.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-leonardo-cavagnis\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "edge-ai",
+        "model-drift",
+        "fallback"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-marco-ippolito-talk-ai-20261025-talk",
+      "speakerId": "marco-ippolito",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "In un archivio di meme, come definisci un duplicato senza eliminare proprio quella piccola variazione che cambia il significato della battuta?",
+      "textEn": "In a meme archive, how do you define a duplicate without removing the small variation that changes the joke’s meaning?",
+      "followUpIt": "Quale coppia di esempi useresti per mettere in crisi la tua regola di deduplicazione?",
+      "followUpEn": "Which pair of examples would you use to challenge your deduplication rule?",
+      "whyMd": "TALK — rende concreto il conflitto tra riduzione dei dati e conservazione del significato culturale.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-marco-ippolito\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "deduplicazione",
+        "semantica",
+        "meme"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-marco-ippolito-talk-ai-20261025-ai",
+      "speakerId": "marco-ippolito",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se un modello classifica un contenuto di una sottocultura che il team conosce poco, come distingui una classificazione plausibile da una lettura culturalmente sbagliata?",
+      "textEn": "If a model classifies content from a subculture the team barely knows, how do you distinguish a plausible classification from a culturally wrong interpretation?",
+      "followUpIt": "Chi dovrebbe poter correggere il modello, e come conserveresti il disaccordo?",
+      "followUpEn": "Who should be able to correct the model, and how would you preserve disagreement?",
+      "whyMd": "AI — porta la valutazione oltre l’accuratezza aggregata.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-marco-ippolito\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "valutazione-ai",
+        "contesto-culturale",
+        "annotazione"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-marco-ippolito-talk-ai-20261025-bridge",
+      "speakerId": "marco-ippolito",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Su milioni di immagini, come decidi dove spendere un’analisi AI più costosa e dove bastano embedding, regole o cache, senza rendere invisibili i casi più rari?",
+      "textEn": "Across millions of images, how do you decide where to spend on more expensive AI analysis and where embeddings, rules or caching are enough, without making rare cases invisible?",
+      "followUpIt": "Quale campione controlleresti per scoprire gli errori che questa scelta nasconde?",
+      "followUpEn": "Which sample would you inspect to uncover the errors that this choice hides?",
+      "whyMd": "PONTE — lega i vincoli economici della pipeline alla qualità delle informazioni recuperabili.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-marco-ippolito\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "costi-ai",
+        "retrieval",
+        "campionamento"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-mario-zechner-talk-ai-20261025-talk",
+      "speakerId": "mario-zechner",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Quando una PR generata da un agente funziona ma aumenta il costo di capire il progetto, quale criterio usi per decidere che non vale la pena accettarla?",
+      "textEn": "When an agent-generated PR works but makes the project harder to understand, what criterion tells you it is not worth accepting?",
+      "followUpIt": "Quale onere dovrebbe sostenere chi propone la modifica prima di chiedere tempo al maintainer?",
+      "followUpEn": "What burden should the contributor carry before asking for a maintainer’s time?",
+      "whyMd": "TALK — affronta la complessità e il costo di review indicati nell’abstract.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-mario-zechner\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "manutenzione-oss",
+        "code-review",
+        "complessita"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-mario-zechner-talk-ai-20261025-ai",
+      "speakerId": "mario-zechner",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Quale competenza deve continuare ad allenare uno sviluppatore anche quando un agente completa i suoi task, per accorgersi che sta delegando nella direzione sbagliata?",
+      "textEn": "Which skill must a developer keep practising even when an agent completes their tasks, so they can recognise when delegation is going in the wrong direction?",
+      "followUpIt": "Come la valuteresti senza contare quante righe scrive a mano?",
+      "followUpEn": "How would you assess it without counting how many lines they write by hand?",
+      "whyMd": "AI — cerca un criterio di autonomia professionale oltre il volume di codice.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-mario-zechner\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "giudizio-umano",
+        "agentic-coding",
+        "apprendimento"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-mario-zechner-talk-ai-20261025-bridge",
+      "speakerId": "mario-zechner",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Come imposteresti un esperimento in un progetto esistente per capire se un coding agent riduce davvero il lavoro complessivo, contando anche review, correzioni e manutenzione?",
+      "textEn": "How would you run an experiment in an existing project to determine whether a coding agent really reduces total work, including review, fixes and maintenance?",
+      "followUpIt": "Quale risultato ti farebbe restringerne l’uso, anche se i task vengono chiusi più in fretta?",
+      "followUpEn": "What result would make you narrow its use, even if tasks were closing faster?",
+      "whyMd": "PONTE — trasforma il rallentare in una decisione misurabile sull’uso degli agenti.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-mario-zechner\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "produttivita-ai",
+        "manutenzione",
+        "misurazione"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-matteo-collina-talk-ai-20261025-talk",
+      "speakerId": "matteo-collina",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nel modello del cave engineer, come distingui il coordinamento che puoi eliminare da quello che protegge il progetto quando l’unica persona che lo capisce non è disponibile?",
+      "textEn": "In the cave engineer model, how do you distinguish coordination you can eliminate from coordination that protects the project when the only person who understands it is unavailable?",
+      "followUpIt": "Quale condizione ti farebbe scegliere subito un team invece di un singolo sviluppatore?",
+      "followUpEn": "What condition would make you choose a team over a single developer from the start?",
+      "whyMd": "TALK — verifica il confine organizzativo della tesi, non assume che la produttività equivalga a sostenibilità.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-matteo-collina\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "autonomia",
+        "coordinamento",
+        "continuita"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-matteo-collina-talk-ai-20261025-ai",
+      "speakerId": "matteo-collina",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Quando un agente accelera soprattutto chi sa già valutare il codice, come può un junior costruire quel giudizio senza diventare soltanto qualcuno che accetta o rifiuta suggerimenti?",
+      "textEn": "When an agent mainly accelerates people who can already judge code, how can a junior build that judgment without becoming someone who merely accepts or rejects suggestions?",
+      "followUpIt": "Quale responsabilità gli affideresti per far emergere gli errori di comprensione prima della produzione?",
+      "followUpEn": "What responsibility would you give them to reveal misunderstandings before production?",
+      "whyMd": "AI — esplora come si acquisisce il giudizio richiesto dal modello organizzativo.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-matteo-collina\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "apprendimento",
+        "agentic-coding",
+        "giudizio-umano"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-matteo-collina-talk-ai-20261025-bridge",
+      "speakerId": "matteo-collina",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se la stessa persona indirizza l’agente e approva il risultato, quale verifica indipendente può mettere in discussione anche il requisito, non soltanto controllare che il codice lo soddisfi?",
+      "textEn": "If the same person directs the agent and approves the result, what independent check can challenge the requirement itself rather than only checking that the code satisfies it?",
+      "followUpIt": "Come la introdurresti senza ricreare tutto il coordinamento che vuoi eliminare?",
+      "followUpEn": "How would you add it without recreating all the coordination you want to remove?",
+      "whyMd": "PONTE — collega autonomia con AI e verifica indipendente delle decisioni.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-matteo-collina\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "verifica-indipendente",
+        "agentic-coding",
+        "requisiti"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-mauro-morales-talk-ai-20261025-talk",
+      "speakerId": "mauro-morales",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Quale confine tracci tra ciò che deve stare nell’immagine versionata del nodo GPU e ciò che può restare configurabile a runtime senza ricreare il drift che vuoi eliminare?",
+      "textEn": "Where do you draw the boundary between what belongs in the versioned GPU node image and what can remain runtime configuration without recreating the drift you want to eliminate?",
+      "followUpIt": "Puoi fare un esempio di una configurazione che sembra innocua ma rompe quel confine?",
+      "followUpEn": "Can you give an example of a seemingly harmless setting that breaks that boundary?",
+      "whyMd": "TALK — chiede un confine operativo della proposta di immagine riproducibile.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-mauro-morales\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "infrastruttura-ai",
+        "riproducibilita",
+        "configuration-drift"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-mauro-morales-talk-ai-20261025-ai",
+      "speakerId": "mauro-morales",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Quando scegli dove eseguire un workload AI, come metti nel confronto economico anche il costo di riprodurre e riparare l’ambiente, oltre a GPU e tempo di inferenza?",
+      "textEn": "When choosing where to run an AI workload, how do you include the cost of reproducing and repairing the environment alongside GPU and inference costs?",
+      "followUpIt": "Quale costo nascosto potrebbe farti cambiare scelta tra cloud, datacenter ed edge?",
+      "followUpEn": "What hidden cost might change your choice between cloud, a datacenter and edge devices?",
+      "whyMd": "AI — estende il tema al costo operativo delle scelte di adozione.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-mauro-morales\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "costi-ai",
+        "operazioni-ai",
+        "edge-ai"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-mauro-morales-talk-ai-20261025-bridge",
+      "speakerId": "mauro-morales",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se ripristini l’immagine di un nodo ma nel frattempo sono cambiati modello o formato dei dati, che cosa devi versionare insieme perché il rollback riporti davvero il servizio in uno stato funzionante?",
+      "textEn": "If you restore a node image but the model or data format has changed in the meantime, what must be versioned together for rollback to restore a working service?",
+      "followUpIt": "Come proveresti questo scenario prima di distribuire l’aggiornamento alla flotta?",
+      "followUpEn": "How would you test that scenario before rolling the update out to the fleet?",
+      "whyMd": "PONTE — distingue il rollback della macchina dal ripristino del servizio AI.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-mauro-morales\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "rollback",
+        "compatibilita",
+        "versionamento-modelli"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-olena-borzenko-talk-ai-20261025-talk",
+      "speakerId": "olena-borzenko",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nel passaggio dai dati alle forme e poi alla tela, dove introduci una scelta che rende il risultato riconoscibilmente tuo anziché una conseguenza della pipeline?",
+      "textEn": "As data becomes shapes and then a canvas, where do you introduce a choice that makes the result recognisably yours rather than merely a consequence of the pipeline?",
+      "followUpIt": "Puoi raccontare una decisione artistica che ti ha costretto a cambiare il software?",
+      "followUpEn": "Can you describe an artistic decision that forced you to change the software?",
+      "whyMd": "TALK — porta l’attenzione sul rapporto concreto tra strumenti e intenzione artistica.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-olena-borzenko\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "arte-generativa",
+        "intenzione-artistica",
+        "pipeline"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-olena-borzenko-talk-ai-20261025-ai",
+      "speakerId": "olena-borzenko",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Quando usi un modello AI per esplorare idee, come capisci se ti sta aprendo possibilità nuove o riportando verso forme già frequenti nei suoi risultati?",
+      "textEn": "When you use an AI model to explore ideas, how do you tell whether it is opening new possibilities or steering you towards forms that recur in its outputs?",
+      "followUpIt": "Quale vincolo introdurresti per mettere alla prova quella sensazione?",
+      "followUpEn": "What constraint would you introduce to test that impression?",
+      "whyMd": "AI — chiede come valutare l’esplorazione senza assumere che novità e generazione coincidano.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-olena-borzenko\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "creativita-ai",
+        "esplorazione",
+        "valutazione-ai"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-olena-borzenko-talk-ai-20261025-bridge",
+      "speakerId": "olena-borzenko",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Nella ricerca per embedding, come renderesti visibile una connessione artisticamente interessante ma semanticamente lontana, senza perdere il controllo sulla scelta finale?",
+      "textEn": "In embedding-based search, how would you surface an artistically interesting but semantically distant connection while retaining control over the final choice?",
+      "followUpIt": "Vorresti che il sistema ti spiegasse la connessione o ti lasciasse interpretarla?",
+      "followUpEn": "Would you want the system to explain the connection or leave you to interpret it?",
+      "whyMd": "PONTE — collega la ricerca semantica descritta nell’abstract alla scoperta artistica.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-olena-borzenko\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "embedding",
+        "serendipita",
+        "arte-generativa"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-paolo-caressa-talk-ai-20261025-talk",
+      "speakerId": "paolo-caressa",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Tra i concetti filosofici che riprendete nel talk, quale cambia davvero il modo di progettare un programma, anziché aggiungere soltanto una curiosità alla sua storia?",
+      "textEn": "Among the philosophical ideas you revisit in the talk, which genuinely changes how we design a program rather than simply adding a historical curiosity?",
+      "followUpIt": "Puoi mostrarci una decisione tecnica che prenderesti diversamente grazie a quel concetto?",
+      "followUpEn": "Can you show us a technical decision you would make differently because of that idea?",
+      "whyMd": "TALK — chiede un esempio operativo della relazione tra filosofia e informatica.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-paolo-caressa\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "filosofia-informatica",
+        "astrazione",
+        "progettazione"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-paolo-caressa-talk-ai-20261025-ai",
+      "speakerId": "paolo-caressa",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Quando diciamo che un’AI «ragiona», quale distinzione dovremmo chiarire prima di usare quella parola per decidere quanto fidarci di una risposta?",
+      "textEn": "When we say that AI “reasons”, what distinction should we clarify before using that word to decide how much to trust an answer?",
+      "followUpIt": "Quale esempio ti aiuterebbe a separare una risposta convincente da una giustificazione valida?",
+      "followUpEn": "What example would help distinguish a convincing answer from a valid justification?",
+      "whyMd": "AI — interroga il linguaggio con cui attribuiamo capacità, senza risolvere per premessa il dibattito.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-paolo-caressa\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "ragionamento-ai",
+        "epistemologia",
+        "fiducia"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-paolo-caressa-talk-ai-20261025-bridge",
+      "speakerId": "paolo-caressa",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se un agente traduce una richiesta ambigua in un programma che supera tutti i test, quale domanda filosofica ci aiuterebbe a vedere ciò che abbiamo lasciato fuori dalla specifica?",
+      "textEn": "If an agent turns an ambiguous request into a program that passes every test, what philosophical question could help us see what we left out of the specification?",
+      "followUpIt": "Chi dovrebbe poter contestare quella formalizzazione prima che diventi software?",
+      "followUpEn": "Who should be able to challenge that formalisation before it becomes software?",
+      "whyMd": "PONTE — lega formalizzazione, limiti della verifica e sviluppo con agenti.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-paolo-caressa\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "specifiche",
+        "agentic-coding",
+        "formalizzazione"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-paolo-insogna-talk-ai-20261025-talk",
+      "speakerId": "paolo-insogna",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nel progettare un’FFI per Node.js, quale garanzia non vuoi perdere per rendere una chiamata nativa più veloce, e dove accetti invece di trasferire responsabilità allo sviluppatore?",
+      "textEn": "When designing an FFI for Node.js, which guarantee are you unwilling to lose for a faster native call, and where are you prepared to transfer responsibility to the developer?",
+      "followUpIt": "Quale caso limite rende quel compromesso più evidente?",
+      "followUpEn": "Which edge case makes that trade-off most apparent?",
+      "whyMd": "TALK — esplora un compromesso del progetto senza dare per verificato lo stato di rilascio di node:ffi.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-paolo-insogna\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "ffi",
+        "runtime-nodejs",
+        "sicurezza-memoria"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-paolo-insogna-talk-ai-20261025-ai",
+      "speakerId": "paolo-insogna",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se un coding agent genera un binding che compila e supera gli esempi, quali errori al confine tra linguaggi richiedono ancora una verifica che non puoi delegare allo stesso agente?",
+      "textEn": "If a coding agent generates a binding that compiles and passes the examples, which errors at the language boundary still require verification you cannot delegate to the same agent?",
+      "followUpIt": "Quale prova aggiungeresti per prima, oltre al percorso felice?",
+      "followUpEn": "What test would you add first beyond the happy path?",
+      "whyMd": "AI — scenario ipotetico su codice generato in un confine tecnico delicato.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-paolo-insogna\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "agentic-coding",
+        "ffi",
+        "verifica-indipendente"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-paolo-insogna-talk-ai-20261025-bridge",
+      "speakerId": "paolo-insogna",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Per integrare inferenza AI nativa in un servizio Node.js, come confronteresti una chiamata FFI nello stesso processo con un servizio separato, contando anche isolamento dei guasti e aggiornamenti?",
+      "textEn": "To integrate native AI inference into a Node.js service, how would you compare an in-process FFI call with a separate service, including failure isolation and upgrades?",
+      "followUpIt": "Quale vincolo ti farebbe rinunciare alla latenza migliore?",
+      "followUpEn": "What constraint would make you give up the better latency?",
+      "whyMd": "PONTE — applica il confine di interoperabilità a una scelta di architettura AI, senza attribuirgli un’implementazione.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-paolo-insogna\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "inferenza-ai",
+        "isolamento-guasti",
+        "ffi"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-riccardo-carlesso-talk-ai-20261025-talk",
+      "speakerId": "riccardo-carlesso",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "In una skill che propone un rollback, come separi la capacità di diagnosticare il problema dall’autorità di agire, soprattutto quando l’incidente cambia mentre l’agente sta ragionando?",
+      "textEn": "In a skill that proposes a rollback, how do you separate the ability to diagnose a problem from the authority to act, especially when the incident changes while the agent is reasoning?",
+      "followUpIt": "Quale condizione richiede una nuova verifica subito prima dell’esecuzione?",
+      "followUpEn": "What condition requires a fresh check immediately before execution?",
+      "whyMd": "TALK — traduce le mitigazioni sicure dell’abstract in una verifica al momento dell’azione.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-riccardo-carlesso\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "agentic-sre",
+        "autorizzazioni",
+        "tool-use"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-riccardo-carlesso-talk-ai-20261025-ai",
+      "speakerId": "riccardo-carlesso",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Come valuteresti un agente per gli incidenti quando una spiegazione convincente può arrivare prima di una diagnosi corretta?",
+      "textEn": "How would you evaluate an incident-response agent when a convincing explanation may arrive before a correct diagnosis?",
+      "followUpIt": "Quale falso positivo considereresti più grave di una risposta lenta?",
+      "followUpEn": "Which false positive would you consider worse than a slow response?",
+      "whyMd": "AI — distingue capacità narrativa e utilità diagnostica nella valutazione.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-riccardo-carlesso\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "valutazione-agenti",
+        "incident-response",
+        "evidenze"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-riccardo-carlesso-talk-ai-20261025-bridge",
+      "speakerId": "riccardo-carlesso",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se il rollback suggerito dall’agente ristabilisce il servizio, come eviti che il postmortem generato trasformi quel successo in una falsa prova della causa dell’incidente?",
+      "textEn": "If the agent’s suggested rollback restores service, how do you prevent its generated postmortem from turning that success into false evidence of the incident’s cause?",
+      "followUpIt": "Che cosa dovrebbe restare esplicitamente un’ipotesi nel documento?",
+      "followUpEn": "What should remain explicitly labelled as a hypothesis in the document?",
+      "whyMd": "PONTE — collega mitigazione e postmortem senza confondere correlazione, risultato e causa.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-riccardo-carlesso\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "postmortem",
+        "causalita",
+        "agentic-sre"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-rowdy-rabouw-research-20261025-01",
+      "speakerId": "rowdy-rabouw",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Una View Transition può sembrare fluida anche se la pagina prerenderizzata contiene dati ormai vecchi. Quando rinunceresti alla navigazione istantanea per verificarne la validità, e dove metteresti quel controllo?",
+      "textEn": "A View Transition can look smooth even if the prerendered page contains stale data. When would you sacrifice instant navigation to check validity, and where would you put that check?",
+      "followUpIt": "Quale tipo di contenuto non lasceresti passare senza una nuova verifica?",
+      "followUpEn": "Which kind of content would you refuse to show without a fresh check?",
+      "whyMd": "L’abstract combina prerendering e transizioni; il dossier tratta l’attivazione della pagina. Il nodo è sincronizzare correttezza e percezione di velocità.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Il caso dei dati obsoleti è una deduzione editoriale, non un incidente documentato o una limitazione specifica asserita dell’API.\n\nRiferimenti letti: materials/a0d3bc8b-3da9-4185-a795-cc2a8fc32061; talks/talk-rowdy-rabouw\n\nDa verificare: Ricerca basata su estratti di slide: nessuna soglia, compatibilità browser o supporto API è considerato aggiornato e verificato. Il talk sulla Built-in AI è documentato solo tramite metadati; non sono disponibili slide o trascrizione. Le proposte sull’AI sono ipotetiche. Il materiale e2874e47-9ddb-40a0-a7ab-e60c4c287c30 contiene solo “un altro talk di 4 mesi fa”: non usato come prova tecnica.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "prerendering",
+        "view-transitions",
+        "data-freshness"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "a0d3bc8b-3da9-4185-a795-cc2a8fc32061"
+      ]
+    },
+    {
+      "id": "q-rowdy-rabouw-research-20261025-02",
+      "speakerId": "rowdy-rabouw",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se una funzione del sito usa un modello AI nel browser, quale esperienza deve restare disponibile quando il modello manca o il dispositivo non riesce a eseguirlo, perché il costo non ricada sugli utenti con meno risorse?",
+      "textEn": "If a website feature uses an AI model in the browser, what experience must remain available when the model is missing or the device cannot run it, so users with fewer resources do not bear the cost?",
+      "followUpIt": "Quando un fallback sul server sarebbe una scelta peggiore?",
+      "followUpEn": "When would a server fallback be the worse choice?",
+      "whyMd": "Il dossier accosta un talk sulla Built-in AI al filone di accessibilità e progressive enhancement. La scelta è progettare una funzione utilizzabile anche senza inferenza locale.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. La ricerca documenta il titolo del talk AI, non contenuti o tesi. La domanda è ipotetica e non attribuisce una soluzione allo speaker.\n\nRiferimenti letti: materials/a0d3bc8b-3da9-4185-a795-cc2a8fc32061\n\nDa verificare: Ricerca basata su estratti di slide: nessuna soglia, compatibilità browser o supporto API è considerato aggiornato e verificato. Il talk sulla Built-in AI è documentato solo tramite metadati; non sono disponibili slide o trascrizione. Le proposte sull’AI sono ipotetiche. Il materiale e2874e47-9ddb-40a0-a7ab-e60c4c287c30 contiene solo “un altro talk di 4 mesi fa”: non usato come prova tecnica.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "browser-ai",
+        "progressive-enhancement",
+        "device-constraints"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "a0d3bc8b-3da9-4185-a795-cc2a8fc32061"
+      ]
+    },
+    {
+      "id": "q-rowdy-rabouw-research-20261025-03",
+      "speakerId": "rowdy-rabouw",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se usassimo un modello AI per scegliere quali pagine precaricare, quale vantaggio rispetto a semplici regole giustificherebbe il costo dell’inferenza e delle previsioni sbagliate?",
+      "textEn": "If we used an AI model to choose which pages to preload, what advantage over simple rules would justify the cost of inference and wrong predictions?",
+      "followUpIt": "Quale risultato dell’esperimento ti farebbe tenere le regole semplici?",
+      "followUpEn": "What experimental result would make you keep the simple rules?",
+      "whyMd": "La ricerca propone esplicitamente il collegamento tra Built-in AI e Speculation Rules. Si trasforma lo spunto in una decisione misurabile, includendo il costo delle previsioni e il confronto con una baseline.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: abstract e ricerca fornita nello snapshot, non verifica esterna dei link. Ipotesi editoriale, non una funzionalità implementata o promossa dallo speaker. Nessuna capacità predittiva del browser è presupposta.\n\nRiferimenti letti: materials/a0d3bc8b-3da9-4185-a795-cc2a8fc32061; talks/talk-rowdy-rabouw\n\nDa verificare: Ricerca basata su estratti di slide: nessuna soglia, compatibilità browser o supporto API è considerato aggiornato e verificato. Il talk sulla Built-in AI è documentato solo tramite metadati; non sono disponibili slide o trascrizione. Le proposte sull’AI sono ipotetiche. Il materiale e2874e47-9ddb-40a0-a7ab-e60c4c287c30 contiene solo “un altro talk di 4 mesi fa”: non usato come prova tecnica.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "predictive-prefetching",
+        "browser-ai",
+        "performance-budgets"
+      ],
+      "sourceIds": [],
+      "materialIds": [
+        "a0d3bc8b-3da9-4185-a795-cc2a8fc32061"
+      ]
+    },
+    {
+      "id": "q-soumaya-erradi-talk-ai-20261025-talk",
+      "speakerId": "soumaya-erradi",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nella pipeline che descrivi, dove tracci il confine tra un’anomalia misurata nei dati e un’interpretazione che il modello può soltanto proporre?",
+      "textEn": "In the pipeline you describe, where do you draw the boundary between an anomaly measured in the data and an interpretation the model can only suggest?",
+      "followUpIt": "Come rendi visibile quel confine a chi legge il riepilogo senza vedere i dati grezzi?",
+      "followUpEn": "How do you make that boundary visible to someone reading the summary without seeing the raw data?",
+      "whyMd": "TALK — rispetta il ruolo esplicativo, non di controllo, attribuito all’LLM nell’abstract.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-soumaya-erradi\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "telemetria",
+        "explanation-layer",
+        "evidenze"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-soumaya-erradi-talk-ai-20261025-ai",
+      "speakerId": "soumaya-erradi",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se una spiegazione dell’LLM sembra utile all’utente ma aggiunge un dettaglio non supportato dai sensori, come valuti il sistema senza premiare proprio quella falsa precisione?",
+      "textEn": "If an LLM explanation seems useful to a user but adds a detail unsupported by the sensors, how do you evaluate the system without rewarding that false precision?",
+      "followUpIt": "Quale esempio inseriresti nel test per verificare che sappia dire «non lo sappiamo»?",
+      "followUpEn": "What example would you include in a test to check that it can say “we do not know”?",
+      "whyMd": "AI — tratta l’utilità percepita e la fedeltà ai dati come criteri distinti.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-soumaya-erradi\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "valutazione-ai",
+        "grounding",
+        "incertezza"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-soumaya-erradi-talk-ai-20261025-bridge",
+      "speakerId": "soumaya-erradi",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Quando la telemetria di due auto non è direttamente confrontabile, come impedisci che un riepilogo AI trasformi una differenza di contesto in un segnale di manutenzione?",
+      "textEn": "When telemetry from two cars is not directly comparable, how do you prevent an AI summary from turning a difference in context into a maintenance signal?",
+      "followUpIt": "Quali informazioni mancanti dovrebbero bloccare l’interpretazione e richiedere una verifica esperta?",
+      "followUpEn": "What missing information should block interpretation and require an expert check?",
+      "whyMd": "PONTE — lega dati reali eterogenei e responsabilità dell’interpretazione AI, senza dare consigli automobilistici.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-soumaya-erradi\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "telemetria",
+        "contesto-dati",
+        "human-in-the-loop"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-vladi-stevanovic-talk-ai-20261025-talk",
+      "speakerId": "vladi-stevanovic",
+      "order": 1,
+      "status": "suggested",
+      "textIt": "Nel modello a strati, come capisci se due verifiche coprono errori diversi oppure stanno passando entrambe sopra lo stesso buco?",
+      "textEn": "In the layered model, how do you tell whether two checks cover different failures or are both missing the same hole?",
+      "followUpIt": "Quale errore inseriresti di proposito per verificare l’indipendenza degli strati?",
+      "followUpEn": "What error would you deliberately introduce to test the layers’ independence?",
+      "whyMd": "TALK — verifica la complementarità delle difese, non presume che aggiungerne aumenti sempre l’affidabilità.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-vladi-stevanovic\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "verifica-indipendente",
+        "code-review",
+        "difesa-in-profondita"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-vladi-stevanovic-talk-ai-20261025-ai",
+      "speakerId": "vladi-stevanovic",
+      "order": 2,
+      "status": "suggested",
+      "textIt": "Se un coding agent raddoppia le PR prodotte ma il team riesce a comprenderne lo stesso numero di prima, quale metrica dovrebbe guidare la decisione di accelerare o limitare la generazione?",
+      "textEn": "If a coding agent doubles the number of PRs produced but the team can understand only as many as before, what metric should guide the decision to accelerate or limit generation?",
+      "followUpIt": "Dove misureresti il lavoro che si è spostato invece di essere scomparso?",
+      "followUpEn": "Where would you measure work that has shifted rather than disappeared?",
+      "whyMd": "AI — considera la capacità di assorbire le modifiche come vincolo della produttività.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-vladi-stevanovic\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "produttivita-ai",
+        "code-review",
+        "capacita-team"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    },
+    {
+      "id": "q-vladi-stevanovic-talk-ai-20261025-bridge",
+      "speakerId": "vladi-stevanovic",
+      "order": 3,
+      "status": "suggested",
+      "textIt": "Se specifica, implementazione e test vengono generati a partire dallo stesso contesto sbagliato, quale strato può contestare l’assunto iniziale invece di confermarlo tre volte?",
+      "textEn": "If the specification, implementation and tests are generated from the same mistaken context, which layer can challenge the initial assumption instead of confirming it three times?",
+      "followUpIt": "Come costruiresti una fonte di evidenza indipendente per quel controllo?",
+      "followUpEn": "How would you build an independent source of evidence for that check?",
+      "whyMd": "PONTE — mette alla prova il modello a strati quando le verifiche condividono le premesse degli agenti.",
+      "notesMd": "Revisione editoriale AI — 25 ottobre 2026. Base: solo titolo e abstract forniti; manca un dossier di ricerca. Domande editoriali da rivedere, formulate come scenari o criteri di scelta senza attribuire esperienze non documentate.\n\nRiferimenti letti: talks/talk-vladi-stevanovic\n\nDa verificare: Manca una ricerca dedicata: verificare le premesse con lo speaker.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "specifiche",
+        "errori-correlati",
+        "verifica-indipendente"
+      ],
+      "sourceIds": [
+        "snapshot-priority-csv",
+        "snapshot-speakers-directory"
+      ],
+      "materialIds": []
+    }
+  ],
+  "conductorBriefs": [
+    {
+      "id": "brief-0f52f35672ebf4fa",
+      "speakerId": "abiodun-olowode",
+      "talkId": "talk-abiodun-olowode",
+      "summaryIt": "Dal feedback sul codice alle conversazioni difficili: rendere il dissenso concreto, utile e praticabile anche quando il codice arriva da un agente.",
+      "summaryEn": "From code review to difficult conversations: make disagreement specific and useful, including when an agent writes the code.",
+      "mainQuestionIds": [
+        "q-abiodun-olowode-editorial-2",
+        "q-abiodun-olowode-editorial-7",
+        "q-abiodun-olowode-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-alexio-cassani",
+      "speakerId": "alexio-cassani",
+      "talkId": "talk-alexio-cassani",
+      "summaryIt": "Regole eseguibili, prove del valore organizzativo e autorità del contesto: tre decisioni per portare gli agenti nel lavoro di un team.",
+      "summaryEn": "Executable rules, evidence of organizational value, and context authority: three decisions for bringing agents into a team’s workflow.",
+      "mainQuestionIds": [
+        "q-alexio-cassani-research-20261025-01",
+        "q-alexio-cassani-research-20261025-02",
+        "q-alexio-cassani-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-alfonso-fuggetta",
+      "speakerId": "alfonso-fuggetta",
+      "talkId": "talk-alfonso-fuggetta",
+      "summaryIt": "Confine tra modello e sistema, trasferibilità delle prove e criteri di correttezza nel dominio: rendere concreta la necessità di ingegneria.",
+      "summaryEn": "The boundary between model and system, transferable evidence, and domain correctness: making the need for engineering concrete.",
+      "mainQuestionIds": [
+        "q-alfonso-fuggetta-research-20261025-01",
+        "q-alfonso-fuggetta-research-20261025-02",
+        "q-alfonso-fuggetta-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-alfonso-graziano",
+      "speakerId": "alfonso-graziano",
+      "talkId": "talk-alfonso-graziano",
+      "summaryIt": "Specifiche per imparare, valore dell’adozione lungo la delivery e autonomia dei team: dal metodo individuale alle decisioni organizzative.",
+      "summaryEn": "Specifications for learning, adoption value across delivery, and team autonomy: moving from individual practice to organizational decisions.",
+      "mainQuestionIds": [
+        "q-alfonso-graziano-research-20261025-01",
+        "q-alfonso-graziano-research-20261025-02",
+        "q-alfonso-graziano-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-andrey-breslav",
+      "speakerId": "andrey-breslav",
+      "talkId": "talk-andrey-breslav",
+      "summaryIt": "Decisioni nascoste nella sintesi, responsabilità umana e requisiti estratti dalle conversazioni: interrogare cosa significa mantenere l’intento.",
+      "summaryEn": "Decisions hidden by compression, human responsibility, and requirements extracted from conversations: examining what it means to maintain intent.",
+      "mainQuestionIds": [
+        "q-andrey-breslav-research-20261025-01",
+        "q-andrey-breslav-research-20261025-02",
+        "q-andrey-breslav-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-carolina-pinto",
+      "speakerId": "carolina-pinto",
+      "talkId": "talk-carolina-pinto",
+      "summaryIt": "Dal feedback emotivo alla verifica dell’output, poi alla responsabilità nel design generato con AI e alla misura del beneficio reale.",
+      "summaryEn": "From emotional feedback to output verification, then accountability in AI-generated design and measurement of actual benefit.",
+      "mainQuestionIds": [
+        "q-carolina-pinto-research-20261025-01",
+        "q-carolina-pinto-research-20261025-02",
+        "q-carolina-pinto-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-christian-schabetsberger",
+      "speakerId": "christian-schabetsberger",
+      "talkId": "talk-christian-schabetsberger",
+      "summaryIt": "Tre decisioni distinte: compatibilità del nuovo flusso VCS, verifica indipendente delle migrazioni agentiche e recupero selettivo delle modifiche.",
+      "summaryEn": "Three distinct decisions: compatibility of a new VCS workflow, independent verification of agentic migrations, and selective change recovery.",
+      "mainQuestionIds": [
+        "q-christian-schabetsberger-editorial-1",
+        "q-christian-schabetsberger-editorial-2",
+        "q-christian-schabetsberger-editorial-3"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-david-mccarter",
+      "speakerId": "david-mccarter",
+      "talkId": "talk-david-mccarter",
+      "summaryIt": "Parlare in pubblico come competenza ingegneristica: allenarsi, spiegare senza falsificare e usare l’AI senza perdere la propria voce.",
+      "summaryEn": "Public speaking as an engineering skill: practise, simplify without misleading, and use AI without losing your own voice.",
+      "mainQuestionIds": [
+        "q-david-mccarter-research-20261025-01",
+        "q-david-mccarter-research-20261025-02",
+        "q-david-mccarter-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-dennis-nerush",
+      "speakerId": "dennis-nerush",
+      "talkId": "talk-dennis-nerush",
+      "summaryIt": "Comprensione sotto un vincolo nuovo, costruzione del giudizio e validità della selezione: valutare competenze che restano utili nel lavoro con l’AI.",
+      "summaryEn": "Understanding under a new constraint, developing judgment, and hiring validity: assessing skills that remain useful when working with AI.",
+      "mainQuestionIds": [
+        "q-dennis-nerush-research-20261025-01",
+        "q-dennis-nerush-research-20261025-02",
+        "q-dennis-nerush-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-dotan-horovits",
+      "speakerId": "dotan-horovits",
+      "talkId": "talk-dotan-horovits",
+      "summaryIt": "Portabilità operativa dello stack, segnalazione dei fallimenti semantici e confine tra telemetria utile e minimizzazione dei dati.",
+      "summaryEn": "Operational stack portability, actionable semantic failures, and the boundary between useful telemetry and data minimization.",
+      "mainQuestionIds": [
+        "q-dotan-horovits-research-20261025-01",
+        "q-dotan-horovits-research-20261025-02",
+        "q-dotan-horovits-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-emanuele-fabbiani",
+      "speakerId": "emanuele-fabbiani",
+      "talkId": "talk-emanuele-fabbiani",
+      "summaryIt": "Separare la garanzia del campionamento dalla copertura del watermarking e dall’uso operativo di un esito positivo.",
+      "summaryEn": "Separate the sampling guarantee from watermarking coverage and the operational use of a positive detection.",
+      "mainQuestionIds": [
+        "q-emanuele-fabbiani-research-20261025-01",
+        "q-emanuele-fabbiani-research-20261025-02",
+        "q-emanuele-fabbiani-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-enzo-lombardi",
+      "speakerId": "enzo-lombardi",
+      "talkId": "talk-enzo-lombardi",
+      "summaryIt": "Vincoli reali dell’avversario Atari, qualità del contesto dato agli agenti e verificabilità delle azioni tramite MCP.",
+      "summaryEn": "Real constraints of the Atari opponent, quality of agent context, and verifiability of actions through MCP.",
+      "mainQuestionIds": [
+        "q-enzo-lombardi-research-20261025-01",
+        "q-enzo-lombardi-research-20261025-02",
+        "q-enzo-lombardi-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-gabriele-santomaggio",
+      "speakerId": "gabriele-santomaggio",
+      "talkId": "talk-gabriele-santomaggio",
+      "summaryIt": "Criteri per distinguere novità e riscoperta, contratti di correttezza nel codice generato e falsificazione delle proposte architetturali degli LLM.",
+      "summaryEn": "Criteria for distinguishing novelty from rediscovery, correctness contracts for generated code, and falsification of LLM architectural proposals.",
+      "mainQuestionIds": [
+        "q-gabriele-santomaggio-research-20261025-01",
+        "q-gabriele-santomaggio-research-20261025-02",
+        "q-gabriele-santomaggio-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-giorgio-natili",
+      "speakerId": "giorgio-natili",
+      "talkId": "talk-giorgio-natili",
+      "summaryIt": "Un controllo deterministico tra agente e strumenti: quali vincoli rendere eseguibili, chi li decide e come gestire le eccezioni.",
+      "summaryEn": "A deterministic control point between agents and tools: which constraints to enforce, who defines them, and how to handle exceptions.",
+      "mainQuestionIds": [
+        "q-giorgio-natili-research-20261025-01",
+        "q-giorgio-natili-research-20261025-02",
+        "q-giorgio-natili-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-jigyasa-grover",
+      "speakerId": "jigyasa-grover",
+      "talkId": "talk-jigyasa-grover",
+      "summaryIt": "Individuare dove serve autonomia, contabilizzare il lavoro umano necessario e verificare regressioni senza imporre un unico percorso.",
+      "summaryEn": "Locate where autonomy is needed, account for human work, and test regressions without enforcing a single trajectory.",
+      "mainQuestionIds": [
+        "q-jigyasa-grover-research-20261025-01",
+        "q-jigyasa-grover-research-20261025-02",
+        "q-jigyasa-grover-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-katharine-jarmul",
+      "speakerId": "katharine-jarmul",
+      "talkId": "talk-katharine-jarmul",
+      "summaryIt": "Verificare le tracce con segnali indipendenti, evitare che il controllo umano diventi rituale e usare l’osservazione per validare una migrazione.",
+      "summaryEn": "Validate traces through independent signals, prevent human control from becoming ritual, and use observation to validate a migration.",
+      "mainQuestionIds": [
+        "q-katharine-jarmul-research-20261025-01",
+        "q-katharine-jarmul-research-20261025-02",
+        "q-katharine-jarmul-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-02ed1c9c8405eee4",
+      "speakerId": "leonardo-cavagnis",
+      "talkId": "talk-leonardo-cavagnis",
+      "summaryIt": "Dal sensore al modello sul dispositivo: progettare l’intera pipeline entro vincoli di latenza, accuratezza e affidabilità.",
+      "summaryEn": "From sensors to on-device models: design the whole pipeline around latency, accuracy and reliability constraints.",
+      "mainQuestionIds": [
+        "q-leonardo-cavagnis-talk-ai-20261025-talk",
+        "q-leonardo-cavagnis-talk-ai-20261025-ai",
+        "q-leonardo-cavagnis-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-39ff9335c498e818",
+      "speakerId": "marco-ippolito",
+      "talkId": "talk-marco-ippolito",
+      "summaryIt": "Memedex trasforma immagini e riferimenti culturali in un archivio esplorabile, affrontando deduplicazione, classificazione e costi AI.",
+      "summaryEn": "Memedex turns images and cultural references into a searchable archive, tackling deduplication, classification and AI costs.",
+      "mainQuestionIds": [
+        "q-marco-ippolito-talk-ai-20261025-talk",
+        "q-marco-ippolito-talk-ai-20261025-ai",
+        "q-marco-ippolito-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-acbe102de6a6974e",
+      "speakerId": "mario-zechner",
+      "talkId": "talk-mario-zechner",
+      "summaryIt": "Rallentare la produzione automatica per recuperare disciplina, controllo del progetto e sostenibilità del lavoro dei maintainer.",
+      "summaryEn": "Slow down automated output to regain discipline, project control and sustainable maintenance.",
+      "mainQuestionIds": [
+        "q-mario-zechner-talk-ai-20261025-talk",
+        "q-mario-zechner-talk-ai-20261025-ai",
+        "q-mario-zechner-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-4ab22b26add45e94",
+      "speakerId": "matteo-collina",
+      "talkId": "talk-matteo-collina",
+      "summaryIt": "Autonomia e giudizio tecnico nel lavoro con gli agenti: quando una persona può ridurre il coordinamento e quando serve un team.",
+      "summaryEn": "Autonomy and technical judgment with agents: when one person can reduce coordination and when a team is still needed.",
+      "mainQuestionIds": [
+        "q-matteo-collina-talk-ai-20261025-talk",
+        "q-matteo-collina-talk-ai-20261025-ai",
+        "q-matteo-collina-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-9a2eff2e8a9de832",
+      "speakerId": "mauro-morales",
+      "talkId": "talk-mauro-morales",
+      "summaryIt": "Nodi GPU come immagini versionate: rendere riproducibili compatibilità, aggiornamenti e rollback dell’infrastruttura AI.",
+      "summaryEn": "GPU nodes as versioned images: make compatibility, upgrades and AI infrastructure rollbacks reproducible.",
+      "mainQuestionIds": [
+        "q-mauro-morales-talk-ai-20261025-talk",
+        "q-mauro-morales-talk-ai-20261025-ai",
+        "q-mauro-morales-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-d25964be9265dab8",
+      "speakerId": "olena-borzenko",
+      "talkId": "talk-olena-borzenko",
+      "summaryIt": "Dati, modelli, ricerca semantica e visualizzazioni matematiche dentro un processo artistico che arriva fino alla tela.",
+      "summaryEn": "Data, models, semantic search and mathematical visualisations within an artistic process that reaches the canvas.",
+      "mainQuestionIds": [
+        "q-olena-borzenko-talk-ai-20261025-talk",
+        "q-olena-borzenko-talk-ai-20261025-ai",
+        "q-olena-borzenko-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-4f87a8891eca34e2",
+      "speakerId": "paolo-caressa",
+      "talkId": "talk-paolo-caressa",
+      "summaryIt": "Rileggere le radici filosofiche dell’informatica per distinguere strumenti nuovi, concetti ereditati e limiti del nostro giudizio.",
+      "summaryEn": "Revisit the philosophical roots of computing to distinguish new tools, inherited concepts and the limits of our judgment.",
+      "mainQuestionIds": [
+        "q-paolo-caressa-talk-ai-20261025-talk",
+        "q-paolo-caressa-talk-ai-20261025-ai",
+        "q-paolo-caressa-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-8a8f1787d5f7f0bc",
+      "speakerId": "paolo-insogna",
+      "talkId": "talk-paolo-insogna",
+      "summaryIt": "L’interoperabilità nativa in Node.js: compatibilità ABI, integrazione con V8 e compromessi delle chiamate ad alte prestazioni.",
+      "summaryEn": "Native interoperability in Node.js: ABI compatibility, V8 integration and the trade-offs of high-performance calls.",
+      "mainQuestionIds": [
+        "q-paolo-insogna-talk-ai-20261025-talk",
+        "q-paolo-insogna-talk-ai-20261025-ai",
+        "q-paolo-insogna-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-cb1683da280823ee",
+      "speakerId": "riccardo-carlesso",
+      "talkId": "talk-riccardo-carlesso",
+      "summaryIt": "Skill e strumenti per la diagnosi degli incidenti: dare agli agenti contesto operativo e limiti espliciti sulle mitigazioni.",
+      "summaryEn": "Skills and tools for incident diagnosis: give agents operational context and explicit limits on mitigation.",
+      "mainQuestionIds": [
+        "q-riccardo-carlesso-talk-ai-20261025-talk",
+        "q-riccardo-carlesso-talk-ai-20261025-ai",
+        "q-riccardo-carlesso-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-editorial-rowdy-rabouw",
+      "speakerId": "rowdy-rabouw",
+      "talkId": "talk-rowdy-rabouw",
+      "summaryIt": "Coerenza delle pagine prerenderizzate, accessibilità delle funzioni AI nel browser e criterio per valutare prefetch predittivo con AI.",
+      "summaryEn": "Consistency of prerendered pages, accessibility of browser AI features, and criteria for evaluating AI-driven predictive prefetching.",
+      "mainQuestionIds": [
+        "q-rowdy-rabouw-research-20261025-01",
+        "q-rowdy-rabouw-research-20261025-02",
+        "q-rowdy-rabouw-research-20261025-03"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-4af10ee3dc51be9c",
+      "speakerId": "soumaya-erradi",
+      "talkId": "talk-soumaya-erradi",
+      "summaryIt": "Dalla telemetria automobilistica a segnali misurabili e spiegazioni leggibili, mantenendo separati analisi, interpretazione e ispezione esperta.",
+      "summaryEn": "From vehicle telemetry to measurable signals and readable explanations, keeping analysis, interpretation and expert inspection distinct.",
+      "mainQuestionIds": [
+        "q-soumaya-erradi-talk-ai-20261025-talk",
+        "q-soumaya-erradi-talk-ai-20261025-ai",
+        "q-soumaya-erradi-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    },
+    {
+      "id": "brief-e56ebec3b4cc2180",
+      "speakerId": "vladi-stevanovic",
+      "talkId": "talk-vladi-stevanovic",
+      "summaryIt": "La qualità delle PR come insieme di difese imperfette: specifiche, contesto, review e verifiche che intercettano errori diversi.",
+      "summaryEn": "PR quality as a set of imperfect defences: specifications, context, review and checks that catch different failures.",
+      "mainQuestionIds": [
+        "q-vladi-stevanovic-talk-ai-20261025-talk",
+        "q-vladi-stevanovic-talk-ai-20261025-ai",
+        "q-vladi-stevanovic-talk-ai-20261025-bridge"
+      ],
+      "classicQuestionIds": []
+    }
+  ]
+}

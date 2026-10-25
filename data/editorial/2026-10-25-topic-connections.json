@@ -1,0 +1,3166 @@
+{
+  "schemaVersion": 1,
+  "status": "editorial-draft",
+  "scope": "28 speaker in elenco; domande Talk / AI / ponte",
+  "automaticRecalculation": false,
+  "graph3dImplemented": false,
+  "limitations": [
+    "Collegamenti editoriali proposti dall’AI, da verificare; non risultati di un motore semantico dell’app.",
+    "I temi dello speaker derivano dalle domande: non implicano che sostenga una posizione o abbia esperienza su quel tema.",
+    "Il ricalcolo dopo modifiche e la navigazione 3D non sono implementati."
+  ],
+  "inputSha256": "d64997cc8223a66da49a0ca949257179fa9fd8e53829d5ac29b2cadcfff855c9",
+  "topics": [
+    {
+      "id": "review-verifica",
+      "label": "Review e verifica indipendente",
+      "aliases": [
+        "code-review",
+        "pull-requests",
+        "verifica-indipendente",
+        "test-oracles",
+        "domain-validation",
+        "behavioral-verification",
+        "architectural-review",
+        "failure-testing",
+        "errori-correlati",
+        "difesa-in-profondita",
+        "verifica-output"
+      ]
+    },
+    {
+      "id": "specifiche-contesto",
+      "label": "Specifiche, contesto e autorità delle decisioni",
+      "aliases": [
+        "specifiche",
+        "requisiti",
+        "requirements",
+        "spec-driven-development",
+        "specification-review",
+        "requirements-extraction",
+        "context-authority",
+        "decision-authority",
+        "context-engineering",
+        "decision-records",
+        "formalizzazione"
+      ]
+    },
+    {
+      "id": "adozione-produttivita",
+      "label": "Adozione AI e produttività reale",
+      "aliases": [
+        "adozione-ai",
+        "ai-adoption",
+        "produttivita-ai",
+        "delivery-outcomes",
+        "delivery-flow",
+        "delivery-latency",
+        "review-capacity",
+        "misurazione",
+        "costo-operativo",
+        "costi-ai"
+      ]
+    },
+    {
+      "id": "valutazione-affidabilita",
+      "label": "Valutazione e affidabilità dell’AI",
+      "aliases": [
+        "valutazione-ai",
+        "agent-evaluation",
+        "valutazione-agenti",
+        "regression-testing",
+        "regression-gates",
+        "invarianti",
+        "falsi-positivi",
+        "calibrazione",
+        "grounding",
+        "incertezza",
+        "evidenze"
+      ]
+    },
+    {
+      "id": "autonomia-governance",
+      "label": "Autonomia, permessi e responsabilità",
+      "aliases": [
+        "harness-engineering",
+        "architectural-constraints",
+        "exception-management",
+        "agent-governance",
+        "permission-design",
+        "human-oversight",
+        "human-in-the-loop",
+        "tool-use",
+        "agent-boundaries",
+        "policy-enforcement",
+        "autorizzazioni",
+        "decision-accountability",
+        "responsabilita",
+        "agent-boundary"
+      ]
+    },
+    {
+      "id": "apprendimento-giudizio",
+      "label": "Apprendimento e giudizio umano",
+      "aliases": [
+        "engineering-education",
+        "mental-models",
+        "engineering-judgment",
+        "adaptive-reasoning",
+        "giudizio-umano",
+        "human-judgment",
+        "apprendimento",
+        "ai-delegation"
+      ]
+    },
+    {
+      "id": "osservabilita-incidenti",
+      "label": "Osservabilità, incidenti e spiegazioni",
+      "aliases": [
+        "observability",
+        "incident-response",
+        "agent-tracing",
+        "host-telemetry",
+        "agentic-sre",
+        "postmortem",
+        "causalita",
+        "explanation-layer",
+        "debugging"
+      ]
+    },
+    {
+      "id": "dati-privacy",
+      "label": "Dati, privacy e contesto",
+      "aliases": [
+        "data-minimization",
+        "local-models",
+        "contesto-dati",
+        "telemetria",
+        "sensor-pipeline"
+      ]
+    },
+    {
+      "id": "interazione-fiducia",
+      "label": "Interazione, feedback e fiducia",
+      "aliases": [
+        "feedback",
+        "fiducia",
+        "ricerca-utente",
+        "task-success",
+        "metriche-prodotto",
+        "progressione",
+        "sicurezza-psicologica"
+      ]
+    },
+    {
+      "id": "infrastruttura-edge",
+      "label": "Infrastruttura AI, edge e vincoli fisici",
+      "aliases": [
+        "edge-ai",
+        "infrastruttura-ai",
+        "inferenza-ai",
+        "hardware-constraints",
+        "compatibilita",
+        "rollback",
+        "versionamento-modelli",
+        "configuration-drift",
+        "riproducibilita",
+        "device-constraints",
+        "latenza"
+      ]
+    },
+    {
+      "id": "ricerca-semantica",
+      "label": "Ricerca semantica e significato",
+      "aliases": [
+        "embedding",
+        "semantic-indexing",
+        "deduplicazione",
+        "semantica",
+        "semantic-density",
+        "contesto-culturale",
+        "retrieval"
+      ]
+    },
+    {
+      "id": "creativita-comunicazione",
+      "label": "Creatività e comunicazione",
+      "aliases": [
+        "arte-generativa",
+        "creativita-ai",
+        "intenzione-artistica",
+        "public-speaking",
+        "autenticita",
+        "serendipita"
+      ]
+    },
+    {
+      "id": "storia-fondamenti",
+      "label": "Storia, filosofia e fondamenti",
+      "aliases": [
+        "filosofia-informatica",
+        "computing-foundations",
+        "epistemologia",
+        "ragionamento-ai",
+        "storia-del-software",
+        "astrazione"
+      ]
+    },
+    {
+      "id": "evoluzione-software",
+      "label": "Evoluzione, manutenzione e interoperabilità",
+      "aliases": [
+        "version-control",
+        "change-recovery",
+        "git-interoperability",
+        "brownfield-migration",
+        "behavior-preservation",
+        "manutenzione-oss",
+        "manutenzione",
+        "ffi",
+        "runtime-nodejs",
+        "sicurezza-memoria"
+      ]
+    },
+    {
+      "id": "esperienza-web",
+      "label": "Esperienza web e prestazioni",
+      "aliases": [
+        "prerendering",
+        "view-transitions",
+        "data-freshness",
+        "browser-ai",
+        "progressive-enhancement",
+        "predictive-prefetching",
+        "performance-budgets"
+      ]
+    },
+    {
+      "id": "provenienza-contenuti",
+      "label": "Provenienza e watermark dei contenuti",
+      "aliases": [
+        "provenienza",
+        "tournament-sampling",
+        "distribuzione",
+        "watermark-key",
+        "copertura"
+      ]
+    },
+    {
+      "id": "organizzazione-team",
+      "label": "Organizzazione e selezione dei team",
+      "aliases": [
+        "engineering-interviews",
+        "hiring-validity",
+        "evaluation-bias",
+        "team-maturity",
+        "knowledge-transfer",
+        "coordinamento",
+        "continuita",
+        "autonomia",
+        "capacita-team"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "type": "question-topic",
+      "fromId": "q-abiodun-olowode-editorial-7",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-abiodun-olowode-editorial-7",
+        "textIt": "Quando un agente produce una PR plausibile, quale parte del giudizio artigianale del reviewer diventa più importante proprio perché non ha scritto il codice?",
+        "tags": [
+          "code-review"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alfonso-fuggetta-research-20261025-03",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-alfonso-fuggetta-research-20261025-03",
+        "textIt": "Se un agente genera codice e test dallo stesso requisito ambiguo, entrambi potrebbero essere coerenti ma sbagliati per l’azienda. Chi deve introdurre un criterio di correttezza indipendente prima del rilascio?",
+        "tags": [
+          "domain-validation",
+          "test-oracles"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-carolina-pinto-research-20261025-01",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-carolina-pinto-research-20261025-01",
+        "textIt": "Nel talk colleghi feedback emotivo e fiducia. Se un prodotto AI celebra una risposta prima che sia verificata, come progetteresti quel feedback perché premi il controllo del risultato senza spezzare il ritmo dell’esperienza?",
+        "tags": [
+          "verifica-output"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-christian-schabetsberger-editorial-1",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-christian-schabetsberger-editorial-1",
+        "textIt": "Se il team mantiene Git sul server ma cambia gli strumenti locali, quale garanzia deve sopravvivere al passaggio verso la pull request perché la compatibilità sia davvero sufficiente?",
+        "tags": [
+          "pull-requests"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-enzo-lombardi-research-20261025-03",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-enzo-lombardi-research-20261025-03",
+        "textIt": "Nel collegamento MCP tra Claude e il debugger, come distingui una soluzione che rispetta le regole del gioco da una che ottiene il risultato aggirandole? Il confine va imposto dai tool o verificato sul comportamento finale?",
+        "tags": [
+          "behavioral-verification"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-gabriele-santomaggio-research-20261025-02",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-gabriele-santomaggio-research-20261025-02",
+        "textIt": "Se un LLM genera un consumer che funziona nei test ordinari, quale contratto su retry e duplicati vorresti rendere esplicito prima di usarlo in un sistema distribuito?",
+        "tags": [
+          "failure-testing"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-gabriele-santomaggio-research-20261025-03",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-gabriele-santomaggio-research-20261025-03",
+        "textIt": "Un LLM può rendere molto convincente una proposta architetturale fondata su un’analogia sbagliata. Come tradurresti l’umiltà intellettuale del talk in una prova capace di smentirla prima che il team la adotti?",
+        "tags": [
+          "architectural-review"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-mario-zechner-talk-ai-20261025-talk",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-mario-zechner-talk-ai-20261025-talk",
+        "textIt": "Quando una PR generata da un agente funziona ma aumenta il costo di capire il progetto, quale criterio usi per decidere che non vale la pena accettarla?",
+        "tags": [
+          "code-review"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-matteo-collina-talk-ai-20261025-bridge",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-matteo-collina-talk-ai-20261025-bridge",
+        "textIt": "Se la stessa persona indirizza l’agente e approva il risultato, quale verifica indipendente può mettere in discussione anche il requisito, non soltanto controllare che il codice lo soddisfi?",
+        "tags": [
+          "verifica-indipendente"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-paolo-insogna-talk-ai-20261025-ai",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-paolo-insogna-talk-ai-20261025-ai",
+        "textIt": "Se un coding agent genera un binding che compila e supera gli esempi, quali errori al confine tra linguaggi richiedono ancora una verifica che non puoi delegare allo stesso agente?",
+        "tags": [
+          "verifica-indipendente"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-vladi-stevanovic-talk-ai-20261025-talk",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-vladi-stevanovic-talk-ai-20261025-talk",
+        "textIt": "Nel modello a strati, come capisci se due verifiche coprono errori diversi oppure stanno passando entrambe sopra lo stesso buco?",
+        "tags": [
+          "code-review",
+          "difesa-in-profondita",
+          "verifica-indipendente"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-vladi-stevanovic-talk-ai-20261025-ai",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-vladi-stevanovic-talk-ai-20261025-ai",
+        "textIt": "Se un coding agent raddoppia le PR prodotte ma il team riesce a comprenderne lo stesso numero di prima, quale metrica dovrebbe guidare la decisione di accelerare o limitare la generazione?",
+        "tags": [
+          "code-review"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-vladi-stevanovic-talk-ai-20261025-bridge",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta review e verifica indipendente.",
+      "evidence": {
+        "questionId": "q-vladi-stevanovic-talk-ai-20261025-bridge",
+        "textIt": "Se specifica, implementazione e test vengono generati a partire dallo stesso contesto sbagliato, quale strato può contestare l’assunto iniziale invece di confermarlo tre volte?",
+        "tags": [
+          "errori-correlati",
+          "verifica-indipendente"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "abiodun-olowode",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-abiodun-olowode-editorial-7"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alfonso-fuggetta",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alfonso-fuggetta-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "carolina-pinto",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-carolina-pinto-research-20261025-01"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "christian-schabetsberger",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-christian-schabetsberger-editorial-1"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "enzo-lombardi",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-enzo-lombardi-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "gabriele-santomaggio",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-gabriele-santomaggio-research-20261025-02",
+        "q-gabriele-santomaggio-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "mario-zechner",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-mario-zechner-talk-ai-20261025-talk"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "matteo-collina",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-matteo-collina-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "paolo-insogna",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-paolo-insogna-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "vladi-stevanovic",
+      "toId": "review-verifica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-vladi-stevanovic-talk-ai-20261025-talk",
+        "q-vladi-stevanovic-talk-ai-20261025-ai",
+        "q-vladi-stevanovic-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alexio-cassani-research-20261025-03",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta specifiche, contesto e autorità delle decisioni.",
+      "evidence": {
+        "questionId": "q-alexio-cassani-research-20261025-03",
+        "textIt": "Se l’agente legge la chat del team e trova un messaggio recente che contraddice una decisione architetturale approvata, quale passaggio deve impedirgli di scambiare la novità per autorità?",
+        "tags": [
+          "context-authority",
+          "decision-records"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alfonso-graziano-research-20261025-01",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta specifiche, contesto e autorità delle decisioni.",
+      "evidence": {
+        "questionId": "q-alfonso-graziano-research-20261025-01",
+        "textIt": "Nello Spec-Driven Development la specifica precede il codice; in un esperimento, però, costruisci proprio per capire cosa serve. Qual è la specifica minima che mantiene il controllo senza fingere di avere già le risposte?",
+        "tags": [
+          "requirements",
+          "spec-driven-development"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-andrey-breslav-research-20261025-01",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta specifiche, contesto e autorità delle decisioni.",
+      "evidence": {
+        "questionId": "q-andrey-breslav-research-20261025-01",
+        "textIt": "Se una breve specifica sostituisce molto codice, come distingui il boilerplate eliminabile da una scelta di prodotto che deve restare visibile a chi fa review?",
+        "tags": [
+          "specification-review"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-andrey-breslav-research-20261025-03",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta specifiche, contesto e autorità delle decisioni.",
+      "evidence": {
+        "questionId": "q-andrey-breslav-research-20261025-03",
+        "textIt": "Passando da documenti lunghi a requisiti ricavati dalle chat con gli agenti, quale passaggio distingue un’idea provvisoria da una decisione che il sistema è autorizzato a implementare?",
+        "tags": [
+          "decision-authority",
+          "requirements-extraction"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-enzo-lombardi-research-20261025-02",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta specifiche, contesto e autorità delle decisioni.",
+      "evidence": {
+        "questionId": "q-enzo-lombardi-research-20261025-02",
+        "textIt": "Se un agente riceve un indice semantico invece di esplorare tutto il codice, come verificheresti che il risparmio di token non gli nasconda proprio la dipendenza che rende sbagliata una modifica?",
+        "tags": [
+          "context-engineering"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-matteo-collina-talk-ai-20261025-bridge",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta specifiche, contesto e autorità delle decisioni.",
+      "evidence": {
+        "questionId": "q-matteo-collina-talk-ai-20261025-bridge",
+        "textIt": "Se la stessa persona indirizza l’agente e approva il risultato, quale verifica indipendente può mettere in discussione anche il requisito, non soltanto controllare che il codice lo soddisfi?",
+        "tags": [
+          "requisiti"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-paolo-caressa-talk-ai-20261025-bridge",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta specifiche, contesto e autorità delle decisioni.",
+      "evidence": {
+        "questionId": "q-paolo-caressa-talk-ai-20261025-bridge",
+        "textIt": "Se un agente traduce una richiesta ambigua in un programma che supera tutti i test, quale domanda filosofica ci aiuterebbe a vedere ciò che abbiamo lasciato fuori dalla specifica?",
+        "tags": [
+          "formalizzazione",
+          "specifiche"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-vladi-stevanovic-talk-ai-20261025-bridge",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta specifiche, contesto e autorità delle decisioni.",
+      "evidence": {
+        "questionId": "q-vladi-stevanovic-talk-ai-20261025-bridge",
+        "textIt": "Se specifica, implementazione e test vengono generati a partire dallo stesso contesto sbagliato, quale strato può contestare l’assunto iniziale invece di confermarlo tre volte?",
+        "tags": [
+          "specifiche"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alexio-cassani",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alexio-cassani-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alfonso-graziano",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alfonso-graziano-research-20261025-01"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "andrey-breslav",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-andrey-breslav-research-20261025-01",
+        "q-andrey-breslav-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "enzo-lombardi",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-enzo-lombardi-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "matteo-collina",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-matteo-collina-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "paolo-caressa",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-paolo-caressa-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "vladi-stevanovic",
+      "toId": "specifiche-contesto",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-vladi-stevanovic-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alexio-cassani-research-20261025-02",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-alexio-cassani-research-20261025-02",
+        "textIt": "In un team italiano che sta introducendo coding agent, quale risultato ti farebbe fermare l’estensione dell’AI anche se gli sviluppatori dichiarano di lavorare più velocemente?",
+        "tags": [
+          "ai-adoption",
+          "delivery-outcomes",
+          "review-capacity"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alfonso-fuggetta-research-20261025-02",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-alfonso-fuggetta-research-20261025-02",
+        "textIt": "Una PMI italiana vede uno studio in cui gli agenti accelerano compiti circoscritti. Quale prova dovrebbe cercare prima di trasferire quel risultato a un software che dovrà mantenere per anni?",
+        "tags": [
+          "ai-adoption"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alfonso-graziano-research-20261025-02",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-alfonso-graziano-research-20261025-02",
+        "textIt": "Se un team scrive codice più velocemente con l’AI ma non rilascia prima, quale segnale ti farebbe spostare l’investimento dagli strumenti al processo decisionale?",
+        "tags": [
+          "ai-adoption",
+          "delivery-flow"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-emanuele-fabbiani-research-20261025-02",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-emanuele-fabbiani-research-20261025-02",
+        "textIt": "Immaginiamo che solo una parte dei generatori adotti il watermarking. Quale promessa sulla provenienza dei contenuti può fare un prodotto AI senza trasformare l’assenza di watermark in una falsa garanzia di origine umana?",
+        "tags": [
+          "adozione-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-jigyasa-grover-research-20261025-02",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-jigyasa-grover-research-20261025-02",
+        "textIt": "Un pilota AI può raggiungere gli obiettivi perché qualcuno corregge continuamente l’agente. Come renderesti visibile quel lavoro nel decidere se estendere l’adozione, e quando lo considereresti un segnale di autonomia eccessiva?",
+        "tags": [
+          "adozione-ai",
+          "costo-operativo"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-leonardo-cavagnis-talk-ai-20261025-ai",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-leonardo-cavagnis-talk-ai-20261025-ai",
+        "textIt": "Quale evidenza ti convince che un problema su un dispositivo richieda davvero un modello AI, invece di una regola deterministica più facile da verificare e mantenere?",
+        "tags": [
+          "adozione-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-marco-ippolito-talk-ai-20261025-bridge",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-marco-ippolito-talk-ai-20261025-bridge",
+        "textIt": "Su milioni di immagini, come decidi dove spendere un’analisi AI più costosa e dove bastano embedding, regole o cache, senza rendere invisibili i casi più rari?",
+        "tags": [
+          "costi-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-mario-zechner-talk-ai-20261025-bridge",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-mario-zechner-talk-ai-20261025-bridge",
+        "textIt": "Come imposteresti un esperimento in un progetto esistente per capire se un coding agent riduce davvero il lavoro complessivo, contando anche review, correzioni e manutenzione?",
+        "tags": [
+          "misurazione",
+          "produttivita-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-mauro-morales-talk-ai-20261025-ai",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-mauro-morales-talk-ai-20261025-ai",
+        "textIt": "Quando scegli dove eseguire un workload AI, come metti nel confronto economico anche il costo di riprodurre e riparare l’ambiente, oltre a GPU e tempo di inferenza?",
+        "tags": [
+          "costi-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-vladi-stevanovic-talk-ai-20261025-ai",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta adozione ai e produttività reale.",
+      "evidence": {
+        "questionId": "q-vladi-stevanovic-talk-ai-20261025-ai",
+        "textIt": "Se un coding agent raddoppia le PR prodotte ma il team riesce a comprenderne lo stesso numero di prima, quale metrica dovrebbe guidare la decisione di accelerare o limitare la generazione?",
+        "tags": [
+          "produttivita-ai"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alexio-cassani",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alexio-cassani-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alfonso-fuggetta",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alfonso-fuggetta-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alfonso-graziano",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alfonso-graziano-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "emanuele-fabbiani",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-emanuele-fabbiani-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "jigyasa-grover",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-jigyasa-grover-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "leonardo-cavagnis",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-leonardo-cavagnis-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "marco-ippolito",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-marco-ippolito-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "mario-zechner",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-mario-zechner-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "mauro-morales",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-mauro-morales-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "vladi-stevanovic",
+      "toId": "adozione-produttivita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-vladi-stevanovic-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-christian-schabetsberger-editorial-2",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-christian-schabetsberger-editorial-2",
+        "textIt": "In una migrazione brownfield affidata a un agente, una build verde può nascondere una funzionalità eliminata. Quale verifica indipendente dall’agente useresti per decidere se la migrazione è riuscita?",
+        "tags": [
+          "agent-evaluation"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-david-mccarter-research-20261025-03",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-david-mccarter-research-20261025-03",
+        "textIt": "Come trasformeresti una prova del talk con un coach AI in un allenamento utile davanti a persone reali, senza scambiare il feedback incoraggiante del modello per una prova di chiarezza?",
+        "tags": [
+          "valutazione-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dotan-horovits-research-20261025-02",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-dotan-horovits-research-20261025-02",
+        "textIt": "Un agente può rispondere rapidamente e senza errori tecnici, ma fallire il compito. Quale evidenza renderebbe quel fallimento semantico abbastanza affidabile da svegliare chi è reperibile?",
+        "tags": [
+          "agent-evaluation"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-emanuele-fabbiani-research-20261025-03",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-emanuele-fabbiani-research-20261025-03",
+        "textIt": "Portiamo il detector della demo in una coda di documenti dove i testi con watermark sono rari: come sceglieresti la soglia prima di usare un esito positivo per mandare un documento in revisione?",
+        "tags": [
+          "calibrazione",
+          "falsi-positivi"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-enzo-lombardi-research-20261025-02",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-enzo-lombardi-research-20261025-02",
+        "textIt": "Se un agente riceve un indice semantico invece di esplorare tutto il codice, come verificheresti che il risparmio di token non gli nasconda proprio la dipendenza che rende sbagliata una modifica?",
+        "tags": [
+          "agent-evaluation"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-jigyasa-grover-research-20261025-03",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-jigyasa-grover-research-20261025-03",
+        "textIt": "Se lasciamo all’agente libertà di scegliere i tool, un aggiornamento può cambiare il percorso e produrre comunque il risultato corretto. Come costruiresti un gate di regressione che accetti questa variazione senza far passare azioni non autorizzate?",
+        "tags": [
+          "invarianti",
+          "regression-gates"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-katharine-jarmul-research-20261025-03",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-katharine-jarmul-research-20261025-03",
+        "textIt": "Supponiamo che le tracce ti portino a spostare un workflow da un’API esterna a un modello locale. Quali prove useresti per verificare che ridurre l’esposizione dei dati non abbia introdotto nuovi errori nelle azioni dell’agente?",
+        "tags": [
+          "regression-testing"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-leonardo-cavagnis-talk-ai-20261025-ai",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-leonardo-cavagnis-talk-ai-20261025-ai",
+        "textIt": "Quale evidenza ti convince che un problema su un dispositivo richieda davvero un modello AI, invece di una regola deterministica più facile da verificare e mantenere?",
+        "tags": [
+          "valutazione-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-marco-ippolito-talk-ai-20261025-ai",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-marco-ippolito-talk-ai-20261025-ai",
+        "textIt": "Se un modello classifica un contenuto di una sottocultura che il team conosce poco, come distingui una classificazione plausibile da una lettura culturalmente sbagliata?",
+        "tags": [
+          "valutazione-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-olena-borzenko-talk-ai-20261025-ai",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-olena-borzenko-talk-ai-20261025-ai",
+        "textIt": "Quando usi un modello AI per esplorare idee, come capisci se ti sta aprendo possibilità nuove o riportando verso forme già frequenti nei suoi risultati?",
+        "tags": [
+          "valutazione-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-riccardo-carlesso-talk-ai-20261025-ai",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-riccardo-carlesso-talk-ai-20261025-ai",
+        "textIt": "Come valuteresti un agente per gli incidenti quando una spiegazione convincente può arrivare prima di una diagnosi corretta?",
+        "tags": [
+          "evidenze",
+          "valutazione-agenti"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-soumaya-erradi-talk-ai-20261025-talk",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-soumaya-erradi-talk-ai-20261025-talk",
+        "textIt": "Nella pipeline che descrivi, dove tracci il confine tra un’anomalia misurata nei dati e un’interpretazione che il modello può soltanto proporre?",
+        "tags": [
+          "evidenze"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-soumaya-erradi-talk-ai-20261025-ai",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta valutazione e affidabilità dell’ai.",
+      "evidence": {
+        "questionId": "q-soumaya-erradi-talk-ai-20261025-ai",
+        "textIt": "Se una spiegazione dell’LLM sembra utile all’utente ma aggiunge un dettaglio non supportato dai sensori, come valuti il sistema senza premiare proprio quella falsa precisione?",
+        "tags": [
+          "grounding",
+          "incertezza",
+          "valutazione-ai"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "christian-schabetsberger",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-christian-schabetsberger-editorial-2"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "david-mccarter",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-david-mccarter-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "dotan-horovits",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-dotan-horovits-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "emanuele-fabbiani",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-emanuele-fabbiani-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "enzo-lombardi",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-enzo-lombardi-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "jigyasa-grover",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-jigyasa-grover-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "katharine-jarmul",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-katharine-jarmul-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "leonardo-cavagnis",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-leonardo-cavagnis-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "marco-ippolito",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-marco-ippolito-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "olena-borzenko",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-olena-borzenko-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "riccardo-carlesso",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-riccardo-carlesso-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "soumaya-erradi",
+      "toId": "valutazione-affidabilita",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-soumaya-erradi-talk-ai-20261025-talk",
+        "q-soumaya-erradi-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-abiodun-olowode-talk-ai-20261025-bridge",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-abiodun-olowode-talk-ai-20261025-bridge",
+        "textIt": "Se un collega difende una scelta dicendo «l’ha suggerita l’AI», come riporti il confronto sulle ragioni tecniche senza trasformarlo in un giudizio sulla persona?",
+        "tags": [
+          "responsabilita"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alexio-cassani-research-20261025-01",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-alexio-cassani-research-20261025-01",
+        "textIt": "Se una regola architetturale passa dalle istruzioni di progetto a un controllo bloccante, come gestisci un’eccezione legittima senza insegnare all’agente ad aggirare il controllo?",
+        "tags": [
+          "architectural-constraints",
+          "exception-management",
+          "harness-engineering"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alfonso-graziano-research-20261025-03",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-alfonso-graziano-research-20261025-03",
+        "textIt": "Nel passaggio all’AI-native, quale prova chiederesti a un team prima di ridurre i controlli umani, per evitare che la bravura del singolo esperto nasconda la dipendenza degli altri da lui?",
+        "tags": [
+          "human-oversight"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-andrey-breslav-research-20261025-02",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-andrey-breslav-research-20261025-02",
+        "textIt": "Se due persone vogliono cose incompatibili dal software e l’AI propone un compromesso plausibile, quale parte della decisione deve restare esplicitamente umana, anche se l’agente sa implementare entrambe le alternative?",
+        "tags": [
+          "decision-accountability"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-enzo-lombardi-research-20261025-03",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-enzo-lombardi-research-20261025-03",
+        "textIt": "Nel collegamento MCP tra Claude e il debugger, come distingui una soluzione che rispetta le regole del gioco da una che ottiene il risultato aggirandole? Il confine va imposto dai tool o verificato sul comportamento finale?",
+        "tags": [
+          "agent-boundaries"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-giorgio-natili-research-20261025-01",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-giorgio-natili-research-20261025-01",
+        "textIt": "Nel layer etico che proponi, dove finisce una regola verificabile dal software e dove deve cominciare una decisione umana, senza nascondere quel confine dentro un altro modello?",
+        "tags": [
+          "agent-governance",
+          "human-in-the-loop"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-giorgio-natili-research-20261025-02",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-giorgio-natili-research-20261025-02",
+        "textIt": "Nel passaggio dalle applicazioni web agli agenti AI, quale responsabilità di chi costruisce il software è cambiata davvero, e quale stiamo soltanto riscoprendo con un altro nome?",
+        "tags": [
+          "responsabilita"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-giorgio-natili-research-20261025-03",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-giorgio-natili-research-20261025-03",
+        "textIt": "Se ogni chiamata a uno strumento rispetta la policy ma la loro combinazione danneggia l’utente, come dovrebbe intervenire il tuo layer senza delegare di nuovo il controllo allo stesso agente?",
+        "tags": [
+          "agent-governance",
+          "policy-enforcement",
+          "tool-use"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-jigyasa-grover-research-20261025-01",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-jigyasa-grover-research-20261025-01",
+        "textIt": "Se un processo è prevedibile quasi ovunque, ma ha un passaggio che richiede di scegliere dinamicamente i tool, dove metteresti il confine tra workflow e agente perché il recupero da un errore resti controllabile?",
+        "tags": [
+          "agent-boundary"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-jigyasa-grover-research-20261025-02",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-jigyasa-grover-research-20261025-02",
+        "textIt": "Un pilota AI può raggiungere gli obiettivi perché qualcuno corregge continuamente l’agente. Come renderesti visibile quel lavoro nel decidere se estendere l’adozione, e quando lo considereresti un segnale di autonomia eccessiva?",
+        "tags": [
+          "human-in-the-loop"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-jigyasa-grover-research-20261025-03",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-jigyasa-grover-research-20261025-03",
+        "textIt": "Se lasciamo all’agente libertà di scegliere i tool, un aggiornamento può cambiare il percorso e produrre comunque il risultato corretto. Come costruiresti un gate di regressione che accetti questa variazione senza far passare azioni non autorizzate?",
+        "tags": [
+          "tool-use"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-katharine-jarmul-research-20261025-02",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-katharine-jarmul-research-20261025-02",
+        "textIt": "Se un team approva quasi automaticamente le richieste dell’agente per non interrompere il lavoro, quali decisioni sposteresti in vincoli tecnici e quali lasceresti davvero alla persona?",
+        "tags": [
+          "human-oversight",
+          "permission-design"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-riccardo-carlesso-talk-ai-20261025-talk",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-riccardo-carlesso-talk-ai-20261025-talk",
+        "textIt": "In una skill che propone un rollback, come separi la capacità di diagnosticare il problema dall’autorità di agire, soprattutto quando l’incidente cambia mentre l’agente sta ragionando?",
+        "tags": [
+          "autorizzazioni",
+          "tool-use"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-soumaya-erradi-talk-ai-20261025-bridge",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta autonomia, permessi e responsabilità.",
+      "evidence": {
+        "questionId": "q-soumaya-erradi-talk-ai-20261025-bridge",
+        "textIt": "Quando la telemetria di due auto non è direttamente confrontabile, come impedisci che un riepilogo AI trasformi una differenza di contesto in un segnale di manutenzione?",
+        "tags": [
+          "human-in-the-loop"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "abiodun-olowode",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-abiodun-olowode-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alexio-cassani",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alexio-cassani-research-20261025-01"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alfonso-graziano",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alfonso-graziano-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "andrey-breslav",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-andrey-breslav-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "enzo-lombardi",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-enzo-lombardi-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "giorgio-natili",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-giorgio-natili-research-20261025-01",
+        "q-giorgio-natili-research-20261025-02",
+        "q-giorgio-natili-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "jigyasa-grover",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-jigyasa-grover-research-20261025-01",
+        "q-jigyasa-grover-research-20261025-02",
+        "q-jigyasa-grover-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "katharine-jarmul",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-katharine-jarmul-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "riccardo-carlesso",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-riccardo-carlesso-talk-ai-20261025-talk"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "soumaya-erradi",
+      "toId": "autonomia-governance",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-soumaya-erradi-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-abiodun-olowode-editorial-7",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta apprendimento e giudizio umano.",
+      "evidence": {
+        "questionId": "q-abiodun-olowode-editorial-7",
+        "textIt": "Quando un agente produce una PR plausibile, quale parte del giudizio artigianale del reviewer diventa più importante proprio perché non ha scritto il codice?",
+        "tags": [
+          "giudizio-umano"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alfonso-fuggetta-research-20261025-01",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta apprendimento e giudizio umano.",
+      "evidence": {
+        "questionId": "q-alfonso-fuggetta-research-20261025-01",
+        "textIt": "Il talk descrive un vuoto strutturale degli LLM. Se un agente incorpora memoria esterna, strumenti e verifiche, quale parte di quel vuoto ritieni resti al giudizio umano?",
+        "tags": [
+          "human-judgment"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-andrey-breslav-research-20261025-02",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta apprendimento e giudizio umano.",
+      "evidence": {
+        "questionId": "q-andrey-breslav-research-20261025-02",
+        "textIt": "Se due persone vogliono cose incompatibili dal software e l’AI propone un compromesso plausibile, quale parte della decisione deve restare esplicitamente umana, anche se l’agente sa implementare entrambe le alternative?",
+        "tags": [
+          "human-judgment"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dennis-nerush-research-20261025-01",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta apprendimento e giudizio umano.",
+      "evidence": {
+        "questionId": "q-dennis-nerush-research-20261025-01",
+        "textIt": "Nel walkthrough di un esercizio assistito dall’AI, anche la spiegazione del codice può essere preparata dall’AI. Quale cambiamento al problema useresti per distinguere comprensione reale da una giustificazione imparata bene?",
+        "tags": [
+          "adaptive-reasoning"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dennis-nerush-research-20261025-02",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta apprendimento e giudizio umano.",
+      "evidence": {
+        "questionId": "q-dennis-nerush-research-20261025-02",
+        "textIt": "Se chiediamo agli ingegneri di giudicare il lavoro degli agenti, come può un junior costruire quel giudizio quando delega proprio l’implementazione da cui avrebbe imparato?",
+        "tags": [
+          "ai-delegation",
+          "engineering-education",
+          "mental-models"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dennis-nerush-research-20261025-03",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta apprendimento e giudizio umano.",
+      "evidence": {
+        "questionId": "q-dennis-nerush-research-20261025-03",
+        "textIt": "Per un team italiano che adotta il tuo approccio, come verificheresti che individuare un errore dell’AI al colloquio anticipi il buon giudizio sul lavoro, anziché la capacità di indovinare cosa cerca l’intervistatore?",
+        "tags": [
+          "engineering-judgment"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-mario-zechner-talk-ai-20261025-ai",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta apprendimento e giudizio umano.",
+      "evidence": {
+        "questionId": "q-mario-zechner-talk-ai-20261025-ai",
+        "textIt": "Quale competenza deve continuare ad allenare uno sviluppatore anche quando un agente completa i suoi task, per accorgersi che sta delegando nella direzione sbagliata?",
+        "tags": [
+          "apprendimento",
+          "giudizio-umano"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-matteo-collina-talk-ai-20261025-ai",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta apprendimento e giudizio umano.",
+      "evidence": {
+        "questionId": "q-matteo-collina-talk-ai-20261025-ai",
+        "textIt": "Quando un agente accelera soprattutto chi sa già valutare il codice, come può un junior costruire quel giudizio senza diventare soltanto qualcuno che accetta o rifiuta suggerimenti?",
+        "tags": [
+          "apprendimento",
+          "giudizio-umano"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "abiodun-olowode",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-abiodun-olowode-editorial-7"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alfonso-fuggetta",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alfonso-fuggetta-research-20261025-01"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "andrey-breslav",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-andrey-breslav-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "dennis-nerush",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-dennis-nerush-research-20261025-01",
+        "q-dennis-nerush-research-20261025-02",
+        "q-dennis-nerush-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "mario-zechner",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-mario-zechner-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "matteo-collina",
+      "toId": "apprendimento-giudizio",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-matteo-collina-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dotan-horovits-research-20261025-01",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta osservabilità, incidenti e spiegazioni.",
+      "evidence": {
+        "questionId": "q-dotan-horovits-research-20261025-01",
+        "textIt": "OpenTelemetry aiuta a rendere portabile la raccolta, ma query e dashboard possono legare il team al backend. Quale prova di migrazione useresti per dimostrare che si può davvero uscire da uno stack unificato?",
+        "tags": [
+          "observability"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dotan-horovits-research-20261025-02",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta osservabilità, incidenti e spiegazioni.",
+      "evidence": {
+        "questionId": "q-dotan-horovits-research-20261025-02",
+        "textIt": "Un agente può rispondere rapidamente e senza errori tecnici, ma fallire il compito. Quale evidenza renderebbe quel fallimento semantico abbastanza affidabile da svegliare chi è reperibile?",
+        "tags": [
+          "incident-response"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dotan-horovits-research-20261025-03",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta osservabilità, incidenti e spiegazioni.",
+      "evidence": {
+        "questionId": "q-dotan-horovits-research-20261025-03",
+        "textIt": "Per ricostruire il fallimento di un agente servono contesto e risultati dei tool, ma registrarli aumenta l’esposizione dei dati. Qual è la traccia minima che porteresti nello stack di osservabilità senza perdere la possibilità di indagare?",
+        "tags": [
+          "agent-tracing",
+          "debugging"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-katharine-jarmul-research-20261025-01",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta osservabilità, incidenti e spiegazioni.",
+      "evidence": {
+        "questionId": "q-katharine-jarmul-research-20261025-01",
+        "textIt": "Per verificare che l’agente faccia davvero ciò che raccontano le sue tracce, quale segnale indipendente cercheresti sulla rete o sull’host, e come metteresti alla prova la capacità del monitoraggio di vedere un’azione inattesa?",
+        "tags": [
+          "host-telemetry",
+          "observability"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-riccardo-carlesso-talk-ai-20261025-talk",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta osservabilità, incidenti e spiegazioni.",
+      "evidence": {
+        "questionId": "q-riccardo-carlesso-talk-ai-20261025-talk",
+        "textIt": "In una skill che propone un rollback, come separi la capacità di diagnosticare il problema dall’autorità di agire, soprattutto quando l’incidente cambia mentre l’agente sta ragionando?",
+        "tags": [
+          "agentic-sre"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-riccardo-carlesso-talk-ai-20261025-ai",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta osservabilità, incidenti e spiegazioni.",
+      "evidence": {
+        "questionId": "q-riccardo-carlesso-talk-ai-20261025-ai",
+        "textIt": "Come valuteresti un agente per gli incidenti quando una spiegazione convincente può arrivare prima di una diagnosi corretta?",
+        "tags": [
+          "incident-response"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-riccardo-carlesso-talk-ai-20261025-bridge",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta osservabilità, incidenti e spiegazioni.",
+      "evidence": {
+        "questionId": "q-riccardo-carlesso-talk-ai-20261025-bridge",
+        "textIt": "Se il rollback suggerito dall’agente ristabilisce il servizio, come eviti che il postmortem generato trasformi quel successo in una falsa prova della causa dell’incidente?",
+        "tags": [
+          "agentic-sre",
+          "causalita",
+          "postmortem"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-soumaya-erradi-talk-ai-20261025-talk",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta osservabilità, incidenti e spiegazioni.",
+      "evidence": {
+        "questionId": "q-soumaya-erradi-talk-ai-20261025-talk",
+        "textIt": "Nella pipeline che descrivi, dove tracci il confine tra un’anomalia misurata nei dati e un’interpretazione che il modello può soltanto proporre?",
+        "tags": [
+          "explanation-layer"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "dotan-horovits",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-dotan-horovits-research-20261025-01",
+        "q-dotan-horovits-research-20261025-02",
+        "q-dotan-horovits-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "katharine-jarmul",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-katharine-jarmul-research-20261025-01"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "riccardo-carlesso",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-riccardo-carlesso-talk-ai-20261025-talk",
+        "q-riccardo-carlesso-talk-ai-20261025-ai",
+        "q-riccardo-carlesso-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "soumaya-erradi",
+      "toId": "osservabilita-incidenti",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-soumaya-erradi-talk-ai-20261025-talk"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dotan-horovits-research-20261025-03",
+      "toId": "dati-privacy",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta dati, privacy e contesto.",
+      "evidence": {
+        "questionId": "q-dotan-horovits-research-20261025-03",
+        "textIt": "Per ricostruire il fallimento di un agente servono contesto e risultati dei tool, ma registrarli aumenta l’esposizione dei dati. Qual è la traccia minima che porteresti nello stack di osservabilità senza perdere la possibilità di indagare?",
+        "tags": [
+          "data-minimization"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-katharine-jarmul-research-20261025-03",
+      "toId": "dati-privacy",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta dati, privacy e contesto.",
+      "evidence": {
+        "questionId": "q-katharine-jarmul-research-20261025-03",
+        "textIt": "Supponiamo che le tracce ti portino a spostare un workflow da un’API esterna a un modello locale. Quali prove useresti per verificare che ridurre l’esposizione dei dati non abbia introdotto nuovi errori nelle azioni dell’agente?",
+        "tags": [
+          "local-models"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-leonardo-cavagnis-talk-ai-20261025-talk",
+      "toId": "dati-privacy",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta dati, privacy e contesto.",
+      "evidence": {
+        "questionId": "q-leonardo-cavagnis-talk-ai-20261025-talk",
+        "textIt": "Quando devi rispettare un limite di latenza su un dispositivo, come decidi se sacrificare complessità del modello o cambiare acquisizione e preprocessing dei sensori?",
+        "tags": [
+          "sensor-pipeline"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-soumaya-erradi-talk-ai-20261025-talk",
+      "toId": "dati-privacy",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta dati, privacy e contesto.",
+      "evidence": {
+        "questionId": "q-soumaya-erradi-talk-ai-20261025-talk",
+        "textIt": "Nella pipeline che descrivi, dove tracci il confine tra un’anomalia misurata nei dati e un’interpretazione che il modello può soltanto proporre?",
+        "tags": [
+          "telemetria"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-soumaya-erradi-talk-ai-20261025-bridge",
+      "toId": "dati-privacy",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta dati, privacy e contesto.",
+      "evidence": {
+        "questionId": "q-soumaya-erradi-talk-ai-20261025-bridge",
+        "textIt": "Quando la telemetria di due auto non è direttamente confrontabile, come impedisci che un riepilogo AI trasformi una differenza di contesto in un segnale di manutenzione?",
+        "tags": [
+          "contesto-dati",
+          "telemetria"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "dotan-horovits",
+      "toId": "dati-privacy",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-dotan-horovits-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "katharine-jarmul",
+      "toId": "dati-privacy",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-katharine-jarmul-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "leonardo-cavagnis",
+      "toId": "dati-privacy",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-leonardo-cavagnis-talk-ai-20261025-talk"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "soumaya-erradi",
+      "toId": "dati-privacy",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-soumaya-erradi-talk-ai-20261025-talk",
+        "q-soumaya-erradi-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-abiodun-olowode-editorial-2",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta interazione, feedback e fiducia.",
+      "evidence": {
+        "questionId": "q-abiodun-olowode-editorial-2",
+        "textIt": "In una PR discutiamo un diff osservabile; nel feedback a una persona rischiamo di giudicarne il carattere. Quale evidenza useresti per trasformare «sei poco collaborativo» in un problema su cui si può lavorare?",
+        "tags": [
+          "feedback",
+          "sicurezza-psicologica"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-abiodun-olowode-talk-ai-20261025-bridge",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta interazione, feedback e fiducia.",
+      "evidence": {
+        "questionId": "q-abiodun-olowode-talk-ai-20261025-bridge",
+        "textIt": "Se un collega difende una scelta dicendo «l’ha suggerita l’AI», come riporti il confronto sulle ragioni tecniche senza trasformarlo in un giudizio sulla persona?",
+        "tags": [
+          "feedback"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-carolina-pinto-research-20261025-01",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta interazione, feedback e fiducia.",
+      "evidence": {
+        "questionId": "q-carolina-pinto-research-20261025-01",
+        "textIt": "Nel talk colleghi feedback emotivo e fiducia. Se un prodotto AI celebra una risposta prima che sia verificata, come progetteresti quel feedback perché premi il controllo del risultato senza spezzare il ritmo dell’esperienza?",
+        "tags": [
+          "feedback",
+          "fiducia"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-carolina-pinto-research-20261025-02",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta interazione, feedback e fiducia.",
+      "evidence": {
+        "questionId": "q-carolina-pinto-research-20261025-02",
+        "textIt": "Se l’AI permette anche a chi non fa ricerca UX di produrre un prototipo convincente, quale evidenza sugli utenti dovrebbe servire prima di trasformarlo in una decisione di prodotto?",
+        "tags": [
+          "ricerca-utente"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-carolina-pinto-research-20261025-03",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta interazione, feedback e fiducia.",
+      "evidence": {
+        "questionId": "q-carolina-pinto-research-20261025-03",
+        "textIt": "In un assistente AI, completare bene il compito può significare tornare meno spesso. Se una meccanica di progressione aumenta i ritorni ma non migliora il lavoro svolto, quale risultato useresti per decidere se mantenerla?",
+        "tags": [
+          "metriche-prodotto",
+          "progressione",
+          "task-success"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-david-mccarter-research-20261025-03",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta interazione, feedback e fiducia.",
+      "evidence": {
+        "questionId": "q-david-mccarter-research-20261025-03",
+        "textIt": "Come trasformeresti una prova del talk con un coach AI in un allenamento utile davanti a persone reali, senza scambiare il feedback incoraggiante del modello per una prova di chiarezza?",
+        "tags": [
+          "feedback"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-paolo-caressa-talk-ai-20261025-ai",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta interazione, feedback e fiducia.",
+      "evidence": {
+        "questionId": "q-paolo-caressa-talk-ai-20261025-ai",
+        "textIt": "Quando diciamo che un’AI «ragiona», quale distinzione dovremmo chiarire prima di usare quella parola per decidere quanto fidarci di una risposta?",
+        "tags": [
+          "fiducia"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "abiodun-olowode",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-abiodun-olowode-editorial-2",
+        "q-abiodun-olowode-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "carolina-pinto",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-carolina-pinto-research-20261025-01",
+        "q-carolina-pinto-research-20261025-02",
+        "q-carolina-pinto-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "david-mccarter",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-david-mccarter-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "paolo-caressa",
+      "toId": "interazione-fiducia",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-paolo-caressa-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-enzo-lombardi-research-20261025-01",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta infrastruttura ai, edge e vincoli fisici.",
+      "evidence": {
+        "questionId": "q-enzo-lombardi-research-20261025-01",
+        "textIt": "L’avversario è implementato nella ROM emulata o in un componente esterno? Quale vincolo hardware hai preservato perché il risultato restasse una soluzione per Slot Racers?",
+        "tags": [
+          "hardware-constraints"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-leonardo-cavagnis-talk-ai-20261025-talk",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta infrastruttura ai, edge e vincoli fisici.",
+      "evidence": {
+        "questionId": "q-leonardo-cavagnis-talk-ai-20261025-talk",
+        "textIt": "Quando devi rispettare un limite di latenza su un dispositivo, come decidi se sacrificare complessità del modello o cambiare acquisizione e preprocessing dei sensori?",
+        "tags": [
+          "edge-ai",
+          "latenza"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-leonardo-cavagnis-talk-ai-20261025-bridge",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta infrastruttura ai, edge e vincoli fisici.",
+      "evidence": {
+        "questionId": "q-leonardo-cavagnis-talk-ai-20261025-bridge",
+        "textIt": "Se cambiano i sensori o le condizioni ambientali ma non puoi aggiornare subito tutti i dispositivi, come progetteresti il sistema perché riconosca quando il modello non è più affidabile?",
+        "tags": [
+          "edge-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-mauro-morales-talk-ai-20261025-talk",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta infrastruttura ai, edge e vincoli fisici.",
+      "evidence": {
+        "questionId": "q-mauro-morales-talk-ai-20261025-talk",
+        "textIt": "Quale confine tracci tra ciò che deve stare nell’immagine versionata del nodo GPU e ciò che può restare configurabile a runtime senza ricreare il drift che vuoi eliminare?",
+        "tags": [
+          "configuration-drift",
+          "infrastruttura-ai",
+          "riproducibilita"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-mauro-morales-talk-ai-20261025-ai",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta infrastruttura ai, edge e vincoli fisici.",
+      "evidence": {
+        "questionId": "q-mauro-morales-talk-ai-20261025-ai",
+        "textIt": "Quando scegli dove eseguire un workload AI, come metti nel confronto economico anche il costo di riprodurre e riparare l’ambiente, oltre a GPU e tempo di inferenza?",
+        "tags": [
+          "edge-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-mauro-morales-talk-ai-20261025-bridge",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta infrastruttura ai, edge e vincoli fisici.",
+      "evidence": {
+        "questionId": "q-mauro-morales-talk-ai-20261025-bridge",
+        "textIt": "Se ripristini l’immagine di un nodo ma nel frattempo sono cambiati modello o formato dei dati, che cosa devi versionare insieme perché il rollback riporti davvero il servizio in uno stato funzionante?",
+        "tags": [
+          "compatibilita",
+          "rollback",
+          "versionamento-modelli"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-paolo-insogna-talk-ai-20261025-bridge",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta infrastruttura ai, edge e vincoli fisici.",
+      "evidence": {
+        "questionId": "q-paolo-insogna-talk-ai-20261025-bridge",
+        "textIt": "Per integrare inferenza AI nativa in un servizio Node.js, come confronteresti una chiamata FFI nello stesso processo con un servizio separato, contando anche isolamento dei guasti e aggiornamenti?",
+        "tags": [
+          "inferenza-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-rowdy-rabouw-research-20261025-02",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta infrastruttura ai, edge e vincoli fisici.",
+      "evidence": {
+        "questionId": "q-rowdy-rabouw-research-20261025-02",
+        "textIt": "Se una funzione del sito usa un modello AI nel browser, quale esperienza deve restare disponibile quando il modello manca o il dispositivo non riesce a eseguirlo, perché il costo non ricada sugli utenti con meno risorse?",
+        "tags": [
+          "device-constraints"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "enzo-lombardi",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-enzo-lombardi-research-20261025-01"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "leonardo-cavagnis",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-leonardo-cavagnis-talk-ai-20261025-talk",
+        "q-leonardo-cavagnis-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "mauro-morales",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-mauro-morales-talk-ai-20261025-talk",
+        "q-mauro-morales-talk-ai-20261025-ai",
+        "q-mauro-morales-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "paolo-insogna",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-paolo-insogna-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "rowdy-rabouw",
+      "toId": "infrastruttura-edge",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-rowdy-rabouw-research-20261025-02"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-andrey-breslav-research-20261025-01",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta ricerca semantica e significato.",
+      "evidence": {
+        "questionId": "q-andrey-breslav-research-20261025-01",
+        "textIt": "Se una breve specifica sostituisce molto codice, come distingui il boilerplate eliminabile da una scelta di prodotto che deve restare visibile a chi fa review?",
+        "tags": [
+          "semantic-density"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-enzo-lombardi-research-20261025-02",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta ricerca semantica e significato.",
+      "evidence": {
+        "questionId": "q-enzo-lombardi-research-20261025-02",
+        "textIt": "Se un agente riceve un indice semantico invece di esplorare tutto il codice, come verificheresti che il risparmio di token non gli nasconda proprio la dipendenza che rende sbagliata una modifica?",
+        "tags": [
+          "semantic-indexing"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-marco-ippolito-talk-ai-20261025-talk",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta ricerca semantica e significato.",
+      "evidence": {
+        "questionId": "q-marco-ippolito-talk-ai-20261025-talk",
+        "textIt": "In un archivio di meme, come definisci un duplicato senza eliminare proprio quella piccola variazione che cambia il significato della battuta?",
+        "tags": [
+          "deduplicazione",
+          "semantica"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-marco-ippolito-talk-ai-20261025-ai",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta ricerca semantica e significato.",
+      "evidence": {
+        "questionId": "q-marco-ippolito-talk-ai-20261025-ai",
+        "textIt": "Se un modello classifica un contenuto di una sottocultura che il team conosce poco, come distingui una classificazione plausibile da una lettura culturalmente sbagliata?",
+        "tags": [
+          "contesto-culturale"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-marco-ippolito-talk-ai-20261025-bridge",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta ricerca semantica e significato.",
+      "evidence": {
+        "questionId": "q-marco-ippolito-talk-ai-20261025-bridge",
+        "textIt": "Su milioni di immagini, come decidi dove spendere un’analisi AI più costosa e dove bastano embedding, regole o cache, senza rendere invisibili i casi più rari?",
+        "tags": [
+          "retrieval"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-olena-borzenko-talk-ai-20261025-bridge",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta ricerca semantica e significato.",
+      "evidence": {
+        "questionId": "q-olena-borzenko-talk-ai-20261025-bridge",
+        "textIt": "Nella ricerca per embedding, come renderesti visibile una connessione artisticamente interessante ma semanticamente lontana, senza perdere il controllo sulla scelta finale?",
+        "tags": [
+          "embedding"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "andrey-breslav",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-andrey-breslav-research-20261025-01"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "enzo-lombardi",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-enzo-lombardi-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "marco-ippolito",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-marco-ippolito-talk-ai-20261025-talk",
+        "q-marco-ippolito-talk-ai-20261025-ai",
+        "q-marco-ippolito-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "olena-borzenko",
+      "toId": "ricerca-semantica",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-olena-borzenko-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-david-mccarter-research-20261025-01",
+      "toId": "creativita-comunicazione",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta creatività e comunicazione.",
+      "evidence": {
+        "questionId": "q-david-mccarter-research-20261025-01",
+        "textIt": "Dopo diversi talk posso conoscere bene il contenuto e sentirmi ancora insicuro: come distingui ciò che va allenato dall’ansia con cui devo imparare a parlare?",
+        "tags": [
+          "public-speaking"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-david-mccarter-research-20261025-02",
+      "toId": "creativita-comunicazione",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta creatività e comunicazione.",
+      "evidence": {
+        "questionId": "q-david-mccarter-research-20261025-02",
+        "textIt": "Se un’AI riscrive un intervento rendendolo più fluido, come capisci quando sta chiarendo il tuo pensiero e quando lo sta sostituendo con qualcosa che suona bene ma non ti appartiene?",
+        "tags": [
+          "autenticita",
+          "public-speaking"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-david-mccarter-research-20261025-03",
+      "toId": "creativita-comunicazione",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta creatività e comunicazione.",
+      "evidence": {
+        "questionId": "q-david-mccarter-research-20261025-03",
+        "textIt": "Come trasformeresti una prova del talk con un coach AI in un allenamento utile davanti a persone reali, senza scambiare il feedback incoraggiante del modello per una prova di chiarezza?",
+        "tags": [
+          "public-speaking"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-olena-borzenko-talk-ai-20261025-talk",
+      "toId": "creativita-comunicazione",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta creatività e comunicazione.",
+      "evidence": {
+        "questionId": "q-olena-borzenko-talk-ai-20261025-talk",
+        "textIt": "Nel passaggio dai dati alle forme e poi alla tela, dove introduci una scelta che rende il risultato riconoscibilmente tuo anziché una conseguenza della pipeline?",
+        "tags": [
+          "arte-generativa",
+          "intenzione-artistica"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-olena-borzenko-talk-ai-20261025-ai",
+      "toId": "creativita-comunicazione",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta creatività e comunicazione.",
+      "evidence": {
+        "questionId": "q-olena-borzenko-talk-ai-20261025-ai",
+        "textIt": "Quando usi un modello AI per esplorare idee, come capisci se ti sta aprendo possibilità nuove o riportando verso forme già frequenti nei suoi risultati?",
+        "tags": [
+          "creativita-ai"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-olena-borzenko-talk-ai-20261025-bridge",
+      "toId": "creativita-comunicazione",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta creatività e comunicazione.",
+      "evidence": {
+        "questionId": "q-olena-borzenko-talk-ai-20261025-bridge",
+        "textIt": "Nella ricerca per embedding, come renderesti visibile una connessione artisticamente interessante ma semanticamente lontana, senza perdere il controllo sulla scelta finale?",
+        "tags": [
+          "arte-generativa",
+          "serendipita"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "david-mccarter",
+      "toId": "creativita-comunicazione",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-david-mccarter-research-20261025-01",
+        "q-david-mccarter-research-20261025-02",
+        "q-david-mccarter-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "olena-borzenko",
+      "toId": "creativita-comunicazione",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-olena-borzenko-talk-ai-20261025-talk",
+        "q-olena-borzenko-talk-ai-20261025-ai",
+        "q-olena-borzenko-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-gabriele-santomaggio-research-20261025-01",
+      "toId": "storia-fondamenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta storia, filosofia e fondamenti.",
+      "evidence": {
+        "questionId": "q-gabriele-santomaggio-research-20261025-01",
+        "textIt": "Se molte idee informatiche sono riscoperte, quale cambiamento nei vincoli reali rende comunque necessaria una nuova architettura? Come distingui una novità utile da una vecchia idea rinominata?",
+        "tags": [
+          "computing-foundations"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-giorgio-natili-research-20261025-02",
+      "toId": "storia-fondamenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta storia, filosofia e fondamenti.",
+      "evidence": {
+        "questionId": "q-giorgio-natili-research-20261025-02",
+        "textIt": "Nel passaggio dalle applicazioni web agli agenti AI, quale responsabilità di chi costruisce il software è cambiata davvero, e quale stiamo soltanto riscoprendo con un altro nome?",
+        "tags": [
+          "storia-del-software"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-paolo-caressa-talk-ai-20261025-talk",
+      "toId": "storia-fondamenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta storia, filosofia e fondamenti.",
+      "evidence": {
+        "questionId": "q-paolo-caressa-talk-ai-20261025-talk",
+        "textIt": "Tra i concetti filosofici che riprendete nel talk, quale cambia davvero il modo di progettare un programma, anziché aggiungere soltanto una curiosità alla sua storia?",
+        "tags": [
+          "astrazione",
+          "filosofia-informatica"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-paolo-caressa-talk-ai-20261025-ai",
+      "toId": "storia-fondamenti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta storia, filosofia e fondamenti.",
+      "evidence": {
+        "questionId": "q-paolo-caressa-talk-ai-20261025-ai",
+        "textIt": "Quando diciamo che un’AI «ragiona», quale distinzione dovremmo chiarire prima di usare quella parola per decidere quanto fidarci di una risposta?",
+        "tags": [
+          "epistemologia",
+          "ragionamento-ai"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "gabriele-santomaggio",
+      "toId": "storia-fondamenti",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-gabriele-santomaggio-research-20261025-01"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "giorgio-natili",
+      "toId": "storia-fondamenti",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-giorgio-natili-research-20261025-02"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "paolo-caressa",
+      "toId": "storia-fondamenti",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-paolo-caressa-talk-ai-20261025-talk",
+        "q-paolo-caressa-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-christian-schabetsberger-editorial-1",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta evoluzione, manutenzione e interoperabilità.",
+      "evidence": {
+        "questionId": "q-christian-schabetsberger-editorial-1",
+        "textIt": "Se il team mantiene Git sul server ma cambia gli strumenti locali, quale garanzia deve sopravvivere al passaggio verso la pull request perché la compatibilità sia davvero sufficiente?",
+        "tags": [
+          "git-interoperability"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-christian-schabetsberger-editorial-2",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta evoluzione, manutenzione e interoperabilità.",
+      "evidence": {
+        "questionId": "q-christian-schabetsberger-editorial-2",
+        "textIt": "In una migrazione brownfield affidata a un agente, una build verde può nascondere una funzionalità eliminata. Quale verifica indipendente dall’agente useresti per decidere se la migrazione è riuscita?",
+        "tags": [
+          "behavior-preservation",
+          "brownfield-migration"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-christian-schabetsberger-editorial-3",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta evoluzione, manutenzione e interoperabilità.",
+      "evidence": {
+        "questionId": "q-christian-schabetsberger-editorial-3",
+        "textIt": "Se un agente mescola una correzione utile e una regressione, quale informazione deve conservare il controllo versione per recuperare la prima senza fidarsi del racconto dell’agente?",
+        "tags": [
+          "change-recovery",
+          "version-control"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-mario-zechner-talk-ai-20261025-talk",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta evoluzione, manutenzione e interoperabilità.",
+      "evidence": {
+        "questionId": "q-mario-zechner-talk-ai-20261025-talk",
+        "textIt": "Quando una PR generata da un agente funziona ma aumenta il costo di capire il progetto, quale criterio usi per decidere che non vale la pena accettarla?",
+        "tags": [
+          "manutenzione-oss"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-mario-zechner-talk-ai-20261025-bridge",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta evoluzione, manutenzione e interoperabilità.",
+      "evidence": {
+        "questionId": "q-mario-zechner-talk-ai-20261025-bridge",
+        "textIt": "Come imposteresti un esperimento in un progetto esistente per capire se un coding agent riduce davvero il lavoro complessivo, contando anche review, correzioni e manutenzione?",
+        "tags": [
+          "manutenzione"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-paolo-insogna-talk-ai-20261025-talk",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta evoluzione, manutenzione e interoperabilità.",
+      "evidence": {
+        "questionId": "q-paolo-insogna-talk-ai-20261025-talk",
+        "textIt": "Nel progettare un’FFI per Node.js, quale garanzia non vuoi perdere per rendere una chiamata nativa più veloce, e dove accetti invece di trasferire responsabilità allo sviluppatore?",
+        "tags": [
+          "ffi",
+          "runtime-nodejs",
+          "sicurezza-memoria"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-paolo-insogna-talk-ai-20261025-ai",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta evoluzione, manutenzione e interoperabilità.",
+      "evidence": {
+        "questionId": "q-paolo-insogna-talk-ai-20261025-ai",
+        "textIt": "Se un coding agent genera un binding che compila e supera gli esempi, quali errori al confine tra linguaggi richiedono ancora una verifica che non puoi delegare allo stesso agente?",
+        "tags": [
+          "ffi"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-paolo-insogna-talk-ai-20261025-bridge",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta evoluzione, manutenzione e interoperabilità.",
+      "evidence": {
+        "questionId": "q-paolo-insogna-talk-ai-20261025-bridge",
+        "textIt": "Per integrare inferenza AI nativa in un servizio Node.js, come confronteresti una chiamata FFI nello stesso processo con un servizio separato, contando anche isolamento dei guasti e aggiornamenti?",
+        "tags": [
+          "ffi"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "christian-schabetsberger",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-christian-schabetsberger-editorial-1",
+        "q-christian-schabetsberger-editorial-2",
+        "q-christian-schabetsberger-editorial-3"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "mario-zechner",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-mario-zechner-talk-ai-20261025-talk",
+        "q-mario-zechner-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "paolo-insogna",
+      "toId": "evoluzione-software",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-paolo-insogna-talk-ai-20261025-talk",
+        "q-paolo-insogna-talk-ai-20261025-ai",
+        "q-paolo-insogna-talk-ai-20261025-bridge"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-rowdy-rabouw-research-20261025-01",
+      "toId": "esperienza-web",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta esperienza web e prestazioni.",
+      "evidence": {
+        "questionId": "q-rowdy-rabouw-research-20261025-01",
+        "textIt": "Una View Transition può sembrare fluida anche se la pagina prerenderizzata contiene dati ormai vecchi. Quando rinunceresti alla navigazione istantanea per verificarne la validità, e dove metteresti quel controllo?",
+        "tags": [
+          "data-freshness",
+          "prerendering",
+          "view-transitions"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-rowdy-rabouw-research-20261025-02",
+      "toId": "esperienza-web",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta esperienza web e prestazioni.",
+      "evidence": {
+        "questionId": "q-rowdy-rabouw-research-20261025-02",
+        "textIt": "Se una funzione del sito usa un modello AI nel browser, quale esperienza deve restare disponibile quando il modello manca o il dispositivo non riesce a eseguirlo, perché il costo non ricada sugli utenti con meno risorse?",
+        "tags": [
+          "browser-ai",
+          "progressive-enhancement"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-rowdy-rabouw-research-20261025-03",
+      "toId": "esperienza-web",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta esperienza web e prestazioni.",
+      "evidence": {
+        "questionId": "q-rowdy-rabouw-research-20261025-03",
+        "textIt": "Se usassimo un modello AI per scegliere quali pagine precaricare, quale vantaggio rispetto a semplici regole giustificherebbe il costo dell’inferenza e delle previsioni sbagliate?",
+        "tags": [
+          "browser-ai",
+          "performance-budgets",
+          "predictive-prefetching"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "rowdy-rabouw",
+      "toId": "esperienza-web",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-rowdy-rabouw-research-20261025-01",
+        "q-rowdy-rabouw-research-20261025-02",
+        "q-rowdy-rabouw-research-20261025-03"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-emanuele-fabbiani-research-20261025-01",
+      "toId": "provenienza-contenuti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta provenienza e watermark dei contenuti.",
+      "evidence": {
+        "questionId": "q-emanuele-fabbiani-research-20261025-01",
+        "textIt": "Nell’abstract dici che il tournament sampling lascia invariata la distribuzione del modello. Su quale casualità vale questa garanzia, e che cosa resta da verificare quando usiamo la stessa chiave per generare molti testi?",
+        "tags": [
+          "distribuzione",
+          "tournament-sampling",
+          "watermark-key"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-emanuele-fabbiani-research-20261025-02",
+      "toId": "provenienza-contenuti",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta provenienza e watermark dei contenuti.",
+      "evidence": {
+        "questionId": "q-emanuele-fabbiani-research-20261025-02",
+        "textIt": "Immaginiamo che solo una parte dei generatori adotti il watermarking. Quale promessa sulla provenienza dei contenuti può fare un prodotto AI senza trasformare l’assenza di watermark in una falsa garanzia di origine umana?",
+        "tags": [
+          "copertura",
+          "provenienza"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "emanuele-fabbiani",
+      "toId": "provenienza-contenuti",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-emanuele-fabbiani-research-20261025-01",
+        "q-emanuele-fabbiani-research-20261025-02"
+      ]
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-alfonso-graziano-research-20261025-03",
+      "toId": "organizzazione-team",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta organizzazione e selezione dei team.",
+      "evidence": {
+        "questionId": "q-alfonso-graziano-research-20261025-03",
+        "textIt": "Nel passaggio all’AI-native, quale prova chiederesti a un team prima di ridurre i controlli umani, per evitare che la bravura del singolo esperto nasconda la dipendenza degli altri da lui?",
+        "tags": [
+          "knowledge-transfer",
+          "team-maturity"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dennis-nerush-research-20261025-01",
+      "toId": "organizzazione-team",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta organizzazione e selezione dei team.",
+      "evidence": {
+        "questionId": "q-dennis-nerush-research-20261025-01",
+        "textIt": "Nel walkthrough di un esercizio assistito dall’AI, anche la spiegazione del codice può essere preparata dall’AI. Quale cambiamento al problema useresti per distinguere comprensione reale da una giustificazione imparata bene?",
+        "tags": [
+          "engineering-interviews"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-dennis-nerush-research-20261025-03",
+      "toId": "organizzazione-team",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta organizzazione e selezione dei team.",
+      "evidence": {
+        "questionId": "q-dennis-nerush-research-20261025-03",
+        "textIt": "Per un team italiano che adotta il tuo approccio, come verificheresti che individuare un errore dell’AI al colloquio anticipi il buon giudizio sul lavoro, anziché la capacità di indovinare cosa cerca l’intervistatore?",
+        "tags": [
+          "evaluation-bias",
+          "hiring-validity"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-matteo-collina-talk-ai-20261025-talk",
+      "toId": "organizzazione-team",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta organizzazione e selezione dei team.",
+      "evidence": {
+        "questionId": "q-matteo-collina-talk-ai-20261025-talk",
+        "textIt": "Nel modello del cave engineer, come distingui il coordinamento che puoi eliminare da quello che protegge il progetto quando l’unica persona che lo capisce non è disponibile?",
+        "tags": [
+          "autonomia",
+          "continuita",
+          "coordinamento"
+        ]
+      }
+    },
+    {
+      "type": "question-topic",
+      "fromId": "q-vladi-stevanovic-talk-ai-20261025-ai",
+      "toId": "organizzazione-team",
+      "origin": "editorial-ai",
+      "reason": "La domanda affronta organizzazione e selezione dei team.",
+      "evidence": {
+        "questionId": "q-vladi-stevanovic-talk-ai-20261025-ai",
+        "textIt": "Se un coding agent raddoppia le PR prodotte ma il team riesce a comprenderne lo stesso numero di prima, quale metrica dovrebbe guidare la decisione di accelerare o limitare la generazione?",
+        "tags": [
+          "capacita-team"
+        ]
+      }
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "alfonso-graziano",
+      "toId": "organizzazione-team",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-alfonso-graziano-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "dennis-nerush",
+      "toId": "organizzazione-team",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-dennis-nerush-research-20261025-01",
+        "q-dennis-nerush-research-20261025-03"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "matteo-collina",
+      "toId": "organizzazione-team",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-matteo-collina-talk-ai-20261025-talk"
+      ]
+    },
+    {
+      "type": "speaker-topic",
+      "fromId": "vladi-stevanovic",
+      "toId": "organizzazione-team",
+      "origin": "editorial-ai",
+      "reason": "Tema affrontato dalle domande proposte, non attestazione di competenza o posizione dello speaker.",
+      "questionIds": [
+        "q-vladi-stevanovic-talk-ai-20261025-ai"
+      ]
+    },
+    {
+      "type": "question-similar",
+      "fromId": "q-alfonso-fuggetta-research-20261025-03",
+      "toId": "q-vladi-stevanovic-talk-ai-20261025-bridge",
+      "origin": "editorial-ai",
+      "reason": "Codice e test possono confermare la stessa specifica sbagliata: entrambe chiedono un criterio indipendente di correttezza."
+    },
+    {
+      "type": "question-similar",
+      "fromId": "q-matteo-collina-talk-ai-20261025-ai",
+      "toId": "q-dennis-nerush-research-20261025-02",
+      "origin": "editorial-ai",
+      "reason": "Entrambe chiedono come un junior costruisca giudizio tecnico se delega l’implementazione agli agenti."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-andrey-breslav-research-20261025-03",
+      "toId": "q-alexio-cassani-research-20261025-03",
+      "origin": "editorial-ai",
+      "reason": "Entrambe distinguono informazioni presenti in chat da decisioni autorizzate; Andrey riguarda la promozione a requisito, Alexio il conflitto con una decisione già approvata."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-alexio-cassani-research-20261025-02",
+      "toId": "q-mario-zechner-talk-ai-20261025-bridge",
+      "origin": "editorial-ai",
+      "reason": "Misurare il beneficio netto dei coding agent includendo review e rilavorazione, oltre alla velocità percepita."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-alfonso-graziano-research-20261025-02",
+      "toId": "q-vladi-stevanovic-talk-ai-20261025-ai",
+      "origin": "editorial-ai",
+      "reason": "La produzione di codice può accelerare senza aumentare la capacità del team di rilasciare o comprendere le modifiche."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-jigyasa-grover-research-20261025-02",
+      "toId": "q-alfonso-graziano-research-20261025-03",
+      "origin": "editorial-ai",
+      "reason": "Una persona che corregge gli agenti può nascondere un’autonomia insufficiente del sistema o del team."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-dotan-horovits-research-20261025-02",
+      "toId": "q-riccardo-carlesso-talk-ai-20261025-ai",
+      "origin": "editorial-ai",
+      "reason": "Valutare fallimenti e diagnosi semanticamente sbagliati anche quando gli indicatori tecnici o la spiegazione sembrano buoni."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-katharine-jarmul-research-20261025-01",
+      "toId": "q-vladi-stevanovic-talk-ai-20261025-talk",
+      "origin": "editorial-ai",
+      "reason": "Verificare l’indipendenza delle difese: segnali esterni alle tracce dell’agente e verifiche capaci di intercettare errori differenti."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-giorgio-natili-research-20261025-03",
+      "toId": "q-jigyasa-grover-research-20261025-03",
+      "origin": "editorial-ai",
+      "reason": "Azioni e percorsi devono rispettare vincoli anche quando ciascuna chiamata appare valida o il risultato finale è corretto."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-soumaya-erradi-talk-ai-20261025-ai",
+      "toId": "q-carolina-pinto-research-20261025-01",
+      "origin": "editorial-ai",
+      "reason": "Non premiare una risposta che sembra convincente prima di averne verificato il contenuto."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-leonardo-cavagnis-talk-ai-20261025-bridge",
+      "toId": "q-mauro-morales-talk-ai-20261025-bridge",
+      "origin": "editorial-ai",
+      "reason": "Cambiamenti fuori dal modello possono compromettere il comportamento del sistema AI dopo il rilascio."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-abiodun-olowode-editorial-7",
+      "toId": "q-matteo-collina-talk-ai-20261025-bridge",
+      "origin": "editorial-ai",
+      "reason": "Il giudizio del reviewer e la verifica delle premesse quando la persona non ha scritto direttamente il codice."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-paolo-caressa-talk-ai-20261025-bridge",
+      "toId": "q-gabriele-santomaggio-research-20261025-03",
+      "origin": "editorial-ai",
+      "reason": "Rendere visibili e contestabili le premesse che una formalizzazione o analogia architetturale può nascondere."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-rowdy-rabouw-research-20261025-03",
+      "toId": "q-leonardo-cavagnis-talk-ai-20261025-ai",
+      "origin": "editorial-ai",
+      "reason": "Confrontare una soluzione AI con regole più semplici prima di giustificarne il costo e la complessità."
+    },
+    {
+      "type": "question-related",
+      "fromId": "q-marco-ippolito-talk-ai-20261025-talk",
+      "toId": "q-olena-borzenko-talk-ai-20261025-bridge",
+      "origin": "editorial-ai",
+      "reason": "La somiglianza semantica o visiva non esaurisce il valore culturale o artistico di una differenza."
+    }
+  ]
+}
