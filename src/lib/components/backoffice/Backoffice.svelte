@@ -99,7 +99,10 @@
           .toSorted((a, b) => Number(a.order || 0) - Number(b.order || 0))
           .map((entity) => ({ collection: tab, entity }))
   );
-  async function saveResearch(records: Entity[]) {
+  async function saveResearch(
+    records: Entity[],
+    collection: 'materials' | 'questions' = 'materials'
+  ) {
     if (!client || !user) throw new Error('Accedi prima di salvare.');
     if (new TextEncoder().encode(JSON.stringify(records)).length > 2_000_000) {
       throw new Error('Anteprima troppo grande: salva meno documenti per volta (massimo 2 MB).');
@@ -110,12 +113,12 @@
         client.db,
         user.uid,
         records.map((entity) => ({
-          collection: 'materials' as const,
+          collection,
           data: entity,
           expectedRevision: null
         }))
       );
-      workspace.message = 'Ricerca salvata.';
+      workspace.message = collection === 'questions' ? 'Domande importate.' : 'Ricerca salvata.';
     } finally {
       busy = false;
     }
@@ -267,7 +270,13 @@
           gli argomenti e preparare l’intervista. Copia i prompt da usare in Gemini, ChatGPT o NotebookLM
           e salva i risultati nelle Note.
         </p>
-        {#key speaker.id}<ResearchAssistant {speaker} {data} {busy} onsave={saveResearch} />{/key}
+        {#key speaker.id}<ResearchAssistant
+            {speaker}
+            {data}
+            {busy}
+            onsave={saveResearch}
+            onsavequestions={(records) => saveResearch(records, 'questions')}
+          />{/key}
         <a class="button-link" href={speakerPath(selectedId) + '/note'}>Vai alle note</a>
       {:else if tab === 'speakers'}
         <div class="language">

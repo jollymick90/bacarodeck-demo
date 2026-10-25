@@ -6,16 +6,19 @@
   import { emptyEntity, type Dataset, type Entity } from '$lib/fields';
   import { validateEntity } from '$lib/domain';
   import ResearchReader from './ResearchReader.svelte';
+  import QuestionMarkdownImport from './QuestionMarkdownImport.svelte';
   let {
     speaker,
     data,
     busy,
-    onsave
+    onsave,
+    onsavequestions
   }: {
     speaker: Entity;
     data: Dataset;
     busy: boolean;
     onsave: (records: Entity[]) => Promise<void>;
+    onsavequestions: (records: Entity[]) => Promise<void>;
   } = $props();
   let questionsOpen = $state(untrack(() => page.url.searchParams.get('prompt') === 'domande'));
   let selected = $state<string[]>([]);
@@ -170,7 +173,13 @@
         testo è stato troncato.
       </p>{/if}
   {/if}
-  <h4>Importa i risultati Markdown</h4>
+  <QuestionMarkdownImport
+    speakerId={speaker.id}
+    existing={data.questions || []}
+    {busy}
+    onsave={onsavequestions}
+  />
+  <h4>Importa Markdown come note</h4>
   <p>
     Ogni file o testo aggiunto crea un nuovo contenuto, marcato come generato dall’AI. Controlla
     l’anteprima prima di salvarlo. Le domande nel Markdown rimangono testo: non vengono aggiunte
