@@ -38,7 +38,6 @@
   const contextQuery = $derived(
     new URLSearchParams({ speaker: speakerId, talk: talkId, lang: language }).toString()
   );
-  const conductorQuery = $derived(new URLSearchParams({ talk: talkId, lang: language }).toString());
   const text = (value: unknown) => (typeof value === 'string' ? value : '');
   const questionText = (question: Entity) =>
     text(question[language === 'it' ? 'textIt' : 'textEn']) ||
@@ -107,10 +106,8 @@
       >EN</button
     >
   </div>
-  <a
-    class="button-link primary"
-    href={'/speaker/' + encodeURIComponent(speakerId) + '/scaletta?' + conductorQuery}
-    >Apri scaletta conduttore</a
+  <a class="button-link primary" href={'/backoffice/nuovo/questions?' + contextQuery}
+    >Aggiungi domanda</a
   >
 </div>
 {#if failure}<p role="alert" class="error">{failure}</p>{/if}
@@ -138,8 +135,7 @@
     >
   </div>
   <div class="interview-tools">
-    <a class="button-link" href={'/backoffice/nuovo/questions?' + contextQuery}>Aggiungi domanda</a
-    ><a class="button-link" href={'/backoffice/importa/domande?' + contextQuery}
+    <a class="button-link" href={'/backoffice/importa/domande?' + contextQuery}
       >Prepara altre 10 domande</a
     >
   </div>

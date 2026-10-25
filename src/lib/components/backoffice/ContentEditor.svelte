@@ -42,7 +42,10 @@
         ? id
         : String(entity?.speakerId || (entity?.speakerIds as string[] | undefined)?.[0] || ''))
   );
-  const isNote = $derived(['materials', 'sources', 'insights'].includes(collection));
+  const stayInDetail = $derived(
+    ['materials', 'sources', 'insights', 'questions'].includes(collection)
+  );
+  const savedMessage = $derived(collection === 'questions' ? 'Domanda salvata.' : 'Nota salvata.');
   const speaker = $derived(workspace.data.speakers?.find((item) => item.id === relatedSpeaker));
   const speakerTalks = $derived(
     (workspace.data.talks || []).filter((talk) =>
@@ -73,7 +76,7 @@
   );
   let busy = $state(false);
   function cancel() {
-    if (isNote && id) {
+    if (stayInDetail && id) {
       editorVersion += 1;
       savedNotice = '';
       workspace.message = '';
@@ -81,7 +84,7 @@
   }
   function startEditing() {
     savedNotice = '';
-    if (isNote) workspace.message = '';
+    if (stayInDetail) workspace.message = '';
   }
   async function save(updated: Entity, plan?: Entity) {
     if (!entity) return;
@@ -97,7 +100,7 @@
           expectedRevision: interviewPlan.revision ?? null
         });
       const saved = await commitChanges(workspace.client!.db, workspace.user!.uid, changes);
-      if (isNote) {
+      if (stayInDetail) {
         entity = saved.find((record) => record.id === updated.id)!;
         workspace.data[collection] = [
           ...(workspace.data[collection] || []).filter((record) => record.id !== updated.id),
@@ -109,13 +112,22 @@
               collection +
               '/' +
               encodeURIComponent(updated.id) +
-              (relatedSpeaker ? '?speaker=' + encodeURIComponent(relatedSpeaker) : ''),
+              '?' +
+              new URLSearchParams({
+                ...(relatedSpeaker ? { speaker: relatedSpeaker } : {}),
+                ...(collection === 'questions'
+                  ? {
+                      talk: page.url.searchParams.get('talk') || '',
+                      lang: page.url.searchParams.get('lang') || 'it'
+                    }
+                  : {})
+              }),
             { replaceState: true }
           );
-          workspace.message = 'Nota salvata.';
+          workspace.message = savedMessage;
         } else {
           editorVersion += 1;
-          savedNotice = 'Nota salvata.';
+          savedNotice = savedMessage;
           workspace.message = '';
         }
         return;
@@ -135,11 +147,11 @@
 <svelte:head
   ><title>{id ? 'Scheda contenuto' : 'Nuovo contenuto'} · Gestione BacaroTech</title></svelte:head
 >
-{#if isNote && speaker}<SpeakerHeader {speaker} talks={speakerTalks} />{/if}
+{#if stayInDetail && speaker}<SpeakerHeader {speaker} talks={speakerTalks} />{/if}
 <p><a href={returnPath}>← Torna {relatedSpeaker ? 'allo speaker' : 'agli speaker'}</a></p>
 {#if entity}{#key editorVersion}<Editor
       {collection}
-      actionsAtTop={isNote}
+      actionsAtTop={stayInDetail}
       {entity}
       {interviewPlan}
       members={workspace.members}

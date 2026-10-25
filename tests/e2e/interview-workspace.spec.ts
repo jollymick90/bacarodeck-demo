@@ -126,7 +126,53 @@ test('info is separate and interview questions follow the shared talk selection'
     await expect(others.locator('article')).toHaveCount(4);
     await page.getByRole('combobox', { name: 'Talk', exact: true }).selectOption(talkId);
     await expect(selected.locator('article h3')).toHaveText(['Domanda 4', 'Domanda 3']);
-    await page.getByRole('link', { name: 'Apri scaletta conduttore', exact: true }).click();
+    await expect(
+      page.getByRole('link', { name: 'Apri scaletta conduttore', exact: true })
+    ).toHaveCount(0);
+    await page.getByRole('combobox', { name: 'Talk', exact: true }).selectOption(secondTalk);
+    await page.getByRole('button', { name: 'EN', exact: true }).click();
+    const addQuestion = page.getByRole('link', { name: 'Aggiungi domanda', exact: true });
+    await expect(addQuestion).toHaveCount(1);
+    await addQuestion.click();
+    const editor = page.locator('.editor');
+    await expect(editor.getByRole('heading', { name: 'Domanda', exact: true })).toBeVisible();
+    await expect(page.locator('.speaker-profile')).toContainText('Interview speaker');
+    await expect(page.locator('.speaker-photo')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toHaveCount(0);
+    await expect(editor.locator('.editor-actions').getByRole('button')).toHaveText([
+      'Salva',
+      'Annulla'
+    ]);
+    await expect(editor.locator('.form-actions')).toHaveCount(0);
+    await page.getByLabel('Domanda IT', { exact: true }).fill('Nuova domanda per intervista');
+    await page.getByLabel('Domanda EN', { exact: true }).fill('New interview question');
+    await editor.getByRole('button', { name: 'Salva modifiche' }).click();
+    await expect(page).toHaveURL(/\/backoffice\/contenuti\/questions\//);
+    await expect(editor).toHaveAttribute('aria-label', 'Lettura contenuto');
+    await expect(page.getByRole('status')).toContainText('Domanda salvata.');
+    const questionUrl = page.url();
+    expect(new URL(questionUrl).searchParams.get('talk')).toBe(secondTalk);
+    expect(new URL(questionUrl).searchParams.get('lang')).toBe('en');
+    await editor.getByRole('button', { name: 'Modifica', exact: true }).click();
+    await page.getByLabel('Domanda IT', { exact: true }).fill('Modifica da annullare');
+    await editor.getByRole('button', { name: 'Annulla', exact: true }).click();
+    await expect(page).toHaveURL(questionUrl);
+    await expect(editor).toHaveAttribute('aria-label', 'Lettura contenuto');
+    await expect(editor).toContainText('Nuova domanda per intervista');
+    await expect(editor).not.toContainText('Modifica da annullare');
+    await editor.getByRole('button', { name: 'Modifica', exact: true }).click();
+    await page.getByLabel('Domanda EN', { exact: true }).fill('Updated interview question');
+    await editor.getByRole('button', { name: 'Salva modifiche' }).click();
+    await expect(editor.getByRole('status')).toHaveText('Domanda salvata.');
+    await expect(page).toHaveURL(questionUrl);
+    await page.reload();
+    await expect(editor).toContainText('Updated interview question');
+    await editor.getByRole('button', { name: 'Chiudi', exact: true }).click();
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/intervista?talk=${secondTalk}&lang=en`);
+    await expect(
+      others.getByRole('heading', { name: 'Updated interview question', exact: true })
+    ).toBeVisible();
+    await page.goto(`/speaker/${id}/scaletta?talk=${talkId}&lang=it`);
     await expect(page).toHaveURL(new RegExp(`/speaker/${id}/scaletta\\?`));
     await expect(page.locator('.interview-question')).toContainText('Domanda 4');
   } finally {

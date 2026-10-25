@@ -161,7 +161,9 @@
   <form onsubmit={save}>
     <div class="section-heading wide">
       <h2>
-        {#if actionsAtTop}Nota{:else if interviewPlan}Profilo e intervista{:else}{readOnly
+        {#if actionsAtTop}{collection === 'questions'
+            ? 'Domanda'
+            : 'Nota'}{:else if interviewPlan}Profilo e intervista{:else}{readOnly
             ? 'Leggi'
             : entity.revision
               ? 'Modifica'
