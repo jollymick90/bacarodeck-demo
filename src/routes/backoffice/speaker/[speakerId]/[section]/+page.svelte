@@ -3,4 +3,8 @@
   let { data } = $props();
 </script>
 
-{#key data.speakerId}<Backoffice selectedId={data.speakerId} tab={data.tab} />{/key}
+{#key data.speakerId}<Backoffice
+    selectedId={data.speakerId}
+    tab={data.tab}
+    tools={data.tools}
+  />{/key}

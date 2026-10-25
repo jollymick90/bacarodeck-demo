@@ -89,64 +89,70 @@
     try {
       await onsave(drafts);
       drafts = [];
-      notice = 'Markdown salvati nella ricerca dello speaker.';
+      notice = 'Markdown salvati nelle note dello speaker.';
     } catch (cause) {
       failure = cause instanceof Error ? cause.message : String(cause);
     }
   }
 </script>
 
-<details class="research-assistant">
-  <summary>Ricerca con Gemini / ChatGPT e audio con NotebookLM</summary>
+<section class="research-assistant" aria-label="Ricerca e importazione">
+  <h3>Prompt precompilati</h3>
   <p>
     Due sessioni separate: prima raccogli le fonti, poi prepara le domande. I prompt vengono
     copiati; l’app non chiama servizi AI.
   </p>
-  <h4>1. Cerca e raccogli</h4>
-  <button disabled={busy} onclick={() => copy(researchPrompt(speaker, data))}
-    >Copia prompt ricerca</button
-  >
-  <h4>2. Prepara le domande</h4>
-  <p>
-    Seleziona solo i contenuti da portare nella nuova chat. Il prompt include anche i talk, la
-    lingua prevista e le domande già presenti.
-  </p>
-  <div class="choices">
-    {#each entries as { collection, entity } (key(collection, entity))}
-      <label
-        ><input
-          type="checkbox"
-          bind:group={selected}
-          value={key(collection, entity)}
-        />{entity.title || 'Senza titolo'}
-        <small
-          >({collection === 'sources'
-            ? 'fonte'
-            : collection === 'insights'
-              ? 'spunto'
-              : 'materiale'})</small
-        ></label
-      >
-    {/each}
-  </div>
-  <p>{selectedEntries.length} contenuti selezionati</p>
-  <button
-    disabled={busy || !selectedEntries.length}
-    onclick={() => copy(questionsPrompt(speaker, data, selectedEntries))}
-    >Copia prompt domande</button
-  >
-  <h4>3. Prepara l’audio con NotebookLM</h4>
-  <p>
-    Carica le fonti in NotebookLM e incolla il prompt nelle istruzioni di personalizzazione
-    dell’audio. Il nome dello speaker è già compilato; scegli la lingua dell’audio e imposta la
-    stessa lingua anche in NotebookLM. Questi prompt non includono i materiali selezionati sopra.
-  </p>
-  <button disabled={busy} onclick={() => copy(audioPrompt(speaker, 'it'), 'NotebookLM')}
-    >Copia prompt audio IT</button
-  >
-  <button disabled={busy} onclick={() => copy(audioPrompt(speaker, 'en'), 'NotebookLM')}
-    >Copia prompt audio EN</button
-  >
+  <details class="prompt-group">
+    <summary>1. Cerca e raccogli</summary>
+    <button disabled={busy} onclick={() => copy(researchPrompt(speaker, data))}
+      >Copia prompt ricerca</button
+    >
+  </details>
+  <details class="prompt-group">
+    <summary>2. Prepara le domande</summary>
+    <p>
+      Seleziona solo i contenuti da portare nella nuova chat. Il prompt include anche i talk, la
+      lingua prevista e le domande già presenti.
+    </p>
+    <div class="choices">
+      {#each entries as { collection, entity } (key(collection, entity))}
+        <label
+          ><input
+            type="checkbox"
+            bind:group={selected}
+            value={key(collection, entity)}
+          />{entity.title || 'Senza titolo'}
+          <small
+            >({collection === 'sources'
+              ? 'fonte'
+              : collection === 'insights'
+                ? 'spunto'
+                : 'materiale'})</small
+          ></label
+        >
+      {/each}
+    </div>
+    <p>{selectedEntries.length} contenuti selezionati</p>
+    <button
+      disabled={busy || !selectedEntries.length}
+      onclick={() => copy(questionsPrompt(speaker, data, selectedEntries))}
+      >Copia prompt domande</button
+    >
+  </details>
+  <details class="prompt-group">
+    <summary>3. Prepara l’audio con NotebookLM</summary>
+    <p>
+      Carica le fonti in NotebookLM e incolla il prompt nelle istruzioni di personalizzazione
+      dell’audio. Il nome dello speaker è già compilato; scegli la lingua dell’audio e imposta la
+      stessa lingua anche in NotebookLM. Questi prompt non includono i materiali selezionati sopra.
+    </p>
+    <button disabled={busy} onclick={() => copy(audioPrompt(speaker, 'it'), 'NotebookLM')}
+      >Copia prompt audio IT</button
+    >
+    <button disabled={busy} onclick={() => copy(audioPrompt(speaker, 'en'), 'NotebookLM')}
+      >Copia prompt audio EN</button
+    >
+  </details>
   {#if prompt}
     <label for="ai-prompt">Prompt pronto — {prompt.length.toLocaleString('it-IT')} caratteri</label>
     <textarea
@@ -196,7 +202,7 @@
     >{/if}
   {#if notice}<p role="status">{notice}</p>{/if}
   {#if failure}<p class="error" role="alert">{failure}</p>{/if}
-</details>
+</section>
 
 <style>
   .research-assistant {
@@ -205,10 +211,20 @@
     border: 1px solid var(--line);
     border-radius: 10px;
   }
-  summary {
+  .prompt-group {
+    border-top: 1px solid var(--line);
+    padding-block: 0.5rem;
+  }
+  .prompt-group summary {
     cursor: pointer;
     font-weight: 600;
-    min-height: 44px;
+    padding-block: 0.75rem;
+  }
+  .prompt-group[open] {
+    padding-bottom: 1rem;
+  }
+  h3 {
+    margin-top: 0;
   }
   label {
     display: block;

@@ -14,20 +14,25 @@
   import ResearchAssistant from '$lib/components/ResearchAssistant.svelte';
   import InterviewBadges from '$lib/components/InterviewBadges.svelte';
   import InterviewQuestions from './InterviewQuestions.svelte';
+  import ActionHelp from '$lib/components/ActionHelp.svelte';
   import ConfirmDelete from '$lib/components/ConfirmDelete.svelte';
   import Markdown from '$lib/components/Markdown.svelte';
   import ResearchReader from '$lib/components/ResearchReader.svelte';
-  let { selectedId = '', tab = 'materials' }: { selectedId?: string; tab?: Collection } = $props();
+  let {
+    selectedId = '',
+    tab = 'materials',
+    tools = false
+  }: { selectedId?: string; tab?: Collection; tools?: boolean } = $props();
   const workspace = getWorkspace();
   const data = $derived(workspace.data);
   const members = $derived(workspace.members);
   const client = $derived(workspace.client);
   const user = $derived(workspace.user);
   const ready = $derived(workspace.ready);
-  const tabLabels = { ...labels, speakers: 'Info', materials: 'Ricerca', questions: 'Intervista' };
+  const tabLabels = { ...labels, speakers: 'Info', materials: 'Note', questions: 'Intervista' };
   const sections: Partial<Record<Collection, string>> = {
     speakers: '',
-    materials: '/ricerca',
+    materials: '/note',
     questions: '/intervista',
     interviewPlans: '/intervista',
     talks: '/talk'
@@ -259,13 +264,27 @@
       </header>
       <nav class="tabs" aria-label="Contenuti dello speaker">
         {#each ['speakers', 'materials', 'questions'] as name}<a
-            class:current={tab === name}
-            aria-current={tab === name ? 'page' : undefined}
+            class:current={!tools && tab === name}
+            aria-current={!tools && tab === name ? 'page' : undefined}
             href={speakerPath(selectedId) + sections[name as Collection]}
             >{tabLabels[name as Collection]}</a
           >{/each}
+        <a
+          class:current={tools}
+          aria-current={tools ? 'page' : undefined}
+          href={speakerPath(selectedId) + '/strumenti'}>Strumenti</a
+        >
       </nav>
-      {#if tab === 'speakers'}
+      {#if tools}
+        <h2>Strumenti per la ricerca di informazioni</h2>
+        <p class="muted">
+          Questi strumenti ti aiutano a trovare informazioni su {speaker.fullName} e sui suoi talk, approfondire
+          gli argomenti e preparare l’intervista. Copia i prompt da usare in Gemini, ChatGPT o NotebookLM
+          e salva i risultati nelle Note.
+        </p>
+        {#key speaker.id}<ResearchAssistant {speaker} {data} {busy} onsave={saveResearch} />{/key}
+        <a class="button-link" href={speakerPath(selectedId) + '/note'}>Vai alle note</a>
+      {:else if tab === 'speakers'}
         <div class="language">
           <button onclick={() => (language = 'it')} aria-pressed={language === 'it'}
             >Italiano</button
@@ -294,7 +313,7 @@
             Da verificare: {(speaker.reviewFlags as string[]).join(', ')}
           </p>{/if}
         <div class="detail-actions">
-          <a class="button-link primary" href={editPath('materials')}>+ Aggiungi ricerca</a><a
+          <a class="button-link primary" href={editPath('materials')}>+ Aggiungi nota</a><a
             class="button-link"
             href={editPath('speakers', speaker)}>Modifica profilo e intervista</a
           >
@@ -332,21 +351,26 @@
           </div>
         {/if}
         <div class="section-heading">
-          <h3>{tabLabels[tab]}</h3>
+          <div class="notes-heading">
+            <h2>{tabLabels[tab]}</h2>
+            {#if tab === 'materials'}<ActionHelp
+                title="Note dello speaker"
+                description="Le note sono appunti, fonti e spunti condivisi con tutti i conduttori. Servono a conoscere lo speaker e il talk, conservare gli approfondimenti e preparare domande più mirate. Puoi aggiungerle e modificarle. Le domande scritte nelle note restano appunti: scegli e organizza quelle da usare nella tab Intervista. Nella tab Strumenti trovi i prompt per la ricerca e l’importazione dei risultati Markdown."
+              />{/if}
+          </div>
           <a class="button-link" href={editPath(tab)}
-            >{tab === 'materials' ? 'Aggiungi ricerca' : 'Aggiungi talk'}</a
+            >{tab === 'materials' ? 'Aggiungi nota' : 'Aggiungi talk'}</a
           >
         </div>
-        {#if tab === 'materials'}
-          {#key speaker.id}<ResearchAssistant {speaker} {data} {busy} onsave={saveResearch} />{/key}
-        {/if}
         {#if !related.length}<div class="empty-state">
-            <h3>Spazio alla ricerca.</h3>
+            <h3>{tab === 'materials' ? 'Nessuna nota, per ora.' : 'Nessun talk, per ora.'}</h3>
             <p>
               Non ci sono ancora {tabLabels[tab].toLowerCase()} per {speaker.firstName ||
                 speaker.fullName}. Aggiungi il primo contenuto.
             </p>
-            <a class="button-link" href={editPath(tab)}>Aggiungi {tabLabels[tab].toLowerCase()}</a>
+            <a class="button-link" href={editPath(tab)}
+              >{tab === 'materials' ? 'Aggiungi la prima nota' : 'Aggiungi talk'}</a
+            >
           </div>{/if}
         {#each related as { collection, entity } (collection + ':' + entity.id)}
           <article class="content-entry">
@@ -461,18 +485,26 @@
     max-width: 60ch;
     font-weight: 600;
   }
+  .notes-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .notes-heading h2 {
+    margin: 0;
+  }
   .chips {
     margin-bottom: 1rem;
   }
   .tabs {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0;
     margin-top: 0;
     text-align: center;
   }
   .tabs a {
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 0.25rem;
     text-decoration: none;
     color: var(--muted);
     border-bottom: 3px solid transparent;

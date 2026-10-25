@@ -94,15 +94,49 @@ test('speaker and scheduling URLs survive reload and browser history', async ({
     await expect(page.getByText('Engineering lead', { exact: true })).toBeVisible();
     await expect(
       page.getByRole('navigation', { name: 'Contenuti dello speaker' }).getByRole('link')
-    ).toHaveText(['Info', 'Ricerca', 'Intervista']);
+    ).toHaveText(['Info', 'Note', 'Intervista', 'Strumenti']);
     await expect(
       page.getByRole('link', { name: 'Designing resilient systems', exact: true })
     ).toHaveAttribute('href', `/backoffice/speaker/${id}/talk`);
     await page.getByRole('link', { name: 'Designing resilient systems', exact: true }).click();
     await expect(page).toHaveURL(`/backoffice/speaker/${id}/talk`);
-    await page.getByRole('link', { name: 'Ricerca', exact: true }).click();
-    await expect(page).toHaveURL(`/backoffice/speaker/${id}/ricerca`);
-    await page.screenshot({ path: info.outputPath('speaker-profile.png'), fullPage: true });
+    await page.getByRole('link', { name: 'Note', exact: true }).click();
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/note`);
+    await expect(page.locator('.research-assistant')).toHaveCount(0);
+    await page.getByRole('button', { name: 'Informazioni: Note dello speaker' }).click();
+    const help = page.getByRole('dialog', { name: 'Informazioni: Note dello speaker' });
+    await expect(help).toContainText('appunti, fonti e spunti condivisi');
+    await help.getByRole('button', { name: 'Ho capito' }).click();
+    await expect(help).not.toBeVisible();
+    await page.screenshot({ path: info.outputPath('speaker-notes.png'), fullPage: true });
+    await page
+      .getByRole('navigation', { name: 'Contenuti dello speaker' })
+      .getByRole('link', { name: 'Strumenti', exact: true })
+      .click();
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/strumenti`);
+    await expect(
+      page.getByRole('heading', { name: 'Prompt precompilati', exact: true })
+    ).toBeVisible();
+    const groups = page.locator('.prompt-group');
+    await expect(groups).toHaveCount(3);
+    await expect(page.locator('.prompt-group[open]')).toHaveCount(0);
+    await groups.nth(0).locator('summary').click();
+    await expect(
+      page.getByRole('button', { name: 'Copia prompt ricerca', exact: true })
+    ).toBeVisible();
+    await groups.nth(1).locator('summary').click();
+    await expect(page.locator('.prompt-group[open]')).toHaveCount(2);
+    await groups.nth(0).locator('summary').click();
+    await expect(
+      page.getByRole('button', { name: 'Copia prompt ricerca', exact: true })
+    ).not.toBeVisible();
+    await page.reload();
+    await groups.nth(2).locator('summary').click();
+    await expect(
+      page.getByRole('button', { name: 'Copia prompt audio IT', exact: true })
+    ).toBeVisible();
+    await page.goto(`/backoffice/speaker/${id}/ricerca?lang=en`);
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/note?lang=en`);
     await page.getByRole('link', { name: 'Intervista', exact: true }).click();
     await expect(page).toHaveURL(`/backoffice/speaker/${id}/intervista`);
     await page.reload();

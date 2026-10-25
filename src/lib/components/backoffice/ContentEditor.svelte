@@ -39,9 +39,9 @@
   );
   const suffix: Partial<Record<Collection, string>> = {
     questions: '/intervista',
-    materials: '/ricerca',
-    sources: '/ricerca',
-    insights: '/ricerca',
+    materials: '/note',
+    sources: '/note',
+    insights: '/note',
     interviewPlans: '/intervista',
     talks: '/talk'
   };

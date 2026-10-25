@@ -6,7 +6,10 @@ async function openTools(page: Page) {
     .getByRole('navigation', { name: 'Navigazione principale' })
     .getByRole('link', { name: 'Gestione', exact: true })
     .click();
-  await page.getByRole('link', { name: 'Strumenti', exact: true }).click();
+  await page
+    .getByRole('navigation', { name: 'Gestione', exact: true })
+    .getByRole('link', { name: 'Strumenti', exact: true })
+    .click();
   await expect(page).toHaveURL('/backoffice/strumenti');
 }
 
@@ -82,14 +85,18 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   }
   await page.getByRole('link', { name: /Andrey Breslav/ }).click();
   await expect(page.getByRole('heading', { name: 'Andrey Breslav', exact: true })).toBeVisible();
-  await page.getByRole('link', { name: 'Ricerca', exact: true }).click();
+  await page
+    .getByRole('navigation', { name: 'Contenuti dello speaker' })
+    .getByRole('link', { name: 'Strumenti', exact: true })
+    .click();
   const assistant = page.locator('.research-assistant');
-  await assistant.locator('summary').click();
+  await assistant.locator('summary').filter({ hasText: '1. Cerca e raccogli' }).click();
   await assistant.getByRole('button', { name: 'Copia prompt ricerca', exact: true }).click();
   await expect(assistant.getByLabel(/Prompt pronto/)).toHaveValue(/Andrey Breslav/);
   await expect(
     assistant.getByRole('button', { name: 'Copia prompt domande', exact: true })
   ).toBeDisabled();
+  await assistant.locator('summary').filter({ hasText: '2. Prepara le domande' }).click();
   await assistant.locator('.choices input').first().check();
   await assistant.getByRole('button', { name: 'Copia prompt domande', exact: true }).click();
   await expect(assistant.getByLabel(/Prompt pronto/)).toHaveValue(/RICERCA SELEZIONATA/);
@@ -117,6 +124,10 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     buffer: Buffer.from('# Ricerca AI da file\n\nAppunti dal file.')
   });
   await assistant.getByRole('button', { name: 'Conferma e salva 2 contenuti' }).click();
+  await expect(assistant.getByRole('status')).toHaveText(
+    'Markdown salvati nelle note dello speaker.'
+  );
+  await page.getByRole('link', { name: 'Vai alle note', exact: true }).click();
   for (const title of ['Ricerca AI incollata', 'Ricerca AI da file']) {
     const entry = page
       .locator('.content-entry')
@@ -126,7 +137,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     await page.getByRole('button', { name: 'Elimina definitivamente' }).click();
     await expect(entry).toHaveCount(0);
   }
-  await page.getByRole('link', { name: 'Aggiungi ricerca', exact: true }).click();
+  await page.getByRole('link', { name: 'Aggiungi nota', exact: true }).click();
   await page.getByLabel('Titolo (facoltativo)').fill('Ricerca da Gemini');
   const markdown = '# Appunti da Gemini\n\n' + 'Testo lungo senza metadati. '.repeat(110);
   await page.getByLabel('Testo Markdown').fill(markdown);
@@ -159,7 +170,7 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   await material.getByRole('button', { name: 'Elimina', exact: true }).click();
   await page.getByRole('button', { name: 'Elimina definitivamente' }).click();
   await expect(page.getByRole('heading', { name: 'Ricerca da Gemini' })).toHaveCount(0);
-  await page.getByRole('link', { name: 'Ricerca', exact: true }).click();
+  await page.getByRole('link', { name: 'Note', exact: true }).click();
   const source = page
     .locator('.content-entry')
     .filter({ has: page.getByRole('heading', { name: /CSV fornito/ }) });

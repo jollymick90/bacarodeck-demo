@@ -78,9 +78,9 @@ test('info is separate and interview questions follow the shared talk selection'
     await expect(page.locator('.assignment-control')).toBeVisible();
     await expect(
       page.getByRole('navigation', { name: 'Contenuti dello speaker' }).getByRole('link')
-    ).toHaveText(['Info', 'Ricerca', 'Intervista']);
-    await page.getByRole('link', { name: 'Ricerca', exact: true }).click();
-    await expect(page.locator('.research-assistant')).toBeVisible();
+    ).toHaveText(['Info', 'Note', 'Intervista', 'Strumenti']);
+    await page.getByRole('link', { name: 'Note', exact: true }).click();
+    await expect(page.locator('.research-assistant')).toHaveCount(0);
     await expect(page.locator('.assignment-control')).toHaveCount(0);
     await expect(page.getByText('Biografia riservata alla tab Info.', { exact: true })).toHaveCount(
       0

@@ -157,7 +157,7 @@
           : entity.revision
             ? 'Modifica'
             : 'Aggiungi'} · {['materials', 'sources', 'insights'].includes(collection)
-          ? 'Ricerca'
+          ? 'Nota'
           : labels[collection]}{/if}
     </h2>
     <div class="editor-actions">
