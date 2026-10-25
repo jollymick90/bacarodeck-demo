@@ -131,6 +131,19 @@ test('info is separate and interview questions follow the shared talk selection'
     ).toHaveCount(0);
     await page.getByRole('combobox', { name: 'Talk', exact: true }).selectOption(secondTalk);
     await page.getByRole('button', { name: 'EN', exact: true }).click();
+    const interviewUrl = page.url();
+    await page.getByRole('link', { name: 'Prepara domande con AI', exact: true }).click();
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/strumenti?prompt=domande`);
+    await expect(page.locator('.prompt-group').nth(1)).toHaveAttribute('open');
+    await expect(
+      page.getByText('Scaletta: una domanda sul talk, una sull’AI e una che collega i due temi.', {
+        exact: true
+      })
+    ).toBeVisible();
+    await page.goto(`/backoffice/importa/domande?speaker=${id}`);
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/strumenti?prompt=domande`);
+    await expect(page.locator('.prompt-group').nth(1)).toHaveAttribute('open');
+    await page.goto(interviewUrl);
     const addQuestion = page.getByRole('link', { name: 'Aggiungi domanda', exact: true });
     await expect(addQuestion).toHaveCount(1);
     await addQuestion.click();

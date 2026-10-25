@@ -49,34 +49,6 @@
       } else if (preset === 'esempio') {
         const seed = await import('../../../../data/seed/seed_five.json');
         if (active) initial = JSON.stringify(seed.default, null, 2);
-      } else if (preset === 'domande') {
-        const speaker = data.speakers?.find((item) => item.id === speakerId);
-        if (!speaker)
-          throw new Error('Speaker non trovato. Apri una scheda speaker per preparare le domande.');
-        const { draftQuestions } = await import('$lib/questions');
-        const response = await fetch('/api/questions/deleted', {
-          headers: { Authorization: 'Bearer ' + (await workspace.user!.getIdToken()) }
-        });
-        if (!response.ok) throw new Error('Impossibile controllare le domande eliminate.');
-        const deleted: string[] = await response.json();
-        const speakerTalks = (data.talks || []).filter((item) =>
-          ((item.speakerIds as string[]) || []).includes(speakerId)
-        );
-        const talk =
-          speakerTalks.find((item) => item.id === page.url.searchParams.get('talk')) ||
-          speakerTalks[0];
-        const questions = draftQuestions(
-          speaker,
-          talk,
-          (data.materials || []).filter((item) =>
-            ((item.speakerIds as string[]) || []).includes(speakerId)
-          )
-        ).filter(
-          (question) =>
-            !deleted.includes(question.id) &&
-            !data.questions?.some((existing) => existing.id === question.id)
-        );
-        if (active) initial = JSON.stringify({ schemaVersion: 1, questions }, null, 2);
       }
     }
     void prepare()

@@ -135,8 +135,10 @@
     >
   </div>
   <div class="interview-tools">
-    <a class="button-link" href={'/backoffice/importa/domande?' + contextQuery}
-      >Prepara altre 10 domande</a
+    <a
+      class="button-link"
+      href={'/backoffice/speaker/' + encodeURIComponent(speakerId) + '/strumenti?prompt=domande'}
+      >Prepara domande con AI</a
     >
   </div>
   {#if selectedIds.length === 3}<p class="muted">

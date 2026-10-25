@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/state';
   import { researchEntries } from '$lib/research';
   import { researchPrompt, questionsPrompt, audioPrompt } from '$lib/research-prompts';
   import { emptyEntity, type Dataset, type Entity } from '$lib/fields';
@@ -108,12 +109,13 @@
       >Copia prompt ricerca</button
     >
   </details>
-  <details class="prompt-group">
+  <details class="prompt-group" open={page.url.searchParams.get('prompt') === 'domande'}>
     <summary>2. Prepara le domande</summary>
     <p>
       Seleziona solo i contenuti da portare nella nuova chat. Il prompt include anche i talk, la
       lingua prevista e le domande già presenti.
     </p>
+    <p class="notice">Scaletta: una domanda sul talk, una sull’AI e una che collega i due temi.</p>
     <div class="choices">
       {#each entries as { collection, entity } (key(collection, entity))}
         <label

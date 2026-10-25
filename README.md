@@ -216,7 +216,9 @@ Il pannello conserva 14 coppie principale/backup e gli slot originali da 30 minu
 
 ## Domande e PWA
 
-“Prepara altre 10 domande” offre bozze IT/EN ancorate a estratti di abstract, materiali o biografia; senza testi usa tracce esplorative sul titolo e segnala la lacuna. Sono spunti editoriali da rivedere, non una ricerca autonoma o un servizio AI. IDs stabili evitano duplicati e la ricomparsa di bozze eliminate. Voti personali 1–5, media, ordinamento; scarto tramite stato e cancellazione con conferma. Le cancellazioni registrano un tombstone privato che impedisce il reimport dello stesso ID.
+“Prepara domande con AI” apre il prompt domande in Strumenti: usa le note selezionate e le domande esistenti. Il vecchio generatore di dieci tracce con estratti è stato rimosso; i suoi link aprono ora il prompt. La scaletta consigliata contiene una domanda sul talk, una sull’AI e una che collega i due temi. Il posizionamento di Codemotion come motore dell’AI in Italia è trattato come obiettivo editoriale, senza attribuire opinioni allo speaker o presentarlo come un primato verificato. Le note mantengono distinti fatti, interpretazioni e possibili collegamenti con l’AI; le fonti non vengono riscritte per adattarle al brief. Ricerca, domande e audio IT/EN condividono questa impostazione.
+
+Voti personali 1–5, media, ordinamento; scarto tramite stato e cancellazione con conferma. Le cancellazioni registrano un tombstone privato che impedisce il reimport dello stesso ID.
 
 La PWA è installabile dal browser su HTTPS. Il service worker conserva solo asset pubblici e pagina offline, mai API o pagine autenticate. Non supporta scritture offline. La pagina offline invita a riconnettersi; le bozze aperte rimangono nello stato della pagina finché questa resta aperta.
 

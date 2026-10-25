@@ -56,3 +56,23 @@ it.each(['it', 'en'] as const)(
     );
   }
 );
+
+it('distinguishes commissioning intent from evidence and keeps talk, AI and bridge roles', () => {
+  const research = researchPrompt(speaker, data);
+  const questions = questionsPrompt(speaker, data, []);
+  for (const prompt of [research, questions, audioPrompt(speaker, 'it')]) {
+    expect(prompt).toContain('obiettivo editoriale, non un primato');
+    expect(prompt).toContain('1) TALK');
+    expect(prompt).toContain('2) AI');
+    expect(prompt).toContain('3) PONTE');
+    expect(prompt).toContain('Non inserire l’AI a forza nella domanda sul talk');
+  }
+  expect(research).toContain('Se la fonte non tratta AI, scrivilo');
+  expect(questions).toContain('Scegli esattamente 3 domande');
+  expect(questions).not.toContain('Scegli 4 domande');
+  expect(questions).toContain('id: q');
+  expect(questions).toContain('riutilizza quelle adatte indicando il loro ID');
+  const english = audioPrompt(speaker, 'en');
+  expect(english).toContain('not a verified leadership claim');
+  expect(english).toContain('TALK, AI, BRIDGE order');
+});
