@@ -67,6 +67,9 @@
     })
   );
   const speaker = $derived(speakers.find((s) => s.id === selectedId));
+  const speakerTalks = $derived(
+    (data.talks || []).filter((talk) => ((talk.speakerIds as string[]) || []).includes(selectedId))
+  );
   const plan = $derived(data.interviewPlans?.find((p) => p.speakerId === selectedId));
   const related = $derived(
     tab === 'materials'
@@ -237,40 +240,48 @@
   </aside>
 {:else}<section class="speaker-detail" aria-label="Scheda speaker">
     {#if speaker}
+      <header class="speaker-profile">
+        {#if speaker.photoUrl && safeUrl(speaker.photoUrl)}
+          <img
+            class="speaker-photo"
+            src={display(speaker.photoUrl)}
+            alt={'Foto di ' + speaker.fullName}
+            referrerpolicy="no-referrer"
+          />
+        {:else}
+          <div class="speaker-photo photo-placeholder" aria-label="Foto non disponibile">
+            {display(speaker.fullName)
+              .split(' ')
+              .map((part) => part[0])
+              .slice(0, 2)
+              .join('')}
+          </div>
+        {/if}
+        <h1 id="speaker-title" tabindex="-1">{speaker.fullName}</h1>
+        <p class="speaker-role">{speaker.headline || 'Ruolo non disponibile'}</p>
+        {#each speakerTalks as talk}
+          <a class="speaker-talk" href={speakerPath(selectedId) + '/talk'}
+            >{talk.title || 'Talk senza titolo'}</a
+          >
+        {:else}<p class="muted">Talk non ancora disponibile.</p>{/each}
+      </header>
       <nav class="tabs" aria-label="Contenuti dello speaker">
-        {#each ['materials', 'questions', 'interviewPlans', 'talks'] as name}<a
+        {#each ['materials', 'questions', 'interviewPlans'] as name}<a
             class:current={tab === name}
             aria-current={tab === name ? 'page' : undefined}
             href={speakerPath(selectedId) + sections[name as Collection]}
             >{tabLabels[name as Collection]}</a
           >{/each}
       </nav>
-      <div class="speaker-heading">
-        {#if speaker.photoUrl && safeUrl(speaker.photoUrl)}<img
-            class="portrait"
-            src={display(speaker.photoUrl)}
-            alt={'Foto pubblica di ' + speaker.fullName}
-            referrerpolicy="no-referrer"
-          />{/if}
-        <div>
-          <p class="muted">Scheda di preparazione</p>
-          <div class="language">
-            <button onclick={() => (language = 'it')} aria-pressed={language === 'it'}
-              >Italiano</button
-            ><button onclick={() => (language = 'en')} aria-pressed={language === 'en'}
-              >English</button
-            >
-          </div>
-          <h2 id="speaker-title" tabindex="-1">{speaker.fullName}</h2>
-          <p>{speaker.headline}</p>
-          <div class="chips">
-            <span>{isInInterviewList(speaker) ? 'In elenco' : 'Non in elenco'}</span>
-            {#if speaker.isKeynote}<span class="keynote-badge">Keynote</span>{/if}
-            {#each (speaker.tags as string[]) || [] as t}<span>{String(t)}</span>{/each}<span
-              >{translate(plan?.status) || 'Da preparare'}</span
-            >
-          </div>
-        </div>
+      <div class="language">
+        <button onclick={() => (language = 'it')} aria-pressed={language === 'it'}>Italiano</button>
+        <button onclick={() => (language = 'en')} aria-pressed={language === 'en'}>English</button>
+      </div>
+      <div class="chips">
+        <span>{isInInterviewList(speaker) ? 'In elenco' : 'Non in elenco'}</span>
+        {#if speaker.isKeynote}<span class="keynote-badge">Keynote</span>{/if}
+        {#each (speaker.tags as string[]) || [] as t}<span>{String(t)}</span>{/each}
+        <span>{translate(plan?.status) || 'Da preparare'}</span>
       </div>
       <AssignmentControl {speaker} {plan} />
       <p>
@@ -438,8 +449,50 @@
   .speaker-detail {
     min-width: 0;
   }
+  .speaker-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+  .speaker-photo {
+    width: 128px;
+    height: 128px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  .photo-placeholder {
+    display: grid;
+    place-items: center;
+    background: #dce6f2;
+    color: var(--blue);
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .speaker-profile h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 5vw, 2rem);
+  }
+  .speaker-role {
+    margin: 0;
+    color: var(--muted);
+  }
+  .speaker-talk {
+    max-width: 60ch;
+    font-weight: 600;
+  }
+  .chips {
+    margin-bottom: 1rem;
+  }
   .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
     margin-top: 0;
+    text-align: center;
   }
   .tabs a {
     padding: 0.8rem 1rem;

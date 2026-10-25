@@ -2,6 +2,10 @@ import { readFile } from 'node:fs/promises';
 import { test, expect, type Page } from '@playwright/test';
 
 async function openTools(page: Page) {
+  await page
+    .getByRole('navigation', { name: 'Navigazione principale' })
+    .getByRole('link', { name: 'Gestione', exact: true })
+    .click();
   await page.getByRole('link', { name: 'Strumenti', exact: true }).click();
   await expect(page).toHaveURL('/backoffice/strumenti');
 }
@@ -250,8 +254,8 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
   expect(Object.values(rated.ratings)).toContain(5);
   if (testInfo.project.name === 'mobile') {
     await page
-      .getByRole('navigation', { name: 'Gestione', exact: true })
-      .getByRole('link', { name: 'Speaker', exact: true })
+      .getByRole('navigation', { name: 'Navigazione principale' })
+      .getByRole('link', { name: 'Gestione', exact: true })
       .click();
     await page.getByLabel('Cerca nome, organizzazione o tag').fill('breslav');
     await expect(
@@ -310,10 +314,12 @@ test('member prepares the five speakers, CRUD and import work on screen', async 
     if (await commit.isEnabled()) await commit.click();
     else await page.getByRole('button', { name: 'Chiudi', exact: true }).click();
   }
+  await expect(page.getByRole('heading', { name: 'Importa ricerca', exact: true })).toHaveCount(0);
   await page
     .getByRole('navigation', { name: 'Gestione', exact: true })
     .getByRole('link', { name: 'Speaker', exact: true })
     .click();
+  await expect(page).toHaveURL('/backoffice');
   await page.getByRole('navigation', { name: 'Scegli speaker' }).waitFor();
   const reset = page.getByRole('button', { name: 'Azzera ricerca' });
   if (await reset.isVisible()) await reset.click();

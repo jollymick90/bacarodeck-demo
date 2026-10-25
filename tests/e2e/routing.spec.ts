@@ -45,7 +45,17 @@ test('speaker and scheduling URLs survive reload and browser history', async ({
           changes: [
             {
               collection: 'speakers',
-              data: { id, fullName: 'Routing speaker', inInterviewList: true },
+              data: {
+                id,
+                fullName: 'Routing speaker',
+                headline: 'Engineering lead',
+                inInterviewList: true
+              },
+              expectedRevision: null
+            },
+            {
+              collection: 'talks',
+              data: { id: id + '-talk', speakerIds: [id], title: 'Designing resilient systems' },
               expectedRevision: null
             }
           ]
@@ -71,12 +81,26 @@ test('speaker and scheduling URLs survive reload and browser history', async ({
     ).toHaveCount(1);
     await page.goForward();
     await expect(page.getByRole('heading', { name: 'Routing speaker', exact: true })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toHaveCount(0);
+    await expect(page.getByRole('navigation', { name: 'Gestione', exact: true })).toHaveCount(0);
+    await expect(page.getByText('Engineering lead', { exact: true })).toBeVisible();
+    await expect(
+      page.getByRole('navigation', { name: 'Contenuti dello speaker' }).getByRole('link')
+    ).toHaveText(['Ricerca', 'Domande', 'Intervista']);
+    await expect(
+      page.getByRole('link', { name: 'Designing resilient systems', exact: true })
+    ).toHaveAttribute('href', `/backoffice/speaker/${id}/talk`);
+    await page.getByRole('link', { name: 'Designing resilient systems', exact: true }).click();
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}/talk`);
+    await page.getByRole('link', { name: 'Ricerca', exact: true }).click();
+    await expect(page).toHaveURL(`/backoffice/speaker/${id}`);
+    await page.screenshot({ path: info.outputPath('speaker-profile.png'), fullPage: true });
     await page.getByRole('link', { name: 'Domande', exact: true }).click();
     await expect(page).toHaveURL(`/backoffice/speaker/${id}/domande`);
     await page.reload();
     await expect(page.getByRole('heading', { name: 'Routing speaker', exact: true })).toBeVisible();
-    await page.getByRole('link', { name: 'Programmazione', exact: true }).click();
-    await expect(page).toHaveURL('/backoffice/programmazione');
+    await page.getByRole('link', { name: 'Gestione', exact: true }).click();
+    await expect(page).toHaveURL('/backoffice');
     await expect(page.getByRole('heading', { name: 'Routing speaker', exact: true })).toHaveCount(
       0
     );
@@ -84,6 +108,8 @@ test('speaker and scheduling URLs survive reload and browser history', async ({
     await expect(page).toHaveURL(`/backoffice/speaker/${id}/domande`);
     await expect(page.getByRole('heading', { name: 'Routing speaker', exact: true })).toBeVisible();
     await page.goForward();
+    await expect(page).toHaveURL('/backoffice');
+    await page.getByRole('link', { name: 'Programmazione', exact: true }).click();
     await expect(page).toHaveURL('/backoffice/programmazione');
     await page.goto(`/backoffice/contenuti/speakers/${id}`);
     await expect(page.locator('.editor')).toContainText('Routing speaker');
@@ -102,6 +128,16 @@ test('speaker and scheduling URLs survive reload and browser history', async ({
     await page.goto('/backoffice/speaker/missing-speaker');
     await expect(page.getByRole('heading', { name: 'Speaker non trovato' })).toBeVisible();
   } finally {
+    const talks = await (await request.get('/api/data/talks', { headers })).json();
+    const talk = talks.find((row: { id: string }) => row.id === id + '-talk');
+    if (talk)
+      await request.post('/api/data', {
+        headers,
+        data: {
+          action: 'delete',
+          changes: [{ collection: 'talks', data: talk, expectedRevision: talk.revision }]
+        }
+      });
     const rows = await (await request.get('/api/data/speakers', { headers })).json();
     const speaker = rows.find((row: { id: string }) => row.id === id);
     if (speaker)
