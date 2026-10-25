@@ -77,6 +77,13 @@ Puoi usare lo stesso **database esistente di BacaroGame**, anche sul piano gratu
 
 Come in BacaroGame, i dati passano attraverso il server Firebase Admin. Ogni richiesta verifica il token Firebase, il provider Google, l’email verificata e `ALLOW_LIST` privata. Il browser conserva il login Firebase e invia il token Bearer alle API; non usa una sessione cookie. I documenti membri servono per assegnare interviste, non concedono accesso.
 
+Home e backoffice condividono lo stesso accesso Google. La sessione viene conservata
+nel profilo del browser anche dopo chiusura e riapertura, finché non si esce,
+si cancellano i dati del browser o Firebase richiede una nuova autenticazione.
+Il ripristino dell'account precede la schermata di login. Questo non abilita ancora
+la riapertura dei contenuti offline: il download locale è previsto nella
+[specifica sessione/offline](docs/superpowers/specs/2026-10-25-session-offline-design.md).
+
 Le regole negano letture e scritture dirette dal browser. **Migrazione dalla versione precedente:** pubblica il blocco di regole aggiornato per questo workspace, preservando le altre regole del progetto condiviso. Finché restano attive le vecchie regole, la vecchia policy nel database può ancora autorizzare accessi SDK. Il documento `access/config` non viene più usato dal server.
 
 Quando cambi `ALLOW_LIST`, riavvia il server locale o crea un nuovo deploy Vercel. Ogni deploy usa il proprio ambiente: vecchi deployment ancora raggiungibili possono continuare a usare la vecchia lista e vanno rimossi o protetti quando revochi accessi. Il browser aggiorna i dati ogni 15 secondi e dopo ogni salvataggio; le transazioni mantengono il controllo dei conflitti.

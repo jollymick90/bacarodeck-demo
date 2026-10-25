@@ -1,10 +1,22 @@
 # Login persistente e consultazione offline per l'evento
 
-Data: 25 ottobre 2026. Requisiti concordati in chat; proposta tecnica da approvare.
+Data: 25 ottobre 2026. Requisiti e proposta tecnica approvati in chat.
 Revisione indipendente completata: nessuna domanda di prodotto indispensabile
-rimasta aperta per pianificare l'implementazione. Nessuna modifica al codice app.
+rimasta aperta per pianificare l'implementazione.
 Ordine: login unico, download locale completo, riapertura offline, aggiornamento online.
 Il grafo rimane successivo a questa consegna.
+
+## Stato di implementazione
+
+Prima priorità implementata: home e backoffice riutilizzano Auth e Firestore;
+la persistenza locale di Auth è esplicita e il listener attende il ripristino
+dell'identità prima di mostrare l'accesso. Test browser desktop e mobile verificano
+navigazione ripetuta, reload, chiusura e riapertura completa del browser con lo
+stesso profilo e logout. Corretto anche il favicon mancante.
+
+Restano da implementare download completo, consultazione offline per 30 giorni
+e aggiornamento della copia locale. La persistenza della login non rende ancora
+disponibili i dati dopo una riapertura senza rete.
 
 ## Obiettivo e decisioni concordate
 
