@@ -17,11 +17,20 @@
 - Browser Back/Forward changes the screen and links can open in a new tab.
 
 ## Tasks
-1. [ ] Write failing route acceptance tests; move auth/data lifecycle into per-layout Workspace state and shell. Root layout gates all page content and preserves one session across navigation.
-2. [ ] Conductor: /, /speaker/[speakerId], /speaker/[speakerId]/scaletta, /topic and /topic/[topic]. Replace manual history and screen switches. Keep short edit/confirmation dialogs local.
-3. [ ] Backoffice: /backoffice list; /backoffice/speaker/[speakerId] and /[section] for research/questions/interview/talk; /backoffice/programmazione; /backoffice/strumenti; explicit import/export/backup/tag/access pages; /backoffice/contenuti/[collection]/[id] and /backoffice/nuovo/[collection]. Speaker IDs and return destinations are URL data. Preserve unified readonly editor and IT/EN switch.
-4. [ ] Update old query links via redirects. Replace toolbar commands with links. Adapt existing browser tests to URL navigation and assert deep reload, Back/Forward, route-to-route entity changes, access control and missing entities.
-5. [ ] Run check, unit and browser suites, build, focused review; document paths and verification. Leave changes reviewable in this checkout without publishing.
+1. [x] Write failing route acceptance tests; move auth/data lifecycle into per-layout Workspace state and shell. Root layout gates all page content and preserves one session across navigation.
+2. [x] Conductor: /, /speaker/[speakerId], /speaker/[speakerId]/scaletta, /topic and /topic/[topic]. Replace manual history and screen switches. Keep short edit/confirmation dialogs local.
+3. [x] Backoffice: /backoffice list; /backoffice/speaker/[speakerId] and /[section] for research/questions/interview/talk; /backoffice/programmazione; /backoffice/strumenti; explicit import/export/backup/tag/access pages; /backoffice/contenuti/[collection]/[id] and /backoffice/nuovo/[collection]. Speaker IDs and return destinations are URL data. Preserve unified readonly editor and IT/EN switch.
+4. [x] Update old query links via redirects. Replace toolbar commands with links. Adapt existing browser tests to URL navigation and assert deep reload, Back/Forward, route-to-route entity changes, access control and missing entities.
+5. [x] Run check, unit and browser suites, build, focused review; document paths and verification. Leave changes reviewable in this checkout without publishing.
 
 ## Shared interface
 `getWorkspace()` from `$lib/workspace.svelte` returns per-layout state with reactive `data: Dataset`, `members: Entity[]`, `user: User|null`, `client: ReturnType<typeof getFirebase>`, `access`, `ready`, `superadmin`, `online`, `error`, `message`. Shell renders children only once authorized and ready. Pages use existing repository APIs for writes. The conductor worker owns only conductor components, conductor route files, and conductor tests; root owns layout/state/backoffice.
+
+## Verification
+- `npm run check`: 0 errors, 0 warnings.
+- `npm test`: 26 files, 96 tests passed.
+- Browser acceptance: 18 desktop/mobile cases passed across conductor, routing, session, speaker editor and hub suites. Navigation assertions wait for route content before checking conditional UI.
+- Direct links, reload, Back/Forward, retained filters, prepared imports after reload, persistent login, atomic editor conflicts and backup navigation guard exercised.
+- Mobile screenshots inspected; clipped the inactive accessibility skip link so it cannot overlay a full-page capture.
+- Changed Svelte/TypeScript/CSS files pass Prettier. Production build succeeds with existing bundle-size/optional tracing warnings.
+- Independent review findings (filters and backup interruption) fixed and reviewed again.
