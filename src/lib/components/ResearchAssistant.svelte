@@ -1,6 +1,6 @@
 <script lang="ts">
   import { researchEntries } from '$lib/research';
-  import { researchPrompt, questionsPrompt } from '$lib/research-prompts';
+  import { researchPrompt, questionsPrompt, audioPrompt } from '$lib/research-prompts';
   import { emptyEntity, type Dataset, type Entity } from '$lib/fields';
   import { validateEntity } from '$lib/domain';
   import ResearchReader from './ResearchReader.svelte';
@@ -28,13 +28,13 @@
   );
   const key = (collection: string, entity: Entity) => `${collection}/${entity.id}`;
 
-  async function copy(text: string) {
+  async function copy(text: string, destination = 'una nuova chat AI') {
     prompt = text;
     notice = '';
     failure = '';
     try {
       await navigator.clipboard.writeText(text);
-      notice = 'Prompt copiato. Incollalo in una nuova chat AI.';
+      notice = `Prompt copiato. Incollalo in ${destination}.`;
     } catch {
       notice =
         'Copia automatica non disponibile: seleziona il prompt qui sotto e copialo manualmente.';
@@ -97,7 +97,7 @@
 </script>
 
 <details class="research-assistant">
-  <summary>Ricerca con Gemini / ChatGPT</summary>
+  <summary>Ricerca con Gemini / ChatGPT e audio con NotebookLM</summary>
   <p>
     Due sessioni separate: prima raccogli le fonti, poi prepara le domande. I prompt vengono
     copiati; l’app non chiama servizi AI.
@@ -134,6 +134,18 @@
     disabled={busy || !selectedEntries.length}
     onclick={() => copy(questionsPrompt(speaker, data, selectedEntries))}
     >Copia prompt domande</button
+  >
+  <h4>3. Prepara l’audio con NotebookLM</h4>
+  <p>
+    Carica le fonti in NotebookLM e incolla il prompt nelle istruzioni di personalizzazione
+    dell’audio. Il nome dello speaker è già compilato; scegli la lingua dell’audio e imposta la
+    stessa lingua anche in NotebookLM. Questi prompt non includono i materiali selezionati sopra.
+  </p>
+  <button disabled={busy} onclick={() => copy(audioPrompt(speaker, 'it'), 'NotebookLM')}
+    >Copia prompt audio IT</button
+  >
+  <button disabled={busy} onclick={() => copy(audioPrompt(speaker, 'en'), 'NotebookLM')}
+    >Copia prompt audio EN</button
   >
   {#if prompt}
     <label for="ai-prompt">Prompt pronto — {prompt.length.toLocaleString('it-IT')} caratteri</label>

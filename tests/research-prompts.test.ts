@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest';
-import { researchPrompt, questionsPrompt } from '../src/lib/research-prompts';
+import { researchPrompt, questionsPrompt, audioPrompt } from '../src/lib/research-prompts';
 import type { Dataset } from '../src/lib/fields';
 
 const speaker = { id: 's', fullName: 'Test Speaker', updatedBy: 'private-uid' };
@@ -43,3 +43,16 @@ it('question prompt includes only selected research and existing speaker questio
   expect(prompt).not.toContain('Unrelated question');
   expect(prompt).not.toContain('private-uid');
 });
+
+it.each(['it', 'en'] as const)(
+  'audio prompt targets only the current speaker in %s',
+  (language) => {
+    const prompt = audioPrompt(speaker, language);
+    expect(prompt).toContain('Test Speaker');
+    expect(prompt).not.toContain('private-uid');
+    expect(prompt).not.toMatch(/\[NOME|\[NAME/);
+    expect(prompt).toContain(
+      language === 'it' ? 'Lingua dell’audio: Italiano' : 'Audio language: English'
+    );
+  }
+);
