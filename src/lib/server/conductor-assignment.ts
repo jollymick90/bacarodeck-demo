@@ -1,3 +1,6 @@
+import { env } from '$env/dynamic/private';
+import { accessConfiguration, assignmentDirectory } from '../assignees';
+import { accessDocument } from './member-access';
 import type { Firestore } from 'firebase-admin/firestore';
 import type { Dataset, Entity } from '../fields';
 import { assignmentChanges } from '../conductor/assignment';
@@ -20,12 +23,19 @@ export async function assignSpeaker(db: Firestore, actorUid: string, request: As
     const plan = data.interviewPlans?.find((p) => p.speakerId === request.speakerId);
     if ((plan?.revision ?? null) !== request.expectedPlanRevision)
       throw new Error('Conflitto: assegnazione cambiata. Riapri il riepilogo.');
+    const access = (await tx.get(db.doc(accessDocument))).data() || {};
+    const members = (await tx.get(db.collection(`${workspacePath}/members`))).docs.map((d) => ({
+      ...d.data(),
+      id: d.id
+    }));
+    const assignees = assignmentDirectory(accessConfiguration(env), access, members);
     const changes = assignmentChanges(
       data,
       request.speakerId,
       request.teamId,
       request.expectedOwner,
-      request.confirmReplacement
+      request.confirmReplacement,
+      assignees
     );
     for (const change of changes) {
       const existing = data[change.collection]?.find((e) => e.id === change.data.id) || null;

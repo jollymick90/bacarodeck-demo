@@ -1,6 +1,7 @@
 <script lang="ts">
   import { isInInterviewList } from '$lib/interview-list';
-  import { team } from '$lib/team';
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import { untrack } from 'svelte';
   import {
     fields,
@@ -128,7 +129,7 @@
       }
     } else draft[field.key] = value;
     if (field.key === 'assignedToUid')
-      draft.assignedToName = [...team, ...members].find((m) => m.id === value)?.displayName ?? null;
+      draft.assignedToName = workspace.assignees.find((m) => m.id === value)?.displayName ?? null;
   }
   async function save(event: SubmitEvent) {
     event.preventDefault();
@@ -261,8 +262,7 @@
                 id={fieldId}
                 value={String(draft[field.key] ?? '')}
                 onchange={(e) => update(draft, group.collection, field, e.currentTarget.value)}
-                ><option value="">Non assegnato</option
-                >{#each [...team.filter((m) => m.role === 'interview'), ...members.filter((m) => !team.some((t) => t.id === m.id))] as member}<option
+                ><option value="">Non assegnato</option>{#each workspace.assignees as member}<option
                     value={member.id}>{member.displayName || member.id}</option
                   >{/each}</select
               >

@@ -5,7 +5,9 @@ import { collections, type Collection, type Entity } from './fields';
 export const basePath = 'workspaces/codemotion-milano-2026';
 const refresh = new EventTarget();
 export function refreshWorkspace() {
-  refresh.dispatchEvent(new CustomEvent('change', { detail: [...collections, 'members'] }));
+  refresh.dispatchEvent(
+    new CustomEvent('change', { detail: [...collections, 'members', 'assignees'] })
+  );
 }
 export function refreshData() {
   refresh.dispatchEvent(new CustomEvent('change', { detail: ['questions'] }));
@@ -51,7 +53,7 @@ export async function removeEntity(
 }
 export function watchCollection(
   _db: Firestore,
-  name: Collection | 'members',
+  name: Collection | 'members' | 'assignees',
   ondata: (entities: Entity[], cached: boolean) => void,
   onerror: (error: Error) => void
 ): Unsubscribe {

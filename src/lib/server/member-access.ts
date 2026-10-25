@@ -1,4 +1,5 @@
 import { env } from '$env/dynamic/private';
+import { accessConfiguration } from '$lib/assignees';
 import { memberPolicy } from '$lib/member-policy';
 import { firestoreCache } from './firestore-cache';
 import { getAdmin } from './firebase-admin';
@@ -10,10 +11,11 @@ export async function readAccessMembers(fresh = false) {
 }
 export async function getAccessState(email: string, fresh = false) {
   const data = await readAccessMembers(fresh);
+  const config = accessConfiguration(env);
   return memberPolicy(
     email,
-    env.ALLOW_LIST || '',
-    env.SUPERADMIN_EMAILS || '',
+    config.configured,
+    config.permanent,
     data?.added || [],
     data?.blocked || []
   );

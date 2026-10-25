@@ -7,7 +7,7 @@ import type { RequestHandler } from './$types';
 export const POST: RequestHandler = async ({ request, url }) => {
   const { db, identity, superadmin } = await authorize(request, url, false);
   const syncKey = createHash('sha256')
-    .update(JSON.stringify([identity.uid, identity.name || 'Membro BacaroTech']))
+    .update(JSON.stringify([identity.uid, identity.email, identity.name || 'Membro BacaroTech']))
     .digest('hex');
   await runAccessStep('member-sync', () =>
     firestoreCache(db).read(`member-sync:${syncKey}`, 3600, async () => {
@@ -18,9 +18,14 @@ export const POST: RequestHandler = async ({ request, url }) => {
         if (
           !snapshot.exists ||
           snapshot.data()?.displayName !== displayName ||
-          snapshot.data()?.role !== 'editor'
+          snapshot.data()?.role !== 'editor' ||
+          snapshot.data()?.email !== identity.email
         ) {
-          transaction.set(ref, { displayName, role: 'editor' }, { merge: true });
+          transaction.set(
+            ref,
+            { displayName, email: identity.email, role: 'editor' },
+            { merge: true }
+          );
           return true;
         }
         return false;

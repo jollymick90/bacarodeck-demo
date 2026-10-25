@@ -1,3 +1,4 @@
+import { accessConfiguration } from './src/lib/assignees';
 import { defineConfig, devices } from '@playwright/test';
 const testPort = process.env.TEST_PORT || '4173';
 export default defineConfig({
@@ -29,7 +30,9 @@ export default defineConfig({
       PUBLIC_FIRESTORE_EMULATOR_PORT: (process.env.FIRESTORE_EMULATOR_HOST || '127.0.0.1:8080')
         .split(':')
         .pop()!,
-      ALLOW_LIST: 'editor-desktop@example.test,editor-mobile@example.test',
+      ALLOW_LIST:
+        'editor-desktop@example.test,editor-mobile@example.test,' +
+        accessConfiguration({}).configured,
       SUPERADMIN_EMAILS: 'editor-desktop@example.test',
       FIREBASE_ADMIN_KEY: ''
     }

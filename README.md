@@ -102,12 +102,12 @@ Puoi usare lo stesso **database esistente di BacaroGame**, anche sul piano gratu
    FIREBASE_ADMIN_KEY='{"type":"service_account", ...}'
    ```
 
-   `ALLOW_LIST` contiene email Google esatte separate da virgola (accettati anche punto e virgola e righe separate), senza distinzione maiuscole/minuscole. Vuota significa nessun accesso. `FIREBASE_ADMIN_KEY` contiene il JSON completo del service account, in una sola riga: è la stessa convenzione già usata da BacaroGame e puoi riutilizzare la credenziale dello stesso progetto. Il JSON abbreviato nell’esempio non è una credenziale utilizzabile. Non commettere `.env` o il file JSON e non inserire la chiave nel frontend. In alternativa locale è supportato `GOOGLE_APPLICATION_CREDENTIALS` verso un file fuori dal repository.
+   `ALLOW_LIST` contiene email Google esatte separate da virgola (accettati anche punto e virgola e righe separate), senza distinzione maiuscole/minuscole. Se assente usa le sei email predefinite in `.env.example`; una stringa vuota esclude gli accessi configurati, ma restano validi i superadmin e gli account aggiunti da Gestisci accessi. `FIREBASE_ADMIN_KEY` contiene il JSON completo del service account, in una sola riga: è la stessa convenzione già usata da BacaroGame e puoi riutilizzare la credenziale dello stesso progetto. Il JSON abbreviato nell’esempio non è una credenziale utilizzabile. Non commettere `.env` o il file JSON e non inserire la chiave nel frontend. In alternativa locale è supportato `GOOGLE_APPLICATION_CREDENTIALS` verso un file fuori dal repository.
 
 3. Integra **il solo blocco match di questo workspace** di `firebase/firestore.rules` nelle regole del progetto, mantenendo tutti i match degli altri dataset. Controlla che eventuali regole globali permissive non concedano accesso a questo percorso: i permessi Firestore si combinano in OR. Pubblica il ruleset unificato con il normale processo del progetto scelto.
 4. Avvia l’app con `npm run dev`. Non serve sincronizzare la lista nel database.
 
-Come in BacaroGame, i dati passano attraverso il server Firebase Admin. Ogni richiesta verifica il token Firebase, il provider Google, l’email verificata e `ALLOW_LIST` privata. Il browser conserva il login Firebase e invia il token Bearer alle API; non usa una sessione cookie. I documenti membri servono per assegnare interviste, non concedono accesso.
+Come in BacaroGame, i dati passano attraverso il server Firebase Admin. Ogni richiesta verifica il token Firebase, il provider Google, l’email verificata e `ALLOW_LIST` privata. Il browser conserva il login Firebase e invia il token Bearer alle API; non usa una sessione cookie. La lista degli intervistatori coincide con gli accessi abilitati, inclusi i superadmin e gli account che non hanno ancora fatto login. I documenti membri forniscono nome e UID, senza concedere accesso.
 
 Home e backoffice condividono lo stesso accesso Google. La sessione viene conservata
 nel profilo del browser anche dopo chiusura e riapertura, finché non si esce,
@@ -208,7 +208,7 @@ Il team editoriale è distinto dagli account Google: Giorgio (IT), Alberto, Mart
 
 ## Superadmin
 
-Imposta `SUPERADMIN_EMAILS` su Vercel con l'email Google del primo amministratore (solo il valore, nessuna assegnazione o virgolette). La variabile locale è configurata privatamente per l'account indicato. Gli amministratori permanenti possono aprire “Gestisci accessi”, abilitare e revocare email. Un blocco prevale su ALLOW_LIST; i permanenti si gestiscono dall'ambiente. Le email autorizzate e bloccate sono in un documento privato access/members. Nessun comando di sincronizzazione; build sempre `npm run build`.
+Se `SUPERADMIN_EMAILS` è assente, il superadmin predefinito è `scarpa.michele.90@gmail.com`. Per sostituirlo, imposta `SUPERADMIN_EMAILS` su Vercel con l'email Google del primo amministratore (solo il valore, nessuna assegnazione o virgolette). La variabile locale è configurata privatamente per l'account indicato. Gli amministratori permanenti possono aprire “Gestisci accessi”, abilitare e revocare email. Un blocco prevale su ALLOW_LIST; i permanenti si gestiscono dall'ambiente. Le email autorizzate e bloccate sono in un documento privato access/members. Nessun comando di sincronizzazione; build sempre `npm run build`.
 
 ## Programmazione
 
@@ -399,3 +399,5 @@ più piccola. Biografia e abstract sono inclusi in una sola lingua per ridurre r
 Le domande importate via Markdown rimangono testo nella Ricerca: non vengono inserite
 automaticamente nella scaletta strutturata. Le bozze nell'anteprima non sono ancora
 salvate: confermarle prima di cambiare speaker o ricaricare la pagina.
+
+Le revoche rimuovono gli account dalle nuove assegnazioni; quelle già registrate rimangono visibili e possono essere riassegnate. Il server verifica il destinatario nella stessa transazione che aggiorna intervista e programmazione.

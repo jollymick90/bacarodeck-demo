@@ -1,6 +1,6 @@
 import type { Dataset, Entity } from '../fields';
 import type { Change } from '../domain';
-import { team } from '../team';
+import type { Assignee } from '../assignees';
 import agenda from '../../../data/agenda/codemotion.json';
 export const assignmentOwner = (plan?: Entity) =>
   String(plan?.assignedTeamId || plan?.assignedToUid || plan?.assignedToName || '');
@@ -9,10 +9,11 @@ export function assignmentChanges(
   speakerId: string,
   teamId: string,
   expectedOwner: string,
-  confirmReplacement: boolean
+  confirmReplacement: boolean,
+  assignees: Assignee[]
 ): Change[] {
   const speaker = data.speakers?.find((s) => s.id === speakerId);
-  const member = team.find((t) => t.id === teamId && t.role === 'interview');
+  const member = assignees.find((t) => t.id === teamId);
   if (!speaker || !member) throw new Error('Speaker o conduttore non valido.');
   const plan = data.interviewPlans?.find((p) => p.speakerId === speakerId);
   const current = assignmentOwner(plan);
@@ -28,7 +29,7 @@ export function assignmentChanges(
         id: plan?.id || speakerId,
         speakerId,
         assignedTeamId: teamId,
-        assignedToUid: '',
+        assignedToUid: member.uid,
         assignedToName: member.displayName
       },
       expectedRevision: plan?.revision ?? null

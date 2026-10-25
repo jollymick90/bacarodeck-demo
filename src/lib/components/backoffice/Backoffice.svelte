@@ -8,7 +8,7 @@
   import { labels, translate, type Collection, type Entity } from '$lib/fields';
   import { safeUrl, provenanceLabel } from '$lib/domain';
   import { commitChanges, removeEntity } from '$lib/repository';
-  import { team } from '$lib/team';
+  import { assignmentOwner } from '$lib/conductor/assignment';
   import ResearchQuestionPromotion from '$lib/components/conductor/ResearchQuestionPromotion.svelte';
   import AssignmentControl from '$lib/components/conductor/AssignmentControl.svelte';
   import ResearchAssistant from '$lib/components/ResearchAssistant.svelte';
@@ -68,7 +68,11 @@
         (!directory || (directory === 'in' ? isInInterviewList(s) : !isInInterviewList(s))) &&
         (!tag || ((s.tags as string[]) || []).includes(tag)) &&
         (!prep || plan?.status === prep) &&
-        (!assignee || plan?.assignedToUid === assignee)
+        (!assignee ||
+          assignmentOwner(plan) === assignee ||
+          plan?.assignedToUid === assignee ||
+          (plan?.assignedToUid &&
+            plan.assignedToUid === workspace.assignees.find((m) => m.id === assignee)?.uid))
       );
     })
   );
@@ -192,8 +196,7 @@
         >Intervistatore<select
           value={assignee}
           onchange={(event) => filter('conduttore', event.currentTarget.value)}
-          ><option value="">Tutti i membri</option
-          >{#each [...team.filter((m) => m.role === 'interview'), ...members] as m}<option
+          ><option value="">Tutti i membri</option>{#each workspace.assignees as m}<option
               value={m.id}>{m.displayName || m.id}</option
             >{/each}</select
         ></label

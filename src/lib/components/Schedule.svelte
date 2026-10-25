@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import agenda from '../../../data/agenda/codemotion.json';
   import { localTime, suggestInterview, findConflicts, outsideWindows } from '$lib/scheduling';
   import { team } from '$lib/team';
@@ -111,7 +113,11 @@
       <label
         >Intervistatore<select disabled bind:value={draft.interviewerId}
           ><option value="">Da assegnare</option
-          >{#each team.filter((m) => m.role === 'interview') as member}<option value={member.id}
+          >{#if draft.interviewerId && !workspace.assignees.some((m) => m.id === draft?.interviewerId)}<option
+              value={draft.interviewerId}
+              >{team.find((m) => m.id === draft?.interviewerId)?.displayName || draft.interviewerId} (non
+              abilitato)</option
+            >{/if}{#each workspace.assignees as member}<option value={member.id}
               >{member.displayName}</option
             >{/each}</select
         ></label

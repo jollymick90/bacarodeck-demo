@@ -18,12 +18,13 @@ export class Workspace {
   access = $state<'loading' | 'setup' | 'login' | 'denied' | 'member'>('loading');
   data = $state<Dataset>({});
   members = $state<Entity[]>([]);
+  assignees = $state<Entity[]>([]);
   loaded = $state<string[]>([]);
   superadmin = $state(false);
   online = $state(true);
   error = $state('');
   message = $state('');
-  ready = $derived(this.access === 'member' && this.loaded.length === collections.length + 1);
+  ready = $derived(this.access === 'member' && this.loaded.length === collections.length + 2);
 
   async login() {
     if (!this.client) return;
@@ -71,6 +72,7 @@ export class Workspace {
     const clear = () => {
       this.data = {};
       this.members = [];
+      this.assignees = [];
       this.loaded = [];
       this.superadmin = false;
       this.message = '';
@@ -105,7 +107,7 @@ export class Workspace {
         this.superadmin = result.superadmin === true;
         if (this.access === 'member') return;
         this.access = 'member';
-        for (const name of [...collections, 'members'] as const) {
+        for (const name of [...collections, 'members', 'assignees'] as const) {
           subscriptions.push(
             watchCollection(
               client.db,
@@ -113,6 +115,7 @@ export class Workspace {
               (entities, cached) => {
                 if (version !== generation || this.access !== 'member') return;
                 if (name === 'members') this.members = entities;
+                else if (name === 'assignees') this.assignees = entities;
                 else this.data[name] = entities;
                 if (!cached && !this.loaded.includes(name)) this.loaded = [...this.loaded, name];
               },

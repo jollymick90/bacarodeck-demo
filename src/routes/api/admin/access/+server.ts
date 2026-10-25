@@ -4,30 +4,14 @@ import { env } from '$env/dynamic/private';
 import { authorize } from '$lib/server/authorize';
 import { accessDocument, readAccessMembers } from '$lib/server/member-access';
 import { parseAllowList } from '$lib/server/access-policy';
+import { accessConfiguration, accessEntries } from '$lib/assignees';
 import type { RequestHandler } from './$types';
 const headers = { 'Cache-Control': 'private, no-store' };
 export const GET: RequestHandler = async ({ request, url }) => {
   const { db, superadmin } = await authorize(request, url);
   if (!superadmin) error(403, 'Operazione riservata al superadmin.');
   const data = await readAccessMembers();
-  const permanent = parseAllowList(env.SUPERADMIN_EMAILS || '');
-  const blocked: string[] = data?.blocked || [];
-  const emails = [
-    ...new Set([
-      ...permanent,
-      ...parseAllowList(env.ALLOW_LIST || ''),
-      ...(data?.added || []),
-      ...blocked
-    ])
-  ].sort();
-  return json(
-    emails.map((email) => ({
-      email,
-      permanent: permanent.includes(email),
-      enabled: permanent.includes(email) || !blocked.includes(email)
-    })),
-    { headers }
-  );
+  return json(accessEntries(accessConfiguration(env), data), { headers });
 };
 export const POST: RequestHandler = async ({ request, url }) => {
   const { db, superadmin } = await authorize(request, url);
@@ -40,7 +24,7 @@ export const POST: RequestHandler = async ({ request, url }) => {
     typeof body.enabled !== 'boolean'
   )
     error(400, 'Email o operazione non valida.');
-  if (parseAllowList(env.SUPERADMIN_EMAILS || '').includes(email))
+  if (parseAllowList(accessConfiguration(env).permanent).includes(email))
     error(400, 'Gli amministratori permanenti si gestiscono nella configurazione del server.');
   const ref = db.doc(accessDocument);
   await db.runTransaction(async (tx) => {

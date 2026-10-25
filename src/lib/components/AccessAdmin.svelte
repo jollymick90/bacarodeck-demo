@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { refreshWorkspace } from '$lib/repository';
   import { onMount } from 'svelte';
   import { getAuth } from 'firebase/auth';
   let entries = $state<{ email: string; enabled: boolean; permanent: boolean }[]>([]);
@@ -28,6 +29,7 @@
     failure = '';
     try {
       await request({ email: address, enabled });
+      refreshWorkspace();
       email = '';
       await load();
     } catch (e) {
