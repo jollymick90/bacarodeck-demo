@@ -1,5 +1,6 @@
 <script lang="ts">
   import StartInterview from './StartInterview.svelte';
+  import SpeakerPhoto from '../SpeakerPhoto.svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import type { Dataset, Entity } from '$lib/fields';
@@ -325,6 +326,7 @@
     {/if}
   {:else if speaker && mode === 'reading'}
     <a class="nav-action" href={speakerHref()}>Torna alla scheda</a>
+    <SpeakerPhoto {speaker} compact />
     <h1>{speaker.fullName}</h1>
     {#if current}<StartInterview
         speakerId={selected}
@@ -360,6 +362,7 @@
       href={'/topic/connessioni?node=' + encodeURIComponent('speaker:' + selected)}
       >Esplora connessioni</a
     >
+    <SpeakerPhoto {speaker} />
     <div class="brief-heading">
       <div>
         <h1>{speaker.fullName}</h1>
@@ -558,8 +561,13 @@
         class="assignment-badge">{owner(s.id)}</span
       >
     </div>
-    <h3>{s.fullName}</h3>
-    <p>{s.headline || s.organization || ''}</p>
+    <div class="speaker-identity">
+      <SpeakerPhoto speaker={s} compact />
+      <div>
+        <h3>{s.fullName}</h3>
+        <p>{s.headline || s.organization || ''}</p>
+      </div>
+    </div>
     <small
       >{preparation.brief
         ? `${preparation.mainQuestions.length} domande in scaletta`
@@ -613,6 +621,16 @@
 </dialog>
 
 <style>
+  .speaker-identity {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin: 0.75rem 0;
+  }
+  .speaker-identity > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
   .conductor {
     max-width: 960px;
     margin: 0 auto;
