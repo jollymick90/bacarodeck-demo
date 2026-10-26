@@ -165,9 +165,7 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
     .first()
     .getByRole('button', { name: 'Modifica', exact: true })
     .click();
-  await page
-    .getByLabel('Testo della domanda', { exact: true })
-    .fill('Domanda modificata dal conduttore?');
+  await page.getByLabel('Domanda IT', { exact: true }).fill('Domanda modificata dal conduttore?');
   await page.getByRole('button', { name: 'Salva per tutti', exact: true }).click();
   await expect(page.locator('.question-row').first()).toContainText(
     'Domanda modificata dal conduttore?'

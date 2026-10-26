@@ -3,6 +3,7 @@
   import { onMount, type Snippet } from 'svelte';
   import AppHeader from './AppHeader.svelte';
   import AppNavigation from './AppNavigation.svelte';
+  import SuccessNotice from './SuccessNotice.svelte';
   import { provideWorkspace } from '$lib/workspace.svelte';
   let { children }: { children: Snippet } = $props();
   const workspace = provideWorkspace();
@@ -51,9 +52,11 @@
         Sei offline. Puoi leggere i dati già caricati in questa sessione. I salvataggi richiedono la
         rete.
       </p>{/if}
-    {#if workspace.message && !immersive}<p class="success" role="status">
-        {workspace.message}
-      </p>{/if}
+    <SuccessNotice
+      message={workspace.message}
+      hidden={immersive}
+      ondismiss={() => (workspace.message = '')}
+    />
     {@render children()}
   {/if}
   {#if workspace.error && !immersive}<p class="error" role="alert">{workspace.error}</p>{/if}

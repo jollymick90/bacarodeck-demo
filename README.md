@@ -72,6 +72,13 @@ I contenuti esistenti si aprono in lettura, con Markdown formattato e il pulsant
 «Modifica» per abilitare i campi. La descrizione speaker usa una sola area IT / EN;
 il cambio lingua conserva i due testi e le rispettive modifiche non ancora salvate.
 I nuovi contenuti si aprono direttamente in modifica.
+Dal conduttore, «Modifica» apre lo stesso editor delle domande di Gestione:
+inizialmente mostra il testo nella lingua corrente; «Mostra tutti i campi editoriali»
+consente di modificare anche entrambe le lingue, follow-up, motivazione, tag, fonti,
+materiali, stato, ordine e note. «Annulla» scarta la bozza; un errore o conflitto
+la conserva nel popup. Dopo un conflitto, chiudere e riaprire carica i dati aggiornati.
+Le notifiche di successo condivise e del conduttore scompaiono dopo quattro secondi
+e si possono chiudere subito con «Chiudi notifica».
 Da un materiale di ricerca si può incollare una domanda, controllare l'anteprima e
 confermare la creazione del record strutturato, conservando il materiale originale.
 Sintesi, domande classiche e scaletta si gestiscono dalla scheda conduttore collegata.

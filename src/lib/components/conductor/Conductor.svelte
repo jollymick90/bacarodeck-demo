@@ -14,6 +14,8 @@
   import { api, refreshWorkspace } from '$lib/repository';
   import TalkSchedule from '../TalkSchedule.svelte';
   import Markdown from '../Markdown.svelte';
+  import SuccessNotice from '../SuccessNotice.svelte';
+  import Editor from '../Editor.svelte';
   import ResearchReader from '../ResearchReader.svelte';
   import { researchEntries } from '$lib/research';
   import AssignmentControl from './AssignmentControl.svelte';
@@ -56,7 +58,6 @@
   let failure = $state('');
   let message = $state('');
   let editQuestion = $state<Entity | null>(null);
-  let editText = $state('');
   let editLanguage = $state<'it' | 'en'>('it');
   let questionDialog: HTMLDialogElement;
   let replacement = $state<string | null>(null);
@@ -224,19 +225,29 @@
   function edit(q: Entity) {
     editQuestion = { ...q };
     editLanguage = language;
-    editText = String(q[language === 'it' ? 'textIt' : 'textEn'] || '');
+    failure = '';
     questionDialog.showModal();
   }
-  async function saveQuestion() {
-    await run(async () => {
-      if (!editQuestion || !editText.trim()) throw Error('Inserisci il testo della domanda.');
-      await onquestion({
-        ...editQuestion,
-        [editLanguage === 'it' ? 'textIt' : 'textEn']: editText
-      });
+  function closeQuestion() {
+    if (busy) return;
+    questionDialog.close();
+    editQuestion = null;
+  }
+  async function saveQuestion(updated: Entity) {
+    if (busy) return;
+    busy = true;
+    message = '';
+    try {
+      await onquestion(updated);
       questionDialog.close();
       editQuestion = null;
-    }, 'Domanda aggiornata per tutti.');
+      message = 'Domanda aggiornata per tutti.';
+    } catch (error) {
+      refreshWorkspace();
+      throw error;
+    } finally {
+      busy = false;
+    }
   }
   async function summarySave() {
     await run(async () => {
@@ -640,12 +651,8 @@
         >{/if}
     </details>
   {/if}
-  {#if failure}<p class="error" role="alert">{failure}</p>{/if}{#if message}<p
-      class="success"
-      role="status"
-    >
-      {message}
-    </p>{/if}
+  {#if failure}<p class="error" role="alert">{failure}</p>{/if}
+  <SuccessNotice {message} ondismiss={() => (message = '')} />
 </div>
 
 {#snippet card(s: Entity)}
@@ -683,21 +690,33 @@
     </div>
   </article>
 {/snippet}
-<dialog bind:this={questionDialog} aria-labelledby="edit-question-title">
+<dialog
+  bind:this={questionDialog}
+  aria-labelledby="edit-question-title"
+  oncancel={(event) => {
+    if (busy) event.preventDefault();
+    else editQuestion = null;
+  }}
+>
   <h2 id="edit-question-title">Modifica condivisa</h2>
   <p>
-    Il testo in {editLanguage === 'it' ? 'italiano' : 'inglese'} cambierà per tutti. L’altra lingua resta
-    invariata.
+    Le modifiche sono condivise con tutti. Apri «Mostra tutti i campi editoriali» per modificare
+    anche traduzioni, follow-up, motivazione, note e gli altri campi della domanda.
   </p>
-  <label>Testo della domanda<textarea bind:value={editText} rows="6"></textarea></label
-  >{#if failure}<p role="alert">{failure}</p>{/if}
-  <div class="card-controls">
-    <button disabled={busy} onclick={() => questionDialog.close()}>Annulla</button><button
-      class="primary"
-      disabled={busy}
-      onclick={saveQuestion}>Salva per tutti</button
-    >
-  </div>
+  {#if editQuestion}
+    <Editor
+      collection="questions"
+      entity={editQuestion}
+      {members}
+      {busy}
+      initialEditing
+      primaryFields={[editLanguage === 'it' ? 'textIt' : 'textEn']}
+      saveLabel="Salva per tutti"
+      onsave={saveQuestion}
+      oncancel={closeQuestion}
+      onclose={closeQuestion}
+    />
+  {/if}
 </dialog>
 <dialog bind:this={picker} aria-labelledby="question-picker-title">
   <h2 id="question-picker-title">Scegli una domanda</h2>
@@ -955,7 +974,7 @@
   dialog::backdrop {
     background: #18382c88;
   }
-  dialog textarea {
+  dialog :global(textarea) {
     width: 100%;
   }
   small {

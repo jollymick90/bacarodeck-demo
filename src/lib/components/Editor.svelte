@@ -25,7 +25,10 @@
     onedit = () => {},
     savedNotice = '',
     busy = false,
-    actionsAtTop = false
+    actionsAtTop = false,
+    initialEditing = false,
+    primaryFields,
+    saveLabel = 'Salva modifiche'
   }: {
     collection: Collection;
     entity: Entity;
@@ -38,9 +41,12 @@
     savedNotice?: string;
     busy?: boolean;
     actionsAtTop?: boolean;
+    initialEditing?: boolean;
+    primaryFields?: string[];
+    saveLabel?: string;
   } = $props();
   let draft = $state<Entity>(untrack(() => JSON.parse(JSON.stringify(entity))));
-  let readOnly = $state(untrack(() => Boolean(entity.revision)));
+  let readOnly = $state(untrack(() => !initialEditing && Boolean(entity.revision)));
   let descriptionLanguage = $state<'it' | 'en'>('it');
   let planDraft = $state<Entity | undefined>(
     untrack(() => (interviewPlan ? JSON.parse(JSON.stringify(interviewPlan)) : undefined))
@@ -110,7 +116,7 @@
           f.key === (descriptionLanguage === 'it' ? 'biographyEn' : 'biographyIt')
         ) &&
         !(interviewPlan && section === 'interviewPlans' && f.key === 'speakerId') &&
-        (advanced || mainKeys.includes(f.key))
+        (advanced || (primaryFields ?? mainKeys).includes(f.key))
     );
   }
   function update(draft: Entity, section: Collection, field: Field, value: string | boolean) {
@@ -342,7 +348,7 @@
     {#if error && !actionsAtTop}<p class="error wide" role="alert">{error}</p>{/if}
     {#if !readOnly && !actionsAtTop}<div class="form-actions wide">
         <button class="primary" disabled={busy} type="submit"
-          >{busy ? 'Salvataggio…' : 'Salva modifiche'}</button
+          >{busy ? 'Salvataggio…' : saveLabel}</button
         ><button type="button" onclick={oncancel} disabled={busy}>Annulla</button>
       </div>{/if}
   </form>
