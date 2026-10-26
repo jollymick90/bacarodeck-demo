@@ -1,6 +1,7 @@
 <script lang="ts">
   import StartInterview from './StartInterview.svelte';
   import SpeakerPhoto from '../SpeakerPhoto.svelte';
+  import SpeakerAudio from '../SpeakerAudio.svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import type { Dataset, Entity } from '$lib/fields';
@@ -396,6 +397,7 @@
           approfondimenti.
         </p>{/if}
     </section>
+    <SpeakerAudio speakerId={selected} />
     <div class="interest-bar">
       <button class:primary={saved(selected)} disabled={busy} onclick={() => interest(selected)}
         >{saved(selected) ? '★ Salvato tra i miei speaker' : 'Mi interessa'}</button

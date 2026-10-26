@@ -1,5 +1,33 @@
 # BacaroTech Interview Hub
 
+## Audio degli speaker
+
+Le schede conduttore di Abiodun Olowode, Andrey Breslav, Alexio Cassani, Alfonso
+Fuggetta e Alfonso Graziano includono un player con il briefing audio in italiano.
+Il link «Apri o scarica l’audio» permette anche l’apertura diretta. Il player usa
+`preload="none"`: il file viene richiesto quando si avvia l’ascolto, senza download
+automatico degli altri briefing o precache nel service worker.
+
+I cinque M4A in `static/audio/` sono asset pubblici del deployment Vercel,
+accessibili dal relativo URL anche senza login. Non richiedono Firebase Storage,
+nuove variabili d’ambiente o modifiche a Firestore. Per pubblicarli, includere i
+file audio nel normale commit e deploy dell’app.
+
+Gli originali in `../bacarodeck-audio/` sono stati compressi con FFmpeg da circa
+147,3 MB a 38,4 MB totali: AAC mono a 64 kbps, con indice iniziale per l’avvio
+rapido. Per preparare un nuovo file senza sovrascrivere un output esistente:
+
+```sh
+ffmpeg -hide_banner -nostdin -n -i sorgente.m4a -map 0:a:0 -vn \
+  -c:a aac -b:a 64k -ac 1 -map_metadata -1 -movflags +faststart \
+  static/audio/speaker-id.m4a
+```
+
+Per aggiungere altri briefing, inserire il file in `static/audio/` e aggiornare
+`src/lib/speaker-audio.ts` con l’ID esatto del catalogo, il titolo e la durata.
+Il file sorgente chiamato `alfonso-graziani-…` è associato a `alfonso-graziano`,
+come nel catalogo. Il player resta nascosto per gli speaker privi di audio.
+
 ## Vista conduttore
 
 La home `/` apre la vista per il telefono. «Mi interessa» salva uno speaker tra i
