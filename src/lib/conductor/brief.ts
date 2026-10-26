@@ -25,7 +25,7 @@ export function validateBrief(brief: Entity, data: Dataset): void {
     )
   )
     throw new Error('Talk non collegato allo speaker.');
-  for (const key of ['mainQuestionIds', 'classicQuestionIds']) {
+  for (const key of ['mainQuestionIds', 'optionalQuestionIds', 'classicQuestionIds']) {
     const ids = brief[key] || [];
     if (
       !Array.isArray(ids) ||
@@ -33,7 +33,9 @@ export function validateBrief(brief: Entity, data: Dataset): void {
       new Set(ids).size !== ids.length ||
       (key === 'mainQuestionIds' && ids.length > 3)
     )
-      throw new Error('Scegli al massimo tre domande principali, senza duplicati.');
+      throw new Error(
+        'Scegli al massimo tre domande principali e non ripetere le domande negli elenchi.'
+      );
     if (
       ids.some(
         (id) =>
@@ -44,6 +46,9 @@ export function validateBrief(brief: Entity, data: Dataset): void {
     )
       throw new Error('Una domanda non è disponibile per questo speaker. Ricarica la scheda.');
   }
+  const mainIds = new Set((brief.mainQuestionIds || []) as string[]);
+  if (((brief.optionalQuestionIds || []) as string[]).some((id) => mainIds.has(id)))
+    throw new Error('Una domanda non può essere sia principale sia opzionale.');
 }
 export function resolveBrief(
   data: Dataset,
@@ -65,6 +70,13 @@ export function resolveBrief(
   const mainQuestions = brief
     ? chosen('mainQuestionIds')
     : [...questions].sort((a, b) => Number(a.order || 0) - Number(b.order || 0)).slice(0, 3);
+  const optionalQuestions = chosen('optionalQuestionIds').filter(
+    (question) => !mainQuestions.some((main) => main.id === question.id)
+  );
+  const closingQuestion = mainQuestions.at(-1);
+  const interviewQuestions = closingQuestion
+    ? [...mainQuestions.slice(0, -1), ...optionalQuestions, closingQuestion]
+    : [];
   const editorial = String(brief?.[language === 'it' ? 'summaryIt' : 'summaryEn'] || '');
   const abstract = String(
     talk?.[language === 'it' ? 'abstractIt' : 'abstractEn'] || talk?.abstractMd || ''
@@ -73,6 +85,8 @@ export function resolveBrief(
     brief,
     talk,
     mainQuestions,
+    optionalQuestions,
+    interviewQuestions,
     classicQuestions: chosen('classicQuestionIds'),
     summary: editorial || abstract.slice(0, 500),
     summaryOrigin: editorial ? 'editorial' : abstract ? 'abstract_excerpt' : 'missing',

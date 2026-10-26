@@ -18,3 +18,29 @@ it('rejects a question removed before save', () => {
     prepareBriefUpdate({ id: 'x', speakerId: 'g', mainQuestionIds: ['gone'] }, data)
   ).toThrow();
 });
+
+it('preserves the selected order of additional optional questions', () => {
+  const brief = {
+    id: 'x',
+    speakerId: 'g',
+    mainQuestionIds: ['a'],
+    optionalQuestionIds: ['c', 'b']
+  };
+  expect(prepareBriefUpdate(brief, data).optionalQuestionIds).toEqual(['c', 'b']);
+});
+
+it('rejects unavailable, duplicate and main questions in the optional selection', () => {
+  for (const ids of [['gone'], ['b', 'b'], ['a']]) {
+    expect(() =>
+      prepareBriefUpdate(
+        {
+          id: 'x',
+          speakerId: 'g',
+          mainQuestionIds: ['a'],
+          optionalQuestionIds: ids
+        },
+        data
+      )
+    ).toThrow();
+  }
+});

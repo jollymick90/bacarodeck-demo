@@ -45,3 +45,54 @@ describe('shared conductor brief', () => {
     expect(resolveBrief(dataset, 'g', 'b').selectionOrigin).toBe('legacy_proposal');
   });
 });
+
+it('resolves optional questions in editorial order without adding unselected questions', () => {
+  const dataset: Dataset = {
+    ...data,
+    conductorBriefs: [
+      {
+        id: 'b',
+        speakerId: 'g',
+        talkId: 'a',
+        mainQuestionIds: ['q1'],
+        optionalQuestionIds: ['q2', 'bad', 'reject', 'missing']
+      }
+    ]
+  };
+  expect(resolveBrief(dataset, 'g', 'a').optionalQuestions.map((q) => q.id)).toEqual(['q2']);
+  expect(resolveBrief(data, 'g', 'a').optionalQuestions).toEqual([]);
+});
+
+it('places optional questions before the last main question and preserves the main selection', () => {
+  const dataset: Dataset = {
+    speakers: [{ id: 'g' }],
+    questions: [1, 2, 3, 4, 5].map((n) => ({ id: `q${n}`, speakerId: 'g', order: n })),
+    conductorBriefs: [
+      {
+        id: 'b',
+        speakerId: 'g',
+        mainQuestionIds: ['q1', 'q2', 'q3'],
+        optionalQuestionIds: ['q5', 'q4']
+      }
+    ]
+  };
+  const brief = resolveBrief(dataset, 'g');
+  expect(brief.mainQuestions.map((q) => q.id)).toEqual(['q1', 'q2', 'q3']);
+  expect(brief.interviewQuestions.map((q) => q.id)).toEqual(['q1', 'q2', 'q5', 'q4', 'q3']);
+  expect(
+    resolveBrief(
+      { ...dataset, conductorBriefs: [{ id: 'b', speakerId: 'g', mainQuestionIds: ['q1', 'q3'] }] },
+      'g'
+    ).interviewQuestions.map((q) => q.id)
+  ).toEqual(['q1', 'q3']);
+});
+
+it('keeps the only main question last when optional questions are selected', () => {
+  const dataset: Dataset = {
+    ...data,
+    conductorBriefs: [
+      { id: 'b', speakerId: 'g', talkId: 'a', mainQuestionIds: ['q1'], optionalQuestionIds: ['q2'] }
+    ]
+  };
+  expect(resolveBrief(dataset, 'g', 'a').interviewQuestions.map((q) => q.id)).toEqual(['q2', 'q1']);
+});

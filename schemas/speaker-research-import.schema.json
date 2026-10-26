@@ -680,6 +680,13 @@
               "type": "string"
             }
           },
+          "optionalQuestionIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
           "classicQuestionIds": {
             "type": "array",
             "uniqueItems": true,

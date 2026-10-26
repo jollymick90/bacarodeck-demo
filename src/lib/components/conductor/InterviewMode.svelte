@@ -25,7 +25,9 @@
       data.talks?.find(
         (t) => t.id === talkId && ((t.speakerIds as string[]) || []).includes(speakerId)
       ) || data.talks?.find((t) => ((t.speakerIds as string[]) || []).includes(speakerId));
-    return resolveBrief(data, speakerId, talk?.id || '', language).mainQuestions.map((q) => ({
+    const brief = resolveBrief(data, speakerId, talk?.id || '', language);
+    return brief.interviewQuestions.map((q) => ({
+      optional: brief.optionalQuestions.some((optional) => optional.id === q.id),
       id: q.id,
       text: String(
         q[language === 'it' ? 'textIt' : 'textEn'] || q.textIt || q.textEn || 'Domanda senza testo.'
@@ -49,6 +51,11 @@
         cards.findIndex((q) => q.id === questionId)
       )
     )
+  );
+  const firstOptional = cards.findIndex((question) => question.optional);
+  const finalIndex = cards.length - 1;
+  const canSkipOptional = $derived(
+    firstOptional >= 0 && index >= firstOptional - 1 && index < finalIndex
   );
   let leaving = $state(false);
   async function leave() {
@@ -94,6 +101,10 @@
 <section class="interview-mode" aria-label="Modalità intervista">
   <div class="question" aria-live="polite" aria-atomic="true">
     <div class="question-text">
+      {#if cards[index]?.optional}<p class="question-kind">Domanda opzionale · se c’è tempo</p>
+      {:else if firstOptional >= 0 && index === finalIndex}<p class="question-kind">
+          Domanda finale
+        </p>{/if}
       <Markdown text={cards[index]?.text || 'Nessuna domanda nella scaletta.'} />
     </div>
   </div>
@@ -102,6 +113,11 @@
     <button class="next" onclick={next} disabled={leaving || index >= cards.length - 1}
       >Prossima domanda</button
     >
+    {#if canSkipOptional}<button
+        class="skip"
+        disabled={leaving}
+        onclick={() => (index = finalIndex)}>Vai alla domanda finale</button
+      >{/if}
   </div>
 </section>
 
@@ -147,6 +163,7 @@
   }
   .controls {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
@@ -163,6 +180,17 @@
     background: transparent;
     border: 1px solid #a8b8cb;
     color: #fffdf7;
+  }
+  .question-kind {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #c9d7ea;
+  }
+  .skip {
+    flex-basis: 100%;
+    background: transparent;
+    color: #fffdf7;
+    border: 1px solid #a8b8cb;
   }
   .next {
     background: #fffdf7;

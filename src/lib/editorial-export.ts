@@ -127,6 +127,7 @@ export function buildEditorialExport(
       ['sourceIds', 'sources'],
       ['materialIds', 'materials'],
       ['mainQuestionIds', 'questions'],
+      ['optionalQuestionIds', 'questions'],
       ['classicQuestionIds', 'questions']
     ] as const) {
       for (const id of (entity[field] as string[] | undefined) || []) addDependency(collection, id);

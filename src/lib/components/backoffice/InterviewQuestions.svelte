@@ -25,13 +25,19 @@
   const language = $derived(page.url.searchParams.get('lang') === 'en' ? 'en' : 'it');
   const brief = $derived(resolveBrief(data, speakerId, talkId, language));
   const selectedIds = $derived(brief.mainQuestions.map((question) => question.id));
+  const optionalIds = $derived(brief.optionalQuestions.map((question) => question.id));
   const plan = $derived(data.interviewPlans?.find((plan) => plan.speakerId === speakerId));
   let sortByRating = $state(false);
   let busy = $state(false);
   let failure = $state('');
   const others = $derived(
     (data.questions || [])
-      .filter((question) => question.speakerId === speakerId && !selectedIds.includes(question.id))
+      .filter(
+        (question) =>
+          question.speakerId === speakerId &&
+          !selectedIds.includes(question.id) &&
+          !optionalIds.includes(question.id)
+      )
       .toSorted((a, b) =>
         sortByRating ? average(b) - average(a) : Number(a.order || 0) - Number(b.order || 0)
       )
@@ -54,7 +60,7 @@
     params.set(name, value);
     void goto(page.url.pathname + '?' + params, { noScroll: true, keepFocus: true });
   }
-  async function saveSelection(ids: string[]) {
+  async function saveSelection(ids: string[], optional = optionalIds) {
     if (busy) return;
     busy = true;
     failure = '';
@@ -66,6 +72,7 @@
           speakerId,
           talkId,
           mainQuestionIds: ids,
+          optionalQuestionIds: optional,
           classicQuestionIds: brief.brief?.classicQuestionIds || []
         },
         expectedRevision: brief.brief?.revision ?? null
@@ -83,10 +90,11 @@
       busy = false;
     }
   }
-  function move(index: number, direction: number) {
-    const ids = [...selectedIds];
+  function move(index: number, direction: number, optional = false) {
+    const ids = [...(optional ? optionalIds : selectedIds)];
     [ids[index], ids[index + direction]] = [ids[index + direction], ids[index]];
-    void saveSelection(ids);
+    if (optional) void saveSelection(selectedIds, ids);
+    else void saveSelection(ids);
   }
 </script>
 
@@ -135,6 +143,15 @@
       Nessuna domanda selezionata. Scegli fino a tre domande dall’elenco qui sotto.
     </p>{/each}
 </section>
+<section class="interview-selection" aria-label="Domande opzionali">
+  <h2>Domande opzionali <small>{optionalIds.length}</small></h2>
+  <p class="muted">
+    Da usare se c’è tempo, prima dell’ultima domanda principale, che resta la chiusura.
+  </p>
+  {#each brief.optionalQuestions as question, index (question.id)}
+    {@render questionCard(question, index, true)}
+  {:else}<p class="muted">Nessuna domanda opzionale selezionata.</p>{/each}
+</section>
 <section aria-label="Altre domande">
   <div class="section-heading">
     <h2>Altre domande</h2>
@@ -157,7 +174,7 @@
     >
   </div>
   {#if selectedIds.length === 3}<p class="muted">
-      Hai già tre domande per intervista. Togli una dalla selezione per sostituirla.
+      Hai già tre domande principali. Puoi aggiungere altre domande come opzionali.
     </p>{/if}
   {#each others as question (question.id)}{@render questionCard(question)}{:else}<p class="muted">
       Non ci sono altre domande.
@@ -183,9 +200,14 @@
   <a href={'/backoffice/speaker/' + encodeURIComponent(speakerId)}>Info e assegnazione</a>
 </details>
 
-{#snippet questionCard(question: Entity, index = -1)}
+{#snippet questionCard(question: Entity, index = -1, optional = false)}
   <article class="content-entry" class:interview-question={index >= 0}>
-    {#if index >= 0}<p class="selection-label">Domanda per intervista · {index + 1}</p>{/if}
+    {#if index >= 0}<p class="selection-label">
+        {optional ? 'Domanda opzionale' : 'Domanda principale'} · {index + 1}{!optional &&
+        index === selectedIds.length - 1
+          ? ' · Finale'
+          : ''}
+      </p>{/if}
     <div class="entry-meta">
       <span>{provenanceLabel('questions', question)} · {question.order || '—'}</span
       >{#if question.status}<span class="status">{translate(question.status)}</span>{/if}
@@ -217,23 +239,46 @@
       {#if index >= 0}
         <button
           disabled={busy}
-          onclick={() => saveSelection(selectedIds.filter((id) => id !== question.id))}
-          >Togli dall’intervista</button
+          onclick={() =>
+            optional
+              ? saveSelection(
+                  selectedIds,
+                  optionalIds.filter((id) => id !== question.id)
+                )
+              : saveSelection(selectedIds.filter((id) => id !== question.id))}
+          >{optional ? 'Togli dalle opzionali' : 'Togli dall’intervista'}</button
         >
         <button
-          aria-label={'Sposta domanda ' + (index + 1) + ' in alto'}
+          aria-label={'Sposta domanda ' + (optional ? 'opzionale ' : '') + (index + 1) + ' in alto'}
           disabled={busy || index === 0}
-          onclick={() => move(index, -1)}>↑</button
+          onclick={() => move(index, -1, optional)}>↑</button
         >
         <button
-          aria-label={'Sposta domanda ' + (index + 1) + ' in basso'}
-          disabled={busy || index === selectedIds.length - 1}
-          onclick={() => move(index, 1)}>↓</button
+          aria-label={'Sposta domanda ' +
+            (optional ? 'opzionale ' : '') +
+            (index + 1) +
+            ' in basso'}
+          disabled={busy || index === (optional ? optionalIds : selectedIds).length - 1}
+          onclick={() => move(index, 1, optional)}>↓</button
         >
+        {#if !optional}<button
+            disabled={busy}
+            onclick={() =>
+              saveSelection(
+                selectedIds.filter((id) => id !== question.id),
+                [...optionalIds, question.id]
+              )}>Rendi opzionale</button
+          >{/if}
       {:else}<button
           disabled={busy || selectedIds.length >= 3 || question.status === 'rejected'}
           onclick={() => saveSelection([...selectedIds, question.id])}>Usa per intervista</button
-        >{/if}
+        >
+        <button
+          disabled={busy || question.status === 'rejected'}
+          onclick={() => saveSelection(selectedIds, [...optionalIds, question.id])}
+          >Usa come opzionale</button
+        >
+      {/if}
       <a
         class="button-link"
         href={'/backoffice/contenuti/questions/' +

@@ -71,6 +71,7 @@ export const fields: Record<Collection, Field[]> = {
     f('summaryIt', 'Sintesi IT', 'markdown'),
     f('summaryEn', 'Sintesi EN', 'markdown'),
     f('mainQuestionIds', 'Domande principali', 'array'),
+    f('optionalQuestionIds', 'Domande opzionali', 'array'),
     f('classicQuestionIds', 'Domande classiche', 'array')
   ],
   speakerInterests: [f('speakerId', 'Speaker'), f('memberUid', 'Membro')],

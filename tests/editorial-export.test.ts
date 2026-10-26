@@ -169,3 +169,24 @@ it('optional votes never block restoration of independent documents', () => {
   const result = buildEditorialExport(rows, [{ questionId: 'missing', score: 5 }]);
   expect(previewImport(parseImport(JSON.stringify(result)), {})[0].blocked).toBe(false);
 });
+
+it('exports optional question references and lists their dependencies', () => {
+  const rows = exportCandidates(
+    {
+      conductorBriefs: [
+        {
+          id: 'brief',
+          speakerId: 'speaker',
+          mainQuestionIds: ['main'],
+          optionalQuestionIds: ['extra'],
+          entryOrigin: 'manual'
+        }
+      ]
+    },
+    []
+  );
+  const exported = buildEditorialExport(rows);
+  expect(exported.conductorBriefs?.[0].optionalQuestionIds).toEqual(['extra']);
+  expect(exported.requiredDocuments).toContainEqual({ collection: 'questions', id: 'extra' });
+  expect(() => parseImport(JSON.stringify(exported))).not.toThrow();
+});

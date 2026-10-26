@@ -96,10 +96,20 @@
     (data.questions || []).filter((q) => q.speakerId === selected && q.status !== 'rejected')
   );
   const liveId = $derived(
-    page.url.searchParams.get('question') || brief.mainQuestions[0]?.id || ''
+    page.url.searchParams.get('question') || brief.interviewQuestions[0]?.id || ''
   );
-  const current = $derived(brief.mainQuestions.find((q) => q.id === liveId));
-  const currentIndex = $derived(brief.mainQuestions.findIndex((q) => q.id === liveId));
+  const current = $derived(brief.interviewQuestions.find((q) => q.id === liveId));
+  const currentIndex = $derived(brief.interviewQuestions.findIndex((q) => q.id === liveId));
+  const firstOptional = $derived(
+    brief.interviewQuestions.findIndex((q) =>
+      brief.optionalQuestions.some((optional) => optional.id === q.id)
+    )
+  );
+  const canSkipOptional = $derived(
+    firstOptional >= 0 &&
+      currentIndex >= firstOptional - 1 &&
+      currentIndex < brief.interviewQuestions.length - 1
+  );
   const research = $derived(researchEntries(data, selected));
   function names(id: string) {
     return (data.speakerInterests || [])
@@ -162,7 +172,8 @@
   }
   async function saveSelection(
     ids: string[],
-    classic = (brief.brief?.classicQuestionIds || []) as string[]
+    classic = (brief.brief?.classicQuestionIds || []) as string[],
+    optional = brief.optionalQuestions.map((q) => q.id)
   ) {
     const record = {
       ...brief.brief,
@@ -170,6 +181,7 @@
       speakerId: selected,
       talkId,
       mainQuestionIds: ids,
+      optionalQuestionIds: optional.filter((id) => !ids.includes(id)),
       classicQuestionIds: classic
     };
     await api('/api/conductor/brief', {
@@ -197,6 +209,17 @@
       [ids[index], ids[index + direction]] = [ids[index + direction], ids[index]];
       await saveSelection(ids);
     }, 'Ordine aggiornato per tutti.');
+  }
+  async function moveOptional(index: number, direction: number) {
+    await run(async () => {
+      const ids = brief.optionalQuestions.map((q) => q.id);
+      [ids[index], ids[index + direction]] = [ids[index + direction], ids[index]];
+      await saveSelection(
+        brief.mainQuestions.map((q) => q.id),
+        undefined,
+        ids
+      );
+    }, 'Ordine delle opzionali aggiornato per tutti.');
   }
   function edit(q: Entity) {
     editQuestion = { ...q };
@@ -336,17 +359,24 @@
         questionId={current.id}
         back="scaletta"
       />
-      <p class="muted">Domanda {currentIndex + 1} di {brief.mainQuestions.length}</p>
+      <p class="muted">
+        Domanda {currentIndex + 1} di {brief.interviewQuestions
+          .length}{brief.optionalQuestions.some((q) => q.id === current.id) ? ' · Opzionale' : ''}
+      </p>
       <div class="interview-question"><Markdown text={qtext(current)} /></div>
       <div class="card-controls">
         {#if currentIndex > 0}<a
             class="nav-action"
-            href={speakerHref(true, brief.mainQuestions[currentIndex - 1].id)}>Indietro</a
+            href={speakerHref(true, brief.interviewQuestions[currentIndex - 1].id)}>Indietro</a
           >{:else}<button disabled>Indietro</button>{/if}
-        {#if currentIndex < brief.mainQuestions.length - 1}<a
+        {#if currentIndex < brief.interviewQuestions.length - 1}<a
             class="nav-action primary"
-            href={speakerHref(true, brief.mainQuestions[currentIndex + 1].id)}>Avanti</a
+            href={speakerHref(true, brief.interviewQuestions[currentIndex + 1].id)}>Avanti</a
           >{:else}<button disabled>Avanti</button>{/if}
+        {#if canSkipOptional}<a
+            class="nav-action"
+            href={speakerHref(true, brief.mainQuestions.at(-1)!.id)}>Vai alla domanda finale</a
+          >{/if}
       </div>
       {#if current[language === 'it' ? 'followUpIt' : 'followUpEn']}<details>
           <summary>Follow-up</summary><Markdown
@@ -414,7 +444,9 @@
       {#each brief.mainQuestions as q, index (q.id)}<article class="question-row">
           <span class="question-number">{index + 1}</span>
           <div>
-            <Markdown text={qtext(q)} />{#if !q[language === 'it' ? 'textIt' : 'textEn']}<small
+            <Markdown text={qtext(q)} />{#if index === brief.mainQuestions.length - 1}<small
+                >Domanda finale</small
+              >{/if}{#if !q[language === 'it' ? 'textIt' : 'textEn']}<small
                 >Traduzione mancante: testo originale.</small
               >{/if}
             <div class="question-actions">
@@ -470,9 +502,50 @@
       {#if brief.mainQuestions.length}
         <a
           class="nav-action primary start-interview"
-          href={speakerHref(true, brief.mainQuestions[0].id)}>Usa la scaletta</a
+          href={speakerHref(true, brief.interviewQuestions[0].id)}>Usa la scaletta</a
         >
       {:else}<button class="primary start-interview" disabled>Usa la scaletta</button>{/if}
+    </section>
+    <section aria-label="Domande opzionali" class="question-sheet">
+      <h2>Domande opzionali</h2>
+      <p class="muted">
+        Se c’è tempo, compaiono prima dell’ultima domanda principale, che resta la chiusura.
+      </p>
+      {#each brief.optionalQuestions as q, index (q.id)}
+        <article class="card">
+          <Markdown text={qtext(q)} />
+          <div class="question-actions">
+            <button disabled={busy} onclick={() => edit(q)}>Modifica</button>
+            <button
+              aria-label={'Sposta domanda opzionale ' + (index + 1) + ' in alto'}
+              disabled={busy || index === 0}
+              onclick={() => moveOptional(index, -1)}>↑</button
+            >
+            <button
+              aria-label={'Sposta domanda opzionale ' + (index + 1) + ' in basso'}
+              disabled={busy || index === brief.optionalQuestions.length - 1}
+              onclick={() => moveOptional(index, 1)}>↓</button
+            >
+            <button
+              disabled={busy}
+              onclick={() =>
+                run(
+                  () =>
+                    saveSelection(
+                      brief.mainQuestions.map((main) => main.id),
+                      undefined,
+                      brief.optionalQuestions
+                        .filter((optional) => optional.id !== q.id)
+                        .map((optional) => optional.id)
+                    ),
+                  'Domanda tolta dalle opzionali.'
+                )}>Togli dalle opzionali</button
+            >
+          </div>
+        </article>
+      {:else}<p class="muted">
+          Nessuna domanda opzionale. Puoi sceglierle da Tutte le domande.
+        </p>{/each}
     </section>
     <details>
       <summary>Domande classiche</summary>{#each brief.classicQuestions as q}<div class="card">
@@ -497,6 +570,27 @@
               href={'/topic/connessioni?node=' + encodeURIComponent('question:' + q.id)}
               >Domande simili e topic</a
             >
+            <button
+              disabled={busy ||
+                brief.mainQuestions.some((main) => main.id === q.id) ||
+                brief.optionalQuestions.some((optional) => optional.id === q.id)}
+              onclick={() =>
+                run(
+                  () =>
+                    saveSelection(
+                      brief.mainQuestions.map((main) => main.id),
+                      undefined,
+                      [...brief.optionalQuestions.map((optional) => optional.id), q.id]
+                    ),
+                  'Domanda aggiunta alle opzionali.'
+                )}
+            >
+              {brief.mainQuestions.some((main) => main.id === q.id)
+                ? 'Domanda principale'
+                : brief.optionalQuestions.some((optional) => optional.id === q.id)
+                  ? 'Già opzionale'
+                  : 'Usa come opzionale'}
+            </button>
             <button disabled={busy} onclick={() => edit(q)}>Modifica</button><button
               disabled={busy}
               onclick={() =>

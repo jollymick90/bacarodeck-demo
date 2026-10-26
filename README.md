@@ -34,8 +34,15 @@ La home `/` apre la vista per il telefono. «Mi interessa» salva uno speaker tr
 propri preferiti, visibili in cima anche quando assegnati a un collega. Gli interessi
 di ciascun account sono visibili a tutto il team e non prenotano l'intervista.
 
-La scheda riunisce talk, sintesi, tre domande principali, altre domande e ricerca.
-«Usa la scaletta» mostra una domanda alla volta. Testi, scelta e ordine sono comuni:
+La scheda riunisce talk, sintesi, tre domande principali, domande opzionali, altre domande e ricerca.
+«Usa la scaletta» mostra una domanda alla volta. Le domande opzionali si scelgono
+con «Usa come opzionale», si possono riordinare e restano condivise per il talk.
+La sequenza è: prime domande principali → opzionali → ultima domanda principale,
+che resta sempre la chiusura. In lettura e in modalità intervista, «Vai alla domanda
+finale» permette di saltare le opzionali quando manca tempo; senza opzionali la
+sequenza delle tre principali resta invariata. La modalità intervista conserva
+all'avvio una copia dei testi e dell'ordine, anche se altri modificano la scaletta.
+Testi, scelta e ordine sono comuni:
 una modifica vale per tutti. Se non è ancora stata salvata una scelta editoriale,
 l'app propone le prime domande attive nell'ordine esistente e segnala la proposta.
 La mancanza di tre domande o della sintesi non viene riempita con contenuti inventati.
@@ -75,7 +82,7 @@ Ogni schermata ha una pagina SvelteKit e un URL apribile direttamente:
 - `/speaker`, `/speaker/[id]`, `/speaker/[id]/scaletta`: elenco, scheda e lettura per il conduttore.
 - `/topic` e `/topic/[topic]`: esplorazione degli argomenti.
 - `/backoffice/speaker/[id]`: Info con biografia, assegnazione e modifica del profilo; `/note` per appunti e approfondimenti condivisi, con un popup ⓘ che ne spiega lo scopo; `/strumenti` per i prompt Gemini/ChatGPT/NotebookLM e l’importazione Markdown; `/intervista` unisce domande e preparazione; `/talk` per i dettagli del talk. I vecchi link `/domande` rimandano a `/intervista` e `/ricerca` a `/note`.
-- In Intervista le **Domande per intervista** compaiono prima delle altre, evidenziate e riordinabili. La selezione, fino a tre domande per talk, è condivisa con la scaletta conduttore. In assenza di una selezione salvata vengono proposte le prime tre domande, da confermare.
+- In Intervista le **Domande per intervista** compaiono prima delle altre, evidenziate e riordinabili. La selezione, fino a tre domande per talk, è condivisa con la scaletta conduttore. In assenza di una selezione salvata vengono proposte le prime tre domande, da confermare. Le opzionali hanno un elenco separato, senza consumare i tre posti principali; l’ultima delle principali è indicata come finale e viene mostrata dopo le opzionali.
 - `/backoffice/programmazione`: calendario delle interviste.
 - `/backoffice/contenuti/[collection]/[id]` e `/backoffice/nuovo/[collection]`: lettura/modifica e creazione dei contenuti.
 - `/backoffice/importa`, `/esporta`, `/backup`, `/tag`, `/accessi`: strumenti dedicati (tutti sotto `/backoffice`).

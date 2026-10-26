@@ -33,3 +33,21 @@ it('blocks restoring a brief whose questions are missing in both workspaces', ()
   });
   expect(() => planRestore(source, makeBackup({}))).toThrow();
 });
+
+it('round trips optional selections and requires their referenced questions on restore', () => {
+  const source = makeBackup({
+    speakers: [{ id: 'g', fullName: 'Giulia' }],
+    questions: [
+      { id: 'main', speakerId: 'g' },
+      { id: 'extra', speakerId: 'g' }
+    ],
+    conductorBriefs: [
+      { id: 'b', speakerId: 'g', mainQuestionIds: ['main'], optionalQuestionIds: ['extra'] }
+    ]
+  });
+  const parsed = parseBackup(JSON.stringify(source));
+  expect(parsed.data.conductorBriefs[0].optionalQuestionIds).toEqual(['extra']);
+  expect(() => planRestore(parsed, makeBackup({}))).not.toThrow();
+  parsed.data.questions = parsed.data.questions.filter((q) => q.id !== 'extra');
+  expect(() => planRestore(parsed, makeBackup({}))).toThrow();
+});
