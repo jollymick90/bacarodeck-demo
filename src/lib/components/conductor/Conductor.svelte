@@ -362,7 +362,23 @@
   {:else if speaker && mode === 'reading'}
     <a class="nav-action" href={speakerHref()}>Torna alla scheda</a>
     <SpeakerPhoto {speaker} compact />
-    <h1>{speaker.fullName}</h1>
+    <div class="brief-heading">
+      <h1>{speaker.fullName}</h1>
+      <div class="language-switch" role="group" aria-label="Lingua domande">
+        <button
+          type="button"
+          class:current={language === 'it'}
+          aria-pressed={language === 'it'}
+          onclick={() => changeOption('lang', 'it')}>IT</button
+        >
+        <button
+          type="button"
+          class:current={language === 'en'}
+          aria-pressed={language === 'en'}
+          onclick={() => changeOption('lang', 'en')}>EN</button
+        >
+      </div>
+    </div>
     {#if current}<StartInterview
         speakerId={selected}
         {talkId}

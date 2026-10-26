@@ -60,6 +60,8 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
         order: n,
         textIt: `Domanda preparata ${n}?`,
         textEn: `Prepared question ${n}?`,
+        followUpIt: `Approfondimento ${n}?`,
+        followUpEn: `Follow-up question ${n}?`,
         status: 'suggested'
       }
     }))
@@ -150,6 +152,27 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
   await expect(
     page.locator('.interview-question').getByText('Domanda preparata 2?', { exact: true })
   ).toBeVisible();
+  const languageSwitch = page.getByRole('group', { name: 'Lingua domande', exact: true });
+  await expect(languageSwitch).toBeVisible();
+  await languageSwitch.getByRole('button', { name: 'EN', exact: true }).click();
+  await expect(languageSwitch.getByRole('button', { name: 'EN', exact: true })).toHaveAttribute(
+    'aria-pressed',
+    'true'
+  );
+  await expect(page).toHaveURL(new RegExp('lang=en'));
+  await expect(page).toHaveURL(new RegExp('question=' + id + '-q2'));
+  await expect(page).toHaveURL(new RegExp('talk=' + id + '-talk'));
+  await expect(page.locator('.interview-question')).toContainText('Prepared question 2?');
+  await page.getByText('Follow-up', { exact: true }).click();
+  await expect(page.getByText('Follow-up question 2?', { exact: true })).toBeVisible();
+  await page.reload();
+  await expect(page.locator('.interview-question')).toContainText('Prepared question 2?');
+  await languageSwitch.getByRole('button', { name: 'IT', exact: true }).click();
+  await expect(page).toHaveURL(new RegExp('lang=it'));
+  await expect(page).toHaveURL(new RegExp('question=' + id + '-q2'));
+  await expect(page.locator('.interview-question')).toContainText('Domanda preparata 2?');
+  await page.getByText('Follow-up', { exact: true }).click();
+  await expect(page.getByText('Approfondimento 2?', { exact: true })).toBeVisible();
   await page.getByRole('link', { name: 'Torna alla scheda' }).click();
   await page.getByRole('button', { name: 'Assegna / cambia' }).click();
   await page.getByLabel('Conduttore', { exact: true }).selectOption('alberto');

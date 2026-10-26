@@ -35,7 +35,10 @@ propri preferiti, visibili in cima anche quando assegnati a un collega. Gli inte
 di ciascun account sono visibili a tutto il team e non prenotano l'intervista.
 
 La scheda riunisce talk, sintesi, tre domande principali, domande opzionali, altre domande e ricerca.
-«Usa la scaletta» mostra una domanda alla volta. Le domande opzionali si scelgono
+«Usa la scaletta» mostra una domanda alla volta. I pulsanti IT / EN permettono di
+cambiare lingua senza perdere la domanda corrente o il talk selezionato; la scelta
+resta nell’URL anche dopo il refresh e si applica anche ai follow-up.
+Le domande opzionali si scelgono
 con «Usa come opzionale», si possono riordinare e restano condivise per il talk.
 La sequenza è: prime domande principali → opzionali → ultima domanda principale,
 che resta sempre la chiusura. In lettura e in modalità intervista, «Vai alla domanda
@@ -77,8 +80,9 @@ inizialmente mostra il testo nella lingua corrente; «Mostra tutti i campi edito
 consente di modificare anche entrambe le lingue, follow-up, motivazione, tag, fonti,
 materiali, stato, ordine e note. «Annulla» scarta la bozza; un errore o conflitto
 la conserva nel popup. Dopo un conflitto, chiudere e riaprire carica i dati aggiornati.
-Le notifiche di successo condivise e del conduttore scompaiono dopo quattro secondi
-e si possono chiudere subito con «Chiudi notifica».
+Le notifiche di successo condivise e del conduttore mostrano un conto alla rovescia
+e scompaiono dopo tre secondi. Gli aggiornamenti del callback di chiusura non
+riavviano il timer; «Chiudi notifica» consente comunque di chiuderle subito.
 Da un materiale di ricerca si può incollare una domanda, controllare l'anteprima e
 confermare la creazione del record strutturato, conservando il materiale originale.
 Sintesi, domande classiche e scaletta si gestiscono dalla scheda conduttore collegata.
