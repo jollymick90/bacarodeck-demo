@@ -128,7 +128,7 @@
 </div>
 {#if failure}<p role="alert" class="error">{failure}</p>{/if}
 <section class="interview-selection" aria-label="Domande per intervista">
-  <h2>Domande per intervista <small>{selectedIds.length}/3</small></h2>
+  <h2>Domande per intervista <small>{selectedIds.length}</small></h2>
   <p class="muted">Questa selezione e il suo ordine sono condivisi con i conduttori.</p>
   {#if brief.selectionOrigin === 'legacy_proposal'}<p class="notice">
       Proposte dall’ordine attuale: la scaletta non è ancora stata confermata.
@@ -139,9 +139,7 @@
   {#each brief.mainQuestions as question, index (question.id)}{@render questionCard(
       question,
       index
-    )}{:else}<p>
-      Nessuna domanda selezionata. Scegli fino a tre domande dall’elenco qui sotto.
-    </p>{/each}
+    )}{:else}<p>Nessuna domanda selezionata. Scegli le domande dall’elenco qui sotto.</p>{/each}
 </section>
 <section class="interview-selection" aria-label="Domande opzionali">
   <h2>Domande opzionali <small>{optionalIds.length}</small></h2>
@@ -173,9 +171,6 @@
       >Prepara domande con AI</a
     >
   </div>
-  {#if selectedIds.length === 3}<p class="muted">
-      Hai già tre domande principali. Puoi aggiungere altre domande come opzionali.
-    </p>{/if}
   {#each others as question (question.id)}{@render questionCard(question)}{:else}<p class="muted">
       Non ci sono altre domande.
     </p>{/each}
@@ -270,7 +265,7 @@
               )}>Rendi opzionale</button
           >{/if}
       {:else}<button
-          disabled={busy || selectedIds.length >= 3 || question.status === 'rejected'}
+          disabled={busy || question.status === 'rejected'}
           onclick={() => saveSelection([...selectedIds, question.id])}>Usa per intervista</button
         >
         <button

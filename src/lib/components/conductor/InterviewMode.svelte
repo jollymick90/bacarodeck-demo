@@ -18,6 +18,7 @@
     back?: string;
   } = $props();
   const workspace = getWorkspace();
+  let activeLanguage = $state(untrack(() => language));
   // Freeze the prepared cards for this interview, even if the team edits the shared data.
   const cards = untrack(() => {
     const data = workspace.data;
@@ -29,13 +30,14 @@
     return brief.interviewQuestions.map((q) => ({
       optional: brief.optionalQuestions.some((optional) => optional.id === q.id),
       id: q.id,
-      text: String(
-        q[language === 'it' ? 'textIt' : 'textEn'] || q.textIt || q.textEn || 'Domanda senza testo.'
-      )
+      textIt: String(q.textIt || ''),
+      textEn: String(q.textEn || ''),
+      followUpIt: String(q.followUpIt || ''),
+      followUpEn: String(q.followUpEn || '')
     }));
   });
   const returnHref = untrack(() => {
-    const params = new URLSearchParams({ lang: language });
+    const params = new URLSearchParams();
     if (talkId) params.set('talk', talkId);
     if (back === 'scaletta' && questionId) params.set('question', questionId);
     const base =
@@ -52,6 +54,20 @@
       )
     )
   );
+  const current = $derived(cards[index]);
+  const questionText = $derived(
+    current?.[activeLanguage === 'it' ? 'textIt' : 'textEn'] ||
+      current?.textIt ||
+      current?.textEn ||
+      'Domanda senza testo.'
+  );
+  const followUp = $derived(
+    current?.[activeLanguage === 'it' ? 'followUpIt' : 'followUpEn'] ||
+      current?.followUpIt ||
+      current?.followUpEn ||
+      ''
+  );
+  let showFollowUp = $state(false);
   const firstOptional = cards.findIndex((question) => question.optional);
   const finalIndex = cards.length - 1;
   const canSkipOptional = $derived(
@@ -66,10 +82,19 @@
     } catch {
       /* Already exited by browser. */
     }
-    await goto(returnHref);
+    const url = new URL(returnHref, window.location.origin);
+    url.searchParams.set('lang', activeLanguage);
+    await goto(url.pathname + url.search);
   }
   function next() {
-    if (index < cards.length - 1) index++;
+    if (index < cards.length - 1) {
+      showFollowUp = false;
+      index++;
+    }
+  }
+  function skipOptional() {
+    showFollowUp = false;
+    index = finalIndex;
   }
   onMount(() => {
     let wasFullscreen = Boolean(document.fullscreenElement);
@@ -100,23 +125,57 @@
 <svelte:head><title>Modalità intervista · BacaroTech</title></svelte:head>
 <section class="interview-mode" aria-label="Modalità intervista">
   <div class="question" aria-live="polite" aria-atomic="true">
-    <div class="question-text">
-      {#if cards[index]?.optional}<p class="question-kind">Domanda opzionale · se c’è tempo</p>
-      {:else if firstOptional >= 0 && index === finalIndex}<p class="question-kind">
-          Domanda finale
-        </p>{/if}
-      <Markdown text={cards[index]?.text || 'Nessuna domanda nella scaletta.'} />
+    <div class="question-content">
+      <div class="question-text" lang={activeLanguage}>
+        {#if cards[index]?.optional}<p class="question-kind">Domanda opzionale · se c’è tempo</p>
+        {:else if firstOptional >= 0 && index === finalIndex}<p class="question-kind">
+            Domanda finale
+          </p>{/if}
+        <Markdown text={current ? questionText : 'Nessuna domanda nella scaletta.'} />
+      </div>
+      {#if showFollowUp && followUp}
+        <section
+          class="follow-up"
+          id="interview-follow-up"
+          aria-label="Follow-up"
+          lang={activeLanguage}
+        >
+          <h2>Follow-up</h2>
+          <Markdown text={followUp} />
+        </section>
+      {/if}
     </div>
   </div>
   <div class="controls">
     <button class="exit" onclick={leave} disabled={leaving}>Esci</button>
+    <div class="language-switch" role="group" aria-label="Lingua domande">
+      <button
+        disabled={leaving}
+        aria-pressed={activeLanguage === 'it'}
+        onclick={() => (activeLanguage = 'it')}>IT</button
+      >
+      <button
+        disabled={leaving}
+        aria-pressed={activeLanguage === 'en'}
+        onclick={() => (activeLanguage = 'en')}>EN</button
+      >
+    </div>
+    {#if followUp}
+      <button
+        class="follow-up-toggle"
+        disabled={leaving}
+        aria-expanded={showFollowUp}
+        aria-controls={showFollowUp ? 'interview-follow-up' : undefined}
+        onclick={() => (showFollowUp = !showFollowUp)}
+      >
+        {showFollowUp ? 'Nascondi follow-up' : 'Mostra follow-up'}
+      </button>
+    {/if}
     <button class="next" onclick={next} disabled={leaving || index >= cards.length - 1}
       >Prossima domanda</button
     >
-    {#if canSkipOptional}<button
-        class="skip"
-        disabled={leaving}
-        onclick={() => (index = finalIndex)}>Vai alla domanda finale</button
+    {#if canSkipOptional}<button class="skip" disabled={leaving} onclick={skipOptional}
+        >Vai alla domanda finale</button
       >{/if}
   </div>
 </section>
@@ -142,10 +201,12 @@
     overscroll-behavior: contain;
     padding: clamp(12px, 3vmin, 32px) 0;
   }
-  .question-text {
+  .question-content {
     width: 100%;
     max-width: 1100px;
     margin: auto;
+  }
+  .question-text {
     font-size: clamp(1.6rem, 5.3vmin, 4rem);
     font-weight: 600;
     line-height: 1.3;
@@ -176,10 +237,42 @@
     touch-action: manipulation;
     border-radius: 10px;
   }
-  .exit {
+  .exit,
+  .follow-up-toggle,
+  .language-switch button {
     background: transparent;
     border: 1px solid #a8b8cb;
     color: #fffdf7;
+  }
+  .language-switch {
+    display: flex;
+    gap: 8px;
+  }
+  .language-switch button[aria-pressed='true'] {
+    background: #fffdf7;
+    color: #13243b;
+    border-color: #fffdf7;
+  }
+  .follow-up {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #a8b8cb;
+    font-size: clamp(1.2rem, 3.5vmin, 2.5rem);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+  .follow-up h2 {
+    color: #c9d7ea;
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem;
+  }
+  .follow-up :global(.markdown) {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+  .follow-up :global(a) {
+    color: inherit;
   }
   .question-kind {
     font-size: 0.9rem;

@@ -31,7 +31,7 @@ test('interview shows only one question, rotates, finishes and exits without cha
           data: { id, fullName: 'Interview mode test' },
           expectedRevision: null
         },
-        ...[1, 2, 3].map((n) => ({
+        ...[1, 2, 3, 4].map((n) => ({
           collection: 'questions',
           data: {
             id: `${id}-q${n}`,
@@ -43,6 +43,8 @@ test('interview shows only one question, rotates, finishes and exits without cha
                 ? ' When an AI agent produces convincing code and tests from the same mistaken specification, how would you introduce an independent check without making every delivery depend on a single expert reviewer?'
                 : ''),
             order: n,
+            followUpIt: n === 3 ? '' : `Approfondimento ${n}?`,
+            followUpEn: n === 3 || n === 4 ? '' : `Follow-up ${n}?`,
             status: 'suggested'
           },
           expectedRevision: null
@@ -60,22 +62,53 @@ test('interview shows only one question, rotates, finishes and exits without cha
   await expect(viewer).not.toContainText('Interview question 2?');
   await expect(page.locator('header')).toHaveCount(0);
   await expect(page.locator('nav')).toHaveCount(0);
-  await expect(page.getByRole('button')).toHaveCount(2);
+  const languages = viewer.getByRole('group', { name: 'Lingua domande' });
+  await expect(languages.getByRole('button', { name: 'EN', exact: true })).toHaveAttribute(
+    'aria-pressed',
+    'true'
+  );
+  const followUp = viewer.getByRole('region', { name: 'Follow-up', exact: true });
+  await expect(followUp).toHaveCount(0);
+  await viewer.getByRole('button', { name: 'Mostra follow-up', exact: true }).click();
+  await expect(followUp).toContainText('Follow-up 1?');
+  await languages.getByRole('button', { name: 'IT', exact: true }).click();
+  await expect(viewer).toContainText('Domanda da intervista 1?');
+  await expect(followUp).toContainText('Approfondimento 1?');
+  await viewer.getByRole('button', { name: 'Nascondi follow-up', exact: true }).click();
+  await expect(followUp).toHaveCount(0);
+  await languages.getByRole('button', { name: 'EN', exact: true }).click();
   if (info.project.name === 'desktop')
     expect(await page.evaluate(() => !!document.fullscreenElement)).toBe(true);
   if (info.project.name === 'mobile') await page.setViewportSize({ width: 844, height: 390 });
   await expect(page.getByRole('button', { name: 'Prossima domanda' })).toBeInViewport();
   await page.getByRole('button', { name: 'Prossima domanda' }).click();
   await expect(viewer).toContainText('Interview question 2?');
+  await expect(followUp).toHaveCount(0);
+  await languages.getByRole('button', { name: 'IT', exact: true }).click();
+  await expect(viewer).toContainText('Domanda da intervista 2?');
+  await languages.getByRole('button', { name: 'EN', exact: true }).click();
+  await expect(viewer).toContainText('Interview question 2?');
+  await viewer.getByRole('button', { name: 'Mostra follow-up', exact: true }).click();
+  await expect(followUp).toContainText('Follow-up 2?');
   await page.screenshot({ path: `.superpowers/interview-mode/${info.project.name}-landscape.png` });
   if (info.project.name === 'mobile') await page.setViewportSize({ width: 390, height: 844 });
   await page.screenshot({ path: `.superpowers/interview-mode/${info.project.name}-portrait.png` });
   await expect(page.getByRole('button', { name: 'Esci', exact: true })).toBeInViewport();
   await page.getByRole('button', { name: 'Prossima domanda' }).click();
   await expect(viewer).toContainText('Interview question 3?');
+  await expect(followUp).toHaveCount(0);
+  await expect(viewer.getByRole('button', { name: 'Mostra follow-up', exact: true })).toHaveCount(
+    0
+  );
+  await page.getByRole('button', { name: 'Prossima domanda' }).click();
+  await expect(viewer).toContainText('Interview question 4?');
+  await viewer.getByRole('button', { name: 'Mostra follow-up', exact: true }).click();
+  await expect(followUp).toContainText('Approfondimento 4?');
   await expect(page.getByRole('button', { name: 'Prossima domanda' })).toBeDisabled();
+  await languages.getByRole('button', { name: 'IT', exact: true }).click();
   await page.getByRole('button', { name: 'Esci', exact: true }).click();
   await expect(page).toHaveURL(new RegExp(`/speaker/${id}\\?`));
+  expect(new URL(page.url()).searchParams.get('lang')).toBe('it');
   await expect.poll(() => page.evaluate(() => !!document.fullscreenElement)).toBe(false);
   await expect(page.getByRole('button', { name: 'Avvia intervista', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Avvia intervista', exact: true }).click();

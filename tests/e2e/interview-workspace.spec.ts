@@ -104,7 +104,21 @@ test('info is separate and interview questions follow the shared talk selection'
       'Domanda 1',
       'Domanda 4'
     ]);
-    await expect(others.getByRole('button', { name: 'Usa per intervista' })).toBeDisabled();
+    await others.getByRole('button', { name: 'Usa per intervista' }).click();
+    await expect(selected.locator('article h3')).toHaveText([
+      'Domanda 3',
+      'Domanda 1',
+      'Domanda 4',
+      'Domanda 2'
+    ]);
+    await page.reload();
+    await expect(selected.locator('article')).toHaveCount(4);
+    await selected
+      .locator('article')
+      .filter({ has: page.getByRole('heading', { name: 'Domanda 2', exact: true }) })
+      .getByRole('button', { name: 'Togli dall’intervista' })
+      .click();
+    await expect(selected.locator('article')).toHaveCount(3);
     await selected
       .locator('article')
       .filter({ has: page.getByRole('heading', { name: 'Domanda 1', exact: true }) })

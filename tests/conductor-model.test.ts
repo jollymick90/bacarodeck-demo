@@ -26,8 +26,8 @@ describe('shared conductor brief', () => {
     expect(result.selectionOrigin).toBe('legacy_proposal');
     expect(result.summaryOrigin).toBe('abstract_excerpt');
   });
-  it('rejects duplicates, more than three and another speaker questions', () => {
-    for (const ids of [['q1', 'q1'], ['q1', 'q2', 'q3', 'q4'], ['bad']]) {
+  it('rejects duplicates, unavailable and another speaker questions', () => {
+    for (const ids of [['q1', 'q1'], ['missing'], ['reject'], ['bad']]) {
       expect(() =>
         validateBrief({ id: 'x', speakerId: 'g', talkId: 'a', mainQuestionIds: ids }, data)
       ).toThrow();
@@ -35,6 +35,35 @@ describe('shared conductor brief', () => {
     expect(() =>
       validateBrief({ id: 'x', speakerId: 'g', talkId: 'b', mainQuestionIds: [] }, data)
     ).not.toThrow();
+  });
+  it('accepts more than three main questions and preserves their editorial order', () => {
+    const dataset: Dataset = {
+      ...data,
+      questions: [1, 2, 3, 4, 5].map((n) => ({ id: `q${n}`, speakerId: 'g', order: n }))
+    };
+    const brief = {
+      id: 'extended',
+      speakerId: 'g',
+      talkId: 'a',
+      mainQuestionIds: ['q4', 'q1', 'q3', 'q2'],
+      optionalQuestionIds: ['q5']
+    };
+    expect(() => validateBrief(brief, dataset)).not.toThrow();
+    const resolved = resolveBrief({ ...dataset, conductorBriefs: [brief] }, 'g', 'a');
+    expect(resolved.mainQuestions.map((q) => q.id)).toEqual(brief.mainQuestionIds);
+    expect(resolved.interviewQuestions.map((q) => q.id)).toEqual(['q4', 'q1', 'q3', 'q5', 'q2']);
+  });
+  it('offers all available legacy questions without truncating the interview', () => {
+    const dataset: Dataset = {
+      ...data,
+      questions: [4, 2, 1, 3].map((n) => ({ id: `q${n}`, speakerId: 'g', order: n }))
+    };
+    expect(resolveBrief(dataset, 'g', 'a').mainQuestions.map((q) => q.id)).toEqual([
+      'q1',
+      'q2',
+      'q3',
+      'q4'
+    ]);
   });
   it('does not borrow editorial choices from another talk', () => {
     const dataset = {

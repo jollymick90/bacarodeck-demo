@@ -16,6 +16,20 @@ it('round trips interests and a shared brief', () => {
   });
   expect(parseBackup(JSON.stringify(backup)).data.speakerInterests[0].memberUid).toBe('m');
 });
+it('imports and restores briefs with more than three main questions', () => {
+  const mainQuestionIds = ['q4', 'q2', 'q1', 'q3'];
+  const data = {
+    speakers: [{ id: 'g', fullName: 'Giulia' }],
+    questions: mainQuestionIds.map((id) => ({ id, speakerId: 'g' })),
+    conductorBriefs: [{ id: 'b', speakerId: 'g', mainQuestionIds }]
+  };
+  expect(
+    parseImport(JSON.stringify({ schemaVersion: 1, ...data })).conductorBriefs![0].mainQuestionIds
+  ).toEqual(mainQuestionIds);
+  const backup = parseBackup(JSON.stringify(makeBackup(data)));
+  expect(backup.data.conductorBriefs[0].mainQuestionIds).toEqual(mainQuestionIds);
+  expect(() => planRestore(backup, makeBackup({}))).not.toThrow();
+});
 it('rejects interests in ordinary research import', () => {
   expect(() =>
     parseImport(

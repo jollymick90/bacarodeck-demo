@@ -6,7 +6,7 @@ La home `/` apre la vista per il telefono. «Mi interessa» salva uno speaker tr
 propri preferiti, visibili in cima anche quando assegnati a un collega. Gli interessi
 di ciascun account sono visibili a tutto il team e non prenotano l'intervista.
 
-La scheda riunisce talk, sintesi, tre domande principali, domande opzionali, altre domande e ricerca.
+La scheda riunisce talk, sintesi, domande principali, domande opzionali, altre domande e ricerca.
 «Usa la scaletta» mostra una domanda alla volta. I pulsanti IT / EN permettono di
 cambiare lingua senza perdere la domanda corrente o il talk selezionato; la scelta
 resta nell’URL anche dopo il refresh e si applica anche ai follow-up.
@@ -15,12 +15,12 @@ con «Usa come opzionale», si possono riordinare e restano condivise per il tal
 La sequenza è: prime domande principali → opzionali → ultima domanda principale,
 che resta sempre la chiusura. In lettura e in modalità intervista, «Vai alla domanda
 finale» permette di saltare le opzionali quando manca tempo; senza opzionali la
-sequenza delle tre principali resta invariata. La modalità intervista conserva
+sequenza delle principali resta invariata. La modalità intervista conserva
 all'avvio una copia dei testi e dell'ordine, anche se altri modificano la scaletta.
 Testi, scelta e ordine sono comuni:
 una modifica vale per tutti. Se non è ancora stata salvata una scelta editoriale,
 l'app propone le prime domande attive nell'ordine esistente e segnala la proposta.
-La mancanza di tre domande o della sintesi non viene riempita con contenuti inventati.
+La mancanza di domande o della sintesi non viene riempita con contenuti inventati.
 
 «Assegna / cambia» usa il team editoriale; una sostituzione richiede una conferma
 con il riepilogo. Piano e slot collegati vengono aggiornati insieme. I vecchi slot
@@ -65,7 +65,7 @@ Ogni schermata ha una pagina SvelteKit e un URL apribile direttamente:
 - `/speaker`, `/speaker/[id]`, `/speaker/[id]/scaletta`: elenco, scheda e lettura per il conduttore.
 - `/topic` e `/topic/[topic]`: esplorazione degli argomenti.
 - `/backoffice/speaker/[id]`: Info con biografia, assegnazione e modifica del profilo; `/note` per appunti e approfondimenti condivisi, con un popup ⓘ che ne spiega lo scopo; `/strumenti` per i prompt Gemini/ChatGPT/NotebookLM e l’importazione Markdown; `/intervista` unisce domande e preparazione; `/talk` per i dettagli del talk. I vecchi link `/domande` rimandano a `/intervista` e `/ricerca` a `/note`.
-- In Intervista le **Domande per intervista** compaiono prima delle altre, evidenziate e riordinabili. La selezione, fino a tre domande per talk, è condivisa con la scaletta conduttore. In assenza di una selezione salvata vengono proposte le prime tre domande, da confermare. Le opzionali hanno un elenco separato, senza consumare i tre posti principali; l’ultima delle principali è indicata come finale e viene mostrata dopo le opzionali.
+- In Intervista le **Domande per intervista** compaiono prima delle altre, evidenziate e riordinabili. La selezione può superare le tre domande per talk ed è condivisa con la scaletta conduttore. In assenza di una selezione salvata vengono proposte tutte le domande attive nell’ordine esistente, da confermare. Le opzionali hanno un elenco separato; l’ultima delle principali è indicata come finale e viene mostrata dopo le opzionali.
 - `/backoffice/programmazione`: calendario delle interviste.
 - `/backoffice/contenuti/[collection]/[id]` e `/backoffice/nuovo/[collection]`: lettura/modifica e creazione dei contenuti.
 - `/backoffice/importa`, `/esporta`, `/backup`, `/tag`, `/accessi`: strumenti dedicati (tutti sotto `/backoffice`).
@@ -510,9 +510,15 @@ prioritarie; un successivo import può sostituirle soltanto selezionando le diff
 
 **Avvia intervista**, nella scheda conduttore, nella scaletta o nel tab Intervista di
 Gestione, apre `/speaker/[speakerId]/intervista`: una domanda alla volta, testo grande,
-solo **Prossima domanda** ed **Esci**. Usa l'ordine e la lingua della scaletta corrente;
-i testi vengono mantenuti per la durata della lettura, evitando cambi improvvisi
-quando un collega modifica i contenuti. Non scrive modifiche alla scaletta condivisa.
+con **Prossima domanda**, **Esci** e i pulsanti **IT / EN** per cambiare lingua
+senza perdere la domanda corrente. **Mostra follow-up** apre l'approfondimento
+della domanda nella lingua selezionata; **Nascondi follow-up** lo richiude.
+Se manca una traduzione, viene mostrato il testo disponibile nell'altra lingua.
+Passando alla domanda successiva o saltando alla finale, il follow-up si richiude.
+La selezione può contenere più di tre domande. L'ordine e i testi in entrambe le
+lingue vengono mantenuti per la durata della lettura, evitando cambi improvvisi
+quando un collega modifica i contenuti. All'uscita viene conservata l'ultima
+lingua scelta. Non scrive modifiche alla scaletta condivisa.
 
 La richiesta di schermo intero parte dal clic dell'utente. Se il browser non supporta
 o rifiuta la Fullscreen API, resta la vista a tutto viewport senza header/footer.

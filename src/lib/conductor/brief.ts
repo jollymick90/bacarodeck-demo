@@ -30,12 +30,9 @@ export function validateBrief(brief: Entity, data: Dataset): void {
     if (
       !Array.isArray(ids) ||
       !ids.every((id) => typeof id === 'string') ||
-      new Set(ids).size !== ids.length ||
-      (key === 'mainQuestionIds' && ids.length > 3)
+      new Set(ids).size !== ids.length
     )
-      throw new Error(
-        'Scegli al massimo tre domande principali e non ripetere le domande negli elenchi.'
-      );
+      throw new Error('Scegli elenchi di domande validi e non ripetere le domande.');
     if (
       ids.some(
         (id) =>
@@ -69,7 +66,7 @@ export function resolveBrief(
     ((brief?.[key] || []) as string[]).flatMap((id) => questions.find((q) => q.id === id) || []);
   const mainQuestions = brief
     ? chosen('mainQuestionIds')
-    : [...questions].sort((a, b) => Number(a.order || 0) - Number(b.order || 0)).slice(0, 3);
+    : [...questions].sort((a, b) => Number(a.order || 0) - Number(b.order || 0));
   const optionalQuestions = chosen('optionalQuestionIds').filter(
     (question) => !mainQuestions.some((main) => main.id === question.id)
   );

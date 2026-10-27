@@ -514,10 +514,10 @@
               </details>{/if}
           </div>
         </article>{/each}
-      {#if brief.mainQuestions.length < 3}<p class="muted">
-          {brief.mainQuestions.length} domande disponibili nella scaletta.
-        </p>
-        <button disabled={busy} onclick={() => replace(null)}>Scegli una domanda</button>{/if}
+      <p class="muted">
+        {brief.mainQuestions.length} domande disponibili nella scaletta.
+      </p>
+      <button disabled={busy} onclick={() => replace(null)}>Scegli una domanda</button>
       <StartInterview
         speakerId={selected}
         {talkId}
@@ -575,9 +575,7 @@
     <details>
       <summary>Domande classiche</summary>{#each brief.classicQuestions as q}<div class="card">
           <Markdown text={qtext(q)} /><button
-            disabled={busy ||
-              brief.mainQuestions.length >= 3 ||
-              brief.mainQuestions.some((m) => m.id === q.id)}
+            disabled={busy || brief.mainQuestions.some((m) => m.id === q.id)}
             onclick={() => choose(q.id)}>Aggiungi alla scaletta</button
           >
         </div>{:else}<p>
