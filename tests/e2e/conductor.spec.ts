@@ -96,10 +96,12 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
   const card = page.locator('[data-speaker="' + id + '"]');
   await card.getByRole('button', { name: 'Mi interessa', exact: true }).first().click();
   await expect(
-    page.locator('[aria-label="I miei speaker"]').getByText('Speaker mobile ' + info.project.name)
+    page
+      .locator('[aria-label="I miei speaker e i miei assegnati"]')
+      .getByText('Speaker mobile ' + info.project.name)
   ).toBeVisible();
   await page
-    .locator('[aria-label="I miei speaker"]')
+    .locator('[aria-label="I miei speaker e i miei assegnati"]')
     .getByRole('link', { name: 'Apri scheda' })
     .click();
   await expect(page).toHaveURL(new RegExp('/speaker/' + id + '$'));

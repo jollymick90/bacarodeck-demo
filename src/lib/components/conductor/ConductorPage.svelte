@@ -20,6 +20,7 @@
   <Conductor
     data={workspace.data}
     members={workspace.members}
+    assignees={workspace.assignees}
     uid={workspace.user!.uid}
     {mode}
     selected={speakerId}

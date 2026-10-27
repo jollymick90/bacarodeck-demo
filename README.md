@@ -5,6 +5,16 @@
 La home `/` apre la vista per il telefono. «Mi interessa» salva uno speaker tra i
 propri preferiti, visibili in cima anche quando assegnati a un collega. Gli interessi
 di ciascun account sono visibili a tutto il team e non prenotano l'intervista.
+La sezione **I miei speaker e i miei assegnati** riunisce gli interessi e le
+assegnazioni al proprio account, senza duplicare gli speaker con entrambi gli stati.
+I filtri **Tutti i miei**, **Mi interessano** e **Assegnati a me** conservano la
+scelta nell'URL (`miei=interessi` o `miei=assegnati`). La ricerca si applica anche
+a questa sezione. Gli speaker personali restano visibili anche fuori dalla lista
+interviste; il comando per mostrare tutti gli speaker riguarda l'elenco generale.
+Le schede in lista hanno uno sfondo salvia, quelle fuori lista pesca. Le etichette
+lavanda indicano il proprio interesse, quelle azzurre un'assegnazione, con
+**Assegnato a me** quando riguarda il proprio account. Le due etichette possono
+comparire insieme; i testi rendono gli stati riconoscibili anche senza i colori.
 
 La scheda riunisce talk, sintesi, domande principali, domande opzionali, altre domande e ricerca.
 «Usa la scaletta» mostra una domanda alla volta. I pulsanti IT / EN permettono di

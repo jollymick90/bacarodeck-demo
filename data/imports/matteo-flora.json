@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-27",
+  "description": "Matteo Flora: bio e foto fornite dall’utente, abstract dall’allegato; orario dallo snapshot agenda Codemotion del progetto.",
+  "speakers": [
+    {
+      "id": "matteo-flora",
+      "fullName": "Matteo Flora",
+      "firstName": "Matteo",
+      "lastName": "Flora",
+      "headline": "Founder of The Fool",
+      "biographyMd": "Matteo Flora is Professor of Fundamentals of AI and SuperIntelligence Safety at the European School of Economics and contract Professor of Corporate Reputation and Crisis Management at Università di Pavia. He combines cognitive science, data and generative AI to shape how organisations, ideas and audiences build knowledge and make choices.\n\nA serial entrepreneur, he founded The Fool through Samadhi Holding, co-founded The Magician, 40Degrees and LT42, and is Founding Partner of 42 Law Firm.\n\nA cybersecurity expert and 2012 US Department of State IVLP participant, he is President of PermessoNegato APS, supporting victims of non-consensual pornography, and co-founder of the Hermes Centre for Digital Human Rights.\n\nHe hosts “Intelligenze Artifici” on Mediaset/TgCom and the tech policy YouTube channel “Ciao Internet”. A lecturer and keynote speaker, he is a three-time TEDx speaker and former Forbes podcaster.",
+      "biographyIt": "Matteo Flora è professore di Fondamenti di AI e SuperIntelligence Safety presso la European School of Economics e professore a contratto di Corporate Reputation e Crisis Management presso l'Università di Pavia. Combina scienze cognitive, dati e intelligenza artificiale generativa per modellare il modo in cui le organizzazioni, le idee e il pubblico costruiscono conoscenza e fanno scelte.\n\nImprenditore seriale, ha fondato The Fool attraverso Samadhi Holding, ha co-fondato The Magician, 40Degrees e LT42 ed è socio fondatore di 42 Law Firm.\n\nEsperto di sicurezza informatica e membro IVLP del Dipartimento di Stato degli Stati Uniti nel 2012, è presidente di PermessoNegato APS, che sostiene le vittime della pornografia non consensuale, e co-fondatore dell'Hermes Center for Digital Human Rights.\n\nConduce “Intelligenze Artifici” su Mediaset/TgCom e il canale YouTube di politica tecnologica “Ciao Internet”. Docente e relatore principale, è tre volte relatore TEDx ed ex podcaster di Forbes.",
+      "biographyEn": "Matteo Flora is Professor of Fundamentals of AI and SuperIntelligence Safety at the European School of Economics and contract Professor of Corporate Reputation and Crisis Management at Università di Pavia. He combines cognitive science, data and generative AI to shape how organisations, ideas and audiences build knowledge and make choices.\n\nA serial entrepreneur, he founded The Fool through Samadhi Holding, co-founded The Magician, 40Degrees and LT42, and is Founding Partner of 42 Law Firm.\n\nA cybersecurity expert and 2012 US Department of State IVLP participant, he is President of PermessoNegato APS, supporting victims of non-consensual pornography, and co-founder of the Hermes Centre for Digital Human Rights.\n\nHe hosts “Intelligenze Artifici” on Mediaset/TgCom and the tech policy YouTube channel “Ciao Internet”. A lecturer and keynote speaker, he is a three-time TEDx speaker and former Forbes podcaster.",
+      "talkIds": ["talk-matteo-flora"],
+      "inDirectorySnapshot": true,
+      "status": "active",
+      "organization": "The Fool",
+      "photoUrl": "https://cdn.sessionize.com/image/2c62-200o200o2-JUExRHFZwihifpRczS23aE.png",
+      "sourceIds": ["codemotion-matteo-flora-2026"]
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-matteo-flora",
+      "speakerIds": ["matteo-flora"],
+      "title": "What Could Possibly Go Wrong? A Crash Course in Paranoia for Developers",
+      "abstractMd": "Your code compiles. Your tests pass. Your deployment is green. So why are you in a meeting with Legal?\n\nSome disasters begin with perfectly working software—and a developer who thought “someone else is handling that.”\n\nIn this talk, Matteo Flora explores ten “what could possibly go wrong?” scenarios behind everyday engineering decisions: the data you collect, the dependencies you trust, the permissions you grant, and the shortcuts that become production infrastructure. Discover the regulatory blind spots that turn ordinary technical choices into expensive surprises.\n\nAt the heart of it all: human error, misplaced confidence, and how quickly “it should be fine” becomes an incident report.\n\nThe takeaway? Paranoia as preventive practice: question defaults, challenge assumptions, and design for your own fallibility.\n\nBecause the best time to ask “what could go wrong?” is while you can still change the answer.",
+      "abstractEn": "Your code compiles. Your tests pass. Your deployment is green. So why are you in a meeting with Legal?\n\nSome disasters begin with perfectly working software—and a developer who thought “someone else is handling that.”\n\nIn this talk, Matteo Flora explores ten “what could possibly go wrong?” scenarios behind everyday engineering decisions: the data you collect, the dependencies you trust, the permissions you grant, and the shortcuts that become production infrastructure. Discover the regulatory blind spots that turn ordinary technical choices into expensive surprises.\n\nAt the heart of it all: human error, misplaced confidence, and how quickly “it should be fine” becomes an incident report.\n\nThe takeaway? Paranoia as preventive practice: question defaults, challenge assumptions, and design for your own fallibility.\n\nBecause the best time to ask “what could go wrong?” is while you can still change the answer.",
+      "sourceIds": ["codemotion-matteo-flora-2026"],
+      "day": "2026-10-29",
+      "time": "10:00",
+      "endTime": "10:30",
+      "stage": "SANSIRO",
+      "agendaSessionId": "1361549"
+    }
+  ],
+  "sources": [
+    {
+      "id": "codemotion-matteo-flora-2026",
+      "kind": "conference",
+      "title": "Codemotion Milano 2026 — Matteo Flora",
+      "url": "https://conferences.codemotion.com/milan/speakers/#sz-session-1361549",
+      "publisher": "Codemotion",
+      "speakerIds": ["matteo-flora"],
+      "notesMd": "Biografia e foto fornite dall’utente. Abstract e orario «SANSIRO Thu 10:00 am - 10:30 am» dal testo allegato; data e ID sessione dallo snapshot agenda locale."
+    }
+  ]
+}

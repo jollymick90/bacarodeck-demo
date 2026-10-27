@@ -21,6 +21,7 @@
   let {
     data,
     members,
+    assignees = [],
     uid,
     onquestion,
     mode = 'home',
@@ -29,6 +30,7 @@
   }: {
     data: Dataset;
     members: Entity[];
+    assignees?: Entity[];
     uid: string;
     onquestion: (q: Entity) => Promise<void>;
     mode?: 'home' | 'speakers' | 'speaker' | 'reading' | 'topics' | 'topic';
@@ -39,15 +41,26 @@
   let query = $state('');
   const speakerList = $derived(mode === 'home' || mode === 'speakers');
   const showAllSpeakers = $derived(page.url.searchParams.get('elenco') === 'tutti');
-  const visibleSpeakers = $derived(
-    (data.speakers || []).filter(
-      (item) => !speakerList || showAllSpeakers || isInInterviewList(item)
-    )
-  );
   function toggleSpeakers() {
     const params = new URLSearchParams(page.url.search);
     if (showAllSpeakers) params.delete('elenco');
     else params.set('elenco', 'tutti');
+    void goto(page.url.pathname + (params.size ? '?' + params : ''), {
+      noScroll: true,
+      keepFocus: true
+    });
+  }
+  const personalFilter = $derived(
+    page.url.searchParams.get('miei') === 'assegnati'
+      ? 'assegnati'
+      : page.url.searchParams.get('miei') === 'interessi'
+        ? 'interessi'
+        : 'tutti'
+  );
+  function filterPersonal(value: 'tutti' | 'interessi' | 'assegnati') {
+    const params = new URLSearchParams(page.url.search);
+    if (value === 'tutti') params.delete('miei');
+    else params.set('miei', value);
     void goto(page.url.pathname + (params.size ? '?' + params : ''), {
       noScroll: true,
       keepFocus: true
@@ -75,17 +88,32 @@
   const brief = $derived(resolveBrief(data, selected, talkId, language));
   const groups = $derived(
     groupSpeakers(
-      searchSpeakers(visibleSpeakers, query),
+      searchSpeakers(data.speakers || [], query),
       data.speakerInterests || [],
       data.interviewPlans || [],
       uid,
-      topic
+      topic,
+      assignees
     )
   );
+  const visibleSpeakers = $derived(
+    groups.all.filter((item) => !speakerList || showAllSpeakers || isInInterviewList(item))
+  );
+  const personalSpeakers = $derived(
+    personalFilter === 'assegnati'
+      ? groups.assigned
+      : personalFilter === 'interessi'
+        ? groups.saved
+        : groups.personal
+  );
+  const visibleIds = $derived(new Set(visibleSpeakers.map((speaker) => speaker.id)));
+  const unassignedSpeakers = $derived(
+    groups.unassigned.filter((speaker) => visibleIds.has(speaker.id))
+  );
   const remainingSpeakers = $derived(
-    groups.all.filter(
+    visibleSpeakers.filter(
       (item) =>
-        !groups.saved.some((saved) => saved.id === item.id) &&
+        !groups.personal.some((personal) => personal.id === item.id) &&
         !groups.unassigned.some((unassigned) => unassigned.id === item.id)
     )
   );
@@ -128,7 +156,8 @@
     const p = data.interviewPlans?.find((p) => p.speakerId === id);
     const value = assignmentOwner(p);
     return value
-      ? team.find((t) => t.id === value)?.displayName ||
+      ? assignees.find((member) => member.id === value || member.uid === value)?.displayName ||
+          team.find((t) => t.id === value)?.displayName ||
           String(p?.assignedToName || 'Assegnazione precedente')
       : 'Da assegnare';
   }
@@ -298,9 +327,9 @@
     {#if speakerList}
       <div class="speaker-list-controls">
         <p class="muted">
-          {showAllSpeakers
-            ? 'Stai vedendo tutti gli speaker.'
-            : 'Stai vedendo gli speaker in elenco per le interviste.'}
+          Elenco generale: {showAllSpeakers
+            ? 'tutti gli speaker.'
+            : 'speaker in lista per le interviste.'}
         </p>
         <button type="button" aria-pressed={showAllSpeakers} onclick={toggleSpeakers}>
           {showAllSpeakers ? 'Mostra solo in elenco' : 'Mostra anche gli altri speaker'}
@@ -308,20 +337,47 @@
       </div>
     {/if}
     {#if mode === 'home'}
-      <section aria-label="I miei speaker">
-        <h2>I miei speaker <span>{groups.saved.length}</span></h2>
-        <p class="muted">I tuoi interessi, visibili anche agli altri.</p>
-        {#if !groups.saved.length}<div class="empty">
-            Tocca «Mi interessa» su uno speaker: lo ritroverai qui, anche dopo l’assegnazione.
-          </div>{/if}
+      <section aria-label="I miei speaker e i miei assegnati">
+        <h2>I miei speaker e i miei assegnati <span>{groups.personal.length}</span></h2>
+        <p class="muted">
+          I tuoi interessi e gli speaker assegnati a te, anche fuori lista. Visibili a tutto il
+          team.
+        </p>
+        <div class="personal-filters" role="group" aria-label="Filtra i miei speaker">
+          <button
+            type="button"
+            aria-pressed={personalFilter === 'tutti'}
+            onclick={() => filterPersonal('tutti')}>Tutti i miei ({groups.personal.length})</button
+          >
+          <button
+            type="button"
+            class="interest-filter"
+            aria-pressed={personalFilter === 'interessi'}
+            onclick={() => filterPersonal('interessi')}
+            >Mi interessano ({groups.saved.length})</button
+          >
+          <button
+            type="button"
+            class="assignment-filter"
+            aria-pressed={personalFilter === 'assegnati'}
+            onclick={() => filterPersonal('assegnati')}
+            >Assegnati a me ({groups.assigned.length})</button
+          >
+        </div>
         <div class="speaker-cards">
-          {#each groups.saved as s (s.id)}{@render card(s)}{/each}
+          {#each personalSpeakers as s (s.id)}{@render card(s)}{:else}<p class="empty">
+              {personalFilter === 'assegnati'
+                ? 'Nessuno speaker assegnato a te con questo filtro.'
+                : personalFilter === 'interessi'
+                  ? 'Nessuno speaker di tuo interesse con questo filtro. Tocca «Mi interessa» per salvarne uno.'
+                  : 'Nessun interesse o speaker assegnato a te con questo filtro. Tocca «Mi interessa» per salvarne uno.'}
+            </p>{/each}
         </div>
       </section>
       <section>
         <h2>Ancora da assegnare</h2>
         <div class="speaker-cards">
-          {#each groups.unassigned as s (s.id)}{@render card(s)}{:else}<p class="empty">
+          {#each unassignedSpeakers as s (s.id)}{@render card(s)}{:else}<p class="empty">
               Nessun altro speaker con questo filtro. Puoi consultare l’elenco completo.
             </p>{/each}
         </div>
@@ -353,7 +409,7 @@
         </nav>
       {/if}
       <div class="speaker-cards">
-        {#each groups.all as s (s.id)}{@render card(s)}{:else}<p class="empty">
+        {#each visibleSpeakers as s (s.id)}{@render card(s)}{:else}<p class="empty">
             Nessuno speaker con questo filtro.
           </p>{/each}
       </div>
@@ -670,11 +726,23 @@
 {#snippet card(s: Entity)}
   {@const talk = data.talks?.find((t) => ((t.speakerIds as string[]) || []).includes(s.id))}
   {@const preparation = resolveBrief(data, s.id, talk?.id || '')}
-  <article class="speaker-card" data-speaker={s.id}>
+  {@const inList = isInInterviewList(s)}
+  {@const assignment = data.interviewPlans?.find((plan) => plan.speakerId === s.id)}
+  {@const mine = groups.assigned.some((speaker) => speaker.id === s.id)}
+  <article class="speaker-card" class:outside-list={!inList} data-speaker={s.id}>
     <div class="card-top">
-      <span>{((s.tags || []) as string[]).slice(0, 3).join(' · ')}</span><span
-        class="assignment-badge">{owner(s.id)}</span
-      >
+      <span class="list-badge">{inList ? 'In lista' : 'Fuori lista'}</span>
+      <span>{((s.tags || []) as string[]).slice(0, 3).join(' · ')}</span>
+    </div>
+    <div class="card-statuses">
+      {#if saved(s.id)}<span class="interest-badge">Mi interessa</span>{/if}
+      <span class="assignment-badge" class:assigned={!!assignmentOwner(assignment)}>
+        {mine
+          ? 'Assegnato a me'
+          : assignmentOwner(assignment)
+            ? `Assegnato a ${owner(s.id)}`
+            : 'Da assegnare'}
+      </span>
     </div>
     <div class="speaker-identity">
       <SpeakerPhoto speaker={s} compact />
@@ -802,9 +870,50 @@
   }
   .speaker-card {
     padding: 20px;
-    background: #fffef9;
-    border: 1px solid #d6deca;
+    background: #edf4e7;
+    border: 1px solid #bdcfb4;
     border-radius: 16px;
+  }
+  .speaker-card.outside-list {
+    background: #fff0e5;
+    border-color: #e1c3af;
+  }
+  .personal-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .personal-filters button {
+    background: #fffef9;
+    color: #263e32;
+    border: 1px solid #a8b59b;
+  }
+  .personal-filters button[aria-pressed='true'] {
+    background: #245844;
+    border-color: #245844;
+    color: white;
+  }
+  .personal-filters .interest-filter[aria-pressed='true'],
+  .interest-badge {
+    background: #eadff5;
+    border-color: #9982b1;
+    color: #553d70;
+  }
+  .personal-filters .assignment-filter[aria-pressed='true'],
+  .assignment-badge.assigned {
+    background: #dcebf9;
+    border-color: #7c9fbf;
+    color: #294c70;
+  }
+  .list-badge {
+    font-weight: 650;
+  }
+  .card-statuses {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
   }
   .speaker-card h3 {
     font-size: 25px;
@@ -822,10 +931,15 @@
     color: #627458;
     flex-wrap: wrap;
   }
-  .assignment-badge {
-    background: #e9eddf;
+  .assignment-badge,
+  .interest-badge {
+    font-size: 12px;
+    font-weight: 600;
     border-radius: 6px;
     padding: 4px 7px;
+  }
+  .assignment-badge {
+    background: #e9eddf;
   }
   .card-talk {
     font-weight: 550;

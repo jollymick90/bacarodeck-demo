@@ -4,11 +4,28 @@ export function groupSpeakers(
   interests: Entity[],
   plans: Entity[],
   actorUid: string,
-  topic = ''
+  topic = '',
+  assignees: Entity[] = []
 ) {
   const saved = new Set(interests.filter((i) => i.memberUid === actorUid).map((i) => i.speakerId));
+  const actorIds = new Set(
+    assignees.filter((member) => actorUid && member.uid === actorUid).map((member) => member.id)
+  );
+  const assigned = new Set(
+    plans
+      .filter(
+        (plan) =>
+          actorUid &&
+          (plan.assignedTeamId
+            ? actorIds.has(String(plan.assignedTeamId))
+            : plan.assignedToUid === actorUid)
+      )
+      .map((plan) => plan.speakerId)
+  );
   return {
     saved: speakers.filter((s) => saved.has(s.id)),
+    assigned: speakers.filter((s) => assigned.has(s.id)),
+    personal: speakers.filter((s) => saved.has(s.id) || assigned.has(s.id)),
     unassigned: speakers.filter(
       (s) =>
         !saved.has(s.id) &&
