@@ -17,10 +17,35 @@ test('prepared data survives closing the browser and reopening unread routes off
   let context = await chromium.launchPersistentContext(profile, options);
   try {
     let page = await context.newPage();
+    // Existing installed PWAs can still have the old worker controlling their window.
+    // It ignores PREPARE_OFFLINE while the new worker is waiting for activation.
+    if (info.project.name === 'mobile') {
+      await context.route('**/service-worker.js', (route) =>
+        route.fulfill({
+          contentType: 'application/javascript',
+          body: `self.addEventListener('install', e => e.waitUntil(self.skipWaiting()));
+          self.addEventListener('activate', e => e.waitUntil(self.clients.claim()));`
+        })
+      );
+    }
     const errors: string[] = [];
     console.log('[offline] opening app');
     page.on('pageerror', (e) => errors.push(e.message));
     await page.goto('/');
+    if (info.project.name === 'mobile') {
+      await page.evaluate(async () => {
+        await navigator.serviceWorker.ready;
+      });
+      await context.unroute('**/service-worker.js');
+      await page.evaluate(async () => {
+        await (await navigator.serviceWorker.ready).update();
+      });
+      await expect
+        .poll(() =>
+          page.evaluate(async () => Boolean((await navigator.serviceWorker.ready).waiting))
+        )
+        .toBe(true);
+    }
     const access = page.waitForRequest('**/api/access');
     void access.catch(() => {});
     const popupPromise = page.waitForEvent('popup');

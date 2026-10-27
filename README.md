@@ -222,6 +222,10 @@ Prima di confermare si può annullare senza scrivere nulla. Dopo la conferma non
 
 ## Offline e concorrenza
 
+La preparazione verifica l'aggiornamento della PWA e attiva la nuova versione delle
+risorse prima di scaricare i contenuti. Gestisce anche i dispositivi su cui è ancora
+attivo il vecchio service worker, senza cancellare sessione o copie locali.
+
 Per preparare il dispositivo, accedi online e apri **Dati su questo dispositivo → Prepara questo telefono per l’evento**. Attendi **Pronto per l’evento**: vengono conservati localmente speaker, talk, domande IT/EN, scalette, interessi, note, fonti e membri visualizzati, anche se non li avevi ancora aperti. Puoi poi chiudere e riaprire l’app senza rete. La consultazione offline è in sola lettura e vale 30 giorni dall’ultima verifica online riuscita. Una verifica fallita non rinnova la scadenza. Foto e allegati esterni possono richiedere rete. Logout, cambio account e revoca esplicita eliminano la copia dell’identità precedente. Il browser può cancellare lo storage: in quel caso prepara di nuovo il dispositivo.
 
 I dispositivi già preparati aggiornano automaticamente la copia completa al ritorno online e al massimo ogni 5 minuti; **Aggiorna adesso** forza il download. Le date dei contenuti e della scadenza sono separate. Errori di rete, quota o download parziale mantengono l’ultima copia completa. Nessuna modifica è accodata offline; le bozze già aperte restano nella pagina e i comandi di salvataggio sono disabilitati fino alla nuova verifica online.

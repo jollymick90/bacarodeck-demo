@@ -45,7 +45,11 @@ worker.addEventListener('message', (event) => {
   if (event.data?.type !== 'PREPARE_OFFLINE') return;
   event.waitUntil(
     prepare().then(
-      () => event.ports[0]?.postMessage({ ready: true }),
+      async () => {
+        // Explicit device preparation upgrades installed PWAs only after all resources are cached.
+        await worker.skipWaiting();
+        event.ports[0]?.postMessage({ ready: true });
+      },
       (error) =>
         event.ports[0]?.postMessage({ ready: false, error: String(error.message || error) })
     )
