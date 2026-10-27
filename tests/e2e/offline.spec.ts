@@ -178,6 +178,9 @@ test('prepared data survives closing the browser and reopening unread routes off
     ).toBeVisible();
     await page.goto(`/speaker/${id}`);
     await expect(page.getByRole('button', { name: 'Assegna / cambia' })).toBeDisabled();
+    await expect(
+      page.getByRole('button', { name: 'Intervista fatta', exact: true })
+    ).toBeDisabled();
     await page.getByRole('button', { name: 'Avvia intervista', exact: true }).first().click();
     await expect(page.getByRole('region', { name: 'Modalità intervista' })).toBeVisible();
     await page.getByRole('button', { name: 'EN', exact: true }).click();

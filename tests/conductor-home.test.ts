@@ -104,3 +104,31 @@ it('does not attribute assignments from empty UIDs, names or a stale UID after r
   expect(groupSpeakers(speakers, [], plans, 'me', '', directory).assigned).toEqual([]);
   expect(groupSpeakers(speakers, [], plans, '', '', directory).assigned).toEqual([]);
 });
+
+it('hides completed interviews by default and restores them on request without losing personal links', () => {
+  const speakers = [{ id: 'saved' }, { id: 'assigned' }, { id: 'active' }, { id: 'other' }];
+  const interests = [{ id: 'i', speakerId: 'saved', memberUid: 'me' }];
+  const plans = [
+    { id: 'p1', speakerId: 'saved', interviewStatus: 'completed' },
+    { id: 'p2', speakerId: 'assigned', assignedToUid: 'me', interviewStatus: 'completed' },
+    {
+      id: 'p3',
+      speakerId: 'active',
+      assignedToUid: 'me',
+      status: 'done',
+      interviewStatus: 'confirmed'
+    },
+    { id: 'p4', speakerId: 'other', interviewStatus: 'completed' }
+  ];
+  const active = groupSpeakers(speakers, interests, plans, 'me');
+  expect(active.personal.map((s) => s.id)).toEqual(['active']);
+  expect(active.saved).toEqual([]);
+  expect(active.assigned.map((s) => s.id)).toEqual(['active']);
+  expect(active.all.map((s) => s.id)).toEqual(['active']);
+  expect(active.completed?.map((s) => s.id)).toEqual(['saved', 'assigned']);
+  const all = groupSpeakers(speakers, interests, plans, 'me', '', [], true);
+  expect(all.personal.map((s) => s.id)).toEqual(['saved', 'assigned', 'active']);
+  expect(all.saved.map((s) => s.id)).toEqual(['saved']);
+  expect(all.assigned.map((s) => s.id)).toEqual(['assigned', 'active']);
+  expect(all.unassigned).toEqual([]);
+});

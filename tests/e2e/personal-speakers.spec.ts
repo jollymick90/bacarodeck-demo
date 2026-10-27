@@ -181,6 +181,51 @@ test('personal speakers include my assignments outside the list and distinguish 
     await expect(personal.locator('article h3')).toHaveText(['Speaker colori entrambi']);
     await page.getByLabel('Cerca speaker').fill('non presente');
     await expect(personal.locator('article')).toHaveCount(0);
+    await page.getByLabel('Cerca speaker').fill('');
+    await both.getByRole('link', { name: 'Apri scheda', exact: true }).click();
+    const completion = page.getByRole('group', { name: 'Stato intervista', exact: true });
+    await completion.getByRole('button', { name: 'Intervista fatta', exact: true }).click();
+    await expect(completion.getByText('Intervista fatta', { exact: true })).toBeVisible();
+    await expect(
+      completion.getByRole('button', { name: 'Segna da intervistare', exact: true })
+    ).toBeEnabled();
+    const completed = (
+      await (await request.get('/api/data/interviewPlans', { headers })).json()
+    ).find((row: { speakerId: string }) => row.speakerId === `${prefix}-both`);
+    expect(completed.interviewStatus).toBe('completed');
+    expect(completed.assignedTeamId).toBe(email);
+    await page.goto('/?miei=assegnati');
+    await expect(personal.locator('article')).toHaveCount(0);
+    await expect(both).toHaveCount(0);
+    const showCompleted = personal.getByRole('button', { name: /Fai vedere le interviste fatte/ });
+    await showCompleted.click();
+    await expect(personal.locator('article h3')).toHaveText(['Speaker colori entrambi']);
+    await expect(both.getByText('Intervista fatta', { exact: true })).toBeVisible();
+    await page.reload();
+    await expect(personal.locator('article')).toHaveCount(1);
+    const hideCompleted = personal.getByRole('button', { name: /Nascondi le interviste fatte/ });
+    await expect(hideCompleted).toHaveAttribute('aria-pressed', 'true');
+    await hideCompleted.click();
+    await expect(both).toHaveCount(0);
+    await showCompleted.click();
+    await both.getByRole('link', { name: 'Apri scheda', exact: true }).click();
+    await completion.getByRole('button', { name: 'Segna da intervistare', exact: true }).click();
+    await expect(
+      completion.getByRole('button', { name: 'Intervista fatta', exact: true })
+    ).toBeEnabled();
+    await page.goto('/?miei=assegnati');
+    await expect(personal.locator('article h3')).toHaveText(['Speaker colori entrambi']);
+    // A speaker saved only as an interest may not have an interview plan yet.
+    await page.goto(`/speaker/${prefix}-saved`);
+    await completion.getByRole('button', { name: 'Intervista fatta', exact: true }).click();
+    await expect(
+      completion.getByRole('button', { name: 'Segna da intervistare', exact: true })
+    ).toBeEnabled();
+    await page.goto('/');
+    await expect(saved).toHaveCount(0);
+    await showCompleted.click();
+    await expect(saved).toBeVisible();
+    await expect(saved.getByRole('button', { name: '★ Salvato', exact: true })).toBeVisible();
   } finally {
     for (const id of interests) await setInterest(id, false);
     const emulator = process.env.FIRESTORE_EMULATOR_HOST!;

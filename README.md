@@ -7,6 +7,12 @@ propri preferiti, visibili in cima anche quando assegnati a un collega. Gli inte
 di ciascun account sono visibili a tutto il team e non prenotano l'intervista.
 La sezione **I miei speaker e i miei assegnati** riunisce gli interessi e le
 assegnazioni al proprio account, senza duplicare gli speaker con entrambi gli stati.
+Nella scheda speaker, **Intervista fatta** imposta lo stato condiviso dell'intervista
+su **Completata**, conservando preparazione, note, interessi e assegnazioni.
+Le interviste fatte sono nascoste nella home finché si preme **Fai vedere le interviste
+fatte**; il pulsante le include anche nei filtri personali e conserva la scelta
+nell'URL (`fatte=1`). L'elenco completo resta consultabile. **Segna da intervistare**
+riporta lo stato a **Da confermare**. Queste modifiche richiedono connessione e accesso verificato.
 I filtri **Tutti i miei**, **Mi interessano** e **Assegnati a me** conservano la
 scelta nell'URL (`miei=interessi` o `miei=assegnati`). La ricerca si applica anche
 a questa sezione. Gli speaker personali restano visibili anche fuori dalla lista

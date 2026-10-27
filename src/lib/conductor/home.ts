@@ -35,7 +35,8 @@ export function groupSpeakers(
   plans: Entity[],
   actorUid: string,
   topic = '',
-  assignees: Entity[] = []
+  assignees: Entity[] = [],
+  includeCompleted = false
 ) {
   const saved = new Set(interests.filter((i) => i.memberUid === actorUid).map((i) => i.speakerId));
   const actorIds = new Set(
@@ -52,12 +53,20 @@ export function groupSpeakers(
       )
       .map((plan) => plan.speakerId)
   );
+  const completed = new Set(
+    plans.filter((plan) => plan.interviewStatus === 'completed').map((plan) => plan.speakerId)
+  );
+  const visible = speakers.filter((speaker) => includeCompleted || !completed.has(speaker.id));
   return {
-    saved: speakers.filter((s) => saved.has(s.id)),
-    assigned: speakers.filter((s) => assigned.has(s.id)),
-    personal: speakers.filter((s) => saved.has(s.id) || assigned.has(s.id)),
-    unassigned: speakers.filter(
+    saved: visible.filter((s) => saved.has(s.id)),
+    assigned: visible.filter((s) => assigned.has(s.id)),
+    personal: visible.filter((s) => saved.has(s.id) || assigned.has(s.id)),
+    completed: speakers.filter(
+      (s) => completed.has(s.id) && (saved.has(s.id) || assigned.has(s.id))
+    ),
+    unassigned: visible.filter(
       (s) =>
+        !completed.has(s.id) &&
         !saved.has(s.id) &&
         s.status !== 'archived' &&
         (!topic || ((s.tags as string[]) || []).includes(topic)) &&
@@ -65,6 +74,6 @@ export function groupSpeakers(
           (p) => p.speakerId === s.id && (p.assignedTeamId || p.assignedToUid || p.assignedToName)
         )
     ),
-    all: speakers.filter((s) => !topic || ((s.tags as string[]) || []).includes(topic))
+    all: visible.filter((s) => !topic || ((s.tags as string[]) || []).includes(topic))
   };
 }

@@ -19,6 +19,7 @@
   import ResearchReader from '../ResearchReader.svelte';
   import { researchEntries } from '$lib/research';
   import AssignmentControl from './AssignmentControl.svelte';
+  import InterviewCompletion from './InterviewCompletion.svelte';
   let {
     readOnly = false,
     data,
@@ -44,6 +45,16 @@
   let query = $state('');
   const speakerList = $derived(mode === 'home' || mode === 'speakers');
   const showAllSpeakers = $derived(page.url.searchParams.get('elenco') === 'tutti');
+  const showCompleted = $derived(page.url.searchParams.get('fatte') === '1');
+  function toggleCompleted() {
+    const params = new URLSearchParams(page.url.search);
+    if (showCompleted) params.delete('fatte');
+    else params.set('fatte', '1');
+    void goto(page.url.pathname + (params.size ? '?' + params : ''), {
+      noScroll: true,
+      keepFocus: true
+    });
+  }
   function toggleSpeakers() {
     const params = new URLSearchParams(page.url.search);
     if (showAllSpeakers) params.delete('elenco');
@@ -109,7 +120,8 @@
       data.interviewPlans || [],
       uid,
       topic,
-      assignees
+      assignees,
+      mode !== 'home' || showCompleted
     )
   );
   const visibleSpeakers = $derived(
@@ -365,6 +377,10 @@
           I tuoi interessi e gli speaker assegnati a te, anche fuori lista. Visibili a tutto il
           team.
         </p>
+        <button type="button" aria-pressed={showCompleted} onclick={toggleCompleted}>
+          {showCompleted ? 'Nascondi le interviste fatte' : 'Fai vedere le interviste fatte'} ({groups
+            .completed.length})
+        </button>
         <div class="personal-filters" role="group" aria-label="Filtra i miei speaker">
           <button
             type="button"
@@ -579,6 +595,7 @@
       ><span>Interessati: {names(selected) || 'nessuno'}</span>
     </div>
     <AssignmentControl {speaker} {plan} />
+    <InterviewCompletion speakerId={selected} {plan} />
     <section class="question-sheet">
       <h2>Le 3 domande principali</h2>
       <p class="muted">
@@ -803,6 +820,9 @@
       <span>{((s.tags || []) as string[]).slice(0, 3).join(' · ')}</span>
     </div>
     <div class="card-statuses">
+      {#if assignment?.interviewStatus === 'completed'}<span class="completed-badge"
+          >Intervista fatta</span
+        >{/if}
       {#if saved(s.id)}<span class="interest-badge">Mi interessa</span>{/if}
       <span class="assignment-badge" class:assigned={!!assignmentOwner(assignment)}>
         {mine
@@ -1015,11 +1035,16 @@
     flex-wrap: wrap;
   }
   .assignment-badge,
-  .interest-badge {
+  .interest-badge,
+  .completed-badge {
     font-size: 12px;
     font-weight: 600;
     border-radius: 6px;
     padding: 4px 7px;
+  }
+  .completed-badge {
+    background: #dcefdc;
+    color: #245844;
   }
   .assignment-badge {
     background: #e9eddf;
