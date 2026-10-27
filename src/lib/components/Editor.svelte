@@ -140,7 +140,7 @@
   }
   async function save(event: SubmitEvent) {
     event.preventDefault();
-    if (readOnly || busy) return;
+    if (readOnly || busy || workspace.readOnly) return;
     error = '';
     for (const group of groups) {
       for (const [key, raw] of Object.entries(rawJson[group.collection] || {})) {
@@ -181,6 +181,7 @@
       </h2>
       <div class="editor-actions" class:top-actions={actionsAtTop}>
         {#if readOnly}<button
+            disabled={workspace.readOnly}
             type="button"
             class="primary"
             onclick={() => {
@@ -189,8 +190,11 @@
             }}>Modifica</button
           >{/if}
         {#if !readOnly && actionsAtTop}
-          <button type="submit" class="primary" aria-label="Salva modifiche" disabled={busy}
-            >{busy ? 'Salvataggio…' : 'Salva'}</button
+          <button
+            type="submit"
+            class="primary"
+            aria-label="Salva modifiche"
+            disabled={workspace.readOnly || busy}>{busy ? 'Salvataggio…' : 'Salva'}</button
           >
           <button type="button" onclick={oncancel} disabled={busy}>Annulla</button>
         {:else}<button type="button" class="quiet" onclick={onclose} disabled={busy}>Chiudi</button
@@ -201,7 +205,11 @@
     {#if error && actionsAtTop}<p class="error wide" role="alert">{error}</p>{/if}
     {#each groups as group (group.collection)}
       {@const draft = group.draft}
-      <fieldset class="editor-fields wide" aria-label={group.label} disabled={busy}>
+      <fieldset
+        class="editor-fields wide"
+        aria-label={group.label}
+        disabled={workspace.readOnly || busy}
+      >
         {#if interviewPlan}<legend>{group.label}</legend>{/if}
         {#if group.collection === 'interviewPlans'}<p class="notice">
             Per assegnare o riassegnare usa «Assegna / cambia» nella scheda speaker.
@@ -347,7 +355,7 @@
     </div>
     {#if error && !actionsAtTop}<p class="error wide" role="alert">{error}</p>{/if}
     {#if !readOnly && !actionsAtTop}<div class="form-actions wide">
-        <button class="primary" disabled={busy} type="submit"
+        <button class="primary" disabled={workspace.readOnly || busy} type="submit"
           >{busy ? 'Salvataggio…' : saveLabel}</button
         ><button type="button" onclick={oncancel} disabled={busy}>Annulla</button>
       </div>{/if}

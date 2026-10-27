@@ -3,6 +3,7 @@
   import { onMount, type Snippet } from 'svelte';
   import AppHeader from './AppHeader.svelte';
   import AppNavigation from './AppNavigation.svelte';
+  import OfflineStatus from './OfflineStatus.svelte';
   import SuccessNotice from './SuccessNotice.svelte';
   import { provideWorkspace } from '$lib/workspace.svelte';
   let { children }: { children: Snippet } = $props();
@@ -21,7 +22,7 @@
   class:immersive
   class:with-subnavigation={page.url.pathname.startsWith('/backoffice')}
 >
-  {#if workspace.access !== 'member'}
+  {#if !workspace.canRead}
     <section class="welcome">
       <p class="edition">Il tavolo di lavoro delle interviste</p>
       <h1>Le conversazioni migliori<br />cominciano prima.</h1>
@@ -42,22 +43,28 @@
           </p>
           <button onclick={() => location.reload()}>Riprova verifica accesso</button>
         </div>
-      {:else}<button class="primary login" onclick={() => workspace.login()}
+      {:else}{#if !workspace.online}<p class="notice">
+            Nessuna copia offline disponibile. Accedi e prepara questo dispositivo quando hai una
+            connessione.
+          </p>{/if}<button class="primary login" onclick={() => workspace.login()}
           >Accedi con Google</button
         ><small>Solo i membri abilitati possono leggere e modificare il workspace.</small>{/if}
     </section>
   {:else if !workspace.ready}<p role="status">Caricamento del workspace…</p>
   {:else}
-    {#if !workspace.online && !immersive}<p class="warning" role="status">
-        Sei offline. Puoi leggere i dati già caricati in questa sessione. I salvataggi richiedono la
-        rete.
-      </p>{/if}
-    <SuccessNotice
-      message={workspace.message}
-      hidden={immersive}
-      ondismiss={() => (workspace.message = '')}
-    />
-    {@render children()}
+    {#if workspace.checkingAccess}<p role="status">Verifica accesso…</p>{/if}
+    <div
+      hidden={workspace.checkingAccess}
+      style:visibility={workspace.checkingAccess ? 'hidden' : undefined}
+    >
+      {#if !immersive}<OfflineStatus />{/if}
+      <SuccessNotice
+        message={workspace.message}
+        hidden={immersive}
+        ondismiss={() => (workspace.message = '')}
+      />
+      {@render children()}
+    </div>
   {/if}
   {#if workspace.error && !immersive}<p class="error" role="alert">{workspace.error}</p>{/if}
 </main>

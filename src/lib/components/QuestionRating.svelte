@@ -1,5 +1,8 @@
 <script lang="ts">
   import { getAuth } from 'firebase/auth';
+  import { getWorkspace } from '$lib/workspace.svelte';
+  import { api } from '$lib/repository';
+  const workspace = getWorkspace();
   import type { Entity } from '$lib/fields';
   let { question, onchange }: { question: Entity; onchange: () => void } = $props();
   let busy = $state(false);
@@ -11,13 +14,7 @@
     busy = true;
     failure = '';
     try {
-      const token = await getAuth().currentUser?.getIdToken();
-      const response = await fetch(`/api/questions/${question.id}/rating`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ score })
-      });
-      if (!response.ok) throw new Error((await response.json()).message);
+      await api(`/api/questions/${question.id}/rating`, { score });
       onchange();
     } catch (e) {
       failure = (e as Error).message;
@@ -33,7 +30,7 @@
   >
   <div aria-label="Il tuo voto">
     {#each [1, 2, 3, 4, 5] as score}<button
-        disabled={busy}
+        disabled={busy || workspace.readOnly}
         aria-pressed={own === score}
         aria-label={`Vota ${score} su 5`}
         onclick={() => rate(score)}>{score} ★</button

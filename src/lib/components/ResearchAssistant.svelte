@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import { page } from '$app/state';
   import { untrack } from 'svelte';
   import { researchEntries } from '$lib/research';
@@ -210,8 +212,10 @@
       >
     </section>
   {/each}
-  {#if drafts.length}<button class="primary" disabled={busy || reading} onclick={save}
-      >Conferma e salva {drafts.length} contenuti</button
+  {#if drafts.length}<button
+      class="primary"
+      disabled={workspace.readOnly || busy || reading}
+      onclick={save}>Conferma e salva {drafts.length} contenuti</button
     >{/if}
   {#if notice}<p role="status">{notice}</p>{/if}
   {#if failure}<p class="error" role="alert">{failure}</p>{/if}

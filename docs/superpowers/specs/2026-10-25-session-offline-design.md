@@ -14,9 +14,10 @@ dell'identità prima di mostrare l'accesso. Test browser desktop e mobile verifi
 navigazione ripetuta, reload, chiusura e riapertura completa del browser con lo
 stesso profilo e logout. Corretto anche il favicon mancante.
 
-Restano da implementare download completo, consultazione offline per 30 giorni
-e aggiornamento della copia locale. La persistenza della login non rende ancora
-disponibili i dati dopo una riapertura senza rete.
+27 ottobre: aggiunti download completo in pagine limitate, snapshot atomico IndexedDB,
+lettura locale per 30 giorni, shell riapribile offline e aggiornamento della copia.
+Lo stato «Pronto» attende risorse e dati completi; API private e permessi server restano protetti.
+Le prove di accettazione sono registrate nel piano `2026-10-27-offline-reading.md`.
 
 ## Obiettivo e decisioni concordate
 

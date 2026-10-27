@@ -147,7 +147,7 @@
           ><option value="confirmed">Confermata</option></select
         ></label
       >
-      <button disabled={busy}>Salva slot</button><button
+      <button disabled={workspace.readOnly || busy}>Salva slot</button><button
         type="button"
         onclick={() => (draft = null)}>Annulla</button
       >

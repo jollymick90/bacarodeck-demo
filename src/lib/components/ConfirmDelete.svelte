@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import { onMount } from 'svelte';
   let {
     title,
@@ -28,7 +30,7 @@
     <button onclick={oncancel} disabled={busy}>Annulla</button><button
       class="danger"
       onclick={onconfirm}
-      disabled={busy}>Elimina definitivamente</button
+      disabled={workspace.readOnly || busy}>Elimina definitivamente</button
     >
   </div>
 </dialog>

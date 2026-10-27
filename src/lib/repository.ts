@@ -4,6 +4,24 @@ import type { Change } from './domain';
 import { collections, type Collection, type Entity } from './fields';
 export const basePath = 'workspaces/codemotion-milano-2026';
 const refresh = new EventTarget();
+let writesAllowed = false;
+export function setWriteAccess(allowed: boolean) {
+  writesAllowed = allowed;
+}
+export class ApiError extends Error {
+  constructor(
+    message: string,
+    public status: number
+  ) {
+    super(message);
+  }
+}
+export function assertWriteAccess() {
+  if (!writesAllowed || navigator.onLine === false)
+    throw new Error(
+      'Consultazione in sola lettura. Riconnettiti e verifica l’accesso per salvare.'
+    );
+}
 export function refreshWorkspace() {
   refresh.dispatchEvent(
     new CustomEvent('change', { detail: [...collections, 'members', 'assignees'] })
@@ -13,18 +31,24 @@ export function refreshData() {
   refresh.dispatchEvent(new CustomEvent('change', { detail: ['questions'] }));
 }
 export async function api(path: string, body?: unknown) {
+  if (body !== undefined) assertWriteAccess();
   if (typeof navigator !== 'undefined' && navigator.onLine === false)
     throw new Error('Sei offline. Conserva il testo e riprova quando torna la connessione.');
   const user = getAuth().currentUser;
   if (!user) throw new Error('Accedi con Google.');
   const token = await user.getIdToken();
+  if (body !== undefined) assertWriteAccess();
   const response = await fetch(path, {
     method: body === undefined ? 'GET' : 'POST',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     ...(body === undefined ? {} : { body: JSON.stringify(body) })
   });
   const result = await response.json();
-  if (!response.ok) throw new Error(result.message || result.error || 'Operazione non riuscita.');
+  if (!response.ok)
+    throw new ApiError(
+      result.message || result.error || 'Operazione non riuscita.',
+      response.status
+    );
   return result;
 }
 export async function commitChanges(

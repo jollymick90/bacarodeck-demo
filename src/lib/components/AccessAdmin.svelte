@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { refreshWorkspace } from '$lib/repository';
+  import { assertWriteAccess, refreshWorkspace } from '$lib/repository';
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import { onMount } from 'svelte';
   import { getAuth } from 'firebase/auth';
   let entries = $state<{ email: string; enabled: boolean; permanent: boolean }[]>([]);
@@ -7,7 +9,9 @@
   let failure = $state('');
   let busy = $state(false);
   async function request(body?: unknown) {
+    if (body) assertWriteAccess();
     const token = await getAuth().currentUser?.getIdToken();
+    if (body) assertWriteAccess();
     const response = await fetch('/api/admin/access', {
       method: body ? 'POST' : 'GET',
       headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
@@ -56,7 +60,7 @@
     }}
   >
     <label>Email Google<input type="email" required bind:value={email} /></label><button
-      disabled={busy}>Abilita accesso</button
+      disabled={busy || workspace.readOnly}>Abilita accesso</button
     >
   </form>
   {#if failure}<p role="alert">{failure}</p>{/if}
@@ -68,7 +72,7 @@
             ? 'Abilitato'
             : 'Revocato'}</span
       >{#if !entry.permanent}<button
-          disabled={busy}
+          disabled={busy || workspace.readOnly}
           onclick={() => change(entry.email, !entry.enabled)}
           >{entry.enabled ? 'Revoca' : 'Riabilita'}</button
         >{/if}

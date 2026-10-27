@@ -20,6 +20,7 @@
   import { researchEntries } from '$lib/research';
   import AssignmentControl from './AssignmentControl.svelte';
   let {
+    readOnly = false,
     data,
     members,
     assignees = [],
@@ -29,6 +30,7 @@
     selected = '',
     topic = ''
   }: {
+    readOnly?: boolean;
     data: Dataset;
     members: Entity[];
     assignees?: Entity[];
@@ -194,6 +196,7 @@
     void goto(url.pathname + url.search, { noScroll: true, keepFocus: true });
   }
   async function run(action: () => Promise<void>, success = '') {
+    if (readOnly) return;
     busy = true;
     failure = '';
     message = '';
@@ -568,7 +571,10 @@
       {/if}
     </section>
     <div class="interest-bar">
-      <button class:primary={saved(selected)} disabled={busy} onclick={() => interest(selected)}
+      <button
+        class:primary={saved(selected)}
+        disabled={busy || readOnly}
+        onclick={() => interest(selected)}
         >{saved(selected) ? '★ Salvato tra i miei speaker' : 'Mi interessa'}</button
       ><span>Interessati: {names(selected) || 'nessuno'}</span>
     </div>
@@ -594,19 +600,19 @@
                 href={'/topic/connessioni?node=' + encodeURIComponent('question:' + q.id)}
                 >Domande simili e topic</a
               >
-              <button disabled={busy} onclick={() => edit(q)}>Modifica</button><button
-                disabled={busy}
+              <button disabled={busy || readOnly} onclick={() => edit(q)}>Modifica</button><button
+                disabled={busy || readOnly}
                 onclick={() => replace(q.id)}>Sostituisci</button
               ><button
                 aria-label={'Sposta domanda ' + (index + 1) + ' in alto'}
-                disabled={busy || index === 0}
+                disabled={busy || readOnly || index === 0}
                 onclick={() => move(index, -1)}>↑</button
               ><button
                 aria-label={'Sposta domanda ' + (index + 1) + ' in basso'}
-                disabled={busy || index === brief.mainQuestions.length - 1}
+                disabled={busy || readOnly || index === brief.mainQuestions.length - 1}
                 onclick={() => move(index, 1)}>↓</button
               ><button
-                disabled={busy}
+                disabled={busy || readOnly}
                 onclick={() =>
                   run(
                     () =>
@@ -631,7 +637,7 @@
       <p class="muted">
         {brief.mainQuestions.length} domande disponibili nella scaletta.
       </p>
-      <button disabled={busy} onclick={() => replace(null)}>Scegli una domanda</button>
+      <button disabled={busy || readOnly} onclick={() => replace(null)}>Scegli una domanda</button>
       <StartInterview
         speakerId={selected}
         {talkId}
@@ -654,19 +660,19 @@
         <article class="card">
           <Markdown text={qtext(q)} />
           <div class="question-actions">
-            <button disabled={busy} onclick={() => edit(q)}>Modifica</button>
+            <button disabled={busy || readOnly} onclick={() => edit(q)}>Modifica</button>
             <button
               aria-label={'Sposta domanda opzionale ' + (index + 1) + ' in alto'}
-              disabled={busy || index === 0}
+              disabled={busy || readOnly || index === 0}
               onclick={() => moveOptional(index, -1)}>↑</button
             >
             <button
               aria-label={'Sposta domanda opzionale ' + (index + 1) + ' in basso'}
-              disabled={busy || index === brief.optionalQuestions.length - 1}
+              disabled={busy || readOnly || index === brief.optionalQuestions.length - 1}
               onclick={() => moveOptional(index, 1)}>↓</button
             >
             <button
-              disabled={busy}
+              disabled={busy || readOnly}
               onclick={() =>
                 run(
                   () =>
@@ -689,7 +695,7 @@
     <details>
       <summary>Domande classiche</summary>{#each brief.classicQuestions as q}<div class="card">
           <Markdown text={qtext(q)} /><button
-            disabled={busy || brief.mainQuestions.some((m) => m.id === q.id)}
+            disabled={busy || readOnly || brief.mainQuestions.some((m) => m.id === q.id)}
             onclick={() => choose(q.id)}>Aggiungi alla scaletta</button
           >
         </div>{:else}<p>
@@ -709,6 +715,7 @@
             >
             <button
               disabled={busy ||
+                readOnly ||
                 brief.mainQuestions.some((main) => main.id === q.id) ||
                 brief.optionalQuestions.some((optional) => optional.id === q.id)}
               onclick={() =>
@@ -728,8 +735,8 @@
                   ? 'Già opzionale'
                   : 'Usa come opzionale'}
             </button>
-            <button disabled={busy} onclick={() => edit(q)}>Modifica</button><button
-              disabled={busy}
+            <button disabled={busy || readOnly} onclick={() => edit(q)}>Modifica</button><button
+              disabled={busy || readOnly}
               onclick={() =>
                 run(
                   () =>
@@ -763,6 +770,7 @@
     </details>
     <details>
       <summary>Sintesi editoriale</summary>{#if !summaryEditing}<button
+          disabled={readOnly}
           onclick={() => {
             draftSummary = String(
               brief.brief?.[language === 'it' ? 'summaryIt' : 'summaryEn'] || ''
@@ -772,9 +780,8 @@
           }}>Modifica sintesi condivisa</button
         >{:else}<label
           >Sintesi del talk<textarea bind:value={draftSummary} rows="5"></textarea></label
-        ><button disabled={busy} onclick={summarySave}>Salva sintesi per tutti</button><button
-          onclick={() => (summaryEditing = false)}>Annulla</button
-        >{/if}
+        ><button disabled={busy || readOnly} onclick={summarySave}>Salva sintesi per tutti</button
+        ><button onclick={() => (summaryEditing = false)}>Annulla</button>{/if}
     </details>
   {/if}
   {#if failure}<p class="error" role="alert">{failure}</p>{/if}
@@ -828,7 +835,7 @@
       </p>{/if}
     <small>Interessati: {names(s.id) || 'nessuno'}</small>
     <div class="card-controls">
-      <button disabled={busy} onclick={() => interest(s.id)}
+      <button disabled={busy || readOnly} onclick={() => interest(s.id)}
         >{saved(s.id) ? '★ Salvato' : 'Mi interessa'}</button
       ><a
         class="nav-action primary"
@@ -875,7 +882,7 @@
   {#each questions.filter((q) => !brief.mainQuestions.some((m) => m.id === q.id)) as q}<article
       class="card"
     >
-      <Markdown text={qtext(q)} /><button disabled={busy} onclick={() => choose(q.id)}
+      <Markdown text={qtext(q)} /><button disabled={busy || readOnly} onclick={() => choose(q.id)}
         >Usa questa domanda</button
       >
     </article>{:else}<p>

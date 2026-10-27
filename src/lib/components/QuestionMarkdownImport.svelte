@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import type { Entity } from '$lib/fields';
   import { parseQuestionMarkdown } from '$lib/question-markdown-import';
   import Markdown from './Markdown.svelte';
@@ -109,8 +111,10 @@
         </details>
       </article>
     {/each}
-    <button class="primary" disabled={busy || working || !chosen.length} onclick={save}
-      >Conferma e importa {chosen.length} domande</button
+    <button
+      class="primary"
+      disabled={workspace.readOnly || busy || working || !chosen.length}
+      onclick={save}>Conferma e importa {chosen.length} domande</button
     >
   {/if}
   {#if message}<p role="status">{message}</p>

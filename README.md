@@ -150,9 +150,8 @@ Come in BacaroGame, i dati passano attraverso il server Firebase Admin. Ogni ric
 Home e backoffice condividono lo stesso accesso Google. La sessione viene conservata
 nel profilo del browser anche dopo chiusura e riapertura, finché non si esce,
 si cancellano i dati del browser o Firebase richiede una nuova autenticazione.
-Il ripristino dell'account precede la schermata di login. Questo non abilita ancora
-la riapertura dei contenuti offline: il download locale è previsto nella
-[specifica sessione/offline](docs/superpowers/specs/2026-10-25-session-offline-design.md).
+Il ripristino dell'account precede la schermata di login. La consultazione dopo una riapertura senza rete richiede di preparare il dispositivo
+con il comando descritto qui sotto.
 
 Le regole negano letture e scritture dirette dal browser. **Migrazione dalla versione precedente:** pubblica il blocco di regole aggiornato per questo workspace, preservando le altre regole del progetto condiviso. Finché restano attive le vecchie regole, la vecchia policy nel database può ancora autorizzare accessi SDK. Il documento `access/config` non viene più usato dal server.
 
@@ -223,7 +222,9 @@ Prima di confermare si può annullare senza scrivere nulla. Dopo la conferma non
 
 ## Offline e concorrenza
 
-Online-first, cache Firestore solo in memoria per la sessione corrente. Nessuna cache persistente tra accessi, nessun accodamento volontario di scritture offline. Offline restano visibili i dati già letti; le transazioni richiedono la rete e segnalano l’errore. Conserva il testo di un form e riprova. Un conflitto conserva il form aperto: copia le modifiche, chiudi, riapri la versione aggiornata e riapplicale. L’app richiede una verifica membership dal server all’avvio.
+Per preparare il dispositivo, accedi online e apri **Dati su questo dispositivo → Prepara questo telefono per l’evento**. Attendi **Pronto per l’evento**: vengono conservati localmente speaker, talk, domande IT/EN, scalette, interessi, note, fonti e membri visualizzati, anche se non li avevi ancora aperti. Puoi poi chiudere e riaprire l’app senza rete. La consultazione offline è in sola lettura e vale 30 giorni dall’ultima verifica online riuscita. Una verifica fallita non rinnova la scadenza. Foto e allegati esterni possono richiedere rete. Logout, cambio account e revoca esplicita eliminano la copia dell’identità precedente. Il browser può cancellare lo storage: in quel caso prepara di nuovo il dispositivo.
+
+I dispositivi già preparati aggiornano automaticamente la copia completa al ritorno online e al massimo ogni 5 minuti; **Aggiorna adesso** forza il download. Le date dei contenuti e della scadenza sono separate. Errori di rete, quota o download parziale mantengono l’ultima copia completa. Nessuna modifica è accodata offline; le bozze già aperte restano nella pagina e i comandi di salvataggio sono disabilitati fino alla nuova verifica online.
 
 ## Verifica
 
@@ -274,7 +275,7 @@ Il pannello conserva 14 coppie principale/backup e gli slot originali da 30 minu
 
 Voti personali 1–5, media, ordinamento; scarto tramite stato e cancellazione con conferma. Le cancellazioni registrano un tombstone privato che impedisce il reimport dello stesso ID.
 
-La PWA è installabile dal browser su HTTPS. Il service worker conserva solo asset pubblici e pagina offline, mai API o pagine autenticate. Non supporta scritture offline. La pagina offline invita a riconnettersi; le bozze aperte rimangono nello stato della pagina finché questa resta aperta.
+La PWA è installabile dal browser su HTTPS. Il service worker conserva asset e shell HTML pubblica senza contenuti del workspace. Le API private non entrano nella cache HTTP. Il pacchetto locale è conservato in IndexedDB e separato per progetto, ambiente, workspace e identità. Lo stato «Pronto» richiede sia le risorse dell’app sia il pacchetto completo; i test offline dedicati usano una build di produzione con service worker reale e API autenticate su emulatori separati, senza cambiare il divieto di Firebase Admin emulato in produzione. Esecuzione: avvia gli emulatori auth/firestore e lancia `npx playwright test -c playwright.offline.config.ts`.
 
 ### Importare le traduzioni nelle schede esistenti
 

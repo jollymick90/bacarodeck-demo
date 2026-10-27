@@ -324,6 +324,7 @@
           </p>
           <button
             class="danger text-button"
+            disabled={workspace.readOnly}
             onclick={() => (deleting = { collection: 'speakers', entity: speaker })}
             >Elimina speaker</button
           >
@@ -412,6 +413,7 @@
             <div class="entry-actions">
               <a class="button-link" href={editPath(collection, entity)}>Modifica</a><button
                 class="danger quiet"
+                disabled={workspace.readOnly}
                 onclick={() => (deleting = { collection, entity })}>Elimina</button
               >
             </div>

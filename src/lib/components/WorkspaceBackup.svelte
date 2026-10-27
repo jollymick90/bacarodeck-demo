@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { api } from '$lib/repository';
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import { onDestroy } from 'svelte';
   import { getAuth } from 'firebase/auth';
   import {
@@ -42,20 +45,8 @@
   const visible = $derived(changes.slice(page * 30, (page + 1) * 30));
   async function request(body?: unknown, query = '') {
     if (!active) throw new Error('Operazione interrotta.');
-    const user = getAuth().currentUser;
-    if (!user) throw new Error('Accedi con Google.');
     target = getAuth().app.options.projectId || 'progetto corrente';
-    const response = await fetch('/api/backup' + query, {
-      method: body ? 'POST' : 'GET',
-      headers: {
-        Authorization: `Bearer ${await user.getIdToken()}`,
-        'Content-Type': 'application/json'
-      },
-      ...(body ? { body: JSON.stringify(body) } : {})
-    });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.message || 'Operazione non riuscita.');
-    return result;
+    return api('/api/backup' + query, body);
   }
   async function getCompleteBackup(): Promise<WorkspaceBackup> {
     const data: Partial<BackupData> = {};
@@ -244,7 +235,7 @@
       >
       <button
         class="primary"
-        disabled={busy || !approved || !changes.length || !!failure}
+        disabled={workspace.readOnly || busy || !approved || !changes.length || !!failure}
         onclick={restore}>Ripristina backup completo</button
       >
     {/if}

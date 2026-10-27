@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import { untrack } from 'svelte';
   import {
     parseImport,
@@ -245,7 +247,8 @@
       <button
         class="primary"
         onclick={commit}
-        disabled={!approved ||
+        disabled={workspace.readOnly ||
+          !approved ||
           missingRequired ||
           missingVoteTargets ||
           (!changes.length && !(restoreVotes && votes.length)) ||

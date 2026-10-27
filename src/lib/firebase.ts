@@ -40,7 +40,7 @@ export function getFirebase() {
   const db = existing
     ? getFirestore(app)
     : initializeFirestore(app, { localCache: memoryLocalCache() });
-  if (!existing && import.meta.env.DEV && env.PUBLIC_USE_EMULATORS === 'true') {
+  if (!existing && env.PUBLIC_USE_EMULATORS === 'true') {
     connectAuthEmulator(auth, env.PUBLIC_AUTH_EMULATOR_URL || 'http://127.0.0.1:9099', {
       disableWarnings: true
     });

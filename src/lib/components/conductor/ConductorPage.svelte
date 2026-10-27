@@ -21,7 +21,8 @@
     data={workspace.data}
     members={workspace.members}
     assignees={workspace.assignees}
-    uid={workspace.user!.uid}
+    uid={workspace.identityUid}
+    readOnly={workspace.readOnly}
     {mode}
     selected={speakerId}
     {topic}

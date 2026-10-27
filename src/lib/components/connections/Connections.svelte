@@ -89,7 +89,7 @@
     setParam('node', id);
   }
   async function load() {
-    if (fetching || !workspace.online) {
+    if (fetching || workspace.readOnly) {
       loading = false;
       return;
     }
@@ -109,7 +109,7 @@
     }
   }
   async function refresh() {
-    if (busy || !workspace.online) return;
+    if (busy || workspace.readOnly) return;
     busy = true;
     error = '';
     try {
@@ -128,7 +128,7 @@
     decision: 'linked' | 'confirmed' | 'dismissed' | 'reset',
     explanation = ''
   ) {
-    if (busy || !workspace.online) return;
+    if (busy || workspace.readOnly) return;
     busy = true;
     error = '';
     const prior = graph?.overrides.find(
@@ -204,14 +204,14 @@
       </p>
     </div>
     <button
-      disabled={busy || !workspace.online || graph?.status.state === 'running'}
+      disabled={busy || workspace.readOnly || graph?.status.state === 'running'}
       onclick={refresh}>Ricalcola affinità</button
     >
   </header>
   {#if error}<p class="error" role="alert">
       {error}
       <button
-        disabled={busy || !workspace.online}
+        disabled={busy || workspace.readOnly}
         onclick={() => {
           error = '';
           void load();
@@ -228,7 +228,7 @@
           : '…'}
       {:else if graph.status.state === 'error'}Calcolo non riuscito: {graph.status.error ||
           'Modello non disponibile.'}
-        <button disabled={busy || !workspace.online} onclick={refresh}>Riprova calcolo</button>
+        <button disabled={busy || workspace.readOnly} onclick={refresh}>Riprova calcolo</button>
       {:else}Affinità aggiornate.{/if}
       {#if graph.stale}<strong> I risultati automatici mostrati sono da aggiornare.</strong>{/if}
     </div>
@@ -334,7 +334,7 @@
                   placeholder="Perché è utile per l’intervista?"
                 /></label
               >
-              <button class="primary" disabled={busy || !workspace.online || !allowedKinds.length}
+              <button class="primary" disabled={busy || workspace.readOnly || !allowedKinds.length}
                 >Salva collegamento condiviso</button
               >
             </form>
@@ -348,7 +348,7 @@
                   )?.label || item.target}
                 </p>
                 <button
-                  disabled={busy || !workspace.online}
+                  disabled={busy || workspace.readOnly}
                   onclick={() =>
                     decide(
                       String(item.source),
@@ -399,13 +399,13 @@
     </details>
     <div class="edge-actions">
       <button
-        disabled={busy || !workspace.online || edge.origin === 'confirmed'}
+        disabled={busy || workspace.readOnly || edge.origin === 'confirmed'}
         onclick={() => decide(edge.source, edge.target, edge.kind, 'confirmed')}>Conferma</button
       ><button
-        disabled={busy || !workspace.online}
+        disabled={busy || workspace.readOnly}
         onclick={() => decide(edge.source, edge.target, edge.kind, 'dismissed')}>Scarta</button
       >{#if edge.origin === 'manual' || edge.origin === 'confirmed'}<button
-          disabled={busy || !workspace.online}
+          disabled={busy || workspace.readOnly}
           onclick={() => decide(edge.source, edge.target, edge.kind, 'reset')}
           >Annulla decisione</button
         >{/if}

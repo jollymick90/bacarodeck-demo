@@ -61,7 +61,7 @@
     void goto(page.url.pathname + '?' + params, { noScroll: true, keepFocus: true });
   }
   async function saveSelection(ids: string[], optional = optionalIds) {
-    if (busy) return;
+    if (busy || workspace.readOnly) return;
     busy = true;
     failure = '';
     try {
@@ -133,7 +133,7 @@
   {#if brief.selectionOrigin === 'legacy_proposal'}<p class="notice">
       Proposte dall’ordine attuale: la scaletta non è ancora stata confermata.
     </p>
-    <button disabled={busy} onclick={() => saveSelection(selectedIds)}
+    <button disabled={busy || workspace.readOnly} onclick={() => saveSelection(selectedIds)}
       >Conferma domande per intervista</button
     >{/if}
   {#each brief.mainQuestions as question, index (question.id)}{@render questionCard(
@@ -233,7 +233,7 @@
       >
       {#if index >= 0}
         <button
-          disabled={busy}
+          disabled={busy || workspace.readOnly}
           onclick={() =>
             optional
               ? saveSelection(
@@ -245,7 +245,7 @@
         >
         <button
           aria-label={'Sposta domanda ' + (optional ? 'opzionale ' : '') + (index + 1) + ' in alto'}
-          disabled={busy || index === 0}
+          disabled={workspace.readOnly || busy || index === 0}
           onclick={() => move(index, -1, optional)}>↑</button
         >
         <button
@@ -253,11 +253,13 @@
             (optional ? 'opzionale ' : '') +
             (index + 1) +
             ' in basso'}
-          disabled={busy || index === (optional ? optionalIds : selectedIds).length - 1}
+          disabled={workspace.readOnly ||
+            busy ||
+            index === (optional ? optionalIds : selectedIds).length - 1}
           onclick={() => move(index, 1, optional)}>↓</button
         >
         {#if !optional}<button
-            disabled={busy}
+            disabled={busy || workspace.readOnly}
             onclick={() =>
               saveSelection(
                 selectedIds.filter((id) => id !== question.id),
@@ -265,11 +267,11 @@
               )}>Rendi opzionale</button
           >{/if}
       {:else}<button
-          disabled={busy || question.status === 'rejected'}
+          disabled={workspace.readOnly || busy || question.status === 'rejected'}
           onclick={() => saveSelection([...selectedIds, question.id])}>Usa per intervista</button
         >
         <button
-          disabled={busy || question.status === 'rejected'}
+          disabled={workspace.readOnly || busy || question.status === 'rejected'}
           onclick={() => saveSelection(selectedIds, [...optionalIds, question.id])}
           >Usa come opzionale</button
         >
@@ -281,8 +283,10 @@
           '?' +
           contextQuery}>Modifica</a
       >
-      <button class="danger quiet" disabled={busy} onclick={() => ondelete(question)}
-        >Elimina</button
+      <button
+        class="danger quiet"
+        disabled={busy || workspace.readOnly}
+        onclick={() => ondelete(question)}>Elimina</button
       >
     </div>
   </article>

@@ -50,8 +50,9 @@
 </script>
 
 <div class="assignment-control">
-  <span>Assegnazione: <strong>{ownerName}</strong></span><button onclick={open}
-    >Assegna / cambia</button
+  <span>Assegnazione: <strong>{ownerName}</strong></span><button
+    disabled={workspace.readOnly}
+    onclick={open}>Assegna / cambia</button
   >
 </div>
 <dialog bind:this={dialog} aria-labelledby={'assign-' + speaker.id}>
@@ -79,7 +80,7 @@
   <div class="entry-actions">
     <button disabled={busy} onclick={() => dialog.close()}>Annulla</button><button
       class="primary"
-      disabled={busy || !!failure || !assignees.some((t) => t.id === target)}
+      disabled={workspace.readOnly || busy || !!failure || !assignees.some((t) => t.id === target)}
       onclick={save}
       >{expected && expected !== target
         ? 'Conferma riassegnazione'

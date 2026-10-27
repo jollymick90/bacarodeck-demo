@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import { untrack } from 'svelte';
   import { suggestSpeakerTags } from '$lib/tags';
   import type { Dataset } from '$lib/fields';
@@ -77,7 +79,7 @@
         >{/each}
     </article>{/each}
   {#if failure}<p class="error" role="alert">{failure}</p>{/if}
-  <button class="primary" disabled={busy || !selected.length} onclick={save}
+  <button class="primary" disabled={workspace.readOnly || busy || !selected.length} onclick={save}
     >{busy ? 'Salvataggio…' : 'Conferma aggiornamento tag'}</button
   >
 </section>

@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { getWorkspace } from '$lib/workspace.svelte';
+  const workspace = getWorkspace();
   import Markdown from '../Markdown.svelte';
   import type { Entity } from '$lib/fields';
   let {
@@ -48,10 +50,12 @@
   ><label
     >Domanda dalla ricerca<textarea bind:value={text} oninput={() => (preview = false)} rows="4"
     ></textarea></label
-  ><button disabled={!text.trim() || busy} onclick={() => (preview = true)}
+  ><button disabled={workspace.readOnly || !text.trim() || busy} onclick={() => (preview = true)}
     >Controlla anteprima domanda</button
-  >{#if preview}<Markdown {text} /><button class="primary" disabled={busy} onclick={save}
-      >Conferma e aggiungi domanda</button
+  >{#if preview}<Markdown {text} /><button
+      class="primary"
+      disabled={workspace.readOnly || busy}
+      onclick={save}>Conferma e aggiungi domanda</button
     >{/if}{#if failure}<p role="alert">{failure}</p>{/if}{#if message}<p role="status">
       {message}
     </p>{/if}
