@@ -1,4 +1,34 @@
-import type { Entity } from '../fields';
+import type { Dataset, Entity } from '../fields';
+import { talkStartTime, withScheduleDefaults } from '../talk-schedule';
+
+export function firstSpeakerTalk(speakerId: string, data: Dataset): Entity | undefined {
+  return (data.talks || [])
+    .filter((talk) => ((talk.speakerIds as string[]) || []).includes(speakerId))
+    .map((talk) => withScheduleDefaults(talk, data))
+    .toSorted((a, b) => {
+      const first = talkStartTime(a) ?? Infinity;
+      const second = talkStartTime(b) ?? Infinity;
+      return first === second ? 0 : first < second ? -1 : 1;
+    })[0];
+}
+
+export function sortSpeakersByTalk(speakers: Entity[], data: Dataset): Entity[] {
+  return speakers
+    .map((speaker) => {
+      const talk = firstSpeakerTalk(speaker.id, data);
+      return { speaker, start: (talk && talkStartTime(talk)) ?? Infinity };
+    })
+    .toSorted((a, b) =>
+      a.start === b.start
+        ? String(a.speaker.fullName || '').localeCompare(String(b.speaker.fullName || ''), 'it') ||
+          a.speaker.id.localeCompare(b.speaker.id)
+        : a.start < b.start
+          ? -1
+          : 1
+    )
+    .map(({ speaker }) => speaker);
+}
+
 export function groupSpeakers(
   speakers: Entity[],
   interests: Entity[],

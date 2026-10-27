@@ -11,6 +11,12 @@ I filtri **Tutti i miei**, **Mi interessano** e **Assegnati a me** conservano la
 scelta nell'URL (`miei=interessi` o `miei=assegnati`). La ricerca si applica anche
 a questa sezione. Gli speaker personali restano visibili anche fuori dalla lista
 interviste; il comando per mostrare tutti gli speaker riguarda l'elenco generale.
+In **Assegnati a me**, **Ordine assegnati** propone **Orario del talk** come ordine
+predefinito, oppure **Nome**. L'ordine cronologico usa giorno e ora del primo talk
+programmato di ogni speaker, in Europe/Rome, e mette in fondo gli orari mancanti.
+Le schede mostrano giorno, ora e sala; **Apri scheda** apre il talk indicato.
+Gli orari modificati prevalgono sui predefiniti dell'agenda. La scelta per nome
+resta nell'URL (`ordine=nome`) anche dopo il refresh.
 Le schede in lista hanno uno sfondo salvia, quelle fuori lista pesca. Le etichette
 lavanda indicano il proprio interesse, quelle azzurre un'assegnazione, con
 **Assegnato a me** quando riguarda il proprio account. Le due etichette possono

@@ -25,6 +25,35 @@ test('personal speakers include my assignments outside the list and distinguish 
     { id: `${prefix}-free`, fullName: 'Speaker colori disponibile', inInterviewList: true }
   ];
   const interests = [`${prefix}-saved`, `${prefix}-both`];
+  const talks = [
+    {
+      id: `${prefix}-assigned-talk`,
+      speakerIds: [`${prefix}-assigned`],
+      title: 'Talk del secondo giorno',
+      day: '2026-10-29',
+      time: '09:00',
+      endTime: '09:30',
+      stage: 'SALA B'
+    },
+    {
+      id: `${prefix}-both-a-late`,
+      speakerIds: [`${prefix}-both`],
+      title: 'Secondo talk dello speaker',
+      day: '2026-10-28',
+      time: '15:00',
+      endTime: '15:30',
+      stage: 'SALA C'
+    },
+    {
+      id: `${prefix}-both-z-early`,
+      speakerIds: [`${prefix}-both`],
+      title: 'Primo talk dello speaker',
+      day: '2026-10-28',
+      time: '10:00',
+      endTime: '10:30',
+      stage: 'SALA A'
+    }
+  ];
   const setInterest = async (speakerId: string, interested: boolean) => {
     const response = await request.post('/api/conductor/interests', {
       headers,
@@ -36,7 +65,10 @@ test('personal speakers include my assignments outside the list and distinguish 
     headers,
     data: {
       action: 'save',
-      changes: speakers.map((data) => ({ collection: 'speakers', data, expectedRevision: null }))
+      changes: [
+        ...speakers.map((data) => ({ collection: 'speakers', data, expectedRevision: null })),
+        ...talks.map((data) => ({ collection: 'talks', data, expectedRevision: null }))
+      ]
     }
   });
   expect(created.ok(), await created.text()).toBe(true);
@@ -87,9 +119,34 @@ test('personal speakers include my assignments outside the list and distinguish 
     );
     await filters.getByRole('button', { name: /Assegnati a me/ }).click();
     await expect(personal.locator('article h3')).toHaveText([
+      'Speaker colori entrambi',
+      'Speaker colori assegnato'
+    ]);
+    await expect(both.locator('.talk-schedule')).toContainText('2026-10-28 · 10:00–10:30 · SALA A');
+    await expect(assigned.locator('.talk-schedule')).toContainText(
+      '2026-10-29 · 09:00–09:30 · SALA B'
+    );
+    const order = personal.getByRole('combobox', { name: 'Ordine assegnati', exact: true });
+    await expect(order).toHaveValue('orario');
+    await order.selectOption('nome');
+    await expect(personal.locator('article h3')).toHaveText([
       'Speaker colori assegnato',
       'Speaker colori entrambi'
     ]);
+    await page.reload();
+    await expect(order).toHaveValue('nome');
+    await order.selectOption('orario');
+    await expect(personal.locator('article h3')).toHaveText([
+      'Speaker colori entrambi',
+      'Speaker colori assegnato'
+    ]);
+    await page.screenshot({ path: info.outputPath('assigned-talk-order.png'), fullPage: true });
+    await both.getByRole('link', { name: 'Apri scheda', exact: true }).click();
+    await expect(page).toHaveURL(new RegExp(`talk=${prefix}-both-z-early`));
+    await expect(page.getByRole('combobox', { name: 'Talk', exact: true })).toHaveValue(
+      `${prefix}-both-z-early`
+    );
+    await page.goto('/?miei=assegnati');
     await expect(filters.getByRole('button', { name: /Assegnati a me/ })).toHaveAttribute(
       'aria-pressed',
       'true'
@@ -127,8 +184,8 @@ test('personal speakers include my assignments outside the list and distinguish 
   } finally {
     for (const id of interests) await setInterest(id, false);
     const emulator = process.env.FIRESTORE_EMULATOR_HOST!;
-    for (const collection of ['interviewPlans', 'speakers']) {
-      for (const { id } of speakers) {
+    for (const collection of ['interviewPlans', 'talks', 'speakers']) {
+      for (const { id } of collection === 'talks' ? talks : speakers) {
         const removed = await request.delete(
           `http://${emulator}/v1/projects/demo-bacarodeck/databases/(default)/documents/workspaces/codemotion-milano-2026/${collection}/${id}`,
           { headers: { Authorization: 'Bearer owner' } }

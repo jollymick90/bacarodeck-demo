@@ -6,7 +6,8 @@
   import type { Dataset, Entity } from '$lib/fields';
   import { isInInterviewList } from '$lib/interview-list';
   import { searchSpeakers } from '$lib/speaker-search';
-  import { groupSpeakers } from '$lib/conductor/home';
+  import { firstSpeakerTalk, groupSpeakers, sortSpeakersByTalk } from '$lib/conductor/home';
+  import { talkStartTime } from '$lib/talk-schedule';
   import { resolveBrief, briefId } from '$lib/conductor/brief';
   import { assignmentOwner } from '$lib/conductor/assignment';
   import { team } from '$lib/team';
@@ -57,6 +58,18 @@
         ? 'interessi'
         : 'tutti'
   );
+  const assignedOrder = $derived(
+    page.url.searchParams.get('ordine') === 'nome' ? 'nome' : 'orario'
+  );
+  function changeAssignedOrder(value: string) {
+    const params = new URLSearchParams(page.url.search);
+    if (value === 'nome') params.set('ordine', 'nome');
+    else params.delete('ordine');
+    void goto(page.url.pathname + (params.size ? '?' + params : ''), {
+      noScroll: true,
+      keepFocus: true
+    });
+  }
   function filterPersonal(value: 'tutti' | 'interessi' | 'assegnati') {
     const params = new URLSearchParams(page.url.search);
     if (value === 'tutti') params.delete('miei');
@@ -102,7 +115,11 @@
   );
   const personalSpeakers = $derived(
     personalFilter === 'assegnati'
-      ? groups.assigned
+      ? assignedOrder === 'orario'
+        ? sortSpeakersByTalk(groups.assigned, data)
+        : groups.assigned.toSorted((a, b) =>
+            String(a.fullName || '').localeCompare(String(b.fullName || ''), 'it')
+          )
       : personalFilter === 'interessi'
         ? groups.saved
         : groups.personal
@@ -366,6 +383,22 @@
             >Assegnati a me ({groups.assigned.length})</button
           >
         </div>
+        {#if personalFilter === 'assegnati'}
+          <label class="assigned-order">
+            Ordine assegnati
+            <select
+              value={assignedOrder}
+              onchange={(event) => changeAssignedOrder(event.currentTarget.value)}
+            >
+              <option value="orario">Orario del talk</option>
+              <option value="nome">Nome</option>
+            </select>
+          </label>
+          {#if assignedOrder === 'orario'}<p class="muted">
+              Dal primo talk in programma, in orario Europe/Rome. Gli speaker senza orario sono in
+              fondo.
+            </p>{/if}
+        {/if}
         <div class="speaker-cards">
           {#each personalSpeakers as s (s.id)}{@render card(s)}{:else}<p class="empty">
               {personalFilter === 'assegnati'
@@ -749,7 +782,10 @@
 </div>
 
 {#snippet card(s: Entity)}
-  {@const talk = data.talks?.find((t) => ((t.speakerIds as string[]) || []).includes(s.id))}
+  {@const assignedView = mode === 'home' && personalFilter === 'assegnati'}
+  {@const talk = assignedView
+    ? firstSpeakerTalk(s.id, data)
+    : data.talks?.find((t) => ((t.speakerIds as string[]) || []).includes(s.id))}
   {@const preparation = resolveBrief(data, s.id, talk?.id || '')}
   {@const inList = isInInterviewList(s)}
   {@const assignment = data.interviewPlans?.find((plan) => plan.speakerId === s.id)}
@@ -783,15 +819,25 @@
           ? 'Domande disponibili · da confermare'
           : 'Scaletta da preparare'}</small
     >
-    {#if data.talks?.find((t) => ((t.speakerIds as string[]) || []).includes(s.id))}<p
-        class="card-talk"
-      >
-        {data.talks.find((t) => ((t.speakerIds as string[]) || []).includes(s.id))?.title}
-      </p>{/if}<small>Interessati: {names(s.id) || 'nessuno'}</small>
+    {#if talk}
+      <p class="card-talk">{talk.title}</p>
+      <TalkSchedule talk={data.talks?.find((source) => source.id === talk.id) || talk} {data} />
+    {/if}
+    {#if assignedView && (!talk || talkStartTime(talk) === undefined)}<p class="muted">
+        Orario del talk da confermare.
+      </p>{/if}
+    <small>Interessati: {names(s.id) || 'nessuno'}</small>
     <div class="card-controls">
       <button disabled={busy} onclick={() => interest(s.id)}
         >{saved(s.id) ? '★ Salvato' : 'Mi interessa'}</button
-      ><a class="nav-action primary" href={'/speaker/' + encodeURIComponent(s.id)}>Apri scheda</a>
+      ><a
+        class="nav-action primary"
+        href={'/speaker/' +
+          encodeURIComponent(s.id) +
+          (assignedView && talk
+            ? '?' + new URLSearchParams({ talk: talk.id, lang: language })
+            : '')}>Apri scheda</a
+      >
     </div>
   </article>
 {/snippet}
@@ -907,6 +953,11 @@
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .assigned-order {
+    display: block;
+    max-width: 300px;
     margin: 16px 0;
   }
   .personal-filters button {

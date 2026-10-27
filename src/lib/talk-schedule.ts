@@ -150,6 +150,10 @@ function romeInstant(day: unknown, time: unknown): string | undefined {
     local = dateParts(result);
   return local.day === day && local.time === time ? result : undefined;
 }
+export function talkStartTime(talk: Entity): number | undefined {
+  const instant = romeInstant(talk.day, talk.time);
+  return instant ? Date.parse(instant) : undefined;
+}
 export function agendaSessions(data: Dataset, snapshot?: unknown): Session[] {
   const sessions = snapshot ? parseSchedule(snapshot) : defaultSessions;
   return sessions.flatMap((session) => {
