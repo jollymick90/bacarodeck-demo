@@ -15,6 +15,7 @@ export type ResolvedBrief = {
   interviewQuestions: Entity[];
   classicQuestions: Entity[];
   summary: string;
+  abstract: string;
   summaryOrigin: 'editorial' | 'abstract_excerpt' | 'missing';
   selectionOrigin: 'editorial' | 'legacy_proposal' | 'empty';
 };

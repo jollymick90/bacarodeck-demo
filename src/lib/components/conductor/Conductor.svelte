@@ -76,6 +76,7 @@
   let picker: HTMLDialogElement;
   let draftSummary = $state('');
   let summaryEditing = $state(false);
+  let fullAbstract = $state(false);
   let summaryRevision = $state<number | null>(null);
   const speaker = $derived(data.speakers?.find((s) => s.id === selected));
   const talks = $derived(
@@ -172,6 +173,7 @@
     url.searchParams.set(name, value);
     if (name === 'talk') url.searchParams.delete('question');
     summaryEditing = false;
+    fullAbstract = false;
     void goto(url.pathname + url.search, { noScroll: true, keepFocus: true });
   }
   async function run(action: () => Promise<void>, success = '') {
@@ -500,14 +502,37 @@
       <TalkSchedule talk={brief.talk} {data} />{/if}
     <section class="talk-summary">
       <h3>Il talk in 20 secondi</h3>
-      {#if brief.summary}<Markdown
-          text={brief.summary}
-        />{#if brief.summaryOrigin === 'abstract_excerpt'}<small
-            >Estratto dell’abstract · sintesi editoriale non ancora preparata.</small
-          >{/if}{:else}<p>
-          La sintesi non è ancora disponibile. Puoi comunque leggere le domande e gli
-          approfondimenti.
-        </p>{/if}
+      <div id="talk-summary-content">
+        {#if brief.summary}
+          <Markdown
+            text={fullAbstract && brief.summaryOrigin === 'abstract_excerpt'
+              ? brief.abstract
+              : brief.summary}
+          />
+          {#if brief.summaryOrigin === 'abstract_excerpt'}<small>
+              {fullAbstract ? 'Abstract completo' : 'Estratto dell’abstract'} · sintesi editoriale non
+              ancora preparata.
+            </small>{/if}
+        {:else}<p>
+            La sintesi non è ancora disponibile. Puoi comunque leggere le domande e gli
+            approfondimenti.
+          </p>{/if}
+        {#if fullAbstract && brief.summaryOrigin === 'editorial'}
+          <h4>Abstract completo</h4>
+          <Markdown text={brief.abstract} />
+        {/if}
+      </div>
+      {#if brief.abstract && brief.abstract !== brief.summary}
+        <button
+          type="button"
+          class="summary-toggle"
+          aria-expanded={fullAbstract}
+          aria-controls="talk-summary-content"
+          onclick={() => (fullAbstract = !fullAbstract)}
+        >
+          {fullAbstract ? 'Mostra meno' : 'Mostra abstract completo'}
+        </button>
+      {/if}
     </section>
     <div class="interest-bar">
       <button class:primary={saved(selected)} disabled={busy} onclick={() => interest(selected)}
@@ -1010,6 +1035,11 @@
   }
   .talk-summary h3 {
     margin: 0 0 10px;
+  }
+  .summary-toggle {
+    margin-top: 12px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
   }
   .interest-bar {
     display: flex;

@@ -26,6 +26,38 @@ describe('shared conductor brief', () => {
     expect(result.selectionOrigin).toBe('legacy_proposal');
     expect(result.summaryOrigin).toBe('abstract_excerpt');
   });
+  it('keeps the complete localized abstract available alongside the short preview', () => {
+    const abstractIt = 'Contesto italiano. '.repeat(40) + 'Chiusura italiana.';
+    const abstractEn = 'English context. '.repeat(40) + 'English ending.';
+    const dataset = {
+      ...data,
+      talks: [{ id: 'a', speakerIds: ['g'], abstractIt, abstractEn, abstractMd: 'Originale.' }]
+    };
+    const italian = resolveBrief(dataset, 'g', 'a', 'it');
+    expect(italian.summary.length).toBeLessThan(abstractIt.length);
+    expect(italian.abstract).toBe(abstractIt);
+    expect(resolveBrief(dataset, 'g', 'a', 'en').abstract).toBe(abstractEn);
+    expect(
+      resolveBrief(
+        { ...dataset, talks: [{ id: 'a', speakerIds: ['g'], abstractMd: 'Originale.' }] },
+        'g',
+        'a',
+        'en'
+      ).abstract
+    ).toBe('Originale.');
+    const editorial = resolveBrief(
+      {
+        ...dataset,
+        conductorBriefs: [
+          { id: 'b', speakerId: 'g', talkId: 'a', summaryIt: 'Sintesi editoriale.' }
+        ]
+      },
+      'g',
+      'a'
+    );
+    expect(editorial.summary).toBe('Sintesi editoriale.');
+    expect(editorial.abstract).toBe(abstractIt);
+  });
   it('rejects duplicates, unavailable and another speaker questions', () => {
     for (const ids of [['q1', 'q1'], ['missing'], ['reject'], ['bad']]) {
       expect(() =>

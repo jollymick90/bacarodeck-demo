@@ -16,6 +16,9 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
   await popup.getByRole('button', { name: 'Sign in with Google.com', exact: true }).click();
   const token = (await access).headers().authorization;
   const id = 'conductor-' + info.project.name;
+  const abstractIt =
+    'Come verificare un risultato reale. '.repeat(30) + 'Conclusione completa italiana.';
+  const abstractEn = 'How to verify a real result. '.repeat(30) + 'Complete English conclusion.';
   const records = [
     {
       collection: 'speakers',
@@ -40,7 +43,8 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
         id: id + '-talk',
         speakerIds: [id],
         title: 'Valutare gli agenti',
-        abstractIt: 'Come verificare un risultato reale.'
+        abstractIt,
+        abstractEn
       }
     },
     {
@@ -133,6 +137,29 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
   await expect(page).toHaveURL(new RegExp('talk=' + id + '-talk'));
   await page.getByRole('combobox', { name: 'Lingua', exact: true }).selectOption('it');
   await expect(page).toHaveURL(/lang=it/);
+  const summary = page.locator('.talk-summary');
+  await expect(summary).not.toContainText('Conclusione completa italiana.');
+  await summary.getByRole('button', { name: 'Mostra abstract completo', exact: true }).click();
+  await expect(summary).toContainText('Conclusione completa italiana.');
+  await expect(summary.getByRole('button', { name: 'Mostra meno', exact: true })).toHaveAttribute(
+    'aria-expanded',
+    'true'
+  );
+  await summary.getByRole('button', { name: 'Mostra meno', exact: true }).click();
+  await expect(summary).not.toContainText('Conclusione completa italiana.');
+  await page.getByRole('combobox', { name: 'Lingua', exact: true }).selectOption('en');
+  await summary.getByRole('button', { name: 'Mostra abstract completo', exact: true }).click();
+  await expect(summary).toContainText('Complete English conclusion.');
+  await page.screenshot({ path: info.outputPath('complete-abstract.png'), fullPage: true });
+  await page.getByRole('combobox', { name: 'Talk', exact: true }).selectOption(id + '-second-talk');
+  await expect(summary.getByRole('button', { name: 'Mostra meno', exact: true })).toHaveCount(0);
+  await page.getByRole('combobox', { name: 'Lingua', exact: true }).selectOption('it');
+  await expect(summary).toContainText('Il secondo talk dello speaker.');
+  await expect(
+    summary.getByRole('button', { name: 'Mostra abstract completo', exact: true })
+  ).toHaveCount(0);
+  await page.getByRole('combobox', { name: 'Talk', exact: true }).selectOption(id + '-talk');
+  await expect(summary).not.toContainText('Conclusione completa italiana.');
   await page.getByRole('link', { name: 'Usa la scaletta', exact: true }).click();
   await expect(
     page.locator('.interview-question').getByText('Domanda preparata 1?', { exact: true })

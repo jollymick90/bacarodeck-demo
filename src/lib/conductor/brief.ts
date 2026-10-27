@@ -86,6 +86,7 @@ export function resolveBrief(
     interviewQuestions,
     classicQuestions: chosen('classicQuestionIds'),
     summary: editorial || abstract.slice(0, 500),
+    abstract,
     summaryOrigin: editorial ? 'editorial' : abstract ? 'abstract_excerpt' : 'missing',
     selectionOrigin: brief ? 'editorial' : mainQuestions.length ? 'legacy_proposal' : 'empty'
   };

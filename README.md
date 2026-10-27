@@ -17,6 +17,10 @@ lavanda indicano il proprio interesse, quelle azzurre un'assegnazione, con
 comparire insieme; i testi rendono gli stati riconoscibili anche senza i colori.
 
 La scheda riunisce talk, sintesi, domande principali, domande opzionali, altre domande e ricerca.
+In **Il talk in 20 secondi**, **Mostra abstract completo** espande il testo nella
+lingua selezionata; **Mostra meno** torna alla vista breve. Se è presente una
+sintesi editoriale, l'abstract completo si apre sotto di essa. Il pulsante compare
+solo quando c'è altro contenuto da leggere.
 «Usa la scaletta» mostra una domanda alla volta. I pulsanti IT / EN permettono di
 cambiare lingua senza perdere la domanda corrente o il talk selezionato; la scelta
 resta nell’URL anche dopo il refresh e si applica anche ai follow-up.
