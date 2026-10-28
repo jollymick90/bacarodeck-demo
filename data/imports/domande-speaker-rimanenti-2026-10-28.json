@@ -1,0 +1,1280 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-28",
+  "description": "Sei domande brevi per ciascuno dei 24 speaker ancora senza domande, esclusa Elena Guidi. Apertura, quattro domande sul talk con follow-up e consiglio finale sull’AI. Ventidue speaker hanno il talk il 29 ottobre nell’agenda ufficiale. Per Alessandro Miliucci ed Erick Wendel la data non è verificata: domande dal contenuto presente nell’app. Per Alessandro Miliucci la lingua inglese è dedotta dall’abstract e resta da confermare. Nessuna traduzione duplicata. Agenda: https://conferences.codemotion.com/milan/agenda/.",
+  "questions": [
+    {
+      "id": "question-alessandro-miliucci-rimanenti-20261028-01",
+      "speakerId": "alessandro-miliucci",
+      "order": 0,
+      "textEn": "Alessandro, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.\nLingua non confermata: domande in inglese, come l’abstract originale.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-miliucci-rimanenti-20261028-02",
+      "speakerId": "alessandro-miliucci",
+      "order": 1,
+      "textEn": "When do we really need a distributed lock?",
+      "followUpEn": "When would you avoid one?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.\nLingua non confermata: domande in inglese, come l’abstract originale.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-miliucci-rimanenti-20261028-03",
+      "speakerId": "alessandro-miliucci",
+      "order": 2,
+      "textEn": "Why use MongoDB instead of adding another tool?",
+      "followUpEn": "What trade-off do we make?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.\nLingua non confermata: domande in inglese, come l’abstract originale.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-miliucci-rimanenti-20261028-04",
+      "speakerId": "alessandro-miliucci",
+      "order": 3,
+      "textEn": "What happens if a worker dies while holding a lock?",
+      "followUpEn": "How do you know it's safe to try again?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.\nLingua non confermata: domande in inglese, come l’abstract originale.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-miliucci-rimanenti-20261028-05",
+      "speakerId": "alessandro-miliucci",
+      "order": 4,
+      "textEn": "Where would you use this in an AI agent workflow?",
+      "followUpEn": "What resource would you protect?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.\nLingua non confermata: domande in inglese, come l’abstract originale.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-miliucci-rimanenti-20261028-06",
+      "speakerId": "alessandro-miliucci",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.\nLingua non confermata: domande in inglese, come l’abstract originale.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-riboni-rimanenti-20261028-01",
+      "speakerId": "alessandro-riboni",
+      "order": 0,
+      "textIt": "Alessandro, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nScaletta condivisa con Aniello Bossa: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-riboni-rimanenti-20261028-02",
+      "speakerId": "alessandro-riboni",
+      "order": 1,
+      "textIt": "Perché una query SQL scritta dall'AI può sembrare giusta ma essere sbagliata?",
+      "followUpIt": "Qual è l'errore più facile da non vedere?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Aniello Bossa: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-riboni-rimanenti-20261028-03",
+      "speakerId": "alessandro-riboni",
+      "order": 2,
+      "textIt": "Che cosa cambia se definiamo una metrica una sola volta?",
+      "followUpIt": "Ci fate un esempio concreto?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Aniello Bossa: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-riboni-rimanenti-20261028-04",
+      "speakerId": "alessandro-riboni",
+      "order": 3,
+      "textIt": "Come impedite all'AI di leggere dati che non dovrebbe vedere?",
+      "followUpIt": "Dove viene applicato il controllo?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nScaletta condivisa con Aniello Bossa: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-riboni-rimanenti-20261028-05",
+      "speakerId": "alessandro-riboni",
+      "order": 4,
+      "textIt": "Da quale domanda sui dati partireste per una prima prova?",
+      "followUpIt": "Come controllereste il risultato?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nScaletta condivisa con Aniello Bossa: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-riboni-rimanenti-20261028-06",
+      "speakerId": "alessandro-riboni",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nScaletta condivisa con Aniello Bossa: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessio-acella-rimanenti-20261028-01",
+      "speakerId": "alessio-acella",
+      "order": 0,
+      "textIt": "Alessio, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nScaletta condivisa con Diana Bernabei: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessio-acella-rimanenti-20261028-02",
+      "speakerId": "alessio-acella",
+      "order": 1,
+      "textIt": "Che cosa cambia quando l'accessibilità è il punto di partenza?",
+      "followUpIt": "Quale scelta avete fatto diversamente?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Diana Bernabei: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessio-acella-rimanenti-20261028-03",
+      "speakerId": "alessio-acella",
+      "order": 2,
+      "textIt": "Quale esigenza degli utenti vi ha sorpreso di più?",
+      "followUpIt": "Come l'avete trasformata in una soluzione?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Diana Bernabei: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessio-acella-rimanenti-20261028-04",
+      "speakerId": "alessio-acella",
+      "order": 3,
+      "textIt": "Come coinvolgete le persone che useranno davvero la piattaforma?",
+      "followUpIt": "Quando chiedete il loro feedback?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nScaletta condivisa con Diana Bernabei: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessio-acella-rimanenti-20261028-05",
+      "speakerId": "alessio-acella",
+      "order": 4,
+      "textIt": "Dove può aiutare l'AI a migliorare l'accessibilità?",
+      "followUpIt": "Che cosa deve ancora verificare una persona?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nScaletta condivisa con Diana Bernabei: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessio-acella-rimanenti-20261028-06",
+      "speakerId": "alessio-acella",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nScaletta condivisa con Diana Bernabei: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrea-ferlito-rimanenti-20261028-01",
+      "speakerId": "andrea-ferlito",
+      "order": 0,
+      "textIt": "Andrea, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrea-ferlito-rimanenti-20261028-02",
+      "speakerId": "andrea-ferlito",
+      "order": 1,
+      "textIt": "Perché hai scelto proprio Parachute su un display così lento?",
+      "followUpIt": "Qual è stata la prima sfida?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrea-ferlito-rimanenti-20261028-03",
+      "speakerId": "andrea-ferlito",
+      "order": 2,
+      "textIt": "Come hai portato il refresh da 18 secondi a 300 millisecondi?",
+      "followUpIt": "Quale limite hai trasformato in un vantaggio?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrea-ferlito-rimanenti-20261028-04",
+      "speakerId": "andrea-ferlito",
+      "order": 3,
+      "textIt": "Che cosa ha fatto bene Gemini in questo progetto?",
+      "followUpIt": "Dove hai dovuto correggerlo?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrea-ferlito-rimanenti-20261028-05",
+      "speakerId": "andrea-ferlito",
+      "order": 4,
+      "textIt": "Che cosa consiglieresti a chi vuole provare un progetto simile?",
+      "followUpIt": "Da quale piccolo esperimento partiresti?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrea-ferlito-rimanenti-20261028-06",
+      "speakerId": "andrea-ferlito",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aniello-bossa-rimanenti-20261028-01",
+      "speakerId": "aniello-bossa",
+      "order": 0,
+      "textIt": "Aniello, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nScaletta condivisa con Alessandro Riboni: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aniello-bossa-rimanenti-20261028-02",
+      "speakerId": "aniello-bossa",
+      "order": 1,
+      "textIt": "Perché una query SQL scritta dall'AI può sembrare giusta ma essere sbagliata?",
+      "followUpIt": "Qual è l'errore più facile da non vedere?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Alessandro Riboni: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aniello-bossa-rimanenti-20261028-03",
+      "speakerId": "aniello-bossa",
+      "order": 2,
+      "textIt": "Che cosa cambia se definiamo una metrica una sola volta?",
+      "followUpIt": "Ci fate un esempio concreto?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Alessandro Riboni: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aniello-bossa-rimanenti-20261028-04",
+      "speakerId": "aniello-bossa",
+      "order": 3,
+      "textIt": "Come impedite all'AI di leggere dati che non dovrebbe vedere?",
+      "followUpIt": "Dove viene applicato il controllo?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nScaletta condivisa con Alessandro Riboni: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aniello-bossa-rimanenti-20261028-05",
+      "speakerId": "aniello-bossa",
+      "order": 4,
+      "textIt": "Da quale domanda sui dati partireste per una prima prova?",
+      "followUpIt": "Come controllereste il risultato?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nScaletta condivisa con Alessandro Riboni: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aniello-bossa-rimanenti-20261028-06",
+      "speakerId": "aniello-bossa",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nScaletta condivisa con Alessandro Riboni: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aurelie-vache-rimanenti-20261028-01",
+      "speakerId": "aurelie-vache",
+      "order": 0,
+      "textEn": "Aurélie, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aurelie-vache-rimanenti-20261028-02",
+      "speakerId": "aurelie-vache",
+      "order": 1,
+      "textEn": "What's the Kubernetes concept people get wrong most often?",
+      "followUpEn": "How do you explain it simply?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aurelie-vache-rimanenti-20261028-03",
+      "speakerId": "aurelie-vache",
+      "order": 2,
+      "textEn": "When does a small team actually need Kubernetes?",
+      "followUpEn": "When is it too much?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aurelie-vache-rimanenti-20261028-04",
+      "speakerId": "aurelie-vache",
+      "order": 3,
+      "textEn": "Why teach Kubernetes with a quiz?",
+      "followUpEn": "What mistake does a game make easier to understand?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aurelie-vache-rimanenti-20261028-05",
+      "speakerId": "aurelie-vache",
+      "order": 4,
+      "textEn": "Would you trust AI to write your Kubernetes configuration?",
+      "followUpEn": "What would you check before deploying it?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-aurelie-vache-rimanenti-20261028-06",
+      "speakerId": "aurelie-vache",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-costantino-cavallo-rimanenti-20261028-01",
+      "speakerId": "costantino-cavallo",
+      "order": 0,
+      "textIt": "Costantino, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-costantino-cavallo-rimanenti-20261028-02",
+      "speakerId": "costantino-cavallo",
+      "order": 1,
+      "textIt": "Se l'AI ci fa scrivere più codice, stiamo davvero consegnando più valore?",
+      "followUpIt": "Come fai a distinguerlo?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-costantino-cavallo-rimanenti-20261028-03",
+      "speakerId": "costantino-cavallo",
+      "order": 2,
+      "textIt": "Quale metrica useresti al posto delle righe di codice?",
+      "followUpIt": "Come la spiegheresti al team?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-costantino-cavallo-rimanenti-20261028-04",
+      "speakerId": "costantino-cavallo",
+      "order": 3,
+      "textIt": "Quale controllo diventa più importante quando gli agenti scrivono codice?",
+      "followUpIt": "Dove lo inseriresti nel processo?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-costantino-cavallo-rimanenti-20261028-05",
+      "speakerId": "costantino-cavallo",
+      "order": 4,
+      "textIt": "Che cosa cambieresti domani nel lavoro di un team?",
+      "followUpIt": "Da quale piccolo esperimento partiresti?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-costantino-cavallo-rimanenti-20261028-06",
+      "speakerId": "costantino-cavallo",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-daniel-zotti-rimanenti-20261028-01",
+      "speakerId": "daniel-zotti",
+      "order": 0,
+      "textIt": "Daniel, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nScaletta condivisa con Stefano Bruno: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-daniel-zotti-rimanenti-20261028-02",
+      "speakerId": "daniel-zotti",
+      "order": 1,
+      "textIt": "Quale vostra provocazione ha fatto discutere di più?",
+      "followUpIt": "Quale risposta vi ha sorpreso?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Stefano Bruno: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-daniel-zotti-rimanenti-20261028-03",
+      "speakerId": "daniel-zotti",
+      "order": 2,
+      "textIt": "Se l'AI scrive il codice, che cosa distingue ancora un senior?",
+      "followUpIt": "Quale competenza conterà di più?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Stefano Bruno: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-daniel-zotti-rimanenti-20261028-04",
+      "speakerId": "daniel-zotti",
+      "order": 3,
+      "textIt": "Quale previsione sul futuro del lavoro vi sembra troppo esagerata?",
+      "followUpIt": "Che cosa vi farebbe cambiare idea?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nScaletta condivisa con Stefano Bruno: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-daniel-zotti-rimanenti-20261028-05",
+      "speakerId": "daniel-zotti",
+      "order": 4,
+      "textIt": "Per reinventarsi senza inseguire ogni novità, da dove partireste?",
+      "followUpIt": "Che cosa vale la pena imparare adesso?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nScaletta condivisa con Stefano Bruno: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-daniel-zotti-rimanenti-20261028-06",
+      "speakerId": "daniel-zotti",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nScaletta condivisa con Stefano Bruno: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-davide-pensato-rimanenti-20261028-01",
+      "speakerId": "davide-pensato",
+      "order": 0,
+      "textIt": "Davide, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-davide-pensato-rimanenti-20261028-02",
+      "speakerId": "davide-pensato",
+      "order": 1,
+      "textIt": "Che differenza c'è tra riprodurre un suono e progettare l'audio di un gioco?",
+      "followUpIt": "Ci fai un esempio concreto?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-davide-pensato-rimanenti-20261028-03",
+      "speakerId": "davide-pensato",
+      "order": 2,
+      "textIt": "Come fanno programmatori e audio designer a capirsi?",
+      "followUpIt": "Quale equivoco capita più spesso?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-davide-pensato-rimanenti-20261028-04",
+      "speakerId": "davide-pensato",
+      "order": 3,
+      "textIt": "Da quale piccolo sistema audio partiresti in Unreal?",
+      "followUpIt": "Come capiresti se funziona durante il gioco?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-davide-pensato-rimanenti-20261028-05",
+      "speakerId": "davide-pensato",
+      "order": 4,
+      "textIt": "Quale parte del tuo lavoro non affideresti all'AI?",
+      "followUpIt": "Dove invece può esserti utile?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-davide-pensato-rimanenti-20261028-06",
+      "speakerId": "davide-pensato",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-diana-bernabei-rimanenti-20261028-01",
+      "speakerId": "diana-bernabei",
+      "order": 0,
+      "textIt": "Diana, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nScaletta condivisa con Alessio Acella: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-diana-bernabei-rimanenti-20261028-02",
+      "speakerId": "diana-bernabei",
+      "order": 1,
+      "textIt": "Che cosa cambia quando l'accessibilità è il punto di partenza?",
+      "followUpIt": "Quale scelta avete fatto diversamente?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Alessio Acella: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-diana-bernabei-rimanenti-20261028-03",
+      "speakerId": "diana-bernabei",
+      "order": 2,
+      "textIt": "Quale esigenza degli utenti vi ha sorpreso di più?",
+      "followUpIt": "Come l'avete trasformata in una soluzione?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Alessio Acella: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-diana-bernabei-rimanenti-20261028-04",
+      "speakerId": "diana-bernabei",
+      "order": 3,
+      "textIt": "Come coinvolgete le persone che useranno davvero la piattaforma?",
+      "followUpIt": "Quando chiedete il loro feedback?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nScaletta condivisa con Alessio Acella: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-diana-bernabei-rimanenti-20261028-05",
+      "speakerId": "diana-bernabei",
+      "order": 4,
+      "textIt": "Dove può aiutare l'AI a migliorare l'accessibilità?",
+      "followUpIt": "Che cosa deve ancora verificare una persona?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nScaletta condivisa con Alessio Acella: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-diana-bernabei-rimanenti-20261028-06",
+      "speakerId": "diana-bernabei",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nScaletta condivisa con Alessio Acella: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-edoardo-dusi-rimanenti-20261028-01",
+      "speakerId": "edoardo-dusi",
+      "order": 0,
+      "textEn": "Edoardo, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-edoardo-dusi-rimanenti-20261028-02",
+      "speakerId": "edoardo-dusi",
+      "order": 1,
+      "textEn": "Why does predicting the next bit help us compress data?",
+      "followUpEn": "Can you explain it with a simple example?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-edoardo-dusi-rimanenti-20261028-03",
+      "speakerId": "edoardo-dusi",
+      "order": 2,
+      "textEn": "Why does the model need to be part of the message?",
+      "followUpEn": "What cost do people forget?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-edoardo-dusi-rimanenti-20261028-04",
+      "speakerId": "edoardo-dusi",
+      "order": 3,
+      "textEn": "If LLMs predict so well, why are they impractical compressors?",
+      "followUpEn": "What's the biggest obstacle?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-edoardo-dusi-rimanenti-20261028-05",
+      "speakerId": "edoardo-dusi",
+      "order": 4,
+      "textEn": "What should a web developer check before choosing a compression method?",
+      "followUpEn": "When is a smaller file not worth it?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-edoardo-dusi-rimanenti-20261028-06",
+      "speakerId": "edoardo-dusi",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-egon-ferri-rimanenti-20261028-01",
+      "speakerId": "egon-ferri",
+      "order": 0,
+      "textEn": "Egon, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-egon-ferri-rimanenti-20261028-02",
+      "speakerId": "egon-ferri",
+      "order": 1,
+      "textEn": "Does a higher benchmark score mean a model is more intelligent?",
+      "followUpEn": "What might that score hide?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-egon-ferri-rimanenti-20261028-03",
+      "speakerId": "egon-ferri",
+      "order": 2,
+      "textEn": "What makes an ARC puzzle different from a typical AI test?",
+      "followUpEn": "Why do a few examples matter?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-egon-ferri-rimanenti-20261028-04",
+      "speakerId": "egon-ferri",
+      "order": 3,
+      "textEn": "How can we tell learning apart from memorizing?",
+      "followUpEn": "What would a fair test look like?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-egon-ferri-rimanenti-20261028-05",
+      "speakerId": "egon-ferri",
+      "order": 4,
+      "textEn": "What should developers ask before choosing a model from a leaderboard?",
+      "followUpEn": "What would you test on your own project?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-egon-ferri-rimanenti-20261028-06",
+      "speakerId": "egon-ferri",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-emmanuele-villa-rimanenti-20261028-01",
+      "speakerId": "emmanuele-villa",
+      "order": 0,
+      "textEn": "Emmanuele, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-emmanuele-villa-rimanenti-20261028-02",
+      "speakerId": "emmanuele-villa",
+      "order": 1,
+      "textEn": "Why use Flappy Bird to explain how AI learns?",
+      "followUpEn": "What can we see that a chatbot hides?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-emmanuele-villa-rimanenti-20261028-03",
+      "speakerId": "emmanuele-villa",
+      "order": 2,
+      "textEn": "How does a network improve without examples of good play?",
+      "followUpEn": "How do you decide which players survive?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-emmanuele-villa-rimanenti-20261028-04",
+      "speakerId": "emmanuele-villa",
+      "order": 3,
+      "textEn": "Can the agent learn the wrong thing from its score?",
+      "followUpEn": "How would you notice?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-emmanuele-villa-rimanenti-20261028-05",
+      "speakerId": "emmanuele-villa",
+      "order": 4,
+      "textEn": "What should a developer build to understand these ideas?",
+      "followUpEn": "What's the smallest useful experiment?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-emmanuele-villa-rimanenti-20261028-06",
+      "speakerId": "emmanuele-villa",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-erick-wendel-rimanenti-20261028-01",
+      "speakerId": "erick-wendel",
+      "order": 0,
+      "textEn": "Erick, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-erick-wendel-rimanenti-20261028-02",
+      "speakerId": "erick-wendel",
+      "order": 1,
+      "textEn": "What becomes possible when AI runs inside the browser?",
+      "followUpEn": "What's a good first use case?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-erick-wendel-rimanenti-20261028-03",
+      "speakerId": "erick-wendel",
+      "order": 2,
+      "textEn": "When should we use local AI instead of a cloud API?",
+      "followUpEn": "What do we give up?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-erick-wendel-rimanenti-20261028-04",
+      "speakerId": "erick-wendel",
+      "order": 3,
+      "textEn": "What happens when a browser doesn't support the AI feature?",
+      "followUpEn": "How would you handle an older device?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-erick-wendel-rimanenti-20261028-05",
+      "speakerId": "erick-wendel",
+      "order": 4,
+      "textEn": "What would you build first with browser AI?",
+      "followUpEn": "What should developers test before shipping it?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-erick-wendel-rimanenti-20261028-06",
+      "speakerId": "erick-wendel",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nData del talk non verificata nell’agenda attuale; domande preparate dal titolo e abstract della scheda.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-giovanni-galloro-rimanenti-20261028-01",
+      "speakerId": "giovanni-galloro",
+      "order": 0,
+      "textIt": "Giovanni, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-giovanni-galloro-rimanenti-20261028-02",
+      "speakerId": "giovanni-galloro",
+      "order": 1,
+      "textIt": "Che cosa devi spiegare a un agente prima di fargli costruire altri agenti?",
+      "followUpIt": "Quale dettaglio non può mancare?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-giovanni-galloro-rimanenti-20261028-03",
+      "speakerId": "giovanni-galloro",
+      "order": 2,
+      "textIt": "Come capisci se l'architettura proposta ha senso?",
+      "followUpIt": "Che cosa controlli prima del codice?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-giovanni-galloro-rimanenti-20261028-04",
+      "speakerId": "giovanni-galloro",
+      "order": 3,
+      "textIt": "Quando una skill aiuta più di un prompt lungo?",
+      "followUpIt": "Ci fai un esempio dal tuo workflow?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-giovanni-galloro-rimanenti-20261028-05",
+      "speakerId": "giovanni-galloro",
+      "order": 4,
+      "textIt": "Quale piccolo sistema proveresti a costruire con ADK?",
+      "followUpIt": "Come testeresti il lavoro degli agenti?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-giovanni-galloro-rimanenti-20261028-06",
+      "speakerId": "giovanni-galloro",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-landi-rimanenti-20261028-01",
+      "speakerId": "marco-landi",
+      "order": 0,
+      "textIt": "Marco, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nScaletta condivisa con Michele Laurelli: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-landi-rimanenti-20261028-02",
+      "speakerId": "marco-landi",
+      "order": 1,
+      "textIt": "Che differenza c'è tra tradurre codice e modernizzare un'applicazione?",
+      "followUpIt": "Che cosa deve restare uguale?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Michele Laurelli: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-landi-rimanenti-20261028-03",
+      "speakerId": "marco-landi",
+      "order": 2,
+      "textIt": "Come controllate che il nuovo programma faccia davvero le stesse cose?",
+      "followUpIt": "Quale errore è più difficile da scoprire?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Michele Laurelli: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-landi-rimanenti-20261028-04",
+      "speakerId": "marco-landi",
+      "order": 3,
+      "textIt": "Dove serve ancora una persona nel processo di conversione?",
+      "followUpIt": "Che cosa succede quando il codice originale è poco chiaro?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nScaletta condivisa con Michele Laurelli: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-landi-rimanenti-20261028-05",
+      "speakerId": "marco-landi",
+      "order": 4,
+      "textIt": "Da quale pezzo di un sistema legacy partireste?",
+      "followUpIt": "Come misurereste il successo della prima prova?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nScaletta condivisa con Michele Laurelli: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-landi-rimanenti-20261028-06",
+      "speakerId": "marco-landi",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nScaletta condivisa con Michele Laurelli: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-liberati-rimanenti-20261028-01",
+      "speakerId": "marco-liberati",
+      "order": 0,
+      "textEn": "Marco, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-liberati-rimanenti-20261028-02",
+      "speakerId": "marco-liberati",
+      "order": 1,
+      "textEn": "What made you look at Italian law as a Git repository?",
+      "followUpEn": "What was the first surprise?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-liberati-rimanenti-20261028-03",
+      "speakerId": "marco-liberati",
+      "order": 2,
+      "textEn": "Which legal change looks just like a code change?",
+      "followUpEn": "Can you give us one example?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-liberati-rimanenti-20261028-04",
+      "speakerId": "marco-liberati",
+      "order": 3,
+      "textEn": "Where does the law stop behaving like a codebase?",
+      "followUpEn": "What gets lost in that comparison?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-liberati-rimanenti-20261028-05",
+      "speakerId": "marco-liberati",
+      "order": 4,
+      "textEn": "Could AI help people explore this history?",
+      "followUpEn": "What would it need to check before explaining a law?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-marco-liberati-rimanenti-20261028-06",
+      "speakerId": "marco-liberati",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-matteo-flora-rimanenti-20261028-01",
+      "speakerId": "matteo-flora",
+      "order": 0,
+      "textEn": "Matteo, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-matteo-flora-rimanenti-20261028-02",
+      "speakerId": "matteo-flora",
+      "order": 1,
+      "textEn": "Can software work perfectly and still cause a disaster?",
+      "followUpEn": "What's one everyday example?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-matteo-flora-rimanenti-20261028-03",
+      "speakerId": "matteo-flora",
+      "order": 2,
+      "textEn": "Which engineering decision should make us stop and ask more questions?",
+      "followUpEn": "Who should we involve?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-matteo-flora-rimanenti-20261028-04",
+      "speakerId": "matteo-flora",
+      "order": 3,
+      "textEn": "How do you stay careful without blocking every release?",
+      "followUpEn": "What's one useful check before shipping?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-matteo-flora-rimanenti-20261028-05",
+      "speakerId": "matteo-flora",
+      "order": 4,
+      "textEn": "What changes when an AI agent gets production permissions?",
+      "followUpEn": "What permission would you question first?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-matteo-flora-rimanenti-20261028-06",
+      "speakerId": "matteo-flora",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-maurizio-argoneto-rimanenti-20261028-01",
+      "speakerId": "maurizio-argoneto",
+      "order": 0,
+      "textIt": "Maurizio, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-maurizio-argoneto-rimanenti-20261028-02",
+      "speakerId": "maurizio-argoneto",
+      "order": 1,
+      "textIt": "Perché uno scanner segnala vulnerabilità che non possiamo davvero sfruttare?",
+      "followUpIt": "Quanto lavoro ci fanno perdere?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-maurizio-argoneto-rimanenti-20261028-03",
+      "speakerId": "maurizio-argoneto",
+      "order": 2,
+      "textIt": "Come capisci se il codice vulnerabile viene davvero eseguito?",
+      "followUpIt": "Dove entra in gioco l'AI?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-maurizio-argoneto-rimanenti-20261028-04",
+      "speakerId": "maurizio-argoneto",
+      "order": 3,
+      "textIt": "Che prova vuoi prima di ignorare un allarme?",
+      "followUpIt": "Che cosa succede se il modello sbaglia?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-maurizio-argoneto-rimanenti-20261028-05",
+      "speakerId": "maurizio-argoneto",
+      "order": 4,
+      "textIt": "Perché far girare il modello in locale?",
+      "followUpIt": "Da quale servizio partiresti per una prima prova?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-maurizio-argoneto-rimanenti-20261028-06",
+      "speakerId": "maurizio-argoneto",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-michele-laurelli-rimanenti-20261028-01",
+      "speakerId": "michele-laurelli",
+      "order": 0,
+      "textIt": "Michele, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nScaletta condivisa con Marco Landi: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-michele-laurelli-rimanenti-20261028-02",
+      "speakerId": "michele-laurelli",
+      "order": 1,
+      "textIt": "Che differenza c'è tra tradurre codice e modernizzare un'applicazione?",
+      "followUpIt": "Che cosa deve restare uguale?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Marco Landi: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-michele-laurelli-rimanenti-20261028-03",
+      "speakerId": "michele-laurelli",
+      "order": 2,
+      "textIt": "Come controllate che il nuovo programma faccia davvero le stesse cose?",
+      "followUpIt": "Quale errore è più difficile da scoprire?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Marco Landi: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-michele-laurelli-rimanenti-20261028-04",
+      "speakerId": "michele-laurelli",
+      "order": 3,
+      "textIt": "Dove serve ancora una persona nel processo di conversione?",
+      "followUpIt": "Che cosa succede quando il codice originale è poco chiaro?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nScaletta condivisa con Marco Landi: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-michele-laurelli-rimanenti-20261028-05",
+      "speakerId": "michele-laurelli",
+      "order": 4,
+      "textIt": "Da quale pezzo di un sistema legacy partireste?",
+      "followUpIt": "Come misurereste il successo della prima prova?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nScaletta condivisa con Marco Landi: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-michele-laurelli-rimanenti-20261028-06",
+      "speakerId": "michele-laurelli",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nScaletta condivisa con Marco Landi: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-moreno-lovato-rimanenti-20261028-01",
+      "speakerId": "moreno-lovato",
+      "order": 0,
+      "textIt": "Moreno, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-moreno-lovato-rimanenti-20261028-02",
+      "speakerId": "moreno-lovato",
+      "order": 1,
+      "textIt": "Quando hai capito che volevi passare dal software in banca ai videogiochi?",
+      "followUpIt": "Qual è stato il primo passo concreto?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-moreno-lovato-rimanenti-20261028-03",
+      "speakerId": "moreno-lovato",
+      "order": 2,
+      "textIt": "Quale competenza del lavoro precedente ti è servita di più?",
+      "followUpIt": "Che cosa hai dovuto imparare da zero?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-moreno-lovato-rimanenti-20261028-04",
+      "speakerId": "moreno-lovato",
+      "order": 3,
+      "textIt": "Perché hai scoperto che vendere viene prima di fare il gioco che ami?",
+      "followUpIt": "Che cosa avresti voluto sapere prima?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-moreno-lovato-rimanenti-20261028-05",
+      "speakerId": "moreno-lovato",
+      "order": 4,
+      "textIt": "L'AI cambia le possibilità di un piccolo studio indipendente?",
+      "followUpIt": "Dove la useresti davvero?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-moreno-lovato-rimanenti-20261028-06",
+      "speakerId": "moreno-lovato",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-bruno-rimanenti-20261028-01",
+      "speakerId": "stefano-bruno",
+      "order": 0,
+      "textIt": "Stefano, ciao! Come sta andando questo Codemotion?",
+      "followUpIt": "Ci racconti in breve il tuo talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia\nScaletta condivisa con Daniel Zotti: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-bruno-rimanenti-20261028-02",
+      "speakerId": "stefano-bruno",
+      "order": 1,
+      "textIt": "Quale vostra provocazione ha fatto discutere di più?",
+      "followUpIt": "Quale risposta vi ha sorpreso?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Daniel Zotti: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-bruno-rimanenti-20261028-03",
+      "speakerId": "stefano-bruno",
+      "order": 2,
+      "textIt": "Se l'AI scrive il codice, che cosa distingue ancora un senior?",
+      "followUpIt": "Quale competenza conterà di più?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nScaletta condivisa con Daniel Zotti: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-bruno-rimanenti-20261028-04",
+      "speakerId": "stefano-bruno",
+      "order": 3,
+      "textIt": "Quale previsione sul futuro del lavoro vi sembra troppo esagerata?",
+      "followUpIt": "Che cosa vi farebbe cambiare idea?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nScaletta condivisa con Daniel Zotti: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-bruno-rimanenti-20261028-05",
+      "speakerId": "stefano-bruno",
+      "order": 4,
+      "textIt": "Per reinventarsi senza inseguire ogni novità, da dove partireste?",
+      "followUpIt": "Che cosa vale la pena imparare adesso?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nScaletta condivisa con Daniel Zotti: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-bruno-rimanenti-20261028-06",
+      "speakerId": "stefano-bruno",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nScaletta condivisa con Daniel Zotti: in una intervista congiunta porre le domande una sola volta.",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-fiorucci-rimanenti-20261028-01",
+      "speakerId": "stefano-fiorucci",
+      "order": 0,
+      "textEn": "Stefano, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-fiorucci-rimanenti-20261028-02",
+      "speakerId": "stefano-fiorucci",
+      "order": 1,
+      "textEn": "Why teach a tiny model to play Doom?",
+      "followUpEn": "What does that show us about small models?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-fiorucci-rimanenti-20261028-03",
+      "speakerId": "stefano-fiorucci",
+      "order": 2,
+      "textEn": "When would you choose a small model over a frontier LLM?",
+      "followUpEn": "What would you measure first?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-fiorucci-rimanenti-20261028-04",
+      "speakerId": "stefano-fiorucci",
+      "order": 3,
+      "textEn": "What did you learn from the attempts that failed?",
+      "followUpEn": "How did you change the training?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-fiorucci-rimanenti-20261028-05",
+      "speakerId": "stefano-fiorucci",
+      "order": 4,
+      "textEn": "What could a developer try on consumer hardware tomorrow?",
+      "followUpEn": "Which small use case would you choose?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-stefano-fiorucci-rimanenti-20261028-06",
+      "speakerId": "stefano-fiorucci",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-valeria-zuccoli-rimanenti-20261028-01",
+      "speakerId": "valeria-zuccoli",
+      "order": 0,
+      "textEn": "Valeria, hi! How's Codemotion been so far?",
+      "followUpEn": "Can you briefly tell us about your talk?",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-valeria-zuccoli-rimanenti-20261028-02",
+      "speakerId": "valeria-zuccoli",
+      "order": 1,
+      "textEn": "Why can the same prompt give different answers at temperature zero?",
+      "followUpEn": "What does temperature actually guarantee?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-valeria-zuccoli-rimanenti-20261028-03",
+      "speakerId": "valeria-zuccoli",
+      "order": 2,
+      "textEn": "How can other users change the answer my model gives?",
+      "followUpEn": "What happens when requests share a batch?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-valeria-zuccoli-rimanenti-20261028-04",
+      "speakerId": "valeria-zuccoli",
+      "order": 3,
+      "textEn": "When do we need exactly the same answer every time?",
+      "followUpEn": "When is the same meaning enough?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-valeria-zuccoli-rimanenti-20261028-05",
+      "speakerId": "valeria-zuccoli",
+      "order": 4,
+      "textEn": "How would you test reproducibility in an AI application?",
+      "followUpEn": "What would you log to investigate a difference?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-valeria-zuccoli-rimanenti-20261028-06",
+      "speakerId": "valeria-zuccoli",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    }
+  ]
+}

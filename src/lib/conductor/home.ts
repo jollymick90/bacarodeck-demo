@@ -1,5 +1,6 @@
 import type { Dataset, Entity } from '../fields';
 import { talkStartTime, withScheduleDefaults } from '../talk-schedule';
+import { assignmentRelationship } from '../speaker-filters';
 
 export function firstSpeakerTalk(speakerId: string, data: Dataset): Entity | undefined {
   return (data.talks || [])
@@ -39,18 +40,9 @@ export function groupSpeakers(
   includeCompleted = false
 ) {
   const saved = new Set(interests.filter((i) => i.memberUid === actorUid).map((i) => i.speakerId));
-  const actorIds = new Set(
-    assignees.filter((member) => actorUid && member.uid === actorUid).map((member) => member.id)
-  );
   const assigned = new Set(
     plans
-      .filter(
-        (plan) =>
-          actorUid &&
-          (plan.assignedTeamId
-            ? actorIds.has(String(plan.assignedTeamId))
-            : plan.assignedToUid === actorUid)
-      )
+      .filter((plan) => assignmentRelationship(plan, actorUid, assignees) === 'self')
       .map((plan) => plan.speakerId)
   );
   const completed = new Set(

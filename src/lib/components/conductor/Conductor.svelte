@@ -6,6 +6,8 @@
   import type { Dataset, Entity } from '$lib/fields';
   import { isInInterviewList } from '$lib/interview-list';
   import { searchSpeakers } from '$lib/speaker-search';
+  import { filterSpeakers, readSpeakerFilters } from '$lib/speaker-filters';
+  import SpeakerFilters from '../SpeakerFilters.svelte';
   import { firstSpeakerTalk, groupSpeakers, sortSpeakersByTalk } from '$lib/conductor/home';
   import { talkStartTime } from '$lib/talk-schedule';
   import { resolveBrief, briefId } from '$lib/conductor/brief';
@@ -45,11 +47,13 @@
   let query = $state('');
   const speakerList = $derived(mode === 'home' || mode === 'speakers');
   const showAllSpeakers = $derived(page.url.searchParams.get('elenco') === 'tutti');
-  const showCompleted = $derived(page.url.searchParams.get('fatte') === '1');
-  function toggleCompleted() {
+  const speakerFilters = $derived(
+    readSpeakerFilters(page.url.searchParams, mode === 'home' ? 'pending' : 'all')
+  );
+  function changeSpeakerFilter(name: 'intervista' | 'assegnazione', value: string) {
     const params = new URLSearchParams(page.url.search);
-    if (showCompleted) params.delete('fatte');
-    else params.set('fatte', '1');
+    params.set(name, value);
+    if (name === 'intervista') params.delete('fatte');
     void goto(page.url.pathname + (params.size ? '?' + params : ''), {
       noScroll: true,
       keepFocus: true
@@ -118,13 +122,19 @@
   const brief = $derived(resolveBrief(data, selected, talkId, language));
   const groups = $derived(
     groupSpeakers(
-      searchSpeakers(data.speakers || [], query),
+      filterSpeakers(
+        searchSpeakers(data.speakers || [], query),
+        data.interviewPlans || [],
+        uid,
+        assignees,
+        speakerFilters
+      ),
       data.speakerInterests || [],
       data.interviewPlans || [],
       uid,
       topic,
       assignees,
-      mode !== 'home' || showCompleted
+      true
     )
   );
   const visibleSpeakers = $derived(
@@ -444,6 +454,11 @@
           {showAllSpeakers ? 'Mostra solo in elenco' : 'Mostra anche gli altri speaker'}
         </button>
       </div>
+      <SpeakerFilters
+        filters={speakerFilters}
+        signedIn={Boolean(uid)}
+        onchange={changeSpeakerFilter}
+      />
     {/if}
     {#if mode === 'home'}
       <section aria-label="I miei speaker e i miei assegnati">
@@ -452,10 +467,6 @@
           I tuoi interessi e gli speaker assegnati a te, anche fuori lista. Visibili a tutto il
           team.
         </p>
-        <button type="button" aria-pressed={showCompleted} onclick={toggleCompleted}>
-          {showCompleted ? 'Nascondi le interviste fatte' : 'Fai vedere le interviste fatte'} ({groups
-            .completed.length})
-        </button>
         <div class="personal-filters" role="group" aria-label="Filtra i miei speaker">
           <button
             type="button"
@@ -519,9 +530,8 @@
           </div>
         </section>
       {/if}
-      <a
-        class="nav-action all-speakers"
-        href={'/speaker' + (showAllSpeakers ? '?elenco=tutti' : '')}>Vedi la lista completa</a
+      <a class="nav-action all-speakers" href={'/speaker' + page.url.search}
+        >Vedi la lista completa</a
       >
     {:else}
       {#if mode === 'topics' || mode === 'topic'}

@@ -5,6 +5,8 @@
   import { researchEntries } from '$lib/research';
   import { isInInterviewList } from '$lib/interview-list';
   import { searchSpeakers } from '$lib/speaker-search';
+  import { filterSpeakers, readSpeakerFilters } from '$lib/speaker-filters';
+  import SpeakerFilters from '$lib/components/SpeakerFilters.svelte';
   import { labels, translate, type Collection, type Entity } from '$lib/fields';
   import { safeUrl, provenanceLabel } from '$lib/domain';
   import { commitChanges, removeEntity } from '$lib/repository';
@@ -47,9 +49,11 @@
   const query = $derived(page.url.searchParams.get('q') ?? '');
   const directory = $derived(page.url.searchParams.get('elenco') ?? 'in');
   const priorityOnly = $derived(page.url.searchParams.get('prioritari') === '1');
+  const speakerFilters = $derived(readSpeakerFilters(page.url.searchParams));
   function filter(name: string, value: string) {
     const params = new URLSearchParams(page.url.search);
     params.set(name, value);
+    if (name === 'intervista') params.delete('fatte');
     void goto('/backoffice?' + params, { replaceState: true, noScroll: true, keepFocus: true });
   }
   const tag = $derived(page.url.searchParams.get('tag') ?? '');
@@ -61,7 +65,13 @@
   const speakers = $derived(data.speakers || []);
   const tags = $derived([...new Set(speakers.flatMap((s) => (s.tags as string[]) || []))].sort());
   const filtered = $derived(
-    searchSpeakers(speakers, query).filter((s) => {
+    filterSpeakers(
+      searchSpeakers(speakers, query),
+      data.interviewPlans || [],
+      user?.uid || '',
+      workspace.assignees,
+      speakerFilters
+    ).filter((s) => {
       const plan = data.interviewPlans?.find((p) => p.speakerId === s.id);
       return (
         (!priorityOnly || s.priority === true) &&
@@ -160,6 +170,7 @@
       value={query}
       oninput={(event) => filter('q', event.currentTarget.value)}
     />
+    <SpeakerFilters filters={speakerFilters} signedIn={Boolean(user?.uid)} onchange={filter} />
     <details class="search-filters">
       <summary>Filtri speaker</summary>
       <label
@@ -207,7 +218,7 @@
     </details>
     <div class="search-summary">
       <span role="status">{filtered.length} di {speakers.length} speaker</span>
-      {#if query || tag || prep || assignee || directory || priorityOnly}<button
+      {#if query || tag || prep || assignee || directory || priorityOnly || speakerFilters.interview !== 'all' || speakerFilters.assignment !== 'all'}<button
           onclick={() =>
             goto('/backoffice?elenco=', { replaceState: true, noScroll: true, keepFocus: true })}
           >Azzera ricerca</button
