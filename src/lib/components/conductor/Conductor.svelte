@@ -11,7 +11,7 @@
   import { resolveBrief, briefId } from '$lib/conductor/brief';
   import { assignmentOwner } from '$lib/conductor/assignment';
   import { team } from '$lib/team';
-  import { api, refreshWorkspace } from '$lib/repository';
+  import { api, ApiError, refreshWorkspace } from '$lib/repository';
   import TalkSchedule from '../TalkSchedule.svelte';
   import Markdown from '../Markdown.svelte';
   import SuccessNotice from '../SuccessNotice.svelte';
@@ -36,7 +36,7 @@
     members: Entity[];
     assignees?: Entity[];
     uid: string;
-    onquestion: (q: Entity) => Promise<void>;
+    onquestion: (q: Entity, brief?: Entity) => Promise<void>;
     mode?: 'home' | 'speakers' | 'speaker' | 'reading' | 'topics' | 'topic';
     selected?: string;
     topic?: string;
@@ -96,6 +96,9 @@
   let failure = $state('');
   let message = $state('');
   let editQuestion = $state<Entity | null>(null);
+  let newQuestionBrief = $state<Entity | null>(null);
+  let questionConflict = $state(false);
+  let questionRecovery = $state('');
   let editLanguage = $state<'it' | 'en'>('it');
   let questionDialog: HTMLDialogElement;
   let replacement = $state<string | null>(null);
@@ -285,26 +288,98 @@
     }, 'Ordine delle opzionali aggiornato per tutti.');
   }
   function edit(q: Entity) {
+    newQuestionBrief = null;
+    questionConflict = false;
+    questionRecovery = '';
     editQuestion = { ...q };
     editLanguage = language;
     failure = '';
     questionDialog.showModal();
   }
+  function addQuestion() {
+    if (busy || readOnly) return;
+    picker.close();
+    editLanguage = language;
+    questionConflict = false;
+    questionRecovery = '';
+    editQuestion = {
+      id: crypto.randomUUID(),
+      speakerId: selected,
+      order: Math.max(0, ...questions.map((q) => Number(q.order) || 0)) + 1,
+      status: 'suggested'
+    };
+    // Keep the revision from when the draft was opened, so a colleague's changes are protected.
+    newQuestionBrief = questionBriefRecord(brief);
+    failure = '';
+    questionDialog.showModal();
+  }
+  function questionBriefRecord(source: ReturnType<typeof resolveBrief>): Entity {
+    return {
+      ...source.brief,
+      id: source.brief?.id || briefId(selected, talkId),
+      speakerId: selected,
+      talkId,
+      mainQuestionIds: source.mainQuestions.map((q) => q.id),
+      optionalQuestionIds: source.optionalQuestions.map((q) => q.id),
+      classicQuestionIds: [...((source.brief?.classicQuestionIds || []) as string[])]
+    };
+  }
+  async function recoverQuestionBrief() {
+    if (busy || readOnly || !newQuestionBrief) return;
+    busy = true;
+    try {
+      const [conductorBriefs, questions] = await Promise.all([
+        api('/api/data/conductorBriefs'),
+        api('/api/data/questions')
+      ]);
+      newQuestionBrief = questionBriefRecord(
+        resolveBrief({ ...data, conductorBriefs, questions }, selected, talkId, editLanguage)
+      );
+      questionConflict = false;
+      questionRecovery =
+        'Scaletta aggiornata. Premi «Aggiungi alla scaletta» per salvare la domanda.';
+    } catch (error) {
+      questionRecovery = (error as Error).message;
+    } finally {
+      busy = false;
+    }
+  }
   function closeQuestion() {
     if (busy) return;
     questionDialog.close();
     editQuestion = null;
+    newQuestionBrief = null;
   }
   async function saveQuestion(updated: Entity) {
-    if (busy) return;
+    if (busy || readOnly) return;
+    const creating = newQuestionBrief !== null;
+    let nextBrief: Entity | undefined;
+    if (newQuestionBrief) {
+      if (!String(updated.textIt || '').trim() && !String(updated.textEn || '').trim())
+        throw Error('Scrivi il testo della domanda in italiano o in inglese.');
+      if (updated.status === 'rejected')
+        throw Error('Una domanda scartata non può essere aggiunta alla scaletta.');
+      updated = { ...updated, id: editQuestion!.id, speakerId: selected };
+      const ids = [...(newQuestionBrief.mainQuestionIds as string[])];
+      ids.splice(Math.max(0, ids.length - 1), 0, updated.id);
+      nextBrief = { ...newQuestionBrief, mainQuestionIds: ids };
+    }
     busy = true;
     message = '';
     try {
-      await onquestion(updated);
+      await onquestion(updated, nextBrief);
       questionDialog.close();
       editQuestion = null;
-      message = 'Domanda aggiornata per tutti.';
+      newQuestionBrief = null;
+      message = creating
+        ? 'Domanda aggiunta alla scaletta per tutti.'
+        : 'Domanda aggiornata per tutti.';
     } catch (error) {
+      if (creating && error instanceof ApiError && error.status === 409) {
+        questionConflict = true;
+        questionRecovery =
+          'La scaletta è cambiata. Puoi aggiornarla conservando il testo della domanda.';
+      }
       refreshWorkspace();
       throw error;
     } finally {
@@ -597,12 +672,15 @@
     <AssignmentControl {speaker} {plan} />
     <InterviewCompletion speakerId={selected} {plan} />
     <section class="question-sheet">
-      <h2>Le 3 domande principali</h2>
+      <h2>Domande principali</h2>
       <p class="muted">
         {brief.selectionOrigin === 'editorial'
           ? 'Scaletta condivisa'
           : 'Proposta dall’ordine esistente · da confermare'} · tutti possono modificarla.
       </p>
+      <button class="primary" disabled={busy || readOnly} onclick={addQuestion}
+        >Aggiungi domanda</button
+      >
       {#each brief.mainQuestions as q, index (q.id)}<article class="question-row">
           <span class="question-number">{index + 1}</span>
           <div>
@@ -873,14 +951,34 @@
   aria-labelledby="edit-question-title"
   oncancel={(event) => {
     if (busy) event.preventDefault();
-    else editQuestion = null;
+    else {
+      editQuestion = null;
+      newQuestionBrief = null;
+    }
   }}
 >
-  <h2 id="edit-question-title">Modifica condivisa</h2>
-  <p>
-    Le modifiche sono condivise con tutti. Apri «Mostra tutti i campi editoriali» per modificare
-    anche traduzioni, follow-up, motivazione, note e gli altri campi della domanda.
-  </p>
+  <h2 id="edit-question-title">{newQuestionBrief ? 'Aggiungi domanda' : 'Modifica condivisa'}</h2>
+  {#if newQuestionBrief}
+    <p>
+      {speaker?.fullName} · {editLanguage === 'it' ? 'Italiano' : 'English'}. La domanda sarà
+      aggiunta alla scaletta condivisa{(newQuestionBrief.mainQuestionIds as string[]).length
+        ? ', prima della domanda finale'
+        : ''}.
+    </p>
+    {#if questionRecovery}<p role={questionConflict ? 'alert' : 'status'}>
+        {questionRecovery}
+      </p>{/if}
+    {#if questionConflict}
+      <button disabled={busy || readOnly} onclick={recoverQuestionBrief}
+        >Aggiorna scaletta e mantieni la domanda</button
+      >
+    {/if}
+  {:else}
+    <p>
+      Le modifiche sono condivise con tutti. Apri «Mostra tutti i campi editoriali» per modificare
+      anche traduzioni, follow-up, motivazione, note e gli altri campi della domanda.
+    </p>
+  {/if}
   {#if editQuestion}
     <Editor
       collection="questions"
@@ -889,7 +987,7 @@
       {busy}
       initialEditing
       primaryFields={[editLanguage === 'it' ? 'textIt' : 'textEn']}
-      saveLabel="Salva per tutti"
+      saveLabel={newQuestionBrief ? 'Aggiungi alla scaletta' : 'Salva per tutti'}
       onsave={saveQuestion}
       oncancel={closeQuestion}
       onclose={closeQuestion}
@@ -906,8 +1004,10 @@
         >Usa questa domanda</button
       >
     </article>{:else}<p>
-      Non ci sono altre domande strutturate. Puoi aggiungerle da Gestione.
-    </p>{/each}{#if failure}<p role="alert">{failure}</p>{/if}<button
+      Non ci sono altre domande strutturate. Puoi scriverne una nuova qui.
+    </p>{/each}
+  <button disabled={busy || readOnly} onclick={addQuestion}>Scrivi una nuova domanda</button>
+  {#if failure}<p role="alert">{failure}</p>{/if}<button
     disabled={busy}
     onclick={() => picker.close()}>Chiudi</button
   >

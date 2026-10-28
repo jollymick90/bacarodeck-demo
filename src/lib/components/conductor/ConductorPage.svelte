@@ -26,9 +26,18 @@
     {mode}
     selected={speakerId}
     {topic}
-    onquestion={async (question) => {
+    onquestion={async (question, brief) => {
       await commitChanges(workspace.client!.db, workspace.user!.uid, [
-        { collection: 'questions', data: question, expectedRevision: question.revision ?? null }
+        { collection: 'questions', data: question, expectedRevision: question.revision ?? null },
+        ...(brief
+          ? [
+              {
+                collection: 'conductorBriefs' as const,
+                data: brief,
+                expectedRevision: brief.revision ?? null
+              }
+            ]
+          : [])
       ]);
     }}
   />

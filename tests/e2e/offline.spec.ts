@@ -179,6 +179,9 @@ test('prepared data survives closing the browser and reopening unread routes off
     await page.goto(`/speaker/${id}`);
     await expect(page.getByRole('button', { name: 'Assegna / cambia' })).toBeDisabled();
     await expect(
+      page.getByRole('button', { name: 'Aggiungi domanda', exact: true })
+    ).toBeDisabled();
+    await expect(
       page.getByRole('button', { name: 'Intervista fatta', exact: true })
     ).toBeDisabled();
     await page.getByRole('button', { name: 'Avvia intervista', exact: true }).first().click();

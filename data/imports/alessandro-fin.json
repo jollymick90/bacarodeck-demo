@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-28",
+  "description": "Alessandro Fin: profilo, foto e abstract forniti dall’utente; traduzioni IT e tre domande IT/EN preparate a partire da questi contenuti.",
+  "speakers": [
+    {
+      "id": "alessandro-fin",
+      "fullName": "Alessandro Fin",
+      "firstName": "Alessandro",
+      "lastName": "Fin",
+      "headline": "Director of Products for Gemini Agents at Google DeepMind",
+      "organization": "Google DeepMind",
+      "biographyMd": "Director of Products for Gemini Agents at Google DeepMind. Inventor of Google Lens and Pixel Face Unlock.",
+      "biographyEn": "Director of Products for Gemini Agents at Google DeepMind. Inventor of Google Lens and Pixel Face Unlock.",
+      "biographyIt": "Direttore di prodotto per Gemini Agents presso Google DeepMind. Inventore di Google Lens e dello sblocco con il volto di Pixel.",
+      "photoUrl": "https://cdn.sessionize.com/image/091c-200o200o2-Lw6jgTq9DUyatGRZAyUj7X.jpg",
+      "talkIds": ["talk-alessandro-fin"],
+      "sourceIds": ["codemotion-alessandro-fin-2026"],
+      "tags": ["AI e agenti", "Software engineering", "Sicurezza"],
+      "status": "active"
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-alessandro-fin",
+      "speakerIds": ["alessandro-fin"],
+      "title": "Trust Is the Feature",
+      "abstractMd": "Why has AI agent adoption outpaced developer trust, and how can engineering teams bridge that gap?\n\nRather than relying on smarter underlying models, in this session we will see how software engineers can safely delegate long-running autonomous tasks — such as overnight production code updates — by implementing four core system safeguards around the model:\n\n- sandboxed environments (Walls)\n- proxied credentials (Keys)\n- task-level evals (Tests)\n- time-compressed audit trails (Receipts)",
+      "abstractEn": "Why has AI agent adoption outpaced developer trust, and how can engineering teams bridge that gap?\n\nRather than relying on smarter underlying models, in this session we will see how software engineers can safely delegate long-running autonomous tasks — such as overnight production code updates — by implementing four core system safeguards around the model:\n\n- sandboxed environments (Walls)\n- proxied credentials (Keys)\n- task-level evals (Tests)\n- time-compressed audit trails (Receipts)",
+      "abstractIt": "Perché l’adozione degli agenti AI ha superato la fiducia degli sviluppatori, e come possono i team di ingegneria colmare questo divario?\n\nAnziché affidarsi a modelli sottostanti più intelligenti, in questa sessione vedremo come gli ingegneri del software possano delegare in sicurezza attività autonome di lunga durata — come aggiornamenti notturni al codice di produzione — implementando quattro garanzie fondamentali a livello di sistema attorno al modello:\n\n- ambienti isolati tramite sandbox (Walls)\n- credenziali mediate da un proxy (Keys)\n- valutazioni a livello di attività (Tests)\n- tracce di audit consultabili in tempi ridotti (Receipts)",
+      "topic": "Fiducia e sicurezza negli agenti AI autonomi",
+      "sourceIds": ["codemotion-alessandro-fin-2026"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "codemotion-alessandro-fin-2026",
+      "kind": "imported_snapshot",
+      "title": "Codemotion Milano 2026 — Alessandro Fin / Trust Is the Feature",
+      "url": "https://conferences.codemotion.com/milan/speakers/",
+      "publisher": "Codemotion",
+      "speakerIds": ["alessandro-fin"],
+      "notesMd": "Profilo, URL della foto e abstract forniti dall’utente il 28 ottobre 2026. Il link rimanda alla directory generale, non a una scheda individuale verificata. Domande e traduzioni generate a partire dal testo fornito."
+    }
+  ],
+  "interviewPlans": [
+    {
+      "id": "alessandro-fin",
+      "speakerId": "alessandro-fin",
+      "status": "not_started",
+      "interviewStatus": "unconfirmed",
+      "targetQuestions": 3
+    }
+  ],
+  "questions": [
+    {
+      "id": "question-alessandro-fin-01",
+      "speakerId": "alessandro-fin",
+      "order": 1,
+      "textEn": "From Google Lens to Gemini agents, what has changed in how you design products that people can trust?",
+      "textIt": "Da Google Lens agli agenti Gemini, cosa è cambiato nel tuo modo di progettare prodotti di cui le persone possano fidarsi?",
+      "followUpEn": "Is there a lesson from Lens or Pixel Face Unlock that still guides you today?",
+      "followUpIt": "C’è una lezione di Lens o dello sblocco con il volto di Pixel che ti guida ancora oggi?",
+      "whyMd": "Aprire con il percorso dello speaker e introdurre la fiducia come scelta di prodotto, collegandosi al titolo del talk.",
+      "tags": ["AI e agenti", "Product design", "Fiducia"],
+      "sourceIds": ["codemotion-alessandro-fin-2026"],
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-fin-02",
+      "speakerId": "alessandro-fin",
+      "order": 2,
+      "textEn": "In your talk, you describe four safeguards: Walls, Keys, Tests and Receipts. What would these look like in practice for a team letting an agent work on its codebase overnight?",
+      "textIt": "Nel talk presenti quattro garanzie: Walls, Keys, Tests e Receipts. Come si traducono in pratica per un team che lascia lavorare un agente sul proprio codice durante la notte?",
+      "followUpEn": "What is one concrete failure these safeguards should contain?",
+      "followUpIt": "Qual è un errore concreto che queste garanzie dovrebbero riuscire a contenere?",
+      "whyMd": "Portare il framework del talk su uno scenario concreto e far emergere il ruolo delle quattro garanzie senza assumere che basti un modello più capace.",
+      "tags": ["AI e agenti", "Software engineering", "Sicurezza"],
+      "sourceIds": ["codemotion-alessandro-fin-2026"],
+      "status": "suggested"
+    },
+    {
+      "id": "question-alessandro-fin-03",
+      "speakerId": "alessandro-fin",
+      "order": 3,
+      "textEn": "The next morning, the agent says the job is done and all tests pass. What evidence would you want before approving its changes?",
+      "textIt": "La mattina dopo, l’agente dice di aver finito e tutti i test passano. Quali evidenze vorresti vedere prima di approvare le sue modifiche?",
+      "followUpEn": "What should a Receipt show so that a developer can review hours of autonomous work in a few minutes?",
+      "followUpIt": "Cosa dovrebbe mostrare una Receipt per permettere a uno sviluppatore di verificare in pochi minuti ore di lavoro autonomo?",
+      "whyMd": "Chiudere la prima sequenza con un criterio operativo di fiducia: quali prove rendono il lavoro dell’agente verificabile e approvabile da una persona.",
+      "tags": ["AI e agenti", "Testing", "Audit"],
+      "sourceIds": ["codemotion-alessandro-fin-2026"],
+      "status": "suggested"
+    }
+  ]
+}
