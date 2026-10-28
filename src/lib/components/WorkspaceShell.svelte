@@ -5,6 +5,7 @@
   import AppNavigation from './AppNavigation.svelte';
   import OfflineStatus from './OfflineStatus.svelte';
   import SuccessNotice from './SuccessNotice.svelte';
+  import PasswordLogin from './PasswordLogin.svelte';
   import { provideWorkspace } from '$lib/workspace.svelte';
   let { children }: { children: Snippet } = $props();
   const workspace = provideWorkspace();
@@ -38,8 +39,8 @@
       {:else if workspace.access === 'denied'}<div class="notice">
           <h2>Accesso non abilitato</h2>
           <p>
-            L’accesso è riservato agli account Google abilitati. Usa un account autorizzato oppure
-            chiedi al gestore di aggiungere la tua email.
+            L’accesso è riservato agli account abilitati. Usa un account autorizzato oppure chiedi
+            al gestore di aggiungere la tua email.
           </p>
           <button onclick={() => location.reload()}>Riprova verifica accesso</button>
         </div>
@@ -48,7 +49,9 @@
             connessione.
           </p>{/if}<button class="primary login" onclick={() => workspace.login()}
           >Accedi con Google</button
-        ><small>Solo i membri abilitati possono leggere e modificare il workspace.</small>{/if}
+        ><PasswordLogin /><small
+          >Solo i membri abilitati possono leggere e modificare il workspace.</small
+        >{/if}
     </section>
   {:else if !workspace.ready}<p role="status">Caricamento del workspace…</p>
   {:else}

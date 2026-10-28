@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getWorkspace } from '$lib/workspace.svelte';
   import { offlineLifetime } from '$lib/offline/snapshot';
+  import PasswordLogin from './PasswordLogin.svelte';
   const workspace = getWorkspace();
   const snapshot = $derived(workspace.offlineSnapshot);
   const count = $derived(
@@ -24,7 +25,7 @@
         onclick={() => (workspace.user ? workspace.retryAccess() : workspace.login())}
       >
         {workspace.user ? 'Verifica accesso online' : 'Accedi con Google'}
-      </button>{/if}
+      </button>{#if !workspace.user}<PasswordLogin />{/if}{/if}
   {/if}
   <details>
     <summary>Dati su questo dispositivo</summary>

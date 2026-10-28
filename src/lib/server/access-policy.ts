@@ -1,6 +1,9 @@
 type Identity = {
   email?: string;
   email_verified?: boolean;
+  bacaroPasswordLogin?: boolean;
+  bacaroPasswordEmail?: string;
+  bacaroPasswordVersion?: string;
   firebase?: { sign_in_provider?: string };
 };
 export function parseAllowList(raw: string): string[] {
@@ -15,8 +18,12 @@ export function parseAllowList(raw: string): string[] {
 }
 export function isAllowedIdentity(token: Identity, raw: string): boolean {
   return (
-    token.email_verified === true &&
-    token.firebase?.sign_in_provider === 'google.com' &&
+    ((token.email_verified === true && token.firebase?.sign_in_provider === 'google.com') ||
+      (token.firebase?.sign_in_provider === 'password' &&
+        token.bacaroPasswordLogin === true &&
+        token.bacaroPasswordEmail === token.email?.toLowerCase() &&
+        typeof token.bacaroPasswordVersion === 'string' &&
+        !!token.bacaroPasswordVersion)) &&
     typeof token.email === 'string' &&
     parseAllowList(raw).includes(token.email.toLowerCase())
   );
@@ -37,9 +44,24 @@ export function getAccessDenial(
       error:
         'Formato ALLOW_LIST non valido: nel Value di Vercel inserisci solo email separate da virgola, senza virgolette, parentesi o ALLOW_LIST=.'
     };
-  if (token.firebase?.sign_in_provider !== 'google.com')
-    return { status: 403, error: 'Questa sessione non usa Google. Esci e accedi con Google.' };
-  if (token.email_verified !== true || !token.email)
+  const provider = token.firebase?.sign_in_provider;
+  if (
+    provider === 'password' &&
+    (token.bacaroPasswordLogin !== true ||
+      token.bacaroPasswordEmail !== token.email?.toLowerCase() ||
+      typeof token.bacaroPasswordVersion !== 'string' ||
+      !token.bacaroPasswordVersion)
+  )
+    return {
+      status: 403,
+      error: 'Accesso con password non abilitato per questo account. Chiedi al superadmin.'
+    };
+  if (provider !== 'google.com' && provider !== 'password')
+    return {
+      status: 403,
+      error: 'Accedi con Google oppure con email e password abilitate dal superadmin.'
+    };
+  if ((provider === 'google.com' && token.email_verified !== true) || !token.email)
     return {
       status: 403,
       error: 'L’account Google non ha un’email verificata. Esci e accedi di nuovo con Google.'
@@ -47,7 +69,20 @@ export function getAccessDenial(
   if (!isAllowedIdentity(token, raw))
     return {
       status: 403,
-      error: `L’account Google ${token.email} non è incluso in ALLOW_LIST di questo deployment. Esci per scegliere un altro account oppure aggiorna la lista e crea un nuovo deploy.`
+      error: `L’account ${token.email} non è incluso in ALLOW_LIST di questo deployment. Esci per scegliere un altro account oppure aggiorna la lista e crea un nuovo deploy.`
     };
   return null;
+}
+
+export function isCurrentPasswordGrant(
+  token: Identity,
+  user: { email?: string; customClaims?: Record<string, unknown> }
+): boolean {
+  return (
+    token.firebase?.sign_in_provider === 'password' &&
+    isAllowedIdentity(token, user.email || '') &&
+    user.customClaims?.bacaroPasswordLogin === true &&
+    user.customClaims.bacaroPasswordEmail === token.bacaroPasswordEmail &&
+    user.customClaims.bacaroPasswordVersion === token.bacaroPasswordVersion
+  );
 }

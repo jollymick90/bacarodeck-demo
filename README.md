@@ -151,7 +151,27 @@ Puoi usare lo stesso **database esistente di BacaroGame**, anche sul piano gratu
 3. Integra **il solo blocco match di questo workspace** di `firebase/firestore.rules` nelle regole del progetto, mantenendo tutti i match degli altri dataset. Controlla che eventuali regole globali permissive non concedano accesso a questo percorso: i permessi Firestore si combinano in OR. Pubblica il ruleset unificato con il normale processo del progetto scelto.
 4. Avvia l’app con `npm run dev`. Non serve sincronizzare la lista nel database.
 
-Come in BacaroGame, i dati passano attraverso il server Firebase Admin. Ogni richiesta verifica il token Firebase, il provider Google, l’email verificata e `ALLOW_LIST` privata. Il browser conserva il login Firebase e invia il token Bearer alle API; non usa una sessione cookie. La lista degli intervistatori coincide con gli accessi abilitati, inclusi i superadmin e gli account che non hanno ancora fatto login. I documenti membri forniscono nome e UID, senza concedere accesso.
+Come in BacaroGame, i dati passano attraverso il server Firebase Admin. Ogni richiesta verifica il token Firebase e l'accesso privato: Google richiede un'email verificata; il provider password richiede una concessione individuale del superadmin, legata all'email e alla versione della password. Il browser conserva il login Firebase e invia il token Bearer alle API; non usa una sessione cookie. La lista degli intervistatori coincide con gli accessi abilitati, inclusi i superadmin e gli account che non hanno ancora fatto login. I documenti membri forniscono nome e UID, senza concedere accesso.
+
+### Accesso alternativo con password
+
+In Firebase Console → Authentication → Sign-in method, abilitare **Email/Password**
+una sola volta per il progetto ([istruzioni Firebase](https://firebase.google.com/docs/auth/web/password-auth)).
+Dopo il deploy, il superadmin apre **Gestione → Strumenti → Accessi Bacaro**,
+abilita l'email se necessario e preme **Imposta password** sulla singola persona.
+Le password hanno da 12 a 128 caratteri. **Cambia password** le reimposta;
+**Disabilita accesso con password** rimuove soltanto questo metodo. **Revoca**
+continua a bloccare l'accesso al workspace con qualsiasi metodo.
+
+La persona usa **Accedi con email e password** nella pagina iniziale. Firebase
+Authentication gestisce le credenziali; l'app non salva né restituisce la password.
+Se esiste già un account con la stessa email, viene conservato il suo UID, con
+interessi e assegnazioni. Il cambio password invalida le sessioni precedenti del
+metodo password anche se avviene nello stesso secondo del login. Un account creato
+autonomamente in Firebase non ottiene accesso con password: serve la concessione
+del superadmin. La concessione è legata all'email approvata; cambiare email in Firebase
+richiede una nuova abilitazione individuale. Il nuovo metodo mantiene la persistenza
+della sessione e le stesse regole di consultazione offline.
 
 Home e backoffice condividono lo stesso accesso Google. La sessione viene conservata
 nel profilo del browser anche dopo chiusura e riapertura, finché non si esce,

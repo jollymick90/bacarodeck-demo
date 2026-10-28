@@ -4,6 +4,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
+  signInWithEmailAndPassword,
   signOut,
   type User
 } from 'firebase/auth';
@@ -64,6 +65,28 @@ export class Workspace {
       await signInWithPopup(this.client.auth, new GoogleAuthProvider());
     } catch (e) {
       this.error = e instanceof Error ? e.message : String(e);
+    }
+  }
+  async loginWithPassword(email: string, password: string): Promise<boolean> {
+    if (!this.client || !this.online) {
+      this.error = 'Serve una connessione per accedere.';
+      return false;
+    }
+    this.error = '';
+    try {
+      await signInWithEmailAndPassword(this.client.auth, email.trim(), password);
+      return true;
+    } catch (failure) {
+      const code = (failure as { code?: string }).code;
+      this.error =
+        code === 'auth/operation-not-allowed'
+          ? 'Accesso con password non attivo nel progetto Firebase. Il gestore deve abilitare Email/Password in Authentication.'
+          : code === 'auth/too-many-requests'
+            ? 'Troppi tentativi. Attendi qualche minuto e riprova.'
+            : code === 'auth/network-request-failed'
+              ? 'Connessione non disponibile. Riprova quando hai rete.'
+              : 'Email o password non corrette, oppure account non abilitato.';
+      return false;
     }
   }
   async logout() {
