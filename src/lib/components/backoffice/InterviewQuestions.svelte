@@ -99,13 +99,6 @@
 </script>
 
 <div class="interview-tools">
-  <StartInterview
-    {speakerId}
-    {talkId}
-    {language}
-    back="gestione"
-    disabled={!selectedIds.length || busy}
-  />
   {#if talks.length > 1}<label
       >Talk<select
         value={talkId}

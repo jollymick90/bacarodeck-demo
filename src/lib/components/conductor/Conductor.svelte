@@ -557,7 +557,16 @@
     <a class="nav-action" href={speakerHref()}>Torna alla scheda</a>
     <SpeakerPhoto {speaker} compact />
     <div class="brief-heading">
-      <h1>{speaker.fullName}</h1>
+      <div class="speaker-heading">
+        <h1>{speaker.fullName}</h1>
+        {#if current}<StartInterview
+            speakerId={selected}
+            {talkId}
+            {language}
+            questionId={current.id}
+            back="scaletta"
+          />{/if}
+      </div>
       <div class="language-switch" role="group" aria-label="Lingua domande">
         <button
           type="button"
@@ -573,13 +582,7 @@
         >
       </div>
     </div>
-    {#if current}<StartInterview
-        speakerId={selected}
-        {talkId}
-        {language}
-        questionId={current.id}
-        back="scaletta"
-      />
+    {#if current}
       <p class="muted">
         Domanda {currentIndex + 1} di {brief.interviewQuestions
           .length}{brief.optionalQuestions.some((q) => q.id === current.id) ? ' · Opzionale' : ''}
@@ -617,7 +620,15 @@
     <SpeakerPhoto {speaker} />
     <div class="brief-heading">
       <div>
-        <h1>{speaker.fullName}</h1>
+        <div class="speaker-heading">
+          <h1>{speaker.fullName}</h1>
+          <StartInterview
+            speakerId={selected}
+            {talkId}
+            {language}
+            disabled={!brief.mainQuestions.length}
+          />
+        </div>
         <p>{speaker.headline || speaker.organization || ''}</p>
       </div>
       <label
@@ -743,12 +754,6 @@
         {brief.mainQuestions.length} domande disponibili nella scaletta.
       </p>
       <button disabled={busy || readOnly} onclick={() => replace(null)}>Scegli una domanda</button>
-      <StartInterview
-        speakerId={selected}
-        {talkId}
-        {language}
-        disabled={!brief.mainQuestions.length}
-      />
       {#if brief.mainQuestions.length}
         <a
           class="nav-action primary start-interview"
@@ -1213,6 +1218,15 @@
   }
   .brief-heading h1 {
     font-size: 36px;
+  }
+  .speaker-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+  }
+  .speaker-heading h1 {
+    margin: 0;
   }
   .brief-heading label {
     min-width: 100px;

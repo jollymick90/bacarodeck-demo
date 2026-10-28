@@ -90,6 +90,17 @@ test('interview shows only one question, rotates, finishes and exits without cha
   await expect(viewer).toContainText('Interview question 2?');
   await viewer.getByRole('button', { name: 'Mostra follow-up', exact: true }).click();
   await expect(followUp).toContainText('Follow-up 2?');
+  if (info.project.name === 'desktop') {
+    // Locking the screen can make the browser leave native fullscreen.
+    await page.evaluate(() => document.exitFullscreen());
+    await expect(viewer).toBeVisible();
+    await expect(viewer).toContainText('Interview question 2?');
+    await expect(followUp).toContainText('Follow-up 2?');
+    await expect(languages.getByRole('button', { name: 'EN', exact: true })).toHaveAttribute(
+      'aria-pressed',
+      'true'
+    );
+  }
   await page.screenshot({ path: `.superpowers/interview-mode/${info.project.name}-landscape.png` });
   if (info.project.name === 'mobile') await page.setViewportSize({ width: 390, height: 844 });
   await page.screenshot({ path: `.superpowers/interview-mode/${info.project.name}-portrait.png` });

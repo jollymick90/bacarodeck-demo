@@ -9,9 +9,11 @@ La sezione **I miei speaker e i miei assegnati** riunisce gli interessi e le
 assegnazioni al proprio account, senza duplicare gli speaker con entrambi gli stati.
 Nella scheda speaker, **Intervista fatta** imposta lo stato condiviso dell'intervista
 su **Completata**, conservando preparazione, note, interessi e assegnazioni.
-Le interviste fatte sono nascoste nella home finché si preme **Fai vedere le interviste
-fatte**; il pulsante le include anche nei filtri personali e conserva la scelta
-nell'URL (`fatte=1`). L'elenco completo resta consultabile. **Segna da intervistare**
+Il filtro globale **Intervista** permette di scegliere **Da fare**, **Già fatte**
+o **Tutte**. **Assegnazione** distingue **Tutte**, **A me**, **Ad altri** e **Non
+assegnati**; i due filtri sono combinabili su home, elenco speaker e Gestione e
+conservano la scelta nell'URL. La home parte da **Da fare**; le altre liste da
+**Tutte**. I precedenti link `fatte=1` restano compatibili. **Segna da intervistare**
 riporta lo stato a **Da confermare**. Queste modifiche richiedono connessione e accesso verificato.
 I filtri **Tutti i miei**, **Mi interessano** e **Assegnati a me** conservano la
 scelta nell'URL (`miei=interessi` o `miei=assegnati`). La ricerca si applica anche
@@ -588,8 +590,8 @@ prioritarie; un successivo import può sostituirle soltanto selezionando le diff
 
 ### Modalità intervista
 
-**Avvia intervista**, nella scheda conduttore, nella scaletta o nel tab Intervista di
-Gestione, apre `/speaker/[speakerId]/intervista`: una domanda alla volta, testo grande,
+**Avvia intervista**, vicino al nome nella scheda speaker e disponibile anche nella
+scaletta e in Gestione, apre `/speaker/[speakerId]/intervista`: una domanda alla volta, testo grande,
 con **Prossima domanda**, **Esci** e i pulsanti **IT / EN** per cambiare lingua
 senza perdere la domanda corrente. **Mostra follow-up** apre l'approfondimento
 della domanda nella lingua selezionata; **Nascondi follow-up** lo richiude.
@@ -606,5 +608,7 @@ Il layout segue l'orientamento del dispositivo e mantiene i controlli visibili; 
 domande molto lunghe scorrono nella sola area del testo. All'ultima domanda Prossima
 è disabilitato. Esci/Escape tornano alla schermata di partenza e rilasciano il
 fullscreen; anche il tasto Indietro del browser lo rilascia. Freccia destra/PageDown
-avanzano alla domanda successiva. Un accesso diretto alla route apre la vista senza
+avanzano alla domanda successiva. La perdita del fullscreen provocata dal blocco
+schermo non chiude l'intervista: domanda, lingua e follow-up restano sullo schermo
+alla riapertura. Un accesso diretto alla route apre la vista senza
 richiedere automaticamente il fullscreen, che richiede un gesto esplicito.

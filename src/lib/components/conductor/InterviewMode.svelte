@@ -117,11 +117,8 @@
     index = finalIndex;
   }
   onMount(() => {
-    let wasFullscreen = Boolean(document.fullscreenElement);
-    const changed = () => {
-      if (wasFullscreen && !document.fullscreenElement) void leave();
-      wasFullscreen = Boolean(document.fullscreenElement);
-    };
+    // The browser may leave fullscreen when the screen locks. Keep the current
+    // interview mounted; only an explicit exit should navigate away.
     const keyboard = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         event.preventDefault();
@@ -133,10 +130,8 @@
         next();
       }
     };
-    document.addEventListener('fullscreenchange', changed);
     window.addEventListener('keydown', keyboard);
     return () => {
-      document.removeEventListener('fullscreenchange', changed);
       window.removeEventListener('keydown', keyboard);
       if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
     };

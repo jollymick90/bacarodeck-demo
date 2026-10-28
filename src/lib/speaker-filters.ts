@@ -43,7 +43,11 @@ export function assignmentRelationship(
     return member.uid || actorIds.size ? 'others' : 'unknown';
   };
   // A canonical reassignment wins over stale UID/name fields.
-  if (canonicalId) return relationship(assignees.find((m) => m.id === canonicalId));
+  if (canonicalId) {
+    if (actorIds.has(canonicalId)) return 'self';
+    if (actorIds.size) return 'others';
+    return relationship(assignees.find((m) => m.id === canonicalId));
+  }
   if (legacyUid) return legacyUid === actorUid ? 'self' : 'others';
   const matches = assignees.filter(
     (m) =>

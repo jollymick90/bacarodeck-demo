@@ -37,7 +37,8 @@ it('resolves self and others using canonical ownership before legacy UID and uni
     { id: 'p5', speakerId: 'name-self', assignedToName: ' michele ' },
     { id: 'p6', speakerId: 'name-other', assignedToName: 'Alberto' },
     { id: 'p7', speakerId: 'unknown-name', assignedToName: 'Unknown' },
-    { id: 'p8', speakerId: 'unassigned' }
+    { id: 'p8', speakerId: 'unassigned' },
+    { id: 'p9', speakerId: 'former-member', assignedTeamId: 'removed', assignedToUid: 'me' }
   ];
   const speakers = plans.map((p) => ({ id: String(p.speakerId) }));
   expect(
@@ -50,7 +51,7 @@ it('resolves self and others using canonical ownership before legacy UID and uni
       interview: 'all',
       assignment: 'others'
     }).map((s) => s.id)
-  ).toEqual(['canonical-other', 'uid-other', 'name-other']);
+  ).toEqual(['canonical-other', 'uid-other', 'name-other', 'former-member']);
   expect(
     filterSpeakers(speakers, plans, 'me', assignees, {
       interview: 'all',

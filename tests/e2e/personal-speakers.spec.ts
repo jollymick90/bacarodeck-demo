@@ -197,17 +197,16 @@ test('personal speakers include my assignments outside the list and distinguish 
     await page.goto('/?miei=assegnati');
     await expect(personal.locator('article')).toHaveCount(0);
     await expect(both).toHaveCount(0);
-    const showCompleted = personal.getByRole('button', { name: /Fai vedere le interviste fatte/ });
-    await showCompleted.click();
+    const interviewFilter = page.getByRole('combobox', { name: 'Intervista', exact: true });
+    await interviewFilter.selectOption('completed');
     await expect(personal.locator('article h3')).toHaveText(['Speaker colori entrambi']);
     await expect(both.getByText('Intervista fatta', { exact: true })).toBeVisible();
     await page.reload();
     await expect(personal.locator('article')).toHaveCount(1);
-    const hideCompleted = personal.getByRole('button', { name: /Nascondi le interviste fatte/ });
-    await expect(hideCompleted).toHaveAttribute('aria-pressed', 'true');
-    await hideCompleted.click();
+    await expect(interviewFilter).toHaveValue('completed');
+    await interviewFilter.selectOption('pending');
     await expect(both).toHaveCount(0);
-    await showCompleted.click();
+    await interviewFilter.selectOption('all');
     await both.getByRole('link', { name: 'Apri scheda', exact: true }).click();
     await completion.getByRole('button', { name: 'Segna da intervistare', exact: true }).click();
     await expect(
@@ -223,7 +222,7 @@ test('personal speakers include my assignments outside the list and distinguish 
     ).toBeEnabled();
     await page.goto('/');
     await expect(saved).toHaveCount(0);
-    await showCompleted.click();
+    await interviewFilter.selectOption('all');
     await expect(saved).toBeVisible();
     await expect(saved.getByRole('button', { name: '★ Salvato', exact: true })).toBeVisible();
   } finally {
