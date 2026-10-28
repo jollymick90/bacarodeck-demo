@@ -225,6 +225,25 @@ test('personal speakers include my assignments outside the list and distinguish 
     await interviewFilter.selectOption('all');
     await expect(saved).toBeVisible();
     await expect(saved.getByRole('button', { name: '★ Salvato', exact: true })).toBeVisible();
+    const totals = page.getByLabel('Totali complessivi speaker');
+    await expect(totals).toContainText('Già fatte: 1');
+    const totalsBefore = await totals.textContent();
+    await interviewFilter.selectOption('pending');
+    await expect(totals).toHaveText(totalsBefore!);
+    await page.getByRole('button', { name: 'Blocca su tutti gli speaker', exact: true }).click();
+    await personal.getByRole('button', { name: /I miei speaker e i miei assegnati/ }).click();
+    await page.goto('/?intervista=all');
+    await page.reload();
+    await expect(
+      page.getByRole('button', { name: '🔒 Mostra tutti: bloccato', exact: true })
+    ).toHaveAttribute('aria-pressed', 'true');
+    await expect(
+      personal.getByRole('button', { name: /I miei speaker e i miei assegnati/ })
+    ).toHaveAttribute('aria-expanded', 'false');
+    const general = page.getByRole('region', { name: 'Elenco generale speaker' });
+    for (const speaker of speakers) {
+      await expect(general.locator(`[data-speaker="${speaker.id}"]`)).toBeVisible();
+    }
   } finally {
     for (const id of interests) await setInterest(id, false);
     const emulator = process.env.FIRESTORE_EMULATOR_HOST!;

@@ -170,7 +170,13 @@
       value={query}
       oninput={(event) => filter('q', event.currentTarget.value)}
     />
-    <SpeakerFilters filters={speakerFilters} signedIn={Boolean(user?.uid)} onchange={filter} />
+    <SpeakerFilters
+      filters={speakerFilters}
+      signedIn={Boolean(user?.uid)}
+      onchange={filter}
+      speakers={data.speakers || []}
+      plans={data.interviewPlans || []}
+    />
     <details class="search-filters">
       <summary>Filtri speaker</summary>
       <label

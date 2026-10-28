@@ -1,17 +1,32 @@
 <script lang="ts">
   import type { SpeakerFilters } from '$lib/speaker-filters';
+  import type { Entity } from '$lib/fields';
 
   let {
     filters,
     signedIn,
-    onchange
+    onchange,
+    speakers = [],
+    plans = []
   }: {
     filters: SpeakerFilters;
     signedIn: boolean;
     onchange: (name: 'intervista' | 'assegnazione', value: string) => void;
+    speakers?: Entity[];
+    plans?: Entity[];
   } = $props();
+  const completedIds = $derived(
+    new Set(
+      plans.filter((plan) => plan.interviewStatus === 'completed').map((plan) => plan.speakerId)
+    )
+  );
+  const completed = $derived(speakers.filter((speaker) => completedIds.has(speaker.id)).length);
 </script>
 
+<p class="speaker-totals" aria-label="Totali complessivi speaker">
+  Totale speaker: <strong>{speakers.length}</strong> · Già fatte: <strong>{completed}</strong> · Da
+  fare: <strong>{speakers.length - completed}</strong>
+</p>
 <div class="speaker-filters" role="group" aria-label="Filtri globali speaker">
   <label>
     Intervista

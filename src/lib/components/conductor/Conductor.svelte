@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import StartInterview from './StartInterview.svelte';
   import SpeakerPhoto from '../SpeakerPhoto.svelte';
   import { goto } from '$app/navigation';
@@ -46,7 +47,34 @@
   const language = $derived(page.url.searchParams.get('lang') === 'en' ? 'en' : 'it');
   let query = $state('');
   const speakerList = $derived(mode === 'home' || mode === 'speakers');
-  const showAllSpeakers = $derived(page.url.searchParams.get('elenco') === 'tutti');
+  let allSpeakersLocked = $state(false);
+  let personalOpen = $state(true);
+  onMount(() => {
+    try {
+      allSpeakersLocked = localStorage.getItem('bacarodeck:all-speakers-locked') === 'true';
+      personalOpen = localStorage.getItem('bacarodeck:personal-open') !== 'false';
+    } catch {
+      /* Preferences remain available for this session. */
+    }
+  });
+  function saveViewPreference(key: string, value: boolean) {
+    try {
+      localStorage.setItem('bacarodeck:' + key, String(value));
+    } catch {
+      /* Storage unavailable. */
+    }
+  }
+  function toggleAllSpeakersLock() {
+    allSpeakersLocked = !allSpeakersLocked;
+    saveViewPreference('all-speakers-locked', allSpeakersLocked);
+  }
+  function togglePersonalSection() {
+    personalOpen = !personalOpen;
+    saveViewPreference('personal-open', personalOpen);
+  }
+  const showAllSpeakers = $derived(
+    allSpeakersLocked || page.url.searchParams.get('elenco') === 'tutti'
+  );
   const speakerFilters = $derived(
     readSpeakerFilters(page.url.searchParams, mode === 'home' ? 'pending' : 'all')
   );
@@ -450,85 +478,124 @@
             ? 'tutti gli speaker.'
             : 'speaker in lista per le interviste.'}
         </p>
-        <button type="button" aria-pressed={showAllSpeakers} onclick={toggleSpeakers}>
+        <button
+          type="button"
+          aria-pressed={showAllSpeakers}
+          disabled={allSpeakersLocked}
+          onclick={toggleSpeakers}
+        >
           {showAllSpeakers ? 'Mostra solo in elenco' : 'Mostra anche gli altri speaker'}
+        </button>
+        <button type="button" aria-pressed={allSpeakersLocked} onclick={toggleAllSpeakersLock}>
+          {allSpeakersLocked ? '🔒 Mostra tutti: bloccato' : 'Blocca su tutti gli speaker'}
         </button>
       </div>
       <SpeakerFilters
         filters={speakerFilters}
         signedIn={Boolean(uid)}
         onchange={changeSpeakerFilter}
+        speakers={data.speakers || []}
+        plans={data.interviewPlans || []}
       />
     {/if}
     {#if mode === 'home'}
       <section aria-label="I miei speaker e i miei assegnati">
-        <h2>I miei speaker e i miei assegnati <span>{groups.personal.length}</span></h2>
-        <p class="muted">
-          I tuoi interessi e gli speaker assegnati a te, anche fuori lista. Visibili a tutto il
-          team.
-        </p>
-        <div class="personal-filters" role="group" aria-label="Filtra i miei speaker">
+        <h2>
           <button
             type="button"
-            aria-pressed={personalFilter === 'tutti'}
-            onclick={() => filterPersonal('tutti')}>Tutti i miei ({groups.personal.length})</button
+            aria-expanded={personalOpen}
+            aria-controls="personal-speakers-content"
+            onclick={togglePersonalSection}
           >
-          <button
-            type="button"
-            class="interest-filter"
-            aria-pressed={personalFilter === 'interessi'}
-            onclick={() => filterPersonal('interessi')}
-            >Mi interessano ({groups.saved.length})</button
-          >
-          <button
-            type="button"
-            class="assignment-filter"
-            aria-pressed={personalFilter === 'assegnati'}
-            onclick={() => filterPersonal('assegnati')}
-            >Assegnati a me ({groups.assigned.length})</button
-          >
-        </div>
-        {#if personalFilter === 'assegnati'}
-          <label class="assigned-order">
-            Ordine assegnati
-            <select
-              value={assignedOrder}
-              onchange={(event) => changeAssignedOrder(event.currentTarget.value)}
-            >
-              <option value="orario">Orario del talk</option>
-              <option value="nome">Nome</option>
-            </select>
-          </label>
-          {#if assignedOrder === 'orario'}<p class="muted">
-              Dal primo talk in programma, in orario Europe/Rome. Gli speaker senza orario sono in
-              fondo.
-            </p>{/if}
+            {personalOpen ? '▾' : '▸'} I miei speaker e i miei assegnati
+            <span>{groups.personal.length}</span>
+          </button>
+        </h2>
+        {#if personalOpen}
+          <div id="personal-speakers-content">
+            <p class="muted">
+              I tuoi interessi e gli speaker assegnati a te, anche fuori lista. Visibili a tutto il
+              team.
+            </p>
+            <div class="personal-filters" role="group" aria-label="Filtra i miei speaker">
+              <button
+                type="button"
+                aria-pressed={personalFilter === 'tutti'}
+                onclick={() => filterPersonal('tutti')}
+                >Tutti i miei ({groups.personal.length})</button
+              >
+              <button
+                type="button"
+                class="interest-filter"
+                aria-pressed={personalFilter === 'interessi'}
+                onclick={() => filterPersonal('interessi')}
+                >Mi interessano ({groups.saved.length})</button
+              >
+              <button
+                type="button"
+                class="assignment-filter"
+                aria-pressed={personalFilter === 'assegnati'}
+                onclick={() => filterPersonal('assegnati')}
+                >Assegnati a me ({groups.assigned.length})</button
+              >
+            </div>
+            {#if personalFilter === 'assegnati'}
+              <label class="assigned-order">
+                Ordine assegnati
+                <select
+                  value={assignedOrder}
+                  onchange={(event) => changeAssignedOrder(event.currentTarget.value)}
+                >
+                  <option value="orario">Orario del talk</option>
+                  <option value="nome">Nome</option>
+                </select>
+              </label>
+              {#if assignedOrder === 'orario'}<p class="muted">
+                  Dal primo talk in programma, in orario Europe/Rome. Gli speaker senza orario sono
+                  in fondo.
+                </p>{/if}
+            {/if}
+            <div class="speaker-cards">
+              {#each personalSpeakers as s (s.id)}{@render card(s)}{:else}<p class="empty">
+                  {personalFilter === 'assegnati'
+                    ? 'Nessuno speaker assegnato a te con questo filtro.'
+                    : personalFilter === 'interessi'
+                      ? 'Nessuno speaker di tuo interesse con questo filtro. Tocca «Mi interessa» per salvarne uno.'
+                      : 'Nessun interesse o speaker assegnato a te con questo filtro. Tocca «Mi interessa» per salvarne uno.'}
+                </p>{/each}
+            </div>
+          </div>
         {/if}
-        <div class="speaker-cards">
-          {#each personalSpeakers as s (s.id)}{@render card(s)}{:else}<p class="empty">
-              {personalFilter === 'assegnati'
-                ? 'Nessuno speaker assegnato a te con questo filtro.'
-                : personalFilter === 'interessi'
-                  ? 'Nessuno speaker di tuo interesse con questo filtro. Tocca «Mi interessa» per salvarne uno.'
-                  : 'Nessun interesse o speaker assegnato a te con questo filtro. Tocca «Mi interessa» per salvarne uno.'}
-            </p>{/each}
-        </div>
       </section>
-      <section>
-        <h2>Ancora da assegnare</h2>
-        <div class="speaker-cards">
-          {#each unassignedSpeakers as s (s.id)}{@render card(s)}{:else}<p class="empty">
-              Nessun altro speaker con questo filtro. Puoi consultare l’elenco completo.
-            </p>{/each}
-        </div>
-      </section>
-      {#if remainingSpeakers.length}
-        <section aria-label="Altri speaker">
-          <h2>Altri speaker</h2>
+      {#if !personalOpen}
+        <section aria-label="Elenco generale speaker">
+          <h2>
+            {showAllSpeakers ? 'Tutti gli speaker' : 'Speaker in elenco'}
+            <span>{visibleSpeakers.length}</span>
+          </h2>
           <div class="speaker-cards">
-            {#each remainingSpeakers as s (s.id)}{@render card(s)}{/each}
+            {#each visibleSpeakers as s (s.id)}{@render card(s)}{:else}<p class="empty">
+                Nessuno speaker con questo filtro.
+              </p>{/each}
           </div>
         </section>
+      {:else}
+        <section>
+          <h2>Ancora da assegnare</h2>
+          <div class="speaker-cards">
+            {#each unassignedSpeakers as s (s.id)}{@render card(s)}{:else}<p class="empty">
+                Nessun altro speaker con questo filtro. Puoi consultare l’elenco completo.
+              </p>{/each}
+          </div>
+        </section>
+        {#if remainingSpeakers.length}
+          <section aria-label="Altri speaker">
+            <h2>Altri speaker</h2>
+            <div class="speaker-cards">
+              {#each remainingSpeakers as s (s.id)}{@render card(s)}{/each}
+            </div>
+          </section>
+        {/if}
       {/if}
       <a class="nav-action all-speakers" href={'/speaker' + page.url.search}
         >Vedi la lista completa</a
@@ -899,7 +966,7 @@
 </div>
 
 {#snippet card(s: Entity)}
-  {@const assignedView = mode === 'home' && personalFilter === 'assegnati'}
+  {@const assignedView = mode === 'home' && personalOpen && personalFilter === 'assegnati'}
   {@const talk = assignedView
     ? firstSpeakerTalk(s.id, data)
     : data.talks?.find((t) => ((t.speakerIds as string[]) || []).includes(s.id))}
