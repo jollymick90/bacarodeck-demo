@@ -216,6 +216,21 @@ Un membro entra nel workspace vuoto, sceglie **Prepara import dei 5 speaker**, c
 
 ## Import JSON
 
+### API pubblica di sola lettura
+
+`GET /api/public/interviews` restituisce senza login speaker, talk con abstract,
+domande con follow-up e note, stato dei piani di intervista e ID delle domande
+selezionate nelle schede conduttore. Per una sola persona usa, per esempio,
+`/api/public/interviews?speakerId=christian-schabetsberger`.
+
+Il JSON conserva i testi e gli ID originali. Pubblica solo i campi editoriali
+elencati nell’endpoint: non include membri, UID, voti, metadati degli autori o note
+interne di speaker e piani. Non accetta scritture. Le API di modifica restano
+autenticate e le regole Firestore restano invariate. Le letture usano la cache
+server esistente (fino a cinque minuti), invalidata dai salvataggi dell’app.
+
+### Formato di importazione
+
 Schema pubblico: `schemas/speaker-research-import.schema.json`. Formato a collezioni compatibile con il seed e con le schede base. Esempio:
 
 ```json
