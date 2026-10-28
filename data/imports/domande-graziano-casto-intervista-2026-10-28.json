@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "targetSpeakerId": "graziano-casto",
+  "dataSnapshotDate": "2026-10-28",
+  "description": "Sei nuove domande fornite per l’intervista a Graziano Casto. Importazione additiva: conserva tutte le domande esistenti. La selezione e il riordino della scaletta vanno completati sulla scheda live dopo la verifica delle domande attuali.",
+  "questions": [
+    {
+      "id": "q-graziano-casto-intervista-20261028-01",
+      "speakerId": "graziano-casto",
+      "order": 1,
+      "textIt": "Graziano, prima di parlare di Kubernetes: qual è la cosa più interessante che hai visto o sentito finora a Codemotion?",
+      "notesMd": "Rompiamo il ghiaccio",
+      "status": "suggested"
+    },
+    {
+      "id": "q-graziano-casto-intervista-20261028-02",
+      "speakerId": "graziano-casto",
+      "order": 2,
+      "textIt": "Nel tuo talk parli di applicazioni che consumano tantissime risorse all'avvio e poi molto meno. Quanto è grande questo problema nella realtà? Ti è capitato di vedere situazioni particolarmente assurde?",
+      "notesMd": "Il problema reale",
+      "status": "suggested"
+    },
+    {
+      "id": "q-graziano-casto-intervista-20261028-03",
+      "speakerId": "graziano-casto",
+      "order": 3,
+      "textIt": "Quando hai iniziato a lavorare su questo problema, qual è stata la difficoltà che ti ha sorpreso di più?",
+      "notesMd": "L’esperienza personale",
+      "status": "suggested"
+    },
+    {
+      "id": "q-graziano-casto-intervista-20261028-04",
+      "speakerId": "graziano-casto",
+      "order": 4,
+      "textIt": "Tra sidecar, operator e autoscaling, ci sono diverse strade per gestire il resize. Secondo te, quando vale davvero la pena introdurre questa complessità e quando invece è meglio lasciare tutto com'è?",
+      "notesMd": "La discussione tecnica",
+      "status": "suggested"
+    },
+    {
+      "id": "q-graziano-casto-intervista-20261028-05",
+      "speakerId": "graziano-casto",
+      "order": 5,
+      "textIt": "Tra AI, cloud e infrastrutture sempre più complesse, secondo te stiamo diventando più bravi a usare le risorse oppure stiamo semplicemente imparando a sprecare meglio?",
+      "notesMd": "Uno sguardo al futuro",
+      "status": "suggested"
+    },
+    {
+      "id": "q-graziano-casto-intervista-20261028-06",
+      "speakerId": "graziano-casto",
+      "order": 6,
+      "textIt": "Se domani uno sviluppatore volesse sperimentare questa tecnica, quale consiglio gli daresti per evitare gli errori che hai già fatto tu?",
+      "notesMd": "Chiusura, se rimane tempo",
+      "status": "suggested"
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-28",
+  "description": "Versioni inglesi semplificate per Dennis Nerush, Matteo Collina, Paolo Insogna, Rowdy Rabouw e Vladi Stevanovic. Create come nuove domande per conservare integralmente gli originali. I testi italiani derivano dalle domande originali nei file editoriali. Le cinque scalette selezionano le tre nuove versioni di ciascuno speaker.",
+  "questions": [
+    {
+      "speakerId": "dennis-nerush",
+      "textIt": "Nel walkthrough di un esercizio assistito dall’AI, anche la spiegazione del codice può essere preparata dall’AI. Quale cambiamento al problema useresti per distinguere comprensione reale da una giustificazione imparata bene?",
+      "followUpIt": "Quale reazione del candidato ti farebbe cambiare valutazione?",
+      "whyMd": "Incrocia due punti del dossier: il walkthrough come prova di comprensione e la capacità dell’AI di spiegare le scelte. Chiede un test del ragionamento, non una spiegazione più eloquente.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "engineering-interviews",
+        "adaptive-reasoning",
+        "ai-assisted-coding"
+      ],
+      "sourceIds": [],
+      "materialIds": ["a77c07ec-3bf3-4847-b35a-7984c12229a5"],
+      "id": "q-dennis-nerush-simple-en-20261028-01",
+      "order": 1,
+      "textEn": "How do you check that a candidate really understands AI-written code?",
+      "followUpEn": "What would you change in the task to test that?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-dennis-nerush-research-20261025-01."
+    },
+    {
+      "speakerId": "dennis-nerush",
+      "textIt": "Se chiediamo agli ingegneri di giudicare il lavoro degli agenti, come può un junior costruire quel giudizio quando delega proprio l’implementazione da cui avrebbe imparato?",
+      "followUpIt": "Quale esercizio manterresti nel lavoro quotidiano?",
+      "whyMd": "Allarga la selezione alla formazione della competenza richiesta dall’adozione: il dossier lega il giudizio ai modelli mentali e allo studio, ma non risolve come acquisirli con meno pratica di implementazione.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "engineering-education",
+        "mental-models",
+        "ai-delegation"
+      ],
+      "sourceIds": [],
+      "materialIds": ["a77c07ec-3bf3-4847-b35a-7984c12229a5"],
+      "id": "q-dennis-nerush-simple-en-20261028-02",
+      "order": 2,
+      "textEn": "How can junior developers learn to judge code if AI writes it for them?",
+      "followUpEn": "What should they still do themselves?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-dennis-nerush-research-20261025-02."
+    },
+    {
+      "speakerId": "dennis-nerush",
+      "textIt": "Per un team italiano che adotta il tuo approccio, come verificheresti che individuare un errore dell’AI al colloquio anticipi il buon giudizio sul lavoro, anziché la capacità di indovinare cosa cerca l’intervistatore?",
+      "followUpIt": "Quale evidenza ti farebbe ritirare un esercizio?",
+      "whyMd": "Collega la promessa di un framework di selezione utile alla validità operativa nel team che lo adotta: chiede come falsificare il segnale, non presume che il metodo sia già validato.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "hiring-validity",
+        "engineering-judgment",
+        "evaluation-bias"
+      ],
+      "sourceIds": [],
+      "materialIds": ["a77c07ec-3bf3-4847-b35a-7984c12229a5"],
+      "id": "q-dennis-nerush-simple-en-20261028-03",
+      "order": 3,
+      "textEn": "How do you know your interview tasks test the skills people need at work?",
+      "followUpEn": "When would you stop using a task?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-dennis-nerush-research-20261025-03."
+    },
+    {
+      "speakerId": "matteo-collina",
+      "textIt": "Nel modello del cave engineer, come distingui il coordinamento che puoi eliminare da quello che protegge il progetto quando l’unica persona che lo capisce non è disponibile?",
+      "followUpIt": "Quale condizione ti farebbe scegliere subito un team invece di un singolo sviluppatore?",
+      "whyMd": "TALK — verifica il confine organizzativo della tesi, non assume che la produttività equivalga a sostenibilità.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "autonomia",
+        "coordinamento",
+        "continuita"
+      ],
+      "sourceIds": ["snapshot-priority-csv", "snapshot-speakers-directory"],
+      "materialIds": [],
+      "id": "q-matteo-collina-simple-en-20261028-01",
+      "order": 1,
+      "textEn": "When is it safe to build a project with just one developer?",
+      "followUpEn": "What happens if that person is away?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-matteo-collina-talk-ai-20261025-talk."
+    },
+    {
+      "speakerId": "matteo-collina",
+      "textIt": "Quando un agente accelera soprattutto chi sa già valutare il codice, come può un junior costruire quel giudizio senza diventare soltanto qualcuno che accetta o rifiuta suggerimenti?",
+      "followUpIt": "Quale responsabilità gli affideresti per far emergere gli errori di comprensione prima della produzione?",
+      "whyMd": "AI — esplora come si acquisisce il giudizio richiesto dal modello organizzativo.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "apprendimento",
+        "agentic-coding",
+        "giudizio-umano"
+      ],
+      "sourceIds": ["snapshot-priority-csv", "snapshot-speakers-directory"],
+      "materialIds": [],
+      "id": "q-matteo-collina-simple-en-20261028-02",
+      "order": 2,
+      "textEn": "If AI helps experts most, how can junior developers catch up?",
+      "followUpEn": "What work would you give them first?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-matteo-collina-talk-ai-20261025-ai."
+    },
+    {
+      "speakerId": "matteo-collina",
+      "textIt": "Se la stessa persona indirizza l’agente e approva il risultato, quale verifica indipendente può mettere in discussione anche il requisito, non soltanto controllare che il codice lo soddisfi?",
+      "followUpIt": "Come la introdurresti senza ricreare tutto il coordinamento che vuoi eliminare?",
+      "whyMd": "PONTE — collega autonomia con AI e verifica indipendente delle decisioni.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "verifica-indipendente",
+        "agentic-coding",
+        "requisiti"
+      ],
+      "sourceIds": ["snapshot-priority-csv", "snapshot-speakers-directory"],
+      "materialIds": [],
+      "id": "q-matteo-collina-simple-en-20261028-03",
+      "order": 3,
+      "textEn": "If one person asks AI to write code and then approves it, who checks the original idea?",
+      "followUpEn": "How can we add that check without slowing things down?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-matteo-collina-talk-ai-20261025-bridge."
+    },
+    {
+      "speakerId": "paolo-insogna",
+      "textIt": "Nel progettare un’FFI per Node.js, quale garanzia non vuoi perdere per rendere una chiamata nativa più veloce, e dove accetti invece di trasferire responsabilità allo sviluppatore?",
+      "followUpIt": "Quale caso limite rende quel compromesso più evidente?",
+      "whyMd": "TALK — esplora un compromesso del progetto senza dare per verificato lo stato di rilascio di node:ffi.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "ffi",
+        "runtime-nodejs",
+        "sicurezza-memoria"
+      ],
+      "sourceIds": ["snapshot-priority-csv"],
+      "materialIds": [],
+      "id": "q-paolo-insogna-simple-en-20261028-01",
+      "order": 1,
+      "textEn": "When Node.js calls native code, what safety checks matter more than speed?",
+      "followUpEn": "What should developers handle themselves?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-paolo-insogna-talk-ai-20261025-talk."
+    },
+    {
+      "speakerId": "paolo-insogna",
+      "textIt": "Se un coding agent genera un binding che compila e supera gli esempi, quali errori al confine tra linguaggi richiedono ancora una verifica che non puoi delegare allo stesso agente?",
+      "followUpIt": "Quale prova aggiungeresti per prima, oltre al percorso felice?",
+      "whyMd": "AI — scenario ipotetico su codice generato in un confine tecnico delicato.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "agentic-coding",
+        "ffi",
+        "verifica-indipendente"
+      ],
+      "sourceIds": ["snapshot-priority-csv"],
+      "materialIds": [],
+      "id": "q-paolo-insogna-simple-en-20261028-02",
+      "order": 2,
+      "textEn": "If an AI-written binding works, what do you still need to check yourself?",
+      "followUpEn": "What failure would you test first?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-paolo-insogna-talk-ai-20261025-ai."
+    },
+    {
+      "speakerId": "paolo-insogna",
+      "textIt": "Per integrare inferenza AI nativa in un servizio Node.js, come confronteresti una chiamata FFI nello stesso processo con un servizio separato, contando anche isolamento dei guasti e aggiornamenti?",
+      "followUpIt": "Quale vincolo ti farebbe rinunciare alla latenza migliore?",
+      "whyMd": "PONTE — applica il confine di interoperabilità a una scelta di architettura AI, senza attribuirgli un’implementazione.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "inferenza-ai",
+        "isolamento-guasti",
+        "ffi"
+      ],
+      "sourceIds": ["snapshot-priority-csv"],
+      "materialIds": [],
+      "id": "q-paolo-insogna-simple-en-20261028-03",
+      "order": 3,
+      "textEn": "For AI inference in Node.js, would you use FFI or a separate service?",
+      "followUpEn": "What would make you choose the slower option?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-paolo-insogna-talk-ai-20261025-bridge."
+    },
+    {
+      "speakerId": "rowdy-rabouw",
+      "textIt": "Una View Transition può sembrare fluida anche se la pagina prerenderizzata contiene dati ormai vecchi. Quando rinunceresti alla navigazione istantanea per verificarne la validità, e dove metteresti quel controllo?",
+      "followUpIt": "Quale tipo di contenuto non lasceresti passare senza una nuova verifica?",
+      "whyMd": "L’abstract combina prerendering e transizioni; il dossier tratta l’attivazione della pagina. Il nodo è sincronizzare correttezza e percezione di velocità.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "prerendering",
+        "view-transitions",
+        "data-freshness"
+      ],
+      "sourceIds": [],
+      "materialIds": ["a0d3bc8b-3da9-4185-a795-cc2a8fc32061"],
+      "id": "q-rowdy-rabouw-simple-en-20261028-01",
+      "order": 1,
+      "textEn": "When is fresh data more important than instant page loads?",
+      "followUpEn": "Which pages always need fresh data?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-rowdy-rabouw-research-20261025-01."
+    },
+    {
+      "speakerId": "rowdy-rabouw",
+      "textIt": "Se una funzione del sito usa un modello AI nel browser, quale esperienza deve restare disponibile quando il modello manca o il dispositivo non riesce a eseguirlo, perché il costo non ricada sugli utenti con meno risorse?",
+      "followUpIt": "Quando un fallback sul server sarebbe una scelta peggiore?",
+      "whyMd": "Il dossier accosta un talk sulla Built-in AI al filone di accessibilità e progressive enhancement. La scelta è progettare una funzione utilizzabile anche senza inferenza locale.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "browser-ai",
+        "progressive-enhancement",
+        "device-constraints"
+      ],
+      "sourceIds": [],
+      "materialIds": ["a0d3bc8b-3da9-4185-a795-cc2a8fc32061"],
+      "id": "q-rowdy-rabouw-simple-en-20261028-02",
+      "order": 2,
+      "textEn": "What should users still be able to do when their device can’t run an AI feature?",
+      "followUpEn": "Is running it on a server always a good fallback?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-rowdy-rabouw-research-20261025-02."
+    },
+    {
+      "speakerId": "rowdy-rabouw",
+      "textIt": "Se usassimo un modello AI per scegliere quali pagine precaricare, quale vantaggio rispetto a semplici regole giustificherebbe il costo dell’inferenza e delle previsioni sbagliate?",
+      "followUpIt": "Quale risultato dell’esperimento ti farebbe tenere le regole semplici?",
+      "whyMd": "La ricerca propone esplicitamente il collegamento tra Built-in AI e Speculation Rules. Si trasforma lo spunto in una decisione misurabile, includendo il costo delle previsioni e il confronto con una baseline.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "predictive-prefetching",
+        "browser-ai",
+        "performance-budgets"
+      ],
+      "sourceIds": [],
+      "materialIds": ["a0d3bc8b-3da9-4185-a795-cc2a8fc32061"],
+      "id": "q-rowdy-rabouw-simple-en-20261028-03",
+      "order": 3,
+      "textEn": "Is AI worth the cost for choosing which pages to preload?",
+      "followUpEn": "How would you compare it with simple rules?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-rowdy-rabouw-research-20261025-03."
+    },
+    {
+      "speakerId": "vladi-stevanovic",
+      "textIt": "Nel modello a strati, come capisci se due verifiche coprono errori diversi oppure stanno passando entrambe sopra lo stesso buco?",
+      "followUpIt": "Quale errore inseriresti di proposito per verificare l’indipendenza degli strati?",
+      "whyMd": "TALK — verifica la complementarità delle difese, non presume che aggiungerne aumenti sempre l’affidabilità.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-talk",
+        "verifica-indipendente",
+        "code-review",
+        "difesa-in-profondita"
+      ],
+      "sourceIds": ["snapshot-priority-csv", "snapshot-speakers-directory"],
+      "materialIds": [],
+      "id": "q-vladi-stevanovic-simple-en-20261028-01",
+      "order": 1,
+      "textEn": "How do you know your code checks catch different mistakes?",
+      "followUpEn": "What bug would you add on purpose to test them?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-vladi-stevanovic-talk-ai-20261025-talk."
+    },
+    {
+      "speakerId": "vladi-stevanovic",
+      "textIt": "Se un coding agent raddoppia le PR prodotte ma il team riesce a comprenderne lo stesso numero di prima, quale metrica dovrebbe guidare la decisione di accelerare o limitare la generazione?",
+      "followUpIt": "Dove misureresti il lavoro che si è spostato invece di essere scomparso?",
+      "whyMd": "AI — considera la capacità di assorbire le modifiche come vincolo della produttività.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ai",
+        "produttivita-ai",
+        "code-review",
+        "capacita-team"
+      ],
+      "sourceIds": ["snapshot-priority-csv", "snapshot-speakers-directory"],
+      "materialIds": [],
+      "id": "q-vladi-stevanovic-simple-en-20261028-02",
+      "order": 2,
+      "textEn": "If AI doubles the pull requests, how do we know the team is actually faster?",
+      "followUpEn": "Do you count the extra review time too?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-vladi-stevanovic-talk-ai-20261025-ai."
+    },
+    {
+      "speakerId": "vladi-stevanovic",
+      "textIt": "Se specifica, implementazione e test vengono generati a partire dallo stesso contesto sbagliato, quale strato può contestare l’assunto iniziale invece di confermarlo tre volte?",
+      "followUpIt": "Come costruiresti una fonte di evidenza indipendente per quel controllo?",
+      "whyMd": "PONTE — mette alla prova il modello a strati quando le verifiche condividono le premesse degli agenti.",
+      "tags": [
+        "ricerca-editoriale",
+        "ai-generated",
+        "intervista-ponte",
+        "specifiche",
+        "errori-correlati",
+        "verifica-indipendente"
+      ],
+      "sourceIds": ["snapshot-priority-csv", "snapshot-speakers-directory"],
+      "materialIds": [],
+      "id": "q-vladi-stevanovic-simple-en-20261028-03",
+      "order": 3,
+      "textEn": "If AI writes the spec, the code, and the tests, who checks the original idea?",
+      "followUpEn": "What would you use for an independent check?",
+      "status": "suggested",
+      "notesMd": "Versione inglese semplificata il 28 ottobre 2026. Domanda originale conservata in questions/q-vladi-stevanovic-talk-ai-20261025-bridge."
+    }
+  ],
+  "conductorBriefs": [
+    {
+      "id": "brief-editorial-dennis-nerush",
+      "speakerId": "dennis-nerush",
+      "talkId": "talk-dennis-nerush",
+      "mainQuestionIds": [
+        "q-dennis-nerush-simple-en-20261028-01",
+        "q-dennis-nerush-simple-en-20261028-02",
+        "q-dennis-nerush-simple-en-20261028-03"
+      ]
+    },
+    {
+      "id": "brief-4ab22b26add45e94",
+      "speakerId": "matteo-collina",
+      "talkId": "talk-matteo-collina",
+      "mainQuestionIds": [
+        "q-matteo-collina-simple-en-20261028-01",
+        "q-matteo-collina-simple-en-20261028-02",
+        "q-matteo-collina-simple-en-20261028-03"
+      ]
+    },
+    {
+      "id": "brief-8a8f1787d5f7f0bc",
+      "speakerId": "paolo-insogna",
+      "talkId": "talk-paolo-insogna",
+      "mainQuestionIds": [
+        "q-paolo-insogna-simple-en-20261028-01",
+        "q-paolo-insogna-simple-en-20261028-02",
+        "q-paolo-insogna-simple-en-20261028-03"
+      ]
+    },
+    {
+      "id": "brief-editorial-rowdy-rabouw",
+      "speakerId": "rowdy-rabouw",
+      "talkId": "talk-rowdy-rabouw",
+      "mainQuestionIds": [
+        "q-rowdy-rabouw-simple-en-20261028-01",
+        "q-rowdy-rabouw-simple-en-20261028-02",
+        "q-rowdy-rabouw-simple-en-20261028-03"
+      ]
+    },
+    {
+      "id": "brief-e56ebec3b4cc2180",
+      "speakerId": "vladi-stevanovic",
+      "talkId": "talk-vladi-stevanovic",
+      "mainQuestionIds": [
+        "q-vladi-stevanovic-simple-en-20261028-01",
+        "q-vladi-stevanovic-simple-en-20261028-02",
+        "q-vladi-stevanovic-simple-en-20261028-03"
+      ]
+    }
+  ]
+}
