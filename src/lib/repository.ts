@@ -99,7 +99,7 @@ export function watchCollection(
   function changed(event: Event) {
     if ((event as CustomEvent<string[]>).detail.includes(name)) void load();
   }
-  const timer = setInterval(poll, 60_000);
+  const timer = setInterval(poll, name === 'interviewPlans' ? 5_000 : 60_000);
   document.addEventListener('visibilitychange', poll);
   window.addEventListener('online', poll);
   refresh.addEventListener('change', changed);

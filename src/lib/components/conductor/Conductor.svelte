@@ -23,6 +23,7 @@
   import { researchEntries } from '$lib/research';
   import AssignmentControl from './AssignmentControl.svelte';
   import InterviewCompletion from './InterviewCompletion.svelte';
+  import { nextInterview } from '$lib/conductor/next-interview';
   let {
     readOnly = false,
     data,
@@ -30,6 +31,7 @@
     assignees = [],
     uid,
     onquestion,
+    onnext,
     mode = 'home',
     selected = '',
     topic = ''
@@ -40,6 +42,7 @@
     assignees?: Entity[];
     uid: string;
     onquestion: (q: Entity, brief?: Entity) => Promise<void>;
+    onnext: (speakerId: string, selected: boolean) => Promise<void>;
     mode?: 'home' | 'speakers' | 'speaker' | 'reading' | 'topics' | 'topic';
     selected?: string;
     topic?: string;
@@ -147,6 +150,7 @@
     talks.find((talk) => talk.id === page.url.searchParams.get('talk'))?.id || talks[0]?.id || ''
   );
   const plan = $derived(data.interviewPlans?.find((p) => p.speakerId === selected));
+  const nextSpeaker = $derived(nextInterview(data));
   const brief = $derived(resolveBrief(data, selected, talkId, language));
   const groups = $derived(
     groupSpeakers(
@@ -268,6 +272,14 @@
       await api('/api/conductor/interests', { speakerId: id, interested: !saved(id) });
       refreshWorkspace();
     });
+  }
+  async function markNext(id: string, selected: boolean) {
+    await run(
+      () => onnext(id, selected),
+      selected
+        ? 'Prossima intervista aggiornata per tutto il team.'
+        : 'Indicazione della prossima intervista rimossa.'
+    );
   }
   function qtext(q: Entity) {
     return String(
@@ -463,6 +475,30 @@
       </h1>
       <p>Le domande sono già qui. Scegli una persona e prepara la conversazione.</p>
     </div>
+    {#if speakerList}
+      <section class="next-interview" aria-label="Prossima intervista">
+        <h2>Prossima intervista</h2>
+        {#if nextSpeaker}
+          <div class="next-speaker">
+            <SpeakerPhoto speaker={nextSpeaker} compact />
+            <div>
+              <h3>{nextSpeaker.fullName}</h3>
+              <p>Scelta condivisa con tutto il team · {owner(nextSpeaker.id)}</p>
+            </div>
+          </div>
+          <div class="card-controls">
+            <a class="nav-action primary" href={'/speaker/' + encodeURIComponent(nextSpeaker.id)}
+              >Apri scheda</a
+            >
+            <button disabled={busy || readOnly} onclick={() => markNext(nextSpeaker!.id, false)}
+              >Togli da prossimo</button
+            >
+          </div>
+        {:else}
+          <p>Nessuno speaker indicato. Apri una scheda e premi «Segna come prossimo».</p>
+        {/if}
+      </section>
+    {/if}
     <label class="search"
       >Cerca speaker<input
         aria-label="Cerca speaker"
@@ -758,6 +794,22 @@
       ><span>Interessati: {names(selected) || 'nessuno'}</span>
     </div>
     <AssignmentControl {speaker} {plan} />
+    <div class="next-interview-control" role="group" aria-label="Prossima intervista">
+      <strong
+        >{nextSpeaker?.id === selected
+          ? 'Prossimo da intervistare'
+          : 'Scegli la prossima intervista per il team'}</strong
+      >
+      <button
+        class:primary={nextSpeaker?.id !== selected}
+        disabled={busy ||
+          readOnly ||
+          plan?.interviewStatus === 'completed' ||
+          speaker.status === 'archived'}
+        onclick={() => markNext(selected, nextSpeaker?.id !== selected)}
+        >{nextSpeaker?.id === selected ? 'Togli da prossimo' : 'Segna come prossimo'}</button
+      >
+    </div>
     <InterviewCompletion speakerId={selected} {plan} />
     <section class="question-sheet">
       <h2>Domande principali</h2>
@@ -980,6 +1032,7 @@
       <span>{((s.tags || []) as string[]).slice(0, 3).join(' · ')}</span>
     </div>
     <div class="card-statuses">
+      {#if nextSpeaker?.id === s.id}<span class="next-badge">Prossimo da intervistare</span>{/if}
       {#if assignment?.interviewStatus === 'completed'}<span class="completed-badge"
           >Intervista fatta</span
         >{/if}
@@ -1096,6 +1149,44 @@
 </dialog>
 
 <style>
+  .next-interview {
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid #ccb979;
+    border-radius: 16px;
+    background: #fff3d6;
+  }
+  .next-interview h2 {
+    margin-top: 0;
+  }
+  .next-speaker {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    overflow-wrap: anywhere;
+  }
+  .next-speaker h3 {
+    margin: 0 0 4px;
+  }
+  .next-speaker p {
+    margin: 0;
+  }
+  .next-interview-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0;
+    padding: 14px;
+    background: #fff3d6;
+    border-radius: 12px;
+  }
+  .next-badge {
+    background: #fff0bc;
+    color: #665016;
+  }
   .speaker-identity {
     display: flex;
     align-items: center;
@@ -1218,6 +1309,7 @@
   }
   .assignment-badge,
   .interest-badge,
+  .next-badge,
   .completed-badge {
     font-size: 12px;
     font-weight: 600;

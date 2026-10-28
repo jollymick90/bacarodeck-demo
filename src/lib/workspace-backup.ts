@@ -206,11 +206,29 @@ export function planRestore(
 }
 
 export function restoreBatches(changes: RestoreChange[]): RestoreChange[][] {
+  // Transfer the next marker together, including any changes to the linked speakers.
+  const markerChanges = changes.filter(
+    (change) =>
+      change.collection === 'interviewPlans' &&
+      (change.expected?.nextInterview === true || change.data?.nextInterview === true)
+  );
+  const markerPlans = new Set(markerChanges.map((change) => change.id));
+  const markerSpeakers = new Set(
+    markerChanges.flatMap((change) =>
+      [change.expected?.speakerId, change.data?.speakerId].filter(
+        (id): id is string => typeof id === 'string'
+      )
+    )
+  );
   const groups = new Map<string, RestoreChange[]>();
   for (const change of changes) {
-    const key = ['questions', 'deletedQuestions'].includes(change.collection)
-      ? `question:${change.id}`
-      : `${change.collection}:${change.id}`;
+    const key =
+      (change.collection === 'interviewPlans' && markerPlans.has(change.id)) ||
+      (change.collection === 'speakers' && markerSpeakers.has(change.id))
+        ? 'next-interview'
+        : ['questions', 'deletedQuestions'].includes(change.collection)
+          ? `question:${change.id}`
+          : `${change.collection}:${change.id}`;
     groups.set(key, [...(groups.get(key) || []), change]);
   }
   const batches: RestoreChange[][] = [];

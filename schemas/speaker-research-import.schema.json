@@ -528,6 +528,9 @@
           "interviewStatus": {
             "type": ["string", "null"]
           },
+          "nextInterview": {
+            "type": "boolean"
+          },
           "priority": {
             "type": ["string", "null"]
           },

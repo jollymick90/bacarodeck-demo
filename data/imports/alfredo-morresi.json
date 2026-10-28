@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-28",
+  "description": "Alfredo Morresi: titolo e abstract del talk forniti dall'utente, traduzione italiana e cinque domande IT/EN preparate a partire da questi contenuti.",
+  "talks": [
+    {
+      "id": "talk-alfredo-morresi",
+      "speakerIds": ["2b41019a-dd84-47f7-a2b0-c6cde075f4a0"],
+      "title": "How to tame our Hermes minions fleet",
+      "abstractMd": "Spin up a VPS, run `install.sh`, plug in a Telegram bot token, and boom - our first Hermes AI agent is alive. A couple of prompts and it is already sending news reports, organizing emails, and build our second brain. It feels effortless, almost magical. We add more minions and turn everything into a workflow. Until a month later, we realize we're spending more time firefighting and patching issues than building anything new.\n\nThis talk distills months of lost sleep trying to tame the bill that non-deterministic agentic workflows inevitably hands us. We'll dive into skill design, organizational patterns, and harness support tools. Using a Hermes Agent and personal productivity as example, but with principles applicable across the board.",
+      "abstractEn": "Spin up a VPS, run `install.sh`, plug in a Telegram bot token, and boom - our first Hermes AI agent is alive. A couple of prompts and it is already sending news reports, organizing emails, and build our second brain. It feels effortless, almost magical. We add more minions and turn everything into a workflow. Until a month later, we realize we're spending more time firefighting and patching issues than building anything new.\n\nThis talk distills months of lost sleep trying to tame the bill that non-deterministic agentic workflows inevitably hands us. We'll dive into skill design, organizational patterns, and harness support tools. Using a Hermes Agent and personal productivity as example, but with principles applicable across the board.",
+      "abstractIt": "Avviamo un VPS, eseguiamo `install.sh`, colleghiamo il token di un bot Telegram e, voilà, il nostro primo agente AI Hermes è operativo. Bastano un paio di prompt e sta già inviando rassegne di notizie, organizzando le email e costruendo il nostro secondo cervello. Sembra tutto semplice, quasi magico. Aggiungiamo altri «minion» e trasformiamo il tutto in un workflow. Finché, un mese dopo, ci rendiamo conto di passare più tempo a spegnere incendi e correggere problemi che a costruire qualcosa di nuovo.\n\nQuesto talk distilla mesi di notti insonni trascorsi cercando di domare il conto che i workflow agentici non deterministici finiscono inevitabilmente per presentarci. Approfondiremo la progettazione delle skill, i modelli organizzativi e gli strumenti di supporto all'harness. Useremo Hermes Agent e la produttività personale come esempio, con principi applicabili anche in altri contesti.",
+      "translationReviewed": false
+    }
+  ],
+  "questions": [
+    {
+      "id": "question-alfredo-morresi-hermes-20261028-01",
+      "speakerId": "2b41019a-dd84-47f7-a2b0-c6cde075f4a0",
+      "order": 1,
+      "textIt": "Qual è stato il primo segnale che i tuoi agenti Hermes stavano richiedendo più tempo di manutenzione di quello che ti facevano risparmiare?",
+      "textEn": "What was the first sign that your Hermes agents were taking more time to maintain than they were saving you?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alfredo-morresi-hermes-20261028-02",
+      "speakerId": "2b41019a-dd84-47f7-a2b0-c6cde075f4a0",
+      "order": 2,
+      "textIt": "Cosa distingue una skill che funziona in una demo da una di cui puoi fidarti in un workflow quotidiano?",
+      "textEn": "What distinguishes a skill that works in a demo from one you can trust in an everyday workflow?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alfredo-morresi-hermes-20261028-03",
+      "speakerId": "2b41019a-dd84-47f7-a2b0-c6cde075f4a0",
+      "order": 3,
+      "textIt": "Come decidi quando aggiungere un altro agente e quando, invece, un workflow più semplice sarebbe più affidabile?",
+      "textEn": "How do you decide when to add another agent and when a simpler workflow would be more reliable?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alfredo-morresi-hermes-20261028-04",
+      "speakerId": "2b41019a-dd84-47f7-a2b0-c6cde075f4a0",
+      "order": 4,
+      "textIt": "Quando un workflow agentico va storto, cosa devono mostrarti gli strumenti dell'harness per aiutarti a capire e risolvere il problema?",
+      "textEn": "When an agentic workflow goes wrong, what do you need your harness tools to show you so you can understand and fix the problem?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-alfredo-morresi-hermes-20261028-05",
+      "speakerId": "2b41019a-dd84-47f7-a2b0-c6cde075f4a0",
+      "order": 5,
+      "textIt": "A chi parte oggi con un VPS e un bot Telegram, quale prima accortezza consiglieresti per evitare di passare il mese successivo a spegnere incendi?",
+      "textEn": "For someone starting with a VPS and a Telegram bot today, what is the first thing you would put in place to avoid spending the next month firefighting?",
+      "status": "suggested"
+    }
+  ]
+}

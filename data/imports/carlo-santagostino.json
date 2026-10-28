@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-28",
+  "description": "Carlo Santagostino: nuovo speaker con foto, biografia e titolo del talk forniti dall'utente. Biografia tradotta in inglese e cinque domande IT/EN preparate a partire dalla biografia e dal titolo. L'abstract del talk non è stato fornito.",
+  "speakers": [
+    {
+      "id": "carlo-santagostino",
+      "fullName": "Carlo Santagostino",
+      "firstName": "Carlo",
+      "lastName": "Santagostino",
+      "headline": "Archeologia Informatica",
+      "photoUrl": "https://cdn.sessionize.com/image/b4bf-200o200o2-WrQ1avcokE81EjVs1E7aKU.jpg",
+      "biographyMd": "Appassionatosi sin da tenerissima età alle novità tecnologiche che stavano cambiando il mondo ha cominciato a farsi strada quando, negli anni ’80, appena quindicenne, ha programmato e pubblicato i suoi primi videogiochi. La sua carriera è proseguita come redattore per le prime riviste di videogiochi in Italia (Zzap! e The Games Machine), conduttore di trasmissioni televisive dedicate al mondo dei videogiochi ed ideatore dei primi progetti di cd-rom multimediali (Enciclopedia Grolier - 1991).\n\nNegli anni non ha mai abbandonato il mondo dell'Informatica dove ha ricoperto svariati ruoli fondando diverse start-up operanti nell’ambito web e delle nuove tecnologie. Ha fondato nel 2010 un’associazione culturale “RetroCampus” che ha per missione la preservazione e divulgazione della storia del videogioco e del personal computer.\n\nDal 2013 è conduttore del podcast “Archeologia Informatica”, una trasmissione su tutto quello che riguarda la storia dell’informatica dalle origini ai giorni nostri.",
+      "biographyIt": "Appassionatosi sin da tenerissima età alle novità tecnologiche che stavano cambiando il mondo ha cominciato a farsi strada quando, negli anni ’80, appena quindicenne, ha programmato e pubblicato i suoi primi videogiochi. La sua carriera è proseguita come redattore per le prime riviste di videogiochi in Italia (Zzap! e The Games Machine), conduttore di trasmissioni televisive dedicate al mondo dei videogiochi ed ideatore dei primi progetti di cd-rom multimediali (Enciclopedia Grolier - 1991).\n\nNegli anni non ha mai abbandonato il mondo dell'Informatica dove ha ricoperto svariati ruoli fondando diverse start-up operanti nell’ambito web e delle nuove tecnologie. Ha fondato nel 2010 un’associazione culturale “RetroCampus” che ha per missione la preservazione e divulgazione della storia del videogioco e del personal computer.\n\nDal 2013 è conduttore del podcast “Archeologia Informatica”, una trasmissione su tutto quello che riguarda la storia dell’informatica dalle origini ai giorni nostri.",
+      "biographyEn": "Fascinated from a very young age by the technological innovations that were changing the world, he began making his mark in the 1980s when, at just fifteen, he programmed and published his first video games. His career continued as a writer for Italy's early video game magazines (Zzap! and The Games Machine), a host of television shows about video games, and the creator of some of the first multimedia CD-ROM projects (Grolier Encyclopedia, 1991).\n\nHe has remained active in computing over the years, holding a variety of roles and founding several startups in the web and new technology sectors. In 2010, he founded the cultural association RetroCampus, whose mission is to preserve and share the history of video games and personal computers.\n\nSince 2013, he has hosted Archeologia Informatica, a podcast covering the history of computing from its origins to the present day.",
+      "translationReviewed": false,
+      "talkIds": ["talk-carlo-santagostino"],
+      "inInterviewList": true,
+      "status": "active"
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-carlo-santagostino",
+      "speakerIds": ["carlo-santagostino"],
+      "title": "Storia dell'Intelligenza Artificiale nei videogiochi"
+    }
+  ],
+  "questions": [
+    {
+      "id": "question-carlo-santagostino-videogiochi-01",
+      "speakerId": "carlo-santagostino",
+      "order": 1,
+      "textIt": "Dai videogiochi che programmavi negli anni Ottanta ai titoli di oggi, qual è stato il cambiamento più importante nel modo di creare avversari che sembrino intelligenti?",
+      "textEn": "From the games you programmed in the 1980s to today's titles, what has been the biggest change in how we create opponents that seem intelligent?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-carlo-santagostino-videogiochi-02",
+      "speakerId": "carlo-santagostino",
+      "order": 2,
+      "textIt": "Nei videogiochi, cosa conta di più per far percepire un personaggio come intelligente: un algoritmo sofisticato o un comportamento credibile per il giocatore?",
+      "textEn": "In video games, what matters more in making a character seem intelligent: a sophisticated algorithm or behavior that feels believable to the player?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-carlo-santagostino-videogiochi-03",
+      "speakerId": "carlo-santagostino",
+      "order": 3,
+      "textIt": "C'è una tecnica o una soluzione dei primi videogiochi che vale ancora la pena studiare per progettare l'AI di oggi?",
+      "textEn": "Is there a technique or solution from early video games that is still worth studying when designing AI today?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-carlo-santagostino-videogiochi-04",
+      "speakerId": "carlo-santagostino",
+      "order": 4,
+      "textIt": "Con RetroCampus e Archeologia Informatica preservi e racconti la storia dell'informatica. Che cosa rischiamo di dimenticare quando presentiamo l'AI nei videogiochi come una novità?",
+      "textEn": "Through RetroCampus and Archeologia Informatica, you preserve and tell the history of computing. What do we risk forgetting when we present AI in video games as something new?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-carlo-santagostino-videogiochi-05",
+      "speakerId": "carlo-santagostino",
+      "order": 5,
+      "textIt": "Quale gioco consiglieresti a uno sviluppatore di recuperare per capire meglio come si è evoluta l'intelligenza artificiale, e cosa dovrebbe osservare mentre gioca?",
+      "textEn": "Which game would you recommend a developer revisit to better understand how artificial intelligence has evolved, and what should they look for while playing?",
+      "status": "suggested"
+    }
+  ]
+}

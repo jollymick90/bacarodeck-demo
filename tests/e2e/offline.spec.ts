@@ -106,6 +106,15 @@ test('prepared data survives closing the browser and reopening unread routes off
     console.log('[offline] seed saved');
     await page.reload();
     await expect(page.getByRole('heading', { name: 'Chi intervistiamo?' })).toBeVisible();
+    await page.goto(`/speaker/${id}`);
+    await page.getByRole('button', { name: 'Segna come prossimo', exact: true }).click();
+    await expect(
+      page.getByRole('button', { name: 'Togli da prossimo', exact: true })
+    ).toBeVisible();
+    await page.goto('/');
+    await expect(
+      page.getByRole('region', { name: 'Prossima intervista', exact: true })
+    ).toContainText('Offline Speaker');
     console.log('[offline] workspace loaded');
     await page.getByText('Dati su questo dispositivo', { exact: true }).click();
     await page.getByRole('button', { name: 'Prepara questo telefono per l’evento' }).click();
@@ -172,12 +181,21 @@ test('prepared data survives closing the browser and reopening unread routes off
     await page.goto('/backoffice');
     await expect(page.getByText('Consultazione offline', { exact: true })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Prepariamo le interviste.' })).toBeVisible();
+    await page.goto('/');
+    const nextInterview = page.getByRole('region', { name: 'Prossima intervista', exact: true });
+    await expect(nextInterview).toContainText('Offline Speaker');
+    await expect(
+      nextInterview.getByRole('button', { name: 'Togli da prossimo', exact: true })
+    ).toBeDisabled();
     await page.goto(`/backoffice/speaker/${id}/note`);
     await expect(
       page.getByText('Approfondimento mai aperto prima del download.', { exact: true })
     ).toBeVisible();
     await page.goto(`/speaker/${id}`);
     await expect(page.getByRole('button', { name: 'Assegna / cambia' })).toBeDisabled();
+    await expect(
+      page.getByRole('button', { name: 'Togli da prossimo', exact: true })
+    ).toBeDisabled();
     await expect(
       page.getByRole('button', { name: 'Aggiungi domanda', exact: true })
     ).toBeDisabled();

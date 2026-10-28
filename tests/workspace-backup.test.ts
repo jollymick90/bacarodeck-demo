@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest';
+import { validateNextInterview } from '../src/lib/conductor/next-interview';
 import {
   makeBackup,
   parseBackup,
@@ -62,6 +63,46 @@ it('skips identical data and prepares conflict expectations for changed document
   expect(planRestore(source, source)).toEqual([]);
   expect(planRestore(source, current)[0].expected).toEqual(current.data.speakers[0]);
 });
+
+it.each(['switch', 'relink'])(
+  'keeps a next-interview %s and related speaker archival in one restore batch',
+  (mode) => {
+    const speakers = [
+      ...Array.from({ length: 99 }, (_, i) => ({ id: `s${i}`, fullName: 'Old' })),
+      { id: 'a', fullName: 'Ada' },
+      { id: 'b', fullName: 'Berto' }
+    ];
+    const current = makeBackup({
+      speakers,
+      interviewPlans: [
+        { id: 'plan-a', speakerId: 'a', nextInterview: true },
+        { id: 'plan-b', speakerId: 'b', nextInterview: false }
+      ]
+    });
+    const source = makeBackup({
+      speakers: speakers.map((s) =>
+        s.id === 'a' ? { ...s, status: 'archived' } : s.id === 'b' ? s : { ...s, fullName: 'New' }
+      ),
+      interviewPlans:
+        mode === 'relink'
+          ? [{ id: 'plan-a', speakerId: 'b', nextInterview: true }]
+          : [
+              { id: 'plan-b', speakerId: 'b', nextInterview: true },
+              { id: 'plan-a', speakerId: 'a', nextInterview: false }
+            ]
+    });
+    const batches = restoreBatches(planRestore(source, current));
+    const state = structuredClone(current.data);
+    for (const batch of batches) {
+      for (const change of batch) {
+        state[change.collection] = state[change.collection].filter((row) => row.id !== change.id);
+        if (change.data) state[change.collection].push(change.data);
+      }
+      expect(() => validateNextInterview(state)).not.toThrow();
+    }
+    expect(batches.map((batch) => batch.length)).toEqual(mode === 'relink' ? [99, 2] : [99, 3]);
+  }
+);
 
 it('splits large imports into bounded requests', () => {
   const source = makeBackup({

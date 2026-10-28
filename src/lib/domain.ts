@@ -167,6 +167,12 @@ export function prepareWrite(
   const clean = Object.fromEntries(
     Object.entries(incoming).filter(([k, v]) => v !== undefined && !auditKeys.includes(k))
   );
+  if (
+    collection === 'interviewPlans' &&
+    clean.interviewStatus === 'completed' &&
+    clean.nextInterview === true
+  )
+    clean.nextInterview = false;
   return {
     ...clean,
     id: incoming.id,

@@ -2,6 +2,7 @@ import { queueConnections, scheduleConnections } from '$lib/server/connections/s
 import { trackEditorialFields } from '$lib/editorial-export';
 import { guardConductorWrite, guardConductorDelete } from '$lib/conductor/write-policy';
 import { validateBrief } from '$lib/conductor/brief';
+import { validateNextInterview } from '$lib/conductor/next-interview';
 import type { Dataset } from '$lib/fields';
 import { invalidateCollections } from '$lib/server/firestore-cache';
 import { error, json } from '@sveltejs/kit';
@@ -45,6 +46,17 @@ export const POST: RequestHandler = async ({ request, url }) => {
     );
     const context: Dataset = {};
     const contextNames = new Set<(typeof collections)[number]>();
+    if (
+      changes.some(
+        (c) =>
+          (body.action === 'save' &&
+            c.collection === 'interviewPlans' &&
+            c.data.nextInterview !== undefined) ||
+          (c.collection === 'speakers' &&
+            (body.action === 'delete' || c.data.status === 'archived'))
+      )
+    )
+      for (const name of ['speakers', 'interviewPlans'] as const) contextNames.add(name);
     if (body.action === 'save' && changes.some((c) => c.collection === 'conductorBriefs'))
       for (const name of ['speakers', 'talks', 'questions', 'conductorBriefs'] as const)
         contextNames.add(name);
@@ -109,6 +121,22 @@ export const POST: RequestHandler = async ({ request, url }) => {
         error(400, failure instanceof Error ? failure.message : 'Documento non valido.');
       }
     });
+    if (context.interviewPlans) {
+      changes.forEach((change, index) => {
+        if (change.collection === 'interviewPlans' || change.collection === 'speakers') {
+          context[change.collection] = context[change.collection]!.filter(
+            (p) => p.id !== change.data.id
+          );
+          if (writes[index]) context[change.collection]!.push(writes[index]!);
+        }
+      });
+      try {
+        validateNextInterview(context);
+      } catch (failure) {
+        const message = (failure as Error).message;
+        error(message.startsWith('Conflitto') ? 409 : 400, message);
+      }
+    }
     queueConnections(
       tx,
       db,

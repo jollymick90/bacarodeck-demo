@@ -14,6 +14,8 @@ import {
   type RestoreChange
 } from '$lib/workspace-backup';
 import { collections, type Entity } from '$lib/fields';
+import type { Dataset } from '$lib/fields';
+import { validateNextInterview } from '$lib/conductor/next-interview';
 import type { RequestHandler } from './$types';
 export const config = { maxDuration: 300 };
 const headers = { 'Cache-Control': 'private, no-store' };
@@ -84,6 +86,19 @@ export const POST: RequestHandler = async ({ request, url }) => {
     }
     const refs = [...keys].map((key) => db.doc(`${workspacePath}/${key}`));
     const snapshots = await Promise.all(refs.map((ref) => tx.get(ref)));
+    const nextContext: Dataset = {};
+    if (
+      changes.some(
+        (c) =>
+          (c.collection === 'interviewPlans' && c.data?.nextInterview !== undefined) ||
+          (c.collection === 'speakers' && c.data?.status === 'archived')
+      )
+    ) {
+      for (const name of ['speakers', 'interviewPlans'] as const) {
+        const snapshot = await tx.get(db.collection(`${workspacePath}/${name}`));
+        nextContext[name] = snapshot.docs.map((d) => ({ ...d.data(), id: d.id }) as Entity);
+      }
+    }
     const current = new Map<string, Entity | null>(
       [...keys].map((key, index) => [
         key,
@@ -117,6 +132,21 @@ export const POST: RequestHandler = async ({ request, url }) => {
           409,
           'La domanda e la sua cancellazione devono essere ripristinate insieme. Ricarica l’anteprima.'
         );
+    }
+    if (nextContext.interviewPlans) {
+      for (const change of changes) {
+        if (change.collection === 'speakers' || change.collection === 'interviewPlans') {
+          nextContext[change.collection] = nextContext[change.collection]!.filter(
+            (p) => p.id !== change.id
+          );
+          if (change.data) nextContext[change.collection]!.push(change.data);
+        }
+      }
+      try {
+        validateNextInterview(nextContext);
+      } catch (failure) {
+        error(409, (failure as Error).message);
+      }
     }
     queueConnections(
       tx,

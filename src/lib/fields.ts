@@ -190,6 +190,7 @@ export const fields: Record<Collection, Field[]> = {
     notes
   ],
   interviewPlans: [
+    f('nextInterview', 'Prossimo da intervistare', 'boolean'),
     f('assignedTeamId', 'Conduttore'),
     f('speakerId', 'ID speaker'),
     f('assignedToUid', 'Intervistatore'),

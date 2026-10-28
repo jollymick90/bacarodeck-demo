@@ -2,6 +2,7 @@
   import { page } from '$app/state';
   import { getWorkspace } from '$lib/workspace.svelte';
   import { commitChanges } from '$lib/repository';
+  import { nextInterviewChanges } from '$lib/conductor/next-interview';
   import Conductor from './Conductor.svelte';
 
   let {
@@ -26,6 +27,18 @@
     {mode}
     selected={speakerId}
     {topic}
+    onnext={async (speakerId, selected) => {
+      const saved = await commitChanges(
+        workspace.client!.db,
+        workspace.user!.uid,
+        nextInterviewChanges(workspace.data, speakerId, selected)
+      );
+      const ids = new Set(saved.map((plan) => plan.id));
+      workspace.data.interviewPlans = [
+        ...(workspace.data.interviewPlans || []).filter((plan) => !ids.has(plan.id)),
+        ...saved
+      ];
+    }}
     onquestion={async (question, brief) => {
       await commitChanges(workspace.client!.db, workspace.user!.uid, [
         { collection: 'questions', data: question, expectedRevision: question.revision ?? null },
