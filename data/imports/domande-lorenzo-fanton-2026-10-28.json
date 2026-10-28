@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-28",
+  "description": "Domande e follow-up originali dalle scalette di Lorenzo Fanton. Nessuna traduzione. Le domande rivolte a entrambi, Santomaggio e Caressa, sono presenti nelle schede di entrambi.",
+  "questions": [
+    {
+      "id": "question-andrey-breslav-lorenzo-fanton-20261028-01",
+      "speakerId": "andrey-breslav",
+      "order": 0,
+      "textEn": "Andrey, hi! Welcome to Codemotion Milan! First impressions? (poi) Tell us about your talk.",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrey-breslav-lorenzo-fanton-20261028-02",
+      "speakerId": "andrey-breslav",
+      "order": 1,
+      "textEn": "In ten years, will we still write code, or just specs?",
+      "followUpEn": "And will those specs be in English?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrey-breslav-lorenzo-fanton-20261028-03",
+      "speakerId": "andrey-breslav",
+      "order": 2,
+      "textEn": "How much of the code we write today is actually worth reading?",
+      "followUpEn": "So what should we keep in the repo?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrey-breslav-lorenzo-fanton-20261028-04",
+      "speakerId": "andrey-breslav",
+      "order": 3,
+      "textEn": "If the spec becomes the code, what happens to languages like Kotlin?",
+      "followUpEn": "Kotlin won by working with Java. Can specs work with old code the same way?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrey-breslav-lorenzo-fanton-20261028-05",
+      "speakerId": "andrey-breslav",
+      "order": 4,
+      "textEn": "How long should a good spec be?",
+      "followUpEn": "Can you give us an example?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-andrey-breslav-lorenzo-fanton-20261028-06",
+      "speakerId": "andrey-breslav",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-olena-borzenko-lorenzo-fanton-20261028-01",
+      "speakerId": "olena-borzenko",
+      "order": 0,
+      "textEn": "Olena, hi! Welcome to Codemotion Milan! First impressions? (poi) Tell us about your talk.",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-olena-borzenko-lorenzo-fanton-20261028-02",
+      "speakerId": "olena-borzenko",
+      "order": 1,
+      "textEn": "You studied applied physics, you code, and you paint. What came first in your life: science or art?",
+      "followUpEn": "And when did the two finally meet?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-olena-borzenko-lorenzo-fanton-20261028-03",
+      "speakerId": "olena-borzenko",
+      "order": 2,
+      "textEn": "Let me provoke you a bit: who's the artist here, you or the model?",
+      "followUpEn": "What happened when you let the AI choose?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-olena-borzenko-lorenzo-fanton-20261028-04",
+      "speakerId": "olena-borzenko",
+      "order": 3,
+      "textEn": "Do you need to know how to paint to make a painting? What does the machine do that your hand cannot?",
+      "followUpEn": "What does your hand still do?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-olena-borzenko-lorenzo-fanton-20261028-05",
+      "speakerId": "olena-borzenko",
+      "order": 4,
+      "textEn": "Tell us about a time the AI surprised you, good or bad.",
+      "followUpEn": "Did you keep it?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-olena-borzenko-lorenzo-fanton-20261028-06",
+      "speakerId": "olena-borzenko",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-christian-schabetsberger-lorenzo-fanton-20261028-01",
+      "speakerId": "christian-schabetsberger",
+      "order": 0,
+      "textEn": "Christian, hi! Welcome to Codemotion! How's it been so far? (poi) Tell us about your talk.",
+      "notesMd": "Min: 5\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-christian-schabetsberger-lorenzo-fanton-20261028-02",
+      "speakerId": "christian-schabetsberger",
+      "order": 1,
+      "textEn": "Do we really need a new version control system?",
+      "followUpEn": "Why did Git win?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-christian-schabetsberger-lorenzo-fanton-20261028-03",
+      "speakerId": "christian-schabetsberger",
+      "order": 2,
+      "textEn": "Did these new tools start before AI, or because of it?",
+      "followUpEn": "Has your talk changed since 2025?",
+      "notesMd": "Min: 3\nSe si dilunga: tieni\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-christian-schabetsberger-lorenzo-fanton-20261028-04",
+      "speakerId": "christian-schabetsberger",
+      "order": 3,
+      "textEn": "If I try one of these tools tomorrow, where should I start?",
+      "followUpEn": "Which one do you use every day?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-christian-schabetsberger-lorenzo-fanton-20261028-05",
+      "speakerId": "christian-schabetsberger",
+      "order": 4,
+      "textEn": "Just my curiosity: if AI can regenerate the code, what's left worth versioning?",
+      "followUpEn": "Should version control keep the reasons, not just the code?",
+      "notesMd": "Min: 3\nSe si dilunga: taglia per prima\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-christian-schabetsberger-lorenzo-fanton-20261028-06",
+      "speakerId": "christian-schabetsberger",
+      "order": 5,
+      "textEn": "One piece of advice on AI for Italian developers?",
+      "notesMd": "Min: 1\nSe si dilunga: non si taglia\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-gabriele-santomaggio-lorenzo-fanton-20261028-01",
+      "speakerId": "gabriele-santomaggio",
+      "order": 0,
+      "textIt": "Paolo, Gabriele, ciao! Benvenuti! Com'è andato finora questo Codemotion? (poi) Raccontateci il vostro talk.",
+      "notesMd": "Min: 5\nRivolta a: entrambi\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-paolo-caressa-lorenzo-fanton-20261028-01",
+      "speakerId": "paolo-caressa",
+      "order": 0,
+      "textIt": "Paolo, Gabriele, ciao! Benvenuti! Com'è andato finora questo Codemotion? (poi) Raccontateci il vostro talk.",
+      "notesMd": "Min: 5\nRivolta a: entrambi\nSe si dilunga: non si taglia",
+      "status": "suggested"
+    },
+    {
+      "id": "question-paolo-caressa-lorenzo-fanton-20261028-02",
+      "speakerId": "paolo-caressa",
+      "order": 1,
+      "textIt": "Qual è il filosofo che ogni programmatore dovrebbe conoscere?",
+      "followUpIt": "E cosa aveva già capito?",
+      "notesMd": "Min: 3\nRivolta a: Caressa\nSe si dilunga: tieni",
+      "status": "suggested"
+    },
+    {
+      "id": "question-gabriele-santomaggio-lorenzo-fanton-20261028-03",
+      "speakerId": "gabriele-santomaggio",
+      "order": 2,
+      "textIt": "Non è la prima volta che salite sul palco insieme. Come funziona la coppia?",
+      "followUpIt": "Chi dei due è il filosofo?",
+      "notesMd": "Min: 3\nRivolta a: entrambi\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-paolo-caressa-lorenzo-fanton-20261028-03",
+      "speakerId": "paolo-caressa",
+      "order": 2,
+      "textIt": "Non è la prima volta che salite sul palco insieme. Come funziona la coppia?",
+      "followUpIt": "Chi dei due è il filosofo?",
+      "notesMd": "Min: 3\nRivolta a: entrambi\nSe si dilunga: taglia per prima",
+      "status": "suggested"
+    },
+    {
+      "id": "question-gabriele-santomaggio-lorenzo-fanton-20261028-04",
+      "speakerId": "gabriele-santomaggio",
+      "order": 3,
+      "textIt": "Gabriele, preparando il talk, quale scoperta ti ha sorpreso di più?",
+      "followUpIt": "Cosa cambia nel tuo lavoro?",
+      "notesMd": "Min: 3\nRivolta a: Santomaggio\nSe si dilunga: taglia per seconda",
+      "status": "suggested"
+    },
+    {
+      "id": "question-gabriele-santomaggio-lorenzo-fanton-20261028-05",
+      "speakerId": "gabriele-santomaggio",
+      "order": 4,
+      "textIt": "Oggi l'AI sembra una novità assoluta. Lo è davvero, o qualcuno ci era già arrivato?",
+      "followUpIt": "Davanti all'AI c'è chi ci crede ciecamente e chi la rifiuta. Voi da che parte state?",
+      "notesMd": "Min: 3\nRivolta a: entrambi\nSe si dilunga: tieni\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-paolo-caressa-lorenzo-fanton-20261028-05",
+      "speakerId": "paolo-caressa",
+      "order": 4,
+      "textIt": "Oggi l'AI sembra una novità assoluta. Lo è davvero, o qualcuno ci era già arrivato?",
+      "followUpIt": "Davanti all'AI c'è chi ci crede ciecamente e chi la rifiuta. Voi da che parte state?",
+      "notesMd": "Min: 3\nRivolta a: entrambi\nSe si dilunga: tieni\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-gabriele-santomaggio-lorenzo-fanton-20261028-06",
+      "speakerId": "gabriele-santomaggio",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nRivolta a: entrambi\nSe si dilunga: non si taglia\nAI: ★",
+      "status": "suggested"
+    },
+    {
+      "id": "question-paolo-caressa-lorenzo-fanton-20261028-06",
+      "speakerId": "paolo-caressa",
+      "order": 5,
+      "textIt": "Un consiglio sull'AI per gli sviluppatori italiani?",
+      "notesMd": "Min: 1\nRivolta a: entrambi\nSe si dilunga: non si taglia\nAI: ★",
+      "status": "suggested"
+    }
+  ]
+}

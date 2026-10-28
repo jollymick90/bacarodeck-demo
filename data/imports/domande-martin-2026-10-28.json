@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "dataSnapshotDate": "2026-10-28",
+  "description": "Sei domande proposte da Martin per Leonardo Cavagnis e David McCarter il 28 ottobre 2026. Testi italiani ripuliti dai refusi e traduzioni inglesi incluse. Per Leonardo: AI in locale, talk Designing Physical AI Systems: From Sensors to On-Device Intelligence. Per David: AI e copywriting, talk Unleash Your Inner Rockstar: The 5 Steps to Dynamic Public Speaking!",
+  "questions": [
+    {
+      "id": "question-leonardo-cavagnis-martin-20261028-01",
+      "speakerId": "leonardo-cavagnis",
+      "order": 1,
+      "textIt": "Parlaci in breve del tuo talk.",
+      "textEn": "Can you briefly tell us about your talk?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-leonardo-cavagnis-martin-20261028-02",
+      "speakerId": "leonardo-cavagnis",
+      "order": 2,
+      "textIt": "Che domande si deve porre una persona per decidere se far girare l'AI in locale o in cloud?",
+      "textEn": "What questions should someone ask themselves when deciding whether to run AI locally or in the cloud?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-leonardo-cavagnis-martin-20261028-03",
+      "speakerId": "leonardo-cavagnis",
+      "order": 3,
+      "textIt": "Che progettino e quale hardware consigli a chi vuole iniziare a sperimentare?",
+      "textEn": "What small project and hardware would you recommend to someone who wants to start experimenting?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-david-mccarter-martin-20261028-01",
+      "speakerId": "david-mccarter",
+      "order": 1,
+      "textIt": "Parlaci in breve del tuo talk.",
+      "textEn": "Can you briefly tell us about your talk?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-david-mccarter-martin-20261028-02",
+      "speakerId": "david-mccarter",
+      "order": 2,
+      "textIt": "Qual è l'errore più comune quando si cerca di tradurre un argomento tecnico per un pubblico non tecnico?",
+      "textEn": "What is the most common mistake people make when trying to explain a technical topic to a non-technical audience?",
+      "status": "suggested"
+    },
+    {
+      "id": "question-david-mccarter-martin-20261028-03",
+      "speakerId": "david-mccarter",
+      "order": 3,
+      "textIt": "Oggi molti usano l'AI per scrivere post e script: dove ti fermeresti? Quale parte di questo processo non delegheresti all'AI, almeno per ora?",
+      "textEn": "Today, many people use AI to write posts and scripts. Where would you draw the line? Which part of this process would you not delegate to AI, at least for now?",
+      "status": "suggested"
+    }
+  ]
+}
