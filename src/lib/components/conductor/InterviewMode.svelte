@@ -19,6 +19,25 @@
   } = $props();
   const workspace = getWorkspace();
   let activeLanguage = $state(untrack(() => language));
+  let showStartQuestions = $state(false);
+  const startQuestions = [
+    {
+      it: 'Puoi raccontarci qualcosa del tuo talk?',
+      en: 'Can you tell us a little about your talk?'
+    },
+    {
+      it: "Qual è l'idea principale del tuo intervento?",
+      en: "What's the main idea behind your talk?"
+    },
+    {
+      it: 'Cosa ti ha spinto a scegliere questo argomento?',
+      en: 'What inspired you to talk about this topic?'
+    },
+    {
+      it: 'Cosa vorresti che gli sviluppatori si portassero a casa dal tuo intervento?',
+      en: 'What do you want developers to take away from your talk?'
+    }
+  ];
   // Freeze the prepared cards for this interview, even if the team edits the shared data.
   const cards = untrack(() => {
     const data = workspace.data;
@@ -87,6 +106,7 @@
     await goto(url.pathname + url.search);
   }
   function next() {
+    if (showStartQuestions) return;
     if (index < cards.length - 1) {
       showFollowUp = false;
       index++;
@@ -105,7 +125,8 @@
     const keyboard = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         event.preventDefault();
-        void leave();
+        if (showStartQuestions) showStartQuestions = false;
+        else void leave();
       }
       if (event.key === 'ArrowRight' || event.key === 'PageDown') {
         event.preventDefault();
@@ -126,23 +147,37 @@
 <section class="interview-mode" aria-label="Modalità intervista">
   <div class="question" aria-live="polite" aria-atomic="true">
     <div class="question-content">
-      <div class="question-text" lang={activeLanguage}>
-        {#if cards[index]?.optional}<p class="question-kind">Domanda opzionale · se c’è tempo</p>
-        {:else if firstOptional >= 0 && index === finalIndex}<p class="question-kind">
-            Domanda finale
-          </p>{/if}
-        <Markdown text={current ? questionText : 'Nessuna domanda nella scaletta.'} />
-      </div>
-      {#if showFollowUp && followUp}
+      {#if showStartQuestions}
         <section
-          class="follow-up"
-          id="interview-follow-up"
-          aria-label="Follow-up"
+          class="start-questions"
+          id="interview-start-questions"
+          aria-label={activeLanguage === 'it' ? 'Domande di inizio' : 'Start questions'}
           lang={activeLanguage}
         >
-          <h2>Follow-up</h2>
-          <Markdown text={followUp} />
+          <h2>{activeLanguage === 'it' ? 'Domande di inizio' : 'Start questions'}</h2>
+          <ol>
+            {#each startQuestions as question}<li>{question[activeLanguage]}</li>{/each}
+          </ol>
         </section>
+      {:else}
+        <div class="question-text" lang={activeLanguage}>
+          {#if cards[index]?.optional}<p class="question-kind">Domanda opzionale · se c’è tempo</p>
+          {:else if firstOptional >= 0 && index === finalIndex}<p class="question-kind">
+              Domanda finale
+            </p>{/if}
+          <Markdown text={current ? questionText : 'Nessuna domanda nella scaletta.'} />
+        </div>
+        {#if showFollowUp && followUp}
+          <section
+            class="follow-up"
+            id="interview-follow-up"
+            aria-label="Follow-up"
+            lang={activeLanguage}
+          >
+            <h2>Follow-up</h2>
+            <Markdown text={followUp} />
+          </section>
+        {/if}
       {/if}
     </div>
   </div>
@@ -160,7 +195,22 @@
         onclick={() => (activeLanguage = 'en')}>EN</button
       >
     </div>
-    {#if followUp}
+    <button
+      class="start-question-toggle"
+      disabled={leaving}
+      aria-expanded={showStartQuestions}
+      aria-controls={showStartQuestions ? 'interview-start-questions' : undefined}
+      onclick={() => (showStartQuestions = !showStartQuestions)}
+    >
+      {showStartQuestions
+        ? activeLanguage === 'it'
+          ? 'Torna all’intervista'
+          : 'Back to interview'
+        : activeLanguage === 'it'
+          ? 'Suggerisci domanda di inizio'
+          : 'Suggest start question'}
+    </button>
+    {#if followUp && !showStartQuestions}
       <button
         class="follow-up-toggle"
         disabled={leaving}
@@ -171,11 +221,15 @@
         {showFollowUp ? 'Nascondi follow-up' : 'Mostra follow-up'}
       </button>
     {/if}
-    <button class="next" onclick={next} disabled={leaving || index >= cards.length - 1}
-      >Prossima domanda</button
+    <button
+      class="next"
+      onclick={next}
+      disabled={leaving || showStartQuestions || index >= cards.length - 1}>Prossima domanda</button
     >
-    {#if canSkipOptional}<button class="skip" disabled={leaving} onclick={skipOptional}
-        >Vai alla domanda finale</button
+    {#if canSkipOptional && !showStartQuestions}<button
+        class="skip"
+        disabled={leaving}
+        onclick={skipOptional}>Vai alla domanda finale</button
       >{/if}
   </div>
 </section>
@@ -265,6 +319,27 @@
     color: #c9d7ea;
     font-size: 0.9rem;
     margin: 0 0 0.5rem;
+  }
+  .start-question-toggle {
+    background: transparent;
+    border: 1px solid #eebd65;
+    color: #ffdda0;
+  }
+  .start-questions {
+    font-size: clamp(1.1rem, 3.1vmin, 1.8rem);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+  .start-questions h2 {
+    color: #ffdda0;
+    font-size: 1rem;
+    margin: 0 0 1rem;
+  }
+  .start-questions ol {
+    display: grid;
+    gap: 0.8em;
+    margin: 0;
+    padding-left: 1.6em;
   }
   .follow-up :global(.markdown) {
     font-size: inherit;

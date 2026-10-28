@@ -188,6 +188,14 @@ test('prepared data survives closing the browser and reopening unread routes off
     await expect(page.getByRole('region', { name: 'Modalità intervista' })).toBeVisible();
     await page.getByRole('button', { name: 'EN', exact: true }).click();
     await expect(page.getByText('Offline question 1', { exact: true })).toBeVisible();
+    await page.getByRole('button', { name: 'Suggest start question', exact: true }).click();
+    const startQuestions = page.getByRole('region', { name: 'Start questions', exact: true });
+    await expect(startQuestions.locator('li')).toHaveCount(4);
+    await expect(startQuestions.locator('li').first()).toHaveText(
+      'Can you tell us a little about your talk?'
+    );
+    await page.getByRole('button', { name: 'Back to interview', exact: true }).click();
+    await expect(page.getByText('Offline question 1', { exact: true })).toBeVisible();
     await page.getByRole('button', { name: 'Prossima domanda' }).click();
     await expect(page.getByText('Offline question 2', { exact: true })).toBeVisible();
     await page.screenshot({ path: info.outputPath('offline-interview.png') });
