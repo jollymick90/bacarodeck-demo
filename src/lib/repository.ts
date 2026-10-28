@@ -35,7 +35,7 @@ export async function api(path: string, body?: unknown) {
   if (typeof navigator !== 'undefined' && navigator.onLine === false)
     throw new Error('Sei offline. Conserva il testo e riprova quando torna la connessione.');
   const user = getAuth().currentUser;
-  if (!user) throw new Error('Accedi con Google.');
+  if (!user) throw new Error('Accedi con Google oppure email e password.');
   const token = await user.getIdToken();
   if (body !== undefined) assertWriteAccess();
   const response = await fetch(path, {

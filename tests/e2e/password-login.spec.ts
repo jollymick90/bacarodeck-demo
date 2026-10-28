@@ -134,11 +134,11 @@ test('superadmin adds, changes and disables a password on the existing Google UI
     ).toBeVisible();
     await userContext.close();
     await row.getByRole('button', { name: 'Disabilita accesso con password', exact: true }).click();
+    await expect(row.getByRole('button', { name: 'Imposta password', exact: true })).toBeEnabled();
     const disabledToken = await request.get('/api/data/speakers', {
       headers: { Authorization: replacementAccess.request().headers().authorization }
     });
     expect([401, 403]).toContain(disabledToken.status());
-    await expect(row.getByRole('button', { name: 'Imposta password', exact: true })).toBeEnabled();
     userContext = await browser.newContext({ baseURL });
     userPage = await userContext.newPage();
     await passwordLogin(userPage, email, replacement);

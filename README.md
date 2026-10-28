@@ -173,7 +173,7 @@ del superadmin. La concessione è legata all'email approvata; cambiare email in 
 richiede una nuova abilitazione individuale. Il nuovo metodo mantiene la persistenza
 della sessione e le stesse regole di consultazione offline.
 
-Home e backoffice condividono lo stesso accesso Google. La sessione viene conservata
+Home e backoffice condividono lo stesso account Firebase, con Google o password abilitata. La sessione viene conservata
 nel profilo del browser anche dopo chiusura e riapertura, finché non si esce,
 si cancellano i dati del browser o Firebase richiede una nuova autenticazione.
 Il ripristino dell'account precede la schermata di login. La consultazione dopo una riapertura senza rete richiede di preparare il dispositivo
