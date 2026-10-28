@@ -229,6 +229,20 @@ interne di speaker e piani. Non accetta scritture. Le API di modifica restano
 autenticate e le regole Firestore restano invariate. Le letture usano la cache
 server esistente (fino a cinque minuti), invalidata dai salvataggi dell’app.
 
+`POST /api/public/interviews/questions` permette di caricare un primo set di
+domande per speaker che non ne hanno ancora. Accetta lo stesso JSON di import
+con `schemaVersion: 1` e `questions` (da 1 a 200), senza altre collezioni. Ogni
+domanda richiede un `id`, lo `speakerId` e almeno `textIt` o `textEn`. I testi
+restano invariati e lo stato salvato è `suggested`.
+
+Con `"dryRun": true` nel corpo verifica il caricamento senza scrivere. Senza
+dry-run salva tutto in un’unica transazione: se anche un solo speaker ha già
+domande, uno speaker non esiste o un ID domanda esiste/è stato eliminato,
+rifiuta l’intero lotto. Ricontrolla Firebase senza cache e serializza gli import
+concorrenti sullo stesso speaker. Non modifica domande esistenti, assegnazioni
+o scalette. Per più di 200 domande usa lotti contenenti speaker distinti e
+mantieni tutte le domande di ogni speaker nello stesso lotto.
+
 ### Formato di importazione
 
 Schema pubblico: `schemas/speaker-research-import.schema.json`. Formato a collezioni compatibile con il seed e con le schede base. Esempio:
