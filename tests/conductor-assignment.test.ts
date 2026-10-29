@@ -56,3 +56,61 @@ it('accepts any enabled account and rejects a revoked target', () => {
     )
   ).toThrow('non valido');
 });
+
+it('clears every owner field and linked slots while preserving interview preparation', () => {
+  const changes = assignmentChanges(
+    {
+      ...data,
+      interviewPlans: [
+        {
+          ...data.interviewPlans[0],
+          assignedToUid: 'old-uid',
+          assignedToName: 'Alberto',
+          cameraId: 'lorenzo',
+          interviewStatus: 'confirmed',
+          notesMd: 'Keep these notes'
+        }
+      ],
+      interviewSlots: [
+        { ...data.interviewSlots[0], cameraId: 'danilo' },
+        { id: 'other', primarySpeakerId: 'other-speaker', interviewerId: 'martin' }
+      ]
+    },
+    'g',
+    '',
+    'alberto',
+    true,
+    []
+  );
+  expect(changes).toHaveLength(2);
+  expect(changes[0].data).toMatchObject({
+    assignedTeamId: '',
+    assignedToUid: '',
+    assignedToName: '',
+    cameraId: 'lorenzo',
+    interviewStatus: 'confirmed',
+    notesMd: 'Keep these notes'
+  });
+  expect(changes[1].data).toMatchObject({
+    primarySpeakerId: 'g',
+    interviewerId: '',
+    cameraId: 'danilo'
+  });
+  expect(changes.map((change) => change.expectedRevision)).toEqual([2, 3]);
+});
+
+it('requires confirmation and a current owner before removing an assignment', () => {
+  expect(() => assignmentChanges(data, 'g', '', 'alberto', false, assignees)).toThrow('Conferma');
+  expect(() => assignmentChanges(data, 'g', '', 'martin', true, assignees)).toThrow('Conflitto');
+});
+
+it('allows a speaker to remain unassigned without any enabled assignees', () => {
+  const changes = assignmentChanges({ speakers: data.speakers }, 'g', '', '', false, []);
+  expect(changes[0].data).toMatchObject({
+    speakerId: 'g',
+    assignedTeamId: '',
+    assignedToUid: '',
+    assignedToName: ''
+  });
+  expect(changes[0].expectedRevision).toBeNull();
+});

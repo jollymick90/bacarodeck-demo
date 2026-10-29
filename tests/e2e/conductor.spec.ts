@@ -212,6 +212,17 @@ test('conductor saves interest, uses shared questions and assigns with confirmat
   await expect(page.getByRole('dialog')).toContainText('Alberto');
   await page.getByRole('button', { name: 'Conferma riassegnazione' }).click();
   await expect(page.locator('.assignment-control')).toContainText('Martin');
+  await page.getByRole('button', { name: 'Assegna / cambia' }).click();
+  await page.getByLabel('Conduttore', { exact: true }).selectOption('');
+  await expect(page.getByRole('dialog')).toContainText('tornerà non assegnato');
+  await page.getByRole('button', { name: 'Conferma rimozione assegnazione' }).click();
+  await expect(page.locator('.assignment-control')).toContainText('Da assegnare');
+  await page.reload();
+  await expect(page.locator('.assignment-control')).toContainText('Da assegnare');
+  await page.getByRole('button', { name: 'Assegna / cambia' }).click();
+  await page.getByLabel('Conduttore', { exact: true }).selectOption('martin');
+  await page.getByRole('button', { name: 'Conferma assegnazione' }).click();
+  await expect(page.locator('.assignment-control')).toContainText('Martin');
   await page
     .locator('.question-row')
     .first()

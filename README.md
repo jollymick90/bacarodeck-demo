@@ -51,8 +51,10 @@ l'app propone le prime domande attive nell'ordine esistente e segnala la propost
 La mancanza di domande o della sintesi non viene riempita con contenuti inventati.
 
 «Assegna / cambia» usa il team editoriale; una sostituzione richiede una conferma
-con il riepilogo. Piano e slot collegati vengono aggiornati insieme. I vecchi slot
-senza ID speaker vengono collegati solo con corrispondenza univoca del nome; i casi
+con il riepilogo. Piano e slot collegati vengono aggiornati insieme.
+La scelta **Non assegnato** permette anche di rimuovere un'assegnazione esistente,
+con conferma, liberando il conduttore dal piano e dagli slot collegati.
+I vecchi slot senza ID speaker vengono collegati solo con corrispondenza univoca del nome; i casi
 ambigui richiedono verifica. L'assegnazione non cambia gli interessi.
 Gli slot originali pertinenti vengono salvati insieme all'assegnazione anche se
 non erano ancora stati aperti nella programmazione. Piani e slot già assegnati

@@ -14,7 +14,7 @@ export function assignmentChanges(
 ): Change[] {
   const speaker = data.speakers?.find((s) => s.id === speakerId);
   const member = assignees.find((t) => t.id === teamId);
-  if (!speaker || !member) throw new Error('Speaker o conduttore non valido.');
+  if (!speaker || (teamId !== '' && !member)) throw new Error('Speaker o conduttore non valido.');
   const plan = data.interviewPlans?.find((p) => p.speakerId === speakerId);
   const current = assignmentOwner(plan);
   if (current !== expectedOwner)
@@ -29,8 +29,8 @@ export function assignmentChanges(
         id: plan?.id || speakerId,
         speakerId,
         assignedTeamId: teamId,
-        assignedToUid: member.uid,
-        assignedToName: member.displayName
+        assignedToUid: member?.uid || '',
+        assignedToName: member?.displayName || ''
       },
       expectedRevision: plan?.revision ?? null
     }

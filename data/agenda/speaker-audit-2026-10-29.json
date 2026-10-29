@@ -1,0 +1,518 @@
+{
+  "checkedOn": "2026-10-29",
+  "checkedAt": "2026-10-29T07:00:28.095Z",
+  "firebaseProject": "bacarodeck-demo",
+  "workspacePath": "workspaces/codemotion-milano-2026",
+  "photoSourceFile": "../speakers.html",
+  "scheduleSource": "https://sessionize.com/api/v2/cdpvhngf/view/GridSmart?under=True",
+  "officialSpeakersUrl": "https://conferences.codemotion.com/milan/speakers/",
+  "summary": {
+    "databaseSpeakers": 89,
+    "scheduledSpeakers": 103,
+    "scheduledSessions": 87,
+    "updatedPhotos": 42,
+    "pendingSpeakers": 67,
+    "pendingSpeakersWithoutPhoto": 0,
+    "missingScheduledSpeakers": 17
+  },
+  "updatedPhotos": [
+    {
+      "id": "alessandro-festa",
+      "fullName": "Alessandro Festa",
+      "photoUrl": "https://cdn.sessionize.com/image/06ce-200o200o2-T5W6w5TZvEWPEsKG1h87iU.png"
+    },
+    {
+      "id": "alessandro-riboni",
+      "fullName": "Alessandro Riboni",
+      "photoUrl": "https://cdn.sessionize.com/image/9647-200o200o2-QTrWgpTNU8QG5pQm7Rbs5L.jpg"
+    },
+    {
+      "id": "alessio-acella",
+      "fullName": "Alessio Acella",
+      "photoUrl": "https://cdn.sessionize.com/image/c295-200o200o2-ppGW3tjJJfrwNJ9hgbnW9D.png"
+    },
+    {
+      "id": "alice-viola-setti",
+      "fullName": "Alice Viola Setti",
+      "photoUrl": "https://cdn.sessionize.com/image/24ab-200o200o2-ENJ7xNpXv9PGv9o37WhFap.jpg"
+    },
+    {
+      "id": "andrea-ferlito",
+      "fullName": "Andrea Ferlito",
+      "photoUrl": "https://cdn.sessionize.com/image/74cf-200o200o2-SduDu9NeyKMAZo3Js8M9ar.jpg"
+    },
+    {
+      "id": "andrea-raponi",
+      "fullName": "Andrea Raponi",
+      "photoUrl": "https://cdn.sessionize.com/image/6f94-200o200o2-p6Sf2nMGFMHuSc8KRqD3gn.png"
+    },
+    {
+      "id": "andrei-chis",
+      "fullName": "Andrei Chiș",
+      "photoUrl": "https://cdn.sessionize.com/image/7be8-200o200o2-3UqFytQWz5JXPyi66ykYxb.jpg"
+    },
+    {
+      "id": "aniello-bossa",
+      "fullName": "Aniello Bossa",
+      "photoUrl": "https://cdn.sessionize.com/image/2124-200o200o2-3sWF7qwT3Pdnk1N5eeJ2xs.png"
+    },
+    {
+      "id": "aurelie-vache",
+      "fullName": "Aurélie Vache",
+      "photoUrl": "https://cdn.sessionize.com/image/c561-200o200o2-TYNNshoAbQhm1MEx7B2DUL.png"
+    },
+    {
+      "id": "costantino-cavallo",
+      "fullName": "Costantino Cavallo",
+      "photoUrl": "https://cdn.sessionize.com/image/9909-200o200o2-pxzZ71Qx1X4aUnwdMTcAR2.png"
+    },
+    {
+      "id": "daniel-zotti",
+      "fullName": "Daniel Zotti",
+      "photoUrl": "https://cdn.sessionize.com/image/1b1c-200o200o2-NbpSeLdoohKtgLSi96GUz1.png"
+    },
+    {
+      "id": "daniele-zonca",
+      "fullName": "Daniele Zonca",
+      "photoUrl": "https://cdn.sessionize.com/image/263b-200o200o2-Y3KQmiCbLfM6hfMA6UVEbG.png"
+    },
+    {
+      "id": "danilo-deponti",
+      "fullName": "Danilo Deponti",
+      "photoUrl": "https://cdn.sessionize.com/image/1f6f-200o200o2-Li2j1bx4BY4YpUrVavJFWq.jpg"
+    },
+    {
+      "id": "davide-caldarulo",
+      "fullName": "Davide Caldarulo",
+      "photoUrl": "https://cdn.sessionize.com/image/4ff4-200o200o2-YMs3G2nbsovSm2HV5SgQaV.jpg"
+    },
+    {
+      "id": "davide-pensato",
+      "fullName": "Davide Pensato",
+      "photoUrl": "https://cdn.sessionize.com/image/3a95-200o200o2-3KQKLGosgX9oab7k2Frh8J.jpg"
+    },
+    {
+      "id": "diana-bernabei",
+      "fullName": "Diana Bernabei",
+      "photoUrl": "https://cdn.sessionize.com/image/e076-200o200o2-UD8vVBvsx1ZDYeL6LLQapV.png"
+    },
+    {
+      "id": "edoardo-dusi",
+      "fullName": "Edoardo Dusi",
+      "photoUrl": "https://cdn.sessionize.com/image/d2c1-200o200o2-3n1jVxeW9jBF4EgAjmk9AR.png"
+    },
+    {
+      "id": "egon-ferri",
+      "fullName": "Egon Ferri",
+      "photoUrl": "https://cdn.sessionize.com/image/8514-200o200o2-ReFBXrwGWaXCVq7XihiBnV.jpg"
+    },
+    {
+      "id": "emmanuele-villa",
+      "fullName": "Emmanuele Villa",
+      "photoUrl": "https://cdn.sessionize.com/image/c6fa-200o200o2-3bZXQv8LDHxXfXZhBPGkhz.jpg"
+    },
+    {
+      "id": "erik-pronk",
+      "fullName": "Erik Pronk",
+      "photoUrl": "https://cdn.sessionize.com/image/2096-200o200o2-WWSBvjRSu94DngxhB1pcQW.jpg"
+    },
+    {
+      "id": "ettore-di-giacinto",
+      "fullName": "Ettore Di Giacinto",
+      "photoUrl": "https://cdn.sessionize.com/image/d3ec-200o200o2-hMnRhVwuJkxQLMthHJQJv1.png"
+    },
+    {
+      "id": "francesco-pirrone",
+      "fullName": "Francesco Pirrone",
+      "photoUrl": "https://cdn.sessionize.com/image/2721-200o200o2-DjHSTscKb98hJTM6Tcsib5.jpg"
+    },
+    {
+      "id": "giovanni-galloro",
+      "fullName": "Giovanni Galloro",
+      "photoUrl": "https://cdn.sessionize.com/image/d4b6-200o200o2-SJ6bN7FZMC5t4breX5weKV.jpg"
+    },
+    {
+      "id": "giulio-d-alessandro",
+      "fullName": "Giulio D'Alessandro",
+      "photoUrl": "https://cdn.sessionize.com/image/8145-200o200o2-QxMbseum7bn7HsXJ9PRcZV.jpg"
+    },
+    {
+      "id": "guglielmo-fancellu",
+      "fullName": "Guglielmo Fancellu",
+      "photoUrl": "https://cdn.sessionize.com/image/9afe-200o200o2-DLGiaDWrwcZAY3r27pxoAg.png"
+    },
+    {
+      "id": "luca-bianchi",
+      "fullName": "Luca Bianchi",
+      "photoUrl": "https://cdn.sessionize.com/image/f194-200o200o2-VHyGUTXJLY5mhFFp36cYLZ.jpg"
+    },
+    {
+      "id": "marco-landi",
+      "fullName": "Marco Landi",
+      "photoUrl": "https://cdn.sessionize.com/image/fee2-200o200o2-SSNHSA8VZsy7R9indoCc52.jpg"
+    },
+    {
+      "id": "marco-liberati",
+      "fullName": "Marco Liberati",
+      "photoUrl": "https://cdn.sessionize.com/image/7490-200o200o2-nrP4JBiXdxQSaHrqbG9pej.png"
+    },
+    {
+      "id": "marco-simonte",
+      "fullName": "Marco Simonte",
+      "photoUrl": "https://cdn.sessionize.com/image/5e74-200o200o2-HBnCXtZsEG9Ad4BU4b8efp.jpg"
+    },
+    {
+      "id": "marta-scandellari",
+      "fullName": "Marta Scandellari",
+      "photoUrl": "https://cdn.sessionize.com/image/3b94-200o200o2-wnWb64M6U7kbb7W7deMTi6.png"
+    },
+    {
+      "id": "matteo-mortari",
+      "fullName": "Matteo Mortari",
+      "photoUrl": "https://cdn.sessionize.com/image/1d0d-200o200o2-NA8rxoWa1UzjUEfChZLkDN.jpg"
+    },
+    {
+      "id": "maurizio-mangione",
+      "fullName": "Maurizio Mangione",
+      "photoUrl": "https://cdn.sessionize.com/image/e3eb-200o200o2-RCFHjgHgoeUdFi5aG2xHU.jpg"
+    },
+    {
+      "id": "michele-laurelli",
+      "fullName": "Michele Laurelli",
+      "photoUrl": "https://cdn.sessionize.com/image/8f7f-200o200o2-w7XVgKRBmSVUM77teoPfez.jpg"
+    },
+    {
+      "id": "moreno-lovato",
+      "fullName": "Moreno Lovato",
+      "photoUrl": "https://cdn.sessionize.com/image/7d74-200o200o2-SxT3jnc8ShmdY2DiMfhfVt.jpg"
+    },
+    {
+      "id": "nicola-guglielmi",
+      "fullName": "Nicola Guglielmi",
+      "photoUrl": "https://cdn.sessionize.com/image/dd23-200o200o2-XE88rcGuZi8wjPvDJgdM9Z.jpg"
+    },
+    {
+      "id": "paolo-rubano",
+      "fullName": "Paolo Rubano",
+      "photoUrl": "https://cdn.sessionize.com/image/bc2c-200o200o2-E2i6PFRNPxpeLnUxH5QZvW.jpg"
+    },
+    {
+      "id": "saverio-murgia",
+      "fullName": "Saverio Murgia",
+      "photoUrl": "https://cdn.sessionize.com/image/8b8a-200o200o2-4f6vfEjQPv62LwoPXzELb6.jpg"
+    },
+    {
+      "id": "simone-desantis",
+      "fullName": "Simone Desantis",
+      "photoUrl": "https://cdn.sessionize.com/image/e534-200o200o2-sxqGRqHJZPPxVR7MaV1HtJ.jpg"
+    },
+    {
+      "id": "stefano-bruno",
+      "fullName": "Stefano Bruno",
+      "photoUrl": "https://cdn.sessionize.com/image/d046-200o200o2-rnWu2SGz3aKd2DhWanQbcS.png"
+    },
+    {
+      "id": "stefano-fiorucci",
+      "fullName": "Stefano Fiorucci",
+      "photoUrl": "https://cdn.sessionize.com/image/9d4a-200o200o2-djjCxfuyiAphubRbCFrZv.png"
+    },
+    {
+      "id": "valeria-salis",
+      "fullName": "Valeria Salis",
+      "photoUrl": "https://cdn.sessionize.com/image/c2ca-200o200o2-HFhWSW85MXNYMfR8REqka3.png"
+    },
+    {
+      "id": "valeria-zuccoli",
+      "fullName": "Valeria Zuccoli",
+      "photoUrl": "https://cdn.sessionize.com/image/74fd-200o200o2-TJeSWPyFSRDmVnicMg1frj.jpg"
+    }
+  ],
+  "missingScheduledSpeakers": [
+    {
+      "fullName": "Alessandro Vadruccio",
+      "sessionizeSpeakerId": "be74b306-53eb-4925-b990-682990fc13ce",
+      "photoUrl": "https://cdn.sessionize.com/image/8fd9-200o200o2-HUwygnQsD6RDRJfwDR7LPQ.jpg",
+      "sessions": [
+        {
+          "sessionId": "1369539",
+          "title": "Platform & Harness Engineering: l'antidoto al caos agentico",
+          "startsAt": "2026-10-28T16:10:00+01:00",
+          "endsAt": "2026-10-28T16:40:00+01:00",
+          "room": "NAVIGLI"
+        }
+      ]
+    },
+    {
+      "fullName": "Alex Pagnoni",
+      "sessionizeSpeakerId": "923911ba-8be5-43c5-a704-632013b0572c",
+      "photoUrl": "https://cdn.sessionize.com/image/1e36-200o200o2-3PccfjjaWUkcF5c9JdWEAX.png",
+      "sessions": [
+        {
+          "sessionId": "1354856",
+          "title": "AI won't fix your Developer Experience",
+          "startsAt": "2026-10-29T12:10:00+01:00",
+          "endsAt": "2026-10-29T12:40:00+01:00",
+          "room": "BRERA"
+        }
+      ]
+    },
+    {
+      "fullName": "Andrea Slemer",
+      "sessionizeSpeakerId": "978284b5-966b-4d18-a62b-c54dfaf89999",
+      "photoUrl": "https://cdn.sessionize.com/image/5b46-200o200o2-fojgjUmaZH58naWcf41MZm.png",
+      "sessions": [
+        {
+          "sessionId": "1367486",
+          "title": "Moving Beyond the Hype: Why Writing Code is No Longer the Hard Part of AI Engineering",
+          "startsAt": "2026-10-29T11:20:00+01:00",
+          "endsAt": "2026-10-29T11:50:00+01:00",
+          "room": "BRERA"
+        }
+      ]
+    },
+    {
+      "fullName": "Andrea Tabacco",
+      "sessionizeSpeakerId": "2ca97891-f213-44c1-b420-b3dd8949e05c",
+      "photoUrl": "https://cdn.sessionize.com/image/4465-200o200o2-StjJL5ZoL7RpT2eigDzn1s.jpg",
+      "sessions": [
+        {
+          "sessionId": "1362542",
+          "title": "Trovare la Propria Dimensione",
+          "startsAt": "2026-10-29T15:20:00+01:00",
+          "endsAt": "2026-10-29T15:50:00+01:00",
+          "room": "LAMBRATE"
+        }
+      ]
+    },
+    {
+      "fullName": "Andrea Veronesi",
+      "sessionizeSpeakerId": "b8003cf8-a2b9-463a-afd1-747d19723af1",
+      "photoUrl": "https://cdn.sessionize.com/image/cee9-200o200o2-MW9t2NQ4U1e63qhhTZD2q1.jpg",
+      "sessions": [
+        {
+          "sessionId": "1369539",
+          "title": "Platform & Harness Engineering: l'antidoto al caos agentico",
+          "startsAt": "2026-10-28T16:10:00+01:00",
+          "endsAt": "2026-10-28T16:40:00+01:00",
+          "room": "NAVIGLI"
+        }
+      ]
+    },
+    {
+      "fullName": "Chiara Russo",
+      "sessionizeSpeakerId": "511b2545-db91-43bb-8435-0fac359397ad",
+      "photoUrl": "https://cdn.sessionize.com/image/7c7f-200o200o2-wu7Rr1JuUxtT4Yz8ryUboA.png",
+      "sessions": [
+        {
+          "sessionId": "1345279",
+          "title": "Codemotion Milan '26 - Opening",
+          "startsAt": "2026-10-28T09:15:00+01:00",
+          "endsAt": "2026-10-28T09:45:00+01:00",
+          "room": "SANSIRO"
+        },
+        {
+          "sessionId": "1345280",
+          "title": "Codemotion Milan '26 - Welcome back!",
+          "startsAt": "2026-10-29T09:35:00+01:00",
+          "endsAt": "2026-10-29T10:00:00+01:00",
+          "room": "SANSIRO"
+        }
+      ]
+    },
+    {
+      "fullName": "Eleonora Pisoni",
+      "sessionizeSpeakerId": "449d6424-322b-49bd-997c-d3bd7b3f935c",
+      "photoUrl": "https://cdn.sessionize.com/image/2616-200o200o2-f5xwruY6jd5gtQmM7SYmWW.jpg",
+      "sessions": [
+        {
+          "sessionId": "1371585",
+          "title": "Human Code: Riavviare l’ascolto tra corpo e mente",
+          "startsAt": "2026-10-29T16:10:00+01:00",
+          "endsAt": "2026-10-29T16:40:00+01:00",
+          "room": "CORVETTO"
+        }
+      ]
+    },
+    {
+      "fullName": "Lara Gianotti",
+      "sessionizeSpeakerId": "b7e3057a-ada5-4bf7-bb3a-aef1fa0947e0",
+      "photoUrl": "https://cdn.sessionize.com/image/c050-200o200o2-7m78JarwREMZh5nHzjrgG5.jpg",
+      "sessions": [
+        {
+          "sessionId": "1362542",
+          "title": "Trovare la Propria Dimensione",
+          "startsAt": "2026-10-29T15:20:00+01:00",
+          "endsAt": "2026-10-29T15:50:00+01:00",
+          "room": "LAMBRATE"
+        }
+      ]
+    },
+    {
+      "fullName": "Luca Fregoso",
+      "sessionizeSpeakerId": "73730527-b5d1-4698-aabf-04274f20264d",
+      "photoUrl": "https://cdn.sessionize.com/image/a9bb-200o200o2-YWEgsPciLrD8g6huzN4TcB.jpg",
+      "sessions": [
+        {
+          "sessionId": "1345280",
+          "title": "Codemotion Milan '26 - Welcome back!",
+          "startsAt": "2026-10-29T09:35:00+01:00",
+          "endsAt": "2026-10-29T10:00:00+01:00",
+          "room": "SANSIRO"
+        }
+      ]
+    },
+    {
+      "fullName": "Martina Truppo",
+      "sessionizeSpeakerId": "f3ab5bfc-9be9-4bb5-a696-c75c681da691",
+      "photoUrl": "https://cdn.sessionize.com/image/375a-200o200o2-KFncfnsmoNFTdXz6SYjmXJ.jpg",
+      "sessions": [
+        {
+          "sessionId": "1371585",
+          "title": "Human Code: Riavviare l’ascolto tra corpo e mente",
+          "startsAt": "2026-10-29T16:10:00+01:00",
+          "endsAt": "2026-10-29T16:40:00+01:00",
+          "room": "CORVETTO"
+        }
+      ]
+    },
+    {
+      "fullName": "Mattia Minotti",
+      "sessionizeSpeakerId": "7ce1be5a-b0fd-4121-9962-1269d381c001",
+      "photoUrl": "https://cdn.sessionize.com/image/da03-200o200o2-fix6aKoSEsYJdsh2wgZrFW.png",
+      "sessions": [
+        {
+          "sessionId": "1368374",
+          "title": "The product engineering team: own the problem, collab on specs, let agents code",
+          "startsAt": "2026-10-28T13:00:00+01:00",
+          "endsAt": "2026-10-28T13:30:00+01:00",
+          "room": "NAVIGLI"
+        }
+      ]
+    },
+    {
+      "fullName": "Michela Bertaina",
+      "sessionizeSpeakerId": "ad8f450f-ae7c-4b1c-bfe5-9fe95c0f452a",
+      "photoUrl": "https://cdn.sessionize.com/image/4639-200o200o2-aa809e27-b86b-48bf-af80-d40cb9324bd8.jpg",
+      "sessions": [
+        {
+          "sessionId": "1345280",
+          "title": "Codemotion Milan '26 - Welcome back!",
+          "startsAt": "2026-10-29T09:35:00+01:00",
+          "endsAt": "2026-10-29T10:00:00+01:00",
+          "room": "SANSIRO"
+        }
+      ]
+    },
+    {
+      "fullName": "Natale Vinto",
+      "sessionizeSpeakerId": "938c8344-624c-44ea-9bb5-c6d54f3c1ae1",
+      "photoUrl": "https://cdn.sessionize.com/image/fa8a-200o200o2-sX1tpqb67bndN4vKHAb4bM.jpg",
+      "sessions": [
+        {
+          "sessionId": "1364614",
+          "title": "Beyond the Hype: Building a Sustainable, Open Source AI Strategy",
+          "startsAt": "2026-10-29T17:00:00+01:00",
+          "endsAt": "2026-10-29T17:15:00+01:00",
+          "room": "SANSIRO"
+        }
+      ]
+    },
+    {
+      "fullName": "Natalia Orlandi",
+      "sessionizeSpeakerId": "2ae3f28c-02f0-4c3e-bac0-ab0c13e8c2a7",
+      "photoUrl": "https://cdn.sessionize.com/image/03a7-200o200o2-XdyqFAnEcqzCoYgpcjbRmw.png",
+      "sessions": [
+        {
+          "sessionId": "1371585",
+          "title": "Human Code: Riavviare l’ascolto tra corpo e mente",
+          "startsAt": "2026-10-29T16:10:00+01:00",
+          "endsAt": "2026-10-29T16:40:00+01:00",
+          "room": "CORVETTO"
+        }
+      ]
+    },
+    {
+      "fullName": "Riccardo Galimberti",
+      "sessionizeSpeakerId": "ecc32706-8e3f-4ebd-a23f-cf7facc0d627",
+      "photoUrl": "https://cdn.sessionize.com/image/8be1-200o200o2-fzYqx675jF8ScV6df8kUz4.jpg",
+      "sessions": [
+        {
+          "sessionId": "1354856",
+          "title": "AI won't fix your Developer Experience",
+          "startsAt": "2026-10-29T12:10:00+01:00",
+          "endsAt": "2026-10-29T12:40:00+01:00",
+          "room": "BRERA"
+        }
+      ]
+    },
+    {
+      "fullName": "Tommaso Allevi",
+      "sessionizeSpeakerId": "635ddb37-ad6e-468e-b639-3c212f30597d",
+      "photoUrl": "https://cdn.sessionize.com/image/5946-200o200o2-U7VU7jKagkhdPZqgM7FEtU.jpg",
+      "sessions": [
+        {
+          "sessionId": "1372401",
+          "title": "Play a Piano Note: i numeri dietro il suono",
+          "startsAt": "2026-10-28T12:10:00+01:00",
+          "endsAt": "2026-10-28T12:40:00+01:00",
+          "room": "CORVETTO"
+        }
+      ]
+    },
+    {
+      "fullName": "Walter Aglietti",
+      "sessionizeSpeakerId": "da541511-4ead-4d82-ab4d-a3218c81e254",
+      "photoUrl": "https://cdn.sessionize.com/image/f498-200o200o2-4KLNniCQSFoutS79kcL2QL.png",
+      "sessions": [
+        {
+          "sessionId": "1367486",
+          "title": "Moving Beyond the Hype: Why Writing Code is No Longer the Hard Part of AI Engineering",
+          "startsAt": "2026-10-29T11:20:00+01:00",
+          "endsAt": "2026-10-29T11:50:00+01:00",
+          "room": "BRERA"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "allUpdatedImagesReachable": true,
+    "existingPhotosPreserved": true,
+    "otherSpeakerFieldsPreserved": true,
+    "talksPreserved": true,
+    "interviewPlansPreserved": true,
+    "missingSpeakersImported": false
+  },
+  "resolution": {
+    "completedOn": "2026-10-29",
+    "verifiedAt": "2026-10-29T10:13:04.161Z",
+    "importFile": "../imports/speaker-mancanti-domande-aperte-2026-10-29.json",
+    "created": {
+      "speakers": 17,
+      "talks": 10,
+      "sources": 1,
+      "questions": 102,
+      "interviewPlans": 17,
+      "conductorBriefs": 18
+    },
+    "databaseSpeakers": 106,
+    "databaseQuestions": 656,
+    "remainingMissingScheduledSpeakers": 0,
+    "questionsPerAddedSpeaker": 6,
+    "questionLanguages": ["it", "en"],
+    "allNewQuestionsAndFollowUpsOpen": true,
+    "existingDocumentsNotOverwritten": true,
+    "concurrentTeamEditsPreserved": 4,
+    "portraitCorrections": [
+      {
+        "id": "nicola-guglielmi",
+        "fullName": "Nicola Guglielmi",
+        "photoUrl": "https://cdn.sessionize.com/image/dd23-200o200o2-XE88rcGuZi8wjPvDJgdM9Z.jpg"
+      },
+      {
+        "id": "stefano-fiorucci",
+        "fullName": "Stefano Fiorucci",
+        "photoUrl": "https://cdn.sessionize.com/image/9d4a-200o200o2-djjCxfuyiAphubRbCFrZv.png"
+      }
+    ]
+  }
+}

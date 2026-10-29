@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "workspaceId": "codemotion-milano-2026",
+  "targetSpeakerId": "mauro-morales",
+  "dataSnapshotDate": "2026-10-28",
+  "description": "Tre domande inglesi semplici e aperte approvate per Mauro Morales, con follow-up. Aggiunge nuove domande e aggiorna la selezione della scaletta esistente, conservando le domande precedenti.",
+  "questions": [
+    {
+      "id": "q-mauro-morales-simple-en-20261028-01",
+      "speakerId": "mauro-morales",
+      "order": 1,
+      "textEn": "I’m a software developer, but I’m new to Kairos. What problem does it solve, and how does that connect to your talk?",
+      "followUpEn": "Can you give us a simple example?",
+      "status": "suggested",
+      "notesMd": "Domanda approvata per l’intervista il 28 ottobre 2026. Le domande precedenti restano conservate."
+    },
+    {
+      "id": "q-mauro-morales-simple-en-20261028-02",
+      "speakerId": "mauro-morales",
+      "order": 2,
+      "textEn": "What has contributing to open source taught you about building software?",
+      "followUpEn": "What has surprised you the most?",
+      "status": "suggested",
+      "notesMd": "Domanda approvata per l’intervista il 28 ottobre 2026. Le domande precedenti restano conservate."
+    },
+    {
+      "id": "q-mauro-morales-simple-en-20261028-03",
+      "speakerId": "mauro-morales",
+      "order": 3,
+      "textEn": "How do you see open source changing as AI agents write more code?",
+      "followUpEn": "What excites you, and what worries you?",
+      "status": "suggested",
+      "notesMd": "Domanda approvata per l’intervista il 28 ottobre 2026. Le domande precedenti restano conservate."
+    }
+  ],
+  "conductorBriefs": [
+    {
+      "id": "brief-9a2eff2e8a9de832",
+      "speakerId": "mauro-morales",
+      "talkId": "talk-mauro-morales",
+      "mainQuestionIds": [
+        "q-mauro-morales-simple-en-20261028-01",
+        "q-mauro-morales-simple-en-20261028-02",
+        "q-mauro-morales-simple-en-20261028-03"
+      ]
+    }
+  ]
+}

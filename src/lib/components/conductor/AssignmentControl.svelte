@@ -20,10 +20,7 @@
   function open() {
     expected = owner;
     revision = plan?.revision ?? null;
-    target =
-      assignees.find((t) => t.id === owner || (t.uid && t.uid === owner))?.id ||
-      assignees[0]?.id ||
-      '';
+    target = assignees.find((t) => t.id === owner || (t.uid && t.uid === owner))?.id || '';
     failure = '';
     dialog.showModal();
   }
@@ -60,14 +57,19 @@
   <p>{speaker.fullName} · assegnazione attuale: <strong>{ownerName}</strong></p>
   <label
     >Conduttore<select aria-label="Conduttore" bind:value={target}
-      >{#each assignees as t}<option value={t.id}>{t.displayName} · {t.email}</option
-        >{/each}</select
+      ><option value="">Non assegnato</option>
+      {#each assignees as t}<option value={t.id}>{t.displayName} · {t.email}</option>{/each}</select
     ></label
   >
   {#if !assignees.length}<p>Nessun account abilitato disponibile.</p>{/if}
   {#if expected && expected !== target}<p class="warning">
-      Confermando sostituirai l’assegnatario con {assignees.find((t) => t.id === target)
-        ?.displayName}. Gli interessi restano invariati.
+      {#if target}
+        Confermando sostituirai l’assegnatario con {assignees.find((t) => t.id === target)
+          ?.displayName}.
+      {:else}
+        Confermando rimuoverai l’assegnazione e lo speaker tornerà non assegnato.
+      {/if}
+      Gli interessi restano invariati.
     </p>{/if}
   {#if failure}<p role="alert">{failure}</p>
     <button
@@ -80,11 +82,18 @@
   <div class="entry-actions">
     <button disabled={busy} onclick={() => dialog.close()}>Annulla</button><button
       class="primary"
-      disabled={workspace.readOnly || busy || !!failure || !assignees.some((t) => t.id === target)}
+      disabled={workspace.readOnly ||
+        busy ||
+        !!failure ||
+        (target !== '' && !assignees.some((t) => t.id === target))}
       onclick={save}
-      >{expected && expected !== target
-        ? 'Conferma riassegnazione'
-        : 'Conferma assegnazione'}</button
+      >{!target
+        ? expected
+          ? 'Conferma rimozione assegnazione'
+          : 'Lascia non assegnato'
+        : expected && expected !== target
+          ? 'Conferma riassegnazione'
+          : 'Conferma assegnazione'}</button
     >
   </div>
 </dialog>
